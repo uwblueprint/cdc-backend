@@ -28,20 +28,23 @@ See cdc-frontend for frontend setup.
 ### Backend
 
 #### Python setup
+
 1. Ensure that you have Python 3.9.1 on your system by running `python3 --version`. If you don't, please upgrade your Python.
 1. If you don't have an environment setup already within the repo: `python3 -m venv env`
-    Note: you will only need to do the above command once.
+   Note: you will only need to do the above command once.
 1. Activate the virtual environment: `. ./env/bin/activate`
 1. Install the requirements: `pip install -r requirements.txt`
+1. One time - install the required pre-commit hooks: `pre-commit install` - this will ensure that each time you `git commit` in this repo, it will run some lint checks. It won't let you commit unless the link checks pass.
 
 Once you have the requirements installed, you should be able to develop by just activating the environment (step 2).
 
 #### Python - adding a new requirement
+
 1. Update the file `requirements.in` with the name of the library that you want to add.
 1. Install pip-compile if you don't have it already - `pip install pip-tools`.
 1. Run `pip-compile requirements.in`
 1. Download the updated packages `pip install -r requirements.txt`
-1. Check locally to ensure that you haven't broken anything ;) 
+1. Check locally to ensure that you haven't broken anything ;)
 
 To run the backend server:
 

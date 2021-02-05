@@ -9,7 +9,7 @@ conn = psycopg2.connect(host=hostname, database=database, user=user, password=pa
 
 table_creation_commands = [
     """
-        CREATE TABLE asset (
+        CREATE TABLE IF NOT EXISTS asset (
             id SERIAL PRIMARY KEY,
             name VARCHAR(256) NOT NULL,
             s3_key VARCHAR(256) NOT NULL,
@@ -17,7 +17,7 @@ table_creation_commands = [
         )
     """,
     """
-        CREATE TABLE scenario (
+        CREATE TABLE IF NOT EXISTS scenario (
             id SERIAL PRIMARY KEY,
             name VARCHAR(256) NOT NULL,
             friendly_name VARCHAR(256) NOT NULL,

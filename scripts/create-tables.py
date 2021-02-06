@@ -60,7 +60,7 @@ table_creation_commands = [
 cur = conn.cursor()
 
 # Drop tables if they exist first
-drop_command = "DROP TABLE IF EXISTS {tablename}"
+drop_command = "DROP TABLE IF EXISTS {tablename} CASCADE"
 for table in tables:
     cur.execute(drop_command.format(tablename=table))
 

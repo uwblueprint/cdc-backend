@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Student Bedroom",
+    "description": "A standard student bedroom. Twin size bed, small table for school work, small closet.",
+    "objects_id": [1, 2, 3],
+    "position": [0.1, 0.5, 0.1],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation": [0.1, 0.5, 0.1],
+    "background_id": 1,
+    "metadata": {}
+  },
+  {
+    "name": "Master Bedroom",
+    "description": "A standard master bedroom. King size bed, a dresser, ensuit washroom, and a large closet.",
+    "objects_id": [1, 2, 3],
+    "position": [0.1, 0.5, 0.1],
+    "scale": [2.0, 2.0, 2.0],
+    "rotation": [0.0, 0.0, 0.0],
+    "background_id": 2,
+    "metadata": {}
+  },
+  {
+    "name": "Classroom",
+    "description": "A classroom at ABC High. Can house 20 students. Blackboard at the front of the room.",
+    "objects_id": [3, 1],
+    "position": [5.0, 20.0, 10.5],
+    "scale": [1.0, 1.5, 1.0],
+    "rotation": [0.0, 0.0, 0.0],
+    "background_id": 3,
+    "metadata": {}
+  }
+]

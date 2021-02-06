@@ -31,6 +31,21 @@ table_creation_commands = [
             expected_solve_time VARCHAR(20)
         )
     """,
+
+    """
+        CREATE TABLE IF NOT EXISTS statistics (
+            id SERIAL PRIMARY KEY,
+            scenario_id BIGINT,
+            scene_id BIGINT,
+            object_id BIGINT,
+            stats JSONB,
+            FOREIGN KEY (scenario_id) REFERENCES scenario (id)
+            --, FOREIGN KEY (scene_id) REFERENCES (scene),
+            --FOREIGN KEY (object_id) REFERENCES (object)
+        
+        )
+    """
+
 ]
 
 cur = conn.cursor()

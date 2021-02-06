@@ -34,6 +34,18 @@ table_creation_commands = [
         )
     """,
     """
+        CREATE TABLE statistics (
+            id SERIAL PRIMARY KEY,
+            scenario_id BIGINT,
+            scene_id BIGINT,
+            object_id BIGINT,
+            stats JSONB,
+            FOREIGN KEY (scenario_id) REFERENCES scenario (id)
+            --FOREIGN KEY (scene_id) REFERENCES (scene),
+            --FOREIGN KEY (object_id) REFERENCES (object)
+        )
+    """,
+    """
         CREATE TABLE scene (
             id SERIAL PRIMARY KEY,
             name TEXT NOT NULL,

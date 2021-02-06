@@ -55,6 +55,21 @@ table_creation_commands = [
             -- FOREIGN KEY (object_id) REFERENCES object (id)
         )
     """,
+    """
+        CREATE TABLE IF NOT EXISTS object (
+            id SERIAL PRIMARY KEY,
+            position FLOAT[] NOT NULL,
+            scale FLOAT[] NOT NULL,
+            rotation FLOAT[] NOT NULL,
+            asset_id BIGINT NOT NULL,
+            next_objects BIGINT[],
+            text_id BIGINT,
+            is_interactable BOOLEAN NOT NULL,
+            animations_json JSONB NOT NULL,
+            FOREIGN KEY (asset_id) REFERENCES asset (id),
+            FOREIGN KEY (text_id) REFERENCES text (id)
+        )
+    """,
 ]
 
 cur = conn.cursor()

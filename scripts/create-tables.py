@@ -34,6 +34,19 @@ table_creation_commands = [
         )
     """,
     """
+        CREATE TABLE scene (
+            id SERIAL PRIMARY KEY,
+            name TEXT NOT NULL,
+            description TEXT NOT NULL,
+            objects_id BIGINT[] NOT NULL,
+            position DOUBLE PRECISION[] NOT NULL,
+            scale DOUBLE PRECISION[] NOT NULL,
+            rotation DOUBLE PRECISION[] NOT NULL,
+            background_id BIGINT NOT NULL,
+            FOREIGN KEY(background_id) REFERENCES asset(id)
+        )
+    """,
+    """
         CREATE TABLE text (
             id SERIAL PRIMARY KEY,
             content text NOT NULL,
@@ -47,7 +60,7 @@ table_creation_commands = [
 cur = conn.cursor()
 
 # Drop tables if they exist first
-drop_command = "DROP TABLE IF EXISTS {tablename}"
+drop_command = "DROP TABLE IF EXISTS {tablename} CASCADE"
 for table in tables:
     cur.execute(drop_command.format(tablename=table))
 

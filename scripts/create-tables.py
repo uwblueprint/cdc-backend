@@ -56,11 +56,11 @@ table_creation_commands = [
         )
     """,
     """
-        CREATE TABLE IF NOT EXISTS object (
+        CREATE TABLE object (
             id SERIAL PRIMARY KEY,
-            position FLOAT[] NOT NULL,
-            scale FLOAT[] NOT NULL,
-            rotation FLOAT[] NOT NULL,
+            position DOUBLE PRECISION[] NOT NULL,
+            scale DOUBLE PRECISION[] NOT NULL,
+            rotation DOUBLE PRECISION[] NOT NULL,
             asset_id BIGINT NOT NULL,
             next_objects BIGINT[],
             text_id BIGINT,

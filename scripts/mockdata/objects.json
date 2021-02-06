@@ -1,0 +1,35 @@
+[
+  {
+    "position": [0.1, 0.5, 0.1],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation": [0.1, 0.5, 0.1],
+    "asset_id": 1,
+    "next_objects": [2, 3],
+    "text_id": 1,
+    "is_interactable": false,
+    "animations": {},
+    "metadata": {}
+  },
+  {
+    "position": [1.1, 1.5, 1.1],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation": [0.1, 0.5, 0.1],
+    "asset_id": 2,
+    "next_objects": [3],
+    "text_id": 3,
+    "is_interactable": true,
+    "animations": {},
+    "metadata": {}
+  },
+  {
+    "position": [0.1, 0.5, 0.1],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation": [0.1, 0.5, 0.1],
+    "asset_id": 3,
+    "next_objects": [],
+    "text_id": 2,
+    "is_interactable": false,
+    "animations": {},
+    "metadata": {}
+  }
+]

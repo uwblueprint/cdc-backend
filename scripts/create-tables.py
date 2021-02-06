@@ -7,9 +7,11 @@ password = ""
 
 conn = psycopg2.connect(host=hostname, database=database, user=user, password=password)
 
+tables = ["asset", "scenario", "scene", "object", "statistics", "text"]
+
 table_creation_commands = [
     """
-        CREATE TABLE IF NOT EXISTS asset (
+        CREATE TABLE asset (
             id SERIAL PRIMARY KEY,
             name VARCHAR(256) NOT NULL,
             s3_key VARCHAR(256) NOT NULL,
@@ -17,7 +19,7 @@ table_creation_commands = [
         )
     """,
     """
-        CREATE TABLE IF NOT EXISTS scenario (
+        CREATE TABLE scenario (
             id SERIAL PRIMARY KEY,
             name VARCHAR(256) NOT NULL,
             friendly_name VARCHAR(256) NOT NULL,
@@ -32,7 +34,7 @@ table_creation_commands = [
         )
     """,
     """
-        CREATE TABLE IF NOT EXISTS scene (
+        CREATE TABLE scene (
             id SERIAL PRIMARY KEY,
             name TEXT NOT NULL,
             description TEXT NOT NULL,
@@ -41,15 +43,28 @@ table_creation_commands = [
             scale DOUBLE PRECISION[] NOT NULL,
             rotation DOUBLE PRECISION[] NOT NULL,
             background_id BIGINT NOT NULL,
-            CONSTRAINT fk_background_id
-                FOREIGN KEY(background_id)
-                    REFERENCES asset(id)
+            FOREIGN KEY(background_id) REFERENCES asset(id)
+        )
+    """,
+    """
+        CREATE TABLE text (
+            id SERIAL PRIMARY KEY,
+            content text NOT NULL,
+            next_text_id BIGINT,
+            object_id BIGINT NOT NULL
+            -- FOREIGN KEY (object_id) REFERENCES object (id)
         )
     """,
 ]
 
 cur = conn.cursor()
 
+# Drop tables if they exist first
+drop_command = "DROP TABLE IF EXISTS {tablename}"
+for table in tables:
+    cur.execute(drop_command.format(tablename=table))
+
+# Create the table with the schema
 for command in table_creation_commands:
     cur.execute(command)
 

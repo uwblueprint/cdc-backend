@@ -13,36 +13,23 @@ table_creation_commands = [
     """
         CREATE TABLE asset (
             id SERIAL PRIMARY KEY,
-            name VARCHAR(256) NOT NULL,
-            s3_key VARCHAR(256) NOT NULL,
-            obj_type VARCHAR(50) NOT NULL
+            name TEXT NOT NULL,
+            s3_key TEXT NOT NULL,
+            obj_type TEXT NOT NULL
         )
     """,
     """
         CREATE TABLE scenario (
             id SERIAL PRIMARY KEY,
-            name VARCHAR(256) NOT NULL,
-            friendly_name VARCHAR(256) NOT NULL,
-            description VARCHAR(256) NOT NULL,
+            name TEXT NOT NULL,
+            friendly_name TEXT NOT NULL,
+            description TEXT NOT NULL,
             scene_ids BIGINT[] NOT NULL,
             is_published BOOLEAN NOT NULL,
-            is_archived BOOLEAN NOT NULL,
             is_previewable BOOLEAN NOT NULL,
-            publish_link VARCHAR(256),
-            preview_link VARCHAR(256),
-            expected_solve_time VARCHAR(20)
-        )
-    """,
-    """
-        CREATE TABLE statistics (
-            id SERIAL PRIMARY KEY,
-            scenario_id BIGINT,
-            scene_id BIGINT,
-            object_id BIGINT,
-            stats JSONB,
-            FOREIGN KEY (scenario_id) REFERENCES scenario (id)
-            --FOREIGN KEY (scene_id) REFERENCES (scene),
-            --FOREIGN KEY (object_id) REFERENCES (object)
+            publish_link TEXT,
+            preview_link TEXT,
+            expected_solve_time TEXT
         )
     """,
     """
@@ -55,7 +42,7 @@ table_creation_commands = [
             scale DOUBLE PRECISION[] NOT NULL,
             rotation DOUBLE PRECISION[] NOT NULL,
             background_id BIGINT NOT NULL,
-            FOREIGN KEY(background_id) REFERENCES asset(id)
+            FOREIGN KEY(background_id) REFERENCES asset (id)
         )
     """,
     """
@@ -63,8 +50,8 @@ table_creation_commands = [
             id SERIAL PRIMARY KEY,
             content text NOT NULL,
             next_text_id BIGINT,
-            object_id BIGINT NOT NULL
-            -- FOREIGN KEY (object_id) REFERENCES object (id)
+            object_id BIGINT NOT NULL,
+            FOREIGN KEY (next_text_id) REFERENCES text (id)
         )
     """,
     """
@@ -80,6 +67,18 @@ table_creation_commands = [
             animations_json JSONB NOT NULL,
             FOREIGN KEY (asset_id) REFERENCES asset (id),
             FOREIGN KEY (text_id) REFERENCES text (id)
+        )
+    """,
+    """
+        CREATE TABLE statistics (
+            id SERIAL PRIMARY KEY,
+            scenario_id BIGINT,
+            scene_id BIGINT,
+            object_id BIGINT,
+            stats JSONB NOT NULL,
+            FOREIGN KEY (scenario_id) REFERENCES scenario (id),
+            FOREIGN KEY (scene_id) REFERENCES scene (id),
+            FOREIGN KEY (object_id) REFERENCES object (id)
         )
     """,
 ]

@@ -1,0 +1,12 @@
+# Configuration options for dev
+tornado:
+  port: 8888
+  debug: true # will reload server on each change to python files
+  xsrf: false # for now until we get to it
+
+postgres:
+  hostname: localhost
+  database: postgres_cdc_dev
+  user: postgres
+
+app-env: dev

@@ -15,7 +15,6 @@ class UserTextHandler(BaseUserAPIHandler):
             await self.finish(response_dict)
 
         except ValueError:
-            await self.write_error(status_code=404, message="Text ID not valid")
-            return
+            self.write_error(status_code=404, message="Text ID not valid")
         except Exception as e:
-            await self.write_error(status_code=500, message=str(e))
+            self.write_error(status_code=500, message=str(e))

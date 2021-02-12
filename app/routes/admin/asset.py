@@ -27,7 +27,6 @@ class AdminAssetHandler(BaseAdminAPIHandler):
             await self.finish("testttt")
 
         except ValueError as e:
-            await self.write_error(status_code=404, message=str(e))
-            return
+            self.write_error(status_code=404, message=str(e))
         except Exception as e:
-            await self.write_error(status_code=500, message=str(e))
+            self.write_error(status_code=500, message=str(e))

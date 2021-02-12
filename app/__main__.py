@@ -5,16 +5,13 @@ import tornado.ioloop
 import tornado.web
 from config import config
 from routes.admin.asset import AdminAssetHandler
-
-# from routes.sample import SampleHandler, SampleHandler2
+from routes.base import NotFoundHandler
 from routes.user.text import UserTextHandler
 from tornado.platform.asyncio import AsyncIOMainLoop
 
 
 def get_routes():
     routes = [
-        # (r"/", SampleHandler),
-        # (r"/sample", SampleHandler2),
         (r"/api/user/v1/text/([0-9]{1,16})", UserTextHandler),
         (r"/api/admin/v1/asset", AdminAssetHandler),
     ]
@@ -26,6 +23,7 @@ def make_app():
         get_routes(),
         debug=config.get("tornado.debug"),
         xsrf_cookies=config.get("tornado.xsrf"),
+        default_handler_class=NotFoundHandler,
     )
     return app
 
@@ -33,11 +31,13 @@ def make_app():
 def main():
     if "dev" in config.get("app-env"):
         # Print out config for dev environments
+        print(" --------------------- SERVER SETTINGS ---------------------")
         print("tornado port:", config.get("tornado.port"))
         print("tornado debug:", config.get("tornado.debug"))
         print("postgres hostname:", config.get("postgres.hostname"))
         print("postgres database:", config.get("postgres.database"))
         print("postgres user:", config.get("postgres.user"))
+        print(" --------------------- SERVER STARTED ---------------------")
 
     app = make_app()
     server = tornado.httpserver.HTTPServer(app)

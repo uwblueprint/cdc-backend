@@ -5,6 +5,7 @@ import tornado.ioloop
 import tornado.web
 from config import config
 from routes.sample import SampleHandler, SampleHandler2
+from routes.user.text import UserTextHandler
 from tornado.platform.asyncio import AsyncIOMainLoop
 
 
@@ -12,6 +13,7 @@ def get_routes():
     routes = [
         (r"/", SampleHandler),
         (r"/sample", SampleHandler2),
+        (r"/api/user/v1/text/([0-9]{1,16})", UserTextHandler),
     ]
     return routes
 

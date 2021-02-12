@@ -21,7 +21,7 @@ class BaseAPIHandler(tornado.web.RequestHandler):
         await self.finish(response_error)
 
 
-class BaseAdminAPIHander(BaseAPIHandler):
+class BaseAdminAPIHandler(BaseAPIHandler):
     """
     Base handler for all api/admin/* routes
     """
@@ -30,7 +30,7 @@ class BaseAdminAPIHander(BaseAPIHandler):
 #     Add AUTH stuff here
 
 
-class BaseUserAPIHander(BaseAPIHandler):
+class BaseUserAPIHandler(BaseAPIHandler):
     """
     Base handler for all api/user/* routes
     """

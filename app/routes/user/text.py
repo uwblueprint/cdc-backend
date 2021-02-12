@@ -1,8 +1,8 @@
-from app.library.postgres import get_text_from_postgres
-from app.routes.base import BaseUserAPIHander
+from library.postgres import get_text_from_postgres
+from routes.base import BaseUserAPIHandler
 
 
-class UserTextHandler(BaseUserAPIHander):
+class UserTextHandler(BaseUserAPIHandler):
     """
     Handle routes that have api/user/v1/text/{id}
     """
@@ -13,6 +13,7 @@ class UserTextHandler(BaseUserAPIHander):
         try:
             response_dict = await get_text_from_postgres(id)
             await self.finish(response_dict)
+
         except ValueError:
             await self.write_error(status_code=404, message="Text ID not valid")
             return

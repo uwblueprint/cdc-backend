@@ -3,10 +3,12 @@ import os
 
 from sqlalchemy import MetaData, create_engine
 
-hostname = "localhost"
-database = "postgres_cdc_dev"
-user = "postgres"
-password = ""
+from app.config import config
+
+hostname = config.get("postgres.hostname")
+database = config.get("postgres.database")
+user = config.get("postgres.user")
+password = config.get("postgres.password", "")
 
 tables = ["asset", "scenario", "scene", "text", "object", "statistics"]
 

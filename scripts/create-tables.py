@@ -1,9 +1,11 @@
 import psycopg2
 
-hostname = "localhost"
-database = "postgres_cdc_dev"
-user = "postgres"
-password = ""
+from app.config import config
+
+hostname = config.get("postgres.hostname")
+database = config.get("postgres.database")
+user = config.get("postgres.user")
+password = config.get("postgres.password", "")
 
 conn = psycopg2.connect(host=hostname, database=database, user=user, password=password)
 

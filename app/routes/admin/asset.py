@@ -28,7 +28,7 @@ class AdminAssetPostHandler(BaseAdminAPIHandler):
             self.write_error(status_code=500, message=str(e))
 
 
-class AdminAssetGetHandler(BaseAdminAPIHandler):
+class AdminAssetHandler(BaseAdminAPIHandler):
     """
     Handle routes that have api/admin/v1/asset/{id}
     """

@@ -1,7 +1,11 @@
 import tornado.escape
 from jsonschema import validate
 from library.api_schemas import admin_asset_post_handler_schema
-from library.postgres import get_asset_from_postgres, post_asset_to_postgres
+from library.postgres import (
+    delete_asset_from_postgres,
+    get_asset_from_postgres,
+    post_asset_to_postgres,
+)
 from routes.base import BaseAdminAPIHandler
 
 
@@ -39,6 +43,18 @@ class AdminAssetHandler(BaseAdminAPIHandler):
         try:
             response_dict = await get_asset_from_postgres(id)
             await self.finish(response_dict)
+
+        except ValueError:
+            self.write_error(status_code=404, message="Asset ID not valid")
+        except Exception as e:
+            self.write_error(status_code=500, message=str(e))
+
+    async def delete(self, id):
+        # Validate that id is valid
+
+        try:
+            response_message = await delete_asset_from_postgres(id)
+            await self.finish(response_message)
 
         except ValueError:
             self.write_error(status_code=404, message="Asset ID not valid")

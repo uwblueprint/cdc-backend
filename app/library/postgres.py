@@ -30,3 +30,11 @@ async def get_asset_from_postgres(asset_id: str):
     }
 
     return sample_response
+
+
+async def delete_asset_from_postgres(asset_id: str):
+    # TODO: delete from postgres
+
+    sample_response = {"message": "deleted successfully"}
+
+    return sample_response

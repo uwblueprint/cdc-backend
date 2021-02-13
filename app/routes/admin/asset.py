@@ -17,7 +17,7 @@ class AdminAssetPostHandler(BaseAdminAPIHandler):
             # validate body
             validate(data, schema=admin_asset_post_handler_schema)
 
-            await self.finish("testttt")
+            await self.finish(data)
 
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

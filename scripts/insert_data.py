@@ -13,7 +13,7 @@ password = config.get("postgres.password", "")
 tables = config.get("script.table-order")
 
 path_to_json = "mockdata/"
-db_url = "postgres://{user}:{password}@{hostname}/{database}".format(
+db_url = config.get("postgres.db_url").format(
     user=user, password=password, database=database, hostname=hostname
 )
 engine = create_engine(db_url)

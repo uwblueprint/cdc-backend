@@ -31,7 +31,7 @@ table_creation_commands = [
             is_previewable BOOLEAN NOT NULL,
             publish_link TEXT,
             preview_link TEXT,
-            expected_solve_time TEXT
+            expected_solve_time TEXT NOT NULL
         )
     """,
     """

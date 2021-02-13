@@ -6,8 +6,7 @@
     "position": [0.1, 0.5, 0.1],
     "scale": [1.0, 1.0, 1.0],
     "rotation": [0.1, 0.5, 0.1],
-    "background_id": 1,
-    "metadata": {}
+    "background_id": 1
   },
   {
     "name": "Master Bedroom",
@@ -16,8 +15,7 @@
     "position": [0.1, 0.5, 0.1],
     "scale": [2.0, 2.0, 2.0],
     "rotation": [0.0, 0.0, 0.0],
-    "background_id": 2,
-    "metadata": {}
+    "background_id": 2
   },
   {
     "name": "Classroom",
@@ -26,7 +24,6 @@
     "position": [5.0, 20.0, 10.5],
     "scale": [1.0, 1.5, 1.0],
     "rotation": [0.0, 0.0, 0.0],
-    "background_id": 3,
-    "metadata": {}
+    "background_id": 3
   }
 ]

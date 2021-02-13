@@ -9,7 +9,7 @@ password = config.get("postgres.password", "")
 
 conn = psycopg2.connect(host=hostname, database=database, user=user, password=password)
 
-tables = ["asset", "scenario", "scene", "object", "statistics", "text"]
+tables = config.get("script.table-order")
 
 table_creation_commands = [
     """

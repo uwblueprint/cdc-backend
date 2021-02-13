@@ -10,7 +10,7 @@ database = config.get("postgres.database")
 user = config.get("postgres.user")
 password = config.get("postgres.password", "")
 
-tables = ["asset", "scenario", "scene", "text", "object", "statistics"]
+tables = config.get("script.table-order")
 
 path_to_json = "mockdata/"
 db_url = "postgres://{user}:{password}@{hostname}/{database}".format(

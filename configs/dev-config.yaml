@@ -10,3 +10,12 @@ postgres:
   user: postgres
 
 app-env: dev
+
+script:
+  table-order:
+    - asset
+    - scenario
+    - scene
+    - text
+    - object
+    - statistics

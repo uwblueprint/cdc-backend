@@ -1,6 +1,7 @@
 import tornado.escape
 from jsonschema import validate
 from library.api_schemas import admin_asset_post_handler_schema
+from library.postgres import post_asset_to_postgres
 from routes.base import BaseAdminAPIHandler
 
 
@@ -17,7 +18,9 @@ class AdminAssetPostHandler(BaseAdminAPIHandler):
             # validate body
             validate(data, schema=admin_asset_post_handler_schema)
 
-            await self.finish(data)
+            id_inserted = await post_asset_to_postgres(data)
+
+            await self.finish({"id": id_inserted})
 
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

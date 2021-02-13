@@ -4,7 +4,7 @@ import tornado.httpserver
 import tornado.ioloop
 import tornado.web
 from config import config
-from routes.admin.asset import AdminAssetPostHandler
+from routes.admin.asset import AdminAssetGetHandler, AdminAssetPostHandler
 from routes.base import NotFoundHandler
 from routes.user.text import UserTextHandler
 from tornado.platform.asyncio import AsyncIOMainLoop
@@ -14,6 +14,7 @@ def get_routes():
     routes = [
         (r"/api/user/v1/text/([0-9]{1,16})", UserTextHandler),
         (r"/api/admin/v1/asset", AdminAssetPostHandler),
+        (r"/api/admin/v1/asset/([0-9]{1,16})", AdminAssetGetHandler),
     ]
     return routes
 

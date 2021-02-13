@@ -12,7 +12,8 @@ password = config.get("postgres.password", "")
 
 tables = config.get("script.table-order")
 
-path_to_json = "mockdata/"
+dirname = os.path.dirname(__file__)
+path_to_json = os.path.join(dirname, "mockdata/")
 db_url = config.get("postgres.db_url").format(
     user=user, password=password, database=database, hostname=hostname
 )

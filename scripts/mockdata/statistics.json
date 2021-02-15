@@ -3,28 +3,24 @@
     "scenario_id": 1,
     "scene_id": null,
     "object_id": null,
-    "stat": {},
-    "metadata": {}
+    "stats": {}
   },
   {
     "scenario_id": null,
     "scene_id": 1,
     "object_id": null,
-    "stat": {},
-    "metadata": {}
+    "stats": {}
   },
   {
     "scenario_id": null,
     "scene_id": 2,
     "object_id": null,
-    "stat": {},
-    "metadata": {}
+    "stats": {}
   },
   {
     "scenario_id": null,
     "scene_id": null,
     "object_id": 1,
-    "stat": {},
-    "metadata": {}
+    "stats": {}
   }
 ]

@@ -8,6 +8,7 @@ postgres:
   hostname: localhost
   database: postgres_cdc_dev
   user: postgres
+  db_url: postgres://{user}:{password}@{hostname}/{database}
 
 app-env: dev
 
@@ -15,3 +16,12 @@ asset:
   allowed_asset_types:
     - background
     - object
+
+script:
+  table-order:
+    - asset
+    - scenario
+    - scene
+    - text
+    - object
+    - statistics

@@ -8,8 +8,7 @@
     "is_previewable": true,
     "publish_link": null,
     "preview_link": "www.previewlink.com/student-escape-room",
-    "expected_solve_time": "10 to 20",
-    "metadata": {}
+    "expected_solve_time": "10 to 20"
   },
   {
     "name": "Teacher Escape Room",
@@ -20,7 +19,6 @@
     "is_previewable": true,
     "publish_link": "www.publishlink.com/teacher-escape-room",
     "preview_link": "www.previewlink.com/teacher-escape-room",
-    "expected_solve_time": "20 to 30",
-    "metadata": {}
+    "expected_solve_time": "20 to 30"
   }
 ]

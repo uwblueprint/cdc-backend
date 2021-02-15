@@ -2,31 +2,26 @@
   {
     "name": "Teacup",
     "obj_type": "object",
-    "s3_key": "aws_s3_route",
-    "metadata": {}
+    "s3_key": "aws_s3_route"
   },
   {
     "name": "Playground",
     "obj_type": "background",
-    "s3_key": "aws_s3_route",
-    "metadata": {}
+    "s3_key": "aws_s3_route"
   },
   {
     "name": "Textbook",
     "obj_type": "object",
-    "s3_key": "aws_s3_route",
-    "metadata": {}
+    "s3_key": "aws_s3_route"
   },
   {
     "name": "Seashell",
     "obj_type": "object",
-    "s3_key": "aws_s3_route",
-    "metadata": {}
+    "s3_key": "aws_s3_route"
   },
   {
     "name": "Bedroom",
     "obj_type": "background",
-    "s3_key": "aws_s3_route",
-    "metadata": {}
+    "s3_key": "aws_s3_route"
   }
 ]

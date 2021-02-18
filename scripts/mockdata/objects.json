@@ -4,7 +4,12 @@
     "scale": [1.0, 1.0, 1.0],
     "rotation": [0.1, 0.5, 0.1],
     "asset_id": 1,
-    "next_objects": [2, 3],
+    "next_objects": [
+      {
+        "action": "do_action_1",
+        "next_id": 2
+      }
+    ],
     "text_id": 1,
     "is_interactable": false,
     "animations_json": {}
@@ -14,7 +19,20 @@
     "scale": [1.0, 1.0, 1.0],
     "rotation": [0.1, 0.5, 0.1],
     "asset_id": 2,
-    "next_objects": [3],
+    "next_objects": [
+      {
+        "action": "do_action_1",
+        "next_id": 2
+      },
+      {
+        "action": "do_action_2",
+        "next_id": 2
+      },
+      {
+        "action": "do_action_3",
+        "next_id": 1
+      }
+    ],
     "text_id": 3,
     "is_interactable": true,
     "animations_json": {}

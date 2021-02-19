@@ -7,6 +7,7 @@ from config import config
 from routes.admin.asset import AdminAssetHandler, AdminAssetPostHandler
 from routes.base import NotFoundHandler
 from routes.user.asset import UserAssetHandler
+from routes.user.loading_screen import UserLoadingScreen
 from routes.user.scene import UserSceneHandler
 from routes.user.solved import UserSolvedHandler
 from routes.user.text import UserTextHandler
@@ -19,6 +20,7 @@ def get_routes():
         (r"/api/user/v1/solved/([0-9]{1,16})", UserSolvedHandler),
         (r"/api/user/v1/asset/([0-9]{1,16})", UserAssetHandler),
         (r"/api/user/v1/scene/([0-9]{1,16})", UserSceneHandler),
+        (r"/api/user/v1/loading_screen", UserLoadingScreen),
         (r"/api/admin/v1/asset", AdminAssetPostHandler),
         (r"/api/admin/v1/asset/([0-9]{1,16})", AdminAssetHandler),
     ]

@@ -66,6 +66,11 @@ async def get_scene_from_postgres(scene_id: str):
     return sample_response
 
 
+async def get_loading_screen_from_postgres():
+    # TODO: get actual loading scene from postgres once we have it
+    return await get_scene_from_postgres("123")
+
+
 async def get_asset_from_postgres(asset_id: str):
     # TODO: get data from SQL -> convert to model
 

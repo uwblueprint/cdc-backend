@@ -5,6 +5,7 @@ import tornado.ioloop
 import tornado.web
 from config import config
 from routes.admin.asset import AdminAssetHandler, AdminAssetPostHandler
+from routes.admin.scenario import AdminScenarioPostHandler
 from routes.base import NotFoundHandler
 from routes.user.solved import UserSolvedHandler
 from routes.user.text import UserTextHandler
@@ -17,6 +18,7 @@ def get_routes():
         (r"/api/user/v1/solved/([0-9]{1,16})", UserSolvedHandler),
         (r"/api/admin/v1/asset", AdminAssetPostHandler),
         (r"/api/admin/v1/asset/([0-9]{1,16})", AdminAssetHandler),
+        (r"/api/admin/v1/scenario", AdminScenarioPostHandler),
     ]
     return routes
 

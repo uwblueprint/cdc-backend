@@ -44,3 +44,15 @@ async def delete_asset_from_postgres(asset_id: str):
     sample_response = {"message": "deleted successfully"}
 
     return sample_response
+
+
+async def update_asset_from_postgres(asset_id: str, data: dict):
+    # TODO: update item into postgres
+
+    sample_response = {"message": "updated asset with id " + asset_id}
+    return sample_response  # Represents id
+
+
+async def post_scenario_to_postgres(data: dict):
+    # TODO: insert into postgres
+    return 2  # Represents id

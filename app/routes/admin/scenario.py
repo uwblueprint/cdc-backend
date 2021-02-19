@@ -1,18 +1,21 @@
 import tornado.escape
 from jsonschema import validate
-from library.api_schemas import admin_asset_handler_body_schema
+from library.api_schemas import (
+    admin_scenario_post_handler_schema,
+    admin_scenario_put_handler_schema,
+)
 from library.postgres import (
-    delete_asset_from_postgres,
-    get_asset_from_postgres,
-    post_asset_to_postgres,
-    update_asset_from_postgres,
+    delete_scenario_from_postgres,
+    get_scenario_from_postgres,
+    post_scenario_to_postgres,
+    update_scenario_from_postgres,
 )
 from routes.base import BaseAdminAPIHandler
 
 
-class AdminAssetPostHandler(BaseAdminAPIHandler):
+class AdminScenarioPostHandler(BaseAdminAPIHandler):
     """
-    Handle routes that have api/admin/v1/asset
+    Handle routes that have api/admin/v1/scenario
     """
 
     async def post(self):
@@ -21,9 +24,9 @@ class AdminAssetPostHandler(BaseAdminAPIHandler):
             data = tornado.escape.json_decode(self.request.body)
 
             # validate body
-            validate(data, schema=admin_asset_handler_body_schema)
+            validate(data, schema=admin_scenario_post_handler_schema)
 
-            id_inserted = await post_asset_to_postgres(data)
+            id_inserted = await post_scenario_to_postgres(data)
 
             await self.finish({"id": id_inserted})
 
@@ -33,16 +36,16 @@ class AdminAssetPostHandler(BaseAdminAPIHandler):
             self.write_error(status_code=500, message=str(e))
 
 
-class AdminAssetHandler(BaseAdminAPIHandler):
+class AdminScenarioHandler(BaseAdminAPIHandler):
     """
-    Handle routes that have api/admin/v1/asset/{id}
+    Handle routes that have api/admin/v1/scenario/{id}
     """
 
     async def get(self, id):
         # Validate that id is valid
 
         try:
-            response_dict = await get_asset_from_postgres(id)
+            response_dict = await get_scenario_from_postgres(id)
             await self.finish(response_dict)
 
         except ValueError:
@@ -54,7 +57,7 @@ class AdminAssetHandler(BaseAdminAPIHandler):
         # Validate that id is valid
 
         try:
-            response_message = await delete_asset_from_postgres(id)
+            response_message = await delete_scenario_from_postgres(id)
             await self.finish(response_message)
 
         except ValueError:
@@ -69,9 +72,9 @@ class AdminAssetHandler(BaseAdminAPIHandler):
             data = tornado.escape.json_decode(self.request.body)
 
             # validate body
-            validate(data, schema=admin_asset_handler_body_schema)
+            validate(data, schema=admin_scenario_put_handler_schema)
 
-            response_message = await update_asset_from_postgres(id, data)
+            response_message = await update_scenario_from_postgres(id, data)
             await self.finish(response_message)
 
         except ValueError:

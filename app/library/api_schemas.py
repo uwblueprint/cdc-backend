@@ -2,7 +2,7 @@ from config import config
 
 # Schemas for the various endpoints
 
-admin_asset_post_handler_schema = {
+admin_asset_handler_body_schema = {
     "type": "object",
     "properties": {
         "display_name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
@@ -12,4 +12,41 @@ admin_asset_post_handler_schema = {
         "s3_prefix": {"type": "string", "pattern": r"^[\S]{1,50}$"},
     },
     "required": ["display_name", "object_type", "s3_prefix"],
+}
+
+admin_scenario_post_handler_schema = {
+    "type": "object",
+    "properties": {
+        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
+        "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
+        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z _-]{,2000}$"},
+    },
+    "required": [
+        "name",
+        "friendly_name",
+        "description",
+    ],
+}
+
+admin_scenario_put_handler_schema = {
+    "type": "object",
+    "properties": {
+        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
+        "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
+        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z _-]{,2000}$"},
+        "scene_ids": {"type": "array"},
+        "is_published": {"type": "boolean"},
+        "is_previewable": {"type": "boolean"},
+        "publish_link": {"type": "string", "pattern": r"^[\S]{1,50}$"},
+        "preview_link": {"type": "string", "pattern": r"^[\S]{1,50}$"},
+        "expected_solve_time": {"type": "string", "pattern": r"^[a-zA-Z0-9 _-]{,50}$"},
+    },
+    "required": [
+        "name",
+        "friendly_name",
+        "description",
+        "scene_ids",
+        "is_published",
+        "is_previewable",
+    ],
 }

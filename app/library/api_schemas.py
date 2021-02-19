@@ -14,7 +14,21 @@ admin_asset_handler_body_schema = {
     "required": ["display_name", "object_type", "s3_prefix"],
 }
 
-admin_scenario_handler_body_schema = {
+admin_scenario_post_handler_schema = {
+    "type": "object",
+    "properties": {
+        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
+        "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
+        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z _-]{,2000}$"},
+    },
+    "required": [
+        "name",
+        "friendly_name",
+        "description",
+    ],
+}
+
+admin_scenario_put_handler_schema = {
     "type": "object",
     "properties": {
         "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},

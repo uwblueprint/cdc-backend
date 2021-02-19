@@ -104,11 +104,11 @@ async def post_scenario_to_postgres(data: dict):
     return 2  # Represents id
 
 
-async def get_scenario_from_postgres(asset_id: str):
+async def get_scenario_from_postgres(scenario_id: str):
     # TODO: get data from SQL -> convert to model
 
     sample_response = {
-        "id": asset_id,
+        "id": scenario_id,
         "name": "Student Escape Room",
         "friendly_name": "student-escape-room",
         "description": "A student at ABC High is going through a troubling time."
@@ -124,17 +124,17 @@ async def get_scenario_from_postgres(asset_id: str):
     return sample_response
 
 
-async def delete_scenario_from_postgres(asset_id: str):
+async def delete_scenario_from_postgres(scenario_id: str):
     # TODO: delete from postgres
 
     sample_response = {"message": "deleted successfully"}
     return sample_response
 
 
-async def update_scenario_from_postgres(asset_id: str, data: dict):
+async def update_scenario_from_postgres(scenario_id: str, data: dict):
     # TODO: update item into postgres
 
-    sample_response = {"message": "updated scenario with id " + asset_id}
+    sample_response = {"message": "updated scenario with id " + scenario_id}
     return sample_response  # Represents id
 
 
@@ -143,8 +143,8 @@ async def post_scene_to_postgres(data: dict):
     return 2  # Represents id
 
 
-async def update_scene_from_postgres(asset_id: str, data: dict):
+async def update_scene_from_postgres(scene_id: str, data: dict):
     # TODO: update item into postgres
 
-    sample_response = {"message": "updated scene with id " + asset_id}
+    sample_response = {"message": "updated scene with id " + scene_id}
     return sample_response  # Represents id

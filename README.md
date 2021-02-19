@@ -40,7 +40,8 @@ See cdc-frontend for frontend setup.
    - On Windows, download Postgres from [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) and then use the script in `scripts/PSQL Server Management.bat` to start/stop your Postgres Server
 1. Once Postgres is installed, create a database with the name: `postgres_cdc_dev`
 1. Install the requirements, and setup Postgres: `make install`
-1. One time - install the required pre-commit hooks: `pre-commit install` - this will ensure that each time you `git commit` in this repo, it will run some lint checks. It won't let you commit unless the lint checks pass. Note that this means you may have to run `git commit` multiple times, as each `git commit` will attempt to fix the files! Some files may fail to auto-fix, in which case, you will have to ensure you fix them.
+
+Note: Every time you run `git commit` in this repo, it will run some lint checks. It won't let you commit unless the lint checks pass. Note that this means you may have to run `git commit` multiple times, as each `git commit` will attempt to fix the files! Some files may fail to auto-fix, in which case, you will have to ensure you fix them.
 
 Once you have the requirements installed, you should be able to develop by just activating the environment (step 2).
 

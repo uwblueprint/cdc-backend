@@ -5,6 +5,7 @@ from library.api_schemas import (
     admin_scene_put_handler_schema,
 )
 from library.postgres import (
+    duplicate_scene,
     get_scene_from_postgres,
     post_scene_to_postgres,
     update_scene_from_postgres,
@@ -66,5 +67,24 @@ class AdminSceneHandler(BaseAdminAPIHandler):
 
         except ValueError:
             self.write_error(status_code=404, message="Scene ID not valid")
+        except Exception as e:
+            self.write_error(status_code=500, message=str(e))
+
+
+class AdminSceneDuplicateHandler(BaseAdminAPIHandler):
+    """
+    Handle routes that have api/admin/v1/scene/{id}/duplicate
+    """
+
+    async def post(self, id):
+
+        try:
+
+            response = await duplicate_scene(id)
+
+            await self.finish(response)
+
+        except ValueError as e:
+            self.write_error(status_code=404, message=str(e))
         except Exception as e:
             self.write_error(status_code=500, message=str(e))

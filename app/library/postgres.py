@@ -149,3 +149,21 @@ async def update_scene_from_postgres(scene_id: str, data: dict):
 
     sample_response = {"message": "updated scene with id " + scene_id}
     return sample_response  # Represents id
+
+
+async def duplicate_scenario(scenario_id: str):
+    # TODO: actual duplication in postgres
+    sample_response = {
+        "message": "Duplicated scenario with id " + scenario_id,
+        "id": scenario_id + "2",
+    }
+    return sample_response
+
+
+async def duplicate_scene(scene_id: str):
+    # TODO: actual duplication in postgres
+    sample_response = {
+        "message": "Duplicated scene with id " + scene_id,
+        "id": scene_id + "3",
+    }
+    return sample_response

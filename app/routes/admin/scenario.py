@@ -6,6 +6,7 @@ from library.api_schemas import (
 )
 from library.postgres import (
     delete_scenario_from_postgres,
+    duplicate_scenario,
     get_scenario_from_postgres,
     post_scenario_to_postgres,
     update_scenario_from_postgres,
@@ -79,5 +80,24 @@ class AdminScenarioHandler(BaseAdminAPIHandler):
 
         except ValueError:
             self.write_error(status_code=404, message="Scenario ID not valid")
+        except Exception as e:
+            self.write_error(status_code=500, message=str(e))
+
+
+class AdminScenarioDuplicateHandler(BaseAdminAPIHandler):
+    """
+    Handle routes that have api/admin/v1/scenario/{id}/duplicate
+    """
+
+    async def post(self, id):
+
+        try:
+
+            response = await duplicate_scenario(id)
+
+            await self.finish(response)
+
+        except ValueError as e:
+            self.write_error(status_code=404, message=str(e))
         except Exception as e:
             self.write_error(status_code=500, message=str(e))

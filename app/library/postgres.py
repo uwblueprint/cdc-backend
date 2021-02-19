@@ -46,6 +46,7 @@ async def get_scene_from_postgres(scene_id: str):
     # TODO: get datta from SQL -> model representation?
 
     # NOTE: scene response should populate the objects properly by getting object from postgres
+    # TODO: get actual camera properties
     sample_response = {
         "id": scene_id,
         "name": "Master Bedroom",
@@ -55,6 +56,7 @@ async def get_scene_from_postgres(scene_id: str):
         "scale": [2.0, 2.0, 2.0],
         "rotation": [0.0, 0.0, 0.0],
         "background_id": 2,
+        "camera_properties": "",
     }
     objects = []
     for object_id in sample_response["objects_id"]:

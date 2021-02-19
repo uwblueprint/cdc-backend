@@ -136,3 +136,15 @@ async def update_scenario_from_postgres(asset_id: str, data: dict):
 
     sample_response = {"message": "updated scenario with id " + asset_id}
     return sample_response  # Represents id
+
+
+async def post_scene_to_postgres(data: dict):
+    # TODO: insert into postgres
+    return 2  # Represents id
+
+
+async def update_scene_from_postgres(asset_id: str, data: dict):
+    # TODO: update item into postgres
+
+    sample_response = {"message": "updated scene with id " + asset_id}
+    return sample_response  # Represents id

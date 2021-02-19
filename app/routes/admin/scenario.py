@@ -49,7 +49,7 @@ class AdminScenarioHandler(BaseAdminAPIHandler):
             await self.finish(response_dict)
 
         except ValueError:
-            self.write_error(status_code=404, message="Asset ID not valid")
+            self.write_error(status_code=404, message="Scenario ID not valid")
         except Exception as e:
             self.write_error(status_code=500, message=str(e))
 
@@ -61,7 +61,7 @@ class AdminScenarioHandler(BaseAdminAPIHandler):
             await self.finish(response_message)
 
         except ValueError:
-            self.write_error(status_code=404, message="Asset ID not valid")
+            self.write_error(status_code=404, message="Scenario ID not valid")
         except Exception as e:
             self.write_error(status_code=500, message=str(e))
 
@@ -78,6 +78,6 @@ class AdminScenarioHandler(BaseAdminAPIHandler):
             await self.finish(response_message)
 
         except ValueError:
-            self.write_error(status_code=404, message="Asset ID not valid")
+            self.write_error(status_code=404, message="Scenario ID not valid")
         except Exception as e:
             self.write_error(status_code=500, message=str(e))

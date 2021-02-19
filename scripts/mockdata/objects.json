@@ -6,8 +6,11 @@
     "asset_id": 1,
     "next_objects": [
       {
-        "action": "do_action_1",
-        "next_id": 2
+        "id": 2,
+        "action": {
+          "type": "text",
+          "text_id": 1
+        }
       }
     ],
     "text_id": 1,
@@ -21,16 +24,25 @@
     "asset_id": 2,
     "next_objects": [
       {
-        "action": "do_action_1",
-        "next_id": 2
+        "id": 3,
+        "action": {
+          "type": "class",
+          "interactive": true
+        }
       },
       {
-        "action": "do_action_2",
-        "next_id": 2
+        "id": 3,
+        "action": {
+          "type": "text",
+          "text_id": 2
+        }
       },
       {
-        "action": "do_action_3",
-        "next_id": 1
+        "id": 1,
+        "action": {
+          "type": "text",
+          "text_id": 3
+        }
       }
     ],
     "text_id": 3,

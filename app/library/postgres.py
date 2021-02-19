@@ -117,6 +117,7 @@ async def get_scenario_from_postgres(scenario_id: str):
         "scene_ids": [1, 2, 3],
         "is_published": False,
         "is_previewable": True,
+        "publish_link": "www.publishlink.com/teacher-escape-room",
         "preview_link": "www.previewlink.com/student-escape-room",
         "expected_solve_time": "10 to 20",
     }

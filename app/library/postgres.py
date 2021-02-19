@@ -16,6 +16,7 @@ async def get_text_from_postgres(text_id: str):
 
 async def get_solved_from_postgres(object_id: str):
     # TODO: Get actual list from postgres
+
     next_object_ids = ["1", "2", "23", "37", object_id]
     return next_object_ids
 
@@ -42,7 +43,6 @@ async def delete_asset_from_postgres(asset_id: str):
     # TODO: delete from postgres
 
     sample_response = {"message": "deleted successfully"}
-
     return sample_response
 
 
@@ -82,7 +82,6 @@ async def delete_scenario_from_postgres(asset_id: str):
     # TODO: delete from postgres
 
     sample_response = {"message": "deleted successfully"}
-
     return sample_response
 
 

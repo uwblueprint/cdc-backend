@@ -1,19 +1,13 @@
-from config import config
 from models.asset import Asset
-from models.db_client import create_entity, get_text
+from models.db_client import create_entity, get_asset, get_text
 
 
 async def get_text_from_postgres(text_id: str):
     text_obj = get_text(text_id)
+    if text_obj is None:
+        raise ValueError("Invalid Text ID")
 
-    sample_response = {
-        "id": text_obj.id,
-        "next_text_id": text_obj.next_text_id,
-        "content": text_obj.content,
-        "object_id": text_obj.object_id,
-    }
-
-    return sample_response
+    return text_obj.as_dict()
 
 
 async def get_solved_from_postgres(object_id: str):
@@ -77,16 +71,11 @@ async def get_loading_screen_from_postgres():
 
 
 async def get_asset_from_postgres(asset_id: str):
-    # TODO: get data from SQL -> convert to model
+    asset_obj = get_asset(asset_id)
+    if asset_obj is None:
+        raise ValueError("Asset ID not valid")
 
-    sample_response = {
-        "id": asset_id,
-        "name": "cup",
-        "s3_key": "cup.file",
-        "obj_type": config.get("asset.allowed_asset_types")[1],
-    }
-
-    return sample_response
+    return asset_obj.as_dict()
 
 
 async def delete_asset_from_postgres(asset_id: str):

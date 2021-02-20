@@ -1,5 +1,5 @@
-from sqlalchemy import Array, BigInteger, Boolean, Column, Float, ForeignKey, Integer
-from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy import BigInteger, Boolean, Column, Float, ForeignKey, Integer
+from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 
 from . import Base
 
@@ -7,11 +7,11 @@ from . import Base
 class Object(Base):
     __tablename__ = "object"
     id = Column(Integer, primary_key=True)
-    position = Column(Array(Float), nullable=False)
-    scale = Column(Array(Float), nullable=False)
-    rotation = Column(Array(Float), nullable=False)
+    position = Column(ARRAY(Float), nullable=False)
+    scale = Column(ARRAY(Float), nullable=False)
+    rotation = Column(ARRAY(Float), nullable=False)
     asset_id = Column(BigInteger, ForeignKey("asset.id"), nullable=False)
-    next_objects = Column(Array(JSONB), nullable=True)
+    next_objects = Column(ARRAY(JSONB), nullable=True)
     text_id = Column(BigInteger, ForeignKey("text.id"), nullable=True)
     is_interactable = Column(Boolean, nullable=False)
     animations_json = Column(JSONB, nullable=False)

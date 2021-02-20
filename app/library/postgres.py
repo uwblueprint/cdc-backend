@@ -1,14 +1,15 @@
 from config import config
+from models.db_client import get_text
 
 
 async def get_text_from_postgres(text_id: str):
-    # TODO: get data from SQL -> convert to model
+    text_obj = get_text(text_id)
 
     sample_response = {
-        "id": text_id,
-        "next_text_id": text_id * 2,
-        "content": "Hello this is what is displayed",
-        "object_id": text_id * 3,
+        "id": text_obj.id,
+        "next_text_id": text_obj.next_text_id,
+        "content": text_obj.content,
+        "object_id": text_obj.object_id,
     }
 
     return sample_response

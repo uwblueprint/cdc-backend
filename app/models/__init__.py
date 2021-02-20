@@ -1,8 +1,7 @@
+from config import config
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-
-from app.config import config
 
 hostname = config.get("postgres.hostname")
 database = config.get("postgres.database")

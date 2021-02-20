@@ -1,4 +1,5 @@
-from sqlalchemy import Array, BigInteger, Boolean, Column, Integer, Text
+from sqlalchemy import BigInteger, Boolean, Column, Integer, Text
+from sqlalchemy.dialects.postgresql import ARRAY
 
 from . import Base
 
@@ -9,7 +10,7 @@ class Scenario(Base):
     name = Column(Text, nullable=False)
     friendly_name = Column(Text, nullable=False)
     description = Column(Text, nullable=False)
-    scene_ids = Column(Array(BigInteger), nullable=False)
+    scene_ids = Column(ARRAY(BigInteger), nullable=False)
     is_published = Column(Boolean, nullable=False)
     is_previewable = Column(Boolean, nullable=False)
     publish_link = Column(Text, nullable=True)

@@ -1,10 +1,11 @@
-from ..models import Base, Session, engine
-from ..models.asset import Asset
-from ..models.object import Object
-from ..models.scenario import Scenario
-from ..models.scene import Scene
-from ..models.statistics import Statistics
-from ..models.text import Text
+from models.asset import Asset
+from models.object import Object
+from models.scenario import Scenario
+from models.scene import Scene
+from models.statistics import Statistics
+from models.text import Text
+
+from . import Base, Session, engine
 
 
 # TODO: move session creating and closing out of these individual calls

@@ -1,4 +1,5 @@
-from sqlalchemy import Array, BigInteger, Column, Float, ForeignKey, Integer, Text
+from sqlalchemy import BigInteger, Column, Float, ForeignKey, Integer, Text
+from sqlalchemy.dialects.postgresql import ARRAY
 
 from . import Base
 
@@ -8,10 +9,10 @@ class Scene(Base):
     id = Column(Integer, primary_key=True)
     name = Column(Text, nullable=False)
     description = Column(Text, nullable=False)
-    object_ids = Column(Array(BigInteger), nullable=False)
-    position = Column(Array(Float), nullable=False)
-    scale = Column(Array(Float), nullable=False)
-    rotation = Column(Array(Float), nullable=False)
+    object_ids = Column(ARRAY(BigInteger), nullable=False)
+    position = Column(ARRAY(Float), nullable=False)
+    scale = Column(ARRAY(Float), nullable=False)
+    rotation = Column(ARRAY(Float), nullable=False)
     background_id = Column(BigInteger, ForeignKey("asset.id"), nullable=False)
 
     def __init__(

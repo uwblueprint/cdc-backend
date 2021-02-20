@@ -1,3 +1,4 @@
+from ..models import Base, Session, engine
 from ..models.asset import Asset
 from ..models.object import Object
 from ..models.scenario import Scenario
@@ -6,73 +7,119 @@ from ..models.statistics import Statistics
 from ..models.text import Text
 
 
-def create_asset(data):
-    return Asset.create(**data)
+# TODO: move session creating and closing out of these individual calls
+def create_entity(data):
+    # create the session
+    Base.metadata.create_all(engine)
+    session = Session()
+
+    # add the entity to the session
+    session.add(data)
+
+    # commit the change to the database
+    session.commit()
+
+    # refresh the data to get the id autopopulated in database
+    session.refresh(data)
+
+    # close the session
+    session.close()
+
+    # return the id to the caller
+    return data.id
 
 
+# TODO: move session creating and closing out of these individual calls
 def get_assets():
-    return Asset.query.all()
+    session = Session()
+    assets = session.query(Asset).all()
+    session.close()
+    return assets
 
 
+# TODO: move session creating and closing out of these individual calls
 def get_asset(id):
-    return Asset.get(id)
+    session = Session()
+    asset = session.query(Asset).get(id)
+    session.close()
+    return asset
 
 
-def create_object(data):
-    return Object.create(**data)
-
-
+# TODO: move session creating and closing out of these individual calls
 def get_objects():
-    return Object.query.all()
+    session = Session()
+    objects = session.query(Object).all()
+    session.close()
+    return objects
 
 
+# TODO: move session creating and closing out of these individual calls
 def get_object(id):
-    return Object.get(id)
+    session = Session()
+    obj = session.query(Object).get(id)
+    session.close()
+    return obj
 
 
-def create_scenario(data):
-    return Scenario.create(**data)
-
-
+# TODO: move session creating and closing out of these individual calls
 def get_scenarios():
-    return Scenario.query.all()
+    session = Session()
+    scenarios = session.query(Scenario).all()
+    session.close()
+    return scenarios
 
 
+# TODO: move session creating and closing out of these individual calls
 def get_scenario(id):
-    return Scenario.get(id)
+    session = Session()
+    scenario = session.query(Scenario).get(id)
+    session.close()
+    return scenario
 
 
-def create_scenes(data):
-    return Scene.create(**data)
-
-
+# TODO: move session creating and closing out of these individual calls
 def get_scenes():
-    return Scene.query.all()
+    session = Session()
+    scenes = session.query(Scene).all()
+    session.close()
+    return scenes
 
 
+# TODO: move session creating and closing out of these individual calls
 def get_scene(id):
-    return Scene.get(id)
+    session = Session()
+    scene = session.query(Scene).get(id)
+    session.close()
+    return scene
 
 
-def create_statistic(data):
-    return Statistics.create(**data)
-
-
+# TODO: move session creating and closing out of these individual calls
 def get_statistics():
-    return Statistics.query.all()
+    session = Session()
+    stats = session.query(Statistics).all()
+    session.close()
+    return stats
 
 
+# TODO: move session creating and closing out of these individual calls
 def get_statistic(id):
-    return Statistics.get(id)
+    session = Session()
+    stat = session.query(Statistics).get(id)
+    session.close()
+    return stat
 
 
-def create_text(data):
-    return Text.create(**data)
-
-
+# TODO: move session creating and closing out of these individual calls
 def get_texts():
-    return Text.query.all()
+    session = Session()
+    texts = session.query(Text).all()
+    session.close()
+    return texts
 
 
+# TODO: move session creating and closing out of these individual calls
 def get_text(id):
-    return Text.get(id)
+    session = Session()
+    text = session.query(Text).get(id)
+    session.close()
+    return text

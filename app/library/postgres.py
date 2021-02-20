@@ -1,5 +1,6 @@
 from config import config
-from models.db_client import get_text
+from models.asset import Asset
+from models.db_client import create_entity, get_text
 
 
 async def get_text_from_postgres(text_id: str):
@@ -23,8 +24,10 @@ async def get_solved_from_postgres(object_id: str):
 
 
 async def post_asset_to_postgres(data: dict):
-    # TODO: insert into postgres
-    return 2  # Represents id
+    asset_model = Asset(data["display_name"], data["s3_prefix"], data["object_type"])
+    new_id = create_entity(asset_model)
+
+    return new_id
 
 
 async def get_object_from_postgres(object_id: str):

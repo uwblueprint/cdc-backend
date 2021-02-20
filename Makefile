@@ -10,6 +10,7 @@ install:
 	@echo ""
 	@echo " ---- Installing requirements... ----"
 	@pip install -r requirements.txt
+	@pre-commit install
 	@echo ""
 	@echo " ---- Setting up Postgres (make sure Postgres is running) ----"
 	@PYTHONPATH=$(PYTHON_PATH) CONFIG_PATH=$(CONFIG_FILE) python scripts/create-tables.py

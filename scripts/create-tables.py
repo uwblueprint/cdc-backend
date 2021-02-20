@@ -63,7 +63,7 @@ table_creation_commands = [
             scale DOUBLE PRECISION[] NOT NULL,
             rotation DOUBLE PRECISION[] NOT NULL,
             asset_id BIGINT NOT NULL,
-            next_objects BIGINT[],
+            next_objects JSONB[],
             text_id BIGINT,
             is_interactable BOOLEAN NOT NULL,
             animations_json JSONB NOT NULL,

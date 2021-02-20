@@ -30,23 +30,28 @@ See cdc-frontend for frontend setup.
 #### Python setup
 
 1. Ensure that you have Python 3.9.1 on your system by running `python3 --version`. If you don't, please upgrade your Python.
-2. If you don't have an environment setup already within the repo: `python3 -m venv env`
+1. If you don't have an environment setup already within the repo: `python3 -m venv env`
    - Note: you will only need to do the above command once.
-3. Activate the virtual environment.
+1. Activate the virtual environment.
    - On a mac operating system, use: `. ./env/bin/activate`
    - On a windows operating system, use: `source ./env/Scripts/activate`
-4. Install the requirements: `pip install -r requirements.txt`
-5. One time - install the required pre-commit hooks: `pre-commit install` - this will ensure that each time you `git commit` in this repo, it will run some lint checks. It won't let you commit unless the lint checks pass. Note that this means you may have to run `git commit` multiple times, as each `git commit` will attempt to fix the files! Some files may fail to auto-fix, in which case, you will have to ensure you fix them.
+1. Install `Postgres` - Version 12. Choose user "Postgres" with blank password for local development.
+   - On Mac, the recommended tool for managing your Postgres installation is [Postgres App](https://postgresapp.com/)
+   - On Windows, download Postgres from [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) and then use the script in `scripts/PSQL Server Management.bat` to start/stop your Postgres Server
+1. Once Postgres is installed, create a database with the name: `postgres_cdc_dev`
+1. Install the requirements, and setup Postgres: `make install`
+
+Note: Every time you run `git commit` in this repo, it will run some lint checks. It won't let you commit unless the lint checks pass. Note that this means you may have to run `git commit` multiple times, as each `git commit` will attempt to fix the files! Some files may fail to auto-fix, in which case, you will have to ensure you fix them.
 
 Once you have the requirements installed, you should be able to develop by just activating the environment (step 2).
 
 #### Python - adding a new requirement
 
 1. Update the file `requirements.in` with the name of the library that you want to add.
-2. Install pip-compile if you don't have it already - `pip install pip-tools`.
-3. Run `pip-compile requirements.in`
-4. Download the updated packages `pip install -r requirements.txt`
-5. Check locally to ensure that you haven't broken anything
+1. Install pip-compile if you don't have it already - `pip install pip-tools`.
+1. Run `pip-compile requirements.in`
+1. Download the updated packages `pip install -r requirements.txt`
+1. Check locally to ensure that you haven't broken anything
 
 To run the backend server:
 

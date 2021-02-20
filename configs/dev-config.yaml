@@ -12,6 +12,11 @@ postgres:
 
 app-env: dev
 
+asset:
+  allowed_asset_types:
+    - background
+    - object
+
 script:
   table-order:
     - asset

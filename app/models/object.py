@@ -11,7 +11,7 @@ class Object(Base):
     scale = Column(Array(Float), nullable=False)
     rotation = Column(Array(Float), nullable=False)
     asset_id = Column(BigInteger, ForeignKey("asset.id"), nullable=False)
-    next_objects = Column(Array(BigInteger), nullable=True)
+    next_objects = Column(Array(JSONB), nullable=True)
     text_id = Column(BigInteger, ForeignKey("text.id"), nullable=True)
     is_interactable = Column(Boolean, nullable=False)
     animations_json = Column(JSONB, nullable=False)

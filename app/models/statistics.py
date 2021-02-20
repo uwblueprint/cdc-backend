@@ -11,3 +11,9 @@ class Statistics(Base):
     scene_id = Column(BigInteger, ForeignKey("scene.id"), nullable=True)
     object_id = Column(BigInteger, ForeignKey("object.id"), nullable=True)
     stats = Column(JSONB, nullable=False)
+
+    def __init__(self, scenario_id, scene_id, object_id, stats):
+        self.scenario_id = scenario_id
+        self.scene_id = scene_id
+        self.object_id = object_id
+        self.stats = stats

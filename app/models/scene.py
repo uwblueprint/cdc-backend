@@ -1,13 +1,15 @@
-from . import db
+from sqlalchemy import Array, BigInteger, Column, Float, ForeignKey, Integer, Text
+
+from . import Base
 
 
-class Scene(db.Model):
+class Scene(Base):
     __tablename__ = "scene"
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.Text, nullable=False)
-    description = db.Column(db.Text, nullable=False)
-    object_ids = db.Column(db.Array(db.BigInteger), nullable=False)
-    position = db.Column(db.Array(db.Float), nullable=False)
-    scale = db.Column(db.Array(db.Float), nullable=False)
-    rotation = db.Column(db.Array(db.Float), nullable=False)
-    background_id = db.Column(db.BigInteger, db.ForeignKey("asset.id"), nullable=False)
+    id = Column(Integer, primary_key=True)
+    name = Column(Text, nullable=False)
+    description = Column(Text, nullable=False)
+    object_ids = Column(Array(BigInteger), nullable=False)
+    position = Column(Array(Float), nullable=False)
+    scale = Column(Array(Float), nullable=False)
+    rotation = Column(Array(Float), nullable=False)
+    background_id = Column(BigInteger, ForeignKey("asset.id"), nullable=False)

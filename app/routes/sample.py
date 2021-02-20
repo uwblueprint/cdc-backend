@@ -1,11 +1,9 @@
-import db_client as client
 import tornado.web
 
 
 class SampleHandler(tornado.web.RequestHandler):
     async def get(self):
         self.write("Hello, world")
-        client.get_assets()
         await self.finish()
 
 

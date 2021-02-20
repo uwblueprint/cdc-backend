@@ -1,15 +1,17 @@
-from . import db
+from sqlalchemy import Array, BigInteger, Boolean, Column, Integer, Text
+
+from . import Base
 
 
-class Scenario(db.Model):
+class Scenario(Base):
     __tablename__ = "scenario"
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.Text, nullable=False)
-    friendly_name = db.Column(db.Text, nullable=False)
-    description = db.Column(db.Text, nullable=False)
-    scene_ids = db.Column(db.Array(db.BigInteger), nullable=False)
-    is_published = db.Column(db.Boolean, nullable=False)
-    is_previewable = db.Column(db.Boolean, nullable=False)
-    publish_link = db.Column(db.Text, nullable=True)
-    preview_link = db.Column(db.Text, nullable=True)
-    expected_solve_time = db.Column(db.Text, nullable=False)
+    id = Column(Integer, primary_key=True)
+    name = Column(Text, nullable=False)
+    friendly_name = Column(Text, nullable=False)
+    description = Column(Text, nullable=False)
+    scene_ids = Column(Array(BigInteger), nullable=False)
+    is_published = Column(Boolean, nullable=False)
+    is_previewable = Column(Boolean, nullable=False)
+    publish_link = Column(Text, nullable=True)
+    preview_link = Column(Text, nullable=True)
+    expected_solve_time = Column(Text, nullable=False)

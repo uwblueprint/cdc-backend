@@ -1,9 +1,16 @@
-from . import db
+from sqlalchemy import Column, Integer, Text
+
+from . import Base
 
 
-class Asset(db.Model):
+class Asset(Base):
     __tablename__ = "asset"
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.Text, nullable=False)
-    s3_key = db.Column(db.Text, nullable=False)
-    obj_type = db.Column(db.Text, nullable=False)
+    id = Column(Integer, primary_key=True)
+    name = Column(Text, nullable=False)
+    s3_key = Column(Text, nullable=False)
+    obj_type = Column(Text, nullable=False)
+
+    def __init__(self, name, s3_key, obj_type):
+        self.name = name
+        self.s3_key = s3_key
+        self.obj_type = obj_type

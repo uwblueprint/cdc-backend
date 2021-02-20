@@ -1,9 +1,11 @@
-from . import db
+from sqlalchemy import BigInteger, Column, ForeignKey, Integer, Text
+
+from . import Base
 
 
-class Text(db.Model):
+class Text(Base):
     __tablename__ = "text"
-    id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.Text, nullable=False)
-    next_text_id = db.Column(db.BigInteger, db.ForeignKey("text.id"), nullable=True)
-    object_id = db.Column(db.BigInteger, nullable=False)
+    id = Column(Integer, primary_key=True)
+    content = Column(Text, nullable=False)
+    next_text_id = Column(BigInteger, ForeignKey("text.id"), nullable=True)
+    object_id = Column(BigInteger, nullable=False)

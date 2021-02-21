@@ -1,10 +1,9 @@
+from models.base import BaseModel
 from sqlalchemy import BigInteger, Column, Float, ForeignKey, Integer, Text
 from sqlalchemy.dialects.postgresql import ARRAY
 
-from . import Base
 
-
-class Scene(Base):
+class Scene(BaseModel):
     __tablename__ = "scene"
     id = Column(Integer, primary_key=True)
     name = Column(Text, nullable=False)
@@ -14,6 +13,16 @@ class Scene(Base):
     scale = Column(ARRAY(Float), nullable=False)
     rotation = Column(ARRAY(Float), nullable=False)
     background_id = Column(BigInteger, ForeignKey("asset.id"), nullable=False)
+    columns = [
+        "id",
+        "name",
+        "description",
+        "object_ids",
+        "position",
+        "scale",
+        "rotation",
+        "background_id",
+    ]
 
     def __init__(
         self, name, description, object_ids, position, scale, rotation, background_id

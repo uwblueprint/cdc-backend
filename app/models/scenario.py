@@ -1,10 +1,9 @@
+from models.base import BaseModel
 from sqlalchemy import BigInteger, Boolean, Column, Integer, Text
 from sqlalchemy.dialects.postgresql import ARRAY
 
-from . import Base
 
-
-class Scenario(Base):
+class Scenario(BaseModel):
     __tablename__ = "scenario"
     id = Column(Integer, primary_key=True)
     name = Column(Text, nullable=False)
@@ -16,6 +15,18 @@ class Scenario(Base):
     publish_link = Column(Text, nullable=True)
     preview_link = Column(Text, nullable=True)
     expected_solve_time = Column(Text, nullable=False)
+    columns = [
+        "id",
+        "name",
+        "friendly_name",
+        "description",
+        "scene_ids",
+        "is_published",
+        "is_previewable",
+        "publish_link",
+        "preview_link",
+        "expected_solve_time",
+    ]
 
     def __init__(
         self,

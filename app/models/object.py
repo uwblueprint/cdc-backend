@@ -1,10 +1,9 @@
+from models.base import BaseModel
 from sqlalchemy import BigInteger, Boolean, Column, Float, ForeignKey, Integer
 from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 
-from . import Base
 
-
-class Object(Base):
+class Object(BaseModel):
     __tablename__ = "object"
     id = Column(Integer, primary_key=True)
     position = Column(ARRAY(Float), nullable=False)
@@ -15,6 +14,17 @@ class Object(Base):
     text_id = Column(BigInteger, ForeignKey("text.id"), nullable=True)
     is_interactable = Column(Boolean, nullable=False)
     animations_json = Column(JSONB, nullable=False)
+    columns = [
+        "id",
+        "position",
+        "scale",
+        "rotation",
+        "asset_id",
+        "next_objects",
+        "text_id",
+        "is_interactable",
+        "animations_json",
+    ]
 
     def __init__(
         self,

@@ -162,3 +162,15 @@ async def duplicate_scene(scene_id: str):
         "id": scene_id + "3",
     }
     return sample_response
+
+
+async def post_object_to_postgres(scene_id: str, data: dict):
+    # TODO add object to postgres
+    # TODO add object id to scene's list of objects
+    return await get_object_from_postgres("23")
+
+
+async def update_object_in_postgres(scene_id: str, object_id: str, data: dict):
+    # TODO add object to postgres
+    # TODO add object id to scene's list of objects
+    return await get_object_from_postgres(object_id)

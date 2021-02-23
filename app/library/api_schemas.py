@@ -58,7 +58,7 @@ admin_scene_post_handler_schema = {
     "type": "object",
     "properties": {
         "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
-        "background_id": {"type": "integer", "pattern": r"^[0-9]{1,16}$"},
+        "background_id": {"type": "integer"},
     },
     "required": [
         "name",
@@ -76,7 +76,7 @@ admin_scene_put_handler_schema = {
         "position": {"type": "array"},
         "scale": {"type": "array"},
         "rotation": {"type": "array"},
-        "background_id": {"type": "integer", "pattern": r"^[0-9]{1,16}$"},
+        "background_id": {"type": "integer"},
     },
     "required": [
         "name",
@@ -86,6 +86,31 @@ admin_scene_put_handler_schema = {
         "scale",
         "rotation",
         "background_id",
+    ],
+    "additionalProperties": False,
+}
+
+admin_object_handler_schema = {
+    "type": "object",
+    "properties": {
+        "position": {"type": "array", "items": {"type": "number"}},
+        "scale": {"type": "array", "items": {"type": "number"}},
+        "rotation": {"type": "array", "items": {"type": "number"}},
+        "asset_id": {"type": "integer"},
+        "next_objects": {"type": "array"},
+        "text_id": {"type": "integer"},
+        "is_interactable": {"type": "boolean"},
+        "animations_json": {"type": "object"},
+    },
+    "required": [
+        "position",
+        "scale",
+        "rotation",
+        "asset_id",
+        "next_objects",
+        "text_id",
+        "is_interactable",
+        "animations_json",
     ],
     "additionalProperties": False,
 }

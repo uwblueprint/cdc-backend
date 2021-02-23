@@ -14,6 +14,3 @@ class Asset(BaseModel):
         self.name = name
         self.s3_key = s3_key
         self.obj_type = obj_type
-
-    def as_dict(self):
-        return {c: getattr(self, c) for c in self.columns}

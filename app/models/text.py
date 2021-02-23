@@ -14,6 +14,3 @@ class Text(BaseModel):
         self.content = content
         self.next_text_id = next_text_id
         self.object_id = object_id
-
-    def as_dict(self):
-        return {c: getattr(self, c) for c in self.columns}

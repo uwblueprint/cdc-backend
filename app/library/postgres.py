@@ -1,5 +1,6 @@
 from models.asset import Asset
 from models.db_client import create_entity, get_asset, get_text
+from models.scenario import Scenario
 
 
 async def get_text_from_postgres(text_id: str):
@@ -18,10 +19,10 @@ async def get_solved_from_postgres(object_id: str):
 
 
 async def post_asset_to_postgres(data: dict):
-    asset_model = Asset(data["display_name"], data["s3_prefix"], data["object_type"])
-    new_id = create_entity(asset_model)
+    asset_model = Asset(**data)
+    asset_model = create_entity(asset_model)
 
-    return new_id
+    return asset_model.as_dict()
 
 
 async def get_object_from_postgres(object_id: str):
@@ -93,8 +94,9 @@ async def update_asset_from_postgres(asset_id: str, data: dict):
 
 
 async def post_scenario_to_postgres(data: dict):
-    # TODO: insert into postgres
-    return 2  # Represents id
+    scenario_obj = Scenario(**data)
+    scenario_obj = create_entity(scenario_obj)
+    return scenario_obj.as_dict()
 
 
 async def get_scenario_from_postgres(scenario_id: str):

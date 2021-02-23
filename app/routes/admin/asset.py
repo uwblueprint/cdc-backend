@@ -23,9 +23,9 @@ class AdminAssetPostHandler(BaseAdminAPIHandler):
             # validate body
             validate(data, schema=admin_asset_handler_body_schema)
 
-            id_inserted = await post_asset_to_postgres(data)
+            inserted_asset = await post_asset_to_postgres(data)
 
-            await self.finish({"id": id_inserted})
+            await self.finish(inserted_asset)
 
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

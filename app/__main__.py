@@ -5,6 +5,7 @@ import tornado.ioloop
 import tornado.web
 from config import config
 from routes.admin.asset import AdminAssetHandler, AdminAssetPostHandler
+from routes.admin.object import AdminObjectPostHandler, AdminObjectPutHandler
 from routes.admin.scenario import (
     AdminScenarioDuplicateHandler,
     AdminScenarioHandler,
@@ -43,6 +44,11 @@ def get_routes():
         ),
         (r"/api/admin/v1/scene", AdminScenePostHandler),
         (r"/api/admin/v1/scene/([0-9]{1,16})", AdminSceneHandler),
+        (r"/api/admin/v1/scene/([0-9]{1,16})/object", AdminObjectPostHandler),
+        (
+            r"/api/admin/v1/scene/([0-9]{1,16})/object/([0-9]{1,16})",
+            AdminObjectPutHandler,
+        ),
         (r"/api/admin/v1/scene/([0-9]{1,16})/duplicate", AdminSceneDuplicateHandler),
     ]
     return routes

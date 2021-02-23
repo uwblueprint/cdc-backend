@@ -68,7 +68,7 @@ admin_scene_put_handler_schema = {
     "properties": {
         "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
         "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z _-]{,2000}$"},
-        "objects_id": {"type": "array"},
+        "object_ids": {"type": "array"},
         "position": {"type": "array"},
         "scale": {"type": "array"},
         "rotation": {"type": "array"},
@@ -77,7 +77,7 @@ admin_scene_put_handler_schema = {
     "required": [
         "name",
         "description",
-        "objects_id",
+        "object_ids",
         "position",
         "scale",
         "rotation",

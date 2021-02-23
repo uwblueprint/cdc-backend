@@ -1,9 +1,8 @@
+from models.base import BaseModel
 from sqlalchemy import BigInteger, Column, ForeignKey, Integer, Text
 
-from . import Base
 
-
-class Text(Base):
+class Text(BaseModel):
     __tablename__ = "text"
     id = Column(Integer, primary_key=True)
     content = Column(Text, nullable=False)

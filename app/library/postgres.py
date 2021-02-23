@@ -50,7 +50,7 @@ async def get_scene_from_postgres(scene_id: str):
         "id": scene_id,
         "name": "Master Bedroom",
         "description": "A standard master bedroom. King size bed, a dresser, ensuit washroom, and a large closet.",
-        "objects_id": [1, 2, 3],
+        "object_ids": [1, 2, 3],
         "position": [0.1, 0.5, 0.1],
         "scale": [2.0, 2.0, 2.0],
         "rotation": [0.0, 0.0, 0.0],
@@ -58,7 +58,7 @@ async def get_scene_from_postgres(scene_id: str):
         "camera_properties": "",
     }
     objects = []
-    for object_id in sample_response["objects_id"]:
+    for object_id in sample_response["object_ids"]:
         objects.append(await get_object_from_postgres(object_id))
 
     sample_response["objects"] = objects

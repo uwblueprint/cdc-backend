@@ -1,9 +1,8 @@
+from models.base import BaseModel
 from sqlalchemy import Column, Integer, Text
 
-from . import Base
 
-
-class Asset(Base):
+class Asset(BaseModel):
     __tablename__ = "asset"
     id = Column(Integer, primary_key=True)
     name = Column(Text, nullable=False)

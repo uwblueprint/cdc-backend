@@ -62,8 +62,8 @@ async def get_scene_from_postgres(scene_id: str):
         "background_id": 2,
         "camera_properties": {
             "position": [0, 2.5, 1],
-            "look_controls": true,
-            "wasd_controls": true,
+            "look_controls": True,
+            "wasd_controls": True,
             "cursor_properties": {
                 "asset_id": 1,
                 "shape": "crosshairs",

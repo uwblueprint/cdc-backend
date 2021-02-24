@@ -59,10 +59,12 @@ admin_scene_post_handler_schema = {
     "properties": {
         "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
         "background_id": {"type": "integer"},
+        "camera_properties": {"type": "object"},
     },
     "required": [
         "name",
         "background_id",
+        "camera_properties",
     ],
     "additionalProperties": False,
 }
@@ -77,6 +79,7 @@ admin_scene_put_handler_schema = {
         "scale": {"type": "array"},
         "rotation": {"type": "array"},
         "background_id": {"type": "integer"},
+        "camera_properties": {"type": "object"},
     },
     "required": [
         "name",
@@ -86,6 +89,7 @@ admin_scene_put_handler_schema = {
         "scale",
         "rotation",
         "background_id",
+        "camera_properties",
     ],
     "additionalProperties": False,
 }

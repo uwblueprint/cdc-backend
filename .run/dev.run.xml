@@ -7,7 +7,7 @@
       <env name="PYTHONUNBUFFERED" value="1" />
       <env name="CONFIG_PATH" value="../configs/dev-config.yaml" />
     </envs>
-    <option name="SDK_HOME" value="C:\Users\vivia\Documents\Blueprint\cdc-backend\env\Scripts\python.exe" />
+    <option name="SDK_HOME" value="$PROJECT_DIR$/env/bin/python" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
     <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />

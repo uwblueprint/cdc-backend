@@ -1,6 +1,7 @@
 from models.asset import Asset
 from models.db_client import create_entity, get_asset, get_scenario, get_text
 from models.scenario import Scenario
+from models.text import Text
 
 
 async def get_text_from_postgres(text_id: str):
@@ -164,8 +165,10 @@ async def update_object_in_postgres(scene_id: str, object_id: str, data: dict):
 
 
 async def post_text_to_postgres(scene_id: str, data: dict):
-    # TODO: actual post to postgres
-    return {"sample": "response"}
+    text_obj = Text(**data)
+    text_obj = create_entity(text_obj)
+
+    return text_obj.as_dict()
 
 
 async def put_text_to_postgres(scene_id: str, text_id: str, data: dict):

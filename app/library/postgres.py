@@ -22,10 +22,9 @@ async def get_text_from_postgres(text_id: str):
 
 
 async def get_solved_from_postgres(object_id: str):
-    # TODO: Get actual list from postgres
+    object_obj = await get_object_from_postgres(object_id)
 
-    next_object_ids = ["1", "2", "23", "37", object_id]
-    return next_object_ids
+    return object_obj["next_objects"]
 
 
 async def post_asset_to_postgres(data: dict):
@@ -148,8 +147,6 @@ async def duplicate_scene(scene_id: str):
 
 
 async def post_object_to_postgres(scene_id: str, data: dict):
-    # TODO add object to postgres
-    # TODO add object id to scene's list of objects
     object_model = Object(**data)
     object_model = create_entity(object_model)
 

@@ -10,8 +10,8 @@ class UserSolvedHandler(BaseUserAPIHandler):
     async def get(self, id):
 
         try:
-            next_object_ids = await get_solved_from_postgres(id)
-            await self.finish({"next_object_ids": next_object_ids})
+            next_objects = await get_solved_from_postgres(id)
+            await self.finish({"next_objects": next_objects})
 
         except ValueError:
             self.write_error(status_code=404, message="Object ID not valid")

@@ -1,6 +1,7 @@
 from models.asset import Asset
 from models.db_client import (
     create_entity,
+    delete_asset,
     get_asset,
     get_object,
     get_scenario,
@@ -75,9 +76,13 @@ async def get_asset_from_postgres(asset_id: str):
 
 async def delete_asset_from_postgres(asset_id: str):
     # TODO: delete from postgres
+    is_deleted = delete_asset(asset_id)
 
-    sample_response = {"message": "deleted successfully"}
-    return sample_response
+    if is_deleted:
+        response = {"message": "deleted successfully"}
+    else:
+        response = {"message": "error deleting asset with id " + asset_id}
+    return response
 
 
 async def update_asset_from_postgres(asset_id: str, data: dict):

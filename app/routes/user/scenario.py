@@ -11,10 +11,10 @@ class UserScenarioHandler(BaseUserAPIHandler):
         # Validate that id is valid
 
         try:
-            response_dict = await get_scenario_from_postgres(id)
-            await self.finish(response_dict)
+            scenario_obj = await get_scenario_from_postgres(id)
+            await self.finish(scenario_obj)
 
-        except ValueError:
-            self.write_error(status_code=404, message="Asset ID not valid")
+        except ValueError as e:
+            self.write_error(status_code=404, message=str(e))
         except Exception as e:
             self.write_error(status_code=500, message=str(e))

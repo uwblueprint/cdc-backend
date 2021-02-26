@@ -9,12 +9,12 @@ class Scenario(BaseModel):
     name = Column(Text, nullable=False)
     friendly_name = Column(Text, nullable=False)
     description = Column(Text, nullable=False)
-    scene_ids = Column(ARRAY(BigInteger), nullable=False)
-    is_published = Column(Boolean, nullable=False)
-    is_previewable = Column(Boolean, nullable=False)
+    scene_ids = Column(ARRAY(BigInteger), nullable=False, default=[])
+    is_published = Column(Boolean, nullable=False, default=False)
+    is_previewable = Column(Boolean, nullable=False, default=False)
     publish_link = Column(Text, nullable=True)
     preview_link = Column(Text, nullable=True)
-    expected_solve_time = Column(Text, nullable=False)
+    expected_solve_time = Column(Text, nullable=False, default="")
     columns = [
         "id",
         "name",
@@ -27,25 +27,3 @@ class Scenario(BaseModel):
         "preview_link",
         "expected_solve_time",
     ]
-
-    def __init__(
-        self,
-        name,
-        friendly_name,
-        description,
-        scene_ids,
-        is_published,
-        is_previewable,
-        publish_link,
-        preview_link,
-        expected_solve_time,
-    ):
-        self.name = name
-        self.friendly_name = friendly_name
-        self.description = description
-        self.scene_ids = scene_ids
-        self.is_published = is_published
-        self.is_previewable = is_previewable
-        self.publish_link = publish_link
-        self.preview_link = preview_link
-        self.expected_solve_time = expected_solve_time

@@ -7,11 +7,11 @@ class Scene(BaseModel):
     __tablename__ = "scene"
     id = Column(Integer, primary_key=True)
     name = Column(Text, nullable=False)
-    description = Column(Text, nullable=False)
-    object_ids = Column(ARRAY(BigInteger), nullable=False)
-    position = Column(ARRAY(Float), nullable=False)
-    scale = Column(ARRAY(Float), nullable=False)
-    rotation = Column(ARRAY(Float), nullable=False)
+    description = Column(Text, nullable=False, default="")
+    object_ids = Column(ARRAY(BigInteger), nullable=False, default=[])
+    position = Column(ARRAY(Float), nullable=False, default=[])
+    scale = Column(ARRAY(Float), nullable=False, default=[])
+    rotation = Column(ARRAY(Float), nullable=False, default=[])
     background_id = Column(BigInteger, ForeignKey("asset.id"), nullable=False)
     columns = [
         "id",
@@ -23,14 +23,3 @@ class Scene(BaseModel):
         "rotation",
         "background_id",
     ]
-
-    def __init__(
-        self, name, description, object_ids, position, scale, rotation, background_id
-    ):
-        self.name = name
-        self.description = description
-        self.object_ids = object_ids
-        self.position = position
-        self.scale = scale
-        self.rotation = rotation
-        self.background_id = background_id

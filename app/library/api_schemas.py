@@ -5,13 +5,14 @@ from config import config
 admin_asset_handler_body_schema = {
     "type": "object",
     "properties": {
-        "display_name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
-        "object_type": {
+        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
+        "obj_type": {
             "enum": config.get("asset.allowed_asset_types"),
         },
-        "s3_prefix": {"type": "string", "pattern": r"^[\S]{1,50}$"},
+        "s3_key": {"type": "string", "pattern": r"^[\S]{1,50}$"},
     },
-    "required": ["display_name", "object_type", "s3_prefix"],
+    "required": ["name", "obj_type", "s3_key"],
+    "additionalProperties": False,
 }
 
 admin_scenario_post_handler_schema = {
@@ -26,6 +27,7 @@ admin_scenario_post_handler_schema = {
         "friendly_name",
         "description",
     ],
+    "additionalProperties": False,
 }
 
 admin_scenario_put_handler_schema = {
@@ -49,6 +51,7 @@ admin_scenario_put_handler_schema = {
         "is_published",
         "is_previewable",
     ],
+    "additionalProperties": False,
 }
 
 admin_scene_post_handler_schema = {
@@ -61,6 +64,7 @@ admin_scene_post_handler_schema = {
         "name",
         "background_id",
     ],
+    "additionalProperties": False,
 }
 
 admin_scene_put_handler_schema = {
@@ -83,6 +87,7 @@ admin_scene_put_handler_schema = {
         "rotation",
         "background_id",
     ],
+    "additionalProperties": False,
 }
 
 admin_object_handler_schema = {

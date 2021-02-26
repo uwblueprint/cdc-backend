@@ -9,8 +9,3 @@ class Asset(BaseModel):
     s3_key = Column(Text, nullable=False)
     obj_type = Column(Text, nullable=False)
     columns = ["id", "name", "s3_key", "obj_type"]
-
-    def __init__(self, name, s3_key, obj_type):
-        self.name = name
-        self.s3_key = s3_key
-        self.obj_type = obj_type

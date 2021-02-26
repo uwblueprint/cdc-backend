@@ -109,3 +109,15 @@ admin_object_handler_schema = {
     ],
     "additionalProperties": False,
 }
+
+
+admin_text_handler_schema = {
+    "type": "object",
+    "properties": {
+        "content": {"type": "string"},
+        "object_id": {"type": "integer"},
+        "next_text_id": {"type": "integer"},
+    },
+    "required": ["content", "object_id"],
+    "additionalProperties": False,
+}

@@ -1,6 +1,16 @@
 from models.asset import Asset
-from models.db_client import create_entity, get_asset, get_scenario, get_text
+from models.db_client import (
+    create_entity,
+    get_asset,
+    get_object,
+    get_scenario,
+    get_scene,
+    get_text,
+)
+from models.object import Object
 from models.scenario import Scenario
+from models.scene import Scene
+from models.text import Text
 
 
 async def get_text_from_postgres(text_id: str):
@@ -26,44 +36,29 @@ async def post_asset_to_postgres(data: dict):
 
 
 async def get_object_from_postgres(object_id: str):
-    # TODO: get datta from SQL -> model representation?
+    object_obj = get_object(object_id)
+    if object_obj is None:
+        raise ValueError("Object ID not valid")
 
-    sample_response = {
-        "object_id": object_id,
-        "position": [1.1, 1.5, 1.1],
-        "scale": [1.0, 1.0, 1.0],
-        "rotation": [0.1, 0.5, 0.1],
-        "asset_id": 2,
-        "next_objects": [3],
-        "text_id": 3,
-        "is_interactable": True,
-        "animations_json": {},
-    }
-    return sample_response
+    return object_obj.as_dict()
 
 
 async def get_scene_from_postgres(scene_id: str):
-    # TODO: get datta from SQL -> model representation?
+    scene_obj = get_scene(scene_id)
+    if scene_obj is None:
+        raise ValueError("Invalid Scene ID")
+
+    response = scene_obj.as_dict()
 
     # NOTE: scene response should populate the objects properly by getting object from postgres
     # TODO: get actual camera properties
-    sample_response = {
-        "id": scene_id,
-        "name": "Master Bedroom",
-        "description": "A standard master bedroom. King size bed, a dresser, ensuit washroom, and a large closet.",
-        "object_ids": [1, 2, 3],
-        "position": [0.1, 0.5, 0.1],
-        "scale": [2.0, 2.0, 2.0],
-        "rotation": [0.0, 0.0, 0.0],
-        "background_id": 2,
-        "camera_properties": "",
-    }
+
     objects = []
-    for object_id in sample_response["object_ids"]:
+    for object_id in response["object_ids"]:
         objects.append(await get_object_from_postgres(object_id))
 
-    sample_response["objects"] = objects
-    return sample_response
+    response["objects"] = objects
+    return response
 
 
 async def get_loading_screen_from_postgres():
@@ -122,8 +117,9 @@ async def update_scenario_from_postgres(scenario_id: str, data: dict):
 
 
 async def post_scene_to_postgres(data: dict):
-    # TODO: insert into postgres
-    return 2  # Represents id
+    scene_model = Scene(**data)
+    scene_model = create_entity(scene_model)
+    return scene_model.as_dict()
 
 
 async def update_scene_from_postgres(scene_id: str, data: dict):
@@ -154,7 +150,10 @@ async def duplicate_scene(scene_id: str):
 async def post_object_to_postgres(scene_id: str, data: dict):
     # TODO add object to postgres
     # TODO add object id to scene's list of objects
-    return await get_object_from_postgres("23")
+    object_model = Object(**data)
+    object_model = create_entity(object_model)
+
+    return object_model.as_dict()
 
 
 async def update_object_in_postgres(scene_id: str, object_id: str, data: dict):
@@ -164,8 +163,10 @@ async def update_object_in_postgres(scene_id: str, object_id: str, data: dict):
 
 
 async def post_text_to_postgres(scene_id: str, data: dict):
-    # TODO: actual post to postgres
-    return {"sample": "response"}
+    text_obj = Text(**data)
+    text_obj = create_entity(text_obj)
+
+    return text_obj.as_dict()
 
 
 async def put_text_to_postgres(scene_id: str, text_id: str, data: dict):

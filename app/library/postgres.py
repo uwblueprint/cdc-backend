@@ -1,6 +1,8 @@
 from models.asset import Asset
-from models.db_client import create_entity, get_asset, get_object, get_scene, get_text
+
+from models.db_client import create_entity, get_asset, get_object, get_scenario, get_scene, get_text
 from models.object import Object
+
 from models.scenario import Scenario
 from models.scene import Scene
 
@@ -87,24 +89,11 @@ async def post_scenario_to_postgres(data: dict):
 
 
 async def get_scenario_from_postgres(scenario_id: str):
-    # TODO: get data from SQL -> convert to model
+    scenario_obj = get_scenario(scenario_id)
+    if scenario_obj is None:
+        raise ValueError("Scenario ID not valid")
 
-    sample_response = {
-        "id": scenario_id,
-        "name": "Student Escape Room",
-        "friendly_name": "student-escape-room",
-        "description": "A student at ABC High is going through a troubling time."
-        + "They are in their Chemistry class when they realize they did not get their homework done in time."
-        + " Find out what they do next in this escape room!",
-        "scene_ids": [1, 2, 3],
-        "is_published": False,
-        "is_previewable": True,
-        "publish_link": "www.publishlink.com/teacher-escape-room",
-        "preview_link": "www.previewlink.com/student-escape-room",
-        "expected_solve_time": "10 to 20",
-    }
-
-    return sample_response
+    return scenario_obj.as_dict()
 
 
 async def delete_scenario_from_postgres(scenario_id: str):
@@ -165,3 +154,18 @@ async def update_object_in_postgres(scene_id: str, object_id: str, data: dict):
     # TODO add object to postgres
     # TODO add object id to scene's list of objects
     return await get_object_from_postgres(object_id)
+
+
+async def post_text_to_postgres(scene_id: str, data: dict):
+    # TODO: actual post to postgres
+    return {"sample": "response"}
+
+
+async def put_text_to_postgres(scene_id: str, text_id: str, data: dict):
+    # TODO: actual PUT to postgres
+    return {"sample": "response"}
+
+
+async def delete_text_from_postgres(scene_id: str, text_id: str, data: dict):
+    # TODO: actual DELETE from postgres
+    return {"sample": "response"}

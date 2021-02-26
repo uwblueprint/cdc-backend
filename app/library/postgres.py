@@ -76,12 +76,12 @@ async def get_asset_from_postgres(asset_id: str):
 
 async def delete_asset_from_postgres(asset_id: str):
     # TODO: delete from postgres
-    is_deleted = delete_asset(asset_id)
+    try:
+        delete_asset(asset_id)
+    except Exception as e:
+        raise e
 
-    if is_deleted:
-        response = {"message": "deleted successfully"}
-    else:
-        response = {"message": "error deleting asset with id " + asset_id}
+    response = {"message": "deleted successfully"}
     return response
 
 

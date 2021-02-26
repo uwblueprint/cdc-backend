@@ -53,8 +53,8 @@ def delete_asset(id):
         session.query(Asset).filter(Asset.id == id).delete(synchronize_session="fetch")
         session.commit()
         session.close()
-    except Exception:
-        return False
+    except Exception as e:
+        raise e
     return True
 
 
@@ -83,8 +83,8 @@ def delete_object(id):
         )
         session.commit()
         session.close()
-    except Exception:
-        return False
+    except Exception as e:
+        raise e
     return True
 
 
@@ -113,8 +113,8 @@ def delete_scenario(id):
         )
         session.commit()
         session.close()
-    except Exception:
-        return False
+    except Exception as e:
+        raise e
     return True
 
 
@@ -141,8 +141,8 @@ def delete_scene(id):
         session.query(Scene).filter(Scene.id == id).delete(synchronize_session="fetch")
         session.commit()
         session.close()
-    except Exception:
-        return False
+    except Exception as e:
+        raise e
     return True
 
 
@@ -171,8 +171,8 @@ def delete_statistic(id):
         )
         session.commit()
         session.close()
-    except Exception:
-        return False
+    except Exception as e:
+        raise e
     return True
 
 
@@ -199,6 +199,6 @@ def delete_text(id):
         session.query(Text).filter(Text.id == id).delete(synchronize_session="fetch")
         session.commit()
         session.close()
-    except Exception:
-        return False
+    except Exception as e:
+        raise e
     return True

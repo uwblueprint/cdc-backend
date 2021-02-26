@@ -13,7 +13,7 @@ class Scene(BaseModel):
     scale = Column(ARRAY(Float), nullable=False, default=[])
     rotation = Column(ARRAY(Float), nullable=False, default=[])
     background_id = Column(BigInteger, ForeignKey("asset.id"), nullable=False)
-    camera_properties = Column(JSONB, nullable=False)
+    camera_properties = Column(JSONB, nullable=False, default={})
     columns = [
         "id",
         "name",

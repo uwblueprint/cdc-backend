@@ -11,7 +11,6 @@ from models.object import Object
 from models.scenario import Scenario
 from models.scene import Scene
 from models.text import Text
-from sqlalchemy import true
 
 
 async def get_text_from_postgres(text_id: str):
@@ -50,27 +49,6 @@ async def get_scene_from_postgres(scene_id: str):
 
     response = scene_obj.as_dict()
 
-    # NOTE: scene response should populate the objects properly by getting object from postgres
-    sample_response = {
-        "id": scene_id,
-        "name": "Master Bedroom",
-        "description": "A standard master bedroom. King size bed, a dresser, ensuit washroom, and a large closet.",
-        "object_ids": [1, 2, 3],
-        "position": [0.1, 0.5, 0.1],
-        "scale": [2.0, 2.0, 2.0],
-        "rotation": [0.0, 0.0, 0.0],
-        "background_id": 2,
-        "camera_properties": {
-            "position": [0, 2.5, 1],
-            "look_controls": True,
-            "wasd_controls": True,
-            "cursor_properties": {
-                "asset_id": 1,
-                "shape": "crosshairs",
-                "position": [0, 0, 0],
-            },
-        },
-    }
     objects = []
     for object_id in response["object_ids"]:
         objects.append(await get_object_from_postgres(object_id))

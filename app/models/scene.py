@@ -25,23 +25,3 @@ class Scene(BaseModel):
         "background_id",
         "camera_properties",
     ]
-
-    def __init__(
-        self,
-        name,
-        description,
-        object_ids,
-        position,
-        scale,
-        rotation,
-        background_id,
-        camera_properties,
-    ):
-        self.name = name
-        self.description = description
-        self.object_ids = object_ids
-        self.position = position
-        self.scale = scale
-        self.rotation = rotation
-        self.background_id = background_id
-        self.camera_properties = camera_properties

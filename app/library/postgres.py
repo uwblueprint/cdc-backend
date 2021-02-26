@@ -1,5 +1,5 @@
 from models.asset import Asset
-from models.db_client import create_entity, get_asset, get_text
+from models.db_client import create_entity, get_asset, get_scenario, get_text
 from models.scenario import Scenario
 
 
@@ -100,24 +100,11 @@ async def post_scenario_to_postgres(data: dict):
 
 
 async def get_scenario_from_postgres(scenario_id: str):
-    # TODO: get data from SQL -> convert to model
+    scenario_obj = get_scenario(scenario_id)
+    if scenario_obj is None:
+        raise ValueError("Scenario ID not valid")
 
-    sample_response = {
-        "id": scenario_id,
-        "name": "Student Escape Room",
-        "friendly_name": "student-escape-room",
-        "description": "A student at ABC High is going through a troubling time."
-        + "They are in their Chemistry class when they realize they did not get their homework done in time."
-        + " Find out what they do next in this escape room!",
-        "scene_ids": [1, 2, 3],
-        "is_published": False,
-        "is_previewable": True,
-        "publish_link": "www.publishlink.com/teacher-escape-room",
-        "preview_link": "www.previewlink.com/student-escape-room",
-        "expected_solve_time": "10 to 20",
-    }
-
-    return sample_response
+    return scenario_obj.as_dict()
 
 
 async def delete_scenario_from_postgres(scenario_id: str):

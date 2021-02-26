@@ -13,7 +13,7 @@ class Object(BaseModel):
     next_objects = Column(ARRAY(JSONB), nullable=True)
     text_id = Column(BigInteger, ForeignKey("text.id"), nullable=True)
     is_interactable = Column(Boolean, nullable=False)
-    animations_json = Column(JSONB, nullable=False)
+    animations_json = Column(JSONB, nullable=False, default={})
     columns = [
         "id",
         "position",
@@ -25,23 +25,3 @@ class Object(BaseModel):
         "is_interactable",
         "animations_json",
     ]
-
-    def __init__(
-        self,
-        position,
-        scale,
-        rotation,
-        asset_id,
-        next_objects,
-        text_id,
-        is_interactable,
-        animations_json,
-    ):
-        self.position = position
-        self.scale = scale
-        self.rotation = rotation
-        self.asset_id = asset_id
-        self.next_objects = next_objects
-        self.text_id = text_id
-        self.is_interactable = is_interactable
-        self.animations_json = animations_json

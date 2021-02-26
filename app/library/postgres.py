@@ -193,3 +193,8 @@ async def post_text_to_postgres(scene_id: str, data: dict):
 async def put_text_to_postgres(scene_id: str, text_id: str, data: dict):
     # TODO: actual PUT to postgres
     return {"sample": "response"}
+
+
+async def delete_text_from_postgres(scene_id: str, text_id: str, data: dict):
+    # TODO: actual DELETE from postgres
+    return {"sample": "response"}

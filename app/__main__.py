@@ -16,7 +16,7 @@ from routes.admin.scene import (
     AdminSceneHandler,
     AdminScenePostHandler,
 )
-from routes.admin.text import AdminTextPostHandler, AdminTextPutHandler
+from routes.admin.text import AdminTextHandler, AdminTextPostHandler
 from routes.base import NotFoundHandler
 from routes.user.asset import UserAssetHandler
 from routes.user.loading_screen import UserLoadingScreen
@@ -53,7 +53,7 @@ def get_routes():
         (r"/api/admin/v1/scene/([0-9]{1,16})/text", AdminTextPostHandler),
         (
             r"/api/admin/v1/scene/([0-9]{1,16})/text/([0-9]{1,16})",
-            AdminTextPutHandler,
+            AdminTextHandler,
         ),
         (r"/api/admin/v1/scene/([0-9]{1,16})/duplicate", AdminSceneDuplicateHandler),
     ]

@@ -77,6 +77,28 @@ admin_scene_put_handler_schema = {
         "scale": {"type": "array"},
         "rotation": {"type": "array"},
         "background_id": {"type": "integer"},
+        "camera_properties": {
+            "type": "object",
+            "properties": {
+                "position": {"type": "array"},
+                "look_controls": {"type": "bool"},
+                "wasd_controls": {"type": "bool"},
+                "cursor_properties": {
+                    "type": "object",
+                    "properties": {
+                        "asset_id": {"type": "integer"},
+                        "shape": {"type": "string", "pattern": r"^[a-zA-Z _-]{,20}$"},
+                        "position": {"type": "array"},
+                    },
+                    "required": [
+                        "position",
+                    ],
+                },
+            },
+            "required": [
+                "position",
+            ],
+        },
     },
     "required": [
         "name",
@@ -86,6 +108,7 @@ admin_scene_put_handler_schema = {
         "scale",
         "rotation",
         "background_id",
+        "camera_properties",
     ],
     "additionalProperties": False,
 }

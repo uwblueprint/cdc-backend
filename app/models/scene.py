@@ -1,6 +1,6 @@
 from models.base import BaseModel
 from sqlalchemy import BigInteger, Column, Float, ForeignKey, Integer, Text
-from sqlalchemy.dialects.postgresql import ARRAY
+from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 
 
 class Scene(BaseModel):
@@ -13,6 +13,7 @@ class Scene(BaseModel):
     scale = Column(ARRAY(Float), nullable=False, default=[])
     rotation = Column(ARRAY(Float), nullable=False, default=[])
     background_id = Column(BigInteger, ForeignKey("asset.id"), nullable=False)
+    camera_properties = Column(JSONB, nullable=False, default={})
     columns = [
         "id",
         "name",
@@ -22,4 +23,5 @@ class Scene(BaseModel):
         "scale",
         "rotation",
         "background_id",
+        "camera_properties",
     ]

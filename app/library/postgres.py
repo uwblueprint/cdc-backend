@@ -182,5 +182,5 @@ async def post_object_to_postgres(scene_id: str, data: dict):
 
 async def update_object_in_postgres(scene_id: str, object_id: str, data: dict):
     # TODO add object id to scene's list of objects
-    await put_object(object_id, data)
+    put_object(object_id, data)
     return await get_object_from_postgres(object_id)

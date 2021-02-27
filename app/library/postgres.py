@@ -1,6 +1,13 @@
 from config import config
 from models.asset import Asset
-from models.db_client import create_entity, get_text
+from models.db_client import (
+    create_entity,
+    get_text,
+    put_asset,
+    put_object,
+    put_scenario,
+    put_scene,
+)
 
 
 async def get_text_from_postgres(text_id: str):
@@ -97,10 +104,8 @@ async def delete_asset_from_postgres(asset_id: str):
 
 
 async def update_asset_from_postgres(asset_id: str, data: dict):
-    # TODO: update item into postgres
-
-    sample_response = {"message": "updated asset with id " + asset_id}
-    return sample_response  # Represents id
+    put_asset(asset_id, data)
+    return get_asset_from_postgres(asset_id)
 
 
 async def post_scenario_to_postgres(data: dict):
@@ -137,10 +142,8 @@ async def delete_scenario_from_postgres(scenario_id: str):
 
 
 async def update_scenario_from_postgres(scenario_id: str, data: dict):
-    # TODO: update item into postgres
-
-    sample_response = {"message": "updated scenario with id " + scenario_id}
-    return sample_response  # Represents id
+    put_scenario(scenario_id, data)
+    return await get_scenario_from_postgres(scenario_id)
 
 
 async def post_scene_to_postgres(data: dict):
@@ -149,10 +152,8 @@ async def post_scene_to_postgres(data: dict):
 
 
 async def update_scene_from_postgres(scene_id: str, data: dict):
-    # TODO: update item into postgres
-
-    sample_response = {"message": "updated scene with id " + scene_id}
-    return sample_response  # Represents id
+    put_scene(scene_id, data)
+    return await get_scene_from_postgres(scene_id)
 
 
 async def duplicate_scenario(scenario_id: str):
@@ -180,6 +181,6 @@ async def post_object_to_postgres(scene_id: str, data: dict):
 
 
 async def update_object_in_postgres(scene_id: str, object_id: str, data: dict):
-    # TODO add object to postgres
     # TODO add object id to scene's list of objects
+    await put_object(object_id, data)
     return await get_object_from_postgres(object_id)

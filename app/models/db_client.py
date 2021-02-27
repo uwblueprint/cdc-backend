@@ -47,6 +47,23 @@ def get_asset(id):
 
 
 # TODO: move session creating and closing out of these individual calls
+def delete_asset(id):
+    try:
+        session = Session()
+
+        exists = session.query(Asset).filter(Asset.id == id).first() is not None
+        if exists:
+            session.query(Asset).filter(Asset.id == id).delete()
+            session.commit()
+
+        session.close()
+    except Exception as e:
+        raise e
+
+    return exists
+
+
+# TODO: move session creating and closing out of these individual calls
 def get_objects():
     session = Session()
     objects = session.query(Object).all()
@@ -60,6 +77,23 @@ def get_object(id):
     obj = session.query(Object).get(id)
     session.close()
     return obj
+
+
+# TODO: move session creating and closing out of these individual calls
+def delete_object(id):
+    try:
+        session = Session()
+
+        exists = session.query(Object).filter(Object.id == id).first() is not None
+        if exists:
+            session.query(Object).filter(Object.id == id).delete()
+            session.commit()
+
+        session.close()
+    except Exception as e:
+        raise e
+
+    return exists
 
 
 # TODO: move session creating and closing out of these individual calls
@@ -79,6 +113,23 @@ def get_scenario(id):
 
 
 # TODO: move session creating and closing out of these individual calls
+def delete_scenario(id):
+    try:
+        session = Session()
+
+        exists = session.query(Scenario).filter(Scenario.id == id).first() is not None
+        if exists:
+            session.query(Scenario).filter(Scenario.id == id).delete()
+            session.commit()
+
+        session.close()
+    except Exception as e:
+        raise e
+
+    return exists
+
+
+# TODO: move session creating and closing out of these individual calls
 def get_scenes():
     session = Session()
     scenes = session.query(Scene).all()
@@ -92,6 +143,23 @@ def get_scene(id):
     scene = session.query(Scene).get(id)
     session.close()
     return scene
+
+
+# TODO: move session creating and closing out of these individual calls
+def delete_scene(id):
+    try:
+        session = Session()
+
+        exists = session.query(Scene).filter(Scene.id == id).first() is not None
+        if exists:
+            session.query(Scene).filter(Scene.id == id).delete()
+            session.commit()
+
+        session.close()
+    except Exception as e:
+        raise e
+
+    return exists
 
 
 # TODO: move session creating and closing out of these individual calls
@@ -111,6 +179,25 @@ def get_statistic(id):
 
 
 # TODO: move session creating and closing out of these individual calls
+def delete_statistic(id):
+    try:
+        session = Session()
+
+        exists = (
+            session.query(Statistics).filter(Statistics.id == id).first() is not None
+        )
+        if exists:
+            session.query(Statistics).filter(Statistics.id == id).delete()
+            session.commit()
+
+        session.close()
+    except Exception as e:
+        raise e
+
+    return exists
+
+
+# TODO: move session creating and closing out of these individual calls
 def get_texts():
     session = Session()
     texts = session.query(Text).all()
@@ -124,3 +211,20 @@ def get_text(id):
     text = session.query(Text).get(id)
     session.close()
     return text
+
+
+# TODO: move session creating and closing out of these individual calls
+def delete_text(id):
+    try:
+        session = Session()
+
+        exists = session.query(Text).filter(Text.id == id).first() is not None
+        if exists:
+            session.query(Text).filter(Text.id == id).delete()
+            session.commit()
+
+        session.close()
+    except Exception as e:
+        raise e
+
+    return exists

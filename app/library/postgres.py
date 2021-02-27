@@ -50,9 +50,6 @@ async def get_scene_from_postgres(scene_id: str):
 
     response = scene_obj.as_dict()
 
-    # NOTE: scene response should populate the objects properly by getting object from postgres
-    # TODO: get actual camera properties
-
     objects = []
     for object_id in response["object_ids"]:
         objects.append(await get_object_from_postgres(object_id))

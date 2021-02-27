@@ -50,12 +50,17 @@ def get_asset(id):
 def delete_asset(id):
     try:
         session = Session()
-        session.query(Asset).filter(Asset.id == id).delete(synchronize_session="fetch")
-        session.commit()
+
+        exists = session.query(Asset).filter(Asset.id == id).first() is not None
+        if exists:
+            session.query(Asset).filter(Asset.id == id).delete()
+            session.commit()
+
         session.close()
     except Exception as e:
         raise e
-    return True
+
+    return exists
 
 
 # TODO: move session creating and closing out of these individual calls
@@ -78,14 +83,17 @@ def get_object(id):
 def delete_object(id):
     try:
         session = Session()
-        session.query(Object).filter(Object.id == id).delete(
-            synchronize_session="fetch"
-        )
-        session.commit()
+
+        exists = session.query(Object).filter(Object.id == id).first() is not None
+        if exists:
+            session.query(Object).filter(Object.id == id).delete()
+            session.commit()
+
         session.close()
     except Exception as e:
         raise e
-    return True
+
+    return exists
 
 
 # TODO: move session creating and closing out of these individual calls
@@ -108,14 +116,17 @@ def get_scenario(id):
 def delete_scenario(id):
     try:
         session = Session()
-        session.query(Scenario).filter(Scenario.id == id).delete(
-            synchronize_session="fetch"
-        )
-        session.commit()
+
+        exists = session.query(Scenario).filter(Scenario.id == id).first() is not None
+        if exists:
+            session.query(Scenario).filter(Scenario.id == id).delete()
+            session.commit()
+
         session.close()
     except Exception as e:
         raise e
-    return True
+
+    return exists
 
 
 # TODO: move session creating and closing out of these individual calls
@@ -138,12 +149,17 @@ def get_scene(id):
 def delete_scene(id):
     try:
         session = Session()
-        session.query(Scene).filter(Scene.id == id).delete(synchronize_session="fetch")
-        session.commit()
+
+        exists = session.query(Scene).filter(Scene.id == id).first() is not None
+        if exists:
+            session.query(Scene).filter(Scene.id == id).delete()
+            session.commit()
+
         session.close()
     except Exception as e:
         raise e
-    return True
+
+    return exists
 
 
 # TODO: move session creating and closing out of these individual calls
@@ -166,14 +182,19 @@ def get_statistic(id):
 def delete_statistic(id):
     try:
         session = Session()
-        session.query(Statistics).filter(Statistics.id == id).delete(
-            synchronize_session="fetch"
+
+        exists = (
+            session.query(Statistics).filter(Statistics.id == id).first() is not None
         )
-        session.commit()
+        if exists:
+            session.query(Statistics).filter(Statistics.id == id).delete()
+            session.commit()
+
         session.close()
     except Exception as e:
         raise e
-    return True
+
+    return exists
 
 
 # TODO: move session creating and closing out of these individual calls
@@ -196,9 +217,14 @@ def get_text(id):
 def delete_text(id):
     try:
         session = Session()
-        session.query(Text).filter(Text.id == id).delete(synchronize_session="fetch")
-        session.commit()
+
+        exists = session.query(Text).filter(Text.id == id).first() is not None
+        if exists:
+            session.query(Text).filter(Text.id == id).delete()
+            session.commit()
+
         session.close()
     except Exception as e:
         raise e
-    return True
+
+    return exists

@@ -214,6 +214,101 @@ def get_text(id):
 
 
 # TODO: move session creating and closing out of these individual calls
+def put_asset(id, data):
+    try:
+        session = Session()
+        asset = (
+            session.query(Asset)
+            .filter(Asset.id == id)
+            .update(data, synchronize_session="fetch")
+        )
+        session.commit()
+        session.close()
+    except Exception as e:
+        raise e
+    return asset
+
+
+# TODO: move session creating and closing out of these individual calls
+def put_object(id, data):
+    try:
+        session = Session()
+        obj = (
+            session.query(Object)
+            .filter(Object.id == id)
+            .update(data, synchronize_session="fetch")
+        )
+        session.commit()
+        session.close()
+    except Exception as e:
+        raise e
+    return obj
+
+
+# TODO: move session creating and closing out of these individual calls
+def put_scenario(id, data):
+    try:
+        session = Session()
+        scenario = (
+            session.query(Scenario)
+            .filter(Scenario.id == id)
+            .update(data, synchronize_session="fetch")
+        )
+        session.commit()
+        session.close()
+    except Exception as e:
+        raise e
+    return scenario
+
+
+# TODO: move session creating and closing out of these individual calls
+def put_scene(id, data):
+    try:
+        session = Session()
+        scene = (
+            session.query(Scene)
+            .filter(Scene.id == id)
+            .update(data, synchronize_session="fetch")
+        )
+        session.commit()
+        session.close()
+    except Exception as e:
+        raise e
+    return scene
+
+
+# TODO: move session creating and closing out of these individual calls
+def put_statistics(id, data):
+    try:
+        session = Session()
+        statistics = (
+            session.query(Statistics)
+            .filter(Statistics.id == id)
+            .update(data, synchronize_session="fetch")
+        )
+        session.commit()
+        session.close()
+    except Exception as e:
+        raise e
+    return statistics
+
+
+# TODO: move session creating and closing out of these individual calls
+def put_text(id, data):
+    try:
+        session = Session()
+        text = (
+            session.query(Text)
+            .filter(Text.id == id)
+            .update(data, synchronize_session="fetch")
+        )
+        session.commit()
+        session.close()
+    except Exception as e:
+        raise e
+    return text
+
+
 def delete_text(id):
     try:
         session = Session()

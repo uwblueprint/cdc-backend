@@ -27,7 +27,7 @@ def create_entity(data):
     session.close()
 
     # return the id to the caller
-    return data.id
+    return data
 
 
 # TODO: move session creating and closing out of these individual calls

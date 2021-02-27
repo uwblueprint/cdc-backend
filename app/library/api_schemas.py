@@ -5,13 +5,14 @@ from config import config
 admin_asset_handler_body_schema = {
     "type": "object",
     "properties": {
-        "display_name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
-        "object_type": {
+        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
+        "obj_type": {
             "enum": config.get("asset.allowed_asset_types"),
         },
-        "s3_prefix": {"type": "string", "pattern": r"^[\S]{1,50}$"},
+        "s3_key": {"type": "string", "pattern": r"^[\S]{1,50}$"},
     },
-    "required": ["display_name", "object_type", "s3_prefix"],
+    "required": ["name", "obj_type", "s3_key"],
+    "additionalProperties": False,
 }
 
 admin_scenario_post_handler_schema = {
@@ -26,6 +27,7 @@ admin_scenario_post_handler_schema = {
         "friendly_name",
         "description",
     ],
+    "additionalProperties": False,
 }
 
 admin_scenario_put_handler_schema = {
@@ -49,6 +51,7 @@ admin_scenario_put_handler_schema = {
         "is_published",
         "is_previewable",
     ],
+    "additionalProperties": False,
 }
 
 admin_scene_post_handler_schema = {
@@ -61,6 +64,7 @@ admin_scene_post_handler_schema = {
         "name",
         "background_id",
     ],
+    "additionalProperties": False,
 }
 
 admin_scene_put_handler_schema = {
@@ -73,6 +77,28 @@ admin_scene_put_handler_schema = {
         "scale": {"type": "array"},
         "rotation": {"type": "array"},
         "background_id": {"type": "integer"},
+        "camera_properties": {
+            "type": "object",
+            "properties": {
+                "position": {"type": "array"},
+                "look_controls": {"type": "bool"},
+                "wasd_controls": {"type": "bool"},
+                "cursor_properties": {
+                    "type": "object",
+                    "properties": {
+                        "asset_id": {"type": "integer"},
+                        "shape": {"type": "string", "pattern": r"^[a-zA-Z _-]{,20}$"},
+                        "position": {"type": "array"},
+                    },
+                    "required": [
+                        "position",
+                    ],
+                },
+            },
+            "required": [
+                "position",
+            ],
+        },
     },
     "required": [
         "name",
@@ -82,7 +108,9 @@ admin_scene_put_handler_schema = {
         "scale",
         "rotation",
         "background_id",
+        "camera_properties",
     ],
+    "additionalProperties": False,
 }
 
 admin_object_handler_schema = {
@@ -107,5 +135,17 @@ admin_object_handler_schema = {
         "is_interactable",
         "animations_json",
     ],
+    "additionalProperties": False,
+}
+
+
+admin_text_handler_schema = {
+    "type": "object",
+    "properties": {
+        "content": {"type": "string"},
+        "object_id": {"type": "integer"},
+        "next_text_id": {"type": "integer"},
+    },
+    "required": ["content", "object_id"],
     "additionalProperties": False,
 }

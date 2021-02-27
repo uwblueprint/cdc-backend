@@ -149,6 +149,18 @@ async def duplicate_scene(scene_id: str):
 
 async def post_object_to_postgres(scene_id: str, data: dict):
     object_model = Object(**data)
+
+    # Ensure each object exists and it is either an object, as postgres won't do validation for us
+    for next_obj in object_model.next_objects:
+        try:
+            await get_object_from_postgres(next_obj["id"])
+        except KeyError:
+            raise ValueError("one of the objects in next_objects is missing id")
+        except ValueError:
+            raise ValueError(
+                "one of the objects in next_objects refers to an invalid id"
+            )
+
     object_model = create_entity(object_model)
 
     return object_model.as_dict()

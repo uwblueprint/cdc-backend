@@ -5,7 +5,7 @@ from config import config
 admin_asset_handler_body_schema = {
     "type": "object",
     "properties": {
-        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
+        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{1,50}$"},
         "obj_type": {
             "enum": config.get("asset.allowed_asset_types"),
         },
@@ -18,8 +18,8 @@ admin_asset_handler_body_schema = {
 admin_scenario_post_handler_schema = {
     "type": "object",
     "properties": {
-        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
-        "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
+        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{1,50}$"},
+        "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z_-]{1,50}$"},
         "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z _-]{,2000}$"},
     },
     "required": [
@@ -33,10 +33,10 @@ admin_scenario_post_handler_schema = {
 admin_scenario_put_handler_schema = {
     "type": "object",
     "properties": {
-        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
-        "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
+        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{1,50}$"},
+        "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z_-]{1,50}$"},
         "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z _-]{,2000}$"},
-        "scene_ids": {"type": "array"},
+        "scene_ids": {"type": "array", "items": {"type": "integer"}},
         "is_published": {"type": "boolean"},
         "is_previewable": {"type": "boolean"},
         "publish_link": {"type": "string", "pattern": r"^[\S]{1,50}$"},
@@ -57,8 +57,9 @@ admin_scenario_put_handler_schema = {
 admin_scene_post_handler_schema = {
     "type": "object",
     "properties": {
-        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
+        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{1,50}$"},
         "background_id": {"type": "integer"},
+        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z _-]{,2000}$"},
     },
     "required": [
         "name",
@@ -70,34 +71,32 @@ admin_scene_post_handler_schema = {
 admin_scene_put_handler_schema = {
     "type": "object",
     "properties": {
-        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{,50}$"},
+        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{1,50}$"},
         "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z _-]{,2000}$"},
-        "object_ids": {"type": "array"},
-        "position": {"type": "array"},
-        "scale": {"type": "array"},
-        "rotation": {"type": "array"},
+        "object_ids": {"type": "array", "items": {"type": "integer"}},
+        "position": {"type": "array", "items": {"type": "number"}},
+        "scale": {"type": "array", "items": {"type": "number"}},
+        "rotation": {"type": "array", "items": {"type": "number"}},
         "background_id": {"type": "integer"},
         "camera_properties": {
             "type": "object",
             "properties": {
-                "position": {"type": "array"},
+                "position": {"type": "array", "items": {"type": "number"}},
                 "look_controls": {"type": "bool"},
                 "wasd_controls": {"type": "bool"},
                 "cursor_properties": {
                     "type": "object",
                     "properties": {
                         "asset_id": {"type": "integer"},
-                        "shape": {"type": "string", "pattern": r"^[a-zA-Z _-]{,20}$"},
-                        "position": {"type": "array"},
+                        "shape": {"type": "string", "pattern": r"^[a-zA-Z _-]{1,20}$"},
+                        "position": {"type": "array", "items": {"type": "number"}},
                     },
                     "required": [
                         "position",
                     ],
                 },
             },
-            "required": [
-                "position",
-            ],
+            "required": ["look_controls", "position", "wasd_controls"],
         },
     },
     "required": [
@@ -120,9 +119,10 @@ admin_object_handler_schema = {
         "scale": {"type": "array", "items": {"type": "number"}},
         "rotation": {"type": "array", "items": {"type": "number"}},
         "asset_id": {"type": "integer"},
-        "next_objects": {"type": "array"},
+        "next_objects": {"type": "array", "items": {"type": "object"}},
         "text_id": {"type": "integer"},
         "is_interactable": {"type": "boolean"},
+        # TODO: validate animations_json once frontend is more developed
         "animations_json": {"type": "object"},
     },
     "required": [
@@ -133,7 +133,6 @@ admin_object_handler_schema = {
         "next_objects",
         "text_id",
         "is_interactable",
-        "animations_json",
     ],
     "additionalProperties": False,
 }
@@ -142,9 +141,9 @@ admin_object_handler_schema = {
 admin_text_handler_schema = {
     "type": "object",
     "properties": {
-        "content": {"type": "string"},
-        "object_id": {"type": "integer"},
+        "content": {"type": "string", "pattern": r"^[\S\s]{1,2000}$"},
         "next_text_id": {"type": "integer"},
+        "object_id": {"type": "integer"},
     },
     "required": ["content", "object_id"],
     "additionalProperties": False,

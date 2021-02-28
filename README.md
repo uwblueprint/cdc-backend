@@ -15,7 +15,7 @@ todo
 Project Lead: [Ahmed Hamodi](https://github.com/ahmedhamodi)\
 Product Manager: [Aaron Abraham](https://github.com/aaronabraham311)\
 Designers: [Jack Zhang](https://github.com/fakesquid), [Kouthar Waled](https://github.com/kouthar)\
-Developers: [Jay Dhulia](https://github.com/jaydhulia), [Dhruvin Balar](https://github.com/drbalar), [Vivian Liu](https://github.com/vivianliu0), [Kevin Hu](https://github.com/andstun)
+Developers: [Jay Dhulia](https://github.com/jaydhulia), [Dhruvin Balar](https://github.com/drbalar), [Amolik Singh](https://github.com/amoliksingh), [Vivian Liu](https://github.com/vivianliu0), [Kevin Hu](https://github.com/andstun)
 
 ---
 

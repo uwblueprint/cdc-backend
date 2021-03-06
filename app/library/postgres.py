@@ -2,6 +2,7 @@ from models.asset import Asset
 from models.db_client import (
     create_entity,
     delete_asset,
+    delete_object,
     delete_scenario,
     delete_scene,
     get_asset,
@@ -135,6 +136,16 @@ async def update_scene_from_postgres(scene_id: str, data: dict):
 
 
 async def delete_scene_from_postgres(scene_id: str):
+    # Get scene first
+    scene_obj: Scene = get_scene(scene_id)
+    if scene_obj is None:
+        raise ValueError("Invalid Scene ID")
+
+    # Delete all objects in the scene
+    for object_id in scene_obj.object_ids:
+        await delete_object_in_postgres(scene_id, object_id)
+
+    # Delete the scene
     if not delete_scene(scene_id):
         raise ValueError("Scene ID not valid")
 
@@ -174,15 +185,50 @@ async def post_object_to_postgres(scene_id: str, data: dict):
                 "one of the objects in next_objects refers to an invalid id"
             )
 
+    # Make sure the scene exists
+    scene_obj: Scene = get_scene(scene_id)
+    if scene_obj is None:
+        raise ValueError("Invalid Scene ID")
+
     object_model = create_entity(object_model)
+
+    # Add object to the scene
+    scene_obj.object_ids.append(object_model.id)
+    put_scene(scene_id, scene_obj.as_dict())
 
     return object_model.as_dict()
 
 
 async def update_object_in_postgres(scene_id: str, object_id: str, data: dict):
-    # TODO add object id to scene's list of objects
-    put_object(object_id, data)
+    num_objects_updated = put_object(object_id, data)
+    if num_objects_updated == 0:
+        raise ValueError("Invalid Object ID")
+
     return await get_object_from_postgres(object_id)
+
+
+async def delete_object_in_postgres(scene_id: str, object_id: str):
+    # Make sure the scene exists
+    scene_obj: Scene = get_scene(scene_id)
+    if scene_obj is None:
+        raise ValueError("Invalid Scene ID")
+
+    object_model = await get_object_from_postgres(object_id)
+
+    if not delete_object(object_id):
+        raise ValueError("Object ID not valid")
+
+    # Remove object from the scene
+    if int(object_id) in scene_obj.object_ids:
+        scene_obj.object_ids.remove(int(object_id))
+        put_scene(scene_id, scene_obj.as_dict())
+
+    # Delete any texts associated with the object
+    if object_model["text_id"]:
+        await delete_text_from_postgres(scene_id, object_model["text_id"])
+
+    response = {"message": "Deleted successfully"}
+    return response
 
 
 async def post_text_to_postgres(scene_id: str, data: dict):
@@ -197,6 +243,6 @@ async def put_text_to_postgres(scene_id: str, text_id: str, data: dict):
     return {"sample": "response"}
 
 
-async def delete_text_from_postgres(scene_id: str, text_id: str, data: dict):
+async def delete_text_from_postgres(scene_id: str, text_id: str):
     # TODO: actual DELETE from postgres
     return {"sample": "response"}

@@ -131,7 +131,6 @@ admin_object_handler_schema = {
         "rotation",
         "asset_id",
         "next_objects",
-        "text_id",
         "is_interactable",
     ],
     "additionalProperties": False,

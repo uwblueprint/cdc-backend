@@ -3,6 +3,7 @@ from models.db_client import (
     create_entity,
     delete_asset,
     delete_scenario,
+    delete_scene,
     get_asset,
     get_object,
     get_scenario,
@@ -127,8 +128,18 @@ async def post_scene_to_postgres(data: dict):
 
 
 async def update_scene_from_postgres(scene_id: str, data: dict):
-    put_scene(scene_id, data)
+    num_scenes_updated = put_scene(scene_id, data)
+    if num_scenes_updated == 0:
+        raise ValueError("Invalid scene ID")
     return await get_scene_from_postgres(scene_id)
+
+
+async def delete_scene_from_postgres(scene_id: str):
+    if not delete_scene(scene_id):
+        raise ValueError("Scene ID not valid")
+
+    response = {"message": "Deleted successfully"}
+    return response
 
 
 async def duplicate_scenario(scenario_id: str):

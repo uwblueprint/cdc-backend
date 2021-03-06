@@ -57,8 +57,8 @@ class AdminAssetHandler(BaseAdminAPIHandler):
             response_message = await delete_asset_from_postgres(id)
             await self.finish(response_message)
 
-        except ValueError:
-            self.write_error(status_code=404, message="Asset ID not valid")
+        except ValueError as e:
+            self.write_error(status_code=404, message=str(e))
         except Exception as e:
             self.write_error(status_code=500, message=str(e))
 
@@ -74,7 +74,7 @@ class AdminAssetHandler(BaseAdminAPIHandler):
             response_message = await update_asset_from_postgres(id, data)
             await self.finish(response_message)
 
-        except ValueError:
-            self.write_error(status_code=404, message="Asset ID not valid")
+        except ValueError as e:
+            self.write_error(status_code=404, message=str(e))
         except Exception as e:
             self.write_error(status_code=500, message=str(e))

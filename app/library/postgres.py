@@ -76,18 +76,18 @@ async def get_asset_from_postgres(asset_id: str):
 
 
 async def delete_asset_from_postgres(asset_id: str):
-    did_delete = delete_asset(asset_id)
+    if not delete_asset(asset_id):
+        raise ValueError("Asset ID not valid")
 
-    if did_delete:
-        response = {"message": "deleted successfully"}
-    else:
-        response = {"message": "asset id " + asset_id + " not found"}
+    response = {"message": "Deleted successfully"}
     return response
 
 
 async def update_asset_from_postgres(asset_id: str, data: dict):
-    put_asset(asset_id, data)
-    return get_asset_from_postgres(asset_id)
+    num_assets_updated = put_asset(asset_id, data)
+    if num_assets_updated == 0:
+        raise ValueError("Invalid Asset ID")
+    return await get_asset_from_postgres(asset_id)
 
 
 async def post_scenario_to_postgres(data: dict):

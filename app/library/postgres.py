@@ -2,6 +2,7 @@ from models.asset import Asset
 from models.db_client import (
     create_entity,
     delete_asset,
+    delete_scenario,
     get_asset,
     get_object,
     get_scenario,
@@ -105,14 +106,17 @@ async def get_scenario_from_postgres(scenario_id: str):
 
 
 async def delete_scenario_from_postgres(scenario_id: str):
-    # TODO: delete from postgres
+    if not delete_scenario(scenario_id):
+        raise ValueError("Scenario ID not valid")
 
-    sample_response = {"message": "deleted successfully"}
-    return sample_response
+    response = {"message": "Deleted successfully"}
+    return response
 
 
 async def update_scenario_from_postgres(scenario_id: str, data: dict):
-    put_scenario(scenario_id, data)
+    num_scenarios_updated = put_scenario(scenario_id, data)
+    if num_scenarios_updated == 0:
+        raise ValueError("Invalid Scenario ID")
     return await get_scenario_from_postgres(scenario_id)
 
 

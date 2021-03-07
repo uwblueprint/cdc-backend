@@ -78,10 +78,7 @@ table_creation_commands = [
             scenario_id BIGINT,
             scene_id BIGINT,
             object_id BIGINT,
-            stats JSONB NOT NULL,
-            FOREIGN KEY (scenario_id) REFERENCES scenario (id),
-            FOREIGN KEY (scene_id) REFERENCES scene (id),
-            FOREIGN KEY (object_id) REFERENCES object (id)
+            stats JSONB NOT NULL
         )
     """,
 ]

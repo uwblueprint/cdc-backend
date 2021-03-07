@@ -82,8 +82,8 @@ admin_scene_put_handler_schema = {
             "type": "object",
             "properties": {
                 "position": {"type": "array", "items": {"type": "number"}},
-                "look_controls": {"type": "bool"},
-                "wasd_controls": {"type": "bool"},
+                "look_controls": {"type": "boolean"},
+                "wasd_controls": {"type": "boolean"},
                 "cursor_properties": {
                     "type": "object",
                     "properties": {
@@ -131,7 +131,6 @@ admin_object_handler_schema = {
         "rotation",
         "asset_id",
         "next_objects",
-        "text_id",
         "is_interactable",
     ],
     "additionalProperties": False,

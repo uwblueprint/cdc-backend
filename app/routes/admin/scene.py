@@ -5,6 +5,7 @@ from library.api_schemas import (
     admin_scene_put_handler_schema,
 )
 from library.postgres import (
+    delete_scene_from_postgres,
     duplicate_scene,
     get_scene_from_postgres,
     post_scene_to_postgres,
@@ -65,8 +66,20 @@ class AdminSceneHandler(BaseAdminAPIHandler):
             response_message = await update_scene_from_postgres(id, data)
             await self.finish(response_message)
 
-        except ValueError:
-            self.write_error(status_code=404, message="Scene ID not valid")
+        except ValueError as e:
+            self.write_error(status_code=404, message=str(e))
+        except Exception as e:
+            self.write_error(status_code=500, message=str(e))
+
+    async def delete(self, id):
+        # Validate that id is valid
+
+        try:
+            response_message = await delete_scene_from_postgres(id)
+            await self.finish(response_message)
+
+        except ValueError as e:
+            self.write_error(status_code=404, message=str(e))
         except Exception as e:
             self.write_error(status_code=500, message=str(e))
 

@@ -66,6 +66,7 @@ table_creation_commands = [
             asset_id BIGINT NOT NULL,
             next_objects JSONB[],
             text_id BIGINT,
+            texts TEXT[] NOT NULL,
             is_interactable BOOLEAN NOT NULL,
             animations_json JSONB NOT NULL,
             FOREIGN KEY (asset_id) REFERENCES asset (id),

@@ -2,12 +2,16 @@ from typing import Any
 
 import tornado.httputil as httputil
 import tornado.web
+from models import get_session, return_session
 
 
 class BaseAPIHandler(tornado.web.RequestHandler):
     """
     Base handler for all api/* routes
     """
+
+    def prepare(self):
+        self.session = get_session()
 
     def set_default_headers(self) -> None:
         self.set_header("Content-Type", "application/json")
@@ -19,6 +23,9 @@ class BaseAPIHandler(tornado.web.RequestHandler):
         self.set_status(status_code)
         response_error = {"status": status_code, "title": title, "message": message}
         self.finish(response_error)
+
+    def on_finish(self):
+        return_session(self.session)
 
 
 class BaseAdminAPIHandler(BaseAPIHandler):

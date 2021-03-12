@@ -11,7 +11,7 @@ class UserScenarioHandler(BaseUserAPIHandler):
         # Validate that id is valid
 
         try:
-            scenario_obj = await get_scenario_from_postgres(id)
+            scenario_obj = await get_scenario_from_postgres(id, self.session)
             await self.finish(scenario_obj)
 
         except ValueError as e:

@@ -11,8 +11,16 @@ password = config.get("postgres.password", "")
 db_url = config.get("postgres.db_url").format(
     user=user, password=password, database=database, hostname=hostname
 )
-engine = create_engine(db_url, pool_size=20, max_overflow=5)
+engine = create_engine(db_url, pool_size=2, max_overflow=1)
 
 Session = sessionmaker(bind=engine)
 
 Base = declarative_base()
+
+
+def get_session():
+    return Session()
+
+
+def return_session(session):
+    session.close()

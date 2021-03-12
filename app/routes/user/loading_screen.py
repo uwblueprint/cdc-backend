@@ -11,7 +11,7 @@ class UserLoadingScreen(BaseUserAPIHandler):
         # Validate that id is valid
 
         try:
-            response_dict = await get_loading_screen_from_postgres()
+            response_dict = await get_loading_screen_from_postgres(self.session)
             await self.finish(response_dict)
 
         except ValueError:

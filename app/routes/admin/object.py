@@ -22,7 +22,7 @@ class AdminObjectPostHandler(BaseAdminAPIHandler):
             # validate body
             validate(data, schema=admin_object_handler_schema)
 
-            inserted_obj = await post_object_to_postgres(scene_id, data)
+            inserted_obj = await post_object_to_postgres(scene_id, data, self.session)
 
             await self.finish(inserted_obj)
 
@@ -47,7 +47,7 @@ class AdminObjectPutHandler(BaseAdminAPIHandler):
             validate(data, schema=admin_object_handler_schema)
 
             response_message = await update_object_in_postgres(
-                scene_id, object_id, data
+                scene_id, object_id, data, self.session
             )
             await self.finish(response_message)
 
@@ -59,7 +59,9 @@ class AdminObjectPutHandler(BaseAdminAPIHandler):
     async def delete(self, scene_id, object_id):
 
         try:
-            response_message = await delete_object_in_postgres(scene_id, object_id)
+            response_message = await delete_object_in_postgres(
+                scene_id, object_id, self.session
+            )
             await self.finish(response_message)
 
         except ValueError as e:

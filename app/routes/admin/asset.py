@@ -23,7 +23,7 @@ class AdminAssetPostHandler(BaseAdminAPIHandler):
             # validate body
             validate(data, schema=admin_asset_handler_body_schema)
 
-            inserted_asset = await post_asset_to_postgres(data)
+            inserted_asset = await post_asset_to_postgres(data, self.session)
 
             await self.finish(inserted_asset)
 
@@ -42,7 +42,7 @@ class AdminAssetHandler(BaseAdminAPIHandler):
         # Validate that id is valid
 
         try:
-            response_dict = await get_asset_from_postgres(id)
+            response_dict = await get_asset_from_postgres(id, self.session)
             await self.finish(response_dict)
 
         except ValueError:
@@ -54,7 +54,7 @@ class AdminAssetHandler(BaseAdminAPIHandler):
         # Validate that id is valid
 
         try:
-            response_message = await delete_asset_from_postgres(id)
+            response_message = await delete_asset_from_postgres(id, self.session)
             await self.finish(response_message)
 
         except ValueError as e:
@@ -71,7 +71,7 @@ class AdminAssetHandler(BaseAdminAPIHandler):
             # validate body
             validate(data, schema=admin_asset_handler_body_schema)
 
-            response_message = await update_asset_from_postgres(id, data)
+            response_message = await update_asset_from_postgres(id, data, self.session)
             await self.finish(response_message)
 
         except ValueError as e:

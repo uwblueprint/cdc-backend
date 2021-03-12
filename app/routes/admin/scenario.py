@@ -27,7 +27,7 @@ class AdminScenarioPostHandler(BaseAdminAPIHandler):
             # validate body
             validate(data, schema=admin_scenario_post_handler_schema)
 
-            scenario_obj = await post_scenario_to_postgres(data)
+            scenario_obj = await post_scenario_to_postgres(data, self.session)
 
             await self.finish(scenario_obj)
 
@@ -46,7 +46,7 @@ class AdminScenarioHandler(BaseAdminAPIHandler):
         # Validate that id is valid
 
         try:
-            scenario_obj = await get_scenario_from_postgres(id)
+            scenario_obj = await get_scenario_from_postgres(id, self.session)
             await self.finish(scenario_obj)
 
         except ValueError as e:
@@ -58,7 +58,7 @@ class AdminScenarioHandler(BaseAdminAPIHandler):
         # Validate that id is valid
 
         try:
-            response_message = await delete_scenario_from_postgres(id)
+            response_message = await delete_scenario_from_postgres(id, self.session)
             await self.finish(response_message)
 
         except ValueError as e:
@@ -75,7 +75,9 @@ class AdminScenarioHandler(BaseAdminAPIHandler):
             # validate body
             validate(data, schema=admin_scenario_put_handler_schema)
 
-            response_message = await update_scenario_from_postgres(id, data)
+            response_message = await update_scenario_from_postgres(
+                id, data, self.session
+            )
             await self.finish(response_message)
 
         except ValueError as e:
@@ -93,7 +95,7 @@ class AdminScenarioDuplicateHandler(BaseAdminAPIHandler):
 
         try:
 
-            response = await duplicate_scenario(id)
+            response = await duplicate_scenario(id, self.session)
 
             await self.finish(response)
 

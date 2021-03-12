@@ -11,7 +11,7 @@ class UserTextHandler(BaseUserAPIHandler):
         # Validate that id is valid
 
         try:
-            response_dict = await get_text_from_postgres(id, self.session)
+            response_dict = await get_text_from_postgres(id, self.db_session)
             await self.finish(response_dict)
 
         except ValueError:

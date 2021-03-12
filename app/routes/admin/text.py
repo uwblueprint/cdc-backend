@@ -23,7 +23,7 @@ class AdminTextPostHandler(BaseAdminAPIHandler):
             # validate body
             validate(data, schema=admin_text_handler_schema)
 
-            inserted_obj = await post_text_to_postgres(scene_id, data, self.session)
+            inserted_obj = await post_text_to_postgres(scene_id, data, self.db_session)
 
             await self.finish(inserted_obj)
 
@@ -42,7 +42,7 @@ class AdminTextHandler(BaseAdminAPIHandler):
         # Validate that id is valid
 
         try:
-            response_dict = await get_text_from_postgres(text_id, self.session)
+            response_dict = await get_text_from_postgres(text_id, self.db_session)
             await self.finish(response_dict)
 
         except ValueError as e:
@@ -60,7 +60,7 @@ class AdminTextHandler(BaseAdminAPIHandler):
             validate(data, schema=admin_text_handler_schema)
 
             response_message = await put_text_to_postgres(
-                scene_id, text_id, data, self.session
+                scene_id, text_id, data, self.db_session
             )
             await self.finish(response_message)
 

@@ -10,7 +10,7 @@ class UserSolvedHandler(BaseUserAPIHandler):
     async def get(self, id):
 
         try:
-            next_objects = await get_solved_from_postgres(id, self.session)
+            next_objects = await get_solved_from_postgres(id, self.db_session)
             await self.finish({"next_objects": next_objects})
 
         except ValueError:

@@ -27,7 +27,7 @@ class AdminScenePostHandler(BaseAdminAPIHandler):
             # validate body
             validate(data, schema=admin_scene_post_handler_schema)
 
-            id_inserted = await post_scene_to_postgres(data, self.session)
+            id_inserted = await post_scene_to_postgres(data, self.db_session)
 
             await self.finish({"id": id_inserted})
 
@@ -46,7 +46,7 @@ class AdminSceneHandler(BaseAdminAPIHandler):
         # Validate that id is valid
 
         try:
-            response_dict = await get_scene_from_postgres(id, self.session)
+            response_dict = await get_scene_from_postgres(id, self.db_session)
             await self.finish(response_dict)
 
         except ValueError:
@@ -63,7 +63,9 @@ class AdminSceneHandler(BaseAdminAPIHandler):
             # validate body
             validate(data, schema=admin_scene_put_handler_schema)
 
-            response_message = await update_scene_from_postgres(id, data, self.session)
+            response_message = await update_scene_from_postgres(
+                id, data, self.db_session
+            )
             await self.finish(response_message)
 
         except ValueError as e:
@@ -75,7 +77,7 @@ class AdminSceneHandler(BaseAdminAPIHandler):
         # Validate that id is valid
 
         try:
-            response_message = await delete_scene_from_postgres(id, self.session)
+            response_message = await delete_scene_from_postgres(id, self.db_session)
             await self.finish(response_message)
 
         except ValueError as e:
@@ -93,7 +95,7 @@ class AdminSceneDuplicateHandler(BaseAdminAPIHandler):
 
         try:
 
-            response = await duplicate_scene(id, self.session)
+            response = await duplicate_scene(id, self.db_session)
 
             await self.finish(response)
 

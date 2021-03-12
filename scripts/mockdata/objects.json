@@ -13,7 +13,7 @@
         }
       }
     ],
-    "text_id": 1,
+    "texts": ["", "hello", "from the other side"],
     "is_interactable": false,
     "animations_json": {}
   },
@@ -45,7 +45,7 @@
         }
       }
     ],
-    "text_id": 3,
+    "texts": ["", "hello", "kenobi"],
     "is_interactable": true,
     "animations_json": {}
   },
@@ -55,7 +55,7 @@
     "rotation": [0.1, 0.5, 0.1],
     "asset_id": 3,
     "next_objects": [],
-    "text_id": 2,
+    "texts": ["", "my", "name"],
     "is_interactable": false,
     "animations_json": {}
   }

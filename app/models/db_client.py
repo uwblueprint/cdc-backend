@@ -8,7 +8,6 @@ from models.text import Text
 from . import Base, engine
 
 
-# TODO: move session creating and closing out of these individual calls
 def create_entity(data, session):
     # create the session
     Base.metadata.create_all(engine)
@@ -26,19 +25,16 @@ def create_entity(data, session):
     return data
 
 
-# TODO: move session creating and closing out of these individual calls
 def get_assets(session):
     assets = session.query(Asset).all()
     return assets
 
 
-# TODO: move session creating and closing out of these individual calls
 def get_asset(id, session):
     asset = session.query(Asset).get(id)
     return asset
 
 
-# TODO: move session creating and closing out of these individual calls
 def delete_asset(id, session):
     try:
         exists = session.query(Asset).filter(Asset.id == id).first() is not None
@@ -52,19 +48,16 @@ def delete_asset(id, session):
     return exists
 
 
-# TODO: move session creating and closing out of these individual calls
 def get_objects(session):
     objects = session.query(Object).all()
     return objects
 
 
-# TODO: move session creating and closing out of these individual calls
 def get_object(id, session):
     obj = session.query(Object).get(id)
     return obj
 
 
-# TODO: move session creating and closing out of these individual calls
 def delete_object(id, session):
     try:
         exists = session.query(Object).filter(Object.id == id).first() is not None
@@ -78,19 +71,16 @@ def delete_object(id, session):
     return exists
 
 
-# TODO: move session creating and closing out of these individual calls
 def get_scenarios(session):
     scenarios = session.query(Scenario).all()
     return scenarios
 
 
-# TODO: move session creating and closing out of these individual calls
 def get_scenario(id, session):
     scenario = session.query(Scenario).get(id)
     return scenario
 
 
-# TODO: move session creating and closing out of these individual calls
 def delete_scenario(id, session):
     try:
         exists = session.query(Scenario).filter(Scenario.id == id).first() is not None
@@ -104,19 +94,16 @@ def delete_scenario(id, session):
     return exists
 
 
-# TODO: move session creating and closing out of these individual calls
 def get_scenes(session):
     scenes = session.query(Scene).all()
     return scenes
 
 
-# TODO: move session creating and closing out of these individual calls
 def get_scene(id, session):
     scene = session.query(Scene).get(id)
     return scene
 
 
-# TODO: move session creating and closing out of these individual calls
 def delete_scene(id, session):
     try:
         exists = session.query(Scene).filter(Scene.id == id).first() is not None
@@ -130,19 +117,16 @@ def delete_scene(id, session):
     return exists
 
 
-# TODO: move session creating and closing out of these individual calls
 def get_statistics(session):
     stats = session.query(Statistics).all()
     return stats
 
 
-# TODO: move session creating and closing out of these individual calls
 def get_statistic(id, session):
     stat = session.query(Statistics).get(id)
     return stat
 
 
-# TODO: move session creating and closing out of these individual calls
 def delete_statistic(id, session):
     try:
         exists = (
@@ -158,19 +142,16 @@ def delete_statistic(id, session):
     return exists
 
 
-# TODO: move session creating and closing out of these individual calls
 def get_texts(session):
     texts = session.query(Text).all()
     return texts
 
 
-# TODO: move session creating and closing out of these individual calls
 def get_text(id, session):
     text = session.query(Text).get(id)
     return text
 
 
-# TODO: move session creating and closing out of these individual calls
 def put_asset(id, data, session):
     try:
         asset = (
@@ -184,7 +165,6 @@ def put_asset(id, data, session):
     return asset
 
 
-# TODO: move session creating and closing out of these individual calls
 def put_object(id, data, session):
     try:
         obj = (
@@ -198,7 +178,6 @@ def put_object(id, data, session):
     return obj
 
 
-# TODO: move session creating and closing out of these individual calls
 def put_scenario(id, data, session):
     try:
         scenario = (
@@ -212,7 +191,6 @@ def put_scenario(id, data, session):
     return scenario
 
 
-# TODO: move session creating and closing out of these individual calls
 def put_scene(id, data, session):
     try:
         scene = (
@@ -226,7 +204,6 @@ def put_scene(id, data, session):
     return scene
 
 
-# TODO: move session creating and closing out of these individual calls
 def put_statistics(id, data, session):
     try:
         statistics = (
@@ -240,7 +217,6 @@ def put_statistics(id, data, session):
     return statistics
 
 
-# TODO: move session creating and closing out of these individual calls
 def put_text(id, data, session):
     try:
         text = (

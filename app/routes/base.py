@@ -43,10 +43,16 @@ class BaseUserAPIHandler(BaseAPIHandler):
     """
 
 
-class NotFoundHandler(BaseAPIHandler):
+class NotFoundHandler(tornado.web.RequestHandler):
     """
     Base handler for all invalid routes
     """
 
     async def prepare(self):
-        self.write_error(status_code=404, message="Invalid Path")
+        self.set_header("Content-Type", "application/problem+json")
+        title = "Not Found"
+        message = "Invalid Path"
+        status_code = 404
+        self.set_status(status_code)
+        response_error = {"status": status_code, "title": title, "message": message}
+        await self.finish(response_error)

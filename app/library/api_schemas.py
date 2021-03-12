@@ -120,7 +120,6 @@ admin_object_handler_schema = {
         "rotation": {"type": "array", "items": {"type": "number"}},
         "asset_id": {"type": "integer"},
         "next_objects": {"type": "array", "items": {"type": "object"}},
-        "text_id": {"type": "integer"},
         "texts": {
             "type": "array",
             "items": {"type": "string", "pattern": r"^[\S\s]{0,2000}$"},

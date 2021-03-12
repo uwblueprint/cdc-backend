@@ -65,12 +65,10 @@ table_creation_commands = [
             rotation DOUBLE PRECISION[] NOT NULL,
             asset_id BIGINT NOT NULL,
             next_objects JSONB[],
-            text_id BIGINT,
             texts TEXT[] NOT NULL,
             is_interactable BOOLEAN NOT NULL,
             animations_json JSONB NOT NULL,
-            FOREIGN KEY (asset_id) REFERENCES asset (id),
-            FOREIGN KEY (text_id) REFERENCES text (id)
+            FOREIGN KEY (asset_id) REFERENCES asset (id)
         )
     """,
     """
@@ -97,3 +95,5 @@ for command in table_creation_commands:
 
 cur.close()
 conn.commit()
+
+print("CREATE TABLE script completed successfully")

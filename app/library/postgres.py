@@ -214,8 +214,6 @@ async def delete_object_in_postgres(scene_id: str, object_id: str, session):
     if scene_obj is None:
         raise ValueError("Invalid Scene ID")
 
-    object_model = await get_object_from_postgres(object_id, session)
-
     if not delete_object(object_id, session):
         raise ValueError("Object ID not valid")
 
@@ -223,10 +221,6 @@ async def delete_object_in_postgres(scene_id: str, object_id: str, session):
     if int(object_id) in scene_obj.object_ids:
         scene_obj.object_ids.remove(int(object_id))
         put_scene(scene_id, scene_obj.as_dict(), session)
-
-    # Delete any texts associated with the object
-    if object_model["text_id"]:
-        await delete_text_from_postgres(scene_id, object_model["text_id"])
 
     response = {"message": "Deleted successfully"}
     return response

@@ -11,7 +11,7 @@ class BaseAPIHandler(tornado.web.RequestHandler):
     """
 
     def prepare(self):
-        self.session = get_session()
+        self.db_session = get_session()
 
     def set_default_headers(self) -> None:
         self.set_header("Content-Type", "application/json")
@@ -25,7 +25,7 @@ class BaseAPIHandler(tornado.web.RequestHandler):
         self.finish(response_error)
 
     def on_finish(self):
-        return_session(self.session)
+        return_session(self.db_session)
 
 
 class BaseAdminAPIHandler(BaseAPIHandler):

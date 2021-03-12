@@ -11,7 +11,7 @@ class UserAssetHandler(BaseUserAPIHandler):
         # Validate that id is valid
 
         try:
-            response_dict = await get_asset_from_postgres(id)
+            response_dict = await get_asset_from_postgres(id, self.db_session)
             await self.finish(response_dict)
 
         except ValueError:

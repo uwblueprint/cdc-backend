@@ -3,7 +3,6 @@ from models.object import Object
 from models.scenario import Scenario
 from models.scene import Scene
 from models.statistics import Statistics
-from models.text import Text
 
 from . import Base, engine
 
@@ -142,16 +141,6 @@ def delete_statistic(id, session):
     return exists
 
 
-def get_texts(session):
-    texts = session.query(Text).all()
-    return texts
-
-
-def get_text(id, session):
-    text = session.query(Text).get(id)
-    return text
-
-
 def put_asset(id, data, session):
     try:
         asset = (
@@ -215,29 +204,3 @@ def put_statistics(id, data, session):
     except Exception as e:
         raise e
     return statistics
-
-
-def put_text(id, data, session):
-    try:
-        text = (
-            session.query(Text)
-            .filter(Text.id == id)
-            .update(data, synchronize_session="fetch")
-        )
-        session.commit()
-    except Exception as e:
-        raise e
-    return text
-
-
-def delete_text(id, session):
-    try:
-        exists = session.query(Text).filter(Text.id == id).first() is not None
-        if exists:
-            session.query(Text).filter(Text.id == id).delete()
-            session.commit()
-
-    except Exception as e:
-        raise e
-
-    return exists

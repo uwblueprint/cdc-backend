@@ -22,6 +22,5 @@ script:
     - asset
     - scenario
     - scene
-    - text
     - object
     - statistics

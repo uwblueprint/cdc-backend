@@ -1,5 +1,5 @@
 from models.asset import Asset
-from models.db_client import (  # delete_text,
+from models.db_client import (
     create_entity,
     delete_asset,
     delete_object,
@@ -9,25 +9,14 @@ from models.db_client import (  # delete_text,
     get_object,
     get_scenario,
     get_scene,
-    get_text,
     put_asset,
     put_object,
     put_scenario,
     put_scene,
-    put_text,
 )
 from models.object import Object
 from models.scenario import Scenario
 from models.scene import Scene
-from models.text import Text
-
-
-async def get_text_from_postgres(text_id: str, session):
-    text_obj = get_text(text_id, session)
-    if text_obj is None:
-        raise ValueError("Invalid Text ID")
-
-    return text_obj.as_dict()
 
 
 async def get_solved_from_postgres(object_id: str, session):
@@ -222,48 +211,5 @@ async def delete_object_in_postgres(scene_id: str, object_id: str, session):
         scene_obj.object_ids.remove(int(object_id))
         put_scene(scene_id, scene_obj.as_dict(), session)
 
-    response = {"message": "Deleted successfully"}
-    return response
-
-
-async def post_text_to_postgres(scene_id: str, data: dict, session):
-    text_obj = Text(**data)
-    text_obj = create_entity(text_obj, session)
-
-    return text_obj.as_dict()
-
-
-async def put_text_to_postgres(scene_id: str, text_id: str, data: dict, session):
-    num_texts_updated = put_text(text_id, data, session)
-    if num_texts_updated == 0:
-        raise ValueError("Invalid Text ID")
-
-    return await get_text_from_postgres(text_id, session)
-
-
-async def delete_text_from_postgres(
-    scene_id: str, text_id: str, obj_model: Object = None
-):
-    # # ensure that it exists
-    # text_obj: Text = get_text(text_id)
-    # if text_obj is None:
-    #     raise ValueError("Invalid Text ID")
-    #
-    # # Remove reference from object if it exists and references this text
-    # if not obj_model:
-    #     obj_model = get_object(text_obj.object_id)
-    #
-    # if obj_model and obj_model.text_id == int(text_id, session):
-    #     obj_model.text_id = None
-    #     put_object(obj_model.id, obj_model.as_dict())
-    #
-    # if not delete_text(text_id, session):
-    #     raise ValueError("Text ID not valid")
-    #
-    # # Recursively delete the next texts in the list
-    # if text_obj.next_text_id:
-    #     await delete_text_from_postgres(scene_id, str(text_obj.next_text_id), obj_model)
-
-    # TODO: this will most likely need more discussion and schema changes
     response = {"message": "Deleted successfully"}
     return response

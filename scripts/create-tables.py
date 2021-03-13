@@ -49,15 +49,6 @@ table_creation_commands = [
         )
     """,
     """
-        CREATE TABLE text (
-            id SERIAL PRIMARY KEY,
-            content text NOT NULL,
-            next_text_id BIGINT,
-            object_id BIGINT NOT NULL,
-            FOREIGN KEY (next_text_id) REFERENCES text (id)
-        )
-    """,
-    """
         CREATE TABLE object (
             id SERIAL PRIMARY KEY,
             position DOUBLE PRECISION[] NOT NULL,

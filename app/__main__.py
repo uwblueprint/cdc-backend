@@ -16,20 +16,17 @@ from routes.admin.scene import (
     AdminSceneHandler,
     AdminScenePostHandler,
 )
-from routes.admin.text import AdminTextHandler, AdminTextPostHandler
 from routes.base import NotFoundHandler
 from routes.user.asset import UserAssetHandler
 from routes.user.loading_screen import UserLoadingScreen
 from routes.user.scenario import UserScenarioHandler
 from routes.user.scene import UserSceneHandler
 from routes.user.solved import UserSolvedHandler
-from routes.user.text import UserTextHandler
 from tornado.platform.asyncio import AsyncIOMainLoop
 
 
 def get_routes():
     routes = [
-        (r"/api/user/v1/text/([0-9]{1,16})", UserTextHandler),
         (r"/api/user/v1/solved/([0-9]{1,16})", UserSolvedHandler),
         (r"/api/user/v1/asset/([0-9]{1,16})", UserAssetHandler),
         (r"/api/user/v1/scene/([0-9]{1,16})", UserSceneHandler),
@@ -49,11 +46,6 @@ def get_routes():
         (
             r"/api/admin/v1/scene/([0-9]{1,16})/object/([0-9]{1,16})",
             AdminObjectPutHandler,
-        ),
-        (r"/api/admin/v1/scene/([0-9]{1,16})/text", AdminTextPostHandler),
-        (
-            r"/api/admin/v1/scene/([0-9]{1,16})/text/([0-9]{1,16})",
-            AdminTextHandler,
         ),
         (r"/api/admin/v1/scene/([0-9]{1,16})/duplicate", AdminSceneDuplicateHandler),
     ]

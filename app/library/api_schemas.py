@@ -138,15 +138,3 @@ admin_object_handler_schema = {
     ],
     "additionalProperties": False,
 }
-
-
-admin_text_handler_schema = {
-    "type": "object",
-    "properties": {
-        "content": {"type": "string", "pattern": r"^[\S\s]{1,2000}$"},
-        "next_text_id": {"type": "integer"},
-        "object_id": {"type": "integer"},
-    },
-    "required": ["content", "object_id"],
-    "additionalProperties": False,
-}

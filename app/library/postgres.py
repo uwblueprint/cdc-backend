@@ -1,3 +1,4 @@
+from cache.cache import update_scenario_cache
 from models.asset import Asset
 from models.db_client import (
     create_entity,
@@ -89,12 +90,14 @@ async def post_scenario_to_postgres(data: dict, session):
     return scenario_obj.as_dict()
 
 
-async def get_scenario_from_postgres(scenario_id: str, session):
+async def get_scenario_from_postgres(scenario_id: str, session, update_cache=False):
     scenario_obj = get_scenario(scenario_id, session)
     if scenario_obj is None:
         raise ValueError("Scenario ID not valid")
-
-    return scenario_obj.as_dict()
+    scenario_obj_dict = scenario_obj.as_dict()
+    if update_cache:
+        await update_scenario_cache(scenario_id, scenario_obj_dict)
+    return scenario_obj_dict
 
 
 async def delete_scenario_from_postgres(scenario_id: str, session):

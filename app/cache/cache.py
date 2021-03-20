@@ -27,7 +27,16 @@ class CustomCache(object):
         return ret_obj
 
     async def check_and_get_scene(self, scene_id: str):
-        pass
+        ret_obj = None
+        if scene_id in self.scene_cache:
+            if self.scene_cache[scene_id]["timestamp"] + self.expire_time < int(
+                time.time()
+            ):
+                del self.scene_cache[scene_id]
+            else:
+                ret_obj = self.scene_cache[scene_id]["obj_dict"]
+
+        return ret_obj
 
     async def check_and_get_asset(self, asset_id: str):
         pass
@@ -35,6 +44,12 @@ class CustomCache(object):
     async def update_scenario_cache(self, id, scenario_obj_dict):
         self.scenario_cache[id] = {
             "obj_dict": scenario_obj_dict,
+            "timestamp": int(time.time()),
+        }
+
+    async def update_scene_cache(self, id, scene_obj_dict):
+        self.scene_cache[id] = {
+            "obj_dict": scene_obj_dict,
             "timestamp": int(time.time()),
         }
 
@@ -48,3 +63,5 @@ check_and_get_scene = CACHE.check_and_get_scene
 check_and_get_asset = CACHE.check_and_get_asset
 
 update_scenario_cache = CACHE.update_scenario_cache
+
+update_scene_cache = CACHE.update_scene_cache

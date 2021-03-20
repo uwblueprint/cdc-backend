@@ -1,4 +1,4 @@
-from cache.cache import update_scenario_cache
+from cache.cache import update_scenario_cache, update_scene_cache
 from models.asset import Asset
 from models.db_client import (
     create_entity,
@@ -41,7 +41,7 @@ async def get_object_from_postgres(object_id: str, session):
     return object_obj.as_dict()
 
 
-async def get_scene_from_postgres(scene_id: str, session):
+async def get_scene_from_postgres(scene_id: str, session, update_cache=False):
     scene_obj = get_scene(scene_id, session)
     if scene_obj is None:
         raise ValueError("Invalid Scene ID")
@@ -53,6 +53,8 @@ async def get_scene_from_postgres(scene_id: str, session):
         objects.append(await get_object_from_postgres(object_id, session))
 
     response["objects"] = objects
+    if update_cache:
+        await update_scene_cache(scene_id, response)
     return response
 
 

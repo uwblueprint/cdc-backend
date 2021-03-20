@@ -35,11 +35,10 @@ class BaseAdminAPIHandler(BaseAPIHandler):
     """
 
     def prepare(self):
+        # TODO: check auth cookie before creating session
+
         # Admins always get a brand new session
         self.db_session = get_session()
-
-
-#     Add AUTH stuff here
 
 
 class BaseUserAPIHandler(BaseAPIHandler):

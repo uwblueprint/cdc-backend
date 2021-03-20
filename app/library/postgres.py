@@ -1,4 +1,4 @@
-from cache.cache import update_scenario_cache, update_scene_cache
+from cache.cache import update_asset_cache, update_scenario_cache, update_scene_cache
 from models.asset import Asset
 from models.db_client import (
     create_entity,
@@ -63,12 +63,16 @@ async def get_loading_screen_from_postgres(session):
     return await get_scene_from_postgres("123", session)
 
 
-async def get_asset_from_postgres(asset_id: str, session):
+async def get_asset_from_postgres(asset_id: str, session, update_cache=False):
     asset_obj = get_asset(asset_id, session)
     if asset_obj is None:
         raise ValueError("Asset ID not valid")
 
-    return asset_obj.as_dict()
+    response = asset_obj.as_dict()
+    if update_cache:
+        await update_asset_cache(asset_id, response)
+
+    return response
 
 
 async def delete_asset_from_postgres(asset_id: str, session):

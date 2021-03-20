@@ -27,11 +27,14 @@ from tornado.platform.asyncio import AsyncIOMainLoop
 
 def get_routes():
     routes = [
-        (r"/api/user/v1/solved/([0-9]{1,16})", UserSolvedHandler),
+        (
+            r"/api/user/v1/solved/([0-9]{1,16})",
+            UserSolvedHandler,
+        ),  # TODO: remove endpoint
         (r"/api/user/v1/asset/([0-9]{1,16})", UserAssetHandler),
         (r"/api/user/v1/scene/([0-9]{1,16})", UserSceneHandler),
         (r"/api/user/v1/scenario/([0-9]{1,16})", UserScenarioHandler),
-        (r"/api/user/v1/loading_screen", UserLoadingScreen),
+        (r"/api/user/v1/loading_screen", UserLoadingScreen),  # TODO: remove endpoint
         (r"/api/admin/v1/asset", AdminAssetPostHandler),
         (r"/api/admin/v1/asset/([0-9]{1,16})", AdminAssetHandler),
         (r"/api/admin/v1/scenario", AdminScenarioPostHandler),

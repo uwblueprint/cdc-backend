@@ -1,4 +1,6 @@
+from cache.cache import check_and_get_scene
 from library.postgres import get_scene_from_postgres
+from models import get_session
 from routes.base import BaseUserAPIHandler
 
 
@@ -11,7 +13,13 @@ class UserSceneHandler(BaseUserAPIHandler):
         # Validate that id is valid
 
         try:
-            response_dict = await get_scene_from_postgres(id, self.db_session)
+            # Check cache first
+            response_dict = await check_and_get_scene(id)
+            if not response_dict:
+                self.db_session = get_session()
+                response_dict = await get_scene_from_postgres(
+                    id, self.db_session, update_cache=True
+                )
             await self.finish(response_dict)
 
         except ValueError:

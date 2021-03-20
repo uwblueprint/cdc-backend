@@ -11,7 +11,7 @@ class BaseAPIHandler(tornado.web.RequestHandler):
     """
 
     def prepare(self):
-        self.db_session = get_session()
+        self.db_session = None
 
     def set_default_headers(self) -> None:
         self.set_header("Content-Type", "application/json")
@@ -25,7 +25,8 @@ class BaseAPIHandler(tornado.web.RequestHandler):
         self.finish(response_error)
 
     def on_finish(self):
-        return_session(self.db_session)
+        if self.db_session:
+            return_session(self.db_session)
 
 
 class BaseAdminAPIHandler(BaseAPIHandler):
@@ -33,8 +34,11 @@ class BaseAdminAPIHandler(BaseAPIHandler):
     Base handler for all api/admin/* routes
     """
 
+    def prepare(self):
+        # TODO: check auth cookie before creating session
 
-#     Add AUTH stuff here
+        # Admins always get a brand new session
+        self.db_session = get_session()
 
 
 class BaseUserAPIHandler(BaseAPIHandler):

@@ -24,3 +24,7 @@ script:
     - scene
     - object
     - statistics
+
+cache:
+  # seconds in day: 24 * 60 * 60
+  expire_time: 86400

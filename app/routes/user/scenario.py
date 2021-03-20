@@ -1,4 +1,6 @@
+from cache.cache import check_and_get_scenario
 from library.postgres import get_scenario_from_postgres
+from models import get_session
 from routes.base import BaseUserAPIHandler
 
 
@@ -11,7 +13,13 @@ class UserScenarioHandler(BaseUserAPIHandler):
         # Validate that id is valid
 
         try:
-            scenario_obj = await get_scenario_from_postgres(id, self.db_session)
+            # Check cache first
+            scenario_obj = await check_and_get_scenario(id)
+            if not scenario_obj:
+                self.db_session = get_session()
+                scenario_obj = await get_scenario_from_postgres(
+                    id, self.db_session, update_cache=True
+                )
             await self.finish(scenario_obj)
 
         except ValueError as e:

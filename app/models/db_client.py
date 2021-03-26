@@ -80,6 +80,12 @@ def get_scenario(id, session):
     return scenario
 
 
+def get_scenario_by_friendly_name(friendly_name, session):
+    return (
+        session.query(Scenario).filter(Scenario.friendly_name == friendly_name).first()
+    )
+
+
 def delete_scenario(id, session):
     try:
         exists = session.query(Scenario).filter(Scenario.id == id).first() is not None

@@ -19,6 +19,7 @@ from routes.admin.scene import (
     AdminScenePostHandler,
 )
 from routes.base import NotFoundHandler, UIStaticHandler
+from routes.ui.scenario import UIScenarioHandler
 from routes.user.asset import UserAssetHandler
 from routes.user.loading_screen import UserLoadingScreen
 from routes.user.scenario import UserScenarioHandler
@@ -58,6 +59,8 @@ def get_routes():
             UIStaticHandler,
             dict(path=f"{os.path.dirname(__file__)}/public/static/"),
         ),
+        (r"/([a-zA-Z_-]{1,50})/?", UIScenarioHandler),
+        (r"/([a-zA-Z_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),
     ]
     return routes
 

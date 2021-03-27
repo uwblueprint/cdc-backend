@@ -38,8 +38,14 @@ async def get_object_from_postgres(object_id: str, session):
     object_obj = get_object(object_id, session)
     if object_obj is None:
         raise ValueError("Object ID not valid")
+    object_obj_dict = object_obj.as_dict()
 
-    return object_obj.as_dict()
+    # Get the asset details
+    object_obj_dict["asset_details"] = await get_asset_from_postgres(
+        object_obj.asset_id, session
+    )
+
+    return object_obj_dict
 
 
 async def get_scene_from_postgres(scene_id: str, session, update_cache=False):
@@ -54,6 +60,10 @@ async def get_scene_from_postgres(scene_id: str, session, update_cache=False):
         objects.append(await get_object_from_postgres(object_id, session))
 
     response["objects"] = objects
+    response["background_details"] = await get_asset_from_postgres(
+        scene_obj.background_id, session
+    )
+
     if update_cache:
         await update_scene_cache(scene_id, response)
     return response

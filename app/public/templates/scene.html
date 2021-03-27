@@ -2,21 +2,39 @@
 <html lang="en">
   <head>
     <title>{{ scenario_dict["name"] }} - {{ scene_dict["name"] }}</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   </head>
 
   <body>
-    <h1>
-      <!--   Yes I know, ignore the ugly HTML for now, this is a placeholder for demo purposes    -->
-      {{ scenario_dict["name"] }}
-    </h1>
-    <p>
-      The scene attributes can be accessed as scene_dict["attribute"]. For
-      example: {{ scene_dict["name"] }}
-    </p>
-    <p>
-      <u> This is the entire scene_dict for now: </u>
-      {{ scene_dict }}
-    </p>
-    <p>Is this the last scene? {{ is_last_scene }}</p>
+    <div id="scene-root">
+      <a-scene>
+        <a-assets timeout="50000">
+          {% for object in scene_dict["objects"] %}
+          <!--  TODO: deal with multiple objects of same asset type  -->
+          <a-asset-item
+            id="{{ object['asset_id'] }}-asset-src"
+            src="{{ asset_prefix_url }}{{ object['asset_details']['s3_key'] }}"
+          ></a-asset-item>
+          {% end %}
+        </a-assets>
+        <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+        <a-entity
+          id="camera"
+          camera
+          look-controls
+          wasd-controls
+          position="0 3 0"
+        >
+          <!--    TODO: use scene's camera properties instead    -->
+        </a-entity>
+        <a-entity
+          geometry="primitive: plane; width: 4; height: auto"
+          position="0 3 -2"
+          material="color: blue"
+          text="value: {{ scenario_dict['name'] }} - {{ scene_dict['name'] }}"
+        ></a-entity>
+      </a-scene>
+    </div>
   </body>
 </html>

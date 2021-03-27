@@ -21,7 +21,7 @@
   {
     "name": "Master Bedroom",
     "description": "A standard master bedroom. King size bed, a dresser, ensuit washroom, and a large closet.",
-    "object_ids": [1, 2, 3],
+    "object_ids": [1, 2],
     "position": [0.1, 0.5, 0.1],
     "scale": [2.0, 2.0, 2.0],
     "rotation": [0.0, 0.0, 0.0],
@@ -40,11 +40,11 @@
   {
     "name": "Classroom",
     "description": "A classroom at ABC High. Can house 20 students. Blackboard at the front of the room.",
-    "object_ids": [3, 1],
+    "object_ids": [3],
     "position": [5.0, 20.0, 10.5],
     "scale": [1.0, 1.5, 1.0],
     "rotation": [0.0, 0.0, 0.0],
-    "background_id": 3,
+    "background_id": 2,
     "camera_properties": {
       "position": [0, 2.5, 1],
       "look_controls": true,

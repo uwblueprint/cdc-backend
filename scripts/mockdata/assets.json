@@ -1,18 +1,18 @@
 [
   {
-    "name": "Teacup",
+    "name": "Armchair",
     "obj_type": "object",
-    "s3_key": "aws_s3_route"
+    "s3_key": "assets/dev/armchair.gltf"
   },
   {
-    "name": "Playground",
+    "name": "Apartment",
     "obj_type": "background",
-    "s3_key": "aws_s3_route"
+    "s3_key": "assets/dev/apartment-living-room.gltf"
   },
   {
-    "name": "Textbook",
+    "name": "Sanitizer",
     "obj_type": "object",
-    "s3_key": "aws_s3_route"
+    "s3_key": "assets/dev/sanitizer.gltf"
   },
   {
     "name": "Seashell",

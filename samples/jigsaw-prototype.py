@@ -13,6 +13,5 @@ for r in range(1, rows + 1):
             img[
                 (r - 1) * pixelXscale : r * pixelXscale,  # noqa: E203
                 (c - 1) * pixelYscale : c * pixelYscale,  # noqa: E203
-                :,
             ],
         )

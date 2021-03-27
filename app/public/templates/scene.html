@@ -20,7 +20,6 @@
         </a-assets>
         <a-entity environment="preset: japan; dressingAmount: 500"></a-entity>
 
-        <!-- prettier-ignore -->
         <a-entity
           id="camera"
           camera
@@ -31,9 +30,7 @@
             wasd-controls
           {% end %}
           position="{{ scene_dict['camera_properties']['position'][0] }} {{ scene_dict['camera_properties']['position'][1] }} {{ scene_dict['camera_properties']['position'][2] }}"
-        >
-        <!-- prettier-ignore -->
-        </a-entity>
+        ></a-entity>
 
         <a-entity
           geometry="primitive: plane; width: 4; height: auto"

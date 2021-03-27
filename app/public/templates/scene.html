@@ -24,7 +24,7 @@
           camera
           look-controls
           wasd-controls
-          position="0 3 0"
+          position="0 3 3"
         >
           <!--    TODO: use scene's camera properties instead    -->
         </a-entity>
@@ -32,8 +32,19 @@
           geometry="primitive: plane; width: 4; height: auto"
           position="0 3 -2"
           material="color: blue"
-          text="value: {{ scenario_dict['name'] }} - {{ scene_dict['name'] }}"
+          text="value: {{ scene_dict['name'] }}; align: center"
         ></a-entity>
+
+        <!-- Objects in the scene -->
+        {% for object in scene_dict["objects"] %}
+        <a-gltf-model
+          id="{{ object['id'] }}-obj"
+          src="#{{ object['asset_id'] }}-asset-src"
+          position="{{ object['position'][0] }} {{ object['position'][1] }} {{ object['position'][2] }}"
+          scale="{{ object['scale'][0] }} {{ object['scale'][1] }} {{ object['scale'][2] }}"
+          rotation="{{ object['rotation'][0] }} {{ object['rotation'][1] }} {{ object['rotation'][2] }}"
+        ></a-gltf-model>
+        {% end %}
       </a-scene>
     </div>
   </body>

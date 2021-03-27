@@ -1,5 +1,7 @@
 import asyncio
+import os
 
+import tornado.autoreload
 import tornado.httpserver
 import tornado.ioloop
 import tornado.web
@@ -16,7 +18,8 @@ from routes.admin.scene import (
     AdminSceneHandler,
     AdminScenePostHandler,
 )
-from routes.base import NotFoundHandler
+from routes.base import NotFoundHandler, UIStaticHandler
+from routes.ui.scenario import UIScenarioHandler
 from routes.user.asset import UserAssetHandler
 from routes.user.loading_screen import UserLoadingScreen
 from routes.user.scenario import UserScenarioHandler
@@ -51,6 +54,13 @@ def get_routes():
             AdminObjectPutHandler,
         ),
         (r"/api/admin/v1/scene/([0-9]{1,16})/duplicate", AdminSceneDuplicateHandler),
+        (
+            r"/static/(.*)",
+            UIStaticHandler,
+            dict(path=f"{os.path.dirname(__file__)}/public/static/"),
+        ),
+        (r"/([a-zA-Z_-]{1,50})/?", UIScenarioHandler),
+        (r"/([a-zA-Z_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),
     ]
     return routes
 
@@ -61,6 +71,7 @@ def make_app():
         debug=config.get("tornado.debug"),
         xsrf_cookies=config.get("tornado.xsrf"),
         default_handler_class=NotFoundHandler,
+        template_path=f"{os.path.dirname(__file__)}/public/templates",
     )
     return app
 
@@ -75,6 +86,14 @@ def main():
         print("postgres database:", config.get("postgres.database"))
         print("postgres user:", config.get("postgres.user"))
         print(" --------------------- SERVER STARTED ---------------------")
+
+        # Autoreload server for HTML file changes
+        for directory, _, files in os.walk("public"):
+            [
+                tornado.autoreload.watch(directory + "/" + f)
+                for f in files
+                if not f.startswith(".")
+            ]
 
     app = make_app()
     server = tornado.httpserver.HTTPServer(app)

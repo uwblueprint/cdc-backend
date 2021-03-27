@@ -18,16 +18,14 @@
           ></a-asset-item>
           {% end %}
         </a-assets>
-        <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+        <a-entity environment="preset: japan; dressingAmount: 500"></a-entity>
+
         <a-entity
           id="camera"
           camera
-          look-controls
-          wasd-controls
-          position="0 3 3"
-        >
-          <!--    TODO: use scene's camera properties instead    -->
-        </a-entity>
+          position="{{ scene_dict['camera_properties']['position'][0] }} {{ scene_dict['camera_properties']['position'][1] }} {{ scene_dict['camera_properties']['position'][2] }}"
+        ></a-entity>
+
         <a-entity
           geometry="primitive: plane; width: 4; height: auto"
           position="0 3 -2"

@@ -27,9 +27,9 @@
     "rotation": [0.0, 0.0, 0.0],
     "background_id": 2,
     "camera_properties": {
-      "position": [0, 2.5, 1],
+      "position": [0, 3, 3],
       "look_controls": true,
-      "wasd_controls": false,
+      "wasd_controls": true,
       "cursor_properties": {
         "asset_id": 1,
         "shape": "crosshairs",
@@ -46,9 +46,9 @@
     "rotation": [0.0, 0.0, 0.0],
     "background_id": 2,
     "camera_properties": {
-      "position": [0, 2.5, 1],
+      "position": [0, 3, 3],
       "look_controls": true,
-      "wasd_controls": false,
+      "wasd_controls": true,
       "cursor_properties": {
         "asset_id": 1,
         "shape": "crosshairs",

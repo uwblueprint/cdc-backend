@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ scenario_dict["name"] }} - {{ scene_dict["name"] }}</title>
+  </head>
+
+  <body>
+    <h1>
+      <!--   Yes I know, ignore the ugly HTML for now, this is a placeholder for demo purposes    -->
+      {{ scenario_dict["name"] }}
+    </h1>
+    <p>
+      The scene attributes can be accessed as scene_dict["attribute"]. For
+      example: {{ scene_dict["name"] }}
+    </p>
+    <p>
+      <u> This is the entire scene_dict for now: </u>
+      {{ scene_dict }}
+    </p>
+    <p>Is this the last scene? {{ is_last_scene }}</p>
+  </body>
+</html>

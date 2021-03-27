@@ -9,6 +9,7 @@ from models.db_client import (
     get_asset,
     get_object,
     get_scenario,
+    get_scenario_by_friendly_name,
     get_scene,
     put_asset,
     put_object,
@@ -104,6 +105,17 @@ async def get_scenario_from_postgres(scenario_id: str, session, update_cache=Fal
     if update_cache:
         await update_scenario_cache(scenario_id, scenario_obj_dict)
     return scenario_obj_dict
+
+
+async def get_scenario_by_friendly_name_from_postgres(
+    friendly_name: str, session, update_cache=False
+):
+    scenario_obj: Scenario = get_scenario_by_friendly_name(friendly_name, session)
+    if scenario_obj is None:
+        raise ValueError("Unknown Scenario")
+    if update_cache:
+        await update_scenario_cache(scenario_obj.id, scenario_obj.as_dict())
+    return scenario_obj
 
 
 async def delete_scenario_from_postgres(scenario_id: str, session):

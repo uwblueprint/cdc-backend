@@ -60,3 +60,33 @@ class NotFoundHandler(tornado.web.RequestHandler):
         self.set_status(status_code)
         response_error = {"status": status_code, "title": title, "message": message}
         await self.finish(response_error)
+
+
+class BaseUIHandler(tornado.web.RequestHandler):
+    """
+    Base handler for all UI routes
+    """
+
+    def prepare(self):
+        # TODO: caching for these routes will be implemented later (diff PR)
+        self.db_session = get_session()
+
+    def write_error(self, status_code: int, **kwargs: Any) -> None:
+        title = httputil.responses.get(status_code, "Unknown")
+        message = kwargs.get("message", self._reason)
+        self.render("error.html", error_title=title, error_message=message)
+
+    def on_finish(self):
+        if self.db_session:
+            return_session(self.db_session)
+
+
+class UIStaticHandler(tornado.web.StaticFileHandler):
+    """
+    Base handler for /public/static/*
+    """
+
+    def write_error(self, status_code, *args, **kwargs):
+        title = httputil.responses.get(status_code, "Unknown")
+        message = kwargs.get("message", self._reason)
+        self.render("error.html", error_title=title, error_message=message)

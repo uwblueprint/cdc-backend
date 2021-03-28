@@ -21,8 +21,24 @@
             src="{{ asset_prefix_url }}{{ object['asset_details']['s3_key'] }}"
           ></a-asset-item>
           {% end %}
+
+        <!--  Background  -->
+          <a-asset-item
+            id="{{ scene_dict['background_details']['id'] }}-asset-src"
+            src="{{ asset_prefix_url }}{{ scene_dict['background_details']['s3_key'] }}"
+          ></a-asset-item>
+
         </a-assets>
-        <a-entity environment="preset: japan; dressingAmount: 500"></a-entity>
+        <a-entity environment="preset: forest; dressingAmount: 500; playArea: 10"></a-entity>
+
+        <!--  Background  -->
+        <a-gltf-model
+            id="{{ scene_dict['background_details']['id'] }}-background"
+            src="#{{ scene_dict['background_details']['id'] }}-asset-src"
+            position="{{ scene_dict['position'][0] }} {{ scene_dict['position'][1] }} {{ scene_dict['position'][2] }}"
+            scale="{{ scene_dict['scale'][0] }} {{ scene_dict['scale'][1] }} {{ scene_dict['scale'][2] }}"
+            rotation="{{ scene_dict['rotation'][0] }} {{ scene_dict['rotation'][1] }} {{ scene_dict['rotation'][2] }}"
+        ></a-gltf-model>
 
         <a-entity
           id="camera"
@@ -36,12 +52,13 @@
           position="{{ scene_dict['camera_properties']['position'][0] }} {{ scene_dict['camera_properties']['position'][1] }} {{ scene_dict['camera_properties']['position'][2] }}"
         ></a-entity>
 
-        <a-entity
-          geometry="primitive: plane; width: 4; height: auto"
-          position="0 3 -2"
-          material="color: blue"
-          text="value: {{ scene_dict['name'] }}; align: center"
-        ></a-entity>
+<!--  Keeping for future reference  -->
+<!--        <a-entity-->
+<!--          geometry="primitive: plane; width: 4; height: auto"-->
+<!--          position="-3.237 3 -2.0"-->
+<!--          material="color: blue"-->
+<!--          text="value: {{ scene_dict['name'] }}; align: center"-->
+<!--        ></a-entity>-->
 
         <!-- Objects in the scene -->
         {% for object in scene_dict["objects"] %}

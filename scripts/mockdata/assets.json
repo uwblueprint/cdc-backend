@@ -2,12 +2,12 @@
   {
     "name": "Armchair",
     "obj_type": "object",
-    "s3_key": "assets/dev/armchair.gltf"
+    "s3_key": "assets/dev/armchair.glb"
   },
   {
-    "name": "Apartment",
+    "name": "Classroom",
     "obj_type": "background",
-    "s3_key": "assets/dev/apartment-living-room.gltf"
+    "s3_key": "assets/dev/classroom.glb"
   },
   {
     "name": "Sanitizer",
@@ -20,8 +20,8 @@
     "s3_key": "aws_s3_route"
   },
   {
-    "name": "Bedroom",
+    "name": "Living Room",
     "obj_type": "background",
-    "s3_key": "aws_s3_route"
+    "s3_key": "assets/dev/living_room.glb"
   }
 ]

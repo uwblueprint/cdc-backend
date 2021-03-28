@@ -82,7 +82,7 @@
       }
     ],
     "texts": ["", "hello", "from the other side part 2"],
-    "is_interactable": false,
+    "is_interactable": true,
     "animations_json": {}
   },
   {

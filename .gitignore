@@ -11,3 +11,7 @@ ENV/
 
 __pycache__
 __pycache__/
+
+# Mac
+.DS_Store
+.DS_Store/

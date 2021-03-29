@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Popup Demo</title>
+    <meta name="description" content="Popup demo" />
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="chair.js"></script>
+    <script>
+      // TODO: Verify room is not needed and delete it
+      AFRAME.registerComponent("read-room", {
+        schema: {
+          oldPosition: {
+            default: "0 10 0",
+            type: "vec3",
+          },
+          oldRotation: {
+            default: "0 0 0",
+            type: "vec3",
+          },
+          spawnPosition: {
+            default: "0 -25 5",
+            type: "vec3",
+          },
+          spawnRotation: {
+            default: "0 0 0",
+            type: "vec3",
+          },
+        },
+        init: function () {
+          var data = this.data;
+          var el = this.el;
+
+          var floor = document.createElement("a-box");
+          floor.setAttribute("width", "20");
+          floor.setAttribute("height", "1");
+          floor.setAttribute("depth", "20");
+          floor.setAttribute("position", "0 -10 0");
+          floor.setAttribute("color", "blue");
+          floor.setAttribute("opacity", "0.25");
+          floor.setAttribute("static-body", "");
+          el.appendChild(floor);
+
+          var ceiling = document.createElement("a-box");
+          ceiling.setAttribute("width", "20");
+          ceiling.setAttribute("height", "1");
+          ceiling.setAttribute("depth", "20");
+          ceiling.setAttribute("position", "0 10 0");
+          ceiling.setAttribute("color", "blue");
+          ceiling.setAttribute("opacity", "0.25");
+          ceiling.setAttribute("static-body", "");
+          el.appendChild(ceiling);
+
+          var northWall = document.createElement("a-box");
+          northWall.setAttribute("width", "20");
+          northWall.setAttribute("height", "20");
+          northWall.setAttribute("depth", "1");
+          northWall.setAttribute("position", "0 0 -10");
+          northWall.setAttribute("color", "red");
+          northWall.setAttribute("opacity", "0.25");
+          northWall.setAttribute("static-body", "");
+          el.appendChild(northWall);
+
+          var southWall = document.createElement("a-box");
+          southWall.setAttribute("width", "20");
+          southWall.setAttribute("height", "20");
+          southWall.setAttribute("depth", "1");
+          southWall.setAttribute("position", "0 0 10");
+          southWall.setAttribute("color", "red");
+          southWall.setAttribute("opacity", "0.25");
+          southWall.setAttribute("static-body", "");
+          el.appendChild(southWall);
+
+          var westWall = document.createElement("a-box");
+          westWall.setAttribute("width", "20");
+          westWall.setAttribute("height", "20");
+          westWall.setAttribute("depth", "1");
+          westWall.setAttribute("rotation", "0 -90 0");
+          westWall.setAttribute("position", "-10 0 0");
+          westWall.setAttribute("color", "yellow");
+          westWall.setAttribute("opacity", "0.25");
+          westWall.setAttribute("static-body", "");
+          el.appendChild(westWall);
+
+          var eastWall = document.createElement("a-box");
+          eastWall.setAttribute("width", "20");
+          eastWall.setAttribute("height", "20");
+          eastWall.setAttribute("depth", "1");
+          eastWall.setAttribute("rotation", "0 -90 0");
+          eastWall.setAttribute("position", "10 0 0");
+          eastWall.setAttribute("color", "yellow");
+          eastWall.setAttribute("opacity", "0.25");
+          eastWall.setAttribute("static-body", "");
+          el.appendChild(eastWall);
+        },
+      });
+    </script>
+  </head>
+  <body>
+    <a-scene
+      background="color: #ECECEC"
+      cursor="rayOrigin: mouse"
+      physics="debug: true; gravity: 0"
+    >
+      <a-box
+        id="wbox"
+        static-body
+        position="0 0.5 -5"
+        width="3"
+        height="5"
+        depth="1"
+        color="orange"
+        animation__rotation="property: rotation; to: 0 90 0; dur:500; startEvents: click"
+        animation__position="property: object3D.position.x; to: 10; dir: alternate; dur: 500; startEvents: animationcomplete__rotation"
+        animation__rotationcomplete="property: rotation; to: 0 270 0; dur:500; dir:reverse; startEvents: animationcomplete__position"
+        animation__positioncomplete="property: object3D.position.x; to: 0; dir: normal; dur: 500; startEvents: animationcomplete__rotationcomplete"
+        animation__rotationcompletecomplete="property: rotation; to: 0 360 0; dur:500; startEvents: animationcomplete__positioncomplete"
+      ></a-box>
+      <a-entity
+        id="primaryCamera"
+        position="0 0 9"
+        rotation="0 0 0"
+        camera
+        look-controls
+        wasd-controls
+        kinematic-body
+      ></a-entity>
+      <a-entity id="readRoom" read-room position="0 -100 0">
+        <a-entity
+          id="blackboard"
+          info-panel
+          visible="true"
+          geometry="primitive: plane; width: 18   ; height: 15"
+          material="color: #333333; shader: flat; transparent: false"
+        >
+        </a-entity>
+        <a-entity id="returnButton"></a-entity>
+        <a-entity
+          id="popup-camera"
+          position="0 0 9"
+          rotation="0 0 0"
+          camera="active: false;"
+        ></a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
+<script>
+  var jsonDataArr = [
+    'jsonData: {"width": "1", "height": "2", "depth": "1", "color": "orange", "x": "2", "y": "0", "z": "0"}',
+    'jsonData: {"width": "1", "height": "2", "depth": "1", "color": "blue", "x": "0", "y": "0", "z": "0"}',
+  ];
+
+  setupEnv(jsonDataArr);
+
+  function setupEnv(jsonDataArr) {
+    // default return button. Always here.
+    // TODO: move into a A-Frame component. [closePopup]
+    entityEl = document.querySelector("#returnButton");
+    entityEl.setAttribute(
+      "chair",
+      'jsonData: {"width": "1", "height": "1", "depth": "0.01", "color": "red", "x": "-8.25", "y": "6.75", "z": "0.005"}'
+    );
+    entityEl.addEventListener("click", function () {
+      var primaryCamera = document.querySelector("#primaryCamera");
+      primaryCamera.setAttribute("camera", "active", true);
+      wipeBlackboard();
+    });
+
+    // second button. May or may not be here. There can be many of these.
+    // TODO: Also move into a component. [openPopup]
+    var parentEl = document.querySelector("a-scene");
+    var entityEl2 = document.createElement("a-entity");
+    entityEl2.setAttribute("chair", jsonDataArr[1]);
+    entityEl2.addEventListener("click", function () {
+      addEntityToBlackboard(
+        '{"componentType": "chair", "jsonData": {"width": "10", "height": "2", "depth": "1", "color": "orange", "x": "2", "y": "0", "z": "2"}}'
+      );
+      var popupCameraEl = document.querySelector("#popup-camera");
+      popupCameraEl.setAttribute("camera", "active", true);
+    });
+    parentEl.appendChild(entityEl2);
+  }
+
+  function addEntityToBlackboard(componentData) {
+    var componentDataParsed = JSON.parse(componentData);
+    var blackboardEl = document.querySelector("#blackboard");
+    var entityEl = document.createElement("a-entity");
+    entityEl.setAttribute(
+      componentDataParsed.componentType,
+      "jsonData",
+      JSON.stringify(componentDataParsed.jsonData)
+    );
+    blackboardEl.appendChild(entityEl);
+  }
+
+  function wipeBlackboard() {
+    var blackboardEl = document.querySelector("#blackboard");
+    while (blackboardEl.firstChild) {
+      blackboardEl.removeChild(blackboardEl.lastChild);
+    }
+  }
+</script>

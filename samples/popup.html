@@ -8,25 +8,7 @@
     <script src="chair.js"></script>
   </head>
   <body>
-    <a-scene
-      background="color: #ECECEC"
-      cursor="rayOrigin: mouse"
-      physics="debug: true; gravity: 0"
-    >
-      <a-box
-        id="wbox"
-        static-body
-        position="0 0.5 -5"
-        width="3"
-        height="5"
-        depth="1"
-        color="orange"
-        animation__rotation="property: rotation; to: 0 90 0; dur:500; startEvents: click"
-        animation__position="property: object3D.position.x; to: 10; dir: alternate; dur: 500; startEvents: animationcomplete__rotation"
-        animation__rotationcomplete="property: rotation; to: 0 270 0; dur:500; dir:reverse; startEvents: animationcomplete__position"
-        animation__positioncomplete="property: object3D.position.x; to: 0; dir: normal; dur: 500; startEvents: animationcomplete__rotationcomplete"
-        animation__rotationcompletecomplete="property: rotation; to: 0 360 0; dur:500; startEvents: animationcomplete__positioncomplete"
-      ></a-box>
+    <a-scene background="color: #ECECEC" cursor="rayOrigin: mouse">
       <a-entity
         id="primaryCamera"
         position="0 0 9"
@@ -34,7 +16,6 @@
         camera
         look-controls
         wasd-controls
-        kinematic-body
       ></a-entity>
       <a-entity id="readRoom" position="0 -100 0">
         <a-entity

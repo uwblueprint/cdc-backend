@@ -6,95 +6,6 @@
     <meta name="description" content="Popup demo" />
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="chair.js"></script>
-    <script>
-      // TODO: Verify room is not needed and delete it
-      AFRAME.registerComponent("read-room", {
-        schema: {
-          oldPosition: {
-            default: "0 10 0",
-            type: "vec3",
-          },
-          oldRotation: {
-            default: "0 0 0",
-            type: "vec3",
-          },
-          spawnPosition: {
-            default: "0 -25 5",
-            type: "vec3",
-          },
-          spawnRotation: {
-            default: "0 0 0",
-            type: "vec3",
-          },
-        },
-        init: function () {
-          var data = this.data;
-          var el = this.el;
-
-          var floor = document.createElement("a-box");
-          floor.setAttribute("width", "20");
-          floor.setAttribute("height", "1");
-          floor.setAttribute("depth", "20");
-          floor.setAttribute("position", "0 -10 0");
-          floor.setAttribute("color", "blue");
-          floor.setAttribute("opacity", "0.25");
-          floor.setAttribute("static-body", "");
-          el.appendChild(floor);
-
-          var ceiling = document.createElement("a-box");
-          ceiling.setAttribute("width", "20");
-          ceiling.setAttribute("height", "1");
-          ceiling.setAttribute("depth", "20");
-          ceiling.setAttribute("position", "0 10 0");
-          ceiling.setAttribute("color", "blue");
-          ceiling.setAttribute("opacity", "0.25");
-          ceiling.setAttribute("static-body", "");
-          el.appendChild(ceiling);
-
-          var northWall = document.createElement("a-box");
-          northWall.setAttribute("width", "20");
-          northWall.setAttribute("height", "20");
-          northWall.setAttribute("depth", "1");
-          northWall.setAttribute("position", "0 0 -10");
-          northWall.setAttribute("color", "red");
-          northWall.setAttribute("opacity", "0.25");
-          northWall.setAttribute("static-body", "");
-          el.appendChild(northWall);
-
-          var southWall = document.createElement("a-box");
-          southWall.setAttribute("width", "20");
-          southWall.setAttribute("height", "20");
-          southWall.setAttribute("depth", "1");
-          southWall.setAttribute("position", "0 0 10");
-          southWall.setAttribute("color", "red");
-          southWall.setAttribute("opacity", "0.25");
-          southWall.setAttribute("static-body", "");
-          el.appendChild(southWall);
-
-          var westWall = document.createElement("a-box");
-          westWall.setAttribute("width", "20");
-          westWall.setAttribute("height", "20");
-          westWall.setAttribute("depth", "1");
-          westWall.setAttribute("rotation", "0 -90 0");
-          westWall.setAttribute("position", "-10 0 0");
-          westWall.setAttribute("color", "yellow");
-          westWall.setAttribute("opacity", "0.25");
-          westWall.setAttribute("static-body", "");
-          el.appendChild(westWall);
-
-          var eastWall = document.createElement("a-box");
-          eastWall.setAttribute("width", "20");
-          eastWall.setAttribute("height", "20");
-          eastWall.setAttribute("depth", "1");
-          eastWall.setAttribute("rotation", "0 -90 0");
-          eastWall.setAttribute("position", "10 0 0");
-          eastWall.setAttribute("color", "yellow");
-          eastWall.setAttribute("opacity", "0.25");
-          eastWall.setAttribute("static-body", "");
-          el.appendChild(eastWall);
-        },
-      });
-    </script>
   </head>
   <body>
     <a-scene
@@ -125,7 +36,7 @@
         wasd-controls
         kinematic-body
       ></a-entity>
-      <a-entity id="readRoom" read-room position="0 -100 0">
+      <a-entity id="readRoom" position="0 -100 0">
         <a-entity
           id="blackboard"
           info-panel

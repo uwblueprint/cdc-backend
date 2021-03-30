@@ -5,7 +5,7 @@
     <title>Popup Demo</title>
     <meta name="description" content="Popup demo" />
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="chair.js"></script>
+    <script src="prism.js"></script>
   </head>
   <body>
     <a-scene background="color: #ECECEC" cursor="rayOrigin: mouse">
@@ -50,7 +50,7 @@
     // TODO: move into a A-Frame component. [closePopup]
     entityEl = document.querySelector("#returnButton");
     entityEl.setAttribute(
-      "chair",
+      "prism",
       'jsonData: {"width": "1", "height": "1", "depth": "0.01", "color": "red", "x": "-8.25", "y": "6.75", "z": "0.005"}'
     );
     entityEl.addEventListener("click", function () {
@@ -63,10 +63,10 @@
     // TODO: Also move into a component. [openPopup]
     var parentEl = document.querySelector("a-scene");
     var entityEl2 = document.createElement("a-entity");
-    entityEl2.setAttribute("chair", jsonDataArr[1]);
+    entityEl2.setAttribute("prism", jsonDataArr[1]);
     entityEl2.addEventListener("click", function () {
       addEntityToBlackboard(
-        '{"componentType": "chair", "jsonData": {"width": "10", "height": "2", "depth": "1", "color": "orange", "x": "2", "y": "0", "z": "2"}}'
+        '{"componentType": "prism", "jsonData": {"width": "10", "height": "2", "depth": "1", "color": "orange", "x": "2", "y": "0", "z": "2"}}'
       );
       var popupCameraEl = document.querySelector("#popup-camera");
       popupCameraEl.setAttribute("camera", "active", true);

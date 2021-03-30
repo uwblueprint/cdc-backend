@@ -1,4 +1,4 @@
-AFRAME.registerComponent("chair", {
+AFRAME.registerComponent("prism", {
   schema: {
     jsonData: {
       parse: JSON.parse,

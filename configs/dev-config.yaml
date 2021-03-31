@@ -16,6 +16,8 @@ asset:
   allowed_asset_types:
     - background
     - object
+  # This will be the S3 bucket URL in prod
+  prefix_url: http://localhost:8888/static/
 
 script:
   table-order:

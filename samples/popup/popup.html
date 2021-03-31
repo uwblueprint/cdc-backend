@@ -5,7 +5,9 @@
     <title>Popup Demo</title>
     <meta name="description" content="Popup demo" />
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="prism.js"></script>
+    <script src="components/prism.js"></script>
+    <script src="components/closePopup.js"></script>
+    <script src="components/openPopup.js"></script>
   </head>
   <body>
     <a-scene background="color: #ECECEC" cursor="rayOrigin: mouse">
@@ -37,59 +39,24 @@
   </body>
 </html>
 <script>
-  var jsonDataArr = [
-    'jsonData: {"width": "1", "height": "2", "depth": "1", "color": "orange", "x": "2", "y": "0", "z": "0"}',
-    'jsonData: {"width": "1", "height": "2", "depth": "1", "color": "blue", "x": "0", "y": "0", "z": "0"}',
-  ];
+  setupEnv();
 
-  setupEnv(jsonDataArr);
-
-  function setupEnv(jsonDataArr) {
+  function setupEnv() {
     // default return button. Always here.
-    // TODO: move into a A-Frame component. [closePopup]
+    // TODO: If we later decide on a single style/design for the return button, we can hardcode into close-popup component and remove this
     entityEl = document.querySelector("#returnButton");
     entityEl.setAttribute(
-      "prism",
+      "close-popup",
       'jsonData: {"width": "1", "height": "1", "depth": "0.01", "color": "red", "x": "-8.25", "y": "6.75", "z": "0.005"}'
     );
-    entityEl.addEventListener("click", function () {
-      var primaryCamera = document.querySelector("#primaryCamera");
-      primaryCamera.setAttribute("camera", "active", true);
-      wipeBlackboard();
-    });
 
     // second button. May or may not be here. There can be many of these.
-    // TODO: Also move into a component. [openPopup]
     var parentEl = document.querySelector("a-scene");
     var entityEl2 = document.createElement("a-entity");
-    entityEl2.setAttribute("prism", jsonDataArr[1]);
-    entityEl2.addEventListener("click", function () {
-      addEntityToBlackboard(
-        '{"componentType": "prism", "jsonData": {"width": "10", "height": "2", "depth": "1", "color": "orange", "x": "2", "y": "0", "z": "2"}}'
-      );
-      var popupCameraEl = document.querySelector("#popup-camera");
-      popupCameraEl.setAttribute("camera", "active", true);
-    });
-    parentEl.appendChild(entityEl2);
-  }
-
-  // TODO: Add support for multiple entity creation
-  function addEntityToBlackboard(componentData) {
-    var componentDataParsed = JSON.parse(componentData);
-    var blackboardEl = document.querySelector("#blackboard");
-    var entityEl = document.createElement("a-entity");
-    entityEl.setAttribute(
-      componentDataParsed.componentType,
-      "jsonData",
-      JSON.stringify(componentDataParsed.jsonData)
+    entityEl2.setAttribute(
+      "open-popup",
+      'jsonData: {"width": "1", "height": "2", "depth": "1", "color": "blue", "x": "0", "y": "0", "z": "0", "blackboardData":{"componentType": "prism", "jsonData": {"width": "10", "height": "2", "depth": "1", "color": "orange", "x": "2", "y": "0", "z": "2"}}}'
     );
-    blackboardEl.appendChild(entityEl);
-  }
-
-  function wipeBlackboard() {
-    var blackboardEl = document.querySelector("#blackboard");
-    while (blackboardEl.firstChild) {
-      blackboardEl.removeChild(blackboardEl.lastChild);
-    }
+    parentEl.appendChild(entityEl2);
   }
 </script>

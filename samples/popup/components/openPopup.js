@@ -34,8 +34,6 @@ AFRAME.registerComponent("open-popup", {
         // Add event listener for closing (returning) on mouse click.
         el.addEventListener("click", function () {
           addEntityToBlackboard(JSON.stringify(data.blackboardData));
-          var popupCameraEl = document.querySelector("#popup-camera");
-          popupCameraEl.setAttribute("camera", "active", true);
         });
       }
     });
@@ -52,5 +50,11 @@ function addEntityToBlackboard(componentData) {
     "jsonData",
     JSON.stringify(componentDataParsed.jsonData)
   );
+  entityEl.addEventListener("loaded", function (e) {
+    if (e.target === entityEl) {
+      var popupCameraEl = document.querySelector("#popup-camera");
+      popupCameraEl.setAttribute("camera", "active", true);
+    }
+  });
   blackboardEl.appendChild(entityEl);
 }

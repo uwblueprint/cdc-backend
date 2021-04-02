@@ -67,7 +67,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "componentType": "prism",
+        "componentType": "keypad",
         "jsonData": {
           "width": "10",
           "height": "2",
@@ -75,7 +75,8 @@
           "color": "orange",
           "x": "2",
           "y": "0",
-          "z": "2"
+          "z": "2",
+          "password": "1234"
         }
       }
     }

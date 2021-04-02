@@ -65,7 +65,20 @@
     ],
     "texts": ["", "hello", "from the other side part 2"],
     "is_interactable": true,
-    "animations_json": {}
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "prism",
+        "jsonData": {
+          "width": "10",
+          "height": "2",
+          "depth": "1",
+          "color": "orange",
+          "x": "2",
+          "y": "0",
+          "z": "2"
+        }
+      }
+    }
   },
   {
     "position": [-5.775, 0.014, -5.717],

@@ -18,3 +18,21 @@ AFRAME.registerComponent("animation-on-click-run", {
     });
   },
 });
+
+// TODO: Add support for multiple entity creation
+function addEntityToBlackboard(componentDataParsed) {
+  var blackboardEl = document.querySelector("#blackboard");
+  var entityEl = document.createElement("a-entity");
+  entityEl.setAttribute(
+    componentDataParsed.componentType,
+    "jsonData",
+    JSON.stringify(componentDataParsed.jsonData)
+  );
+  entityEl.addEventListener("loaded", function (e) {
+    if (e.target === entityEl) {
+      var popupCameraEl = document.querySelector("#popup-camera");
+      popupCameraEl.setAttribute("camera", "active", true);
+    }
+  });
+  blackboardEl.appendChild(entityEl);
+}

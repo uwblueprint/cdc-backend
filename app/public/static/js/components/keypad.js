@@ -21,11 +21,9 @@ AFRAME.registerComponent("keypad", {
     el.setAttribute("position", { x: 0, y: 0, z: 0.5 });
 
     el.setAttribute("class", "link");
-    console.log(el.getAttribute("super-keyboard"));
 
     el.addEventListener("superkeyboardinput", function (event) {
       if (event.detail.value === password) {
-        console.log("pass");
         el.setAttribute(
           "super-keyboard",
           "label:SUCCESS; labelColor: green; multipleInputs:true"
@@ -33,8 +31,6 @@ AFRAME.registerComponent("keypad", {
       } else {
         const statusLabel = el.getAttribute("super-keyboard").label;
         if (statusLabel !== "SUCCESS") {
-          console.log("fail ");
-
           el.setAttribute("super-keyboard", "label:ERROR; labelColor: red");
           removeError(el);
         }

@@ -71,8 +71,8 @@ Once you have the requirements installed, you should be able to develop by just 
 #### Windows
 
 1. Ensure you are in the root directory, and your virtual env is activated. Also make sure your Postgres is running.
-1. Run `set PYTHONPATH=.`
-1. Run `set CONFIG_PATH=configs/dev-config.yaml`
+1. Run `set PYTHONPATH=.`. Note: if you are using bash on Windows you will have to use `export` instead of `set`
+1. Run `set CONFIG_PATH=configs/dev-config.yaml`. Note: if you are using bash on windows you will have to use `export` instead of `set`
 1. If you have not done so recently, run the scripts to create and populate the database:
    ```
       python scripts/create-tables.py

@@ -53,11 +53,13 @@ Once you have the requirements installed, you should be able to develop by just 
 1. Download the updated packages `pip install -r requirements.txt`
 1. Check locally to ensure that you haven't broken anything
 
-To run the backend server:
+To run the backend server on VS Code, you need to set the environment variable CONFIG_PATH and run the program, which can be done with the following command:
 
 ```
-todo
+CONFIG_PATH="../configs/dev-config.yaml" python __main__.py
 ```
+
+To run the backend server on Pycharm, you can just click the start button which will run the necessary files for you (`__main__.py` within app folder).
 
 To call any APIs that require authentication without the frontend running (ex. using curl or Postman), you'll need an access token. You can generate a token for your account this with the command:
 

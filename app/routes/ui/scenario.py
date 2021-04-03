@@ -1,3 +1,5 @@
+import json
+
 from config import config
 from library.postgres import (
     get_scenario_by_friendly_name_from_postgres,
@@ -38,6 +40,7 @@ class UIScenarioHandler(BaseUIHandler):
                 scenario_dict=scenario_obj.as_dict(),
                 scene_dict=scene_dict,
                 asset_prefix_url=config.get("asset.prefix_url"),
+                json=json,
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

@@ -4,9 +4,12 @@
     <title>{{ scenario_dict["name"] }} - {{ scene_dict["name"] }}</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-super-keyboard@2.1.0/dist/aframe-super-keyboard.min.js"></script>
 
     <!-- A-frame components   -->
     <script src="../static/js/components/animation-on-click.js"></script>
+    <script src="../static/js/components/close-popup.js"></script>
+    <script src="../static/js/components/keypad.js"></script>
 
   </head>
 
@@ -41,7 +44,7 @@
         ></a-gltf-model>
 
         <a-entity
-          id="camera"
+          id="primaryCamera"
           camera
           {% if scene_dict["camera_properties"]["look_controls"] %}
             look-controls
@@ -51,6 +54,7 @@
           {% end %}
           position="{{ scene_dict['camera_properties']['position'][0] }} {{ scene_dict['camera_properties']['position'][1] }} {{ scene_dict['camera_properties']['position'][2] }}"
         ></a-entity>
+        {% include popup.html %}
 
 <!--  Keeping for future reference  -->
 <!--        <a-entity-->
@@ -71,7 +75,7 @@
           {% if object["is_interactable"] %}
             class="link"
             animation__onclick="property: position; dur: 0; startEvents: click"
-            animation-on-click-run="extraInformation: {{ object['id'] }}"
+            animation-on-click-run='blackboardData: {% raw json.dumps(object["animations_json"]["blackboardData"]) %}'
           {% end %}
         ></a-gltf-model>
         {% end %}

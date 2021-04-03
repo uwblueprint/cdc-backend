@@ -15,7 +15,7 @@ AFRAME.registerComponent("keypad", {
     const el = this.el;
     el.setAttribute(
       "super-keyboard",
-      "imagePath:static/img/; multipleInputs:true; model: numpad; align: center; maxLength: 4; label: Enter Password; labelColor: black"
+      "imagePath:/static/img/; multipleInputs:true; model: numpad; align: center; maxLength: 4; label: Enter Password; labelColor: black"
     );
     el.setAttribute("scale", { x: 20, y: 20, z: 20 });
     el.setAttribute("position", { x: 0, y: 0, z: 0.5 });

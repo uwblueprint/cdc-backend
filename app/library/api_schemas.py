@@ -78,6 +78,10 @@ admin_scene_put_handler_schema = {
         "scale": {"type": "array", "items": {"type": "number"}},
         "rotation": {"type": "array", "items": {"type": "number"}},
         "background_id": {"type": "integer"},
+        "hints": {
+            "type": "array",
+            "items": {"type": "string", "pattern": r"^[\:\?\!\.,a-zA-Z _-]{1,200}$"},
+        },
         "camera_properties": {
             "type": "object",
             "properties": {

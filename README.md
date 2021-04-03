@@ -62,9 +62,9 @@ Once you have the requirements installed, you should be able to develop by just 
 #### Mac
 
 1. Ensure you are in the root directory, and your virtual env is activated. Also make sure your Postgres is running.
-1. If you have not done so recently, run `make install` as it will update any schema changes.
 1. Run `export PYTHONPATH=.`
 1. Run `export CONFIG_PATH=configs/dev-config.yaml`
+1. If you have not done so recently, run `make install` as it will update any schema changes.
 1. Run `python app/__main__.py`
 1. You should see a `SERVER STARTED` message along with configuration details
 

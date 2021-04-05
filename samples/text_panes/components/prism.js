@@ -1,4 +1,4 @@
-AFRAME.registerComponent("nav_button", {
+AFRAME.registerComponent("prism", {
   schema: {
     jsonData: {
       parse: JSON.parse,
@@ -29,21 +29,5 @@ AFRAME.registerComponent("nav_button", {
     el.object3D.position.set(data.x, data.y, data.z);
     // Set mesh on entity.
     el.setObject3D("mesh", this.mesh);
-
-    // Add event listener for closing (returning) on mouse click.
-    el.addEventListener("click", function () {
-      var text_pane = document.querySelector("#text_pane");
-      text_pane.setAttribute("currPos", ++text_pane.getAttribute("currPos"));
-    });
-  },
-
-  remove: function () {
-    const data = this.data.jsonData;
-    const el = this.el;
-    el.removeObject3D("mesh");
-
-    if (data.jsonData) {
-      el.removeEventListener();
-    }
   },
 });

@@ -4,17 +4,10 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="components/text_pane.js"></script>
     <script src="components/nav_button.js"></script>
+    <script src="components/prism.js"></script>
   </head>
   <body>
     <a-scene background="color: #AAD5D7" cursor="rayOrigin: mouse">
-      <a-sphere position="0 0 0" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-text
-        value="Hello!"
-        negate="true"
-        scale="2 2 1"
-        position="-0.6 0 3"
-      ></a-text>
-
       <a-entity
         id="primaryCamera"
         position="0 -30 15"
@@ -24,7 +17,6 @@
         wasd-controls
       ></a-entity>
 
-      <!--        <a-entity text_pane="text: hello,world"></a-entity>-->
       <a-entity id="readRoom" position="0 -30 0">
         <a-entity
           id="blackboard"
@@ -32,44 +24,26 @@
           geometry="primitive: plane; width: 18   ; height: 15"
           material="color: #333333; shader: flat; transparent: false"
         ></a-entity>
-        <a-entity id="text_pane" text_pane="text: hello,world">
-          <a-entity
-            id="left_nav_button"
-            nav_button='jsonData: {"width": "1", "height": "1", "depth": "0.01", "color": "blue", "x": "-8.25", "y": "0", "z": "0.005"};'
-          ></a-entity>
-          <a-entity
-            id="right_nav_button"
-            nav_button='jsonData: {"width": "1", "height": "1", "depth": "0.01", "color": "blue", "x": "8.25", "y": "0", "z": "0.005"};'
-          ></a-entity>
-          <a-text
-            id="text"
-            value="This is where the text goes"
-            negate="true"
-            scale="2 2 1"
-            position="-3 0 0.25"
-          ></a-text>
-        </a-entity>
         <a-entity
-          id="popup-camera"
-          position="0 0 9"
-          rotation="0 0 0"
-          camera="active: false;"
-        ></a-entity>
+          id="text_pane"
+          text_pane='jsonData: {"text": ["phrase1","phrase2"], "currPosition" : 0}'
+        >
+        </a-entity>
       </a-entity>
     </a-scene>
   </body>
 </html>
 <script>
-  setupEnv();
+  <!--  setupEnv();-->
 
-  function setupEnv() {
-    // second button. May or may not be here. There can be many of these.
-    var parentEl = document.querySelector("a-scene");
-    var entityEl2 = document.createElement("a-entity");
-    entityEl2.setAttribute(
-      "open-popup",
-      'jsonData: {"width": "1", "height": "2", "depth": "1", "color": "blue", "x": "0", "y": "0", "z": "0", "blackboardData":{"componentType": "prism", "jsonData": {"width": "10", "height": "2", "depth": "1", "color": "orange", "x": "2", "y": "0", "z": "2"}}}'
-    );
-    parentEl.appendChild(entityEl2);
-  }
+  <!--  function setupEnv() {-->
+  <!--    // second button. May or may not be here. There can be many of these.-->
+  <!--    var parentEl = document.querySelector("a-scene");-->
+  <!--    var entityEl2 = document.createElement("a-entity");-->
+  <!--    entityEl2.setAttribute(-->
+  <!--      "open-popup",-->
+  <!--      'jsonData: {"width": "1", "height": "2", "depth": "1", "color": "blue", "x": "0", "y": "0", "z": "0", "blackboardData":{"componentType": "prism", "jsonData": {"width": "10", "height": "2", "depth": "1", "color": "orange", "x": "2", "y": "0", "z": "2"}}}'-->
+  <!--    );-->
+  <!--    parentEl.appendChild(entityEl2);-->
+  <!--  }-->
 </script>

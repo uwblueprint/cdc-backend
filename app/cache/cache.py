@@ -86,6 +86,12 @@ class CustomCache(object):
             "timestamp": int(time.time()),
         }
 
+    async def clear_all_cache(self):
+        self.scenario_cache.clear()
+        self.scene_cache.clear()
+        self.asset_cache.clear()
+        self.scenario_name_to_id_cache.clear()
+
 
 CACHE = CustomCache()
 
@@ -96,6 +102,8 @@ check_and_get_scenario_by_name = CACHE.check_and_get_scenario_by_name
 check_and_get_scene = CACHE.check_and_get_scene
 
 check_and_get_asset = CACHE.check_and_get_asset
+
+clear_all_cache = CACHE.clear_all_cache
 
 update_scenario_cache = CACHE.update_scenario_cache
 

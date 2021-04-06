@@ -106,7 +106,9 @@ def main():
     server.start()
 
     cache_update_time = config.get("cache.update_time") * 1000
-    tornado.ioloop.PeriodicCallback(update_cache, cache_update_time).start()
+    cache_update_enabled = config.get("cache.update_enabled")
+    if cache_update_enabled:
+        tornado.ioloop.PeriodicCallback(update_cache, cache_update_time).start()
     asyncio.get_event_loop().run_forever()
 
 

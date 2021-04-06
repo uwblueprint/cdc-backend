@@ -119,7 +119,9 @@ async def get_scenario_from_postgres(scenario_id: str, session, update_cache=Fal
         raise ValueError("Scenario ID not valid")
     scenario_obj_dict = scenario_obj.as_dict()
     if update_cache:
-        await update_scenario_cache(scenario_id, scenario_obj_dict)
+        await update_scenario_cache(
+            scenario_id, scenario_obj_dict, scenario_obj.friendly_name
+        )
     return scenario_obj_dict
 
 
@@ -130,7 +132,9 @@ async def get_scenario_by_friendly_name_from_postgres(
     if scenario_obj is None:
         raise ValueError("Unknown Scenario")
     if update_cache:
-        await update_scenario_cache(scenario_obj.id, scenario_obj.as_dict())
+        await update_scenario_cache(
+            scenario_obj.id, scenario_obj.as_dict(), scenario_obj.friendly_name
+        )
     return scenario_obj
 
 

@@ -61,7 +61,6 @@ class UIScenarioHandler(BaseUIHandler):
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))
-        except Exception as e:
+        except Exception:
             # no need to expose exact exception error on this route
-            print(str(e))
             self.write_error(status_code=500, message="Internal Server Error")

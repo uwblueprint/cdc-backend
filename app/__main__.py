@@ -5,6 +5,7 @@ import tornado.autoreload
 import tornado.httpserver
 import tornado.ioloop
 import tornado.web
+from cache.update_cache import update_cache
 from config import config
 from routes.admin.asset import AdminAssetHandler, AdminAssetPostHandler
 from routes.admin.object import AdminObjectPostHandler, AdminObjectPutHandler
@@ -103,6 +104,11 @@ def main():
         server.bind(port, address=config.get("tornado.address"))
 
     server.start()
+
+    cache_update_time = config.get("cache.update_time") * 1000
+    cache_periodic_callback_enabled = config.get("cache.periodic_callback_enabled")
+    if cache_periodic_callback_enabled:
+        tornado.ioloop.PeriodicCallback(update_cache, cache_update_time).start()
     asyncio.get_event_loop().run_forever()
 
 

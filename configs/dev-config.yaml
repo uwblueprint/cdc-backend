@@ -33,4 +33,4 @@ cache:
   # how frequently to update cache (in seconds), 60 seconds for dev, for now
   update_time: 5
   # no need to update cache for dev, except for testing purpose
-  update_enabled: false
+  periodic_callback_enabled: false

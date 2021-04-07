@@ -9,7 +9,7 @@ from models.db_client import get_scenarios
 
 async def update_cache():
     session = get_session()
-    clear_all_cache()
+    await clear_all_cache()
     scenarios = get_scenarios(session)
     scenes_updated = set()
     for scenario in scenarios:

@@ -34,7 +34,7 @@ async def post_asset_to_postgres(data: dict, session):
     return asset_model.as_dict()
 
 
-async def get_object_from_postgres(object_id: str, session):
+async def get_object_from_postgres(object_id: str, session, update_cache=False):
     object_obj = get_object(object_id, session)
     if object_obj is None:
         raise ValueError("Object ID not valid")
@@ -42,7 +42,7 @@ async def get_object_from_postgres(object_id: str, session):
 
     # Get the asset details
     object_obj_dict["asset_details"] = await get_asset_from_postgres(
-        object_obj.asset_id, session
+        object_obj.asset_id, session, update_cache
     )
 
     return object_obj_dict
@@ -57,11 +57,11 @@ async def get_scene_from_postgres(scene_id: str, session, update_cache=False):
 
     objects = []
     for object_id in response["object_ids"]:
-        objects.append(await get_object_from_postgres(object_id, session))
+        objects.append(await get_object_from_postgres(object_id, session, update_cache))
 
     response["objects"] = objects
     response["background_details"] = await get_asset_from_postgres(
-        scene_obj.background_id, session
+        scene_obj.background_id, session, update_cache
     )
 
     if update_cache:
@@ -103,6 +103,12 @@ async def update_asset_from_postgres(asset_id: str, data: dict, session):
 
 async def post_scenario_to_postgres(data: dict, session):
     scenario_obj = Scenario(**data)
+    potential_duplicate = get_scenario_by_friendly_name(
+        scenario_obj.friendly_name, session
+    )
+    if potential_duplicate is not None:
+        # this friendly name already exists
+        raise AssertionError("Scenario with that friendly name already exists")
     scenario_obj = create_entity(scenario_obj, session)
     return scenario_obj.as_dict()
 
@@ -113,7 +119,9 @@ async def get_scenario_from_postgres(scenario_id: str, session, update_cache=Fal
         raise ValueError("Scenario ID not valid")
     scenario_obj_dict = scenario_obj.as_dict()
     if update_cache:
-        await update_scenario_cache(scenario_id, scenario_obj_dict)
+        await update_scenario_cache(
+            scenario_id, scenario_obj_dict, scenario_obj.friendly_name
+        )
     return scenario_obj_dict
 
 
@@ -124,7 +132,9 @@ async def get_scenario_by_friendly_name_from_postgres(
     if scenario_obj is None:
         raise ValueError("Unknown Scenario")
     if update_cache:
-        await update_scenario_cache(scenario_obj.id, scenario_obj.as_dict())
+        await update_scenario_cache(
+            scenario_obj.id, scenario_obj.as_dict(), scenario_obj.friendly_name
+        )
     return scenario_obj
 
 
@@ -137,6 +147,14 @@ async def delete_scenario_from_postgres(scenario_id: str, session):
 
 
 async def update_scenario_from_postgres(scenario_id: str, data: dict, session):
+    potential_duplicate: Scenario = get_scenario_by_friendly_name(
+        data["friendly_name"], session
+    )
+    if potential_duplicate is not None:
+        # this friendly name already exists, ensure it is the current scenario
+        if potential_duplicate.id != int(scenario_id):
+            raise AssertionError("Scenario with that friendly name already exists")
+
     num_scenarios_updated = put_scenario(scenario_id, data, session)
     if num_scenarios_updated == 0:
         raise ValueError("Invalid Scenario ID")

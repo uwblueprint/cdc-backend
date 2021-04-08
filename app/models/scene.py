@@ -14,6 +14,8 @@ class Scene(BaseModel):
     rotation = Column(ARRAY(Float), nullable=False, default=[])
     background_id = Column(BigInteger, ForeignKey("asset.id"), nullable=False)
     camera_properties = Column(JSONB, nullable=False, default={})
+    # TODO: Default can include basic WASD movements control if needed, later on
+    hints = Column(ARRAY(Text), nullable=False, default=[])
     columns = [
         "id",
         "name",
@@ -24,4 +26,5 @@ class Scene(BaseModel):
         "rotation",
         "background_id",
         "camera_properties",
+        "hints",
     ]

@@ -47,7 +47,14 @@
     ],
     "texts": ["", "hello", "kenobi"],
     "is_interactable": true,
-    "animations_json": {}
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "jsonData": {
+          "password": "1234"
+        }
+      }
+    }
   },
   {
     "position": [5.775, 0.014, -5.717],
@@ -65,7 +72,14 @@
     ],
     "texts": ["", "hello", "from the other side part 2"],
     "is_interactable": true,
-    "animations_json": {}
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "jsonData": {
+          "password": "1000"
+        }
+      }
+    }
   },
   {
     "position": [-5.775, 0.014, -5.717],

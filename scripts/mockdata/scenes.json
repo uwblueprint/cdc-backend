@@ -16,7 +16,8 @@
         "shape": "crosshairs",
         "position": [0, 0, 0]
       }
-    }
+    },
+    "hints": []
   },
   {
     "name": "Living Room",
@@ -35,7 +36,8 @@
         "shape": "crosshairs",
         "position": [0, 0, 0]
       }
-    }
+    },
+    "hints": ["hint1", "hint2"]
   },
   {
     "name": "Classroom",
@@ -54,6 +56,7 @@
         "shape": "crosshairs",
         "position": [0, -1, -1]
       }
-    }
+    },
+    "hints": []
   }
 ]

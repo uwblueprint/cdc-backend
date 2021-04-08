@@ -68,8 +68,7 @@ class BaseUIHandler(tornado.web.RequestHandler):
     """
 
     def prepare(self):
-        # TODO: caching for these routes will be implemented later (diff PR)
-        self.db_session = get_session()
+        self.db_session = None
 
     def write_error(self, status_code: int, **kwargs: Any) -> None:
         title = httputil.responses.get(status_code, "Unknown")

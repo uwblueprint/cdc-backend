@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="components/text_pane.js"></script>
+    <script src="components/text-box.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #AAD5D7" cursor="rayOrigin: mouse">
+      <a-entity
+        id="primaryCamera"
+        position="0 -30 15"
+        rotation="0 0 0"
+        camera
+        look-controls
+        wasd-controls
+      ></a-entity>
+
+      <a-entity id="readRoom" position="0 -30 0">
+        <a-entity
+          id="blackboard"
+          visible="true"
+          geometry="primitive: plane; width: 18; height: 15"
+          material="color: #333333; shader: flat; transparent: false"
+        ></a-entity>
+        <a-entity
+          id="text_pane"
+          text_pane='jsonData: {"text": ["Welcome to the Escape Room! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test.","This is where text will go. This is where text will go. This is where text will go", "This is some more text. This is some more text. This is some more text."], "currPosition" : 0}'
+        >
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
+<script></script>

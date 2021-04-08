@@ -23,68 +23,44 @@ AFRAME.registerComponent("text_pane", {
 
     if (data.text.length > 1) {
       const leftNavProp =
-        '{"width": "1.5", "height": "1.5", "depth": "0.01", "color": "white", "x": "-8", "y": "0", "z": "0.005"}';
+        '{"width": "1.5", "height": "1.5", "depth": "0.005", "color": "white", "x": "-8", "y": "0", "z": "0.005", "text": "Prev"}';
       const rightNavProp =
-        '{"width": "1.5", "height": "1.5", "depth": "0.01", "color": "white", "x": "8", "y": "0", "z": "0.005"}';
-
-      // Create left nav textLabel
-      this.buttonLabelLeft = document.createElement("a-text");
-      this.buttonLabelLeft.setAttribute("id", "text-nav-left");
-      this.buttonLabelLeft.setAttribute("value", "Prev");
-      this.buttonLabelLeft.setAttribute("negate", "true");
-      this.buttonLabelLeft.setAttribute("scale", "2 2 1");
-      this.buttonLabelLeft.setAttribute("color", "black");
-      this.buttonLabelLeft.setAttribute("position", "-8.5 0 0.01");
-      this.el.appendChild(this.buttonLabelLeft);
+        '{"width": "1.5", "height": "1.5", "depth": "0.005", "color": "white", "x": "8", "y": "0", "z": "0.005", "text": "Next"}';
+      const textLabelConst = this.textLabel;
 
       // Create left nav button
       this.leftNav = document.createElement("a-entity");
       this.leftNav.setAttribute("id", "nav-button-left");
-      this.leftNav.setAttribute("prism", "jsonData", leftNavProp);
-      this.leftNav.addEventListener("click", function () {
-        if (data.currPosition != 0) {
-          --data.currPosition;
-          document
-            .querySelector("#text")
-            .setAttribute("value", data.text[data.currPosition]);
-          document
-            .querySelector("#text-nav-right")
-            .setAttribute("jsonData", rightNavProp);
-        }
-      });
+      this.leftNav.setAttribute("text-box", "jsonData", leftNavProp);
       this.el.appendChild(this.leftNav);
-
-      // Create right nav textLabel
-      this.buttonLabelRight = document.createElement("a-text");
-      this.buttonLabelRight.setAttribute("id", "text-nav-right");
-      this.buttonLabelRight.setAttribute("value", "Next");
-      this.buttonLabelRight.setAttribute("negate", "true");
-      this.buttonLabelRight.setAttribute("scale", "2 2 1");
-      this.buttonLabelRight.setAttribute("color", "black");
-      this.buttonLabelRight.setAttribute("position", "7.5 0 0.01");
-      this.el.appendChild(this.buttonLabelRight);
 
       // Create right nav button
       this.rightNav = document.createElement("a-entity");
       this.rightNav.setAttribute("id", "nav-button-right");
-      this.rightNav.setAttribute("prism", "jsonData", rightNavProp);
+      this.rightNav.setAttribute("text-box", "jsonData", rightNavProp);
+      this.el.appendChild(this.rightNav);
+
+      const rightNavConst = this.rightNav;
+      this.leftNav.addEventListener("click", function () {
+        if (data.currPosition != 0) {
+          --data.currPosition;
+          textLabelConst.setAttribute("value", data.text[data.currPosition]);
+          rightNavConst.firstChild.setAttribute("value", "Next");
+        }
+      });
+
       this.rightNav.addEventListener("click", function () {
         if (data.currPosition == data.text.length - 2) {
-          document
-            .querySelector("#text-nav-right")
-            .setAttribute("value", "Done");
+          rightNavConst.firstChild.setAttribute("value", "Done");
         }
 
         if (data.currPosition != data.text.length - 1) {
           ++data.currPosition;
-          document
-            .querySelector("#text")
-            .setAttribute("value", data.text[data.currPosition]);
+          textLabelConst.setAttribute("value", data.text[data.currPosition]);
         } else {
           closeTextPane();
         }
       });
-      this.el.appendChild(this.rightNav);
     }
   },
 });

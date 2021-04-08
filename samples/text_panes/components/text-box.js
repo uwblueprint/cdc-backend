@@ -1,4 +1,4 @@
-AFRAME.registerComponent("prism", {
+AFRAME.registerComponent("text-box", {
   schema: {
     jsonData: {
       parse: JSON.parse,
@@ -14,11 +14,7 @@ AFRAME.registerComponent("prism", {
     const el = this.el;
 
     // Create geometry.
-    this.geometry = new THREE.BoxBufferGeometry(
-      data.width,
-      data.height,
-      data.depth
-    );
+    this.geometry = new THREE.PlaneGeometry(data.width, data.height);
 
     // Create material.
     this.material = new THREE.MeshStandardMaterial({ color: data.color });
@@ -29,5 +25,15 @@ AFRAME.registerComponent("prism", {
     el.object3D.position.set(data.x, data.y, data.z);
     // Set mesh on entity.
     el.setObject3D("mesh", this.mesh);
+
+    // Create textLabel
+    this.textLabel = document.createElement("a-text");
+    this.textLabel.setAttribute("id", "text-nav");
+    this.textLabel.setAttribute("value", data.text);
+    this.textLabel.setAttribute("negate", "true");
+    this.textLabel.setAttribute("scale", "2 2 1");
+    this.textLabel.setAttribute("color", "black");
+    this.textLabel.setAttribute("align", "center");
+    this.el.appendChild(this.textLabel);
   },
 });

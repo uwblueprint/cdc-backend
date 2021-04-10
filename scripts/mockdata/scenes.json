@@ -48,7 +48,7 @@
     "rotation": [0.0, 0.0, 0.0],
     "background_id": 2,
     "camera_properties": {
-      "position": [0, 1.6, 0],
+      "position": [-2.17, 1.689, 2.659],
       "look_controls": true,
       "wasd_controls": true,
       "cursor_properties": {

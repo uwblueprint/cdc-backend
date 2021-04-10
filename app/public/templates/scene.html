@@ -59,19 +59,20 @@
             scale="{{ scene_dict['scale'][0] }} {{ scene_dict['scale'][1] }} {{ scene_dict['scale'][2] }}"
             rotation="{{ scene_dict['rotation'][0] }} {{ scene_dict['rotation'][1] }} {{ scene_dict['rotation'][2] }}"
             nav-mesh
+            visible="false"
         ></a-gltf-model>
 
         <a-entity id="rig"
                 movement-controls="constrainToNavMesh: true;
                                    controls: checkpoint, gamepad, trackpad, keyboard, touch;"
-                position="-0.8 0 3">
+                position="{{ scene_dict['camera_properties']['position'][0] }} 0 {{ scene_dict['camera_properties']['position'][2] }}">
         <a-entity
           id="primaryCamera"
           camera
           {% if scene_dict["camera_properties"]["look_controls"] %}
             look-controls
           {% end %}
-          position="{{ scene_dict['camera_properties']['position'][0] }} {{ scene_dict['camera_properties']['position'][1] }} {{ scene_dict['camera_properties']['position'][2] }}"
+          position="0 {{ scene_dict['camera_properties']['position'][1] }} 0"
         ></a-entity>
       </a-entity>
         {% include popup.html %}

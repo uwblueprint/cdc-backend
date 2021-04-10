@@ -8,7 +8,18 @@ AFRAME.registerComponent("animation-on-click-run", {
   dependencies: ["animation__onclick"],
 
   init: function () {
-    var extraInfo = this.data.blackboardData;
+    const el = this.el;
+    this.data.blackboardData.jsonData.id = el.id;
+
+    const extraInfo = this.data.blackboardData;
+
+    // initialize each interactive object to not solved state, except text-panes (which are just view objects)
+    if (extraInfo.componentType === "text-pane") {
+      el.sceneEl.emit("initializeObject", { id: el.id, solved: true });
+    } else {
+      el.sceneEl.emit("initializeObject", { id: el.id, solved: false });
+    }
+
     this.el.addEventListener("animationbegin", function (e) {
       // do nothing for now, will be added later, if needed
     });
@@ -31,6 +42,11 @@ function addEntityToBlackboard(componentDataParsed) {
     "jsonData",
     JSON.stringify(componentDataParsed.jsonData)
   );
+  entityEl.setAttribute(
+    "bind__" + componentDataParsed.componentType,
+    "isSolved: solvedObjects"
+  );
+
   entityEl.addEventListener("loaded", function (e) {
     if (e.target === entityEl) {
       var popupCameraEl = document.querySelector("#popup-camera");

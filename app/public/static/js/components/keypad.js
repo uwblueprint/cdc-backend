@@ -4,6 +4,8 @@ AFRAME.registerComponent("keypad", {
       parse: JSON.parse,
       stringify: JSON.stringify,
     },
+    isSolved: { type: "map" },
+    score: { type: "number" },
   },
   multiple: true,
   /**
@@ -13,6 +15,8 @@ AFRAME.registerComponent("keypad", {
     const data = this.data.jsonData;
     const password = data.password;
     const el = this.el;
+    console.log("init:");
+    console.log(this.data.isSolved);
     el.setAttribute(
       "super-keyboard",
       "imagePath:/static/img/; multipleInputs:true; model: numpad; align: center; maxLength: 4; label: Enter Password; labelColor: black"
@@ -28,6 +32,7 @@ AFRAME.registerComponent("keypad", {
           "super-keyboard",
           "label:SUCCESS; labelColor: green; multipleInputs:true"
         );
+        el.sceneEl.emit("solvedObject", { id: data.id });
       } else {
         const statusLabel = el.getAttribute("super-keyboard").label;
         if (statusLabel !== "SUCCESS") {
@@ -36,6 +41,10 @@ AFRAME.registerComponent("keypad", {
         }
       }
     });
+  },
+  update: function () {
+    console.log("update:");
+    console.log(this.data.isSolved);
   },
 });
 

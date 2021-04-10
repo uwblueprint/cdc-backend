@@ -115,15 +115,15 @@
           "############",
           cameraEl.getAttribute("look-controls").enabled
         );
-        if (!event.value) {
-          if (control.object === boxObj) {
-            control.detach();
-            control.attach(planeObj);
-          } else {
-            control.detach();
-            control.attach(boxObj);
-          }
-        }
+        // if (!event.value) {
+        //   if (control.object === boxObj) {
+        //     control.detach();
+        //     control.attach(planeObj);
+        //   } else {
+        //     control.detach();
+        //     control.attach(boxObj);
+        //   }
+        // }
       });
 
       const mesh = new THREE.Mesh(geometry, material);
@@ -137,7 +137,6 @@
       // scene.add(boxObj);
 
       control.attach(boxObj);
-      control.attach(planeObj);
       scene.add(control);
 
       window.addEventListener("resize", onWindowResize);

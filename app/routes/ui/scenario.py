@@ -50,6 +50,14 @@ class UIScenarioHandler(BaseUIHandler):
                 )
 
             is_last_scene = scene_number_int == len(scenario_obj.scene_ids) - 1
+            background_ext = (
+                "." + scene_dict["background_details"]["s3_key"].split(".")[-1]
+            )
+            navmesh_src = (
+                scene_dict["background_details"]["s3_key"].removesuffix(background_ext)
+                + "-navmesh"
+                + ".gltf"
+            )
 
             await self.render(
                 "scene.html",
@@ -57,6 +65,7 @@ class UIScenarioHandler(BaseUIHandler):
                 scenario_dict=scenario_obj.as_dict(),
                 scene_dict=scene_dict,
                 asset_prefix_url=config.get("asset.prefix_url"),
+                navmesh_src=navmesh_src,
                 json=json,
             )
         except ValueError as e:

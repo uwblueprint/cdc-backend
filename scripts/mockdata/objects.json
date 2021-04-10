@@ -96,7 +96,20 @@
       }
     ],
     "texts": ["", "hello", "from the other side part 3"],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "text": [
+            "Welcome to the Escape Room! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test.",
+            "This is where text will go. This is where text will go. This is where text will go",
+            "This is some more text. This is some more text. This is some more text.",
+            "This is the last text, clicking Done will close this in a later PR"
+          ],
+          "currPosition": 0
+        }
+      }
+    }
   }
 ]

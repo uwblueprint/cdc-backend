@@ -10,7 +10,6 @@ AFRAME.registerComponent("text_pane", {
 
   init: function () {
     const data = this.data.jsonData;
-    const el = this.el;
 
     // Create textLabel
     this.textLabel = document.createElement("a-text");
@@ -32,17 +31,19 @@ AFRAME.registerComponent("text_pane", {
       this.leftNav = document.createElement("a-entity");
       this.leftNav.setAttribute("id", "nav-button-left");
       this.leftNav.setAttribute("text-box", "jsonData", leftNavProp);
+      this.leftNav.setAttribute("class", "link");
       this.el.appendChild(this.leftNav);
 
       // Create right nav button
       this.rightNav = document.createElement("a-entity");
       this.rightNav.setAttribute("id", "nav-button-right");
       this.rightNav.setAttribute("text-box", "jsonData", rightNavProp);
+      this.rightNav.setAttribute("class", "link");
       this.el.appendChild(this.rightNav);
 
       const rightNavConst = this.rightNav;
       this.leftNav.addEventListener("click", function () {
-        if (data.currPosition != 0) {
+        if (data.currPosition !== 0) {
           --data.currPosition;
           textLabelConst.setAttribute("value", data.text[data.currPosition]);
           rightNavConst.firstChild.setAttribute("value", "Next");
@@ -50,11 +51,11 @@ AFRAME.registerComponent("text_pane", {
       });
 
       this.rightNav.addEventListener("click", function () {
-        if (data.currPosition == data.text.length - 2) {
+        if (data.currPosition === data.text.length - 2) {
           rightNavConst.firstChild.setAttribute("value", "Done");
         }
 
-        if (data.currPosition != data.text.length - 1) {
+        if (data.currPosition !== data.text.length - 1) {
           ++data.currPosition;
           textLabelConst.setAttribute("value", data.text[data.currPosition]);
         } else {

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Page to allow creation of a nav-mesh for a scene -->
+  <head>
+    <title>{{ scenario_dict["name"] }} - {{ scene_dict["name"] }}</title>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+
+    <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+  </head>
+
+  <body>
+    <div id="scene-root">
+      <a-scene
+        cursor="rayOrigin:mouse"
+        raycaster="objects: .link"
+        inspector-plugin-recast
+      >
+        <a-assets timeout="50000">
+          {% for object in scene_dict["objects"] %}
+          <a-asset-item
+            id="{{ object['asset_id'] }}-asset-src"
+            src="{{ asset_prefix_url }}{{ object['asset_details']['s3_key'] }}"
+          ></a-asset-item>
+          {% end %}
+
+          <!--  Background  -->
+          <a-asset-item
+            id="{{ scene_dict['background_details']['id'] }}-asset-src"
+            src="{{ asset_prefix_url }}{{ scene_dict['background_details']['s3_key'] }}"
+          ></a-asset-item>
+        </a-assets>
+
+        <!--  Background  -->
+        <a-gltf-model
+          id="{{ scene_dict['background_details']['id'] }}-background"
+          src="#{{ scene_dict['background_details']['id'] }}-asset-src"
+          position="{{ scene_dict['position'][0] }} {{ scene_dict['position'][1] }} {{ scene_dict['position'][2] }}"
+          scale="{{ scene_dict['scale'][0] }} {{ scene_dict['scale'][1] }} {{ scene_dict['scale'][2] }}"
+          rotation="{{ scene_dict['rotation'][0] }} {{ scene_dict['rotation'][1] }} {{ scene_dict['rotation'][2] }}"
+        ></a-gltf-model>
+
+        <a-entity
+          id="primaryCamera"
+          camera
+          look-controls
+          wasd-controls
+          position="{{ scene_dict['camera_properties']['position'][0] }} {{ scene_dict['camera_properties']['position'][1] }} {{ scene_dict['camera_properties']['position'][2] }}"
+        ></a-entity>
+
+        <!-- Objects in the scene -->
+        {% for object in scene_dict["objects"] %}
+        <a-gltf-model
+          id="{{ object['id'] }}-obj"
+          src="#{{ object['asset_id'] }}-asset-src"
+          position="{{ object['position'][0] }} {{ object['position'][1] }} {{ object['position'][2] }}"
+          scale="{{ object['scale'][0] }} {{ object['scale'][1] }} {{ object['scale'][2] }}"
+          rotation="{{ object['rotation'][0] }} {{ object['rotation'][1] }} {{ object['rotation'][2] }}"
+        ></a-gltf-model>
+        {% end %}
+      </a-scene>
+    </div>
+  </body>
+</html>

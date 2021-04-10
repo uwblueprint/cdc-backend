@@ -2,8 +2,10 @@
 <html lang="en">
   <head>
     <title>{{ scenario_dict["name"] }} - {{ scene_dict["name"] }}</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.controls.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.pathfinding.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://unpkg.com/aframe-super-keyboard@2.1.0/dist/aframe-super-keyboard.min.js"></script>
 
     <!-- A-frame components   -->
@@ -31,6 +33,12 @@
             src="{{ asset_prefix_url }}{{ scene_dict['background_details']['s3_key'] }}"
           ></a-asset-item>
 
+        <!--  Background nav mesh  -->
+          <a-asset-item
+            id="{{ scene_dict['background_details']['id'] }}-asset-navmesh-src"
+            src="{{ asset_prefix_url }}{{ navmesh_src }}"
+          ></a-asset-item>
+
         </a-assets>
         <a-entity environment="preset: forest; dressingAmount: 500; playArea: 10"></a-entity>
 
@@ -43,17 +51,30 @@
             rotation="{{ scene_dict['rotation'][0] }} {{ scene_dict['rotation'][1] }} {{ scene_dict['rotation'][2] }}"
         ></a-gltf-model>
 
+        <!--  Background nav-mesh     -->
+        <a-gltf-model
+            id="{{ scene_dict['background_details']['id'] }}-background-navmesh"
+            src="#{{ scene_dict['background_details']['id'] }}-asset-navmesh-src"
+            position="{{ scene_dict['position'][0] }} {{ scene_dict['position'][1] }} {{ scene_dict['position'][2] }}"
+            scale="{{ scene_dict['scale'][0] }} {{ scene_dict['scale'][1] }} {{ scene_dict['scale'][2] }}"
+            rotation="{{ scene_dict['rotation'][0] }} {{ scene_dict['rotation'][1] }} {{ scene_dict['rotation'][2] }}"
+            nav-mesh
+            visible="false"
+        ></a-gltf-model>
+
+        <a-entity id="rig"
+                movement-controls="constrainToNavMesh: true;
+                                   controls: checkpoint, gamepad, trackpad, keyboard, touch;"
+                position="{{ scene_dict['camera_properties']['position'][0] }} 0 {{ scene_dict['camera_properties']['position'][2] }}">
         <a-entity
           id="primaryCamera"
           camera
           {% if scene_dict["camera_properties"]["look_controls"] %}
             look-controls
           {% end %}
-          {% if scene_dict["camera_properties"]["wasd_controls"] %}
-            wasd-controls
-          {% end %}
-          position="{{ scene_dict['camera_properties']['position'][0] }} {{ scene_dict['camera_properties']['position'][1] }} {{ scene_dict['camera_properties']['position'][2] }}"
+          position="0 {{ scene_dict['camera_properties']['position'][1] }} 0"
         ></a-entity>
+      </a-entity>
         {% include popup.html %}
 
 <!--  Keeping for future reference  -->

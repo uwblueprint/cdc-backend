@@ -8,6 +8,8 @@
       content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="./js/OrbitControls.js"></script>
+    <script src="./js/TransformControls.js"></script>
     <script>
       AFRAME.registerComponent("mythreejsthing", {
         schema: {
@@ -34,329 +36,128 @@
     </script>
   </head>
   <body>
-    <a-scene>
+    <a-scene
+      background="color: black"
+      cursor="rayOrigin:mouse"
+      raycaster="objects: .link"
+    >
+      <!--      <a-assets>-->
+      <!--        <img-->
+      <!--                id="boxTexture"-->
+      <!--                src="https://i.imgur.com/mYmmbrp.jpg"-->
+      <!--                crossorigin="anonymous"-->
+      <!--        />-->
+      <!--        <img-->
+      <!--                id="groundTexture"-->
+      <!--                src="https://cdn.aframe.io/a-painter/images/floor.jpg"-->
+      <!--                crossorigin="anonymous"-->
+      <!--        />-->
+      <!--      </a-assets>-->
+
+      <a-box
+        color="red"
+        position="0 2 -5"
+        rotation="0 45 45"
+        scale="2 2 2"
+        animation__position="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"
+        animation__mouseenter="property: scale; to: 2.3 2.3 2.3; dur: 300; startEvents: mouseenter"
+        animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave"
+      >
+      </a-box>
+      <a-text
+        value="Hello and welcome to CoronaEscape!"
+        color="#BBB"
+        position="-2.9 1.0 -3"
+        scale="1.5 1.5 1.5"
+      ></a-text>
+      <!--      <a-light type="ambient" color="#445451"></a-light>-->
+      <!--      <a-light type="point" intensity="2" position="2 4 4"></a-light>-->
+      <!--      <a-plane-->
+      <!--              src="#groundTexture"-->
+      <!--              rotation="-90 0 0"-->
+      <!--              height="1000"-->
+      <!--              width="1000"-->
+      <!--      ></a-plane>-->
+
+      <a-entity camera look-controls wasd-controls position="0 1 0"> </a-entity>
       <a-entity mythreejsthing="color: green;" position="0 50 -5"> </a-entity>
     </a-scene>
     <script type="module">
-      import { TransformControls } from "./TransformControls.js";
+      let { THREE } = AFRAME;
+      let { OrbitControls, TransformControls } = THREE;
 
-      const aspect = window.innerWidth / window.innerHeight;
       let sceneEl = document.querySelector("a-scene");
       let scene = sceneEl.object3D;
 
-      // let renderer = sceneEl.renderer;
-      // renderer.setPixelRatio( window.devicePixelRatio );
-      // renderer.setSize( window.innerWidth, window.innerHeight );
-      // document.body.appendChild( renderer.domElement );
+      let renderer = sceneEl.renderer;
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
 
-      let currentCamera = sceneEl.camera;
+      const aspect = window.innerWidth / window.innerHeight;
 
-      currentCamera.position.set(1000, 500, 1000);
-      currentCamera.lookAt(0, 200, 0);
-
-      scene.camera = currentCamera;
+      let cameraEl = document.querySelector("[camera]");
+      let currentCamera = document
+        .querySelector("[camera]")
+        .getObject3D("camera");
+      // let currentCamera = sceneEl.camera;
       scene.add(new THREE.GridHelper(1000, 10, 0x888888, 0x444444));
 
-      // let boxObj = document.querySelector("a-box");
-      // let currRotation = boxObj3.rotation;
-      // // let camera = document.querySelector("a-entity[camera]");
-      //
-      // boxObj.addEventListener("mousedown", onPointerDown);
-      // boxObj.addEventListener("mouseup", onPointerUp);
-      //
-      // function onPointerDown(event) {
-      //     console.log("POINTER DOWN --------------------", event);
-      //     document.addEventListener("mousemove", onPointerHover);
-      // }
-      //
-      // function onPointerUp(event) {
-      //     console.log("POINTER UP ----------------------", event);
-      //     document.removeEventListener(`mousemove`, onPointerHover);
-      // }
-      //
-      // function onPointerHover(event) {
-      //     const xV = new THREE.Vector3(1, 0, 0);
-      //     const yV = new THREE.Vector3(0, 1, 0);
-      //     boxObj3.rotateOnWorldAxis(yV, event.movementX / 250);
-      //     boxObj3.rotateOnWorldAxis(xV, event.movementY / 250);
-      //     // console.log("POINTER HOVER --------------------", event);
-      // }
+      const light = new THREE.DirectionalLight(0xffffff, 2);
+      light.position.set(1, 1, 1);
+      scene.add(light);
+
+      const texture = new THREE.TextureLoader().load(
+        "textures/crate.gif",
+        render
+      );
+      texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+
+      const geometry = new THREE.BoxGeometry(200, 200, 200);
+      const material = new THREE.MeshLambertMaterial({
+        map: texture,
+        transparent: true,
+      });
+
+      let control = new TransformControls(currentCamera, renderer.domElement);
+      control.addEventListener("change", render);
+
+      control.addEventListener("dragging-changed", function (event) {
+        cameraEl.setAttribute("look-controls", "enabled", `${!event.value}`);
+        console.log(
+          "#############",
+          cameraEl.getAttribute("look-controls").enabled
+        );
+      });
+
+      const mesh = new THREE.Mesh(geometry, material);
+
+      let boxEl = document.querySelector("a-box");
+      let boxObj = boxEl.object3D;
+
+      scene.add(boxObj);
+
+      control.attach(boxObj);
+      scene.add(control);
+
+      window.addEventListener("resize", onWindowResize);
+
+      control.setMode("rotate");
+
+      function onWindowResize() {
+        const aspect = window.innerWidth / window.innerHeight;
+
+        currentCamera.aspect = aspect;
+        currentCamera.updateProjectionMatrix();
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        render();
+      }
+
+      function render() {
+        renderer.render(scene, currentCamera);
+      }
     </script>
   </body>
 </html>
-
-<!--        <div id="info">-->
-<!--            "W" translate | "E" rotate | "R" scale | "+/-" adjust size<br />-->
-<!--            "Q" toggle world/local space | "Shift" snap to grid<br />-->
-<!--            "X" toggle X | "Y" toggle Y | "Z" toggle Z | "Spacebar" toggle-->
-<!--            enabled<br />-->
-<!--            "C" toggle camera | "V" random zoom-->
-<!--        </div>-->
-
-<!--        <a-scene background="color: black" cursor="rayOrigin:mouse">-->
-<!--            <a-assets>-->
-<!--                <img-->
-<!--                    id="boxTexture"-->
-<!--                    src="https://i.imgur.com/mYmmbrp.jpg"-->
-<!--                    crossorigin="anonymous"-->
-<!--                />-->
-<!--                <img-->
-<!--                    id="groundTexture"-->
-<!--                    src="https://cdn.aframe.io/a-painter/images/floor.jpg"-->
-<!--                    crossorigin="anonymous"-->
-<!--                />-->
-<!--            </a-assets>-->
-
-<!--            <a-box-->
-<!--                color="red"-->
-<!--                position="0 2 -5"-->
-<!--                rotation="0 45 45"-->
-<!--                scale="2 2 2"-->
-<!--                animation__position="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"-->
-<!--                animation__mouseenter="property: scale; to: 2.3 2.3 2.3; dur: 300; startEvents: mouseenter"-->
-<!--                animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave"-->
-<!--            >-->
-<!--            </a-box>-->
-<!--            <a-light type="ambient" color="#445451"></a-light>-->
-<!--            <a-light type="point" intensity="2" position="2 4 4"></a-light>-->
-<!--            <a-plane-->
-<!--                src="#groundTexture"-->
-<!--                rotation="-90 0 0"-->
-<!--                height="100"-->
-<!--                width="100"-->
-<!--            ></a-plane>-->
-
-<!--            <a-text-->
-<!--                value="Hello and welcome to CoronaEscape!"-->
-<!--                color="#BBB"-->
-<!--                position="-2.9 1.0 -3"-->
-<!--                scale="1.5 1.5 1.5"-->
-<!--            ></a-text>-->
-
-<!--            <a-entity-->
-<!--                camera-->
-<!--                look-controls="enabled: false"-->
-<!--                wasd-controls-->
-<!--                position="0 1 0"-->
-<!--            >-->
-<!--            </a-entity>-->
-<!--        </a-scene>-->
-<!--        <script type="module">-->
-<!--            import { TransformControls } from "./TransformControls.js";-->
-
-<!--            // var changeEvent = { type: "change" };-->
-<!--            // var mouseDownEvent = { type: "mouseDown" };-->
-<!--            // var objectChangeEvent = { type: "objectChange" };-->
-
-<!--            let boxObj = document.querySelector("a-box");-->
-<!--            let boxObj3 = boxObj.object3D;-->
-<!--            let currRotation = boxObj3.rotation;-->
-<!--            // let camera = document.querySelector("a-entity[camera]");-->
-
-<!--            boxObj.addEventListener("mousedown", onPointerDown);-->
-<!--            boxObj.addEventListener("mouseup", onPointerUp);-->
-
-<!--            function onPointerDown(event) {-->
-<!--                console.log("POINTER DOWN &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;", event);-->
-<!--                document.addEventListener("mousemove", onPointerHover);-->
-<!--            }-->
-
-<!--            function onPointerUp(event) {-->
-<!--                console.log("POINTER UP &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;", event);-->
-<!--                document.removeEventListener(`mousemove`, onPointerHover);-->
-<!--            }-->
-
-<!--            function onPointerHover(event) {-->
-<!--                const xV = new THREE.Vector3(1, 0, 0);-->
-<!--                const yV = new THREE.Vector3(0, 1, 0);-->
-<!--                boxObj3.rotateOnWorldAxis(yV, event.movementX / 250);-->
-<!--                boxObj3.rotateOnWorldAxis(xV, event.movementY / 250);-->
-<!--                // console.log("POINTER HOVER &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;", event);-->
-<!--            }-->
-<!--        </script>-->
-
-<!--        &lt;!&ndash;<script type="module">&ndash;&gt;-->
-
-<!--        &lt;!&ndash;    import { OrbitControls } from './OrbitControls.js';&ndash;&gt;-->
-<!--        &lt;!&ndash;    import { TransformControls } from './TransformControls.js';&ndash;&gt;-->
-
-<!--        &lt;!&ndash;    let cameraPersp, cameraOrtho, currentCamera;&ndash;&gt;-->
-<!--        &lt;!&ndash;    let scene, renderer, control, orbit;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;    init();&ndash;&gt;-->
-<!--        &lt;!&ndash;    render();&ndash;&gt;-->
-
-<!--        &lt;!&ndash;    function init() {&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        renderer = new THREE.WebGLRenderer();&ndash;&gt;-->
-<!--        &lt;!&ndash;        renderer.setPixelRatio( window.devicePixelRatio );&ndash;&gt;-->
-<!--        &lt;!&ndash;        renderer.setSize( window.innerWidth, window.innerHeight );&ndash;&gt;-->
-<!--        &lt;!&ndash;        document.body.appendChild( renderer.domElement );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        const aspect = window.innerWidth / window.innerHeight;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        cameraPersp = new THREE.PerspectiveCamera( 50, aspect, 0.01, 30000 );&ndash;&gt;-->
-<!--        &lt;!&ndash;        cameraOrtho = new THREE.OrthographicCamera( - 600 * aspect, 600 * aspect, 600, - 600, 0.01, 30000 );&ndash;&gt;-->
-<!--        &lt;!&ndash;        currentCamera = cameraPersp;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        currentCamera.position.set( 1000, 500, 1000 );&ndash;&gt;-->
-<!--        &lt;!&ndash;        currentCamera.lookAt( 0, 200, 0 );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        scene = document.querySelector('a-scene').object3D;&ndash;&gt;-->
-<!--        &lt;!&ndash;        scene.add( new THREE.GridHelper( 50, 25, 0x888888, 0x444444 ) );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        var boxObj = document.querySelector('a-box');&ndash;&gt;-->
-<!--        &lt;!&ndash;        boxObj.addEventListener("click", function() {&ndash;&gt;-->
-<!--        &lt;!&ndash;            console.log("CLICKEDDDDDDDD!!!!!!!!!!!!!!!!!!!!!");&ndash;&gt;-->
-<!--        &lt;!&ndash;        })&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        const texture = new THREE.TextureLoader().load( 'textures/crate.gif', render );&ndash;&gt;-->
-<!--        &lt;!&ndash;        texture.anisotropy = renderer.capabilities.getMaxAnisotropy();&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        const geometry = new THREE.BoxGeometry( 2, 2, 2 );&ndash;&gt;-->
-<!--        &lt;!&ndash;        const material = new THREE.MeshLambertMaterial( { map: texture, transparent: true } );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        orbit = new OrbitControls( currentCamera, renderer.domElement );&ndash;&gt;-->
-<!--        &lt;!&ndash;        orbit.update();&ndash;&gt;-->
-<!--        &lt;!&ndash;        orbit.addEventListener( 'change', render );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        control = new TransformControls( currentCamera, renderer.domElement );&ndash;&gt;-->
-<!--        &lt;!&ndash;        control.addEventListener( 'change', render );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        control.addEventListener( 'dragging-changed', function ( event ) {&ndash;&gt;-->
-
-<!--        &lt;!&ndash;            orbit.enabled = ! event.value;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        } );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        const mesh = new THREE.Mesh( geometry, material );&ndash;&gt;-->
-<!--        &lt;!&ndash;        scene.add( mesh );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        control.attach( mesh );&ndash;&gt;-->
-<!--        &lt;!&ndash;        // control.add( boxObj );&ndash;&gt;-->
-<!--        &lt;!&ndash;        scene.add( control );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        window.addEventListener( 'resize', onWindowResize );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        window.addEventListener( 'keydown', function ( event ) {&ndash;&gt;-->
-
-<!--        &lt;!&ndash;            switch ( event.keyCode ) {&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 81: // Q&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.setSpace( control.space === "local" ? "world" : "local" );&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 16: // Shift&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.setTranslationSnap( 100 );&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.setRotationSnap( THREE.MathUtils.degToRad( 15 ) );&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.setScaleSnap( 0.25 );&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 87: // W&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.setMode( "translate" );&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 69: // E&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.setMode( "rotate" );&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 82: // R&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.setMode( "scale" );&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 67: // C&ndash;&gt;-->
-<!--        &lt;!&ndash;                    const position = currentCamera.position.clone();&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                    currentCamera = currentCamera.isPerspectiveCamera ? cameraOrtho : cameraPersp;&ndash;&gt;-->
-<!--        &lt;!&ndash;                    currentCamera.position.copy( position );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                    orbit.object = currentCamera;&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.camera = currentCamera;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                    currentCamera.lookAt( orbit.target.x, orbit.target.y, orbit.target.z );&ndash;&gt;-->
-<!--        &lt;!&ndash;                    onWindowResize();&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 86: // V&ndash;&gt;-->
-<!--        &lt;!&ndash;                    const randomFoV = Math.random() + 0.1;&ndash;&gt;-->
-<!--        &lt;!&ndash;                    const randomZoom = Math.random() + 0.1;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                    cameraPersp.fov = randomFoV * 160;&ndash;&gt;-->
-<!--        &lt;!&ndash;                    cameraOrtho.bottom = - randomFoV * 500;&ndash;&gt;-->
-<!--        &lt;!&ndash;                    cameraOrtho.top = randomFoV * 500;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                    cameraPersp.zoom = randomZoom * 5;&ndash;&gt;-->
-<!--        &lt;!&ndash;                    cameraOrtho.zoom = randomZoom * 5;&ndash;&gt;-->
-<!--        &lt;!&ndash;                    onWindowResize();&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 187:&ndash;&gt;-->
-<!--        &lt;!&ndash;                case 107: // +, =, num+&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.setSize( control.size + 0.1 );&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 189:&ndash;&gt;-->
-<!--        &lt;!&ndash;                case 109: // -, _, num- &ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.setSize( Math.max( control.size - 0.1, 0.1 ) );&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 88: // X&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.showX = ! control.showX;&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 89: // Y&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.showY = ! control.showY;&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 90: // Z&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.showZ = ! control.showZ;&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 32: // Spacebar&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.enabled = ! control.enabled;&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;            }&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        } );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        window.addEventListener( 'keyup', function ( event ) {&ndash;&gt;-->
-
-<!--        &lt;!&ndash;            switch ( event.keyCode ) {&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                case 16: // Shift&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.setTranslationSnap( null );&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.setRotationSnap( null );&ndash;&gt;-->
-<!--        &lt;!&ndash;                    control.setScaleSnap( null );&ndash;&gt;-->
-<!--        &lt;!&ndash;                    break;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;            }&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        } );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;    }&ndash;&gt;-->
-
-<!--        &lt;!&ndash;    function onWindowResize() {&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        const aspect = window.innerWidth / window.innerHeight;&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        cameraPersp.aspect = aspect;&ndash;&gt;-->
-<!--        &lt;!&ndash;        cameraPersp.updateProjectionMatrix();&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        cameraOrtho.left = cameraOrtho.bottom * aspect;&ndash;&gt;-->
-<!--        &lt;!&ndash;        cameraOrtho.right = cameraOrtho.top * aspect;&ndash;&gt;-->
-<!--        &lt;!&ndash;        cameraOrtho.updateProjectionMatrix();&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        renderer.setSize( window.innerWidth, window.innerHeight );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        render();&ndash;&gt;-->
-
-<!--        &lt;!&ndash;    }&ndash;&gt;-->
-
-<!--        &lt;!&ndash;    function render() {&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        renderer.render( scene, currentCamera );&ndash;&gt;-->
-
-<!--        &lt;!&ndash;    }&ndash;&gt;-->
-
-<!--        &lt;!&ndash;</script>&ndash;&gt;-->

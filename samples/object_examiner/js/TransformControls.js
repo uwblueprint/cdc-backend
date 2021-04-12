@@ -229,10 +229,11 @@ THREE.TransformControls = function (camera, domElement) {
 
     raycaster.setFromCamera(pointer, this.camera);
 
-    var intersect = intersectObjectWithRay(_gizmo.picker[this.mode], raycaster);
+    var intersect = intersectObjectWithRay(this.object, raycaster);
+    // var intersect = intersectObjectWithRay(_gizmo.picker[this.mode], raycaster);
 
     if (intersect) {
-      this.axis = intersect.object.name;
+      this.axis = "XYZE";
     } else {
       this.axis = null;
     }
@@ -304,13 +305,6 @@ THREE.TransformControls = function (camera, domElement) {
     var axis = this.axis;
     var mode = this.mode;
     var object = this.object;
-    var space = this.space;
-
-    if (mode === "scale") {
-      space = "local";
-    } else if (axis === "E" || axis === "XYZE" || axis === "XYZ") {
-      space = "world";
-    }
 
     if (
       object === undefined ||
@@ -328,173 +322,20 @@ THREE.TransformControls = function (camera, domElement) {
 
     pointEnd.copy(planeIntersect.point).sub(worldPositionStart);
 
-    if (mode === "translate") {
-      // Apply translate
-
-      offset.copy(pointEnd).sub(pointStart);
-
-      if (space === "local" && axis !== "XYZ") {
-        offset.applyQuaternion(worldQuaternionInv);
-      }
-
-      if (axis.indexOf("X") === -1) offset.x = 0;
-      if (axis.indexOf("Y") === -1) offset.y = 0;
-      if (axis.indexOf("Z") === -1) offset.z = 0;
-
-      if (space === "local" && axis !== "XYZ") {
-        offset.applyQuaternion(quaternionStart).divide(parentScale);
-      } else {
-        offset.applyQuaternion(parentQuaternionInv).divide(parentScale);
-      }
-
-      object.position.copy(offset).add(positionStart);
-
-      // Apply translation snap
-
-      if (this.translationSnap) {
-        if (space === "local") {
-          object.position.applyQuaternion(
-            _tempQuaternion.copy(quaternionStart).invert()
-          );
-
-          if (axis.search("X") !== -1) {
-            object.position.x =
-              Math.round(object.position.x / this.translationSnap) *
-              this.translationSnap;
-          }
-
-          if (axis.search("Y") !== -1) {
-            object.position.y =
-              Math.round(object.position.y / this.translationSnap) *
-              this.translationSnap;
-          }
-
-          if (axis.search("Z") !== -1) {
-            object.position.z =
-              Math.round(object.position.z / this.translationSnap) *
-              this.translationSnap;
-          }
-
-          object.position.applyQuaternion(quaternionStart);
-        }
-
-        if (space === "world") {
-          if (object.parent) {
-            object.position.add(
-              _tempVector.setFromMatrixPosition(object.parent.matrixWorld)
-            );
-          }
-
-          if (axis.search("X") !== -1) {
-            object.position.x =
-              Math.round(object.position.x / this.translationSnap) *
-              this.translationSnap;
-          }
-
-          if (axis.search("Y") !== -1) {
-            object.position.y =
-              Math.round(object.position.y / this.translationSnap) *
-              this.translationSnap;
-          }
-
-          if (axis.search("Z") !== -1) {
-            object.position.z =
-              Math.round(object.position.z / this.translationSnap) *
-              this.translationSnap;
-          }
-
-          if (object.parent) {
-            object.position.sub(
-              _tempVector.setFromMatrixPosition(object.parent.matrixWorld)
-            );
-          }
-        }
-      }
-    } else if (mode === "scale") {
-      if (axis.search("XYZ") !== -1) {
-        var d = pointEnd.length() / pointStart.length();
-
-        if (pointEnd.dot(pointStart) < 0) d *= -1;
-
-        _tempVector2.set(d, d, d);
-      } else {
-        _tempVector.copy(pointStart);
-        _tempVector2.copy(pointEnd);
-
-        _tempVector.applyQuaternion(worldQuaternionInv);
-        _tempVector2.applyQuaternion(worldQuaternionInv);
-
-        _tempVector2.divide(_tempVector);
-
-        if (axis.search("X") === -1) {
-          _tempVector2.x = 1;
-        }
-
-        if (axis.search("Y") === -1) {
-          _tempVector2.y = 1;
-        }
-
-        if (axis.search("Z") === -1) {
-          _tempVector2.z = 1;
-        }
-      }
-
-      // Apply scale
-
-      object.scale.copy(scaleStart).multiply(_tempVector2);
-
-      if (this.scaleSnap) {
-        if (axis.search("X") !== -1) {
-          object.scale.x =
-            Math.round(object.scale.x / this.scaleSnap) * this.scaleSnap ||
-            this.scaleSnap;
-        }
-
-        if (axis.search("Y") !== -1) {
-          object.scale.y =
-            Math.round(object.scale.y / this.scaleSnap) * this.scaleSnap ||
-            this.scaleSnap;
-        }
-
-        if (axis.search("Z") !== -1) {
-          object.scale.z =
-            Math.round(object.scale.z / this.scaleSnap) * this.scaleSnap ||
-            this.scaleSnap;
-        }
-      }
-    } else if (mode === "rotate") {
+    if (mode === "rotate") {
       offset.copy(pointEnd).sub(pointStart);
 
       var ROTATION_SPEED =
-        20 /
+        5 /
         worldPosition.distanceTo(
           _tempVector.setFromMatrixPosition(this.camera.matrixWorld)
         );
 
-      if (axis === "E") {
-        rotationAxis.copy(eye);
-        rotationAngle = pointEnd.angleTo(pointStart);
-
-        startNorm.copy(pointStart).normalize();
-        endNorm.copy(pointEnd).normalize();
-
-        rotationAngle *= endNorm.cross(startNorm).dot(eye) < 0 ? 1 : -1;
-      } else if (axis === "XYZE") {
+      if (axis === "XYZE") {
         rotationAxis.copy(offset).cross(eye).normalize();
         rotationAngle =
           offset.dot(_tempVector.copy(rotationAxis).cross(this.eye)) *
           ROTATION_SPEED;
-      } else if (axis === "X" || axis === "Y" || axis === "Z") {
-        rotationAxis.copy(_unit[axis]);
-
-        _tempVector.copy(_unit[axis]);
-
-        if (space === "local") {
-          _tempVector.applyQuaternion(worldQuaternion);
-        }
-
-        rotationAngle =
-          offset.dot(_tempVector.cross(eye).normalize()) * ROTATION_SPEED;
       }
 
       // Apply rotation snap
@@ -506,14 +347,7 @@ THREE.TransformControls = function (camera, domElement) {
       this.rotationAngle = rotationAngle;
 
       // Apply rotate
-      if (space === "local" && axis !== "E" && axis !== "XYZE") {
-        object.quaternion.copy(quaternionStart);
-        object.quaternion
-          .multiply(
-            _tempQuaternion.setFromAxisAngle(rotationAxis, rotationAngle)
-          )
-          .normalize();
-      } else {
+      if (axis === "XYZE") {
         rotationAxis.applyQuaternion(parentQuaternionInv);
         object.quaternion.copy(
           _tempQuaternion.setFromAxisAngle(rotationAxis, rotationAngle)
@@ -1418,6 +1252,7 @@ THREE.TransformControlsGizmo = function () {
 
     for (var name in gizmoMap) {
       for (var i = gizmoMap[name].length; i--; ) {
+        console.log("##########", name);
         var object = gizmoMap[name][i][0].clone();
         var position = gizmoMap[name][i][1];
         var rotation = gizmoMap[name][i][2];
@@ -1479,41 +1314,41 @@ THREE.TransformControlsGizmo = function () {
   this.picker = {};
   this.helper = {};
 
-  this.add((this.gizmo["translate"] = setupGizmo(gizmoTranslate)));
+  // this.add((this.gizmo["translate"] = setupGizmo(gizmoTranslate)));
   this.add((this.gizmo["rotate"] = setupGizmo(gizmoRotate)));
-  this.add((this.gizmo["scale"] = setupGizmo(gizmoScale)));
-  this.add((this.picker["translate"] = setupGizmo(pickerTranslate)));
+  // this.add((this.gizmo["scale"] = setupGizmo(gizmoScale)));
+  // this.add((this.picker["translate"] = setupGizmo(pickerTranslate)));
   this.add((this.picker["rotate"] = setupGizmo(pickerRotate)));
-  this.add((this.picker["scale"] = setupGizmo(pickerScale)));
-  this.add((this.helper["translate"] = setupGizmo(helperTranslate)));
+  // this.add((this.picker["scale"] = setupGizmo(pickerScale)));
+  // this.add((this.helper["translate"] = setupGizmo(helperTranslate)));
   this.add((this.helper["rotate"] = setupGizmo(helperRotate)));
-  this.add((this.helper["scale"] = setupGizmo(helperScale)));
+  // this.add((this.helper["scale"] = setupGizmo(helperScale)));
 
   // Pickers should be hidden always
 
-  this.picker["translate"].visible = false;
+  // this.picker["translate"].visible = false;
   this.picker["rotate"].visible = false;
-  this.picker["scale"].visible = false;
+  // this.picker["scale"].visible = false;
 
   // updateMatrixWorld will update transformations and appearance of individual handles
 
   this.updateMatrixWorld = function () {
     var space = this.space;
 
-    if (this.mode === "scale") space = "local"; // scale always oriented to local rotation
+    // if (this.mode === "scale") space = "local"; // scale always oriented to local rotation
 
     var quaternion =
       space === "local" ? this.worldQuaternion : identityQuaternion;
 
     // Show only gizmos for current transform mode
 
-    this.gizmo["translate"].visible = this.mode === "translate";
-    this.gizmo["rotate"].visible = this.mode === "rotate";
-    this.gizmo["scale"].visible = this.mode === "scale";
+    // this.gizmo["translate"].visible = this.mode === "translate";
+    this.gizmo["rotate"].visible = false; //this.mode === "rotate";
+    // this.gizmo["scale"].visible = this.mode === "scale";
 
-    this.helper["translate"].visible = this.mode === "translate";
-    this.helper["rotate"].visible = this.mode === "rotate";
-    this.helper["scale"].visible = this.mode === "scale";
+    // this.helper["translate"].visible = this.mode === "translate";
+    this.helper["rotate"].visible = false; //this.mode === "rotate";
+    // this.helper["scale"].visible = this.mode === "scale";
 
     var handles = [];
     handles = handles.concat(this.picker[this.mode].children);

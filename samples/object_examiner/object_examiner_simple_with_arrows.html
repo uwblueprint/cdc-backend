@@ -8,7 +8,7 @@
       content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-    <script src="./js/TransformControls.js"></script>
+    <script src="js/TransformControls_arrows.js"></script>
   </head>
   <body>
     <a-scene
@@ -21,14 +21,9 @@
       </a-assets>
 
       <a-box src="#boxTexture" position="0 5 0" rotation="0 0 0" scale="2 2 2">
-        animation__position="property: object3D.position.y; to: 2.2; dir:
-        alternate; dur: 2000; loop: true" animation__mouseenter="property:
-        scale; to: 2.3 2.3 2.3; dur: 300; startEvents: mouseenter"
-        animation__mouseleave="property: scale; to: 2 2 2; dur: 300;
-        startEvents: mouseleave"
       </a-box>
       <a-text
-        value="Rotate the objects!"
+        value="Rotate the box!"
         color="#BBB"
         position="-2.9 1.0 2"
         scale="1.5 1.5 1.5"
@@ -66,41 +61,15 @@
       // let currentCamera = sceneEl.camera;
       scene.add(new THREE.GridHelper(1000, 10, 0x888888, 0x444444));
 
-      const texture = new THREE.TextureLoader().load(
-        "textures/crate.gif",
-        render
-      );
-      texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-
-      const geometry = new THREE.BoxGeometry(200, 200, 200);
-      const material = new THREE.MeshLambertMaterial({
-        map: texture,
-        transparent: true,
-      });
-
       let control = new TransformControls(currentCamera, renderer.domElement);
       control.addEventListener("change", render);
 
       control.addEventListener("dragging-changed", function (event) {
         cameraEl.setAttribute("look-controls", "enabled", `${!event.value}`);
-        if (!event.value) {
-          if (control.object === boxObj) {
-            control.detach();
-            control.attach(planeObj);
-          } else {
-            control.detach();
-            control.attach(boxObj);
-          }
-        }
       });
-
-      const mesh = new THREE.Mesh(geometry, material);
 
       let boxEl = document.querySelector("a-box");
       let boxObj = boxEl.object3D;
-
-      let planeEl = document.querySelector("a-plane");
-      let planeObj = planeEl.object3D;
 
       control.attach(boxObj);
       scene.add(control);

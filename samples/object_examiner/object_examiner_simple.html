@@ -9,6 +9,7 @@
     />
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="js/TransformControls.js"></script>
+    <script src="js/rotation-controls.js"></script>
   </head>
   <body>
     <a-scene
@@ -20,7 +21,10 @@
         <img id="boxTexture" src="textures/crate.gif" />
       </a-assets>
 
+      <a-entity camera look-controls wasd-controls position="0 5 10">
+      </a-entity>
       <a-box
+        class="link"
         src="#boxTexture"
         position="0 5 0"
         rotation="0 0 0"
@@ -30,7 +34,7 @@
       >
       </a-box>
       <a-text
-        value="Rotate the box!"
+        value="Click on the plane to ENABLE/DISABLE box rotation!"
         color="#BBB"
         position="-2.9 1.0 2"
         scale="1.5 1.5 1.5"
@@ -38,65 +42,28 @@
       <a-light type="ambient" color="#445451"></a-light>
       <a-light type="point" intensity="2" position="2 4 4"></a-light>
       <a-plane
+        class="link"
         src="#boxTexture"
         rotation="-90 0 0"
         height="20"
         width="20"
       ></a-plane>
-
-      <a-entity camera look-controls wasd-controls position="0 5 10">
-      </a-entity>
     </a-scene>
     <script type="module">
       let { THREE } = AFRAME;
       let { TransformControls } = THREE;
 
-      let sceneEl = document.querySelector("a-scene");
-      let scene = sceneEl.object3D;
-
-      let renderer = sceneEl.renderer;
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      document.body.appendChild(renderer.domElement);
-
-      const aspect = window.innerWidth / window.innerHeight;
-
-      let cameraEl = document.querySelector("[camera]");
-      let currentCamera = cameraEl.getObject3D("camera");
-      // let currentCamera = sceneEl.camera;
-      scene.add(new THREE.GridHelper(1000, 10, 0x888888, 0x444444));
-
-      let control = new TransformControls(currentCamera, renderer.domElement);
-      control.addEventListener("change", render);
-
-      control.addEventListener("dragging-changed", function (event) {
-        cameraEl.setAttribute("look-controls", "enabled", `${!event.value}`);
+      let planeEL = document.querySelector("a-plane");
+      planeEL.addEventListener("click", function () {
+        let boxEl = document.querySelector("a-box");
+        if (boxEl.attributes.hasOwnProperty("rotation-controls")) {
+          console.log("Rotation disabled.");
+          boxEl.removeAttribute("rotation-controls");
+        } else {
+          console.log("Rotation enabled.");
+          boxEl.setAttribute("rotation-controls", "");
+        }
       });
-
-      let boxEl = document.querySelector("a-box");
-      let boxObj = boxEl.object3D;
-
-      control.attach(boxObj);
-      scene.add(control);
-
-      window.addEventListener("resize", onWindowResize);
-
-      control.setMode("rotate");
-
-      function onWindowResize() {
-        const aspect = window.innerWidth / window.innerHeight;
-
-        currentCamera.aspect = aspect;
-        currentCamera.updateProjectionMatrix();
-
-        renderer.setSize(window.innerWidth, window.innerHeight);
-
-        render();
-      }
-
-      function render() {
-        renderer.render(scene, currentCamera);
-      }
     </script>
   </body>
 </html>

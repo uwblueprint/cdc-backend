@@ -1,8 +1,6 @@
-let { THREE } = AFRAME;
-let { TransformControls } = THREE;
-
 AFRAME.registerComponent("rotation-controls", {
   init: function () {
+    let { TransformControls } = THREE;
     let { el } = this;
     let self = this;
     let obj = el.object3D;

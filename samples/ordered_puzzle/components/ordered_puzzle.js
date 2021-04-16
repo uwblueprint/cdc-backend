@@ -34,6 +34,8 @@ AFRAME.registerComponent("ordered-puzzle", {
       this.puzzlePiece.setAttribute("src", data.images[i].imageSrc);
       this.puzzlePiece.setAttribute("width", data.images[i].width);
       this.puzzlePiece.setAttribute("height", data.images[i].height);
+
+      // Randomized the position of the puzzle piece on the blackboard
       this.puzzlePiece.setAttribute(
         "position",
         (Math.random() - 0.5) *
@@ -44,8 +46,6 @@ AFRAME.registerComponent("ordered-puzzle", {
               data.images[i].height) +
           " 0"
       );
-      console.log(blackboard.getAttribute("geometry").width);
-      console.log(blackboard.object3D);
       this.puzzlePiece.setAttribute("xTarget", data.images[i].xTarget);
       this.puzzlePiece.setAttribute("yTarget", data.images[i].yTarget);
       this.puzzlePiece.setAttribute("onTarget", false);

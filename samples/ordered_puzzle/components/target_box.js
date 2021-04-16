@@ -22,7 +22,7 @@ AFRAME.registerComponent("target-box", {
     // Create mesh.
     this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-    el.object3D.position.set(data.x, data.y, data.z);
+    el.object3D.position.set(data.xTarget, data.yTarget, 0);
     // Set mesh on entity.
     el.setObject3D("mesh", this.mesh);
   },

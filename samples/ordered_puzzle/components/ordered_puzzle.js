@@ -10,31 +10,26 @@ AFRAME.registerComponent("ordered-puzzle", {
 
   init: function () {
     const data = this.data.jsonData;
-    const el = this.el;
 
     const numPuzzlePieces = data.images.length;
 
+    const puzzlePieceCache = [];
+
     for (i = 0; i < numPuzzlePieces; i++) {
-      var textBoxProp =
-        '{"width": "' +
-        data.images[i].width +
-        '", "height": "' +
-        data.images[i].height +
-        '", "color": "yellow", "x": "' +
-        data.images[i].xTarget +
-        '", "y": "' +
-        data.images[i].yTarget +
-        '", "z": "0", "text": "' +
-        i +
-        '"}';
+      var textBoxProp = data.images[i];
+      textBoxProp.color = "yellow";
 
       this.target = document.createElement("a-entity");
-      this.target.setAttribute("id", "puzzle-target");
-      this.target.setAttribute("target-box", "jsonData", textBoxProp);
+      this.target.setAttribute("id", "puzzle-target-" + i);
+      this.target.setAttribute(
+        "target-box",
+        "jsonData",
+        JSON.stringify(textBoxProp)
+      );
       this.el.appendChild(this.target);
 
       this.puzzlePiece = document.createElement("a-image");
-      this.puzzlePiece.setAttribute("id", "puzzle-piece-image");
+      this.puzzlePiece.setAttribute("id", "puzzle-piece-image-" + i);
       this.puzzlePiece.setAttribute("src", data.images[i].imageSrc);
       this.puzzlePiece.setAttribute("width", data.images[i].width);
       this.puzzlePiece.setAttribute("height", data.images[i].height);
@@ -45,19 +40,18 @@ AFRAME.registerComponent("ordered-puzzle", {
       this.puzzlePiece.setAttribute("xTarget", data.images[i].xTarget);
       this.puzzlePiece.setAttribute("yTarget", data.images[i].yTarget);
       this.puzzlePiece.setAttribute("onTarget", false);
-      this.puzzlePiece.setAttribute("class", "draggable");
-      this.puzzlePiece.addEventListener("dragend", onDragEnd);
+      this.puzzlePiece.setAttribute("class", "draggable link");
+      this.puzzlePiece.addEventListener("dragend", function (event) {
+        event.target.setAttribute("onTarget", isOnTarget(event.target));
+        if (isPuzzleComplete(puzzlePieceCache)) {
+          closePuzzle();
+        }
+      });
       this.el.appendChild(this.puzzlePiece);
+      puzzlePieceCache.push(this.puzzlePiece);
     }
   },
 });
-
-function onDragEnd(event) {
-  event.target.setAttribute("onTarget", isOnTarget(event.target));
-  if (isPuzzleComplete()) {
-    closePuzzle();
-  }
-}
 
 function isOnTarget(puzzlePiece) {
   const delta = puzzlePiece.object3D.children[0].position;
@@ -73,12 +67,9 @@ function isOnTarget(puzzlePiece) {
   );
 }
 
-function isPuzzleComplete() {
-  var puzzlePieces = document.querySelectorAll("a-image.draggable");
-  //var puzzlePieces = document.querySelector("#ordered-puzzle").children;
-  console.log(puzzlePieces);
-  for (var i = 0; i < puzzlePieces.length; i++) {
-    if (puzzlePieces[i].getAttribute("onTarget") === "false") {
+function isPuzzleComplete(puzzlePieceCache) {
+  for (var i = 0; i < puzzlePieceCache.length; i++) {
+    if (puzzlePieceCache[i].getAttribute("onTarget") === "false") {
       return false;
     }
   }

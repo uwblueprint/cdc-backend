@@ -35,7 +35,7 @@ AFRAME.registerComponent("ordered-puzzle", {
       this.puzzlePiece.setAttribute("width", data.images[i].width);
       this.puzzlePiece.setAttribute("height", data.images[i].height);
 
-      // Randomized the position of the puzzle piece on the blackboard
+      // Randomizes the position of the puzzle piece on the blackboard
       this.puzzlePiece.setAttribute(
         "position",
         (Math.random() - 0.5) *

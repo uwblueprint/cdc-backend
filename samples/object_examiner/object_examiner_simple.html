@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>three.js webgl - transform controls</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="js/TransformControls.js"></script>
+    <script src="js/rotation-controls.js"></script>
+  </head>
+  <body>
+    <a-scene
+      background="color: black"
+      cursor="rayOrigin:mouse"
+      raycaster="objects: .link"
+    >
+      <a-assets>
+        <img id="boxTexture" src="textures/crate.gif" />
+        <a-asset-item id="armchair" src="assets/armchair.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-gltf-model
+        src="#armchair"
+        scale="0.002 0.002 0.002"
+        position="0 5 -5"
+      ></a-gltf-model>
+
+      <a-entity camera look-controls wasd-controls position="0 5 10">
+      </a-entity>
+      <!--      <a-box-->
+      <!--        class="link"-->
+      <!--        src="#boxTexture"-->
+      <!--        position="0 5 0"-->
+      <!--        rotation="0 0 0"-->
+      <!--        scale="2 2 2"-->
+      <!--        animation__mouseenter="property: scale; to: 2.3 2.3 2.3; dur: 300; startEvents: mouseenter"-->
+      <!--        animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave"-->
+      <!--      >-->
+      <!--      </a-box>-->
+      <a-text
+        value="Click on the plane to ENABLE/DISABLE rotation!"
+        color="#BBB"
+        position="-2.9 1.0 2"
+        scale="1.5 1.5 1.5"
+      ></a-text>
+      <a-light type="ambient" color="#445451"></a-light>
+      <a-light type="point" intensity="2" position="2 4 4"></a-light>
+      <a-plane
+        class="link"
+        src="#boxTexture"
+        rotation="-90 0 0"
+        height="20"
+        width="20"
+      ></a-plane>
+    </a-scene>
+    <script type="module">
+      let { THREE } = AFRAME;
+      let { TransformControls } = THREE;
+
+      let planeEL = document.querySelector("a-plane");
+      planeEL.addEventListener("click", function () {
+        let boxEl = document.querySelector("a-gltf-model");
+        if (boxEl.attributes.hasOwnProperty("rotation-controls")) {
+          console.log("Rotation disabled.");
+          boxEl.removeAttribute("rotation-controls");
+        } else {
+          console.log("Rotation enabled.");
+          boxEl.setAttribute("rotation-controls", "");
+        }
+      });
+    </script>
+  </body>
+</html>

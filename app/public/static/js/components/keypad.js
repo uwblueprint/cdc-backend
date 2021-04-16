@@ -5,7 +5,6 @@ AFRAME.registerComponent("keypad", {
       stringify: JSON.stringify,
     },
     isSolved: { type: "map" },
-    score: { type: "number" },
   },
   multiple: true,
   /**
@@ -15,23 +14,17 @@ AFRAME.registerComponent("keypad", {
     const data = this.data.jsonData;
     const password = data.password;
     const el = this.el;
-    console.log("init:");
-    console.log(this.data.isSolved);
+    this.id = data.id;
+
     el.setAttribute(
       "super-keyboard",
-      "imagePath:/static/img/; multipleInputs:true; model: numpad; align: center; maxLength: 4; label: Enter Password; labelColor: black"
+      "imagePath:/static/img/; multipleInputs:true; model: numpad; align: center; maxLength: 4;"
     );
     el.setAttribute("scale", { x: 20, y: 20, z: 20 });
     el.setAttribute("position", { x: 0, y: 0, z: 0.5 });
-
-    el.setAttribute("class", "link");
-
     el.addEventListener("superkeyboardinput", function (event) {
       if (event.detail.value === password) {
-        el.setAttribute(
-          "super-keyboard",
-          "label:SUCCESS; labelColor: green; multipleInputs:true"
-        );
+        // emit event to update state
         el.sceneEl.emit("solvedObject", { id: data.id });
       } else {
         const statusLabel = el.getAttribute("super-keyboard").label;
@@ -41,10 +34,52 @@ AFRAME.registerComponent("keypad", {
         }
       }
     });
+
+    const solvedPuzzleText = {
+      width: "0.5",
+      height: "0.05",
+      depth: "0.05",
+      color: "green",
+      x: "0",
+      y: "-0.3",
+      z: "0",
+      scaleX: "0.25",
+      scaleY: "0.25",
+      scaleZ: "0.25",
+      text: "Solved",
+    };
+    // Create solved puzzle text
+    this.solvedPuzzleEntity = document.createElement("a-entity");
+    this.solvedPuzzleEntity.setAttribute("id", "keypad-solved-" + this.id);
+    this.solvedPuzzleEntity.setAttribute(
+      "text-box",
+      "jsonData",
+      JSON.stringify(solvedPuzzleText)
+    );
+    // initially set to false visibility
+    this.solvedPuzzleEntity.setAttribute("visible", "false");
+    el.appendChild(this.solvedPuzzleEntity);
   },
   update: function () {
-    console.log("update:");
-    console.log(this.data.isSolved);
+    this.puzzleIsSolved = this.data.isSolved[this.id];
+    const el = this.el;
+
+    if (typeof this.puzzleIsSolved === "undefined") {
+      // not loaded yet, do nothing
+    } else if (this.puzzleIsSolved === true) {
+      // Already solved
+      el.setAttribute(
+        "super-keyboard",
+        "label:SUCCESS; labelColor: green; multipleInputs:true;"
+      );
+      this.solvedPuzzleEntity.setAttribute("visible", "true");
+    } else {
+      // Not solved yet
+      el.setAttribute(
+        "super-keyboard",
+        "label: Enter Password; labelColor: black"
+      );
+    }
   },
 });
 

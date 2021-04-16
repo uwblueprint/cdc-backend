@@ -10,23 +10,24 @@ AFRAME.registerComponent("ordered-puzzle", {
 
   init: function () {
     const data = this.data.jsonData;
-
     const numPuzzlePieces = data.images.length;
-
     const puzzlePieceCache = [];
+    const blackboard = document.querySelector("#blackboard");
 
     for (i = 0; i < numPuzzlePieces; i++) {
-      var textBoxProp = data.images[i];
-      textBoxProp.color = "yellow";
+      if (data.useTargets) {
+        var textBoxProp = data.images[i];
+        textBoxProp.color = "yellow";
 
-      this.target = document.createElement("a-entity");
-      this.target.setAttribute("id", "puzzle-target-" + i);
-      this.target.setAttribute(
-        "target-box",
-        "jsonData",
-        JSON.stringify(textBoxProp)
-      );
-      this.el.appendChild(this.target);
+        this.target = document.createElement("a-entity");
+        this.target.setAttribute("id", "puzzle-target-" + i);
+        this.target.setAttribute(
+          "target-box",
+          "jsonData",
+          JSON.stringify(textBoxProp)
+        );
+        this.el.appendChild(this.target);
+      }
 
       this.puzzlePiece = document.createElement("a-image");
       this.puzzlePiece.setAttribute("id", "puzzle-piece-image-" + i);
@@ -35,18 +36,29 @@ AFRAME.registerComponent("ordered-puzzle", {
       this.puzzlePiece.setAttribute("height", data.images[i].height);
       this.puzzlePiece.setAttribute(
         "position",
-        data.images[i].x + " " + data.images[i].y + " 0"
+        (Math.random() - 0.5) *
+          (blackboard.getAttribute("geometry").width - data.images[i].width) +
+          " " +
+          (Math.random() - 0.5) *
+            (blackboard.getAttribute("geometry").height -
+              data.images[i].height) +
+          " 0"
       );
+      console.log(blackboard.getAttribute("geometry").width);
+      console.log(blackboard.object3D);
       this.puzzlePiece.setAttribute("xTarget", data.images[i].xTarget);
       this.puzzlePiece.setAttribute("yTarget", data.images[i].yTarget);
       this.puzzlePiece.setAttribute("onTarget", false);
       this.puzzlePiece.setAttribute("class", "draggable link");
-      this.puzzlePiece.addEventListener("dragend", function (event) {
-        event.target.setAttribute("onTarget", isOnTarget(event.target));
-        if (isPuzzleComplete(puzzlePieceCache)) {
-          closePuzzle();
-        }
-      });
+      if (data.useTargets) {
+        this.puzzlePiece.addEventListener("dragend", function (event) {
+          event.target.setAttribute("onTarget", isOnTarget(event.target));
+          if (isPuzzleComplete(puzzlePieceCache)) {
+            closePuzzle();
+          }
+        });
+      }
+
       this.el.appendChild(this.puzzlePiece);
       puzzlePieceCache.push(this.puzzlePiece);
     }

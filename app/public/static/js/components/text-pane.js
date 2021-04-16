@@ -32,7 +32,11 @@ AFRAME.registerComponent("text-box", {
     this.textLabel.setAttribute("id", "text-nav");
     this.textLabel.setAttribute("value", data.text);
     this.textLabel.setAttribute("negate", "true");
-    this.textLabel.setAttribute("scale", "2 2 1");
+    this.textLabel.setAttribute("scale", {
+      x: data.scaleX,
+      y: data.scaleY,
+      z: data.scaleZ,
+    });
     this.textLabel.setAttribute("color", "black");
     this.textLabel.setAttribute("align", "center");
     this.el.appendChild(this.textLabel);
@@ -45,6 +49,7 @@ AFRAME.registerComponent("text-pane", {
       parse: JSON.parse,
       stringify: JSON.stringify,
     },
+    isSolved: { type: "map" },
   },
 
   multiple: true,
@@ -63,9 +68,9 @@ AFRAME.registerComponent("text-pane", {
 
     if (data.text.length > 1) {
       const leftNavProp =
-        '{"width": "1.5", "height": "1.5", "depth": "0.005", "color": "white", "x": "-8", "y": "0", "z": "0.005", "text": "Prev"}';
+        '{"width": "1.5", "height": "1.5", "depth": "0.005", "color": "white", "x": "-8", "y": "0", "z": "0.005", "scaleX": "2", "scaleY": "2", "scaleZ": "1", "text": "Prev"}';
       const rightNavProp =
-        '{"width": "1.5", "height": "1.5", "depth": "0.005", "color": "white", "x": "8", "y": "0", "z": "0.005", "text": "Next"}';
+        '{"width": "1.5", "height": "1.5", "depth": "0.005", "color": "white", "x": "8", "y": "0", "z": "0.005", "scaleX": "2", "scaleY": "2", "scaleZ": "1", "text": "Next"}';
       const textLabelConst = this.textLabel;
 
       // Create left nav button

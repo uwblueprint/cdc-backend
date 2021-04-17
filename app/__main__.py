@@ -2,12 +2,14 @@ import asyncio
 import os
 import uuid
 
+import firebase_admin
 import tornado.autoreload
 import tornado.httpserver
 import tornado.ioloop
 import tornado.web
 from cache.update_cache import update_cache
 from config import config
+from firebase_admin import credentials
 from routes.admin.asset import AdminAssetHandler, AdminAssetPostHandler
 from routes.admin.object import AdminObjectPostHandler, AdminObjectPutHandler
 from routes.admin.scenario import (
@@ -80,6 +82,13 @@ def make_app():
     return app
 
 
+def init_firebase():
+    cred_path = credentials.Certificate(
+        f"{os.path.dirname(__file__)}/../secrets/service_account_key.json"
+    )
+    firebase_admin.initialize_app(cred_path)
+
+
 def main():
     if "dev" in config.get("app-env"):
         # Print out config for dev environments
@@ -100,6 +109,7 @@ def main():
             ]
 
     app = make_app()
+    init_firebase()
     server = tornado.httpserver.HTTPServer(app)
 
     port = config.get("tornado.port")

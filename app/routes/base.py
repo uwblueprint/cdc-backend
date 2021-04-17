@@ -40,7 +40,28 @@ class BaseAdminAPIHandler(BaseAPIHandler):
     """
 
     def prepare(self):
-        # TODO: check auth cookie before creating session
+        # AUTH, check to make sure the user is authenticated
+        self.db_session = None
+        self.user = ""
+        cookie_name = config.get("auth.cookie_name")
+        session_cookie = self.get_secure_cookie(cookie_name)
+        if not session_cookie:
+            return self.write_error(status_code=403, message="Forbidden")
+
+        # Verify the session cookie. In this case an additional check is added to detect
+        # if the user's Firebase session was revoked, user deleted/disabled, etc.
+        try:
+            decoded_claims = auth.verify_session_cookie(
+                session_cookie, check_revoked=True
+            )
+            # save the user (for audit purposes, we can use this later)
+            self.user = decoded_claims["email"]
+            # if not user or not valid domain email
+            if self.user.split("@")[-1] not in config.get("auth.allowed_domains"):
+                raise ValueError("Invalid domain")
+        except Exception:
+            # Session cookie is invalid, expired or revoked. Force user to login.
+            return self.write_error(status_code=403, message="Forbidden")
 
         # Admins always get a brand new session
         self.db_session = get_session()
@@ -109,21 +130,23 @@ class BaseAuthHandler(tornado.web.RequestHandler):
             data = tornado.escape.json_decode(self.request.body)
             id_token = data["idToken"]
             decoded_claims = auth.verify_id_token(id_token)
-            # Only process if the user signed in within the last 5 minutes.
-            if time.time() - decoded_claims["auth_time"] < 5 * 60:
-                expires_in = datetime.timedelta(days=config.get("auth.expiry_days"))
+            # Only process if the user signed in within the last X min based on config.
+            if time.time() - decoded_claims["auth_time"] < 100 * 60:
+                expiry_hours = config.get("auth.expiry_hours")
+                expires_in = datetime.timedelta(hours=expiry_hours)
                 session_cookie = auth.create_session_cookie(
                     id_token, expires_in=expires_in
                 )
-                response = {"status": 200, "message": "success"}
+                resp_json = {"status": 200, "message": "success"}
                 cookie_name = config.get("auth.cookie_name")
                 self.set_secure_cookie(
                     cookie_name,
                     session_cookie,
-                    expires_days=config.get("auth.expiry_days"),
                     httponly=True,
                 )
-                await self.finish(response)
+                await self.finish(resp_json)
+            else:
+                raise ValueError("User signed in too long ago")
         except Exception:
             # Don't give any reason as this is a sensitive route
             self.set_header("Content-Type", "application/problem+json")

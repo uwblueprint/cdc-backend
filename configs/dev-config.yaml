@@ -37,4 +37,8 @@ cache:
 
 auth:
   cookie_name: dcc_auth
-  expiry_days: 1
+  expiry_hours: 1
+  # TODO: update this list, if needed
+  allowed_domains:
+    - test.org
+    - distresscentre.com

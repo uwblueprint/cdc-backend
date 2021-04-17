@@ -24,19 +24,16 @@ AFRAME.registerComponent("rotation-controls", {
     clonedEl.setAttribute("scale", childEl.getAttribute("scale"));
     clonedEl.setAttribute("rotation", childEl.getAttribute("rotation"));
 
-    // TODO: implement using default value if position and rotation not provided.
     // TODO: Is scaling needed?
-    el.setAttribute("position", {
-      x: data.position[0],
-      y: data.position[1],
-      z: data.position[2],
-    });
-    childElDuplicate.setAttribute("position", { x: 0, y: 0, z: 0 });
-    childElDuplicate.setAttribute("rotation", {
-      x: data.rotation[0],
-      y: data.rotation[1],
-      z: data.rotation[2],
-    });
+    if (data.hasOwnProperty("position")) {
+      el.setAttribute("position", {
+        x: data.position[0],
+        y: data.position[1],
+        z: data.position[2],
+      });
+    } else {
+      el.setAttribute("position", { x: 0, y: 2, z: 0.5 });
+    }
 
     clonedEl.setAttribute("position", { x: 0, y: 0, z: 0 });
 

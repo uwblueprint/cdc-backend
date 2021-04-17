@@ -1,0 +1,71 @@
+{
+  "asset": { "version": "2.0", "generator": "THREE.GLTFExporter" },
+  "scenes": [{ "nodes": [0], "name": "AuxScene" }],
+  "scene": 0,
+  "nodes": [{ "mesh": 0 }],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 504,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 504,
+      "byteLength": 504,
+      "target": 34962,
+      "byteStride": 12
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1008,
+      "uri": "data:application/octet-stream;base64,MEx2wM3MTD4IrJzAhlpTPc3MTD6iRabAhlpTPc3MTD4736/AMEx2wM3MTD4IrJzAhlpTPc3MTD4736/Asb+0wM3MTD4736/AMEx2wM3MTD68dBNAsb+0wM3MTD76U7NA0LNpQM3MTD76U7NAMEx2wM3MTD68dBNA0LNpQM3MTD76U7NAak1DQM3MTD76U4NAak1DQM3MTD76U4NACOccQM3MTD70pyZAMEx2wM3MTD68dBNAMEx2wM3MTD68dBNAMEx2wM3MTD4IrJzAsb+0wM3MTD4736/AMEx2wM3MTD68dBNAsb+0wM3MTD4736/Asb+0wM3MTD76U7NACOccQM3MTD70pyZAak1DQM3MTD76U4NAnYBWQM3MTD6JQWBACOccQM3MTD70pyZAnYBWQM3MTD6JQWBA0LNpQM3MTD68dBNA0LNpQM3MTD68dBNAGw24QM3MTD68dHNAGw24QM3MTD4736/A0LNpQM3MTD68dBNAGw24QM3MTD4736/A0LNpQM3MTD4IrJzA0LNpQM3MTD68dBNAnYBWQM3MTD6JQWBAGw24QM3MTD68dHNAhlpTPc3MTD4736/AhlpTPc3MTD6iRabA0LNpQM3MTD4IrJzAhlpTPc3MTD4736/A0LNpQM3MTD4IrJzAGw24QM3MTD4736/AAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAgAAAgD8AAAAAAAAAgAAAgD8AAAAAAAAAgAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAACAAAAAAAAAgD8AAACAAAAAAAAAgD8AAACAAAAAAAAAgD8AAACAAAAAAAAAgD8AAACAAAAAAAAAgD8AAACAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAgAAAgD8AAAAAAAAAgAAAgD8AAAAAAAAAgAAAgD8AAAAAAAAAgAAAgD8AAAAAAAAAgAAAgD8AAAAAAAAAgAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAA"
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 42,
+      "max": [5.7515997886657715, 0.20000000298023224, 5.604001045227051],
+      "min": [-5.648399829864502, 0.20000000298023224, -5.495999813079834],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 42,
+      "max": [0, 1, 0],
+      "min": [0, 1, 0],
+      "type": "VEC3"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.5019607843137255,
+          0.5019607843137255,
+          0.5019607843137255,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": { "POSITION": 0, "NORMAL": 1 },
+          "material": 0
+        }
+      ]
+    }
+  ]
+}

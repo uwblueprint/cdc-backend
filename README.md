@@ -68,6 +68,13 @@ Once you have the requirements installed, you should be able to develop by just 
 1. Run `python app/__main__.py`
 1. You should see a `SERVER STARTED` message along with configuration details
 
+Note, if you get a "port 5432 in use" error on the postgres app, do the following:
+
+1. Find the pid of the process using that port: `sudo lsof -n -i :5432`
+1. Kill the process by using the PID from above result: `sudo kill -9 <PID>`
+
+If that does not work, you can run `sudo pkill -u postgres` to clear the port and then restart postgres.
+
 #### Windows
 
 1. Ensure you are in the root directory, and your virtual env is activated. Also make sure your Postgres is running.

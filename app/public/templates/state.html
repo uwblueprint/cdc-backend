@@ -1,0 +1,16 @@
+<script>
+  AFRAME.registerState({
+    initialState: {
+      solvedObjects: {},
+    },
+
+    handlers: {
+      solvedObject: function (state, action) {
+        state.solvedObjects[action.id] = true;
+      },
+      initializeObject: function (state, action) {
+        state.solvedObjects[action.id] = action.solved;
+      },
+    },
+  });
+</script>

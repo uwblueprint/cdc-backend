@@ -19,8 +19,7 @@
       "blackboardData": {
         "componentType": "rotation-controls",
         "jsonData": {
-          "position": [0, 0, 5],
-          "rotation": [0, 0, 0]
+          "position": [0, 0, 5]
         }
       }
     }

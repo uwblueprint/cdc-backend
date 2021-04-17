@@ -66,7 +66,6 @@ Simple documentation for components being used and a sample of their `animations
     - `componentType` - Needs to be the string "rotation-controls"
     - `jsonData` - object
       - `position` - Defines the distance of the object relative to the blackboard. Array of 3 floats: `[x, y, z]`
-      - `rotation` - Defines the initial orientation of the object relative to the blackboard. Array of 3 floats: `[x, y, z]`
 - Sample mock object
 
 ```json
@@ -76,8 +75,7 @@ Simple documentation for components being used and a sample of their `animations
       "blackboardData": {
         "componentType": "rotation-controls",
         "jsonData": {
-          "position": [0, 0, 5],
-          "rotation": [0, 0, 0]
+          "position": [0, 0, 5]
         }
       }
     },

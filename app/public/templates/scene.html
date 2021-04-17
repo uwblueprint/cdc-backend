@@ -22,6 +22,7 @@
 
   <body>
     <div id="scene-root">
+      <!-- Need to add  inspector="url: http://localhost:3333/dist/aframe-inspector.js" to the a-scene element if using local inspector -->
       <a-scene id="{{ scene_id }}-scene" cursor="rayOrigin:mouse" raycaster="objects: .link">
         <a-assets timeout="50000">
           {% for object in scene_dict["objects"] %}

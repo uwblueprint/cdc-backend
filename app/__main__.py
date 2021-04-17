@@ -1,5 +1,6 @@
 import asyncio
 import os
+import uuid
 
 import tornado.autoreload
 import tornado.httpserver
@@ -19,7 +20,7 @@ from routes.admin.scene import (
     AdminSceneHandler,
     AdminScenePostHandler,
 )
-from routes.base import NotFoundHandler, UIStaticHandler
+from routes.base import BaseAuthHandler, NotFoundHandler, UIStaticHandler
 from routes.ui.scenario import UIScenarioHandler
 from routes.user.asset import UserAssetHandler
 from routes.user.loading_screen import UserLoadingScreen
@@ -60,6 +61,7 @@ def get_routes():
             UIStaticHandler,
             dict(path=f"{os.path.dirname(__file__)}/public/static/"),
         ),
+        (r"/admin_login", BaseAuthHandler),
         (r"/([a-zA-Z_-]{1,50})/?", UIScenarioHandler),
         (r"/([a-zA-Z_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),
     ]
@@ -73,6 +75,7 @@ def make_app():
         xsrf_cookies=config.get("tornado.xsrf"),
         default_handler_class=NotFoundHandler,
         template_path=f"{os.path.dirname(__file__)}/public/templates",
+        cookie_secret=uuid.uuid4().hex,
     )
     return app
 

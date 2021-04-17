@@ -34,3 +34,7 @@ cache:
   update_time: 5
   # no need to update cache for dev, except for testing purpose
   periodic_callback_enabled: false
+
+auth:
+  cookie_name: dcc_auth
+  expiry_days: 1

@@ -18,10 +18,11 @@ AFRAME.registerComponent("rotation-controls", {
     let camera, controls;
     let childId = data.id;
 
-    let childElDuplicate = document.getElementById(childId).cloneNode();
-    // TODO: Figure out whether to remove these or keep them... they do get triggered. To remove maybe have some standardized naming system for animation events.
-    childElDuplicate.removeAttribute("animation-on-click-run");
-    childElDuplicate.removeAttribute("animation-onclick");
+    let childEl = document.getElementById(childId);
+    let clonedEl = document.createElement("a-gltf-model");
+    clonedEl.setAttribute("src", childEl.getAttribute("src"));
+    clonedEl.setAttribute("scale", childEl.getAttribute("scale"));
+    clonedEl.setAttribute("rotation", childEl.getAttribute("rotation"));
 
     // TODO: implement using default value if position and rotation not provided.
     // TODO: Is scaling needed?
@@ -37,8 +38,10 @@ AFRAME.registerComponent("rotation-controls", {
       z: data.rotation[2],
     });
 
-    childElDuplicate.addEventListener("loaded", function (e) {
-      if (e.target === childElDuplicate) {
+    clonedEl.setAttribute("position", { x: 0, y: 0, z: 0 });
+
+    clonedEl.addEventListener("loaded", function (e) {
+      if (e.target === clonedEl) {
         let cameraEl = document.querySelector("[camera]");
 
         let controlsSetup = function () {
@@ -77,7 +80,7 @@ AFRAME.registerComponent("rotation-controls", {
         }
       }
     });
-    el.appendChild(childElDuplicate);
+    el.appendChild(clonedEl);
 
     function onWindowResize() {
       const aspect = window.innerWidth / window.innerHeight;

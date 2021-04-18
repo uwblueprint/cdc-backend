@@ -30,7 +30,7 @@ class BaseAPIHandler(tornado.web.RequestHandler):
         self.finish(response_error)
 
     def on_finish(self):
-        if self.db_session:
+        if hasattr(self, "db_session") and self.db_session:
             return_session(self.db_session)
 
 
@@ -125,13 +125,21 @@ class BaseAuthHandler(tornado.web.RequestHandler):
     def set_default_headers(self) -> None:
         self.set_header("Content-Type", "application/json")
 
+    def check_xsrf_cookie(self) -> None:
+        # XSRF cookie won't be on this request, as it would be set on this request
+        # All other handlers other than this will check it by default (Tornado does that)
+        pass
+
     async def post(self):
         try:
             data = tornado.escape.json_decode(self.request.body)
             id_token = data["idToken"]
             decoded_claims = auth.verify_id_token(id_token)
             # Only process if the user signed in within the last X min based on config.
-            if time.time() - decoded_claims["auth_time"] < 100 * 60:
+            if (
+                time.time() - decoded_claims["auth_time"]
+                < config.get("auth.min_since_login") * 60
+            ):
                 expiry_hours = config.get("auth.expiry_hours")
                 expires_in = datetime.timedelta(hours=expiry_hours)
                 session_cookie = auth.create_session_cookie(
@@ -143,6 +151,10 @@ class BaseAuthHandler(tornado.web.RequestHandler):
                     cookie_name,
                     session_cookie,
                     httponly=True,
+                )
+                self.set_cookie(
+                    "_xsrf",
+                    self.xsrf_token,
                 )
                 await self.finish(resp_json)
             else:

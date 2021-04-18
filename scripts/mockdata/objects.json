@@ -84,7 +84,7 @@
       "blackboardData": {
         "componentType": "keypad",
         "jsonData": {
-          "password": "abcd",
+          "password": "abcde",
           "model": "basic"
         }
       }

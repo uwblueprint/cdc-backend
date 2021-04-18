@@ -19,7 +19,7 @@ class UIAdminSceneHandler(BaseUIHandler):
             scene_dict = await get_scene_from_postgres(
                 scene_id_int,
                 self.db_session,
-                update_cache=True,
+                update_cache=False,
             )
 
             background_ext = (

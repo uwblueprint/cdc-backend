@@ -58,7 +58,8 @@
       "blackboardData": {
         "componentType": "keypad",
         "jsonData": {
-          "password": "1234"
+          "password": "1234",
+          "model": "numpad"
         }
       }
     }
@@ -83,7 +84,8 @@
       "blackboardData": {
         "componentType": "keypad",
         "jsonData": {
-          "password": "1000"
+          "password": "abcd",
+          "model": "basic"
         }
       }
     }

@@ -11,7 +11,7 @@ class UIAdminSceneHandler(BaseUIHandler):
     Handle routes that have admin/scene/{scene_id}
     """
 
-    async def get(self, scene_id=1):
+    async def get(self, scene_id):
         try:
             scene_id_int = int(scene_id)
 

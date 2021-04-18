@@ -62,6 +62,7 @@ class UIScenarioHandler(BaseUIHandler):
             await self.render(
                 "scene.html",
                 is_last_scene=is_last_scene,
+                is_admin=False,
                 scenario_name=scenario_obj.name,
                 scene_dict=scene_dict,
                 asset_prefix_url=config.get("asset.prefix_url"),

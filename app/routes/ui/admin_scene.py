@@ -34,11 +34,13 @@ class UIAdminSceneHandler(BaseUIHandler):
             await self.render(
                 "scene.html",
                 is_last_scene=False,
+                is_admin=True,
                 scene_id=scene_id_int,
                 scenario_name="Edit Scene",
                 scene_dict=scene_dict,
                 asset_prefix_url=config.get("asset.prefix_url"),
                 navmesh_src=navmesh_src,
+                inspector_url=config.get("inspector_url"),
                 json=json,
             )
         except ValueError as e:

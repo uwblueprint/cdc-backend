@@ -11,10 +11,10 @@
 
     <!-- A-frame components   -->
     <!--  TODO: minify and combine all components once we are done  -->
-    <script src="../static/js/components/animation-on-click.js"></script>
-    <script src="../static/js/components/close-popup.js"></script>
-    <script src="../static/js/components/keypad.js"></script>
-    <script src="../static/js/components/text-pane.js"></script>
+    <script src="/static/js/components/animation-on-click.js"></script>
+    <script src="/static/js/components/close-popup.js"></script>
+    <script src="/static/js/components/keypad.js"></script>
+    <script src="/static/js/components/text-pane.js"></script>
 
     <!-- Initial state  -->
     {% include state.html %}
@@ -23,7 +23,11 @@
   <body>
     <div id="scene-root">
       <!-- Need to add  inspector="url: http://localhost:3333/dist/aframe-inspector.js" to the a-scene element if using local inspector -->
-      <a-scene id="{{ scene_dict['id'] }}-scene" cursor="rayOrigin:mouse" raycaster="objects: .link">
+      <a-scene id="{{ scene_dict['id'] }}-scene" cursor="rayOrigin:mouse" raycaster="objects: .link"
+        {% if is_admin %}
+          inspector="url: {{ inspector_url }}"
+        {% end %}
+      >
         <a-assets timeout="50000">
           {% for object in scene_dict["objects"] %}
           <!--  TODO: deal with multiple objects of same asset type  -->

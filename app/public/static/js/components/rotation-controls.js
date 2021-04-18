@@ -20,10 +20,9 @@ AFRAME.registerComponent("rotation-controls", {
     let childId = data.id;
 
     let childEl = document.getElementById(childId);
-    let clonedEl = document.createElement("a-gltf-model");
-    clonedEl.setAttribute("src", childEl.getAttribute("src"));
-    clonedEl.setAttribute("scale", childEl.getAttribute("scale"));
-    clonedEl.setAttribute("rotation", childEl.getAttribute("rotation"));
+    el.setAttribute("gltf-model", childEl.getAttribute("src"));
+    el.setAttribute("scale", childEl.getAttribute("scale"));
+    el.setAttribute("rotation", childEl.getAttribute("rotation"));
 
     // TODO: Is scaling needed?
     if (data.hasOwnProperty("position")) {
@@ -36,10 +35,8 @@ AFRAME.registerComponent("rotation-controls", {
       el.setAttribute("position", { x: 0, y: 2, z: 0.5 });
     }
 
-    clonedEl.setAttribute("position", { x: 0, y: 0, z: 0 });
-
-    clonedEl.addEventListener("loaded", function (e) {
-      if (e.target === clonedEl) {
+    el.addEventListener("loaded", function (e) {
+      if (e.target === el) {
         let cameraEl = document.querySelector("[camera]");
 
         let controlsSetup = function () {
@@ -78,7 +75,6 @@ AFRAME.registerComponent("rotation-controls", {
         }
       }
     });
-    el.appendChild(clonedEl);
 
     function onWindowResize() {
       const aspect = window.innerWidth / window.innerHeight;

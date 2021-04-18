@@ -4,6 +4,7 @@ AFRAME.registerComponent("rotation-controls", {
       parse: JSON.parse,
       stringify: JSON.stringify,
     },
+    isSolved: { type: "map" },
   },
   multiple: true,
   init: function () {

@@ -18,8 +18,10 @@ AFRAME.registerComponent("keypad", {
 
     el.setAttribute(
       "super-keyboard",
-      "imagePath:/static/img/; multipleInputs:true; align: center; maxLength: 4; model:" +
-        data.model
+      "imagePath:/static/img/; multipleInputs:true; align: center; model:" +
+        data.model +
+        "; maxLength: " +
+        password.length
     );
     el.setAttribute("scale", { x: 20, y: 20, z: 20 });
     el.setAttribute("position", { x: 0, y: 0, z: 0.5 });

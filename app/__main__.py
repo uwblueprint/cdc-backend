@@ -61,7 +61,7 @@ def get_routes():
             UIStaticHandler,
             dict(path=f"{os.path.dirname(__file__)}/public/static/"),
         ),
-        (r"/admin/scene/([0-9]{0,16})", UIAdminSceneHandler),
+        (r"/admin/scene/([0-9]{1,16})", UIAdminSceneHandler),
         (r"/([a-zA-Z_-]{1,50})/?", UIScenarioHandler),
         (r"/([a-zA-Z_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),
     ]

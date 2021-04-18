@@ -56,9 +56,16 @@ class BaseAdminAPIHandler(BaseAPIHandler):
             )
             # save the user (for audit purposes, we can use this later)
             self.user = decoded_claims["email"]
-            # if not user or not valid domain email
+            # Ensure that the email is verified, so not anyone can make fake accounts
+            if not decoded_claims["email_verified"]:
+                raise ValueError(
+                    "The email address is not verified. Please verify it first!"
+                )
+            # if not user or not valid domain email, let's not provide description of error
             if self.user.split("@")[-1] not in config.get("auth.allowed_domains"):
-                raise ValueError("Invalid domain")
+                raise Exception
+        except ValueError as e:
+            return self.write_error(status_code=403, message=str(e))
         except Exception:
             # Session cookie is invalid, expired or revoked. Force user to login.
             return self.write_error(status_code=403, message="Forbidden")

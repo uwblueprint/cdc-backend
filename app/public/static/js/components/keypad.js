@@ -16,13 +16,13 @@ AFRAME.registerComponent("keypad", {
     const el = this.el;
     this.id = data.id;
 
-    el.setAttribute(
-      "super-keyboard",
-      "imagePath:/static/img/; multipleInputs:true; align: center; model:" +
-        data.model +
-        "; maxLength: " +
-        password.length
-    );
+    el.setAttribute("super-keyboard", {
+      imagePath: "/static/img/",
+      multipleInputs: true,
+      align: "center",
+      model: data.model,
+      maxLength: password.length,
+    });
     el.setAttribute("scale", { x: 20, y: 20, z: 20 });
     el.setAttribute("position", { x: 0, y: 0, z: 0.5 });
     el.addEventListener("superkeyboardinput", function (event) {
@@ -32,7 +32,10 @@ AFRAME.registerComponent("keypad", {
       } else {
         const statusLabel = el.getAttribute("super-keyboard").label;
         if (statusLabel !== "SUCCESS") {
-          el.setAttribute("super-keyboard", "label:ERROR; labelColor: red");
+          el.setAttribute("super-keyboard", {
+            label: "ERROR",
+            labelColor: "red",
+          });
           removeError(el);
         }
       }
@@ -71,26 +74,27 @@ AFRAME.registerComponent("keypad", {
       // not loaded yet, do nothing
     } else if (this.puzzleIsSolved === true) {
       // Already solved
-      el.setAttribute(
-        "super-keyboard",
-        "label:SUCCESS; labelColor: green; multipleInputs:true;"
-      );
+      el.setAttribute("super-keyboard", {
+        label: "SUCCESS",
+        labelColor: "green",
+        multipleInputs: true,
+      });
       this.solvedPuzzleEntity.setAttribute("visible", "true");
     } else {
       // Not solved yet
-      el.setAttribute(
-        "super-keyboard",
-        "label: Enter Password; labelColor: black"
-      );
+      el.setAttribute("super-keyboard", {
+        label: "Enter Password",
+        labelColor: "black",
+      });
     }
   },
 });
 
 async function removeError(el) {
   setTimeout(function () {
-    el.setAttribute(
-      "super-keyboard",
-      "label:Enter Password; labelColor: black"
-    );
+    el.setAttribute("super-keyboard", {
+      label: "Enter Password",
+      labelColor: "black",
+    });
   }, 1.5 * 1000);
 }

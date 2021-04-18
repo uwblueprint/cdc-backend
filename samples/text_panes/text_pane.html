@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="components/text_pane.js"></script>
     <script src="components/text-box.js"></script>
   </head>
   <body>
-    <a-scene background="color: #AAD5D7" cursor="rayOrigin: mouse">
+    <a-scene
+      background="color: #AAD5D7"
+      cursor="rayOrigin: mouse"
+      raycaster="objects: .link"
+    >
       <a-entity
         id="primaryCamera"
         position="0 -30 15"

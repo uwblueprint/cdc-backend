@@ -7,6 +7,7 @@ from models.db_client import (
     delete_scenario,
     delete_scene,
     get_asset,
+    get_assets,
     get_object,
     get_scenario,
     get_scenario_by_friendly_name,
@@ -84,6 +85,12 @@ async def get_asset_from_postgres(asset_id: str, session, update_cache=False):
         await update_asset_cache(asset_id, response)
 
     return response
+
+
+async def get_assets_from_postgres(session):
+    assets = get_assets(session)
+    resp_dict = {"assets": [asset.as_dict() for asset in assets]}
+    return resp_dict
 
 
 async def delete_asset_from_postgres(asset_id: str, session):

@@ -14,8 +14,15 @@
       }
     ],
     "texts": ["", "hello", "from the other side"],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5]
+        }
+      }
+    }
   },
   {
     "position": [4.487, 1.435, -4.129],
@@ -77,7 +84,7 @@
       "blackboardData": {
         "componentType": "keypad",
         "jsonData": {
-          "password": "abcd",
+          "password": "abcde",
           "model": "basic"
         }
       }

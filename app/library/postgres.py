@@ -11,6 +11,7 @@ from models.db_client import (
     get_object,
     get_scenario,
     get_scenario_by_friendly_name,
+    get_scenarios,
     get_scene,
     put_asset,
     put_object,
@@ -130,6 +131,12 @@ async def get_scenario_from_postgres(scenario_id: str, session, update_cache=Fal
             scenario_id, scenario_obj_dict, scenario_obj.friendly_name
         )
     return scenario_obj_dict
+
+
+async def get_scenarios_from_postgres(session):
+    scenarios = get_scenarios(session)
+    resp_dict = {"scenarios": [scenario.as_dict() for scenario in scenarios]}
+    return resp_dict
 
 
 async def get_scenario_by_friendly_name_from_postgres(

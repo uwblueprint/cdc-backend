@@ -8,6 +8,7 @@ from library.postgres import (
     delete_scenario_from_postgres,
     duplicate_scenario,
     get_scenario_from_postgres,
+    get_scenarios_from_postgres,
     post_scenario_to_postgres,
     update_scenario_from_postgres,
 )
@@ -101,5 +102,19 @@ class AdminScenarioDuplicateHandler(BaseAdminAPIHandler):
 
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))
+        except Exception as e:
+            self.write_error(status_code=500, message=str(e))
+
+
+class AdminScenariosHandler(BaseAdminAPIHandler):
+    """
+    Handle routes that have api/admin/[version]/scenarios
+    """
+
+    async def get(self):
+        try:
+            response_dict = await get_scenarios_from_postgres(self.db_session)
+            await self.finish(response_dict)
+
         except Exception as e:
             self.write_error(status_code=500, message=str(e))

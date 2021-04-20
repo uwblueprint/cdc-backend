@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{{ scenario_dict["name"] }} - {{ scene_dict["name"] }}</title>
+    <title>{{ scenario_name }} - {{ scene_dict["name"] }}</title>
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.controls.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.pathfinding.min.js"></script>
@@ -11,12 +11,12 @@
 
     <!-- A-frame components   -->
     <!--  TODO: minify and combine all components once we are done  -->
-    <script src="../static/js/components/animation-on-click.js"></script>
-    <script src="../static/js/components/close-popup.js"></script>
-    <script src="../static/js/components/keypad.js"></script>
-    <script src="../static/js/components/text-pane.js"></script>
-    <script src="../static/js/components/rotation-controls.js"></script>
-    <script src="../static/js/libraries/TransformControls.js"></script>
+    <script src="/static/js/components/animation-on-click.js"></script>
+    <script src="/static/js/components/close-popup.js"></script>
+    <script src="/static/js/components/keypad.js"></script>
+    <script src="/static/js/components/text-pane.js"></script>
+    <script src="/static/js/components/rotation-controls.js"></script>
+    <script src="/static/js/libraries/TransformControls.js"></script>
 
     <!-- Initial state  -->
     {% include state.html %}
@@ -25,7 +25,11 @@
   <body>
     <div id="scene-root">
       <!-- Need to add  inspector="url: http://localhost:3333/dist/aframe-inspector.js" to the a-scene element if using local inspector -->
-      <a-scene id="{{ scene_dict['id'] }}-scene" cursor="rayOrigin:mouse" raycaster="objects: .link">
+      <a-scene id="{{ scene_dict['id'] }}-scene" cursor="rayOrigin:mouse" raycaster="objects: .link"
+        {% if is_admin %}
+          inspector="url: {{ inspector_url }}"
+        {% end %}
+      >
         <a-assets timeout="50000">
           {% for object in scene_dict["objects"] %}
           <!--  TODO: deal with multiple objects of same asset type  -->

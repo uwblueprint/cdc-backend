@@ -23,6 +23,7 @@ from routes.admin.scene import (
     AdminSceneDuplicateHandler,
     AdminSceneHandler,
     AdminScenePostHandler,
+    AdminScenesHandler,
 )
 from routes.base import NotFoundHandler, UIStaticHandler
 from routes.ui.admin_scene import UIAdminSceneHandler
@@ -56,6 +57,7 @@ def get_routes():
         ),
         (r"/api/admin/v1/scenarios", AdminScenariosHandler),
         (r"/api/admin/v1/scene", AdminScenePostHandler),
+        (r"/api/admin/v1/scenes", AdminScenesHandler),
         (r"/api/admin/v1/scene/([0-9]{1,16})", AdminSceneHandler),
         (r"/api/admin/v1/scene/([0-9]{1,16})/object", AdminObjectPostHandler),
         (

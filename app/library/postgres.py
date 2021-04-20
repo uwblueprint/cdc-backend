@@ -13,6 +13,7 @@ from models.db_client import (
     get_scenario_by_friendly_name,
     get_scenarios,
     get_scene,
+    get_scenes,
     put_asset,
     put_object,
     put_scenario,
@@ -69,6 +70,12 @@ async def get_scene_from_postgres(scene_id: str, session, update_cache=False):
     if update_cache:
         await update_scene_cache(scene_id, response)
     return response
+
+
+async def get_scenes_from_postgres(session):
+    scenes = get_scenes(session)
+    resp_dict = {"scenes": [scene.as_dict() for scene in scenes]}
+    return resp_dict
 
 
 async def get_loading_screen_from_postgres(session):

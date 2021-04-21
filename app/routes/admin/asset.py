@@ -4,6 +4,7 @@ from library.api_schemas import admin_asset_handler_body_schema
 from library.postgres import (
     delete_asset_from_postgres,
     get_asset_from_postgres,
+    get_assets_from_postgres,
     post_asset_to_postgres,
     update_asset_from_postgres,
 )
@@ -78,5 +79,19 @@ class AdminAssetHandler(BaseAdminAPIHandler):
 
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))
+        except Exception as e:
+            self.write_error(status_code=500, message=str(e))
+
+
+class AdminAssetsHandler(BaseAdminAPIHandler):
+    """
+    Handle routes that have api/admin/[version]/assets
+    """
+
+    async def get(self):
+        try:
+            response_dict = await get_assets_from_postgres(self.db_session)
+            await self.finish(response_dict)
+
         except Exception as e:
             self.write_error(status_code=500, message=str(e))

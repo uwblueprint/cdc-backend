@@ -7,10 +7,13 @@ from models.db_client import (
     delete_scenario,
     delete_scene,
     get_asset,
+    get_assets,
     get_object,
     get_scenario,
     get_scenario_by_friendly_name,
+    get_scenarios,
     get_scene,
+    get_scenes,
     put_asset,
     put_object,
     put_scenario,
@@ -69,6 +72,12 @@ async def get_scene_from_postgres(scene_id: str, session, update_cache=False):
     return response
 
 
+async def get_scenes_from_postgres(session):
+    scenes = get_scenes(session)
+    resp_dict = {"scenes": [scene.as_dict() for scene in scenes]}
+    return resp_dict
+
+
 async def get_loading_screen_from_postgres(session):
     # TODO: get actual loading scene from postgres once we have it
     return await get_scene_from_postgres("123", session)
@@ -84,6 +93,12 @@ async def get_asset_from_postgres(asset_id: str, session, update_cache=False):
         await update_asset_cache(asset_id, response)
 
     return response
+
+
+async def get_assets_from_postgres(session):
+    assets = get_assets(session)
+    resp_dict = {"assets": [asset.as_dict() for asset in assets]}
+    return resp_dict
 
 
 async def delete_asset_from_postgres(asset_id: str, session):
@@ -123,6 +138,12 @@ async def get_scenario_from_postgres(scenario_id: str, session, update_cache=Fal
             scenario_id, scenario_obj_dict, scenario_obj.friendly_name
         )
     return scenario_obj_dict
+
+
+async def get_scenarios_from_postgres(session):
+    scenarios = get_scenarios(session)
+    resp_dict = {"scenarios": [scenario.as_dict() for scenario in scenarios]}
+    return resp_dict
 
 
 async def get_scenario_by_friendly_name_from_postgres(

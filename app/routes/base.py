@@ -151,6 +151,16 @@ class BaseAuthHandler(tornado.web.RequestHandler):
             data = tornado.escape.json_decode(self.request.body)
             id_token = data["idToken"]
             decoded_claims = auth.verify_id_token(id_token)
+            # save the user (for audit purposes, we can use this later)
+            self.user = decoded_claims["email"]
+            # Ensure that the email is verified, so not anyone can make fake accounts
+            if not decoded_claims["email_verified"]:
+                raise ValueError(
+                    "The email address is not verified. Please verify it first!"
+                )
+            # if not user or not valid domain email, let's not provide description of error
+            if self.user.split("@")[-1] not in config.get("auth.allowed_domains"):
+                raise ValueError("The domain is not allowed")
             # Only process if the user signed in within the last X min based on config.
             if (
                 time.time() - decoded_claims["auth_time"]
@@ -175,6 +185,11 @@ class BaseAuthHandler(tornado.web.RequestHandler):
                 await self.finish(resp_json)
             else:
                 raise ValueError("User signed in too long ago")
+        except ValueError as e:
+            self.set_header("Content-Type", "application/problem+json")
+            self.set_status(403)
+            response_error = {"status": 403, "message": str(e)}
+            await self.finish(response_error)
         except Exception:
             # Don't give any reason as this is a sensitive route
             self.set_header("Content-Type", "application/problem+json")

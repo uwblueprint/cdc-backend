@@ -15,6 +15,8 @@ class BaseAPIHandler(tornado.web.RequestHandler):
 
     def set_default_headers(self) -> None:
         self.set_header("Content-Type", "application/json")
+        self.set_header("Access-Control-Allow-Origin", "*")
+        self.set_header("Access-Control-Allow-Headers", "x-requested-with")
 
     def write_error(self, status_code: int, **kwargs: Any) -> None:
         self.set_header("Content-Type", "application/problem+json")
@@ -33,6 +35,10 @@ class BaseAdminAPIHandler(BaseAPIHandler):
     """
     Base handler for all api/admin/* routes
     """
+
+    async def options(self):
+        self.set_status(204)
+        await self.finish()
 
     def prepare(self):
         # TODO: check auth cookie before creating session

@@ -132,7 +132,9 @@ class BaseAuthHandler(tornado.web.RequestHandler):
     def set_default_headers(self) -> None:
         self.set_header("Content-Type", "application/json")
         self.set_header("Access-Control-Allow-Origin", "*")
-        self.set_header("Access-Control-Allow-Headers", "x-requested-with")
+        self.set_header(
+            "Access-Control-Allow-Headers", "x-requested-with, content-type"
+        )
         self.set_header("Access-Control-Allow-Methods", "POST, OPTIONS")
 
     async def options(self):

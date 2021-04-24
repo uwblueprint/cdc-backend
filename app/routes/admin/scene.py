@@ -8,6 +8,7 @@ from library.postgres import (
     delete_scene_from_postgres,
     duplicate_scene,
     get_scene_from_postgres,
+    get_scenes_from_postgres,
     post_scene_to_postgres,
     update_scene_from_postgres,
 )
@@ -101,5 +102,19 @@ class AdminSceneDuplicateHandler(BaseAdminAPIHandler):
 
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))
+        except Exception as e:
+            self.write_error(status_code=500, message=str(e))
+
+
+class AdminScenesHandler(BaseAdminAPIHandler):
+    """
+    Handle routes that have api/admin/[version]/scenes
+    """
+
+    async def get(self):
+        try:
+            response_dict = await get_scenes_from_postgres(self.db_session)
+            await self.finish(response_dict)
+
         except Exception as e:
             self.write_error(status_code=500, message=str(e))

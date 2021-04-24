@@ -10,17 +10,23 @@ import tornado.web
 from cache.update_cache import update_cache
 from config import config
 from firebase_admin import credentials
-from routes.admin.asset import AdminAssetHandler, AdminAssetPostHandler
+from routes.admin.asset import (
+    AdminAssetHandler,
+    AdminAssetPostHandler,
+    AdminAssetsHandler,
+)
 from routes.admin.object import AdminObjectPostHandler, AdminObjectPutHandler
 from routes.admin.scenario import (
     AdminScenarioDuplicateHandler,
     AdminScenarioHandler,
     AdminScenarioPostHandler,
+    AdminScenariosHandler,
 )
 from routes.admin.scene import (
     AdminSceneDuplicateHandler,
     AdminSceneHandler,
     AdminScenePostHandler,
+    AdminScenesHandler,
 )
 from routes.base import BaseAuthHandler, NotFoundHandler, UIStaticHandler
 from routes.ui.admin_scene import UIAdminSceneHandler
@@ -45,13 +51,16 @@ def get_routes():
         (r"/api/user/v1/loading_screen", UserLoadingScreen),  # TODO: remove endpoint
         (r"/api/admin/v1/asset", AdminAssetPostHandler),
         (r"/api/admin/v1/asset/([0-9]{1,16})", AdminAssetHandler),
+        (r"/api/admin/v1/assets", AdminAssetsHandler),
         (r"/api/admin/v1/scenario", AdminScenarioPostHandler),
         (r"/api/admin/v1/scenario/([0-9]{1,16})", AdminScenarioHandler),
         (
             r"/api/admin/v1/scenario/([0-9]{1,16})/duplicate",
             AdminScenarioDuplicateHandler,
         ),
+        (r"/api/admin/v1/scenarios", AdminScenariosHandler),
         (r"/api/admin/v1/scene", AdminScenePostHandler),
+        (r"/api/admin/v1/scenes", AdminScenesHandler),
         (r"/api/admin/v1/scene/([0-9]{1,16})", AdminSceneHandler),
         (r"/api/admin/v1/scene/([0-9]{1,16})/object", AdminObjectPostHandler),
         (

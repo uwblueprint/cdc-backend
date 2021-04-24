@@ -32,15 +32,26 @@ AFRAME.registerComponent("close-popup", {
 
     // Add event listener for closing (returning) on mouse click.
     el.addEventListener("click", function () {
-      var primaryCamera = document.querySelector("#primaryCamera");
-      primaryCamera.setAttribute("camera", "active", true);
-      wipeBlackboard();
+      closePopup(0);
+    });
+
+    // Add event listener for closing on successful puzzle solve, after X seconds
+    el.sceneEl.addEventListener("dcc-success-close-popup", function (e) {
+      closePopup(e.detail.seconds);
     });
   },
 });
 
+async function closePopup(numSeconds) {
+  setTimeout(function () {
+    const primaryCamera = document.querySelector("#primaryCamera");
+    primaryCamera.setAttribute("camera", "active", true);
+    wipeBlackboard();
+  }, numSeconds * 1000);
+}
+
 function wipeBlackboard() {
-  var blackboardEl = document.querySelector("#blackboard");
+  let blackboardEl = document.querySelector("#blackboard");
   while (blackboardEl.firstChild) {
     blackboardEl.removeChild(blackboardEl.lastChild);
   }

@@ -29,6 +29,8 @@ AFRAME.registerComponent("keypad", {
       if (event.detail.value === password) {
         // emit event to update state
         el.sceneEl.emit("solvedObject", { id: data.id });
+        // emit event to close popup (after 1 second for now)
+        el.sceneEl.emit("dcc-success-close-popup", { seconds: 1 });
       } else {
         const statusLabel = el.getAttribute("super-keyboard").label;
         if (statusLabel !== "SUCCESS") {

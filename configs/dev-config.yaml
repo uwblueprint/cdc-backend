@@ -42,6 +42,5 @@ auth:
   expiry_hours: 1
   # TODO: update this list, if needed
   allowed_domains:
-    - test.org
-    - distresscentre.com
+    - gmail.com
   min_since_login: 100

@@ -20,8 +20,17 @@ AFRAME.registerComponent("open-popup", {
       data.depth
     );
 
+    const isTransparent = data.hasOwnProperty("transparent")
+      ? data.transparent
+      : false;
+    const objectOpacity = data.hasOwnProperty("opacity") ? data.opacity : 1.0;
+
     // Create material.
-    this.material = new THREE.MeshStandardMaterial({ color: data.color });
+    this.material = new THREE.MeshStandardMaterial({
+      color: data.color,
+      transparent: isTransparent,
+      opacity: objectOpacity,
+    });
 
     // Create mesh.
     this.mesh = new THREE.Mesh(this.geometry, this.material);

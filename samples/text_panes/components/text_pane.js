@@ -68,7 +68,7 @@ AFRAME.registerComponent("text_pane", {
 
 function closeTextPane() {
   var textPaneEl = document.querySelector("#text_pane");
-  while (textPaneEl.firstChild) {
+  while (textPaneEl && textPaneEl.firstChild) {
     textPaneEl.removeChild(textPaneEl.lastChild);
   }
 }

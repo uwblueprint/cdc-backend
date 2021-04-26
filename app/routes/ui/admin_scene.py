@@ -35,7 +35,6 @@ class UIAdminSceneHandler(BaseUIHandler):
                 "scene.html",
                 is_last_scene="false",
                 is_admin=True,
-                scene_id=scene_id_int,
                 scenario_name="Edit Scene",
                 scenario_friendly_name="friendly_name",
                 scene_dict=scene_dict,

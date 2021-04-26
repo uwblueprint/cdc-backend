@@ -33,15 +33,16 @@ class UIAdminSceneHandler(BaseUIHandler):
 
             await self.render(
                 "scene.html",
-                is_last_scene=False,
+                is_last_scene="false",
                 is_admin=True,
-                scene_id=scene_id_int,
                 scenario_name="Edit Scene",
+                scenario_friendly_name="friendly_name",
                 scene_dict=scene_dict,
                 asset_prefix_url=config.get("asset.prefix_url"),
                 navmesh_src=navmesh_src,
                 inspector_url=config.get("inspector_url"),
                 json=json,
+                cur_scene_idx=scene_id_int,
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

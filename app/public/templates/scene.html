@@ -107,5 +107,29 @@
         {% end %}
       </a-scene>
     </div>
+  <script>
+    <!--  Logic for scene completion  -->
+    const scene = document.querySelector('a-scene');
+    const is_last_scene = {{ is_last_scene }};
+    const next_scene_idx = {{ cur_scene_idx }} + 1;
+    scene.addEventListener("dcc-success-scene-complete", function () {
+      let nextURL = ""
+      if(is_last_scene){
+        // it is last scene, navigate to same scene for now
+        // TODO: in the future, this will redirect to scenario complete screen
+        nextURL = "/{{ scenario_friendly_name }}/{{ cur_scene_idx }}";
+      } else {
+        // TODO: in the future, we will most likely have some transition logic here, instead of just redirecting
+        nextURL = "/{{ scenario_friendly_name }}/" + next_scene_idx;
+      }
+      sceneComplete(2, nextURL);
+    });
+
+    async function sceneComplete(numSeconds, nextURL) {
+      setTimeout(function () {
+         window.location.replace(nextURL);
+      }, numSeconds * 1000);
+    }
+  </script>
   </body>
 </html>

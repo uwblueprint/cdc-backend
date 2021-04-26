@@ -59,7 +59,8 @@
         "componentType": "keypad",
         "jsonData": {
           "password": "1234",
-          "model": "numpad"
+          "model": "numpad",
+          "is_last_object": true
         }
       }
     }
@@ -85,7 +86,8 @@
         "componentType": "keypad",
         "jsonData": {
           "password": "abcde",
-          "model": "basic"
+          "model": "basic",
+          "is_last_object": true
         }
       }
     }

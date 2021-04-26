@@ -15,6 +15,10 @@ AFRAME.registerComponent("keypad", {
     const password = data.password;
     const el = this.el;
     this.id = data.id;
+    let is_last_object = false;
+    if ("is_last_object" in data) {
+      is_last_object = data.is_last_object;
+    }
 
     el.setAttribute("super-keyboard", {
       imagePath: "/static/img/",
@@ -31,6 +35,10 @@ AFRAME.registerComponent("keypad", {
         el.sceneEl.emit("solvedObject", { id: data.id });
         // emit event to close popup (after 1 second for now)
         el.sceneEl.emit("dcc-success-close-popup", { seconds: 1 });
+        // emit event if it is last object, to indicate scene is solved
+        if (is_last_object) {
+          el.sceneEl.emit("dcc-success-scene-complete");
+        }
       } else {
         const statusLabel = el.getAttribute("super-keyboard").label;
         if (statusLabel !== "SUCCESS") {

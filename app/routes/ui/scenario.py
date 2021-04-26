@@ -49,7 +49,12 @@ class UIScenarioHandler(BaseUIHandler):
                     update_cache=True,
                 )
 
-            is_last_scene = scene_number_int == len(scenario_obj.scene_ids) - 1
+            # Need to convert to JS version of True/False
+            is_last_scene = (
+                "true"
+                if (scene_number_int == len(scenario_obj.scene_ids) - 1)
+                else "false"
+            )
             background_ext = (
                 "." + scene_dict["background_details"]["s3_key"].split(".")[-1]
             )
@@ -64,10 +69,12 @@ class UIScenarioHandler(BaseUIHandler):
                 is_last_scene=is_last_scene,
                 is_admin=False,
                 scenario_name=scenario_obj.name,
+                scenario_friendly_name=scenario_obj.friendly_name,
                 scene_dict=scene_dict,
                 asset_prefix_url=config.get("asset.prefix_url"),
                 navmesh_src=navmesh_src,
                 json=json,
+                cur_scene_idx=scene_number_int,
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

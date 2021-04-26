@@ -34,14 +34,19 @@ class BaseAdminAPIHandler(BaseAPIHandler):
     Base handler for all api/admin/* routes
     """
 
-    async def options(self):
+    async def options(self, *args):
         self.set_status(204)
         await self.finish()
 
     def set_default_headers(self) -> None:
         self.set_header("Content-Type", "application/json")
         self.set_header("Access-Control-Allow-Origin", "*")
-        self.set_header("Access-Control-Allow-Headers", "x-requested-with")
+        self.set_header(
+            "Access-Control-Allow-Headers", "x-requested-with, content-type"
+        )
+        self.set_header(
+            "Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS"
+        )
 
     def prepare(self):
         # TODO: check auth cookie before creating session

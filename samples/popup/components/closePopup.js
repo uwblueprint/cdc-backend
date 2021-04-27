@@ -29,6 +29,7 @@ AFRAME.registerComponent("close-popup", {
     el.object3D.position.set(data.x, data.y, data.z);
     // Set mesh on entity.
     el.setObject3D("mesh", this.mesh);
+    el.setAttribute("class", "link");
 
     // Add event listener for closing (returning) on mouse click.
     el.addEventListener("click", function () {

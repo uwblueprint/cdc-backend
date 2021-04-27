@@ -15,9 +15,11 @@ AFRAME.registerComponent("visual-pane", {
     this.imageEl = document.createElement("a-image");
     this.imageEl.setAttribute("id", "puzzle-piece-image");
     this.imageEl.setAttribute("src", data.imageSrc);
-    this.imageEl.setAttribute("width", data.width);
-    this.imageEl.setAttribute("height", data.height);
 
+    const rawImageEl = document.querySelector(data.imageSrc);
+    const ratio = rawImageEl.width / rawImageEl.height;
+    this.imageEl.setAttribute("width", data.scaleBy * ratio);
+    this.imageEl.setAttribute("height", data.scaleBy);
     // Randomizes the position of the puzzle piece on the blackboard
     if (data.hasOwnProperty("position")) {
       el.setAttribute("position", {

@@ -11,8 +11,8 @@ AFRAME.registerComponent("ordered-puzzle", {
   init: function () {
     const data = this.data.jsonData;
     const numPuzzlePieces = data.images.length;
-    const puzzlePieceCache = [];
     const blackboard = document.querySelector("#blackboard");
+    this.puzzlePieceCache = [];
 
     if (data.useTargets) {
       // Create text label which indicates to users that they have successfully completed the puzzle
@@ -89,14 +89,25 @@ AFRAME.registerComponent("ordered-puzzle", {
       }
 
       this.el.appendChild(this.puzzlePiece);
-      puzzlePieceCache.push(this.puzzlePiece);
+
+      this.puzzlePieceCache.push(this.puzzlePiece);
     }
+
+    const puzzlePieceCache = this.puzzlePieceCache;
+
+    window.addEventListener("load", function () {
+      puzzlePieceCache.forEach((puzzlePiece) => {
+        puzzlePiece.setAttribute("onTarget", isOnTarget(puzzlePiece));
+      });
+    });
   },
 });
 
 function isOnTarget(puzzlePiece) {
-  console.log(puzzlePiece);
-  const delta = puzzlePiece.object3D.children[0].position;
+  const delta =
+    puzzlePiece.object3D.children.length != 0
+      ? puzzlePiece.object3D.children[0].position
+      : { x: 0, y: 0, z: 0 };
   const originalPos = puzzlePiece.getAttribute("position");
   const targetPos = {
     x: puzzlePiece.getAttribute("xTarget"),

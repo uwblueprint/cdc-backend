@@ -13,13 +13,13 @@ AFRAME.registerComponent("visual-pane", {
     const el = this.el;
 
     this.imageEl = document.createElement("a-image");
-    this.imageEl.setAttribute("id", "puzzle-piece-image");
     this.imageEl.setAttribute("src", data.imageSrc);
 
     const rawImageEl = document.querySelector(data.imageSrc);
     const ratio = rawImageEl.width / rawImageEl.height;
-    this.imageEl.setAttribute("width", data.scaleBy * ratio);
-    this.imageEl.setAttribute("height", data.scaleBy);
+    const scaleBy = data.hasOwnProperty("scaleBy") ? data.scaleBy : 5;
+    this.imageEl.setAttribute("width", scaleBy * ratio);
+    this.imageEl.setAttribute("height", scaleBy);
     // Randomizes the position of the puzzle piece on the blackboard
     if (data.hasOwnProperty("position")) {
       el.setAttribute("position", {

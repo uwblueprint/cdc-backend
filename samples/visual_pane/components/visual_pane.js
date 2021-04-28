@@ -39,14 +39,12 @@ AFRAME.registerComponent("visual-pane", {
     this.textEl.setAttribute("value", data.text);
     this.textEl.setAttribute("negate", "true");
     this.textEl.setAttribute("scale", "2 2 1");
-    let textVerticalOffset = 1;
-    let textHorizontalOffset = 0;
-    if (data.hasOwnProperty("textVerticalOffset")) {
-      textVerticalOffset = data.textVerticalOffset;
-    }
-    if (data.hasOwnProperty("textHorizontalOffset")) {
-      textHorizontalOffset = data.textHorizontalOffset;
-    }
+    let textVerticalOffset = data.hasOwnProperty("textVerticalOffset")
+      ? data.textVerticalOffset
+      : 1;
+    let textHorizontalOffset = data.hasOwnProperty("textHorizontalOffset")
+      ? data.textHorizontalOffset
+      : 0;
     if (data.hasOwnProperty("textPosition") && data.textPosition === "above") {
       this.textEl.setAttribute("position", {
         x: -4.9 + textHorizontalOffset,

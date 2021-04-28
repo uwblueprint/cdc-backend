@@ -11,9 +11,6 @@
       cursor="rayOrigin: mouse"
       raycaster="objects: .link"
     >
-      <a-assets>
-        <img id="visual1" src="./pic1.png" crossorigin="anonymous" />
-      </a-assets>
       <a-entity
         id="primaryCamera"
         position="0 -30 15"
@@ -31,7 +28,7 @@
         ></a-entity>
         <a-entity
           id="visualPane"
-          visual-pane='jsonData: {"imageSrc" : "#visual1", "position": [0, 0, 0],
+          visual-pane='jsonData: {"imageSrc" : "./pic1.png", "position": [0, 0, 0],
           "text": "Welcome to the Escape Room! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test."}'
         ></a-entity>
       </a-entity>

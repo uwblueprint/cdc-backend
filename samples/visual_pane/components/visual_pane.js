@@ -50,13 +50,13 @@ AFRAME.registerComponent("visual-pane", {
     if (data.hasOwnProperty("textPosition") && data.textPosition === "above") {
       this.textEl.setAttribute("position", {
         x: -4.9 + textHorizontalOffset,
-        y: data.height / 2 + textVerticalOffset,
+        y: this.imageEl.getAttribute("height") / 2 + textVerticalOffset,
         z: 0.25,
       });
     } else {
       this.textEl.setAttribute("position", {
         x: -4.9 + textHorizontalOffset,
-        y: -(data.height / 2 + textVerticalOffset),
+        y: -(this.imageEl.getAttribute("height") / 2 + textVerticalOffset),
         z: 0.25,
       });
     }

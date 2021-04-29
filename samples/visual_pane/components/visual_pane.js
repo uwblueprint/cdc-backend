@@ -21,7 +21,6 @@ AFRAME.registerComponent("visual-pane", {
       const scaleBy = data.hasOwnProperty("scaleBy") ? data.scaleBy : 5;
       imageEl.setAttribute("width", scaleBy * ratio);
       imageEl.setAttribute("height", scaleBy);
-      // Randomizes the position of the puzzle piece on the blackboard
       if (data.hasOwnProperty("position")) {
         el.setAttribute("position", {
           x: data.position[0],

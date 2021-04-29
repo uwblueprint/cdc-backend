@@ -14,7 +14,7 @@ AFRAME.registerComponent("visual-pane", {
     let imageEl = document.createElement("a-image");
     imageEl.setAttribute("src", data.imageSrc);
 
-    var rawImageEl = document.createElement("img");
+    let rawImageEl = document.createElement("img");
     rawImageEl.src = data.imageSrc;
     rawImageEl.onload = function () {
       const ratio = rawImageEl.width / rawImageEl.height;

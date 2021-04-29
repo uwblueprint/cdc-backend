@@ -10,6 +10,7 @@ AFRAME.registerComponent("ordered-puzzle", {
 
   init: function () {
     const data = this.data.jsonData;
+    const el = this.el;
     const numPuzzlePieces = data.images.length;
     const blackboard = document.querySelector("#blackboard");
     this.puzzlePieceCache = [];
@@ -33,72 +34,98 @@ AFRAME.registerComponent("ordered-puzzle", {
       this.el.appendChild(this.solvedText);
     }
 
+    const solvedTextLabel = this.solvedText;
+    const puzzlePieceCache = this.puzzlePieceCache;
+
     for (i = 0; i < numPuzzlePieces; i++) {
       this.puzzlePiece = document.createElement("a-image");
       this.puzzlePiece.setAttribute("id", "puzzle-piece-image-" + i);
       this.puzzlePiece.setAttribute("src", data.images[i].imageSrc);
-      this.puzzlePiece.setAttribute("width", data.images[i].width);
-      this.puzzlePiece.setAttribute("height", data.images[i].height);
-      this.puzzlePiece.setAttribute("class", "draggable link");
+      puzzlePieceCache.push(this.puzzlePiece);
 
-      if (data.randomizePos) {
-        // Randomizes the position of the puzzle piece on the blackboard
-        this.puzzlePiece.setAttribute("position", {
-          x:
-            (Math.random() - 0.5) *
-            (blackboard.getAttribute("geometry").width - data.images[i].width),
-          y:
-            (Math.random() - 0.5) *
-            (blackboard.getAttribute("geometry").height -
-              data.images[i].height),
-          z: 0,
-        });
-      } else {
-        this.puzzlePiece.setAttribute("position", {
-          x: data.images[i].x,
-          y: data.images[i].y,
-          z: 0,
-        });
-      }
+      let rawImageEl = document.createElement("img");
+      rawImageEl.setAttribute("index", i);
 
-      if (data.useTargets) {
-        // Create target
-        var textBoxProp = data.images[i];
-        textBoxProp.color = "yellow";
+      rawImageEl.onload = function (event) {
+        const index = event.target.getAttribute("index");
+        const puzzlePiece = puzzlePieceCache[index];
+        const ratio = rawImageEl.width / rawImageEl.height;
+        const scaleBy = data.hasOwnProperty("scaleBy") ? data.scaleBy : 3;
+        let puzzlePieceWidth = scaleBy * ratio;
+        let puzzlePieceHeight = scaleBy;
+        puzzlePiece.setAttribute("width", puzzlePieceWidth);
+        puzzlePiece.setAttribute("height", puzzlePieceHeight);
+        puzzlePiece.setAttribute("class", "draggable link");
 
-        this.target = document.createElement("a-entity");
-        this.target.setAttribute("id", "puzzle-target-" + i);
-        this.target.setAttribute(
-          "target-box",
-          "jsonData",
-          JSON.stringify(textBoxProp)
-        );
-        this.el.appendChild(this.target);
+        if (data.randomizePos) {
+          // Randomizes the position of the puzzle piece on the blackboard
+          puzzlePiece.setAttribute("position", {
+            x:
+              (Math.random() - 0.5) *
+              (blackboard.getAttribute("geometry").width - puzzlePieceWidth),
+            y:
+              (Math.random() - 0.5) *
+              (blackboard.getAttribute("geometry").height - puzzlePieceHeight),
+            z: 0,
+          });
+        } else {
+          puzzlePiece.setAttribute("position", {
+            x: data.images[index].x * puzzlePieceWidth,
+            y: data.images[index].y * puzzlePieceHeight,
+            z: 0,
+          });
+        }
 
-        // Set image's target location
-        this.puzzlePiece.setAttribute("xTarget", data.images[i].xTarget);
-        this.puzzlePiece.setAttribute("yTarget", data.images[i].yTarget);
-        this.puzzlePiece.setAttribute("onTarget", false);
-        const solvedTextLabel = this.solvedText;
-        this.puzzlePiece.addEventListener("dragend", function (event) {
-          event.target.setAttribute("onTarget", isOnTarget(event.target));
-          if (isPuzzleComplete(puzzlePieceCache)) {
-            solvedTextLabel.setAttribute("visible", "true");
-          }
-        });
-      }
+        if (data.useTargets) {
+          // Create target
+          let textBoxProp = JSON.parse(JSON.stringify(data.images[index]));
+          textBoxProp.color = "yellow";
+          textBoxProp.width = puzzlePieceWidth;
+          textBoxProp.height = puzzlePieceHeight;
+          textBoxProp.xTarget = textBoxProp.xTarget * puzzlePieceWidth;
+          textBoxProp.yTarget = textBoxProp.yTarget * puzzlePieceHeight;
 
-      this.el.appendChild(this.puzzlePiece);
-      this.puzzlePieceCache.push(this.puzzlePiece);
+          let target = document.createElement("a-entity");
+          target.setAttribute("id", "puzzle-target-" + index);
+          target.setAttribute(
+            "target-box",
+            "jsonData",
+            JSON.stringify(textBoxProp)
+          );
+          el.appendChild(target);
+
+          // Set image's target location
+          puzzlePiece.setAttribute(
+            "xTarget",
+            data.images[index].xTarget * puzzlePieceWidth
+          );
+          puzzlePiece.setAttribute(
+            "yTarget",
+            data.images[index].yTarget * puzzlePieceHeight
+          );
+          puzzlePiece.setAttribute("onTarget", false);
+
+          puzzlePiece.addEventListener("dragend", function (event) {
+            event.target.setAttribute("onTarget", isOnTarget(event.target));
+            if (isPuzzleComplete(puzzlePieceCache)) {
+              solvedTextLabel.setAttribute("visible", "true");
+            }
+          });
+        }
+
+        el.appendChild(puzzlePiece);
+      };
+      rawImageEl.src = data.images[i].imageSrc;
     }
 
-    const puzzlePieceCache = this.puzzlePieceCache;
-
-    window.addEventListener("load", function () {
-      puzzlePieceCache.forEach((puzzlePiece) => {
-        puzzlePiece.setAttribute("onTarget", isOnTarget(puzzlePiece));
+    if (data.useTargets) {
+      // Once window is loaded, calculated if current puzzle pieces are on their target.
+      window.addEventListener("load", function () {
+        puzzlePieceCache.forEach((puzzlePiece) => {
+          puzzlePiece.setAttribute("onTarget", isOnTarget(puzzlePiece));
+        });
       });
-    });
+    }
   },
 });
 
@@ -122,7 +149,6 @@ function isPuzzleComplete(puzzlePieceCache) {
       return false;
     }
   }
-
   return true;
 }
 

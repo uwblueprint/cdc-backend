@@ -11,7 +11,6 @@ AFRAME.registerComponent("visual-pane", {
   init: function () {
     const data = this.data.jsonData;
     const el = this.el;
-    let self = this;
     let imageEl = document.createElement("a-image");
     imageEl.setAttribute("src", data.imageSrc);
 

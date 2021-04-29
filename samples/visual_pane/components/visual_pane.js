@@ -15,7 +15,6 @@ AFRAME.registerComponent("visual-pane", {
     imageEl.setAttribute("src", data.imageSrc);
 
     let rawImageEl = document.createElement("img");
-    rawImageEl.src = data.imageSrc;
     rawImageEl.onload = function () {
       const ratio = rawImageEl.width / rawImageEl.height;
       const scaleBy = data.hasOwnProperty("scaleBy") ? data.scaleBy : 5;
@@ -63,6 +62,7 @@ AFRAME.registerComponent("visual-pane", {
       }
       el.appendChild(textEl);
     };
+    rawImageEl.src = data.imageSrc;
   },
   remove: function () {
     let visual_pane = document.querySelector("[visual-pane]");

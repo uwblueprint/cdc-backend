@@ -89,7 +89,6 @@ AFRAME.registerComponent("ordered-puzzle", {
       }
 
       this.el.appendChild(this.puzzlePiece);
-
       this.puzzlePieceCache.push(this.puzzlePiece);
     }
 
@@ -104,10 +103,7 @@ AFRAME.registerComponent("ordered-puzzle", {
 });
 
 function isOnTarget(puzzlePiece) {
-  const delta =
-    puzzlePiece.object3D.children.length != 0
-      ? puzzlePiece.object3D.children[0].position
-      : { x: 0, y: 0, z: 0 };
+  const delta = puzzlePiece.object3D.children[0].position;
   const originalPos = puzzlePiece.getAttribute("position");
   const targetPos = {
     x: puzzlePiece.getAttribute("xTarget"),

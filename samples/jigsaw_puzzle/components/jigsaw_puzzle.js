@@ -13,12 +13,16 @@ AFRAME.registerComponent("jigsaw-puzzle", {
     const puzzleDimension = data.hasOwnProperty("puzzleDimension")
       ? data.puzzleDimension
       : 3;
+    // Creates possible x coordinates centred at 0
     const xCoord = Array.from(Array(puzzleDimension).keys()).map(
       (x) => x - (puzzleDimension / 2 - 1 / 2)
     );
+    // Creates possible y coordinates centred at 0
     const yCoord = xCoord.slice(0).reverse();
 
+    // Creates possible (x,y) coordinates
     let coordPairs = yCoord.flatMap((y) => xCoord.map((x) => [x, y]));
+    // Randomize the starting position of the puzzle pieces
     let randomCoordPairs = coordPairs.slice(0);
     shuffleArray(randomCoordPairs);
     let images = [];

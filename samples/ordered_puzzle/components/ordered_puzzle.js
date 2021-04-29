@@ -49,6 +49,8 @@ AFRAME.registerComponent("ordered-puzzle", {
       rawImageEl.onload = function (event) {
         const index = event.target.getAttribute("index");
         const puzzlePiece = puzzlePieceCache[index];
+
+        // Calculate the puzzle piece width and height based on image ratio
         const ratio = rawImageEl.width / rawImageEl.height;
         const scaleBy = data.hasOwnProperty("scaleBy") ? data.scaleBy : 3;
         let puzzlePieceWidth = scaleBy * ratio;

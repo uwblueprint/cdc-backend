@@ -1,6 +1,15 @@
 # Components
 
-Simple documentation for components being used and a sample of their `animations_json`:
+Simple documentation for components being used and a sample of their `animations_json`.
+
+The type of component is defined with the `componentType` field. The possible values are:
+
+- `keypad`
+- `text-pane`
+- `rotation-controls`
+- `visual-pane`
+
+Below, the components are described in more detail.
 
 ## Keypad
 

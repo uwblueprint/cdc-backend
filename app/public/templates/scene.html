@@ -17,6 +17,7 @@
     <script src="/static/js/components/text-pane.js"></script>
     <script src="/static/js/components/rotation-controls.js"></script>
     <script src="/static/js/libraries/TransformControls.js"></script>
+    <script src="/static/js/components/hint-button.js"></script>
 
     <!-- Initial state  -->
     {% include state.html %}
@@ -85,7 +86,17 @@
             look-controls
           {% end %}
           position="0 {{ scene_dict['camera_properties']['position'][1] }} 0"
-        ></a-entity>
+        >
+        <!--   Hints    -->
+        <a-entity
+          id="hint-button"
+          class="link"
+          hint-button='jsonData: {"newHintImg": "/static/img/lightOn.png", "hintImg": "/static/img/lightOff.png", "width": 0.08, "height": 0.08}'
+          animation__onclick="property: position; dur: 0; startEvents: click"
+          animation-on-click-run='blackboardData: {"jsonData": {"text": {% raw json.dumps(scene_dict["hints"]) %}, "currPosition": 0}, "componentType": "text-pane"}'
+        >
+        </a-entity>
+        </a-entity>
       </a-entity>
         {% include popup.html %}
 

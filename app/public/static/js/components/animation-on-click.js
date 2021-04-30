@@ -12,7 +12,6 @@ AFRAME.registerComponent("animation-on-click-run", {
     this.data.blackboardData.jsonData.id = el.id;
 
     const extraInfo = this.data.blackboardData;
-
     // initialize each interactive object to not solved state, except text-panes (which are just view objects)
     if (extraInfo.componentType === "text-pane") {
       el.sceneEl.emit("initializeObject", { id: el.id, solved: true });

@@ -65,8 +65,7 @@ function visibleHeightAtZDepth(depth) {
 }
 
 function visibleWidthAtZDepth(depth) {
-  const camera = document.querySelector("#primaryCamera").object3D;
-  const height = visibleHeightAtZDepth(depth, camera);
+  const height = visibleHeightAtZDepth(depth);
   const aspect = window.innerWidth / window.innerHeight;
   return height * aspect;
 }

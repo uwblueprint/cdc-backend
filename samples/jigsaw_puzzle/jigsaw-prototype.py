@@ -1,5 +1,7 @@
 import cv2
 
+# TODO: Add opencv-python to requirements
+
 img = cv2.imread("images/whmis_labels.jpg")
 rows = 3
 cols = 3

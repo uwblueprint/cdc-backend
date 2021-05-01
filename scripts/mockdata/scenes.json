@@ -17,7 +17,11 @@
         "position": [0, 0, 0]
       }
     },
-    "hints": []
+    "hints": [
+      "generic hint for all scenes",
+      "scene specific hint 1",
+      "scene specific hint 2"
+    ]
   },
   {
     "name": "Living Room",
@@ -37,12 +41,12 @@
         "position": [0, 0, 0]
       }
     },
-    "hints": ["hint1", "hint2"]
+    "hints": ["generic hint for all scenes", "scene specific hint 1"]
   },
   {
     "name": "Classroom",
     "description": "A classroom at ABC High. Can house 20 students. Blackboard at the front of the room.",
-    "object_ids": [1, 3, 4],
+    "object_ids": [1, 3, 4, 5],
     "position": [0, 0.03, 0],
     "scale": [1.0, 1.0, 1.0],
     "rotation": [0.0, 0.0, 0.0],
@@ -57,6 +61,11 @@
         "position": [0, -1, -1]
       }
     },
-    "hints": []
+    "hints": [
+      "generic hint for all scenes",
+      "scene specific hint 1",
+      "scene specific hint 2",
+      "scene specific hint 3"
+    ]
   }
 ]

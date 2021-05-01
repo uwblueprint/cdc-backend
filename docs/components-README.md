@@ -1,6 +1,15 @@
 # Components
 
-Simple documentation for components being used and a sample of their `animations_json`:
+Simple documentation for components being used and a sample of their `animations_json`.
+
+The type of component is defined with the `componentType` field. The possible values are:
+
+- `keypad`
+- `text-pane`
+- `rotation-controls`
+- `visual-pane`
+
+Below, the components are described in more detail.
 
 ## Keypad
 
@@ -76,6 +85,36 @@ Simple documentation for components being used and a sample of their `animations
         "componentType": "rotation-controls",
         "jsonData": {
           "position": [0, 0, 5]
+        }
+      }
+    },
+  ...
+}
+```
+
+## Visual Pane
+
+- `animations_json` - object
+  - `blackboardData`- object
+    - `componentType` - Needs to be the string "visual-pane"
+    - `jsonData` - object
+      - `imageSrc` - A string URL pointing to the source of the image
+      - `scaleBy` - A float value by which the image is scaled
+      - `position` - Defines the distance of the object (image AND caption) relative to the blackboard. Array of 3 floats: `[x, y, z]`
+      - `caption` - A string that is displayed below the image as a caption
+- Sample mock object
+
+```json
+{
+  ...
+  "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/assets/dev/pic1.png",
+          "scaleBy": 3,
+          "position": [0, 0, 0],
+          "caption": "Welcome to the Escape Room! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test."
         }
       }
     },

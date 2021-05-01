@@ -153,6 +153,7 @@ class BaseAuthHandler(tornado.web.RequestHandler):
         )
         self.set_header("Access-Control-Expose-Headers", "set-cookie")
         self.set_header("Access-Control-Allow-Methods", "POST, OPTIONS")
+        self.set_header("Access-Control-Allow-Credentials", "true")
 
     async def options(self):
         self.set_status(204)

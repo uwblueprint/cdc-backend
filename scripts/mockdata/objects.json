@@ -122,5 +122,33 @@
         }
       }
     }
+  },
+  {
+    "position": [0, 0.014, 5.717],
+    "scale": [1, 1, 1],
+    "rotation": [0, 0, 0],
+    "asset_id": 1,
+    "next_objects": [
+      {
+        "id": 2,
+        "action": {
+          "type": "text",
+          "text_id": 1
+        }
+      }
+    ],
+    "texts": ["", "hello", "from the other side part 2"],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/assets/dev/pic1.png",
+          "scaleBy": 3,
+          "position": [0, 0, 0],
+          "caption": "Welcome to the Escape Room! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test."
+        }
+      }
+    }
   }
 ]

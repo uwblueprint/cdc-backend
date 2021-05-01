@@ -45,7 +45,7 @@ class BaseAdminAPIHandler(BaseAPIHandler):
 
     def set_default_headers(self) -> None:
         self.set_header("Content-Type", "application/json")
-        self.set_header("Access-Control-Allow-Origin", "http://localhost:3000/")
+        self.set_header("Access-Control-Allow-Origin", "http://localhost:3000")
         self.set_header(
             "Access-Control-Allow-Headers", "x-requested-with, content-type"
         )

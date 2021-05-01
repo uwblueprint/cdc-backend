@@ -3,8 +3,9 @@
   <head>
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-drag-controls@1.0.0/index.js"></script>
-    <script src="components/ordered_puzzle.js"></script>
-    <script src="components/target_box.js"></script>
+    <script src="components/jigsaw_puzzle.js"></script>
+    <script src="../ordered_puzzle/components/ordered_puzzle.js"></script>
+    <script src="../ordered_puzzle/components/target_box.js"></script>
     <link rel="shortcut icon" href="#" />
   </head>
   <body>
@@ -30,13 +31,10 @@
           material="color: #333333; shader: flat; transparent: false"
         ></a-entity>
         <a-entity
-          id="ordered-puzzle"
-          ordered-puzzle='jsonData: {"images": [{"imageSrc" : "./images/pic1.png", "xTarget": -2.5, "yTarget": 0},
-          {"imageSrc" : "./images/pic2.png", "xTarget": -1.25, "yTarget": 0},
-          {"imageSrc" : "./images/pic3.png", "xTarget": 0, "yTarget": 0},
-          {"imageSrc" : "./images/pic4.png", "xTarget": 1.25, "yTarget": 0},
-          {"imageSrc" : "./images/pic5.png", "xTarget": 2.5, "yTarget": 0}],
-          "useTargets": false, "randomizePos": true, "scaleBy": 3}'
+          id="jigsaw-puzzle"
+          jigsaw-puzzle='jsonData: {"images": ["./images/img1_1.png", "./images/img1_2.png", "./images/img1_3.png",
+            "./images/img2_1.png", "./images/img2_2.png", "./images/img2_3.png",
+            "./images/img3_1.png", "./images/img3_2.png", "./images/img3_3.png"], "scaleBy": 3, "puzzleDimension": 3}'
         ></a-entity>
       </a-entity>
     </a-scene>

@@ -191,6 +191,54 @@
               "yTarget": 0
             }
           ],
+          "useTargets": true,
+          "randomizePos": true,
+          "scaleBy": 3,
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "position": [1.495, 0.014, 5.717],
+    "scale": [1, 1, 1],
+    "rotation": [0, 0, 0],
+    "asset_id": 1,
+    "next_objects": [],
+    "texts": ["", "hello", "from the other side part 2"],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "/static/img/dev/pic1.png",
+              "xTarget": -2.5,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/dev/pic2.png",
+              "xTarget": -1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/dev/pic3.png",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/dev/pic4.png",
+              "xTarget": 1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/dev/pic5.png",
+              "xTarget": 2.5,
+              "yTarget": 0
+            }
+          ],
           "useTargets": false,
           "randomizePos": true,
           "scaleBy": 3

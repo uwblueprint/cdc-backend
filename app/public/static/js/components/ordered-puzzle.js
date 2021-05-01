@@ -23,21 +23,33 @@ AFRAME.registerComponent("ordered-puzzle", {
 
     if (data.useTargets) {
       // Create text label which indicates to users that they have successfully completed the puzzle
-      this.solvedText = document.createElement("a-text");
-      this.solvedText.setAttribute("id", "text");
-      this.solvedText.setAttribute("value", "Solved!");
-      this.solvedText.setAttribute("color", "green");
-      this.solvedText.setAttribute("scale", "4 4 2");
-      this.solvedText.setAttribute("align", "center");
-      this.solvedText.setAttribute("visible", false);
-      this.solvedText.setAttribute("position", {
-        x: 0,
-        y:
-          -blackboard.getAttribute("geometry").height / 2 +
-          this.solvedText.getAttribute("scale").y,
-        z: 0.1,
-      });
-      this.el.appendChild(this.solvedText);
+      const solvedPuzzleText = {
+        width: "5",
+        height: "1",
+        depth: "1",
+        color: "green",
+        x: "0",
+        y: "-5.75",
+        z: "0",
+        scaleX: "4",
+        scaleY: "4",
+        scaleZ: "2",
+        text: "Solved",
+      };
+      // Create solved puzzle text
+      this.solvedPuzzleEntity = document.createElement("a-entity");
+      this.solvedPuzzleEntity.setAttribute(
+        "id",
+        "ordered-puzzle-solved-" + this.id
+      );
+      this.solvedPuzzleEntity.setAttribute(
+        "text-box",
+        "jsonData",
+        JSON.stringify(solvedPuzzleText)
+      );
+      // initially set to false visibility
+      this.solvedPuzzleEntity.setAttribute("visible", "false");
+      el.appendChild(this.solvedPuzzleEntity);
     } else {
       // if there is no targets then this puzzle is already solved
       // emit event to update state
@@ -121,8 +133,9 @@ AFRAME.registerComponent("ordered-puzzle", {
             if (isPuzzleComplete(puzzlePieceCache)) {
               // emit event to update state
               el.sceneEl.emit("solvedObject", { id: data.id });
-              // emit event to close popup (after 1 second for now)
-              el.sceneEl.emit("dcc-success-close-popup", { seconds: 1 });
+              // emit event to close popup (after 1 second for now) - TODO: disabled for now
+              // need designer input on whether we should autoclose this
+              // el.sceneEl.emit("dcc-success-close-popup", { seconds: 1 });
               // emit event if it is last object, to indicate scene is solved
               if (is_last_object) {
                 el.sceneEl.emit("dcc-success-scene-complete");
@@ -152,7 +165,7 @@ AFRAME.registerComponent("ordered-puzzle", {
       // not loaded yet, do nothing
     } else if (this.puzzleIsSolved === true && this.useTargets) {
       // Already solved
-      this.solvedText.setAttribute("visible", "true");
+      this.solvedPuzzleEntity.setAttribute("visible", "true");
     } else {
       // not solved yet, do nothing for now
     }

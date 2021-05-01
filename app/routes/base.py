@@ -193,7 +193,8 @@ class BaseAuthHandler(tornado.web.RequestHandler):
                     cookie_name,
                     session_cookie,
                     httponly=True,
-                    samesite=False,
+                    samesite=None,
+                    secure=True,
                 )
                 self.set_cookie(
                     "_xsrf",

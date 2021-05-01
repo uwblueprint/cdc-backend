@@ -70,6 +70,7 @@ class BaseAdminAPIHandler(BaseAPIHandler):
             )
             # save the user (for audit purposes, we can use this later)
             self.user = decoded_claims["email"]
+            self.sub = decoded_claims["sub"]
             # Ensure that the email is verified, so not anyone can make fake accounts
             if not decoded_claims["email_verified"]:
                 raise ValueError(
@@ -211,3 +212,21 @@ class BaseAuthHandler(tornado.web.RequestHandler):
             self.set_status(403)
             response_error = {"status": 403, "message": message}
             await self.finish(response_error)
+
+
+class BaseLogoutHandler(BaseAdminAPIHandler):
+    """
+    Base handler for logout
+    """
+
+    async def get(self):
+        cookie_name = config.get("auth.cookie_name")
+        cookies_to_clear = [cookie_name, "_xsrf"]
+        for cookie in cookies_to_clear:
+            self.clear_cookie(cookie)
+
+        # revoke firebase refresh token
+        auth.revoke_refresh_tokens(self.sub)
+
+        resp_json = {"status": 200, "message": "success"}
+        await self.finish(resp_json)

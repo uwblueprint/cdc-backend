@@ -43,4 +43,5 @@ auth:
   # TODO: update this list, if needed
   allowed_domains:
     - gmail.com
+    - uwblueprint.org
   min_since_login: 100

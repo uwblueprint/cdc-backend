@@ -28,7 +28,12 @@ from routes.admin.scene import (
     AdminScenePostHandler,
     AdminScenesHandler,
 )
-from routes.base import BaseAuthHandler, NotFoundHandler, UIStaticHandler
+from routes.base import (
+    BaseAuthHandler,
+    BaseLogoutHandler,
+    NotFoundHandler,
+    UIStaticHandler,
+)
 from routes.ui.admin_scene import UIAdminSceneHandler
 from routes.ui.scenario import UIScenarioHandler
 from routes.user.asset import UserAssetHandler
@@ -75,6 +80,7 @@ def get_routes():
         ),
         (r"/admin/scene/([0-9]{1,16})", UIAdminSceneHandler),
         (r"/admin_login", BaseAuthHandler),
+        (r"/api/admin/v1/admin_logout", BaseLogoutHandler),
         (r"/([a-zA-Z_-]{1,50})/?", UIScenarioHandler),
         (r"/([a-zA-Z_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),
     ]

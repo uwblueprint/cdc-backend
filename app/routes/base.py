@@ -47,7 +47,8 @@ class BaseAdminAPIHandler(BaseAPIHandler):
         self.set_header("Content-Type", "application/json")
         self.set_header("Access-Control-Allow-Origin", "http://localhost:3000")
         self.set_header(
-            "Access-Control-Allow-Headers", "x-requested-with, content-type"
+            "Access-Control-Allow-Headers",
+            "x-requested-with, content-type, X-Xsrftoken",
         )
         self.set_header(
             "Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS"

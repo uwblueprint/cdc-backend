@@ -43,10 +43,6 @@ class BaseAdminAPIHandler(BaseAPIHandler):
     Base handler for all api/admin/* routes
     """
 
-    async def options(self, *args):
-        self.set_status(204)
-        await self.finish()
-
     def set_default_headers(self) -> None:
         self.set_header("Content-Type", "application/json")
         self.set_header("Access-Control-Allow-Origin", "http://localhost:3000")

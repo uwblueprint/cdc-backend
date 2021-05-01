@@ -33,6 +33,10 @@ class BaseAPIHandler(tornado.web.RequestHandler):
         if hasattr(self, "db_session") and self.db_session:
             return_session(self.db_session)
 
+    async def options(self, *args):
+        self.set_status(204)
+        await self.finish()
+
 
 class BaseAdminAPIHandler(BaseAPIHandler):
     """

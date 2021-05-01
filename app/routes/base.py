@@ -33,15 +33,15 @@ class BaseAPIHandler(tornado.web.RequestHandler):
         if hasattr(self, "db_session") and self.db_session:
             return_session(self.db_session)
 
-    async def options(self, *args):
-        self.set_status(204)
-        await self.finish()
-
 
 class BaseAdminAPIHandler(BaseAPIHandler):
     """
     Base handler for all api/admin/* routes
     """
+
+    async def options(self, *args):
+        self.set_status(204)
+        await self.finish()
 
     def set_default_headers(self) -> None:
         self.set_header("Content-Type", "application/json")
@@ -58,36 +58,39 @@ class BaseAdminAPIHandler(BaseAPIHandler):
         # AUTH, check to make sure the user is authenticated
         self.db_session = None
         self.user = ""
-        cookie_name = config.get("auth.cookie_name")
-        session_cookie = self.get_secure_cookie(cookie_name)
-        if not session_cookie:
-            return self.write_error(status_code=403, message="Forbidden")
 
-        # Verify the session cookie. In this case an additional check is added to detect
-        # if the user's Firebase session was revoked, user deleted/disabled, etc.
-        try:
-            decoded_claims = auth.verify_session_cookie(
-                session_cookie, check_revoked=True
-            )
-            # save the user (for audit purposes, we can use this later)
-            self.user = decoded_claims["email"]
-            self.sub = decoded_claims["sub"]
-            # Ensure that the email is verified, so not anyone can make fake accounts
-            if not decoded_claims["email_verified"]:
-                raise ValueError(
-                    "The email address is not verified. Please verify it first!"
+        # only need to do auth check if it is not OPTIONS
+        if self.request.method != "OPTIONS":
+            cookie_name = config.get("auth.cookie_name")
+            session_cookie = self.get_secure_cookie(cookie_name)
+            if not session_cookie:
+                return self.write_error(status_code=403, message="Forbidden")
+
+            # Verify the session cookie. In this case an additional check is added to detect
+            # if the user's Firebase session was revoked, user deleted/disabled, etc.
+            try:
+                decoded_claims = auth.verify_session_cookie(
+                    session_cookie, check_revoked=True
                 )
-            # if not user or not valid domain email, let's not provide description of error
-            if self.user.split("@")[-1] not in config.get("auth.allowed_domains"):
-                raise Exception
-        except ValueError as e:
-            return self.write_error(status_code=403, message=str(e))
-        except Exception:
-            # Session cookie is invalid, expired or revoked. Force user to login.
-            return self.write_error(status_code=403, message="Forbidden")
+                # save the user (for audit purposes, we can use this later)
+                self.user = decoded_claims["email"]
+                self.sub = decoded_claims["sub"]
+                # Ensure that the email is verified, so not anyone can make fake accounts
+                if not decoded_claims["email_verified"]:
+                    raise ValueError(
+                        "The email address is not verified. Please verify it first!"
+                    )
+                # if not user or not valid domain email, let's not provide description of error
+                if self.user.split("@")[-1] not in config.get("auth.allowed_domains"):
+                    raise Exception
+            except ValueError as e:
+                return self.write_error(status_code=403, message=str(e))
+            except Exception:
+                # Session cookie is invalid, expired or revoked. Force user to login.
+                return self.write_error(status_code=403, message="Forbidden")
 
-        # Admins always get a brand new session
-        self.db_session = get_session()
+            # Admins always get a brand new session
+            self.db_session = get_session()
 
 
 class BaseUserAPIHandler(BaseAPIHandler):

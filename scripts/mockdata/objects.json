@@ -194,7 +194,7 @@
           "useTargets": true,
           "randomizePos": true,
           "scaleBy": 3,
-          "is_last_object": true
+          "is_last_object": false
         }
       }
     }

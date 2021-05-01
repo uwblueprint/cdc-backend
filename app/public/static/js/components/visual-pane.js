@@ -30,7 +30,6 @@ AFRAME.registerComponent("visual-pane", {
       } else {
         el.setAttribute("position", { x: 0, y: 0, z: 0 });
       }
-      imageEl.setAttribute("class", "link");
 
       el.appendChild(imageEl);
 

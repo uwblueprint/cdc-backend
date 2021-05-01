@@ -52,6 +52,7 @@ table_creation_commands = [
     """
         CREATE TABLE object (
             id SERIAL PRIMARY KEY,
+            name TEXT NOT NULL,
             position DOUBLE PRECISION[] NOT NULL,
             scale DOUBLE PRECISION[] NOT NULL,
             rotation DOUBLE PRECISION[] NOT NULL,

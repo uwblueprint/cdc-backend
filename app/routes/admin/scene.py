@@ -28,9 +28,9 @@ class AdminScenePostHandler(BaseAdminAPIHandler):
             # validate body
             validate(data, schema=admin_scene_post_handler_schema)
 
-            id_inserted = await post_scene_to_postgres(data, self.db_session)
+            scene_dict = await post_scene_to_postgres(data, self.db_session)
 
-            await self.finish({"id": id_inserted})
+            await self.finish(scene_dict)
 
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

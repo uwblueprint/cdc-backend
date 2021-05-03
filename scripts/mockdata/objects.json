@@ -157,6 +157,7 @@
     }
   },
   {
+    "name": "Classroom ordered puzzle targets",
     "position": [2.442, 0.014, 5.717],
     "scale": [1, 1, 1],
     "rotation": [0, 0, 0],
@@ -198,13 +199,14 @@
           ],
           "useTargets": true,
           "randomizePos": true,
-          "scaleBy": 3,
+          "scaleBy": 1,
           "is_last_object": false
         }
       }
     }
   },
   {
+    "name": "Classroom ordered puzzle no_targets",
     "position": [1.495, 0.014, 5.717],
     "scale": [1, 1, 1],
     "rotation": [0, 0, 0],

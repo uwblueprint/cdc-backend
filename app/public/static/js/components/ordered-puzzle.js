@@ -57,6 +57,7 @@ AFRAME.registerComponent("ordered-puzzle", {
     }
 
     const puzzlePieceCache = this.puzzlePieceCache;
+    const scaleBy = data.hasOwnProperty("scaleBy") ? data.scaleBy : 3;
 
     for (i = 0; i < numPuzzlePieces; i++) {
       this.puzzlePiece = document.createElement("a-image");
@@ -73,7 +74,6 @@ AFRAME.registerComponent("ordered-puzzle", {
 
         // Calculate the puzzle piece width and height based on image ratio
         const ratio = rawImageEl.width / rawImageEl.height;
-        const scaleBy = data.hasOwnProperty("scaleBy") ? data.scaleBy : 3;
         let puzzlePieceWidth = scaleBy * ratio;
         let puzzlePieceHeight = scaleBy;
         puzzlePiece.setAttribute("width", puzzlePieceWidth);
@@ -129,7 +129,10 @@ AFRAME.registerComponent("ordered-puzzle", {
           puzzlePiece.setAttribute("onTarget", false);
 
           puzzlePiece.addEventListener("dragend", function (event) {
-            event.target.setAttribute("onTarget", isOnTarget(event.target));
+            event.target.setAttribute(
+              "onTarget",
+              isOnTarget(event.target, scaleBy)
+            );
             if (isPuzzleComplete(puzzlePieceCache)) {
               // emit event to update state
               el.sceneEl.emit("solvedObject", { id: data.id });
@@ -153,7 +156,10 @@ AFRAME.registerComponent("ordered-puzzle", {
       // Once window is loaded, calculated if current puzzle pieces are on their target.
       window.addEventListener("load", function () {
         puzzlePieceCache.forEach((puzzlePiece) => {
-          puzzlePiece.setAttribute("onTarget", isOnTarget(puzzlePiece));
+          puzzlePiece.setAttribute(
+            "onTarget",
+            isOnTarget(puzzlePiece, scaleBy)
+          );
         });
       });
     }
@@ -172,14 +178,14 @@ AFRAME.registerComponent("ordered-puzzle", {
   },
 });
 
-function isOnTarget(puzzlePiece) {
+function isOnTarget(puzzlePiece, scaleBy) {
   const delta = puzzlePiece.object3D.children[0].position;
   const originalPos = puzzlePiece.getAttribute("position");
   const targetPos = {
     x: puzzlePiece.getAttribute("xTarget"),
     y: puzzlePiece.getAttribute("yTarget"),
   };
-  const accuracyReq = 1;
+  const accuracyReq = scaleBy / 3;
   return (
     Math.abs(originalPos["x"] + delta["x"] - targetPos["x"]) <= accuracyReq &&
     Math.abs(originalPos["y"] + delta["y"] - targetPos["y"]) <= accuracyReq

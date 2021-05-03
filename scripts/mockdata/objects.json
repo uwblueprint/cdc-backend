@@ -199,7 +199,7 @@
           ],
           "useTargets": true,
           "randomizePos": true,
-          "scaleBy": 1,
+          "scaleBy": 5,
           "is_last_object": false
         }
       }

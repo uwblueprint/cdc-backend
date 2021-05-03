@@ -119,7 +119,7 @@ admin_scene_put_handler_schema = {
 admin_object_handler_schema = {
     "type": "object",
     "properties": {
-        "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{1,50}$"},
+        "name": {"type": "string", "pattern": r"^[a-zA-Z0-9 _-]{1,50}$"},
         "position": {"type": "array", "items": {"type": "number"}},
         "scale": {"type": "array", "items": {"type": "number"}},
         "rotation": {"type": "array", "items": {"type": "number"}},

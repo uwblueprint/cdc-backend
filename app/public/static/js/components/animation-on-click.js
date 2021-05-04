@@ -51,6 +51,13 @@ function addEntityToBlackboard(componentDataParsed) {
     if (e.target === entityEl) {
       var popupCameraEl = document.querySelector("#popup-camera");
       popupCameraEl.setAttribute("camera", "active", true);
+      // Puzzle types that are draggable
+      if (
+        componentDataParsed.hasOwnProperty("draggable") &&
+        componentDataParsed.draggable
+      ) {
+        popupCameraEl.setAttribute("drag-controls", "objects: .draggable");
+      }
     }
   });
   blackboardEl.appendChild(entityEl);

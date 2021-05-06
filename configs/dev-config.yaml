@@ -45,3 +45,5 @@ auth:
     - gmail.com
     - uwblueprint.org
   min_since_login: 100
+
+frontend_domain: http://localhost:3000

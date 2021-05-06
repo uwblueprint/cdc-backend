@@ -1,12 +1,15 @@
 import asyncio
 import os
+import uuid
 
+import firebase_admin
 import tornado.autoreload
 import tornado.httpserver
 import tornado.ioloop
 import tornado.web
 from cache.update_cache import update_cache
 from config import config
+from firebase_admin import credentials
 from routes.admin.asset import (
     AdminAssetHandler,
     AdminAssetPostHandler,
@@ -25,7 +28,12 @@ from routes.admin.scene import (
     AdminScenePostHandler,
     AdminScenesHandler,
 )
-from routes.base import NotFoundHandler, UIStaticHandler
+from routes.base import (
+    BaseAuthHandler,
+    BaseLogoutHandler,
+    NotFoundHandler,
+    UIStaticHandler,
+)
 from routes.ui.admin_scene import UIAdminSceneHandler
 from routes.ui.scenario import UIScenarioHandler
 from routes.user.asset import UserAssetHandler
@@ -71,6 +79,8 @@ def get_routes():
             dict(path=f"{os.path.dirname(__file__)}/public/static/"),
         ),
         (r"/admin/scene/([0-9]{1,16})", UIAdminSceneHandler),
+        (r"/admin_login", BaseAuthHandler),
+        (r"/api/admin/v1/admin_logout", BaseLogoutHandler),
         (r"/([a-zA-Z_-]{1,50})/?", UIScenarioHandler),
         (r"/([a-zA-Z_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),
     ]
@@ -84,8 +94,16 @@ def make_app():
         xsrf_cookies=config.get("tornado.xsrf"),
         default_handler_class=NotFoundHandler,
         template_path=f"{os.path.dirname(__file__)}/public/templates",
+        cookie_secret=uuid.uuid4().hex,
     )
     return app
+
+
+def init_firebase():
+    cred_path = credentials.Certificate(
+        f"{os.path.dirname(__file__)}/../secrets/service_account_key.json"
+    )
+    firebase_admin.initialize_app(cred_path)
 
 
 def main():
@@ -108,6 +126,7 @@ def main():
             ]
 
     app = make_app()
+    init_firebase()
     server = tornado.httpserver.HTTPServer(app)
 
     port = config.get("tornado.port")

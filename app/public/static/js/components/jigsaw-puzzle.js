@@ -46,6 +46,7 @@ AFRAME.registerComponent("jigsaw-puzzle", {
       useTargets: true,
       randomizePos: false,
       scaleBy: data.hasOwnProperty("scaleBy") ? data.scaleBy : 3,
+      is_last_object: "is_last_object" in data ? data.is_last_object : false,
     };
 
     this.ordered_puzzle = document.createElement("a-entity");

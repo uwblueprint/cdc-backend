@@ -160,9 +160,7 @@ AFRAME.registerComponent("ordered-puzzle", {
     }
   },
   update: function () {
-    console.log("updating");
     this.puzzleIsSolved = this.data.isSolved[this.id];
-    console.log(this.puzzleIsSolved);
 
     if (typeof this.puzzleIsSolved === "undefined") {
       // not loaded yet, do nothing

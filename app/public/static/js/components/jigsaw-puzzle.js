@@ -56,23 +56,11 @@ AFRAME.registerComponent("jigsaw-puzzle", {
       "jsonData",
       JSON.stringify(ordered_puzzle_json)
     );
-    this.ordered_puzzle.setAttribute("isSolved", this.data.isSolved);
+    this.ordered_puzzle.setAttribute(
+      "bind__ordered-puzzle",
+      "isSolved: solvedObjects"
+    );
     this.el.appendChild(this.ordered_puzzle);
-  },
-
-  update: function () {
-    this.puzzleIsSolved = this.data.isSolved[this.id];
-    var useTargets = this.ordered_puzzle.getAttribute("useTargets");
-    var solvedPuzzleEntity = this.ordered_puzzle.object3D.children[0];
-
-    if (typeof this.puzzleIsSolved === "undefined") {
-      // not loaded yet, do nothing
-    } else if (this.puzzleIsSolved === true && useTargets) {
-      // Already solved
-      solvedPuzzleEntity.visible = true;
-    } else {
-      // not solved yet, do nothing for now
-    }
   },
 });
 

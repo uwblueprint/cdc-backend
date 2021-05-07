@@ -20,7 +20,6 @@ AFRAME.registerComponent("ordered-puzzle", {
     const numPuzzlePieces = data.images.length;
     const blackboard = document.querySelector("#blackboard");
     this.puzzlePieceCache = [];
-    el.setAttribute("useTargets", data.useTargets);
 
     if (data.useTargets) {
       // Create text label which indicates to users that they have successfully completed the puzzle
@@ -161,7 +160,9 @@ AFRAME.registerComponent("ordered-puzzle", {
     }
   },
   update: function () {
+    console.log("updating");
     this.puzzleIsSolved = this.data.isSolved[this.id];
+    console.log(this.puzzleIsSolved);
 
     if (typeof this.puzzleIsSolved === "undefined") {
       // not loaded yet, do nothing

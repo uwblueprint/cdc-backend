@@ -6,6 +6,7 @@ from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 class Object(BaseModel):
     __tablename__ = "object"
     id = Column(Integer, primary_key=True)
+    name = Column(Text, nullable=False)
     position = Column(ARRAY(Float), nullable=False)
     scale = Column(ARRAY(Float), nullable=False)
     rotation = Column(ARRAY(Float), nullable=False)
@@ -16,6 +17,7 @@ class Object(BaseModel):
     animations_json = Column(JSONB, nullable=False, default={})
     columns = [
         "id",
+        "name",
         "position",
         "scale",
         "rotation",

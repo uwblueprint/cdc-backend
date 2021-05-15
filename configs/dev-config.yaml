@@ -29,11 +29,15 @@ default_data:
           [
             {
               "text": "INTRODUCTION: text goes here.",
-              "imageSrc": "image goes here",
+              "imageSrc": "/static/img/lightOn.png",
             },
           ],
+        "currPosition": 0,
       },
-      { "data": [{ "text": "CONCLUSION: just text, no images" }] },
+      {
+        "data": [{ "text": "CONCLUSION: just text, no images" }],
+        "currPosition": 0,
+      },
     ]
 
 script:

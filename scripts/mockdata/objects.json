@@ -1,6 +1,6 @@
 [
   {
-    "name": "Name1",
+    "name": "Classroom rotation inspector",
     "position": [0, 0.014, -5.717],
     "scale": [1, 1, 1],
     "rotation": [0, 0, 0],
@@ -26,7 +26,7 @@
     }
   },
   {
-    "name": "Name2",
+    "name": "Classroom keypad",
     "position": [4.487, 1.435, -4.129],
     "scale": [0.05, 0.05, 0.05],
     "rotation": [-90.0, 180.0, 180.0],
@@ -68,7 +68,7 @@
     }
   },
   {
-    "name": "Name3",
+    "name": "Classroom keyboard",
     "position": [5.775, 0.014, -5.717],
     "scale": [1, 1, 1],
     "rotation": [0, 0, 0],
@@ -96,7 +96,7 @@
     }
   },
   {
-    "name": "Name4",
+    "name": "Classroom text pane",
     "position": [-5.775, 0.014, -5.717],
     "scale": [1, 1, 1],
     "rotation": [0, 0, 0],
@@ -128,7 +128,7 @@
     }
   },
   {
-    "name": "Name5",
+    "name": "Classroom visual pane",
     "position": [0, 0.014, 5.717],
     "scale": [1, 1, 1],
     "rotation": [0, 0, 0],
@@ -157,13 +157,52 @@
     }
   },
   {
+    "name": "Classroom jigsaw puzzle",
+    "position": [3.389, 0.014, 5.717],
+    "scale": [1, 1, 1],
+    "rotation": [0, 0, 0],
+    "asset_id": 1,
+    "next_objects": [
+      {
+        "id": 2,
+        "action": {
+          "type": "text",
+          "text_id": 1
+        }
+      }
+    ],
+    "texts": ["hola", "amigos"],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "jigsaw-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            "/static/img/jigsaw/img1_1.png",
+            "/static/img/jigsaw/img1_2.png",
+            "/static/img/jigsaw/img1_3.png",
+            "/static/img/jigsaw/img2_1.png",
+            "/static/img/jigsaw/img2_2.png",
+            "/static/img/jigsaw/img2_3.png",
+            "/static/img/jigsaw/img3_1.png",
+            "/static/img/jigsaw/img3_2.png",
+            "/static/img/jigsaw/img3_3.png"
+          ],
+          "scaleBy": 3,
+          "puzzleDimension": 3
+        }
+      }
+    }
+  },
+  {
     "name": "Classroom ordered puzzle targets",
     "position": [2.442, 0.014, 5.717],
     "scale": [1, 1, 1],
     "rotation": [0, 0, 0],
     "asset_id": 1,
     "next_objects": [],
-    "texts": ["", "hello", "from the other side part 2"],
+    "texts": ["yelloo", "hola"],
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
@@ -199,7 +238,7 @@
           ],
           "useTargets": true,
           "randomizePos": true,
-          "scaleBy": 5,
+          "scaleBy": 3,
           "is_last_object": false
         }
       }

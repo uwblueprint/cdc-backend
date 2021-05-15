@@ -145,23 +145,18 @@ AFRAME.registerComponent("ordered-puzzle", {
               }
             }
           });
+
+          puzzlePiece.addEventListener("loaded", function () {
+            puzzlePiece.setAttribute(
+              "onTarget",
+              isOnTarget(puzzlePiece, scaleBy)
+            );
+          });
         }
 
         el.appendChild(puzzlePiece);
       };
       rawImageEl.src = data.images[i].imageSrc;
-    }
-
-    if (data.useTargets) {
-      // Once window is loaded, calculated if current puzzle pieces are on their target.
-      window.addEventListener("load", function () {
-        puzzlePieceCache.forEach((puzzlePiece) => {
-          puzzlePiece.setAttribute(
-            "onTarget",
-            isOnTarget(puzzlePiece, scaleBy)
-          );
-        });
-      });
     }
   },
   update: function () {

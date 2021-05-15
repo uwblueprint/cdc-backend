@@ -29,7 +29,6 @@ admin_scenario_post_handler_schema = {
     ],
     "additionalProperties": False,
 }
-
 admin_scenario_put_handler_schema = {
     "type": "object",
     "properties": {
@@ -42,6 +41,27 @@ admin_scenario_put_handler_schema = {
         "publish_link": {"type": "string", "pattern": r"^[\S]{1,50}$"},
         "preview_link": {"type": "string", "pattern": r"^[\S]{1,50}$"},
         "expected_solve_time": {"type": "string", "pattern": r"^[a-zA-Z0-9 _-]{,50}$"},
+        "transitions": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "text": {"type": "string"},
+                                "imageSrc": {"type": "string"},
+                            },
+                            "additionalProperties": False,
+                        },
+                    },
+                    "currentPosition": {"type": "integer"},
+                },
+                "additionalProperties": False,
+            },
+        },
     },
     "required": [
         "name",

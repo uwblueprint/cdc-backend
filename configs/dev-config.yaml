@@ -21,6 +21,21 @@ asset:
 
 inspector_url: http://localhost:3333/dist/aframe-inspector.js
 
+default_data:
+  transitions:
+    [
+      {
+        "data":
+          [
+            {
+              "text": "INTRODUCTION: text goes here.",
+              "imageSrc": "image goes here",
+            },
+          ],
+      },
+      { "data": [{ "text": "CONCLUSION: just text, no images" }] },
+    ]
+
 script:
   table-order:
     - asset

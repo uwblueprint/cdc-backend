@@ -57,7 +57,24 @@ AFRAME.registerComponent("text-pane", {
   init: function () {
     const data = this.data.jsonData;
 
-    // Create textLabel
+    //    "transitions": [
+    //      {
+    //        "data": [
+    //          { "text": "text and an image", "imageSrc": "bananaaaaaaaaaa" },
+    //          {
+    //            "text": "text and an another image",
+    //            "imageSrc": "moreBananaaaaaaaaaa"
+    //          }
+    //        ],
+    //        "currentPosition": 0
+    //      },
+    //      { "data": [{ "text": "just text, no images" }] }
+    //    ]
+
+    //    'jsonData: {"imageSrc" : "./pic1.png", "position": [0, 0, 0],
+    //          "text": "Welcome to the Escape Room! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test."}'
+    //
+
     this.textLabel = document.createElement("a-text");
     this.textLabel.setAttribute("id", "text");
     this.textLabel.setAttribute("value", data.text[data.currPosition]);
@@ -65,6 +82,24 @@ AFRAME.registerComponent("text-pane", {
     this.textLabel.setAttribute("scale", "2 2 1");
     this.textLabel.setAttribute("position", "-4.9 0 0.25");
     this.el.appendChild(this.textLabel);
+
+    if (data.displayData[data.currPosition].hasOwnProperty("imageSrc")) {
+      visualPaneJson = {
+        imageSrc: data.displayData[data.currPosition].imageSrc,
+        text: data.displayData[data.currPosition].text,
+      };
+
+      this.visualPane = document.createElement(a - entity);
+      this.visualPane.setAttribute("id", "visual-pane");
+      this.visualPane.setAttribute(
+        "visual-pane",
+        "jsonData",
+        JSON.stringify(visualPaneJson)
+      );
+      this.textLabel.setAttribute("visible", false);
+      this.el.appendChild(this.visualPane);
+    } else {
+    }
 
     if (data.text.length > 1) {
       const leftNavProp =
@@ -91,7 +126,13 @@ AFRAME.registerComponent("text-pane", {
       this.leftNav.addEventListener("click", function () {
         if (data.currPosition !== 0) {
           --data.currPosition;
-          textLabelConst.setAttribute("value", data.text[data.currPosition]);
+
+          if (data.displayData[data.currPosition].hasOwnProperty("imageSrc")) {
+          } else {
+            textLabelConst.setAttribute("visible", true);
+            textLabelConst.setAttribute("value", data.text[data.currPosition]);
+          }
+
           rightNavConst.firstChild.setAttribute("value", "Next");
         }
       });
@@ -103,7 +144,11 @@ AFRAME.registerComponent("text-pane", {
 
         if (data.currPosition !== data.text.length - 1) {
           ++data.currPosition;
-          textLabelConst.setAttribute("value", data.text[data.currPosition]);
+          if (data.displayData[data.currPosition].hasOwnProperty("imageSrc")) {
+          } else {
+            textLabelConst.setAttribute("visible", true);
+            textLabelConst.setAttribute("value", data.text[data.currPosition]);
+          }
         } else {
           // TODO: later PR, clicking on done -> close blackboard, similar to keypad success message
         }

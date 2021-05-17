@@ -55,58 +55,32 @@ AFRAME.registerComponent("text-pane", {
   multiple: true,
 
   init: function () {
-    const data = this.data.jsonData;
-
-    //    "transitions": [
-    //      {
-    //        "data": [
-    //          { "text": "text and an image", "imageSrc": "bananaaaaaaaaaa" },
-    //          {
-    //            "text": "text and an another image",
-    //            "imageSrc": "moreBananaaaaaaaaaa"
-    //          }
-    //        ],
-    //        "currentPosition": 0
-    //      },
-    //      { "data": [{ "text": "just text, no images" }] }
-    //    ]
-
-    //    'jsonData: {"imageSrc" : "./pic1.png", "position": [0, 0, 0],
-    //          "text": "Welcome to the Escape Room! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test."}'
-    //
+    const jsonData = this.data.jsonData;
+    const el = this.el;
 
     this.textLabel = document.createElement("a-text");
     this.textLabel.setAttribute("id", "text");
-    this.textLabel.setAttribute("value", data.text[data.currPosition]);
+    this.textLabel.setAttribute(
+      "value",
+      jsonData.data[jsonData.currPosition].text
+    );
     this.textLabel.setAttribute("negate", "true");
     this.textLabel.setAttribute("scale", "2 2 1");
     this.textLabel.setAttribute("position", "-4.9 0 0.25");
-    this.el.appendChild(this.textLabel);
+    el.appendChild(this.textLabel);
+    const textLabelConst = this.textLabel;
 
-    if (data.displayData[data.currPosition].hasOwnProperty("imageSrc")) {
-      visualPaneJson = {
-        imageSrc: data.displayData[data.currPosition].imageSrc,
-        text: data.displayData[data.currPosition].text,
-      };
-
-      this.visualPane = document.createElement(a - entity);
-      this.visualPane.setAttribute("id", "visual-pane");
-      this.visualPane.setAttribute(
-        "visual-pane",
-        "jsonData",
-        JSON.stringify(visualPaneJson)
-      );
+    let initialVisualPane;
+    if (jsonData.data[jsonData.currPosition].hasOwnProperty("imageSrc")) {
+      initialVisualPane = createVisualPane(jsonData, el);
       this.textLabel.setAttribute("visible", false);
-      this.el.appendChild(this.visualPane);
-    } else {
     }
 
-    if (data.text.length > 1) {
+    if (jsonData.data.length > 1) {
       const leftNavProp =
         '{"width": "1.5", "height": "1.5", "depth": "0.005", "color": "white", "x": "-8", "y": "0", "z": "0.005", "scaleX": "2", "scaleY": "2", "scaleZ": "1", "text": "Prev"}';
       const rightNavProp =
         '{"width": "1.5", "height": "1.5", "depth": "0.005", "color": "white", "x": "8", "y": "0", "z": "0.005", "scaleX": "2", "scaleY": "2", "scaleZ": "1", "text": "Next"}';
-      const textLabelConst = this.textLabel;
 
       // Create left nav button
       this.leftNav = document.createElement("a-entity");
@@ -122,15 +96,32 @@ AFRAME.registerComponent("text-pane", {
       this.rightNav.setAttribute("class", "link");
       this.el.appendChild(this.rightNav);
 
+      let currVisualPane = initialVisualPane;
+
       const rightNavConst = this.rightNav;
       this.leftNav.addEventListener("click", function () {
-        if (data.currPosition !== 0) {
-          --data.currPosition;
+        if (jsonData.currPosition !== 0) {
+          --jsonData.currPosition;
 
-          if (data.displayData[data.currPosition].hasOwnProperty("imageSrc")) {
+          if (jsonData.data[jsonData.currPosition].hasOwnProperty("imageSrc")) {
+            if (currVisualPane) {
+              el.removeChild(currVisualPane);
+            }
+
+            textLabelConst.setAttribute("visible", false);
+            let visualPane = createVisualPane(jsonData, el);
+            currVisualPane = visualPane;
+            el.appendChild(visualPane);
           } else {
             textLabelConst.setAttribute("visible", true);
-            textLabelConst.setAttribute("value", data.text[data.currPosition]);
+            if (currVisualPane) {
+              el.removeChild(currVisualPane);
+              currVisualPane = null;
+            }
+            textLabelConst.setAttribute(
+              "value",
+              jsonData.data[jsonData.currPosition].text
+            );
           }
 
           rightNavConst.firstChild.setAttribute("value", "Next");
@@ -138,16 +129,31 @@ AFRAME.registerComponent("text-pane", {
       });
 
       this.rightNav.addEventListener("click", function () {
-        if (data.currPosition === data.text.length - 2) {
+        if (jsonData.currPosition === jsonData.data.length - 2) {
           rightNavConst.firstChild.setAttribute("value", "Done");
         }
 
-        if (data.currPosition !== data.text.length - 1) {
-          ++data.currPosition;
-          if (data.displayData[data.currPosition].hasOwnProperty("imageSrc")) {
+        if (jsonData.currPosition !== jsonData.data.length - 1) {
+          ++jsonData.currPosition;
+          if (jsonData.data[jsonData.currPosition].hasOwnProperty("imageSrc")) {
+            if (currVisualPane) {
+              el.removeChild(currVisualPane);
+            }
+            textLabelConst.setAttribute("visible", false);
+
+            let visualPane = createVisualPane(jsonData, el);
+            currVisualPane = visualPane;
+            el.appendChild(visualPane);
           } else {
             textLabelConst.setAttribute("visible", true);
-            textLabelConst.setAttribute("value", data.text[data.currPosition]);
+            if (currVisualPane) {
+              el.removeChild(currVisualPane);
+              currVisualPane = null;
+            }
+            textLabelConst.setAttribute(
+              "value",
+              jsonData.data[jsonData.currPosition].text
+            );
           }
         } else {
           // TODO: later PR, clicking on done -> close blackboard, similar to keypad success message
@@ -156,3 +162,21 @@ AFRAME.registerComponent("text-pane", {
     }
   },
 });
+
+function createVisualPane(jsonData, textPaneEl) {
+  visualPaneJson = {
+    imageSrc: jsonData.data[jsonData.currPosition].imageSrc,
+    caption: jsonData.data[jsonData.currPosition].text,
+  };
+
+  let visualPane = document.createElement("a-entity");
+  visualPane.setAttribute("id", "visual-pane");
+  visualPane.setAttribute(
+    "visual-pane",
+    "jsonData",
+    JSON.stringify(visualPaneJson)
+  );
+  textPaneEl.appendChild(visualPane);
+
+  return visualPane;
+}

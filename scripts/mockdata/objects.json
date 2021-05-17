@@ -118,15 +118,15 @@
         "jsonData": {
           "data": [
             {
-              "text": "Welcome to the Escape Room! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test."
+              "text": "Welcome to the Escape Room! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test.",
+              "imageSrc": "/static/img/dev/pic1.png"
             },
             {
-              "text": "This is where text will go. This is where text will go. This is where text will go",
-              "imageSrc": "/static/assets/dev/pic1.png"
+              "text": "This is where text will go. This is where text will go. This is where text will go"
             },
             {
               "text": "This is some more text. This is some more text. This is some more text.",
-              "imageSrc": "/static/assets/dev/pic2.png"
+              "imageSrc": "/static/img/dev/pic2.png"
             },
             {
               "text": "This is the last text, clicking Done will close this in a later PR"

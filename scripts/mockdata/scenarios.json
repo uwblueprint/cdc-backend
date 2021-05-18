@@ -8,7 +8,23 @@
     "is_previewable": true,
     "publish_link": null,
     "preview_link": "www.previewlink.com/student-escape-room",
-    "expected_solve_time": "10 to 20"
+    "expected_solve_time": "10 to 20",
+    "transitions": [
+      {
+        "data": [
+          {
+            "text": "text and an image",
+            "imageSrc": "/static/img/lightOn.png"
+          },
+          {
+            "text": "text and an another image",
+            "imageSrc": "/static/img/lightOn.png"
+          }
+        ],
+        "currPosition": 0
+      },
+      { "data": [{ "text": "just text, no images" }] }
+    ]
   },
   {
     "name": "Teacher Escape Room",
@@ -19,6 +35,22 @@
     "is_previewable": true,
     "publish_link": "www.publishlink.com/teacher-escape-room",
     "preview_link": "www.previewlink.com/teacher-escape-room",
-    "expected_solve_time": "20 to 30"
+    "expected_solve_time": "20 to 30",
+    "transitions": [
+      {
+        "data": [
+          {
+            "text": "text and an image",
+            "imageSrc": "/static/img/lightOn.png"
+          },
+          {
+            "text": "text and an another image",
+            "imageSrc": "/static/img/lightOn.png"
+          }
+        ],
+        "currPosition": 0
+      },
+      { "data": [{ "text": "just text, no images" }] }
+    ]
   }
 ]

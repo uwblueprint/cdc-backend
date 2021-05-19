@@ -50,7 +50,16 @@
         ],
         "currPosition": 0
       },
-      { "data": [{ "text": "just text, no images" }], "currPosition": 0 }
+      {
+        "data": [
+          { "text": "just text, no images" },
+          {
+            "text": "ANOTHA ONE",
+            "imageSrc": "/static/img/lightOn.png"
+          }
+        ],
+        "currPosition": 0
+      }
     ]
   }
 ]

@@ -147,6 +147,13 @@
          window.location.replace(nextURL);
       }, numSeconds * 1000);
     }
+
+    {% if is_admin %}
+      const inspector = scene.components.inspector;
+      scene.addEventListener('loaded', function () {
+          inspector.openInspector();
+      });
+    {% end %}
   </script>
   </body>
 </html>

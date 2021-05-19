@@ -20,7 +20,7 @@ admin_scenario_post_handler_schema = {
     "properties": {
         "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{1,50}$"},
         "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z_-]{1,50}$"},
-        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z _-]{,2000}$"},
+        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z0-9 _-]{,2000}$"},
     },
     "required": [
         "name",
@@ -34,7 +34,7 @@ admin_scenario_put_handler_schema = {
     "properties": {
         "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{1,50}$"},
         "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z_-]{1,50}$"},
-        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z _-]{,2000}$"},
+        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z0-9 _-]{,2000}$"},
         "scene_ids": {"type": "array", "items": {"type": "integer"}},
         "is_published": {"type": "boolean"},
         "is_previewable": {"type": "boolean"},
@@ -81,7 +81,7 @@ admin_scene_post_handler_schema = {
     "properties": {
         "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{1,50}$"},
         "background_id": {"type": "integer"},
-        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z _-]{,2000}$"},
+        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z0-9 _-]{,2000}$"},
     },
     "required": [
         "name",
@@ -94,7 +94,7 @@ admin_scene_put_handler_schema = {
     "type": "object",
     "properties": {
         "name": {"type": "string", "pattern": r"^[a-zA-Z _-]{1,50}$"},
-        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z _-]{,2000}$"},
+        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z0-9 _-]{,2000}$"},
         "object_ids": {"type": "array", "items": {"type": "integer"}},
         "position": {"type": "array", "items": {"type": "number"}},
         "scale": {"type": "array", "items": {"type": "number"}},

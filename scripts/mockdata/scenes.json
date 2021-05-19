@@ -26,7 +26,7 @@
   {
     "name": "Living Room",
     "description": "A standard master bedroom. King size bed, a dresser, ensuit washroom, and a large closet.",
-    "object_ids": [12],
+    "object_ids": [2],
     "position": [0, 0.13, 0],
     "scale": [1.0, 1.0, 1.0],
     "rotation": [0.0, 0.0, 0.0],

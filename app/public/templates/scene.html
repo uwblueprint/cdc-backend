@@ -99,7 +99,7 @@
           class="link"
           hint-button='jsonData: {"newHintImg": "/static/img/lightOn.png", "hintImg": "/static/img/lightOff.png", "width": 0.08, "height": 0.08}'
           animation__onclick="property: position; dur: 0; startEvents: click"
-          animation-on-click-run='blackboardData: {"jsonData": {"data": {% raw json.dumps( scene_dict["hints"] ) %}, "currPosition": 0}, "componentType": "text-pane"}'
+          animation-on-click-run='blackboardData: {"jsonData": {"data": {% raw json.dumps( [ {"text": x} for x in scene_dict["hints"] ] ) %}, "currPosition": 0}, "componentType": "text-pane"}'
         >
         </a-entity>
         </a-entity>
@@ -131,15 +131,24 @@
     const next_scene_idx = {{ cur_scene_idx }} + 1;
     scene.addEventListener("dcc-success-scene-complete", function () {
       let nextURL = ""
-      if(is_last_scene){
+      if (is_last_scene) {
         // it is last scene, navigate to same scene for now
         // TODO: in the future, this will redirect to scenario complete screen
         nextURL = "/{{ scenario_friendly_name }}/{{ cur_scene_idx }}";
       } else {
-        // TODO: in the future, we will most likely have some transition logic here, instead of just redirecting
+
+        let transitionData = {% raw json.dumps(scenario_transitions[cur_scene_idx]) %};
+
         nextURL = "/{{ scenario_friendly_name }}/" + next_scene_idx;
+        transitionData["transitionURL"] = nextURL;
+        transitionData["isTransition"] = true;
+
+        let componentDataParsed = {
+          "componentType": "text-pane",
+          "jsonData": transitionData
+        };
+        addEntityToBlackboard(componentDataParsed);
       }
-      sceneComplete(2, nextURL);
     });
 
     async function sceneComplete(numSeconds, nextURL) {

@@ -75,6 +75,7 @@ class UIScenarioHandler(BaseUIHandler):
                 navmesh_src=navmesh_src,
                 json=json,
                 cur_scene_idx=scene_number_int,
+                scenario_transitions=scenario_obj.transitions,
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

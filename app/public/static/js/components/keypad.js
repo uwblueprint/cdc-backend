@@ -34,11 +34,10 @@ AFRAME.registerComponent("keypad", {
         // emit event to update state
         el.sceneEl.emit("solvedObject", { id: data.id });
         // emit event to close popup (after 1 second for now)
-        el.sceneEl.emit("dcc-success-close-popup", { seconds: 1 });
-        // emit event if it is last object, to indicate scene is solved
-        if (is_last_object) {
-          el.sceneEl.emit("dcc-success-scene-complete");
-        }
+        el.sceneEl.emit("dcc-success-close-popup", {
+          seconds: 5,
+          is_last_object: is_last_object,
+        });
       } else {
         const statusLabel = el.getAttribute("super-keyboard").label;
         if (statusLabel !== "SUCCESS") {

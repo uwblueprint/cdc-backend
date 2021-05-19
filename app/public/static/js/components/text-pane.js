@@ -156,7 +156,17 @@ AFRAME.registerComponent("text-pane", {
             );
           }
         } else {
-          // TODO: later PR, clicking on done -> close blackboard, similar to keypad success message
+          if (
+            jsonData.hasOwnProperty("isTransition") &&
+            jsonData.isTransition
+          ) {
+            sceneComplete(0, jsonData.transitionURL);
+          } else {
+            el.sceneEl.emit("dcc-success-close-popup", {
+              seconds: 0,
+              is_last_object: false,
+            });
+          }
         }
       });
     }

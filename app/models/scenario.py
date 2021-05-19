@@ -1,6 +1,7 @@
+from config import config
 from models.base import BaseModel
 from sqlalchemy import BigInteger, Boolean, Column, Integer, Text
-from sqlalchemy.dialects.postgresql import ARRAY
+from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 
 
 class Scenario(BaseModel):
@@ -15,6 +16,9 @@ class Scenario(BaseModel):
     publish_link = Column(Text, nullable=True)
     preview_link = Column(Text, nullable=True)
     expected_solve_time = Column(Text, nullable=False, default="")
+    transitions = Column(
+        ARRAY(JSONB), nullable=False, default=config.get("default_data.transitions")
+    )
     columns = [
         "id",
         "name",
@@ -26,4 +30,5 @@ class Scenario(BaseModel):
         "publish_link",
         "preview_link",
         "expected_solve_time",
+        "transitions",
     ]

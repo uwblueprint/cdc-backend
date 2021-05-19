@@ -35,7 +35,7 @@ AFRAME.registerComponent("keypad", {
         el.sceneEl.emit("solvedObject", { id: data.id });
         // emit event to close popup (after 1 second for now)
         el.sceneEl.emit("dcc-success-close-popup", {
-          seconds: 5,
+          seconds: 2,
           is_last_object: is_last_object,
         });
       } else {

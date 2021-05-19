@@ -71,7 +71,13 @@
         "currPosition": 0
       },
       {
-        "data": [{ "text": "Conclusion: Just text, no images." }],
+        "data": [
+          { "text": "just text, no images" },
+          {
+            "text": "Conclusion: ANOTHA ONE",
+            "imageSrc": "/static/img/lightOn.png"
+          }
+        ],
         "currPosition": 0
       }
     ]

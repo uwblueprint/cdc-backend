@@ -13,17 +13,25 @@
       {
         "data": [
           {
-            "text": "text and an image",
+            "text": "Intro: text and an image",
             "imageSrc": "/static/img/lightOn.png"
           },
           {
-            "text": "text and an another image",
+            "text": "Intro: text and an another image",
             "imageSrc": "/static/img/lightOn.png"
           }
         ],
         "currPosition": 0
       },
-      { "data": [{ "text": "just text, no images" }] }
+      { "data": [{ "text": "0 to 1: just text, no images" }] },
+      {
+        "data": [{ "text": "1 to 2: Just text, no images." }],
+        "currPosition": 0
+      },
+      {
+        "data": [{ "text": "Conclusion: Just text, no images." }],
+        "currPosition": 0
+      }
     ]
   },
   {
@@ -40,12 +48,24 @@
       {
         "data": [
           {
-            "text": "text and an image",
+            "text": "Introduction: text and an image",
             "imageSrc": "/static/img/lightOn.png"
           },
           {
-            "text": "text and an another image",
-            "imageSrc": "/static/img/lightOn.png"
+            "text": "Introduction: text and an another image",
+            "imageSrc": "/static/img/lightOff.png"
+          },
+          {
+            "text": "Introduction: text and an another another image",
+            "imageSrc": "/static/img/error-generic-unknown.png"
+          }
+        ],
+        "currPosition": 0
+      },
+      {
+        "data": [
+          {
+            "text": "Transistion from scene 0 to scene 1: It has just text, no images."
           }
         ],
         "currPosition": 0
@@ -54,7 +74,7 @@
         "data": [
           { "text": "just text, no images" },
           {
-            "text": "ANOTHA ONE",
+            "text": "Conclusion: ANOTHA ONE",
             "imageSrc": "/static/img/lightOn.png"
           }
         ],

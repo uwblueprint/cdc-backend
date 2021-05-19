@@ -15,6 +15,10 @@
     id="popup-camera"
     position="0 0 9"
     rotation="0 0 0"
-    camera="active: false;"
+    {% if cur_scene_idx == 0 %}
+      camera="active: true;"
+    {% else %}
+      camera="active: false;"
+    {% end %}
   ></a-entity>
 </a-entity>

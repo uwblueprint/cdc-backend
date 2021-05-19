@@ -50,7 +50,7 @@
         ],
         "currPosition": 0
       },
-      { "data": [{ "text": "just text, no images" }] }
+      { "data": [{ "text": "just text, no images" }], "currPosition": 0 }
     ]
   }
 ]

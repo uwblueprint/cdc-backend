@@ -137,8 +137,12 @@
         nextURL = "/{{ scenario_friendly_name }}/{{ cur_scene_idx }}";
       } else {
 
-        let transitionData = {% raw json.dumps(scenario_transitions[cur_scene_idx]) %};
-
+        {% if is_last_scene == "true" %}
+          let transitionData = {};
+        {% else %}
+          let transitionData = {% raw json.dumps(scenario_transitions[cur_scene_idx + 1]) %};
+        {% end %}
+        console.log(transitionData);
         nextURL = "/{{ scenario_friendly_name }}/" + next_scene_idx;
         transitionData["transitionURL"] = nextURL;
         transitionData["isTransition"] = true;

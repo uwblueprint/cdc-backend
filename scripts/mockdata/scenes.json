@@ -2,7 +2,7 @@
   {
     "name": "Student Bedroom",
     "description": "A standard student bedroom. Twin size bed, small table for school work, small closet.",
-    "object_ids": [1, 2, 3],
+    "object_ids": [9, 10, 11],
     "position": [0.1, 0.5, 0.1],
     "scale": [1.0, 1.0, 1.0],
     "rotation": [0.1, 0.5, 0.1],
@@ -26,7 +26,7 @@
   {
     "name": "Living Room",
     "description": "A standard master bedroom. King size bed, a dresser, ensuit washroom, and a large closet.",
-    "object_ids": [2],
+    "object_ids": [12],
     "position": [0, 0.13, 0],
     "scale": [1.0, 1.0, 1.0],
     "rotation": [0.0, 0.0, 0.0],

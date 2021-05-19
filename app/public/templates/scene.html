@@ -99,7 +99,7 @@
           class="link"
           hint-button='jsonData: {"newHintImg": "/static/img/lightOn.png", "hintImg": "/static/img/lightOff.png", "width": 0.08, "height": 0.08}'
           animation__onclick="property: position; dur: 0; startEvents: click"
-          animation-on-click-run='blackboardData: {"jsonData": {"text": {% raw json.dumps(scene_dict["hints"]) %}, "currPosition": 0}, "componentType": "text-pane"}'
+          animation-on-click-run='blackboardData: {"jsonData": {"data": {% raw json.dumps( [ {"text": x} for x in scene_dict["hints"] ] ) %}, "currPosition": 0}, "componentType": "text-pane"}'
         >
         </a-entity>
         </a-entity>
@@ -147,6 +147,13 @@
          window.location.replace(nextURL);
       }, numSeconds * 1000);
     }
+
+    {% if is_admin %}
+      const inspector = scene.components.inspector;
+      scene.addEventListener('loaded', function () {
+          inspector.openInspector();
+      });
+    {% end %}
   </script>
   </body>
 </html>

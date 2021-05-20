@@ -209,6 +209,15 @@ async def delete_scene_from_postgres(scene_id: str, session):
     if not delete_scene(scene_id, session):
         raise ValueError("Scene ID not valid")
 
+    # Remove the scene from scenario's scene_ids array
+    scenarios = get_scenarios(session)
+    for scenario in scenarios:
+        if int(scene_id) in scenario.scene_ids:
+            scenario.scene_ids.remove(int(scene_id))
+            await update_scenario_from_postgres(
+                scenario.id, scenario.as_dict(), session
+            )
+
     response = {"message": "Deleted successfully"}
     return response
 

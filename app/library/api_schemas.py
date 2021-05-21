@@ -129,7 +129,6 @@ admin_scene_put_handler_schema = {
     "required": [
         "name",
         "description",
-        "object_ids",
         "position",
         "scale",
         "rotation",

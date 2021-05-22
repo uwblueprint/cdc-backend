@@ -42,7 +42,7 @@ AFRAME.registerComponent("close-popup", {
   },
 });
 
-sceneSolved = false;
+let sceneSolved = false;
 
 async function closePopup(numSeconds, is_last_object, el) {
   if (!sceneSolved) {
@@ -54,6 +54,7 @@ async function closePopup(numSeconds, is_last_object, el) {
       // emit event if it is last object, to indicate scene is solved
       if (is_last_object) {
         sceneSolved = true;
+        el.setAttribute("visible", false);
         el.sceneEl.emit("dcc-success-scene-complete");
       }
     }, numSeconds * 1000);

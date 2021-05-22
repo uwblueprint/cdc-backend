@@ -25,7 +25,6 @@ class UIScenarioCompletedPageHandler(BaseUIHandler):
                 )
             else:
                 scenario_obj: Scenario = Scenario(**scenario_dict)
-            scenario_obj.share_link = "aaaaaaaaaaaa"
             if not scenario_obj.is_published:
                 raise ValueError("This Scenario is currently not accessible")
 
@@ -33,7 +32,7 @@ class UIScenarioCompletedPageHandler(BaseUIHandler):
                 "completed_page.html",
                 scenario_name=scenario_obj.name,
                 scenario_friendly_name=scenario_obj.friendly_name,
-                scenario_share_link=scenario_obj.share_link,
+                scenario_share_link=scenario_obj.conclusion_data["share_link"],
                 json=json,
             )
         except ValueError as e:

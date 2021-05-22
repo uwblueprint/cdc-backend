@@ -16,6 +16,7 @@ class Scenario(BaseModel):
     publish_link = Column(Text, nullable=True)
     preview_link = Column(Text, nullable=True)
     expected_solve_time = Column(Text, nullable=False, default="")
+    conclusion_data = Column(JSONB, nullable=False, default={"share_link": ""})
     transitions = Column(
         ARRAY(JSONB), nullable=False, default=config.get("default_data.transitions")
     )
@@ -30,5 +31,6 @@ class Scenario(BaseModel):
         "publish_link",
         "preview_link",
         "expected_solve_time",
+        "conclusion_data",
         "transitions",
     ]

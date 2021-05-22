@@ -86,7 +86,11 @@
                 position="{{ scene_dict['camera_properties']['position'][0] }} 0 {{ scene_dict['camera_properties']['position'][2] }}">
         <a-entity
           id="primaryCamera"
-          camera
+          {% if cur_scene_idx == 0 %}
+            camera="active: false;"
+          {% else %}
+            camera="active: true;"
+          {% end %}
           fov="80"
           {% if scene_dict["camera_properties"]["look_controls"] %}
             look-controls
@@ -123,24 +127,49 @@
         ></a-gltf-model>
         {% end %}
       </a-scene>
-    </div>
-  <script>
-    <!--  Logic for scene completion  -->
-    const scene = document.querySelector('a-scene');
-    const is_last_scene = {{ is_last_scene }};
-    const next_scene_idx = {{ cur_scene_idx }} + 1;
-    scene.addEventListener("dcc-success-scene-complete", function () {
-      let nextURL = ""
-      if(is_last_scene){
-        // it is last scene, navigate to same scene for now
-        // TODO: in the future, this will redirect to scenario complete screen
-        nextURL = "/{{ scenario_friendly_name }}/{{ cur_scene_idx }}";
-      } else {
-        // TODO: in the future, we will most likely have some transition logic here, instead of just redirecting
-        nextURL = "/{{ scenario_friendly_name }}/" + next_scene_idx;
-      }
-      sceneComplete(2, nextURL);
-    });
+      <script>
+        const scene = document.querySelector('a-scene');
+        // Transition logic only needed for non-admins
+        {% if not is_admin %}
+          <!--  Logic for scene completion  -->
+          const is_last_scene = {{ is_last_scene }};
+          const next_scene_idx = {{ cur_scene_idx }} + 1;
+
+          if({{cur_scene_idx }} == 0){
+            const intro_transition_data = {% raw json.dumps(scenario_transitions[0]) %};
+            intro_transition_data["isTransition"] = false;
+            addTransition(intro_transition_data);
+          }
+
+          scene.addEventListener("dcc-success-scene-complete", function () {
+            let nextURL = ""
+            let transitionData = {};
+            if (is_last_scene) {
+              // it is last scene, navigate to same scene for now
+              // TODO: in the future, this will redirect to scenario complete screen
+              transitionData = {% raw json.dumps(scenario_transitions[-1]) %};
+              nextURL = "/{{ scenario_friendly_name }}/{{ cur_scene_idx }}";
+            } else {
+              {% if is_last_scene != "true" %}
+                transitionData = {% raw json.dumps(scenario_transitions[cur_scene_idx + 1]) %};
+              {% end %}
+              nextURL = "/{{ scenario_friendly_name }}/" + next_scene_idx;
+            }
+
+            transitionData["transitionURL"] = nextURL;
+            transitionData["isTransition"] = true;
+
+            addTransition(transitionData);
+          });
+        {% end %}
+
+        function addTransition(transition_data) {
+          let componentDataParsed = {
+            "componentType": "text-pane",
+            "jsonData": transition_data
+          };
+          addEntityToBlackboard(componentDataParsed);
+        }
 
     async function sceneComplete(numSeconds, nextURL) {
       setTimeout(function () {

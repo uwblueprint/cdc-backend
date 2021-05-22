@@ -141,7 +141,10 @@ AFRAME.registerComponent("ordered-puzzle", {
               // el.sceneEl.emit("dcc-success-close-popup", { seconds: 1 });
               // emit event if it is last object, to indicate scene is solved
               if (is_last_object) {
-                el.sceneEl.emit("dcc-success-scene-complete");
+                el.sceneEl.emit("dcc-success-close-popup", {
+                  seconds: 2,
+                  is_last_object: is_last_object,
+                });
               }
             }
           });

@@ -76,90 +76,126 @@ AFRAME.registerComponent("text-pane", {
       this.textLabel.setAttribute("visible", false);
     }
 
-    if (jsonData.data.length > 1) {
-      const leftNavProp =
-        '{"width": "1.5", "height": "1.5", "depth": "0.005", "color": "white", "x": "-8", "y": "0", "z": "0.005", "scaleX": "2", "scaleY": "2", "scaleZ": "1", "text": "Prev"}';
-      const rightNavProp =
-        '{"width": "1.5", "height": "1.5", "depth": "0.005", "color": "white", "x": "8", "y": "0", "z": "0.005", "scaleX": "2", "scaleY": "2", "scaleZ": "1", "text": "Next"}';
+    const leftNavProp = {
+      width: "1.5",
+      height: "1.5",
+      depth: "0.005",
+      color: "white",
+      x: "-8",
+      y: "0",
+      z: "0.005",
+      scaleX: "2",
+      scaleY: "2",
+      scaleZ: "1",
+      text: "Prev",
+    };
 
-      // Create left nav button
-      this.leftNav = document.createElement("a-entity");
-      this.leftNav.setAttribute("id", "nav-button-left");
-      this.leftNav.setAttribute("text-box", "jsonData", leftNavProp);
-      this.leftNav.setAttribute("class", "link");
-      this.el.appendChild(this.leftNav);
+    const rightNavProp = {
+      width: "1.5",
+      height: "1.5",
+      depth: "0.005",
+      color: "white",
+      x: "8",
+      y: "0",
+      z: "0.005",
+      scaleX: "2",
+      scaleY: "2",
+      scaleZ: "1",
+      text: jsonData.data.length === 1 ? "Done" : "Next",
+    };
 
-      // Create right nav button
-      this.rightNav = document.createElement("a-entity");
-      this.rightNav.setAttribute("id", "nav-button-right");
-      this.rightNav.setAttribute("text-box", "jsonData", rightNavProp);
-      this.rightNav.setAttribute("class", "link");
-      this.el.appendChild(this.rightNav);
+    // Create left nav button
+    this.leftNav = document.createElement("a-entity");
+    this.leftNav.setAttribute("id", "nav-button-left");
+    this.leftNav.setAttribute(
+      "text-box",
+      "jsonData",
+      JSON.stringify(leftNavProp)
+    );
+    this.leftNav.setAttribute("class", "link");
+    this.el.appendChild(this.leftNav);
 
-      let currVisualPane = initialVisualPane;
+    // Create right nav button
+    this.rightNav = document.createElement("a-entity");
+    this.rightNav.setAttribute("id", "nav-button-right");
+    this.rightNav.setAttribute(
+      "text-box",
+      "jsonData",
+      JSON.stringify(rightNavProp)
+    );
+    this.rightNav.setAttribute("class", "link");
+    this.el.appendChild(this.rightNav);
 
-      const rightNavConst = this.rightNav;
-      this.leftNav.addEventListener("click", function () {
-        if (jsonData.currPosition !== 0) {
-          --jsonData.currPosition;
+    let currVisualPane = initialVisualPane;
 
-          if (jsonData.data[jsonData.currPosition].hasOwnProperty("imageSrc")) {
-            if (currVisualPane) {
-              el.removeChild(currVisualPane);
-            }
+    const rightNavConst = this.rightNav;
+    this.leftNav.addEventListener("click", function () {
+      if (jsonData.currPosition !== 0) {
+        --jsonData.currPosition;
 
-            textLabelConst.setAttribute("visible", false);
-            let visualPane = createVisualPane(jsonData, el);
-            currVisualPane = visualPane;
-            el.appendChild(visualPane);
-          } else {
-            textLabelConst.setAttribute("visible", true);
-            if (currVisualPane) {
-              el.removeChild(currVisualPane);
-              currVisualPane = null;
-            }
-            textLabelConst.setAttribute(
-              "value",
-              jsonData.data[jsonData.currPosition].text
-            );
+        if (jsonData.data[jsonData.currPosition].hasOwnProperty("imageSrc")) {
+          if (currVisualPane) {
+            el.removeChild(currVisualPane);
           }
 
-          rightNavConst.firstChild.setAttribute("value", "Next");
-        }
-      });
-
-      this.rightNav.addEventListener("click", function () {
-        if (jsonData.currPosition === jsonData.data.length - 2) {
-          rightNavConst.firstChild.setAttribute("value", "Done");
-        }
-
-        if (jsonData.currPosition !== jsonData.data.length - 1) {
-          ++jsonData.currPosition;
-          if (jsonData.data[jsonData.currPosition].hasOwnProperty("imageSrc")) {
-            if (currVisualPane) {
-              el.removeChild(currVisualPane);
-            }
-            textLabelConst.setAttribute("visible", false);
-
-            let visualPane = createVisualPane(jsonData, el);
-            currVisualPane = visualPane;
-            el.appendChild(visualPane);
-          } else {
-            textLabelConst.setAttribute("visible", true);
-            if (currVisualPane) {
-              el.removeChild(currVisualPane);
-              currVisualPane = null;
-            }
-            textLabelConst.setAttribute(
-              "value",
-              jsonData.data[jsonData.currPosition].text
-            );
-          }
+          textLabelConst.setAttribute("visible", false);
+          let visualPane = createVisualPane(jsonData, el);
+          currVisualPane = visualPane;
+          el.appendChild(visualPane);
         } else {
-          // TODO: later PR, clicking on done -> close blackboard, similar to keypad success message
+          textLabelConst.setAttribute("visible", true);
+          if (currVisualPane) {
+            el.removeChild(currVisualPane);
+            currVisualPane = null;
+          }
+          textLabelConst.setAttribute(
+            "value",
+            jsonData.data[jsonData.currPosition].text
+          );
         }
-      });
-    }
+
+        rightNavConst.firstChild.setAttribute("value", "Next");
+      }
+    });
+
+    this.rightNav.addEventListener("click", function () {
+      if (jsonData.currPosition === jsonData.data.length - 2) {
+        rightNavConst.firstChild.setAttribute("value", "Done");
+      }
+
+      if (jsonData.currPosition !== jsonData.data.length - 1) {
+        ++jsonData.currPosition;
+        if (jsonData.data[jsonData.currPosition].hasOwnProperty("imageSrc")) {
+          if (currVisualPane) {
+            el.removeChild(currVisualPane);
+          }
+          textLabelConst.setAttribute("visible", false);
+
+          let visualPane = createVisualPane(jsonData, el);
+          currVisualPane = visualPane;
+          el.appendChild(visualPane);
+        } else {
+          textLabelConst.setAttribute("visible", true);
+          if (currVisualPane) {
+            el.removeChild(currVisualPane);
+            currVisualPane = null;
+          }
+          textLabelConst.setAttribute(
+            "value",
+            jsonData.data[jsonData.currPosition].text
+          );
+        }
+      } else {
+        if (jsonData.hasOwnProperty("isTransition") && jsonData.isTransition) {
+          sceneComplete(0, jsonData.transitionURL);
+        } else {
+          el.sceneEl.emit("dcc-success-close-popup", {
+            seconds: 0,
+            is_last_object: false,
+          });
+        }
+      }
+    });
   },
 });
 

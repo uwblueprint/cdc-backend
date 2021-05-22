@@ -2,7 +2,7 @@
 tornado:
   port: 8888
   debug: true # will reload server on each change to python files
-  xsrf: false # for now until we get to it
+  xsrf: true # need to make sure frontend is set up to work properly with this setting on
 
 postgres:
   hostname: localhost
@@ -55,3 +55,14 @@ cache:
   update_time: 5
   # no need to update cache for dev, except for testing purpose
   periodic_callback_enabled: false
+
+auth:
+  cookie_name: dcc_auth
+  expiry_hours: 1
+  # TODO: update this list, if needed
+  allowed_domains:
+    - gmail.com
+    - uwblueprint.org
+  min_since_login: 100
+
+frontend_domain: http://localhost:3000

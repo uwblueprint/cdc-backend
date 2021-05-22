@@ -35,6 +35,8 @@ from routes.base import (
     UIStaticHandler,
 )
 from routes.ui.admin_scene import UIAdminSceneHandler
+from routes.ui.completed_page import UIScenarioCompletedPageHandler
+from routes.ui.landing_page import UIScenarioLandingPageHandler
 from routes.ui.scenario import UIScenarioHandler
 from routes.user.asset import UserAssetHandler
 from routes.user.loading_screen import UserLoadingScreen
@@ -81,8 +83,9 @@ def get_routes():
         (r"/admin/scene/([0-9]{1,16})", UIAdminSceneHandler),
         (r"/admin_login", BaseAuthHandler),
         (r"/api/admin/v1/admin_logout", BaseLogoutHandler),
-        (r"/([a-zA-Z_-]{1,50})/?", UIScenarioHandler),
+        (r"/([a-zA-Z_-]{1,50})/?", UIScenarioLandingPageHandler),
         (r"/([a-zA-Z_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),
+        (r"/([a-zA-Z_-]{1,50})/completed", UIScenarioCompletedPageHandler),
     ]
     return routes
 

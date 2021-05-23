@@ -19,7 +19,7 @@ asset:
   # This will be the S3 bucket URL in prod
   prefix_url: http://localhost:8888/static/
 
-inspector_url: http://localhost:3333/dist/aframe-inspector.js
+inspector_url: /static/js/libraries/aframe-inspector.js
 
 default_data:
   transitions:

@@ -42,6 +42,12 @@ admin_scenario_put_handler_schema = {
         "publish_link": {"type": "string", "pattern": r"^[\S]{1,50}$"},
         "preview_link": {"type": "string", "pattern": r"^[\S]{1,50}$"},
         "expected_solve_time": {"type": "string", "pattern": r"^[a-zA-Z0-9 _-]{,50}$"},
+        "conclusion_data": {
+            "type": "object",
+            "properties": {"share_link": {"type": "string"}},
+            "required": ["share_link"],
+            "additionalProperties": False,
+        },
         "transitions": {
             "type": "array",
             "items": {

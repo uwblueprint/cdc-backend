@@ -146,9 +146,8 @@
             let transitionData = {};
             if (is_last_scene) {
               // it is last scene, navigate to same scene for now
-              // TODO: in the future, this will redirect to scenario complete screen
               transitionData = {% raw json.dumps(scenario_transitions[-1]) %};
-              nextURL = "/{{ scenario_friendly_name }}/{{ cur_scene_idx }}";
+              nextURL = "/{{ scenario_friendly_name }}/completed";
             } else {
               {% if is_last_scene != "true" %}
                 transitionData = {% raw json.dumps(scenario_transitions[cur_scene_idx + 1]) %};

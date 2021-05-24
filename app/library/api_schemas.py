@@ -166,3 +166,15 @@ admin_object_handler_schema = {
     ],
     "additionalProperties": False,
 }
+
+admin_aws_handler_body_schema = {
+    "type": "object",
+    "properties": {
+        "type": {
+            "enum": config.get("s3.allowed_types"),
+        },
+        "s3_key": {"type": "string"},
+    },
+    "required": ["type"],
+    "additionalProperties": False,
+}

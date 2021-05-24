@@ -66,3 +66,10 @@ auth:
   min_since_login: 100
 
 frontend_domain: http://localhost:3000
+
+s3:
+  allowed_types:
+    - asset
+    - image
+  bucket_name: dcc-bp-public-dev
+  region: us-east-2

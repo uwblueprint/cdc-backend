@@ -1,5 +1,3 @@
-import json
-
 from cache.cache import check_and_get_scenario_by_name
 from library.postgres import get_scenario_by_friendly_name_from_postgres
 from models import get_session
@@ -31,9 +29,7 @@ class UIScenarioCompletedPageHandler(BaseUIHandler):
             await self.render(
                 "completed_page.html",
                 scenario_name=scenario_obj.name,
-                scenario_friendly_name=scenario_obj.friendly_name,
-                scenario_share_link=scenario_obj.conclusion_data["share_link"],
-                json=json,
+                scenario_conclusion_data=scenario_obj.conclusion_data,
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

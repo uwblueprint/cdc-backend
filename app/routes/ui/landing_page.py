@@ -1,5 +1,3 @@
-import json
-
 from cache.cache import check_and_get_scenario_by_name
 from library.postgres import get_scenario_by_friendly_name_from_postgres
 from models import get_session
@@ -33,7 +31,6 @@ class UIScenarioLandingPageHandler(BaseUIHandler):
                 "landing_page.html",
                 scenario_name=scenario_obj.name,
                 scenario_friendly_name=scenario_obj.friendly_name,
-                json=json,
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

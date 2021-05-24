@@ -11,12 +11,8 @@
     </button>
     <script type="text/javascript">
       function playGame() {
-        let pageUrl = document.URL;
-        if (pageUrl.endsWith("/")) {
-          location.href = pageUrl + "0";
-        } else {
-          location.href = pageUrl + "/0";
-        }
+        let nextURL = "/{{ scenario_friendly_name }}/0";
+        window.location.replace(nextURL);
       }
     </script>
   </body>

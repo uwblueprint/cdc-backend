@@ -6,6 +6,7 @@
     <envs>
       <env name="PYTHONUNBUFFERED" value="1" />
       <env name="CONFIG_PATH" value="../configs/dev-config.yaml" />
+      <env name="AWS_PROFILE" value="bp" />
     </envs>
     <option name="SDK_HOME" value="$PROJECT_DIR$/env/bin/python" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />

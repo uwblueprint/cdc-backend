@@ -15,6 +15,7 @@ from routes.admin.asset import (
     AdminAssetPostHandler,
     AdminAssetsHandler,
 )
+from routes.admin.aws import AdminUploadHandler
 from routes.admin.object import AdminObjectPostHandler, AdminObjectPutHandler
 from routes.admin.scenario import (
     AdminScenarioDuplicateHandler,
@@ -56,6 +57,7 @@ def get_routes():
         (r"/api/user/v1/scene/([0-9]{1,16})", UserSceneHandler),
         (r"/api/user/v1/scenario/([0-9]{1,16})", UserScenarioHandler),
         (r"/api/user/v1/loading_screen", UserLoadingScreen),  # TODO: remove endpoint
+        (r"/api/admin/v1/upload", AdminUploadHandler),
         (r"/api/admin/v1/asset", AdminAssetPostHandler),
         (r"/api/admin/v1/asset/([0-9]{1,16})", AdminAssetHandler),
         (r"/api/admin/v1/assets", AdminAssetsHandler),

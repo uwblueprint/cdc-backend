@@ -132,10 +132,19 @@ def main():
 
     app = make_app()
     init_firebase()
-    server = tornado.httpserver.HTTPServer(app)
 
     port = config.get("tornado.port")
-    if port:
+    if port == 443:
+        server = tornado.httpserver.HTTPServer(
+            app,
+            ssl_options={
+                "certfile": f"{os.path.dirname(__file__)}/../secrets/domain.crt",
+                "keyfile": f"{os.path.dirname(__file__)}/../secrets/domain.key",
+            },
+        )
+        server.bind(port, address=config.get("tornado.address"))
+    else:
+        server = tornado.httpserver.HTTPServer(app)
         server.bind(port, address=config.get("tornado.address"))
 
     server.start()

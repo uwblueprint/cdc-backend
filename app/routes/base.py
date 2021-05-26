@@ -239,6 +239,8 @@ class BaseAuthHandler(tornado.web.RequestHandler):
                 self.set_cookie(
                     "_xsrf",
                     self.xsrf_token,
+                    samesite=None,
+                    secure=True,
                 )
                 await self.finish(resp_json)
             else:

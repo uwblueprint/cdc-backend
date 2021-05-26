@@ -9,6 +9,9 @@
     "publish_link": "www.publishlink.com/sample-escape-room",
     "preview_link": "www.previewlink.com/sample-escape-room",
     "expected_solve_time": "5",
+    "conclusion_data": {
+      "share_link": "www.sharelink.com/student-escape-room"
+    },
     "transitions": [
       {
         "data": [

@@ -5,7 +5,15 @@
     "scale": [1, 1, 1],
     "rotation": [0, 0, 0],
     "asset_id": 6,
-    "next_objects": [],
+    "next_objects": [
+      {
+        "id": 2,
+        "action": {
+          "type": "text",
+          "text_id": 1
+        }
+      }
+    ],
     "texts": ["", "hello", "from the other side"],
     "is_interactable": true,
     "animations_json": {
@@ -32,7 +40,15 @@
     "scale": [1, 1, 1],
     "rotation": [0, 90, 0],
     "asset_id": 6,
-    "next_objects": [],
+    "next_objects": [
+      {
+        "id": 2,
+        "action": {
+          "type": "text",
+          "text_id": 1
+        }
+      }
+    ],
     "texts": ["", "hello", "kenobi"],
     "is_interactable": true,
     "animations_json": {

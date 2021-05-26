@@ -18,9 +18,12 @@ admin_asset_handler_body_schema = {
 admin_scenario_post_handler_schema = {
     "type": "object",
     "properties": {
-        "name": {"type": "string", "pattern": r"^[a-zA-Z0-9 _-]{1,50}$"},
-        "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z0-9_-]{1,50}$"},
-        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z0-9 _-]{,2000}$"},
+        "name": {"type": "string", "pattern": r"^[a-zA-Z0-9 _-\']{1,50}$"},
+        "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z0-9_-\']{1,50}$"},
+        "description": {
+            "type": "string",
+            "pattern": r"^[\?\!\.,a-zA-Z0-9 _-']{,2000}$",
+        },
     },
     "required": [
         "name",

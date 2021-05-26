@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Managing Anxiety Attacks Escape Room",
+    "friendly_name": "sample-escape-room",
+    "description": "A student at ABC High is going through a hard time dealing with the stresses of school, and they begin to feel really anxious in class. Help the student manage their anxiety and escape the class!",
+    "scene_ids": [4],
+    "is_published": true,
+    "is_previewable": true,
+    "publish_link": "www.publishlink.com/sample-escape-room",
+    "preview_link": "www.previewlink.com/sample-escape-room",
+    "expected_solve_time": "5",
+    "transitions": [
+      {
+        "data": [
+          {
+            "text": "You are a student having a sudden panic attack about an upcoming test. Try to escape the class to get a breather!"
+          }
+        ],
+        "currPosition": 0
+      },
+      {
+        "data": [
+          {
+            "text": "The bell rings and you grab your books and shove them in your bag. Slinging the bag over your shoulder, you quickly leave the class. Thank god that class is over with, and you step outside for a breather."
+          },
+          { "text": "Congratulations, you have escaped!" }
+        ],
+        "currPosition": 0
+      }
+    ]
+  }
+]

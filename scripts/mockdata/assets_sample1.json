@@ -1,0 +1,12 @@
+[
+  {
+    "name": "History Class Desk",
+    "obj_type": "object",
+    "s3_key": "assets/dev/armchair.glb"
+  },
+  {
+    "name": "History Classroom",
+    "obj_type": "background",
+    "s3_key": "assets/dev/classroom.glb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "name": "Chemistry Textbook",
+    "position": [0, 0.014, -5.717],
+    "scale": [1, 1, 1],
+    "rotation": [0, 0, 0],
+    "asset_id": 6,
+    "next_objects": [],
+    "texts": ["", "hello", "from the other side"],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You found your chemistry textbook you were looking for! How did it get to the front of the class...",
+              "imageSrc": "/static/img/sample_room_1/textbook.jpg"
+            },
+            {
+              "text": "Bromelain is an enzyme extract derived from the stems of pineapples, although it exists in all parts of the fresh pineapple. The chemical formula of bromelain is C39H66N2O29"
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "History classroom keypad",
+    "position": [5.417, 0.035, -1.569],
+    "scale": [1, 1, 1],
+    "rotation": [0, 90, 0],
+    "asset_id": 6,
+    "next_objects": [],
+    "texts": ["", "hello", "kenobi"],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "jsonData": {
+          "password": "3966229",
+          "model": "numpad",
+          "is_last_object": true
+        }
+      }
+    }
+  }
+]

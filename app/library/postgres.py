@@ -232,12 +232,31 @@ async def duplicate_scenario(scenario_id: str, session):
 
 
 async def duplicate_scene(scene_id: str, session):
-    # TODO: actual duplication in postgres
-    sample_response = {
-        "message": "Duplicated scene with id " + scene_id,
-        "id": scene_id + "3",
-    }
-    return sample_response
+    # Get scene to duplicate
+    curr_scene = get_scene(scene_id, session).as_dict()
+    object_ids = curr_scene["object_ids"]
+    try:
+        del curr_scene["id"]
+        del curr_scene["object_ids"]
+    except KeyError:
+        pass
+
+    # Create new duplicated scene without the objects
+    new_scene = await post_scene_to_postgres(curr_scene, session)
+    new_scene_id = new_scene["id"]
+
+    # Duplicate the objects and add into the scene
+    for object_id in object_ids:
+        curr_object = get_object(object_id, session).as_dict()
+        try:
+            del curr_object["id"]
+        except KeyError:
+            pass
+        await post_object_to_postgres(new_scene_id, curr_object, session)
+
+    # Get the new scene and return
+    final_scene = await get_scene_from_postgres(new_scene_id, session)
+    return final_scene
 
 
 async def post_object_to_postgres(scene_id: str, data: dict, session):

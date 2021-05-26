@@ -5,16 +5,8 @@
     "scale": [1, 1, 1],
     "rotation": [0, 0, 0],
     "asset_id": 6,
-    "next_objects": [
-      {
-        "id": 2,
-        "action": {
-          "type": "text",
-          "text_id": 1
-        }
-      }
-    ],
-    "texts": ["", "hello", "from the other side"],
+    "next_objects": [],
+    "texts": [],
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
@@ -40,16 +32,8 @@
     "scale": [1, 1, 1],
     "rotation": [0, 90, 0],
     "asset_id": 6,
-    "next_objects": [
-      {
-        "id": 2,
-        "action": {
-          "type": "text",
-          "text_id": 1
-        }
-      }
-    ],
-    "texts": ["", "hello", "kenobi"],
+    "next_objects": [],
+    "texts": [],
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
@@ -58,6 +42,52 @@
           "password": "3966229",
           "model": "numpad",
           "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Teacher",
+    "position": [-0.828, 0.014, -5.717],
+    "scale": [1, 1, 1],
+    "rotation": [0, 0, 0],
+    "asset_id": 6,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You are feeling very anxious right now, the last person you want to talk to is your history teacher. Maybe you should go back to your desk"
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Student",
+    "position": [4.572, 0.258, 2.95],
+    "scale": [1, 1, 1],
+    "rotation": [0, 90, 0],
+    "asset_id": 6,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You are not really in the mood to be talking to Karen right now. Lets go back to our desk."
+            }
+          ],
+          "currPosition": 0
         }
       }
     }

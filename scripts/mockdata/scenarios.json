@@ -9,6 +9,9 @@
     "publish_link": null,
     "preview_link": "www.previewlink.com/student-escape-room",
     "expected_solve_time": "10 to 20",
+    "conclusion_data": {
+      "share_link": "www.sharelink.com/student-escape-room"
+    },
     "transitions": [
       {
         "data": [
@@ -44,6 +47,9 @@
     "publish_link": "www.publishlink.com/teacher-escape-room",
     "preview_link": "www.previewlink.com/teacher-escape-room",
     "expected_solve_time": "20 to 30",
+    "conclusion_data": {
+      "share_link": "www.sharelink.com/teacher-escape-room"
+    },
     "transitions": [
       {
         "data": [

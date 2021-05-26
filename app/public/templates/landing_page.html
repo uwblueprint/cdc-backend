@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ scenario_name }}</title>
+  </head>
+
+  <body>
+    <h1>{{ scenario_name }}</h1>
+    <button id="playButton" onclick="playGame();">
+      Click me! This is not a virus!
+    </button>
+    <script type="text/javascript">
+      function playGame() {
+        let nextURL = "/{{ scenario_friendly_name }}/0";
+        window.location.replace(nextURL);
+      }
+    </script>
+  </body>
+</html>

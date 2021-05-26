@@ -45,6 +45,12 @@ admin_scenario_put_handler_schema = {
         "publish_link": {"type": "string", "pattern": r"^[\S]{1,50}$"},
         "preview_link": {"type": "string", "pattern": r"^[\S]{1,50}$"},
         "expected_solve_time": {"type": "string", "pattern": r"^[a-zA-Z0-9 _-]{,50}$"},
+        "conclusion_data": {
+            "type": "object",
+            "properties": {"share_link": {"type": "string"}},
+            "required": ["share_link"],
+            "additionalProperties": False,
+        },
         "transitions": {
             "type": "array",
             "items": {
@@ -167,5 +173,17 @@ admin_object_handler_schema = {
         "next_objects",
         "is_interactable",
     ],
+    "additionalProperties": False,
+}
+
+admin_aws_handler_body_schema = {
+    "type": "object",
+    "properties": {
+        "type": {
+            "enum": config.get("s3.allowed_types"),
+        },
+        "s3_key": {"type": "string"},
+    },
+    "required": ["type"],
     "additionalProperties": False,
 }

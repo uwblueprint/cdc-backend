@@ -19,7 +19,7 @@ asset:
   # This will be the S3 bucket URL in prod
   prefix_url: http://localhost:8888/static/
 
-inspector_url: http://localhost:3333/dist/aframe-inspector.js
+inspector_url: /static/js/libraries/aframe-inspector.js
 
 default_data:
   transitions:
@@ -66,3 +66,10 @@ auth:
   min_since_login: 100
 
 frontend_domain: http://localhost:3000
+
+s3:
+  allowed_types:
+    - asset
+    - image
+  bucket_name: dcc-bp-public-dev
+  region: us-east-2

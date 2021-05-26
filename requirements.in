@@ -1,3 +1,4 @@
+boto3
 firebase-admin
 jsonschema
 pre-commit

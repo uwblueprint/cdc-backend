@@ -15,6 +15,7 @@ from routes.admin.asset import (
     AdminAssetPostHandler,
     AdminAssetsHandler,
 )
+from routes.admin.aws import AdminUploadHandler
 from routes.admin.object import AdminObjectPostHandler, AdminObjectPutHandler
 from routes.admin.scenario import (
     AdminScenarioDuplicateHandler,
@@ -35,6 +36,8 @@ from routes.base import (
     UIStaticHandler,
 )
 from routes.ui.admin_scene import UIAdminSceneHandler
+from routes.ui.completed_page import UIScenarioCompletedPageHandler
+from routes.ui.landing_page import UIScenarioLandingPageHandler
 from routes.ui.scenario import UIScenarioHandler
 from routes.user.asset import UserAssetHandler
 from routes.user.loading_screen import UserLoadingScreen
@@ -54,6 +57,7 @@ def get_routes():
         (r"/api/user/v1/scene/([0-9]{1,16})", UserSceneHandler),
         (r"/api/user/v1/scenario/([0-9]{1,16})", UserScenarioHandler),
         (r"/api/user/v1/loading_screen", UserLoadingScreen),  # TODO: remove endpoint
+        (r"/api/admin/v1/upload", AdminUploadHandler),
         (r"/api/admin/v1/asset", AdminAssetPostHandler),
         (r"/api/admin/v1/asset/([0-9]{1,16})", AdminAssetHandler),
         (r"/api/admin/v1/assets", AdminAssetsHandler),
@@ -81,8 +85,9 @@ def get_routes():
         (r"/admin/scene/([0-9]{1,16})", UIAdminSceneHandler),
         (r"/admin_login", BaseAuthHandler),
         (r"/api/admin/v1/admin_logout", BaseLogoutHandler),
-        (r"/([a-zA-Z_-]{1,50})/?", UIScenarioHandler),
+        (r"/([a-zA-Z_-]{1,50})/?", UIScenarioLandingPageHandler),
         (r"/([a-zA-Z_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),
+        (r"/([a-zA-Z_-]{1,50})/completed", UIScenarioCompletedPageHandler),
     ]
     return routes
 

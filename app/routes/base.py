@@ -229,16 +229,26 @@ class BaseAuthHandler(tornado.web.RequestHandler):
                 )
                 resp_json = {"status": 200, "message": "success"}
                 cookie_name = config.get("auth.cookie_name")
+                set_secure = False
+                domain = None
+                if "https" in config.get("frontend_domain"):
+                    set_secure = True
+                    domain = config.get("frontend_domain")
+                    domain = domain.lstrip(domain.split(".")[0])
                 self.set_secure_cookie(
                     cookie_name,
                     session_cookie,
                     httponly=True,
-                    samesite=None,
-                    secure=True,
+                    samesite="Strict",
+                    secure=set_secure,
+                    domain=domain,
                 )
                 self.set_cookie(
                     "_xsrf",
                     self.xsrf_token,
+                    samesite="Strict",
+                    secure=set_secure,
+                    domain=domain,
                 )
                 await self.finish(resp_json)
             else:

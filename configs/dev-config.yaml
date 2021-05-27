@@ -34,10 +34,6 @@ default_data:
           ],
         "currPosition": 0,
       },
-      {
-        "data": [{ "text": "CONCLUSION: just text, no images" }],
-        "currPosition": 0,
-      },
     ]
 
 script:

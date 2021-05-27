@@ -212,11 +212,13 @@ async def delete_scene_from_postgres(scene_id: str, session):
     # Remove the scene from scenario's scene_ids array
     scenarios = get_scenarios(session)
     for scenario in scenarios:
-        if int(scene_id) in scenario.scene_ids:
-            scenario.scene_ids.remove(int(scene_id))
-            await update_scenario_from_postgres(
-                scenario.id, scenario.as_dict(), session
-            )
+        for idx in range(0, len(scenario.scene_ids)):
+            if int(scene_id) == scenario.scene_ids[idx]:
+                del scenario.scene_ids[idx]
+                del scenario.transitions[idx + 1]
+                await update_scenario_from_postgres(
+                    scenario.id, scenario.as_dict(), session
+                )
 
     response = {"message": "Deleted successfully"}
     return response

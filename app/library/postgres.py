@@ -258,7 +258,6 @@ async def duplicate_scene(scene_id: str, session):
             del curr_object["id"]
         except KeyError:
             pass
-        curr_object["name"] += "_copy"
         object_model = Object(**curr_object)
         object_model = create_entity(object_model, session)
         new_object_ids.append(object_model.id)

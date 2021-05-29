@@ -27109,10 +27109,10 @@ object-assign
           {
             key: "setObjects",
             value: function setObjects(self) {
-              var baseUrl = "http://localhost:8888/";
+              var baseUrl = "https://backend-dev.jaydhulia.com/";
               var baseEndpoint = "api/admin/v1/";
               var getUrl = baseUrl + baseEndpoint + "assets";
-              var assetsUrl = "http://localhost:8888/static/";
+              var assetsUrl = "https://backend-dev.jaydhulia.com/static/";
 
               _axios2.default
                 .get(getUrl, {
@@ -29502,6 +29502,11 @@ object-assign
 
       var LOCALSTORAGE_MOCAP_UI = "aframeinspectormocapuienabled";
 
+      function getCookie(name) {
+        var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+        return r ? r[1] : undefined;
+      }
+
       function filterHelpers(scene, visible) {
         scene.traverse(function (o) {
           if (o.userData.source === "INSPECTOR") {
@@ -29532,12 +29537,17 @@ object-assign
           .replace(/-+$/, ""); // Trim - from end of text
       }
 
-      async function updateObject(putUrl, object) {
+      async function updateObject(putUrl, object, objectId) {
         _axios2.default
           .put(putUrl, object, {
             headers: {
               "Content-Type": "application/json",
+              "X-Xsrftoken": getCookie("_xsrf"),
             },
+            withCredentials: true,
+          })
+          .then(function (response) {
+            alert("Updated object with id: " + objectId);
           })
           .catch(function (error) {
             if (error.response) {
@@ -29564,7 +29574,9 @@ object-assign
           .post(postUrl, object, {
             headers: {
               "Content-Type": "application/json",
+              "X-Xsrftoken": getCookie("_xsrf"),
             },
+            withCredentials: true,
           })
           .then(function (response) {
             var newObjectId = response.data.id;
@@ -29600,12 +29612,17 @@ object-assign
           });
       }
 
-      async function deleteObject(deleteUrl) {
+      async function deleteObject(deleteUrl, objectId) {
         _axios2.default
           .delete(deleteUrl, {
             headers: {
               "Content-Type": "application/json",
+              "X-Xsrftoken": getCookie("_xsrf"),
             },
+            withCredentials: true,
+          })
+          .then(function (response) {
+            alert("Deleted object with id: " + objectId);
           })
           .catch(function (error) {
             if (error.response) {
@@ -29672,7 +29689,7 @@ object-assign
           );
 
           _this.writeChanges = function () {
-            var baseUrl = "http://localhost:8888/";
+            var baseUrl = "https://backend-dev.jaydhulia.com/";
             var apiEndpointScene = AFRAME.scenes[0]
               .getAttribute("id")
               .replace("-scene", "");
@@ -29680,8 +29697,6 @@ object-assign
             var getUrl = baseUrl + baseEndpoint + "scene/" + apiEndpointScene;
             var objects = _this.state.objects;
             var objectChanges = [];
-            var changedObjectsString = "";
-            var deletedObjectsString = "";
 
             // validation of changes
             for (var id in AFRAME.INSPECTOR.history.updates) {
@@ -29734,12 +29749,6 @@ object-assign
                 }
               } else if (id.endsWith("-obj")) {
                 if ("delete" in AFRAME.INSPECTOR.history.updates[id]) {
-                  if (deletedObjectsString == "") {
-                    deletedObjectsString = id.replace("-obj", "");
-                  } else {
-                    deletedObjectsString =
-                      deletedObjectsString + ", " + id.replace("-obj", "");
-                  }
                   var deleteUrl =
                     baseUrl +
                     baseEndpoint +
@@ -29747,7 +29756,7 @@ object-assign
                     apiEndpointScene +
                     "/object/" +
                     id.replace("-obj", "");
-                  deleteObject(deleteUrl);
+                  deleteObject(deleteUrl, id.replace("-obj", ""));
                 } else {
                   objectChanges.push([
                     parseInt(id.replace("-obj", "")),
@@ -29807,14 +29816,6 @@ object-assign
               delete AFRAME.INSPECTOR.history.updates[id];
             }
 
-            if (deletedObjectsString.length > 0) {
-              alert(
-                "The objects with the following ids were deleted: [ " +
-                  deletedObjectsString +
-                  " ]"
-              );
-            }
-
             objectChanges.sort();
             objects.sort(function (a, b) {
               return a.id - b.id;
@@ -29852,18 +29853,11 @@ object-assign
                   }
                 }
                 if (_hasChanged) {
-                  changedObjectsString =
-                    changedObjectsString +
-                    " (" +
-                    objects[i].name +
-                    ", id: " +
-                    objects[i].id +
-                    "),";
                   var putUrl = getUrl + "/object/" + objects[i].id;
                   var curId = objects[i].id;
                   delete objects[i].id;
                   delete objects[i].asset_details;
-                  updateObject(putUrl, objects[i]);
+                  updateObject(putUrl, objects[i], curId);
                   objects[i].id = curId;
                 }
                 j++;
@@ -29871,14 +29865,6 @@ object-assign
               i++;
             }
             _this.setState({ objects: objects });
-
-            if (changedObjectsString.length > 0) {
-              alert(
-                "Changes to the following objects were made: [" +
-                  changedObjectsString +
-                  " ] were saved"
-              );
-            }
           };
 
           _this.toggleScenePlaying = function () {
@@ -29908,12 +29894,12 @@ object-assign
           {
             key: "getRequests",
             value: function getRequests(self) {
-              var baseUrl = "http://localhost:8888/";
+              var baseUrl = "https://backend-dev.jaydhulia.com/";
               var apiEndpointScene = AFRAME.scenes[0]
                 .getAttribute("id")
                 .replace("-scene", "");
               var baseEndpoint = "api/admin/v1/";
-              var assetsUrl = "http://localhost:8888/static/";
+              var assetsUrl = "https://backend-dev.jaydhulia.com/static/";
 
               var getUrl = baseUrl + baseEndpoint + "scene/" + apiEndpointScene;
               _axios2.default

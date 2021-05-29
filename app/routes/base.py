@@ -130,8 +130,40 @@ class BaseUIHandler(tornado.web.RequestHandler):
         self.render("error.html", error_title=title, error_message=message)
 
     def on_finish(self):
-        if self.db_session:
+        if hasattr(self, "db_session") and self.db_session:
             return_session(self.db_session)
+
+
+class BaseAdminUIHandler(BaseUIHandler):
+    def prepare(self):
+        # Auth check: you shall not pass
+        cookie_name = config.get("auth.cookie_name")
+        session_cookie = self.get_secure_cookie(cookie_name)
+        if not session_cookie:
+            return self.write_error(status_code=403, message="Forbidden")
+
+        # Verify the session cookie. In this case an additional check is added to detect
+        # if the user's Firebase session was revoked, user deleted/disabled, etc.
+        try:
+            decoded_claims = auth.verify_session_cookie(
+                session_cookie, check_revoked=True
+            )
+            # save the user (for audit purposes, we can use this later)
+            self.user = decoded_claims["email"]
+            self.sub = decoded_claims["sub"]
+            # Ensure that the email is verified, so not anyone can make fake accounts
+            if not decoded_claims["email_verified"]:
+                raise ValueError(
+                    "The email address is not verified. Please verify it first!"
+                )
+            # if not user or not valid domain email, let's not provide description of error
+            if self.user.split("@")[-1] not in config.get("auth.allowed_domains"):
+                raise Exception
+        except ValueError as e:
+            return self.write_error(status_code=403, message=str(e))
+        except Exception:
+            # Session cookie is invalid, expired or revoked. Force user to login.
+            return self.write_error(status_code=403, message="Forbidden")
 
 
 class UIStaticHandler(tornado.web.StaticFileHandler):
@@ -197,16 +229,26 @@ class BaseAuthHandler(tornado.web.RequestHandler):
                 )
                 resp_json = {"status": 200, "message": "success"}
                 cookie_name = config.get("auth.cookie_name")
+                set_secure = False
+                domain = None
+                if "https" in config.get("frontend_domain"):
+                    set_secure = True
+                    domain = config.get("frontend_domain")
+                    domain = domain.lstrip(domain.split(".")[0])
                 self.set_secure_cookie(
                     cookie_name,
                     session_cookie,
                     httponly=True,
-                    samesite=None,
-                    secure=True,
+                    samesite="Strict",
+                    secure=set_secure,
+                    domain=domain,
                 )
                 self.set_cookie(
                     "_xsrf",
                     self.xsrf_token,
+                    samesite="Strict",
+                    secure=set_secure,
+                    domain=domain,
                 )
                 await self.finish(resp_json)
             else:

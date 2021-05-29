@@ -234,12 +234,38 @@ async def duplicate_scenario(scenario_id: str, session):
 
 
 async def duplicate_scene(scene_id: str, session):
-    # TODO: actual duplication in postgres
-    sample_response = {
-        "message": "Duplicated scene with id " + scene_id,
-        "id": scene_id + "3",
-    }
-    return sample_response
+    # Get scene to duplicate
+    curr_scene = get_scene(scene_id, session)
+    if curr_scene is None:
+        raise ValueError("Invalid Scene ID")
+    curr_scene = curr_scene.as_dict()
+    object_ids = curr_scene["object_ids"]
+    curr_scene["name"] += "_copy"
+    try:
+        del curr_scene["id"]
+        del curr_scene["object_ids"]
+    except KeyError:
+        pass
+
+    # Create new duplicated scene without the objects
+    new_scene = await post_scene_to_postgres(curr_scene, session)
+    new_scene_id = new_scene["id"]
+    new_object_ids = []
+    # Duplicate the objects and get new IDs
+    for object_id in object_ids:
+        curr_object = get_object(object_id, session).as_dict()
+        try:
+            del curr_object["id"]
+        except KeyError:
+            pass
+        object_model = Object(**curr_object)
+        object_model = create_entity(object_model, session)
+        new_object_ids.append(object_model.id)
+
+    # Update the new scene and return
+    new_scene["object_ids"] = new_object_ids
+    final_scene = await update_scene_from_postgres(new_scene_id, new_scene, session)
+    return final_scene
 
 
 async def post_object_to_postgres(scene_id: str, data: dict, session):

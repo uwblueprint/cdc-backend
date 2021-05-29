@@ -102,8 +102,21 @@ async def get_assets_from_postgres(session):
 
 
 async def delete_asset_from_postgres(asset_id: str, session):
-    if not delete_asset(asset_id, session):
+    if not get_asset(asset_id, session):
         raise ValueError("Asset ID not valid")
+
+    scenes_resp = await get_scenes_from_postgres(session)
+    for scene in scenes_resp["scenes"]:
+        if asset_id == str(scene["background_id"]):
+            raise AssertionError(
+                f"Asset ID {asset_id} is reference as background_id in scene with ID {scene['id']}"
+            )
+        for object_id in scene["object_ids"]:
+            object_data = get_object(object_id, session).as_dict()
+            if asset_id == str(object_data["asset_id"]):
+                await delete_object_in_postgres(scene["id"], object_id, session)
+
+    delete_asset(asset_id, session)
 
     response = {"message": "Deleted successfully"}
     return response

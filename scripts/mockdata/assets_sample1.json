@@ -8,5 +8,30 @@
     "name": "History Classroom",
     "obj_type": "background",
     "s3_key": "assets/dev/classroom.glb"
+  },
+  {
+    "name": "Male Student",
+    "obj_type": "object",
+    "s3_key": "assets/dev/boy2.gltf"
+  },
+  {
+    "name": "Teacher",
+    "obj_type": "object",
+    "s3_key": "assets/dev/boy1.gltf"
+  },
+  {
+    "name": "Female Student",
+    "obj_type": "object",
+    "s3_key": "assets/dev/girl1.gltf"
+  },
+  {
+    "name": "Chemistry Textbook",
+    "obj_type": "object",
+    "s3_key": "assets/dev/agenda.glb"
+  },
+  {
+    "name": "Whiteboard",
+    "obj_type": "object",
+    "s3_key": "assets/dev/whiteboard.glb"
   }
 ]

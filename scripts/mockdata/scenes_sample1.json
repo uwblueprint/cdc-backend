@@ -2,7 +2,7 @@
   {
     "name": "History Classroom",
     "description": "A history classroom at Waterloo High.",
-    "object_ids": [12, 13, 14, 15],
+    "object_ids": [12, 13, 14, 15, 16, 17, 18],
     "position": [0, 0.03, 0],
     "scale": [1.0, 1.0, 1.0],
     "rotation": [0.0, 180.0, 0.0],

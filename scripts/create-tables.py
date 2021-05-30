@@ -63,7 +63,7 @@ table_creation_commands = [
             texts TEXT[] NOT NULL,
             is_interactable BOOLEAN NOT NULL,
             animations_json JSONB NOT NULL,
-            FOREIGN KEY (asset_id) REFERENCES asset (id)
+            FOREIGN KEY (asset_id) REFERENCES asset (id) ON DELETE CASCADE
         )
     """,
     """

@@ -9,6 +9,7 @@ from models.db_client import (
     get_asset,
     get_assets,
     get_object,
+    get_object_ids,
     get_scenario,
     get_scenario_by_friendly_name,
     get_scenarios,
@@ -40,7 +41,7 @@ async def post_asset_to_postgres(data: dict, session):
 async def get_object_from_postgres(object_id: str, session, update_cache=False):
     object_obj = get_object(object_id, session)
     if object_obj is None:
-        raise ValueError("Object ID not valid")
+        raise ValueError(f"Object ID {object_id} not valid")
     object_obj_dict = object_obj.as_dict()
 
     # Get the asset details
@@ -113,13 +114,17 @@ async def delete_asset_from_postgres(asset_id: str, session):
                 f"Asset ID {asset_id} is reference as background_id in scene with ID {scene['id']}"
             )
 
-    for scene in scenes_resp["scenes"]:
-        for object_id in scene["object_ids"]:
-            object_data = get_object(object_id, session)
-            if asset_id == str(object_data.asset_id):
-                await delete_object_in_postgres(scene["id"], object_id, session)
-
     delete_asset(asset_id, session)
+
+    object_ids = get_object_ids(session)
+    for scene in scenes_resp["scenes"]:
+        new_object_ids = []
+        for object_id in scene["object_ids"]:
+            if object_id in object_ids:
+                new_object_ids.append(object_id)
+        if scene["object_ids"] != new_object_ids:
+            scene["object_ids"] = new_object_ids
+            await update_scene_from_postgres(scene["id"], scene, session)
 
     response = {"message": "Deleted successfully"}
     return response

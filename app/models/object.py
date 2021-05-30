@@ -10,7 +10,9 @@ class Object(BaseModel):
     position = Column(ARRAY(Float), nullable=False)
     scale = Column(ARRAY(Float), nullable=False)
     rotation = Column(ARRAY(Float), nullable=False)
-    asset_id = Column(BigInteger, ForeignKey("asset.id"), nullable=False)
+    asset_id = Column(
+        BigInteger, ForeignKey("asset.id", ondelete="CASCADE"), nullable=False
+    )
     next_objects = Column(ARRAY(JSONB), nullable=True)
     texts = Column(ARRAY(Text), nullable=False, default=[""])
     is_interactable = Column(Boolean, nullable=False)

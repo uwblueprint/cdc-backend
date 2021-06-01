@@ -1,0 +1,161 @@
+[
+  {
+    "name": "Chemistry Textbook",
+    "position": [-2.99, 0.804, -1.897],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [0, 0, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You found your chemistry textbook you were looking for! How did it get to the front of the class...",
+              "imageSrc": "/static/img/sample_room_1/textbook.jpg"
+            },
+            {
+              "text": "Bromelain is an enzyme extract derived from the stems of pineapples, although it exists in all parts of the fresh pineapple. The chemical formula of bromelain is C39H66N2O29"
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Teacher",
+    "position": [4.707, 0.035, -3.379],
+    "scale": [1.8, 1.8, 1.8],
+    "rotation": [0, 300, 0],
+    "asset_id": 9,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "jsonData": {
+          "password": "3966229",
+          "model": "numpad",
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Female Student",
+    "position": [1.792, 0.148, -1.02],
+    "scale": [0.002, 0.002, 0.002],
+    "rotation": [0, 180, 0],
+    "asset_id": 10,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You are not really in the mood to be talking to Karen right now. Lets go back to our desk."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Male Student",
+    "position": [2.987, -0.025, -1.149],
+    "scale": [0.16, 0.16, 0.16],
+    "rotation": [0, 180, 0],
+    "asset_id": 8,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You are feeling very anxious right now, and feel queasy at the thought of talking to other students. Maybe you should go back to your desk."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Blackboard",
+    "position": [0.005, 1.562, -6.093],
+    "scale": [0.3, 0.25, 0.3],
+    "rotation": [0, 90, 0],
+    "asset_id": 12,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Math Textbook",
+    "position": [-1.758, 0.804, 1.123],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [0, 0, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Whos math textbook is this? There is chicken scratch writing all over the pages inside.",
+              "imageSrc": "/static/img/sample_room_1/mathTextbook.jpg"
+            },
+            {
+              "text": "You flip to a page in the trigonometry unit.",
+              "imageSrc": "/static/img/sample_room_1/trig.png"
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "History Textbook",
+    "position": [1.839, 0.804, 4.138],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [0, 0, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "This history textbook is falling apart...",
+              "imageSrc": "/static/img/sample_room_1/historyTextbook.jpg"
+            },
+            {
+              "text": "World War I, also known as the Great War, began in 1914 after the assassination of Archduke Franz Ferdinand of Austria. His murder catapulted into a war across Europe that lasted until 1918. During the conflict, Germany, Austria-Hungary, Bulgaria and the Ottoman Empire (the Central Powers) fought against Great Britain, France, Russia, Italy, Romania, Japan and the United States (the Allied Powers). "
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  }
+]

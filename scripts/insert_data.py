@@ -24,7 +24,7 @@ conn = engine.connect()
 for table_name in tables:
     for file_name in [
         file
-        for file in os.listdir(path_to_json)
+        for file in sorted(os.listdir(path_to_json))
         if file.startswith(table_name) and file.endswith(".json")
     ]:
         with open(path_to_json + file_name) as json_file:

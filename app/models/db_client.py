@@ -47,6 +47,12 @@ def delete_asset(id, session):
     return exists
 
 
+def get_object_ids(session):
+    object_id_tuples = session.query(Object.id).all()
+    object_ids = [object_id[0] for object_id in object_id_tuples]
+    return object_ids
+
+
 def get_objects(session):
     objects = session.query(Object).all()
     return objects

@@ -20,7 +20,10 @@ admin_scenario_post_handler_schema = {
     "properties": {
         "name": {"type": "string", "pattern": r"^[a-zA-Z0-9 _-]{1,50}$"},
         "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z0-9_-]{1,50}$"},
-        "description": {"type": "string", "pattern": r"^[\?\!\.,a-zA-Z0-9 _-]{,2000}$"},
+        "description": {
+            "type": "string",
+            "pattern": r"^[\?\!\.,a-zA-Z0-9 _-]{,2000}$",
+        },
     },
     "required": [
         "name",

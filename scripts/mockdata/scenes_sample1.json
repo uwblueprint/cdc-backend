@@ -1,0 +1,24 @@
+[
+  {
+    "name": "History Classroom",
+    "description": "A history classroom at Waterloo High.",
+    "object_ids": [12, 13, 14, 15, 16, 17, 18],
+    "position": [0, 0.03, 0],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation": [0.0, 180.0, 0.0],
+    "background_id": 2,
+    "camera_properties": {
+      "position": [-2, 1.3, 5.2],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "I will try to distract myself from my anxious thoughts by studying for the chemistry exam, but where is my textbook?"
+    ]
+  }
+]

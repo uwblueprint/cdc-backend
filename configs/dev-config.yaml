@@ -18,6 +18,8 @@ asset:
     - object
   # This will be the S3 bucket URL in prod
   prefix_url: http://localhost:8888/static/
+  # always false for local dev env, it doesn't have access to AWS
+  aws_hard_delete: false
 
 inspector_url: /static/js/libraries/aframe-inspector.js
 

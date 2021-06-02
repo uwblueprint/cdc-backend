@@ -64,7 +64,7 @@ AFRAME.registerComponent("ordered-puzzle", {
       this.puzzlePiece.setAttribute("id", "puzzle-piece-image-" + i);
       this.puzzlePiece.setAttribute(
         "src",
-        data.images[i].imageSrc + "?d=" + new Date().getTime()
+        data.images[i].imageSrc + "?d=" + new Date().getTime() / 1000
       );
       puzzlePieceCache.push(this.puzzlePiece);
 

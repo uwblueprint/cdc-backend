@@ -69,5 +69,11 @@ s3:
   allowed_types:
     - asset
     - image
+  allowed_extensions:
+    - gltf
+    - glb
+    - png
+    - jpeg
+    - jpg
   bucket_name: dcc-bp-public-dev
   region: us-east-2

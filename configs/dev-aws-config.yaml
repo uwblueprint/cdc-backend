@@ -1,0 +1,79 @@
+# Configuration options for dev
+tornado:
+  port: 8888
+  debug: true # will reload server on each change to python files
+  xsrf: true # need to make sure frontend is set up to work properly with this setting on
+
+postgres:
+  hostname: localhost
+  database: postgres_cdc_dev
+  user: postgres
+  db_url: postgres://{user}:{password}@{hostname}/{database}
+
+app-env: dev-aws
+
+asset:
+  allowed_asset_types:
+    - background
+    - object
+  # This will be the S3 bucket URL in prod
+  prefix_url: https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/
+  # This will be changed to true for prod... for now until we get asset CRUD working
+  # don't actually delete from S3
+  aws_hard_delete: false
+
+inspector_url: /static/js/libraries/aframe-inspector.js
+
+default_data:
+  transitions:
+    [
+      {
+        "data":
+          [
+            {
+              "text": "INTRODUCTION: text goes here.",
+              "imageSrc": "/static/img/lightOn.png",
+            },
+          ],
+        "currPosition": 0,
+      },
+    ]
+
+script:
+  table-order:
+    - asset
+    - scenario
+    - scene
+    - object
+    - statistics
+
+cache:
+  # seconds in day: 24 * 60 * 60
+  expire_time: 86400
+  # how frequently to update cache (in seconds), 60 seconds for dev, for now
+  update_time: 5
+  # no need to update cache for dev, except for testing purpose
+  periodic_callback_enabled: false
+
+auth:
+  cookie_name: dcc_auth
+  expiry_hours: 1
+  # TODO: update this list, if needed
+  allowed_domains:
+    - uwblueprint.org
+  min_since_login: 10
+
+frontend_domain: http://localhost:3000
+
+s3:
+  allowed_types:
+    - asset
+    - image
+  allowed_extensions:
+    - gltf
+    - glb
+    - png
+    - jpeg
+    - jpg
+  bucket_name: dcc-bp-public-dev
+  region: us-east-2

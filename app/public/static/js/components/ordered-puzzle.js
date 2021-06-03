@@ -62,7 +62,10 @@ AFRAME.registerComponent("ordered-puzzle", {
     for (i = 0; i < numPuzzlePieces; i++) {
       this.puzzlePiece = document.createElement("a-image");
       this.puzzlePiece.setAttribute("id", "puzzle-piece-image-" + i);
-      this.puzzlePiece.setAttribute("src", data.images[i].imageSrc);
+      this.puzzlePiece.setAttribute(
+        "src",
+        data.images[i].imageSrc + "?d=" + new Date().getTime() / 1000
+      );
       puzzlePieceCache.push(this.puzzlePiece);
 
       let rawImageEl = document.createElement("img");
@@ -159,7 +162,8 @@ AFRAME.registerComponent("ordered-puzzle", {
 
         el.appendChild(puzzlePiece);
       };
-      rawImageEl.src = data.images[i].imageSrc;
+      rawImageEl.crossOrigin = "anonymous";
+      rawImageEl.src = data.images[i].imageSrc + "?d=" + new Date().getTime();
     }
   },
   update: function () {

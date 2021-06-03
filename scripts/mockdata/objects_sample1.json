@@ -15,7 +15,7 @@
           "data": [
             {
               "text": "You found your chemistry textbook you were looking for! How did it get to the front of the class...",
-              "imageSrc": "/static/img/sample_room_1/textbook.jpg"
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/89a29bddf6164ab1973c07d1f14b49be.jpg"
             },
             {
               "text": "Bromelain is an enzyme extract derived from the stems of pineapples, although it exists in all parts of the fresh pineapple. The chemical formula of bromelain is C39H66N2O29"
@@ -119,11 +119,11 @@
           "data": [
             {
               "text": "Whos math textbook is this? There is chicken scratch writing all over the pages inside.",
-              "imageSrc": "/static/img/sample_room_1/mathTextbook.jpg"
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f60ae6b842774e8f8a12fd3b3958feb6.jpg"
             },
             {
               "text": "You flip to a page in the trigonometry unit.",
-              "imageSrc": "/static/img/sample_room_1/trig.png"
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c04ada911ff24ad79c500309b502e91f.png"
             }
           ],
           "currPosition": 0
@@ -147,7 +147,7 @@
           "data": [
             {
               "text": "This history textbook is falling apart...",
-              "imageSrc": "/static/img/sample_room_1/historyTextbook.jpg"
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/812cebff4b9b4444a79a830761a9b684.jpg"
             },
             {
               "text": "World War I, also known as the Great War, began in 1914 after the assassination of Archduke Franz Ferdinand of Austria. His murder catapulted into a war across Europe that lasted until 1918. During the conflict, Germany, Austria-Hungary, Bulgaria and the Ottoman Empire (the Central Powers) fought against Great Britain, France, Russia, Italy, Romania, Japan and the United States (the Allied Powers). "

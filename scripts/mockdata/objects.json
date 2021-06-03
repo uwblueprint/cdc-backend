@@ -158,7 +158,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/assets/dev/pic1.png",
+          "imageSrc": "/static/img/dev/pic1.png",
           "scaleBy": 3,
           "position": [0, 0, 0],
           "caption": "Welcome to the Escape Room! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test."

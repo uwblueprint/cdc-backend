@@ -40,24 +40,25 @@ from routes.ui.completed_page import UIScenarioCompletedPageHandler
 from routes.ui.landing_page import UIScenarioLandingPageHandler
 from routes.ui.scenario import UIScenarioHandler
 from routes.ui.tutorial import UITutorialPageHandler
-from routes.user.asset import UserAssetHandler
-from routes.user.loading_screen import UserLoadingScreen
-from routes.user.scenario import UserScenarioHandler
-from routes.user.scene import UserSceneHandler
-from routes.user.solved import UserSolvedHandler
+
+# from routes.user.asset import UserAssetHandler
+# from routes.user.loading_screen import UserLoadingScreen
+# from routes.user.scenario import UserScenarioHandler
+# from routes.user.scene import UserSceneHandler
+# from routes.user.solved import UserSolvedHandler
 from tornado.platform.asyncio import AsyncIOMainLoop
 
 
 def get_routes():
     routes = [
-        (
-            r"/api/user/v1/solved/([0-9]{1,16})",
-            UserSolvedHandler,
-        ),  # TODO: remove endpoint
-        (r"/api/user/v1/asset/([0-9]{1,16})", UserAssetHandler),
-        (r"/api/user/v1/scene/([0-9]{1,16})", UserSceneHandler),
-        (r"/api/user/v1/scenario/([0-9]{1,16})", UserScenarioHandler),
-        (r"/api/user/v1/loading_screen", UserLoadingScreen),  # TODO: remove endpoint
+        # (
+        #     r"/api/user/v1/solved/([0-9]{1,16})",
+        #     UserSolvedHandler,
+        # ),
+        # (r"/api/user/v1/asset/([0-9]{1,16})", UserAssetHandler),
+        # (r"/api/user/v1/scene/([0-9]{1,16})", UserSceneHandler),
+        # (r"/api/user/v1/scenario/([0-9]{1,16})", UserScenarioHandler),
+        # (r"/api/user/v1/loading_screen", UserLoadingScreen),
         (r"/api/admin/v1/upload", AdminUploadHandler),
         (r"/api/admin/v1/asset", AdminAssetPostHandler),
         (r"/api/admin/v1/asset/([0-9]{1,16})", AdminAssetHandler),

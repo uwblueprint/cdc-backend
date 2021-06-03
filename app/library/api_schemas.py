@@ -182,6 +182,9 @@ admin_aws_handler_body_schema = {
         "type": {
             "enum": config.get("s3.allowed_types"),
         },
+        "extension": {
+            "enum": config.get("s3.allowed_extensions"),
+        },
         "s3_key": {"type": "string"},
     },
     "required": ["type"],

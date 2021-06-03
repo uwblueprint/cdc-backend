@@ -13,7 +13,10 @@ AFRAME.registerComponent("visual-pane", {
     const data = this.data.jsonData;
     const el = this.el;
     let imageEl = document.createElement("a-image");
-    imageEl.setAttribute("src", data.imageSrc);
+    imageEl.setAttribute(
+      "src",
+      data.imageSrc + "?d=" + new Date().getTime() / 1000
+    );
 
     let rawImageEl = document.createElement("img");
     rawImageEl.onload = function () {
@@ -64,7 +67,8 @@ AFRAME.registerComponent("visual-pane", {
         el.appendChild(captionEl);
       }
     };
-    rawImageEl.src = data.imageSrc;
+    rawImageEl.crossOrigin = "anonymous";
+    rawImageEl.src = data.imageSrc + "?d=" + new Date().getTime();
   },
   remove: function () {
     let el = this.el;

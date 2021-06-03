@@ -2,17 +2,17 @@
   {
     "name": "Armchair",
     "obj_type": "object",
-    "s3_key": "assets/dev/armchair.glb"
+    "s3_key": "assets/752258ee7ff140e98a6f73fcca4e7efd.glb"
   },
   {
     "name": "Classroom",
     "obj_type": "background",
-    "s3_key": "assets/dev/classroom.glb"
+    "s3_key": "assets/ac38abdce987432980ddcbdbba4190f9.glb"
   },
   {
     "name": "Sanitizer",
     "obj_type": "object",
-    "s3_key": "assets/dev/sanitizer.gltf"
+    "s3_key": "assets/4607df2be02e4dd1bb1e3c677a9da0b1.gltf"
   },
   {
     "name": "Seashell",
@@ -22,6 +22,6 @@
   {
     "name": "Living Room",
     "obj_type": "background",
-    "s3_key": "assets/dev/living_room.glb"
+    "s3_key": "assets/f783f92e1d4840c784701af30d9dc313.glb"
   }
 ]

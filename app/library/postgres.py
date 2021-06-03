@@ -1,4 +1,6 @@
+import boto3
 from cache.cache import update_asset_cache, update_scenario_cache, update_scene_cache
+from config import config
 from models.asset import Asset
 from models.db_client import (
     create_entity,
@@ -103,7 +105,8 @@ async def get_assets_from_postgres(session):
 
 
 async def delete_asset_from_postgres(asset_id: str, session):
-    if not get_asset(asset_id, session):
+    asset_obj: Asset = get_asset(asset_id, session)
+    if not asset_obj:
         raise ValueError("Asset ID not valid")
 
     scenes_resp = await get_scenes_from_postgres(session)
@@ -114,8 +117,19 @@ async def delete_asset_from_postgres(asset_id: str, session):
                 f"Asset ID {asset_id} is reference as background_id in scene with ID {scene['id']}"
             )
 
-    delete_asset(asset_id, session)
+    # only delete asset from S3 if hard delete is true
+    if config.get("asset.aws_hard_delete", False):
+        s3_client = boto3.client(
+            "s3",
+            endpoint_url=f"https://s3.{config.get('s3.region')}.amazonaws.com",
+            region_name=config.get("s3.region"),
+        )
+        s3_client.delete_object(
+            Bucket=config.get("s3.bucket_name"),
+            Key=asset_obj.s3_key,
+        )
 
+    delete_asset(asset_id, session)
     object_ids = get_object_ids(session)
     for scene in scenes_resp["scenes"]:
         new_object_ids = []

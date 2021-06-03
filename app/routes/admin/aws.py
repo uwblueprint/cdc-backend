@@ -30,6 +30,9 @@ class AdminUploadHandler(BaseAdminAPIHandler):
                 else:
                     raise ValueError("Unsupported type attribute")
 
+                if "extension" in data:
+                    data["s3_key"] += "." + data["extension"]
+
             s3_client = boto3.client(
                 "s3",
                 config=Config(signature_version="s3v4"),

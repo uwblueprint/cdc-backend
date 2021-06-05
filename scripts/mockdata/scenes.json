@@ -21,7 +21,8 @@
       "generic hint for all scenes",
       "scene specific hint 1",
       "scene specific hint 2"
-    ]
+    ],
+    "screenshot_url": "images/scene-generic.jpeg"
   },
   {
     "name": "Living Room",
@@ -41,7 +42,8 @@
         "position": [0, 0, 0]
       }
     },
-    "hints": ["generic hint for all scenes", "scene specific hint 1"]
+    "hints": ["generic hint for all scenes", "scene specific hint 1"],
+    "screenshot_url": ""
   },
   {
     "name": "Classroom",
@@ -66,6 +68,7 @@
       "scene specific hint 1",
       "scene specific hint 2",
       "scene specific hint 3"
-    ]
+    ],
+    "screenshot_url": ""
   }
 ]

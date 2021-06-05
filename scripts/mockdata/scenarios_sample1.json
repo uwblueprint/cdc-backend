@@ -9,8 +9,13 @@
     "publish_link": "www.publishlink.com/sample-escape-room",
     "preview_link": "www.previewlink.com/sample-escape-room",
     "expected_solve_time": "5",
+    "introduction_data": {
+      "header_text": "Welcome to Managing Anxiety Attacks Escape Room"
+    },
     "conclusion_data": {
-      "share_link": "www.sharelink.com/student-escape-room"
+      "header_text": "You escaped Managing Anxiety Attacks Escape Room",
+      "paragraph_text": "Check out the link below",
+      "share_link": "www.sharelink.com/managing-anxiety-attacks-escape-room"
     },
     "transitions": [
       {

@@ -114,6 +114,7 @@ admin_scene_put_handler_schema = {
             "type": "array",
             "items": {"type": "string", "pattern": r"^[\:\?\!\.,a-zA-Z0-9 _-]{1,200}$"},
         },
+        "screenshot_url": {"type": "string"},
         "camera_properties": {
             "type": "object",
             "properties": {

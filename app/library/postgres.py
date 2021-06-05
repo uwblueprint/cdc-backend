@@ -254,8 +254,8 @@ async def delete_scene_from_postgres(scene_id: str, session):
 
     # Delete the screenshot of scene, if it has one
     if scene_obj.screenshot_url:
-        # only delete asset from S3 if hard delete is true
-        if config.get("asset.aws_hard_delete", False):
+        # Only delete from AWS if config is enabled for AWS support
+        if "aws" in config.get("app-env"):
             s3_client = boto3.client(
                 "s3",
                 endpoint_url=f"https://s3.{config.get('s3.region')}.amazonaws.com",

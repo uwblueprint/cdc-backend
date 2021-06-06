@@ -89,7 +89,13 @@ async def get_scene_from_postgres(scene_id: str, session, update_cache=False):
 
 async def get_scenes_from_postgres(session):
     scenes = get_scenes(session)
-    resp_dict = {"scenes": [scene.as_dict() for scene in scenes]}
+    resp_dict = {"scenes": []}
+    for scene in scenes:
+        # if the scene has a screenshot attached
+        if scene.screenshot_url:
+            scene.screenshot_url = config.get("asset.prefix_url") + scene.screenshot_url
+        resp_dict["scenes"].append(scene.as_dict())
+
     return resp_dict
 
 

@@ -31,6 +31,7 @@ class UIScenarioLandingPageHandler(BaseUIHandler):
                 "landing_page.html",
                 scenario_name=scenario_obj.name,
                 scenario_friendly_name=scenario_obj.friendly_name,
+                scenario_introduction_data=scenario_obj.introduction_data,
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

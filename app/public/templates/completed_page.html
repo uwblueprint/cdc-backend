@@ -5,7 +5,8 @@
   </head>
 
   <body>
-    <h1>Good, you finished {{ scenario_name }}!</h1>
+    <h1>{{ scenario_conclusion_data['header_text'] }}</h1>
+    <p>{{ scenario_conclusion_data['paragraph_text'] }}</p>
     <input
       id="shareLinkInput"
       type="text"

@@ -48,6 +48,7 @@ table_creation_commands = [
             rotation DOUBLE PRECISION[] NOT NULL,
             background_id BIGINT NOT NULL,
             camera_properties JSONB NOT NULL,
+            screenshot_url TEXT NOT NULL,
             hints TEXT[] NOT NULL,
             FOREIGN KEY(background_id) REFERENCES asset (id)
         )

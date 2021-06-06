@@ -1,3 +1,5 @@
+import uuid
+
 import boto3
 from cache.cache import update_asset_cache, update_scenario_cache, update_scene_cache
 from config import config
@@ -70,6 +72,16 @@ async def get_scene_from_postgres(scene_id: str, session, update_cache=False):
         scene_obj.background_id, session, update_cache
     )
 
+    # if the scene doesn't have a screenshot attached, attach the default
+    if not response["screenshot_url"]:
+        response["screenshot_url"] = (
+            config.get("backend_domain") + "/static/img/scene-generic.jpeg"
+        )
+    else:
+        response["screenshot_url"] = (
+            config.get("asset.prefix_url") + response["screenshot_url"]
+        )
+
     if update_cache:
         await update_scene_cache(scene_id, response)
     return response
@@ -77,7 +89,13 @@ async def get_scene_from_postgres(scene_id: str, session, update_cache=False):
 
 async def get_scenes_from_postgres(session):
     scenes = get_scenes(session)
-    resp_dict = {"scenes": [scene.as_dict() for scene in scenes]}
+    resp_dict = {"scenes": []}
+    for scene in scenes:
+        # if the scene has a screenshot attached
+        if scene.screenshot_url:
+            scene.screenshot_url = config.get("asset.prefix_url") + scene.screenshot_url
+        resp_dict["scenes"].append(scene.as_dict())
+
     return resp_dict
 
 
@@ -240,6 +258,20 @@ async def delete_scene_from_postgres(scene_id: str, session):
     for object_id in scene_obj.object_ids:
         await delete_object_in_postgres(scene_id, object_id, session)
 
+    # Delete the screenshot of scene, if it has one
+    if scene_obj.screenshot_url:
+        # Only delete from AWS if config is enabled for AWS support
+        if "aws" in config.get("app-env"):
+            s3_client = boto3.client(
+                "s3",
+                endpoint_url=f"https://s3.{config.get('s3.region')}.amazonaws.com",
+                region_name=config.get("s3.region"),
+            )
+            s3_client.delete_object(
+                Bucket=config.get("s3.bucket_name"),
+                Key=scene_obj.screenshot_url,
+            )
+
     # Delete the scene
     if not delete_scene(scene_id, session):
         raise ValueError("Scene ID not valid")
@@ -254,6 +286,7 @@ async def delete_scene_from_postgres(scene_id: str, session):
                 await update_scenario_from_postgres(
                     scenario.id, scenario.as_dict(), session
                 )
+                break
 
     response = {"message": "Deleted successfully"}
     return response
@@ -296,6 +329,29 @@ async def duplicate_scene(scene_id: str, session):
         object_model = Object(**curr_object)
         object_model = create_entity(object_model, session)
         new_object_ids.append(object_model.id)
+
+    # Duplicate the screenshot, if the scene has one
+    if new_scene["screenshot_url"]:
+        new_screenshot_key = (
+            "images/"
+            + uuid.uuid4().hex
+            + "."
+            + new_scene["screenshot_url"].split(".")[-1]
+        )
+        # Only copy to AWS if config is enabled for AWS support
+        if "aws" in config.get("app-env"):
+            s3_client = boto3.client(
+                "s3",
+                endpoint_url=f"https://s3.{config.get('s3.region')}.amazonaws.com",
+                region_name=config.get("s3.region"),
+            )
+            s3_client.copy_object(
+                ACL="public-read",
+                Bucket=config.get("s3.bucket_name"),
+                CopySource=f"{config.get('s3.bucket_name')}/{new_scene['screenshot_url']}",
+                Key=new_screenshot_key,
+            )
+            new_scene["screenshot_url"] = new_screenshot_key
 
     # Update the new scene and return
     new_scene["object_ids"] = new_object_ids

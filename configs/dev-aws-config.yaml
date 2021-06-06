@@ -2,7 +2,7 @@
 tornado:
   port: 8888
   debug: true # will reload server on each change to python files
-  xsrf: true # need to make sure frontend is set up to work properly with this setting on
+  xsrf: false # can keep this false for dev mode
 
 postgres:
   hostname: localhost
@@ -71,6 +71,7 @@ auth:
   min_since_login: 10
 
 frontend_domain: http://localhost:3000
+backend_domain: http://localhost:8888
 
 s3:
   allowed_types:

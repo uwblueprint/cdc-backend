@@ -9,7 +9,12 @@
     "publish_link": null,
     "preview_link": "www.previewlink.com/student-escape-room",
     "expected_solve_time": "10 to 20",
+    "introduction_data": {
+      "header_text": "You escaped Student Escape Room"
+    },
     "conclusion_data": {
+      "header_text": "Welcome to Student Escape Room",
+      "paragraph_text": "Check out the link below",
       "share_link": "www.sharelink.com/student-escape-room"
     },
     "transitions": [
@@ -50,7 +55,12 @@
     "publish_link": "www.publishlink.com/teacher-escape-room",
     "preview_link": "www.previewlink.com/teacher-escape-room",
     "expected_solve_time": "20 to 30",
+    "introduction_data": {
+      "header_text": "Welcome to Teacher Escape Room"
+    },
     "conclusion_data": {
+      "header_text": "You escaped Teacher Escape Room",
+      "paragraph_text": "Check out the link below",
       "share_link": "www.sharelink.com/teacher-escape-room"
     },
     "transitions": [

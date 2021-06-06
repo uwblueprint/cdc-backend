@@ -5,10 +5,8 @@
   </head>
 
   <body>
-    <h1>{{ scenario_name }}</h1>
-    <button id="playButton" onclick="playGame();">
-      Click me! This is not a virus!
-    </button>
+    <h1>{{ scenario_introduction_data['header_text'] }}</h1>
+    <button id="playButton" onclick="playGame();">Play</button>
     <script type="text/javascript">
       function playGame() {
         let nextURL = "/{{ scenario_friendly_name }}/tutorial";

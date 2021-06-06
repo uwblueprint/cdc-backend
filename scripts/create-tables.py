@@ -32,6 +32,7 @@ table_creation_commands = [
             publish_link TEXT,
             preview_link TEXT,
             expected_solve_time TEXT NOT NULL,
+            introduction_data JSONB NOT NULL,
             conclusion_data JSONB NOT NULL,
             transitions JSONB[] NOT NULL
         )

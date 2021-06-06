@@ -45,10 +45,20 @@ admin_scenario_put_handler_schema = {
         "publish_link": {"type": "string", "pattern": r"^[\S]{1,50}$"},
         "preview_link": {"type": "string", "pattern": r"^[\S]{1,50}$"},
         "expected_solve_time": {"type": "string", "pattern": r"^[a-zA-Z0-9 _-]{,50}$"},
+        "introduction_data": {
+            "type": "object",
+            "properties": {
+                "header_text": {"type": "string"},
+            },
+            "additionalProperties": False,
+        },
         "conclusion_data": {
             "type": "object",
-            "properties": {"share_link": {"type": "string"}},
-            "required": ["share_link"],
+            "properties": {
+                "header_text": {"type": "string"},
+                "paragraph_text": {"type": "string"},
+                "share_link": {"type": "string"},
+            },
             "additionalProperties": False,
         },
         "transitions": {

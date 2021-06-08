@@ -98,4 +98,8 @@ This script will output a JSON object – you can use the `idToken` value and p
 
 ## Deployment
 
-todo
+We have a test deployment setup for a few of the escape rooms built.
+
+The "sample escape room" can be found [here](https://backend-dev.jaydhulia.com/sample-escape-room).
+
+The "teacher escape room" can be found [here](https://backend-dev.jaydhulia.com/teacher-escape-room).

@@ -185,12 +185,15 @@
       scene.addEventListener('loaded', function () {
           {% if take_screenshot %}
           backgroundEl.addEventListener('model-loaded', function () {
-              const screenshot_canvas = scene.components.screenshot.getCanvas('perspective');
-              uploadScreenshotToS3(screenshot_canvas.toDataURL("image/jpeg"));
+             takeSceneScreenshot();
           });
           {% end %}
           inspector.openInspector();
       });
+      async function takeSceneScreenshot(){
+          const screenshot_canvas = scene.components.screenshot.getCanvas('perspective');
+          await uploadScreenshotToS3(screenshot_canvas.toDataURL("image/jpeg"));
+      }
       async function uploadScreenshotToS3(canvasDataUrl){
          const blobData = dataURItoBlob(canvasDataUrl);
          await sendPresignedData(blobData);

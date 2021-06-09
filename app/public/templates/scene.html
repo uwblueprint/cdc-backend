@@ -221,8 +221,11 @@
               xhr_s3.setRequestHeader('Access-Control-Allow-Origin', '*');
               xhr_s3.onload = function() {
                   if(xhr_s3.status === 200 || xhr_s3.status === 204){
+                      {#TODO: send updated s3 key to backend#}
                       console.log(jsonResponse.s3_key);
                   }
+                  {# else request failed, not much we can do at this point, no point displaying this to admins #}
+                  {# it will just try again on next load since scene's screenshot URL will still be empty #}
               }
               xhr_s3.send(formData);
           };

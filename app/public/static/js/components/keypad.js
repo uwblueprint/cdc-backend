@@ -92,12 +92,15 @@ AFRAME.registerComponent("keypad", {
       this.solvedPuzzleEntity.setAttribute("visible", "true");
     } else {
       // Not solved yet
-      keypad_label = data.hasOwnProperty("keypad_text")
+      keypad_text = data.hasOwnProperty("keypad_text")
         ? data.keypad_text
         : "Enter Password";
+      keypad_text_color = data.hasOwnProperty("keypad_text_color")
+        ? data.keypad_text_color
+        : "white";
       el.setAttribute("super-keyboard", {
-        label: keypad_label,
-        labelColor: "black",
+        label: keypad_text,
+        labelColor: keypad_text_color,
       });
     }
   },
@@ -106,12 +109,15 @@ AFRAME.registerComponent("keypad", {
 async function removeError(el) {
   const data = this.data.jsonData;
   setTimeout(function () {
-    keypad_label = data.hasOwnProperty("keypad_text")
+    keypad_text = data.hasOwnProperty("keypad_text")
       ? data.keypad_text
       : "Enter Password";
+    keypad_text_color = data.hasOwnProperty("keypad_text_color")
+      ? data.keypad_text_color
+      : "white";
     el.setAttribute("super-keyboard", {
-      label: keypad_label,
-      labelColor: "black",
+      label: keypad_text,
+      labelColor: keypad_text_color,
     });
   }, 1.5 * 1000);
 }

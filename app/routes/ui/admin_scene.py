@@ -30,6 +30,13 @@ class UIAdminSceneHandler(BaseAdminUIHandler):
                 + "-navmesh"
                 + ".gltf"
             )
+            take_screenshot = False
+            if (
+                "screenshot_url" not in scene_dict
+                or "scene-generic" in scene_dict["screenshot_url"]
+            ):
+                if "aws" in config.get("app-env"):
+                    take_screenshot = True
 
             await self.render(
                 "scene.html",
@@ -43,6 +50,7 @@ class UIAdminSceneHandler(BaseAdminUIHandler):
                 inspector_url=config.get("inspector_url"),
                 json=json,
                 cur_scene_idx=scene_id_int,
+                take_screenshot=take_screenshot,
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

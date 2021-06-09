@@ -97,6 +97,8 @@
           {% end %}
           position="0 {{ scene_dict['camera_properties']['position'][1] }} 0"
         >
+
+        {% if not is_admin %}
         <!--   Hints    -->
         <a-entity
           id="hint-button"
@@ -106,6 +108,7 @@
           animation-on-click-run='blackboardData: {"jsonData": {"data": {% raw json.dumps( [ {"text": x} for x in scene_dict["hints"] ] ) %}, "currPosition": 0}, "componentType": "text-pane"}'
         >
         </a-entity>
+      {% end %}
         </a-entity>
       </a-entity>
         {% include popup.html %}
@@ -178,9 +181,60 @@
 
     {% if is_admin %}
       const inspector = scene.components.inspector;
+      const backgroundEl = document.getElementById("{{ scene_dict['background_details']['id'] }}-background");
       scene.addEventListener('loaded', function () {
+          {% if take_screenshot %}
+          backgroundEl.addEventListener('model-loaded', function () {
+              const screenshot_canvas = scene.components.screenshot.getCanvas('perspective');
+              uploadScreenshotToS3(screenshot_canvas.toDataURL("image/jpeg"));
+          });
+          {% end %}
           inspector.openInspector();
       });
+      async function uploadScreenshotToS3(canvasDataUrl){
+         const blobData = dataURItoBlob(canvasDataUrl);
+         await sendPresignedData(blobData);
+      }
+      async function sendPresignedData(blobData){
+          const xhr = new XMLHttpRequest();
+          xhr.responseType = "json";
+          xhr.open("POST", "/api/admin/v1/upload");
+          xhr.setRequestHeader("Content-Type", "application/json");
+          const requestData = {
+              type: "image",
+              extension: "jpeg"
+          }
+          xhr.onload  = function() {
+              const jsonResponse = xhr.response;
+              const formData = new FormData();
+              Object.keys(jsonResponse.fields).forEach(key => {
+                    formData.append(key, jsonResponse.fields[key]);
+              });
+              formData.append("file", blobData);
+              const xhr_s3 = new XMLHttpRequest();
+              xhr_s3.withCredentials = false;
+              xhr_s3.open("POST", jsonResponse.url);
+              xhr_s3.setRequestHeader('Access-Control-Allow-Headers', '*');
+              xhr_s3.setRequestHeader('Access-Control-Allow-Origin', '*');
+              xhr_s3.onload = function() {
+                  if(xhr_s3.status === 200 || xhr_s3.status === 204){
+                      console.log(jsonResponse.s3_key);
+                  }
+              }
+              xhr_s3.send(formData);
+          };
+          xhr.send(JSON.stringify(requestData));
+      }
+
+      function dataURItoBlob(dataURI) {
+          const binary = atob(dataURI.split(',')[1]);
+          const array = [];
+          for(let i = 0; i < binary.length; i++) {
+                array.push(binary.charCodeAt(i));
+            }
+            return new Blob([new Uint8Array(array)], {type: 'image/jpeg'});
+      }
+
     {% end %}
   </script>
   </body>

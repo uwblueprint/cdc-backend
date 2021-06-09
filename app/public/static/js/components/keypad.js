@@ -92,7 +92,6 @@ AFRAME.registerComponent("keypad", {
       this.solvedPuzzleEntity.setAttribute("visible", "true");
     } else {
       // Not solved yet
-      console.log(data);
       keypad_label = data.hasOwnProperty("keypad_text")
         ? data.keypad_text
         : "Enter Password";

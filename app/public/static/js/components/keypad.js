@@ -45,7 +45,7 @@ AFRAME.registerComponent("keypad", {
             label: "ERROR",
             labelColor: "red",
           });
-          removeError(el);
+          removeError(el, data);
         }
       }
     });
@@ -106,8 +106,7 @@ AFRAME.registerComponent("keypad", {
   },
 });
 
-async function removeError(el) {
-  const data = this.data.jsonData;
+async function removeError(el, data) {
   setTimeout(function () {
     keypad_text = data.hasOwnProperty("keypad_text")
       ? data.keypad_text

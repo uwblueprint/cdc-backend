@@ -62,7 +62,8 @@
         "jsonData": {
           "password": "1234",
           "model": "numpad",
-          "is_last_object": true
+          "is_last_object": true,
+          "keypad_text": "Enter Password!!!"
         }
       }
     }
@@ -90,7 +91,8 @@
         "jsonData": {
           "password": "abcde",
           "model": "basic",
-          "is_last_object": true
+          "is_last_object": true,
+          "keypad_text": "Enter Password"
         }
       }
     }

@@ -78,6 +78,7 @@ AFRAME.registerComponent("keypad", {
   update: function () {
     this.puzzleIsSolved = this.data.isSolved[this.id];
     const el = this.el;
+    const data = this.data.jsonData;
 
     if (typeof this.puzzleIsSolved === "undefined") {
       // not loaded yet, do nothing
@@ -91,8 +92,12 @@ AFRAME.registerComponent("keypad", {
       this.solvedPuzzleEntity.setAttribute("visible", "true");
     } else {
       // Not solved yet
+      console.log(data);
+      keypad_label = data.hasOwnProperty("keypad_text")
+        ? data.keypad_text
+        : "Enter Password";
       el.setAttribute("super-keyboard", {
-        label: "Enter Password",
+        label: keypad_label,
         labelColor: "black",
       });
     }
@@ -100,9 +105,13 @@ AFRAME.registerComponent("keypad", {
 });
 
 async function removeError(el) {
+  const data = this.data.jsonData;
   setTimeout(function () {
+    keypad_label = data.hasOwnProperty("keypad_text")
+      ? data.keypad_text
+      : "Enter Password";
     el.setAttribute("super-keyboard", {
-      label: "Enter Password",
+      label: keypad_label,
       labelColor: "black",
     });
   }, 1.5 * 1000);

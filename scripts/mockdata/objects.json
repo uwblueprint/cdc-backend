@@ -92,7 +92,7 @@
           "password": "abcde",
           "model": "basic",
           "is_last_object": true,
-          "keypad_text": "Enter ssPassword",
+          "keypad_text": "Enter Password",
           "keypad_text_color": "lightgrey"
         }
       }

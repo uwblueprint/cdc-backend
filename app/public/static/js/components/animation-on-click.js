@@ -35,8 +35,8 @@ AFRAME.registerComponent("animation-on-click-run", {
 
 // TODO: Add support for multiple entity creation
 function addEntityToBlackboard(componentDataParsed) {
-  var blackboardEl = document.querySelector("#blackboard");
-  var entityEl = document.createElement("a-entity");
+  let blackboardEl = document.querySelector("#blackboard");
+  let entityEl = document.createElement("a-entity");
   entityEl.setAttribute(
     componentDataParsed.componentType,
     "jsonData",
@@ -49,9 +49,33 @@ function addEntityToBlackboard(componentDataParsed) {
 
   entityEl.addEventListener("loaded", function (e) {
     if (e.target === entityEl) {
-      var popupCameraEl = document.querySelector("#popup-camera");
+      let popupCameraEl = document.querySelector("#popup-camera");
       popupCameraEl.setAttribute("camera", "active", true);
       // Puzzle types that are draggable
+      if (componentDataParsed.hasOwnProperty("blackboardText")) {
+        let blackboardTextEl = document.querySelector("#blackboardText");
+        const blackboardText = componentDataParsed.blackboardText;
+        const blackboardTextColor = componentDataParsed.hasOwnProperty(
+          "blackboardTextColor"
+        )
+          ? componentDataParsed.blackboardTextColor
+          : "white";
+
+        // Without this, the text might be too large or small. The values can be adjusted if needed.
+        const blackboardTextWidth = blackboardTextEl.getAttribute("text").width;
+        const textWrapCount = Math.max(
+          Math.min(blackboardText.length, 60),
+          blackboardTextWidth + 5
+        );
+
+        blackboardTextEl.setAttribute("text", {
+          color: blackboardTextColor,
+          width: blackboardTextWidth,
+          wrapCount: textWrapCount,
+          value: blackboardText,
+        });
+      }
+
       if (
         componentDataParsed.hasOwnProperty("draggable") &&
         componentDataParsed.draggable

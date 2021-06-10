@@ -63,6 +63,8 @@ async function closePopup(numSeconds, is_last_object, el) {
 
 function wipeBlackboard() {
   let blackboardEl = document.querySelector("#blackboard");
+  let blackbaordTextEl = document.querySelector("#blackboardText");
+  blackbaordTextEl.setAttribute("text", "value", "");
   while (blackboardEl.firstChild) {
     blackboardEl.removeChild(blackboardEl.lastChild);
   }

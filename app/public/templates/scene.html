@@ -31,7 +31,12 @@
   <body>
     <div id="scene-root">
       <!-- Need to add  inspector="url: http://localhost:3333/dist/aframe-inspector.js" to the a-scene element if using local inspector -->
-      <a-scene id="{{ scene_dict['id'] }}-scene" cursor="rayOrigin:mouse" raycaster="objects: .link"
+      <a-scene id="{{ scene_dict['id'] }}-scene" cursor="rayOrigin: mouse"
+        {% if cursor_mode == 1 %}
+            raycaster="objects: .link, .mainLink"
+        {% else %}
+            raycaster="objects: .link"
+        {% end %}
         {% if is_admin %}
           inspector="url: {{ inspector_url }}"
         {% end %}
@@ -39,6 +44,9 @@
         <a-assets timeout="50000">
           {% for object in scene_dict["objects"] %}
           <!--  TODO: deal with multiple objects of same asset type  -->
+          {% if not cursor_mode == 1 %}
+            <img id="crosshairs" crossorigin="anonymous" src="{{ asset_prefix_url }}img/crosshairs.png"/>
+          {% end %}
           <a-asset-item
             id="{{ object['asset_id'] }}-asset-src"
             src="{{ asset_prefix_url }}{{ object['asset_details']['s3_key'] }}"
@@ -93,10 +101,29 @@
           {% end %}
           fov="80"
           {% if scene_dict["camera_properties"]["look_controls"] %}
-            look-controls
+            {% if cursor_mode == 2 %}
+              {% if cur_scene_idx == 0 %}
+                look-controls="enabled: false; pointerLockEnabled: true;"
+              {% else %}
+                look-controls="enabled: true; pointerLockEnabled: true;"
+              {% end %}
+            {% else %}
+              look-controls
+            {% end %}
           {% end %}
           position="0 {{ scene_dict['camera_properties']['position'][1] }} 0"
         >
+        {% if not cursor_mode == 1 %}
+            <a-entity cursor="fuse: false;"
+                      raycaster="objects: .mainLink"
+                      position="0 0 -1">
+              <a-image
+                      src="#crosshairs"
+                      transparent="true"
+                      scale="0.15 0.15 0.15"
+              ></a-image>
+            </a-entity>
+        {% end %}
 
         {% if not is_admin %}
         <!--   Hints    -->
@@ -123,7 +150,7 @@
           scale="{{ object['scale'][0] }} {{ object['scale'][1] }} {{ object['scale'][2] }}"
           rotation="{{ object['rotation'][0] }} {{ object['rotation'][1] }} {{ object['rotation'][2] }}"
           {% if object["is_interactable"] %}
-            class="link"
+            class="mainLink"
             animation__onclick="property: position; dur: 0; startEvents: click"
             animation-on-click-run='blackboardData: {% raw json.dumps(object["animations_json"]["blackboardData"]) %}'
           {% end %}

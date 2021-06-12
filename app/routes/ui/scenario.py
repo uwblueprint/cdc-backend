@@ -63,6 +63,7 @@ class UIScenarioHandler(BaseUIHandler):
                 + "-navmesh"
                 + ".gltf"
             )
+            cursor_mode = int(self.get_argument("cursor_mode", "1"))
 
             await self.render(
                 "scene.html",
@@ -77,6 +78,7 @@ class UIScenarioHandler(BaseUIHandler):
                 cur_scene_idx=scene_number_int,
                 scenario_transitions=scenario_obj.transitions,
                 take_screenshot=False,
+                cursor_mode=cursor_mode,
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

@@ -51,6 +51,7 @@ class UIAdminSceneHandler(BaseAdminUIHandler):
                 json=json,
                 cur_scene_idx=scene_id_int,
                 take_screenshot=take_screenshot,
+                cursor_mode=1,
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

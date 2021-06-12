@@ -48,6 +48,7 @@ async function closePopup(numSeconds, is_last_object, el) {
   if (!sceneSolved) {
     setTimeout(function () {
       const primaryCamera = document.querySelector("#primaryCamera");
+      primaryCamera.setAttribute("look-controls", "enabled", true);
       primaryCamera.setAttribute("camera", "active", true);
       wipeBlackboard();
 

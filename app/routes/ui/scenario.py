@@ -76,6 +76,7 @@ class UIScenarioHandler(BaseUIHandler):
                 json=json,
                 cur_scene_idx=scene_number_int,
                 scenario_transitions=scenario_obj.transitions,
+                take_screenshot=False,
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

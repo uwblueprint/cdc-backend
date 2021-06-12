@@ -27109,10 +27109,10 @@ object-assign
           {
             key: "setObjects",
             value: function setObjects(self) {
-              var baseUrl = "https://backend-dev.jaydhulia.com/";
+              var baseUrl = "http://localhost:8888/";
               var baseEndpoint = "api/admin/v1/";
               var getUrl = baseUrl + baseEndpoint + "assets";
-              var assetsUrl = "https://backend-dev.jaydhulia.com/static/";
+              var assetsUrl = "http://localhost:8888/static/";
 
               _axios2.default
                 .get(getUrl, {
@@ -29689,7 +29689,7 @@ object-assign
           );
 
           _this.writeChanges = function () {
-            var baseUrl = "https://backend-dev.jaydhulia.com/";
+            var baseUrl = "http://localhost:8888/";
             var apiEndpointScene = AFRAME.scenes[0]
               .getAttribute("id")
               .replace("-scene", "");
@@ -29894,12 +29894,12 @@ object-assign
           {
             key: "getRequests",
             value: function getRequests(self) {
-              var baseUrl = "https://backend-dev.jaydhulia.com/";
+              var baseUrl = "http://localhost:8888/";
               var apiEndpointScene = AFRAME.scenes[0]
                 .getAttribute("id")
                 .replace("-scene", "");
               var baseEndpoint = "api/admin/v1/";
-              var assetsUrl = "https://backend-dev.jaydhulia.com/static/";
+              var assetsUrl = "http://localhost:8888/static/";
 
               var getUrl = baseUrl + baseEndpoint + "scene/" + apiEndpointScene;
               _axios2.default

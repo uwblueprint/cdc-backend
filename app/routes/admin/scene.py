@@ -3,6 +3,7 @@ from jsonschema import validate
 from library.api_schemas import (
     admin_scene_post_handler_schema,
     admin_scene_put_handler_schema,
+    admin_scene_screenshot_handler,
 )
 from library.postgres import (
     delete_scene_from_postgres,
@@ -116,5 +117,29 @@ class AdminScenesHandler(BaseAdminAPIHandler):
             response_dict = await get_scenes_from_postgres(self.db_session)
             await self.finish(response_dict)
 
+        except Exception as e:
+            self.write_error(status_code=500, message=str(e))
+
+
+class AdminSceneScreenshotHandler(BaseAdminAPIHandler):
+    """
+    Handle routes that have api/admin/v1/scene/{id}/screenshot
+    """
+
+    async def put(self, id):
+
+        try:
+            data = tornado.escape.json_decode(self.request.body)
+
+            # validate body
+            validate(data, schema=admin_scene_screenshot_handler)
+
+            response_message = await update_scene_from_postgres(
+                id, data, self.db_session
+            )
+            await self.finish(response_message)
+
+        except ValueError as e:
+            self.write_error(status_code=404, message=str(e))
         except Exception as e:
             self.write_error(status_code=500, message=str(e))

@@ -27,6 +27,7 @@ from routes.admin.scene import (
     AdminSceneDuplicateHandler,
     AdminSceneHandler,
     AdminScenePostHandler,
+    AdminSceneScreenshotHandler,
     AdminScenesHandler,
 )
 from routes.base import (
@@ -79,6 +80,7 @@ def get_routes():
             AdminObjectPutHandler,
         ),
         (r"/api/admin/v1/scene/([0-9]{1,16})/duplicate", AdminSceneDuplicateHandler),
+        (r"/api/admin/v1/scene/([0-9]{1,16})/screenshot", AdminSceneScreenshotHandler),
         (
             r"/static/(.*)",
             UIStaticHandler,

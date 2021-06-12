@@ -201,3 +201,12 @@ admin_aws_handler_body_schema = {
     "required": ["type"],
     "additionalProperties": False,
 }
+
+admin_scene_screenshot_handler = {
+    "type": "object",
+    "properties": {
+        "screenshot_url": {"type": "string"},
+    },
+    "required": ["screenshot_url"],
+    "additionalProperties": False,
+}

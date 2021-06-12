@@ -59,6 +59,7 @@
     "animations_json": {
       "blackboardData": {
         "componentType": "keypad",
+        "blackboardText": "Enter PIN:",
         "jsonData": {
           "password": "1234",
           "model": "numpad",
@@ -87,6 +88,8 @@
     "animations_json": {
       "blackboardData": {
         "componentType": "keypad",
+        "blackboardText": "Enter Password:",
+        "blackboardTextColor": "white",
         "jsonData": {
           "password": "abcde",
           "model": "basic",

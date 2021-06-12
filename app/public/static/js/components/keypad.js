@@ -15,6 +15,7 @@ AFRAME.registerComponent("keypad", {
     const password = data.password;
     const el = this.el;
     this.id = data.id;
+    let self = this;
     let is_last_object = false;
     if ("is_last_object" in data) {
       is_last_object = data.is_last_object;
@@ -41,11 +42,19 @@ AFRAME.registerComponent("keypad", {
       } else {
         const statusLabel = el.getAttribute("super-keyboard").label;
         if (statusLabel !== "SUCCESS") {
-          el.setAttribute("super-keyboard", {
-            label: "ERROR",
-            labelColor: "red",
+          let blackboardTextEl = document.querySelector("#blackboardText");
+          if (!self.data.hasOwnProperty("prevTextEl")) {
+            // only get value the first time.
+            self.data.prevTextEl = JSON.parse(
+              JSON.stringify(blackboardTextEl.getAttribute("text"))
+            );
+          }
+          blackboardTextEl.setAttribute("text", {
+            value: "ERROR",
+            color: "red",
+            wrapCount: "20",
           });
-          removeError(el);
+          removeError(self);
         }
       }
     });
@@ -83,27 +92,45 @@ AFRAME.registerComponent("keypad", {
       // not loaded yet, do nothing
     } else if (this.puzzleIsSolved === true) {
       // Already solved
+      let blackboardTextEl = document.querySelector("#blackboardText");
+      if (!this.data.hasOwnProperty("prevTextEl")) {
+        // only get value the first time.
+        this.data.prevTextEl = JSON.parse(
+          JSON.stringify(blackboardTextEl.getAttribute("text"))
+        );
+      }
+      blackboardTextEl.setAttribute("text", {
+        value: "SUCCESS",
+        color: "green",
+        wrapCount: "20",
+      });
       el.setAttribute("super-keyboard", {
-        label: "SUCCESS",
-        labelColor: "green",
         multipleInputs: true,
       });
       this.solvedPuzzleEntity.setAttribute("visible", "true");
     } else {
       // Not solved yet
-      el.setAttribute("super-keyboard", {
-        label: "Enter Password",
-        labelColor: "black",
-      });
+      let blackboardTextEl = document.querySelector("#blackboardText");
+      if (this.data.hasOwnProperty("prevTextEl")) {
+        blackboardTextEl.setAttribute("text", this.data.prevTextEl);
+      }
     }
   },
 });
 
-async function removeError(el) {
+async function removeError(self) {
   setTimeout(function () {
-    el.setAttribute("super-keyboard", {
-      label: "Enter Password",
-      labelColor: "black",
-    });
+    if (!self.puzzleIsSolved) {
+      let blackboardTextEl = document.querySelector("#blackboardText");
+      if (self.data.hasOwnProperty("prevTextEl")) {
+        blackboardTextEl.setAttribute("text", self.data.prevTextEl);
+      } else {
+        blackboardTextEl.setAttribute("text", {
+          value: "",
+          color: "white",
+          wrapCount: "20",
+        });
+      }
+    }
   }, 1.5 * 1000);
 }

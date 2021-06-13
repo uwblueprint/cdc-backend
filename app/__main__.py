@@ -16,7 +16,11 @@ from routes.admin.asset import (
     AdminAssetsHandler,
 )
 from routes.admin.aws import AdminUploadHandler
-from routes.admin.object import AdminObjectPostHandler, AdminObjectPutHandler
+from routes.admin.object import (
+    AdminObjectPostHandler,
+    AdminObjectPutHandler,
+    AdminPuzzlePutHandler,
+)
 from routes.admin.scenario import (
     AdminScenarioDuplicateHandler,
     AdminScenarioHandler,
@@ -78,6 +82,10 @@ def get_routes():
         (
             r"/api/admin/v1/scene/([0-9]{1,16})/object/([0-9]{1,16})",
             AdminObjectPutHandler,
+        ),
+        (
+            r"/api/admin/v1/scene/([0-9]{1,16})/object/([0-9]{1,16})/puzzle",
+            AdminPuzzlePutHandler,
         ),
         (r"/api/admin/v1/scene/([0-9]{1,16})/duplicate", AdminSceneDuplicateHandler),
         (r"/api/admin/v1/scene/([0-9]{1,16})/screenshot", AdminSceneScreenshotHandler),

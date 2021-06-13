@@ -29643,6 +29643,11 @@ object-assign
       }
 
       async function editBackground(sceneUrl, sceneBody) {
+        var backgroundModelChanged =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : false;
+
         _axios2.default
           .put(sceneUrl, sceneBody, {
             headers: {
@@ -29651,6 +29656,10 @@ object-assign
           })
           .then(function (response) {
             alert("Changes to the background were saved");
+            // if background model changed, also need to update screenshot
+            if (backgroundModelChanged) {
+              window.takeSceneScreenshot(response.data.s3_key);
+            }
           })
           .catch(function (error) {
             if (error.response) {
@@ -29720,6 +29729,7 @@ object-assign
               if (id.endsWith("-background")) {
                 var sceneBody = _this.state.sceneBody;
                 var hasChanged = false;
+                var backgroundModelChanged = false;
                 var changes = AFRAME.INSPECTOR.history.updates[id];
                 for (var prop in changes) {
                   if (
@@ -29739,13 +29749,14 @@ object-assign
                     var newAssetId = _this.state.linkToIdMap[changes[prop]];
                     if (sceneBody["background_id"] != newAssetId) {
                       hasChanged = true;
+                      backgroundModelChanged = true;
                       sceneBody["background_id"] = newAssetId;
                     }
                   }
                 }
                 if (hasChanged) {
                   _this.setState({ sceneBody: sceneBody });
-                  editBackground(getUrl, sceneBody);
+                  editBackground(getUrl, sceneBody, backgroundModelChanged);
                 }
               } else if (id.endsWith("-obj")) {
                 if ("delete" in AFRAME.INSPECTOR.history.updates[id]) {
@@ -29932,6 +29943,8 @@ object-assign
                   delete sceneBody.id;
                   delete sceneBody.hints;
                   delete sceneBody.object_ids;
+                  delete sceneBody.screenshot_url;
+                  delete sceneBody.s3_key;
                   self.setState({ objects: objects, sceneBody: sceneBody });
                 });
 

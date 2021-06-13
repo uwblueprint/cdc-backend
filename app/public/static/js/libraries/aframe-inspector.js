@@ -29652,7 +29652,9 @@ object-assign
           .put(sceneUrl, sceneBody, {
             headers: {
               "Content-Type": "application/json",
+              "X-Xsrftoken": getCookie("_xsrf"),
             },
+            withCredentials: true,
           })
           .then(function (response) {
             alert("Changes to the background were saved");

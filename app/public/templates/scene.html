@@ -182,6 +182,11 @@
     {% if is_admin %}
       const inspector = scene.components.inspector;
       const backgroundEl = document.getElementById("{{ scene_dict['background_details']['id'] }}-background");
+      let initial_load_js = false;
+      {% if take_screenshot %}
+          initial_load_js = true;
+      {% end %}
+
       scene.addEventListener('loaded', function () {
           {% if take_screenshot %}
           backgroundEl.addEventListener('model-loaded', function () {
@@ -190,22 +195,26 @@
           {% end %}
           inspector.openInspector();
       });
-      async function takeSceneScreenshot(){
-          const screenshot_canvas = scene.components.screenshot.getCanvas('perspective');
-          await uploadScreenshotToS3(screenshot_canvas.toDataURL("image/jpeg"));
+      async function takeSceneScreenshot(s3_key=""){
+        if(initial_load_js || s3_key !== ""){
+            const screenshot_canvas = scene.components.screenshot.getCanvas('perspective');
+            await uploadScreenshotToS3(screenshot_canvas.toDataURL("image/jpeg"), s3_key);
+          }
       }
-      async function uploadScreenshotToS3(canvasDataUrl){
+      async function uploadScreenshotToS3(canvasDataUrl, s3_key){
          const blobData = dataURItoBlob(canvasDataUrl);
-         await sendPresignedData(blobData);
+         await sendPresignedData(blobData, s3_key);
       }
-      async function sendPresignedData(blobData){
+      async function sendPresignedData(blobData, s3_key){
           const xhr = new XMLHttpRequest();
           xhr.responseType = "json";
           xhr.open("POST", "/api/admin/v1/upload");
           xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.setRequestHeader("X-Xsrftoken", getCookieScene("_xsrf"));
           const requestData = {
               type: "image",
-              extension: "jpeg"
+              extension: "jpeg",
+              s3_key: s3_key
           }
           xhr.onload  = function() {
               const jsonResponse = xhr.response;
@@ -225,10 +234,12 @@
                       xhr_update_scene.responseType = "json";
                       xhr_update_scene.open("PUT", "/api/admin/v1/scene/" + {{ scene_dict['id'] }} + "/screenshot");
                       xhr_update_scene.setRequestHeader("Content-Type", "application/json");
+                      xhr_update_scene.setRequestHeader("X-Xsrftoken", getCookieScene("_xsrf"));
                       const requestData_update = {
                           screenshot_url: jsonResponse.s3_key
                       }
                       xhr_update_scene.send(JSON.stringify(requestData_update));
+                      initial_load_js = false;
                   }
                   {# else request failed, not much we can do at this point, no point displaying this to admins #}
                   {# it will just try again on next load since scene's screenshot URL will still be empty #}
@@ -236,6 +247,10 @@
               xhr_s3.send(formData);
           };
           xhr.send(JSON.stringify(requestData));
+      }
+      function getCookieScene(name) {
+          let r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+          return r ? r[1] : undefined;
       }
 
       function dataURItoBlob(dataURI) {

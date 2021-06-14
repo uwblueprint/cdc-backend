@@ -77,7 +77,9 @@ async def get_scene_from_postgres(scene_id: str, session, update_cache=False):
         response["screenshot_url"] = (
             config.get("backend_domain") + "/static/img/scene-generic.jpeg"
         )
+        response["s3_key"] = ""
     else:
+        response["s3_key"] = response["screenshot_url"]
         response["screenshot_url"] = (
             config.get("asset.prefix_url") + response["screenshot_url"]
         )

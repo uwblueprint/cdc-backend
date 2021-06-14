@@ -196,7 +196,7 @@
           inspector.openInspector();
       });
       async function takeSceneScreenshot(s3_key=""){
-        if(initial_load_js || (!initial_load_js && s3_key !== "")){
+        if(initial_load_js || s3_key !== ""){
             const screenshot_canvas = scene.components.screenshot.getCanvas('perspective');
             await uploadScreenshotToS3(screenshot_canvas.toDataURL("image/jpeg"), s3_key);
           }
@@ -251,7 +251,7 @@
       function getCookieScene(name) {
           let r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
           return r ? r[1] : undefined;
-        }
+      }
 
       function dataURItoBlob(dataURI) {
           const binary = atob(dataURI.split(',')[1]);

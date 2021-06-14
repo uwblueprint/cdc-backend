@@ -187,6 +187,16 @@ admin_object_handler_schema = {
     "additionalProperties": False,
 }
 
+admin_puzzle_handler_schema = {
+    "type": "object",
+    "properties": {
+        "is_interactable": {"type": "boolean"},
+        "animations_json": {"type": "object"},
+    },
+    "required": ["is_interactable", "animations_json"],
+    "additionalProperties": False,
+}
+
 admin_aws_handler_body_schema = {
     "type": "object",
     "properties": {

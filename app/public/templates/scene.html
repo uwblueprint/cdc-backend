@@ -182,7 +182,7 @@
               {% if is_last_scene != "true" %}
                 transitionData = {% raw json.dumps(scenario_transitions[cur_scene_idx + 1]) %};
               {% end %}
-              nextURL = "/{{ scenario_friendly_name }}/" + next_scene_idx;
+              nextURL = "/{{ scenario_friendly_name }}/" + next_scene_idx + "?cursor_mode=" + {{ cursor_mode }};
             }
 
             transitionData["transitionURL"] = nextURL;

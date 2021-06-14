@@ -63,7 +63,10 @@ class UIScenarioHandler(BaseUIHandler):
                 + "-navmesh"
                 + ".gltf"
             )
-            cursor_mode = int(self.get_argument("cursor_mode", "1"))
+            try:
+                cursor_mode = int(self.get_argument("cursor_mode", "1"))
+            except ValueError:
+                self.write_error(status_code=500, message="Internal Server Error")
 
             await self.render(
                 "scene.html",

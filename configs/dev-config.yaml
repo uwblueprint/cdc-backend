@@ -24,7 +24,7 @@ asset:
 inspector_url: /static/js/libraries/aframe-inspector.js
 
 default_data:
-  introdution_data: { "header_text": "Welcome to the escape room." }
+  introduction_data: { "header_text": "Welcome to the escape room." }
   conclusion_data:
     {
       "header_text": "Congratulations, you escaped!",

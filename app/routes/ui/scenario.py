@@ -67,6 +67,7 @@ class UIScenarioHandler(BaseUIHandler):
                 cursor_mode = int(self.get_argument("cursor_mode", "1"))
             except ValueError:
                 self.write_error(status_code=500, message="Internal Server Error")
+                return
 
             await self.render(
                 "scene.html",

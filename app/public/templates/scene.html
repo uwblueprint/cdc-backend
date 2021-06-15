@@ -45,7 +45,7 @@
           {% for object in scene_dict["objects"] %}
           <!--  TODO: deal with multiple objects of same asset type  -->
           {% if not cursor_mode == 1 %}
-            <img id="crosshairs" crossorigin="anonymous" src="{{ asset_prefix_url }}img/crosshairs.png"/>
+            <img id="crosshairs" crossorigin="anonymous" src="/static/img/crosshairs.png"/>
           {% end %}
           <a-asset-item
             id="{{ object['asset_id'] }}-asset-src"

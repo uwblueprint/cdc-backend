@@ -1,5 +1,6 @@
 import asyncio
 import os
+import ssl
 import uuid
 
 import firebase_admin
@@ -148,12 +149,14 @@ def main():
 
     port = config.get("tornado.port")
     if port == 443:
+        ssl_ctx = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+        ssl_ctx.load_cert_chain(
+            f"{os.path.dirname(__file__)}/../secrets/domain.crt",
+            f"{os.path.dirname(__file__)}/../secrets/domain.key",
+        )
         server = tornado.httpserver.HTTPServer(
             app,
-            ssl_options={
-                "certfile": f"{os.path.dirname(__file__)}/../secrets/domain.crt",
-                "keyfile": f"{os.path.dirname(__file__)}/../secrets/domain.key",
-            },
+            ssl_options=ssl_ctx,
         )
         server.bind(port, address=config.get("tornado.address"))
     else:

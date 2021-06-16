@@ -180,6 +180,7 @@
     }
 
     {% if is_admin %}
+      document.domain = "jaydhulia.com";
       const inspector = scene.components.inspector;
       const backgroundEl = document.getElementById("{{ scene_dict['background_details']['id'] }}-background");
       let initial_load_js = false;

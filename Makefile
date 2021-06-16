@@ -1,6 +1,6 @@
 SHELL:=/bin/bash
 
-CONFIG_FILE=configs/dev-config.yaml
+CONFIG_FILE=secrets/dev-ec2-config.yaml
 PYTHON_PATH=.
 
 .PHONY: install

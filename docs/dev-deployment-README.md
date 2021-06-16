@@ -32,4 +32,5 @@ Make sure you have sufficient AWS permissions for the actions required. If you h
 1. Run the server using `tmux`:
    - `tmux`
    - `. ./env/bin/activate`
+   - `ulimit -n 70000`
    - `PYTHONPATH=. CONFIG_PATH=./configs/dev-ec2-config.yaml python3.9 app/__main__.py`

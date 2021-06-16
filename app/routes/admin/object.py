@@ -3,6 +3,7 @@ from jsonschema import validate
 from library.api_schemas import admin_object_handler_schema, admin_puzzle_handler_schema
 from library.postgres import (
     delete_object_in_postgres,
+    get_object_from_postgres,
     post_object_to_postgres,
     update_object_in_postgres,
 )
@@ -72,10 +73,24 @@ class AdminObjectPutHandler(BaseAdminAPIHandler):
             self.write_error(status_code=500, message=str(e))
 
 
-class AdminPuzzlePutHandler(BaseAdminAPIHandler):
+class AdminPuzzleHandler(BaseAdminAPIHandler):
     """
     Handle routes that have api/admin/v1/scene/{scene_id}/object/{object_id}/puzzle
     """
+
+    async def get(self, scene_id, object_id):
+        try:
+            response_object = await get_object_from_postgres(object_id, self.db_session)
+            response_message = {
+                "name": response_object["name"],
+                "animations_json": response_object["animations_json"],
+                "is_interactable": response_object["is_interactable"],
+            }
+            await self.finish(response_message)
+        except ValueError as e:
+            self.write_error(status_code=404, message=str(e))
+        except Exception as e:
+            self.write_error(status_code=500, message=str(e))
 
     async def put(self, scene_id, object_id):
         try:

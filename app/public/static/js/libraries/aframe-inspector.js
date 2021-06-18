@@ -27316,33 +27316,19 @@ object-assign
 
       var isSingleProperty = AFRAME.schema.isSingleProperty;
 
-      function getCookie(name) {
-        var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
-        return r ? r[1] : undefined;
-      }
-
       var GltfPopUp = (function (_React$Component) {
         _inherits(GltfPopUp, _React$Component);
 
         function GltfPopUp(props) {
           _classCallCheck(this, GltfPopUp);
 
-          var _this = _possibleConstructorReturn(
+          return _possibleConstructorReturn(
             this,
             (GltfPopUp.__proto__ || Object.getPrototypeOf(GltfPopUp)).call(
               this,
               props
             )
           );
-
-          _this.selectPuzzleType = function (obj) {
-            _this.props.selectPuzzleType(obj);
-          };
-
-          _this.state = {
-            newText: "",
-          };
-          return _this;
         }
 
         _createClass(GltfPopUp, [
@@ -27353,60 +27339,16 @@ object-assign
             },
           },
           {
-            key: "saveModal",
-            value: function saveModal() {
-              this.props.savePopup();
-            },
-          },
-          {
-            key: "toggleButton",
-            value: function toggleButton() {
-              this.props.toggleButton();
-            },
-          },
-          {
-            key: "handleRemove",
-            value: function handleRemove(text) {
-              this.props.handleRemove(text);
-            },
-          },
-          {
-            key: "handleChange",
-            value: function handleChange(event) {
-              this.setState({ newText: event.target.value });
-            },
-          },
-          {
-            key: "handleAdd",
-            value: function handleAdd(text) {
-              this.props.handleAdd(this.state.newText);
-            },
-          },
-          {
             key: "componentDidMount",
             value: function componentDidMount() {
               this.closeModal = this.closeModal.bind(this);
-              this.saveModal = this.saveModal.bind(this);
-              this.selectPuzzleType = this.selectPuzzleType.bind(this);
-              this.toggleButton = this.toggleButton.bind(this);
-              this.handleRemove = this.handleRemove.bind(this);
-              this.handleChange = this.handleChange.bind(this);
-              this.handleAdd = this.handleAdd.bind(this);
             },
           },
           {
             key: "render",
             value: function render() {
-              var puzzleTypeList = [
-                { value: "text-pane", label: "text-pane" },
-                { value: "rotation-controls", label: "rotation-controls" },
-                { value: "keypad", label: "keypad" },
-                { value: "visual-pane", label: "visual-pane" },
-                { value: "jigsaw-puzzle", label: "jigsaw-puzzle" },
-                { value: "ordered-puzzle", label: "ordered-puzzle" },
-              ];
-              var isObjChecked = this.props.isObjChecked;
-
+              // var iframeLink = "http://localhost:3000/admin/scene/" + this.props.sceneId + "/object/" + this.props.objectId;
+              var iframeLink = "https://admin-dev.jaydhulia.com/admin";
               return _react2.default.createElement(
                 "div",
                 {
@@ -27418,7 +27360,7 @@ object-assign
                   "div",
                   {
                     className: "w3-modal-content w3-card-4 w3-animate-zoom",
-                    style: { maxWidth: "600px" },
+                    style: { width: "70%", height: "70%" },
                   },
                   _react2.default.createElement(
                     "div",
@@ -27437,10 +27379,11 @@ object-assign
                   ),
                   _react2.default.createElement(
                     "div",
-                    null,
+                    { style: { height: "800px" } },
                     _react2.default.createElement("iframe", {
-                      src: "https://admin-dev.jaydhulia.com/admin",
+                      src: iframeLink,
                       title: "Test",
+                      style: { height: "100%", width: "95%" },
                     })
                   ),
                   _react2.default.createElement(
@@ -27457,15 +27400,6 @@ object-assign
                         className: "w3-button w3-red",
                       },
                       "Cancel"
-                    ),
-                    _react2.default.createElement(
-                      "button",
-                      {
-                        onClick: this.saveModal,
-                        type: "button",
-                        className: "w3-button w3-green",
-                      },
-                      "Save"
                     )
                   )
                 )
@@ -27564,14 +27498,6 @@ object-assign
                   whichOptions = _this2.state.backgroundList;
                 }
                 var objId = _this2.props.entity.getAttribute("id"); //.replace("-obj", "");
-                var isObjChecked = false;
-                var objData = null;
-                if (objId in _this2.state.idToCheckedMap) {
-                  isObjChecked = _this2.state.idToCheckedMap[objId];
-                }
-                if (objId in _this2.state.idToDataMap) {
-                  objData = _this2.state.idToDataMap[objId];
-                }
                 return _react2.default.createElement(
                   "div",
                   null,
@@ -27589,14 +27515,11 @@ object-assign
                   }),
                   _react2.default.createElement(GltfPopUp, {
                     popupView: _this2.state.popupView,
-                    isObjChecked: isObjChecked,
+                    sceneId: AFRAME.scenes[0]
+                      .getAttribute("id")
+                      .replace("-scene", ""),
+                    objectId: objId.replace("-obj", ""),
                     closePopup: _this2.closePopup,
-                    savePopup: _this2.savePopup,
-                    toggleButton: _this2.toggleButton,
-                    objData: objData,
-                    handleRemove: _this2.handleRemove,
-                    handleAdd: _this2.handleAdd,
-                    selectPuzzleType: _this2.selectPuzzleType,
                   }),
                   objId.endsWith("-obj")
                     ? _react2.default.createElement(
@@ -27712,52 +27635,6 @@ object-assign
                     assetLinkToTypeMap: assetLinkToTypeMap,
                   });
                 });
-
-              getUrl = baseUrl + baseEndpoint + "scene/" + apiEndpointScene;
-              _axios2.default
-                .get(getUrl, {
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                })
-                .catch(function (error) {
-                  if (error.response) {
-                    alert(
-                      "URL: " +
-                        getUrl +
-                        "\nTitle: " +
-                        error.response.data.title +
-                        "\nMessage: " +
-                        error.response.data.message
-                    );
-                  } else if (error.request) {
-                    alert("No response from URL: " + getUrl);
-                  } else {
-                    alert(error.message);
-                  }
-                })
-                .then(function (response) {
-                  var idToCheckedMap = new Map();
-                  var idToDataMap = new Map();
-                  var originalDataMap = new Map();
-                  var objects = response.data.objects;
-                  for (var i = 0; i < objects.length; i++) {
-                    idToCheckedMap[objects[i].id + "-obj"] =
-                      objects[i].is_interactable;
-                    idToDataMap[objects[i].id + "-obj"] =
-                      objects[i].animations_json.blackboardData;
-                    originalDataMap[objects[i].id + "-obj"] = JSON.parse(
-                      JSON.stringify(objects[i].animations_json.blackboardData)
-                    );
-                    // if objects[i].is_inter then check puzzle type and put into map
-                    // if puzzle type is text-pane, then set based json_data
-                  }
-                  self.setState({
-                    idToCheckedMap: idToCheckedMap,
-                    idToDataMap: idToDataMap,
-                    originalDataMap: originalDataMap,
-                  });
-                });
             },
           },
           {
@@ -27767,11 +27644,6 @@ object-assign
 
               this.showPopup = this.showPopup.bind(this);
               this.closePopup = this.closePopup.bind(this);
-              this.savePopup = this.savePopup.bind(this);
-              this.toggleButton = this.toggleButton.bind(this);
-              this.handleRemove = this.handleRemove.bind(this);
-              this.handleAdd = this.handleAdd.bind(this);
-              this.selectPuzzleType = this.selectPuzzleType.bind(this);
 
               var clipboard = new _clipboard2.default(
                 '[data-action="copy-component-to-clipboard"]',
@@ -27829,71 +27701,9 @@ object-assign
           {
             key: "closePopup",
             value: function closePopup() {
-              var idToDataMap = this.state.idToDataMap;
-              var originalDataMap = this.state.originalDataMap;
-              var id = this.props.entity.getAttribute("id");
-              idToDataMap[id] = JSON.parse(JSON.stringify(originalDataMap[id]));
-              this.setState({ idToDataMap: idToDataMap, popupView: "none" });
-            },
-          },
-          {
-            key: "savePopup",
-            value: function savePopup() {
-              // request to save
               this.setState({ popupView: "none" });
             },
-          },
-          {
-            key: "handleRemove",
-            value: function handleRemove(text) {
-              var idToDataMap = this.state.idToDataMap;
-              var id = this.props.entity.getAttribute("id");
-              var newList = idToDataMap[id].jsonData.data.filter(function (
-                item
-              ) {
-                return item.text !== text;
-              });
-              idToDataMap[id].jsonData.data = newList;
-              this.setState({ idToDataMap: idToDataMap });
-            },
-          },
-          {
-            key: "handleAdd",
-            value: function handleAdd(text) {
-              var idToDataMap = this.state.idToDataMap;
-              var id = this.props.entity.getAttribute("id");
-              if (!idToDataMap[id].jsonData.data) {
-                idToDataMap[id].jsonData.data = [{ text: text }];
-              } else {
-                var newList = idToDataMap[id].jsonData.data.concat({
-                  text: text,
-                });
-                idToDataMap[id].jsonData.data = newList;
-              }
-              this.setState({ idToDataMap: idToDataMap });
-            },
-          },
-          {
-            key: "toggleButton",
-            value: function toggleButton() {
-              var objId = this.props.entity.getAttribute("id"); //.replace("-obj", "");
-              var idToCheckedMap = this.state.idToCheckedMap;
-              if (!(objId in this.state.idToCheckedMap)) {
-                idToCheckedMap[objId] = true;
-              } else {
-                idToCheckedMap[objId] = !this.state.idToCheckedMap[objId];
-              }
-              this.setState({ idToCheckedMap: idToCheckedMap });
-            },
-          },
-          {
-            key: "selectPuzzleType",
-            value: function selectPuzzleType(obj) {
-              var objId = this.props.entity.getAttribute("id"); //.replace("-obj", "");
-              var idToDataMap = this.state.idToDataMap;
-              idToDataMap[objId].componentType = obj.value;
-              this.setState({ idToDataMap: idToDataMap });
-            },
+
             /**
              * Render propert(ies) of the component.
              */
@@ -30316,14 +30126,25 @@ object-assign
       }
 
       async function editBackground(sceneUrl, sceneBody) {
+        var backgroundModelChanged =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : false;
+
         _axios2.default
           .put(sceneUrl, sceneBody, {
             headers: {
               "Content-Type": "application/json",
+              "X-Xsrftoken": getCookie("_xsrf"),
             },
+            withCredentials: true,
           })
           .then(function (response) {
             alert("Changes to the background were saved");
+            // if background model changed, also need to update screenshot
+            if (backgroundModelChanged) {
+              window.takeSceneScreenshot(response.data.s3_key);
+            }
           })
           .catch(function (error) {
             if (error.response) {
@@ -30393,6 +30214,7 @@ object-assign
               if (id.endsWith("-background")) {
                 var sceneBody = _this.state.sceneBody;
                 var hasChanged = false;
+                var backgroundModelChanged = false;
                 var changes = AFRAME.INSPECTOR.history.updates[id];
                 for (var prop in changes) {
                   if (
@@ -30412,13 +30234,14 @@ object-assign
                     var newAssetId = _this.state.linkToIdMap[changes[prop]];
                     if (sceneBody["background_id"] != newAssetId) {
                       hasChanged = true;
+                      backgroundModelChanged = true;
                       sceneBody["background_id"] = newAssetId;
                     }
                   }
                 }
                 if (hasChanged) {
                   _this.setState({ sceneBody: sceneBody });
-                  editBackground(getUrl, sceneBody);
+                  editBackground(getUrl, sceneBody, backgroundModelChanged);
                 }
               } else if (id.endsWith("-obj")) {
                 if ("delete" in AFRAME.INSPECTOR.history.updates[id]) {
@@ -30606,6 +30429,8 @@ object-assign
                   delete sceneBody.id;
                   delete sceneBody.hints;
                   delete sceneBody.object_ids;
+                  delete sceneBody.screenshot_url;
+                  delete sceneBody.s3_key;
                   self.setState({ objects: objects, sceneBody: sceneBody });
                 });
 

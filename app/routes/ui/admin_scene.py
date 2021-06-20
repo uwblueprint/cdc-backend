@@ -39,7 +39,7 @@ class UIAdminSceneHandler(BaseAdminUIHandler):
                     take_screenshot = True
 
             await self.render(
-                "scene.html",
+                "scene_nav_mesh.html",
                 is_last_scene="false",
                 is_admin=True,
                 scenario_name="Edit Scene",

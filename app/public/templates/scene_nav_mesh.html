@@ -2,7 +2,7 @@
 <html lang="en">
   <!-- Page to allow creation of a nav-mesh for a scene -->
   <head>
-    <title>{{ scenario_dict["name"] }} - {{ scene_dict["name"] }}</title>
+    <title>Nav mesh</title>
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
 
     <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
@@ -13,7 +13,7 @@
       <a-scene
         cursor="rayOrigin:mouse"
         raycaster="objects: .link"
-        inspector-plugin-recast
+        inspector-plugin-recast="serviceURL: http://localhost:3000;"
       >
         <a-assets timeout="50000">
           {% for object in scene_dict["objects"] %}
@@ -34,9 +34,9 @@
         <a-gltf-model
           id="{{ scene_dict['background_details']['id'] }}-background"
           src="#{{ scene_dict['background_details']['id'] }}-asset-src"
-          position="{{ scene_dict['position'][0] }} {{ scene_dict['position'][1] }} {{ scene_dict['position'][2] }}"
-          scale="{{ scene_dict['scale'][0] }} {{ scene_dict['scale'][1] }} {{ scene_dict['scale'][2] }}"
-          rotation="{{ scene_dict['rotation'][0] }} {{ scene_dict['rotation'][1] }} {{ scene_dict['rotation'][2] }}"
+          position="0 -0.67 0"
+          scale="1 1 1"
+          rotation="0 0 0"
         ></a-gltf-model>
 
         <a-entity

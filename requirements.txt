@@ -148,7 +148,7 @@ tornado==6.1
     # via -r requirements.in
 uritemplate==3.0.1
     # via google-api-python-client
-urllib3==1.26.4
+urllib3==1.26.5
     # via
     #   botocore
     #   requests

@@ -61,7 +61,7 @@
         "jsonData": {
           "data": [
             {
-              "text": "You are not really in the mood to be talking to Karen right now. Lets go back to our desk."
+              "text": "You are not really in the mood to be talking to Karen right now. Let's go back to our desk."
             }
           ],
           "currPosition": 0
@@ -118,7 +118,7 @@
         "jsonData": {
           "data": [
             {
-              "text": "Whos math textbook is this? There is chicken scratch writing all over the pages inside.",
+              "text": "Who's math textbook is this? There is chicken scratch writing all over the pages inside.",
               "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f60ae6b842774e8f8a12fd3b3958feb6.jpg"
             },
             {

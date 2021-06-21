@@ -64,8 +64,8 @@
       }
     },
     "hints": [
-      "generic hint for all scenes",
-      "scene specific hint 1",
+      "generic hint for all scenes testing out single quotes ' ' '",
+      "scene specific hint ' ' ' 1",
       "scene specific hint 2",
       "scene specific hint 3"
     ],

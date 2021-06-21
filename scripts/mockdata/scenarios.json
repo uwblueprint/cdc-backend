@@ -48,7 +48,7 @@
   {
     "name": "Teacher Escape Room",
     "friendly_name": "teacher-escape-room",
-    "description": "A teacher at ABC High is going through a tough divorce at home. At school, they are struggling to keep up with the new students and their childish ways. They realize they did not prepare a lecture plan for today. Find out what they do next in this escape room!",
+    "description": "A teacher at ABC High is going through a tough divorce at home. Teacher is testing whether single quotes ' work. At school, they are struggling to keep up with the new students and their childish ways. They realize they did not prepare a lecture plan for today. Find out what they do next in this escape room!",
     "scene_ids": [3, 2],
     "is_published": true,
     "is_previewable": true,
@@ -67,7 +67,7 @@
       {
         "data": [
           {
-            "text": "Introduction: text and an image",
+            "text": "Introduction: text and an image. Jay's test",
             "imageSrc": "/static/img/lightOn.png"
           },
           {
@@ -84,7 +84,7 @@
       {
         "data": [
           {
-            "text": "Transition from scene 0 to scene 1: It has just text, no images."
+            "text": "Transition from scene 0 to scene 1: It has just text, a single quote ' , and no images."
           }
         ],
         "currPosition": 0
@@ -93,7 +93,7 @@
         "data": [
           { "text": "just text, no images" },
           {
-            "text": "Conclusion: ANOTHA ONE",
+            "text": "Conclusion: ANOTHA ONE with a test for a single quote ' ",
             "imageSrc": "/static/img/lightOn.png"
           }
         ],

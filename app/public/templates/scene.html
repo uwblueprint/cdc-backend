@@ -131,11 +131,6 @@
         {% end %}
       </a-scene>
       <script>
-        function htmlDecode(input) {
-            const doc = new DOMParser().parseFromString(input, "text/html");
-            console.log(doc.documentElement.textContent);
-            return doc.documentElement.textContent;
-        }
         const scene = document.querySelector('a-scene');
         // Transition logic only needed for non-admins
         {% if not is_admin %}

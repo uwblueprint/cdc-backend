@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Living Room - Sample",
+    "description": "Sample escape room at home",
+    "object_ids": [],
+    "position": [-11.53, 0.03, 0],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0.0, 0.0, 0.0],
+    "background_id": 13,
+    "camera_properties": {
+      "position": [-0.654, 3.6, -0.271],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": ["Hint goes here"],
+    "screenshot_url": ""
+  }
+]

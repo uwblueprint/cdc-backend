@@ -17,7 +17,11 @@
         "position": [0, -1, -1]
       }
     },
-    "hints": ["Hint goes here"],
+    "hints": [
+      "Why am I so anxious all of a sudden? Is there a test I forgot to prepare for...?",
+      "I'm so bad at art it's laughable.",
+      "Dates are always something that I forget. It's probably why I'm so stressed now."
+    ],
     "screenshot_url": ""
   }
 ]

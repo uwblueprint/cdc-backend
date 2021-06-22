@@ -3,12 +3,12 @@
     "name": "Living Room - Sample",
     "description": "Sample escape room at home",
     "object_ids": [],
-    "position": [-11.53, 0.03, 0],
+    "position": [0, 0.2, 10],
     "scale": [0.1, 0.1, 0.1],
-    "rotation": [0.0, 0.0, 0.0],
+    "rotation": [0.0, 90.0, 0.0],
     "background_id": 13,
     "camera_properties": {
-      "position": [-0.654, 3.6, -0.271],
+      "position": [2.84, 3.6, 6.145],
       "look_controls": true,
       "wasd_controls": true,
       "cursor_properties": {

@@ -31,17 +31,20 @@
           {
             "text": "The bell rings and you grab your books and shove them in your bag. Slinging the bag over your shoulder, you quickly leave the class. Thank god that class is over with, and you step outside for a breather."
           },
-          { "text": "Congratulations, you have escaped!" }
+          {
+            "text": "You decide to go home early and just relax. So you start heading home while humming the new song your favourite artist just dropped."
+          },
+          {
+            "text": "You finally arrive home. Time to chill out."
+          },
+          {
+            "text": "Your parents are in the living room. If you talk to them, they will start asking a million questions about why you left school early. Leave the room without talking to the parents."
+          }
         ],
         "currPosition": 0
       },
       {
-        "data": [
-          {
-            "text": "TODO"
-          },
-          { "text": "TODO2" }
-        ],
+        "data": [{ "text": "Congratulations, you have escaped!" }],
         "currPosition": 0
       }
     ]

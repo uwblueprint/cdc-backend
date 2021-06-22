@@ -2,7 +2,7 @@
   {
     "name": "Living Room - Sample",
     "description": "Sample escape room at home",
-    "object_ids": [],
+    "object_ids": [19, 20],
     "position": [0, 0.2, 10],
     "scale": [0.1, 0.1, 0.1],
     "rotation": [0.0, 90.0, 0.0],

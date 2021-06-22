@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Shelf",
+    "position": [-9.781, 0.804, 2.979],
+    "scale": [2.258, 2.258, 2.258],
+    "rotation": [0, 90, 0],
+    "asset_id": 14,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Openbook",
+    "position": [-9.781, 2.874, 2.979],
+    "scale": [0.014, 0.014, 0.014],
+    "rotation": [0, 180, 0],
+    "asset_id": 15,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.08, 0.08, 0.08]
+        }
+      }
+    }
+  }
+]

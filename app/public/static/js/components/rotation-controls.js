@@ -21,7 +21,7 @@ AFRAME.registerComponent("rotation-controls", {
 
     let childEl = document.getElementById(childId);
     el.setAttribute("gltf-model", childEl.getAttribute("src"));
-    el.setAttribute("scale", childEl.getAttribute("scale"));
+
     el.setAttribute("rotation", childEl.getAttribute("rotation"));
 
     // TODO: Is scaling needed?
@@ -33,6 +33,15 @@ AFRAME.registerComponent("rotation-controls", {
       });
     } else {
       el.setAttribute("position", { x: 0, y: 2, z: 0.5 });
+    }
+    if (data.hasOwnProperty("scale")) {
+      el.setAttribute("scale", {
+        x: data.scale[0],
+        y: data.scale[1],
+        z: data.scale[2],
+      });
+    } else {
+      el.setAttribute("scale", childEl.getAttribute("scale"));
     }
 
     el.addEventListener("loaded", function (e) {

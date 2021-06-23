@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("/static/css/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("/static/css/Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: "DarkerGrotesque-Regular";
+  src: url("/static/css/Darker_Grotesque/DarkerGrotesque-Regular.ttf");
+}
+
+.page-holder {
+  min-height: 100vh;
+}
+
+.bg-cover {
+  background-size: cover !important;
+}
+
+.base-container {
+  padding-bottom: 187.32px;
+  padding-left: 127.41px;
+  height: 60vh;
+}
+
+.welcome-to-text {
+  font-family: Poppins-Regular !important;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 54px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.escape-room-text {
+  font-family: Poppins-Bold !important;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 65px;
+  line-height: 150px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.slanted {
+  transform: rotate(-18.07deg);
+}
+
+.slanted-play-button {
+  line-height: 54px;
+  transform: rotate(-18deg);
+}
+
+.slanted-play-button-img {
+  text-align: right;
+  float: right;
+}
+
+.play-button-text {
+  position: absolute;
+  right: 5px;
+  top: 50px;
+  font-family: Poppins-Regular !important;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 54px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  float: right;
+  color: #ffffff;
+
+  transform: rotate(-18deg);
+}
+
+.play-modal-title {
+  position: absolute;
+  width: 166px;
+  height: 38px;
+  left: 28px;
+  top: 28px;
+
+  /* Header / Modal Header */
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 38px;
+
+  /* Grey / Grey 9 */
+
+  color: #1a1f26;
+}
+
+.play-modal-body {
+  position: absolute;
+  width: 356px;
+  height: 54px;
+  left: 28px;
+  top: 90px;
+
+  /* Body / Body 1 */
+
+  font-family: DarkerGrotesque-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+
+  /* Grey / Grey 8 */
+
+  color: #1e2b3e;
+}
+
+.skip-button {
+  position: absolute;
+  left: 65px;
+  top: 161px;
+  width: 133px;
+  height: 44px;
+  background: #d5e1ee;
+  border-radius: 4px;
+}
+
+.start-button {
+  position: absolute;
+  width: 133px;
+  height: 44px;
+  left: 210px;
+  top: 161px;
+  background: #ec4e55;
+  border-radius: 4px;
+}
+
+.start-button-text {
+  font-family: DarkerGrotesque-Regular;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.modal-dialog {
+  width: 408px;
+  height: 233px;
+  /* Grey / White */
+
+  background: #ffffff;
+  border-radius: 4px;
+}
+
+.skip-button-text {
+  font-family: DarkerGrotesque-Regular;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  align-items: center;
+  text-align: center;
+  color: #1e2b3e;
+}
+
+/*.escape-text-option-2 {*/
+/*    position: absolute;*/
+/*    width: 747px;*/
+/*    height: 150px;*/
+/*    left: 108.22px;*/
+/*    top: 705.08px;*/
+/*    font-family: Poppins-Bold !important;*/
+/*    font-style: normal;*/
+/*    font-weight: bold;*/
+/*    font-size: 65px;*/
+/*    line-height: 150px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    text-align: center;*/
+/*    color: #FFFFFF;*/
+/*    transform: rotate(-18.07deg);*/
+/*}*/
+
+/*.welcome-to-text-option-2 {*/
+/*    position: absolute;*/
+/*    width: 220px;*/
+/*    height: 54px;*/
+/*    left: 91.41px;*/
+/*    top: 663.23px;*/
+/*    !*594.99*!*/
+/*    font-family: Poppins-Regular !important;*/
+/*    font-style: normal;*/
+/*    font-weight: 600;*/
+/*    font-size: 36px;*/
+/*    line-height: 54px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    text-align: center;*/
+/*    color: #FFFFFF;*/
+/*    transform: rotate(-18.07deg);*/
+/*}*/

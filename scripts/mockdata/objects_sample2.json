@@ -85,5 +85,31 @@
         }
       }
     }
+  },
+  {
+    "name": "Woman",
+    "position": [-7.883, 0.825, 5.244],
+    "scale": [2, 2, 2],
+    "rotation": [0, 0, 0],
+    "asset_id": 19,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You are too scared to approach your parents right now."
+            },
+            {
+              "text": "Try and find a way out of the room and avoid the parents."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
   }
 ]

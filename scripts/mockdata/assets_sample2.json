@@ -28,5 +28,10 @@
     "name": "Jenga",
     "obj_type": "object",
     "s3_key": "assets/jenga.glb"
+  },
+  {
+    "name": "Woman",
+    "obj_type": "object",
+    "s3_key": "assets/woman.glb"
   }
 ]

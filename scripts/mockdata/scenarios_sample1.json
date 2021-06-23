@@ -44,7 +44,12 @@
         "currPosition": 0
       },
       {
-        "data": [{ "text": "Congratulations, you have escaped!" }],
+        "data": [
+          {
+            "text": "You have escaped the living room. You finally remember now. You have an art project due on May 26."
+          },
+          { "text": "Congratulations, you have escaped!" }
+        ],
         "currPosition": 0
       }
     ]

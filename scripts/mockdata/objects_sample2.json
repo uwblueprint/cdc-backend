@@ -12,7 +12,7 @@
   },
   {
     "name": "Openbook",
-    "position": [-9.781, 2.874, 2.979],
+    "position": [-9.781, 2.874, 3.666],
     "scale": [0.014, 0.014, 0.014],
     "rotation": [0, 180, 0],
     "asset_id": 15,
@@ -25,6 +25,63 @@
         "jsonData": {
           "position": [0, 0, 5],
           "scale": [0.08, 0.08, 0.08]
+        }
+      }
+    }
+  },
+  {
+    "name": "Books",
+    "position": [-9.773, 4.767, 3.9],
+    "scale": [2.277, 2.277, 2.277],
+    "rotation": [0, 90, 0],
+    "asset_id": 16,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [5, 5, 5]
+        }
+      }
+    }
+  },
+  {
+    "name": "Rubiks Cube",
+    "position": [-9.719, 3.934, 3.877],
+    "scale": [0.001, 0.001, 0.001],
+    "rotation": [-0.293, -0.042, 0],
+    "asset_id": 17,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.005, 0.005, 0.005]
+        }
+      }
+    }
+  },
+  {
+    "name": "Jenga",
+    "position": [-9.798, 3.926, 2.9],
+    "scale": [0.106, 0.106, 0.106],
+    "rotation": [0, 90, 0],
+    "asset_id": 18,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.3, 0.3, 0.3]
         }
       }
     }

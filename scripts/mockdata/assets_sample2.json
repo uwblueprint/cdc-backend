@@ -13,5 +13,20 @@
     "name": "Open Book",
     "obj_type": "object",
     "s3_key": "assets/openbook.glb"
+  },
+  {
+    "name": "Books",
+    "obj_type": "object",
+    "s3_key": "assets/books.glb"
+  },
+  {
+    "name": "Rubiks Cube",
+    "obj_type": "object",
+    "s3_key": "assets/rubikscube.glb"
+  },
+  {
+    "name": "Jenga",
+    "obj_type": "object",
+    "s3_key": "assets/jenga.glb"
   }
 ]

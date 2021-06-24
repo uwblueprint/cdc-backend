@@ -18,20 +18,6 @@
   </head>
 
   <body>
-    {#
-    <h1>{{ scenario_introduction_data['header_text'] }}</h1>
-    #} {# <button id="playButton" onclick="playGame();">Play</button>#} {#
-    <script type="text/javascript">
-      #}
-      {#      function playGame() {#}
-      {#        let nextURL = "/{{ scenario_friendly_name }}/tutorial";#}
-      {#        alert("You are entering the tutorial.");#}
-      {#        window.location.replace(nextURL);#}
-      {#      }#}
-      {#
-    </script>
-    #}
-
     <!-- Background image -->
     <div
       style="background: url('/static/img/background_image.png')"
@@ -44,33 +30,43 @@
           <div class="p-1 slanted welcome-to-text">Welcome to</div>
           <div class="p-1 slanted escape-room-text">{{ scenario_name }}</div>
           <div
+            {#
             type="button"
+            #}
             class="slanted-play-button"
+            {#
             data-bs-toggle="modal"
+            #}
+            {#
             data-bs-target="#playModal"
+            #}
           >
             <img
+              type="button"
               src="/static/img/play_button.svg"
               class="slanted-play-button-img"
+              data-bs-toggle="modal"
+              data-bs-target="#playModal"
             />
-            <div class="play-button-text">Play</div>
+            <div
+              type="button"
+              class="play-button-text"
+              data-bs-toggle="modal"
+              data-bs-target="#playModal"
+            >
+              Play
+            </div>
           </div>
         </div>
       </div>
+      <div type="button" data-bs-toggle="modal" data-bs-target="#helpModal">
+        <img
+          src="/static/img/help_question.svg"
+          class="help-question-icon btn btn-custom-help"
+        />
+        <div class="help-button-text btn">What's this?</div>
+      </div>
     </div>
-
-    {#
-    <div
-      style="background: url('/static/img/background_image.png')"
-      class="page-holder bg-cover"
-    >
-      #} {#
-      <div class="welcome-to-text-option-2">Welcome to</div>
-      #} {#
-      <div class="escape-text-option-2">{{ scenario_name }}</div>
-      #} {##} {#
-    </div>
-    #}
 
     <!-- Modal -->
     <div
@@ -99,6 +95,35 @@
             onclick="skipTutorial()"
           >
             Skip
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="helpModal"
+      tabindex="-1"
+      aria-labelledby="helpGameLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" id="help-modal-dialog">
+        <div class="modal-content">
+          <div class="help-modal-header">What's this?</div>
+          <div class="help-modal-body">
+            Welcome to the Escape room! This is an escape room designed to help
+            individuals learn about Mental Health resources in a fun interactive
+            way. If you are up for a fun challenge, while learning about some
+            cool resources available to you, hit the play button!
+          </div>
+          <button
+            type="button"
+            class="btn got-it-button got-it-button-text"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            Got it!
           </button>
         </div>
       </div>

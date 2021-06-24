@@ -126,6 +126,26 @@
   color: #1e2b3e;
 }
 
+.help-modal-body {
+  position: absolute;
+  width: 478px;
+  height: 234px;
+  left: 20px;
+  top: 90px;
+
+  /* Body / Body 1 */
+
+  font-family: DarkerGrotesque-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
+  /*display: flex;*/
+  /*align-items: center;*/
+
+  color: #677181;
+}
+
 .skip-button {
   position: absolute;
   left: 65px;
@@ -146,6 +166,27 @@
   border-radius: 4px;
 }
 
+.got-it-button {
+  position: absolute;
+  width: 133px;
+  height: 44px;
+  left: 371px;
+  top: 343px;
+  background: #ec4e55;
+  border-radius: 4px;
+}
+.got-it-button-text {
+  font-family: DarkerGrotesque-Regular;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
 .start-button-text {
   font-family: DarkerGrotesque-Regular;
   font-style: normal;
@@ -157,9 +198,25 @@
   color: #ffffff;
 }
 
+#help-modal-dialog {
+  width: 532px;
+  height: 415px;
+  position: absolute;
+  left: 490px;
+  top: 333px;
+  max-width: 532px;
+  /* Grey / White */
+
+  background: #ffffff;
+  border-radius: 4px;
+}
+
 .modal-dialog {
   width: 408px;
   height: 233px;
+  position: absolute;
+  left: 552px;
+  top: 425px;
   /* Grey / White */
 
   background: #ffffff;
@@ -175,6 +232,61 @@
   align-items: center;
   text-align: center;
   color: #1e2b3e;
+}
+
+.help-question-icon {
+  position: absolute;
+  right: 32.17px;
+  bottom: 28.17px;
+}
+
+.btn-custom-help:hover + .help-button-text {
+  display: flex;
+}
+.btn-custom-help:hover {
+  position: absolute;
+  right: 239.17px;
+  bottom: 28.17px;
+}
+
+.help-button-text {
+  display: none;
+  position: absolute;
+  bottom: 25px;
+  right: 29px;
+  font-family: Poppins-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 48px;
+  /* identical to box height */
+
+  align-items: center;
+  text-align: center;
+
+  /* Grey / White */
+
+  color: #ffffff;
+}
+
+.help-modal-header {
+  position: absolute;
+  width: 169px;
+  height: 38px;
+  left: 20px;
+  top: 28px;
+
+  /* Header / Modal Header */
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 38px;
+
+  /* Grey / Grey 9 */
+
+  color: #1a1f26;
 }
 
 /*.escape-text-option-2 {*/

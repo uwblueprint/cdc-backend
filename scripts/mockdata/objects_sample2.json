@@ -198,29 +198,49 @@
         "jsonData": {
           "images": [
             {
-              "imageSrc": "/static/img/dev/pic1.png",
-              "xTarget": -2.5,
+              "imageSrc": "/static/img/agenda/1.png",
+              "xTarget": 1.1,
+              "yTarget": -1.1
+            },
+            {
+              "imageSrc": "/static/img/agenda/2.png",
+              "xTarget": 0,
+              "yTarget": -1.1
+            },
+            {
+              "imageSrc": "/static/img/agenda/3.png",
+              "xTarget": -1.1,
+              "yTarget": -1.1
+            },
+            {
+              "imageSrc": "/static/img/agenda/4.png",
+              "xTarget": 1.1,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/dev/pic2.png",
-              "xTarget": -1.25,
-              "yTarget": 0
-            },
-            {
-              "imageSrc": "/static/img/dev/pic3.png",
+              "imageSrc": "/static/img/agenda/5.png",
               "xTarget": 0,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/dev/pic4.png",
-              "xTarget": 1.25,
+              "imageSrc": "/static/img/agenda/6.png",
+              "xTarget": -1.1,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/dev/pic5.png",
-              "xTarget": 2.5,
-              "yTarget": 0
+              "imageSrc": "/static/img/agenda/7.png",
+              "xTarget": 1.1,
+              "yTarget": 1.1
+            },
+            {
+              "imageSrc": "/static/img/agenda/8.png",
+              "xTarget": 0,
+              "yTarget": 1.1
+            },
+            {
+              "imageSrc": "/static/img/agenda/9.png",
+              "xTarget": -1.1,
+              "yTarget": 1.1
             }
           ],
           "useTargets": false,

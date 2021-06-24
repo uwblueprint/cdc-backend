@@ -111,5 +111,197 @@
         }
       }
     }
+  },
+  {
+    "name": "Man",
+    "position": [-7.883, 0.825, 7.653],
+    "scale": [2, 2, 2],
+    "rotation": [0, 180, 0],
+    "asset_id": 19,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You are too scared to approach your parents right now."
+            },
+            {
+              "text": "Try and find a way out of the room and avoid the parents."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Frame1",
+    "position": [-2, 4, -13.23],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 270, 0],
+    "asset_id": 21,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Frame2",
+    "position": [-4, 4, -13.23],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 270, 0],
+    "asset_id": 22,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Frame3",
+    "position": [-10.063, 4, -7],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 0, 0],
+    "asset_id": 23,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Frame4",
+    "position": [-10.063, 4, -11],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 0, 0],
+    "asset_id": 24,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Agenda",
+    "position": [-9.343, 1.574, -12.411],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [270, 40, 0],
+    "asset_id": 25,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "/static/img/dev/pic1.png",
+              "xTarget": -2.5,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/dev/pic2.png",
+              "xTarget": -1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/dev/pic3.png",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/dev/pic4.png",
+              "xTarget": 1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/dev/pic5.png",
+              "xTarget": 2.5,
+              "yTarget": 0
+            }
+          ],
+          "useTargets": false,
+          "randomizePos": true,
+          "scaleBy": 3
+        }
+      }
+    }
+  },
+  {
+    "name": "Cat",
+    "position": [-8, 1.64, -12.525],
+    "scale": [0.5, 0.5, 0.5],
+    "rotation": [0, -45, 0],
+    "asset_id": 26,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Trophy",
+    "position": [-5.089, 2.863, -0.822],
+    "scale": [0.5, 0.5, 0.5],
+    "rotation": [0, 0, 0],
+    "asset_id": 27,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [1, 1, 1]
+        }
+      }
+    }
+  },
+  {
+    "name": "Calendar",
+    "position": [-2.6, 2.587, 5.388],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, -67.011, 0],
+    "asset_id": 28,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Darn, I forgot to mark the test date on the calendar! Is that why I'm so stressed?"
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Door",
+    "position": [-10.315, 0.823, 1.26],
+    "scale": [1.434, 2.034, 3.757],
+    "rotation": [0, 270, 0],
+    "asset_id": 29,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "blackboardText": "What is the date test?",
+        "jsonData": {
+          "password": "may 26",
+          "model": "basic",
+          "is_last_object": true
+        }
+      }
+    }
   }
 ]

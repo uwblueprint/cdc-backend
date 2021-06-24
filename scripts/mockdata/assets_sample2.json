@@ -33,5 +33,55 @@
     "name": "Woman",
     "obj_type": "object",
     "s3_key": "assets/woman.glb"
+  },
+  {
+    "name": "Man",
+    "obj_type": "object",
+    "s3_key": "assets/man.glb"
+  },
+  {
+    "name": "Frame1",
+    "obj_type": "object",
+    "s3_key": "assets/mazeframe.glb"
+  },
+  {
+    "name": "Frame2",
+    "obj_type": "object",
+    "s3_key": "assets/thinkframe.glb"
+  },
+  {
+    "name": "Frame3",
+    "obj_type": "object",
+    "s3_key": "assets/sunframe.glb"
+  },
+  {
+    "name": "Frame4",
+    "obj_type": "object",
+    "s3_key": "assets/sunframe4.glb"
+  },
+  {
+    "name": "Agenda",
+    "obj_type": "object",
+    "s3_key": "assets/agenda.glb"
+  },
+  {
+    "name": "Cat",
+    "obj_type": "object",
+    "s3_key": "assets/cat.glb"
+  },
+  {
+    "name": "Trophy",
+    "obj_type": "object",
+    "s3_key": "assets/trophy.glb"
+  },
+  {
+    "name": "Calendar",
+    "obj_type": "object",
+    "s3_key": "assets/calendar.glb"
+  },
+  {
+    "name": "Door",
+    "obj_type": "object",
+    "s3_key": "assets/door.glb"
   }
 ]

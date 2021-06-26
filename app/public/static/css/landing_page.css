@@ -13,6 +13,11 @@
   src: url("/static/css/Darker_Grotesque/DarkerGrotesque-Regular.ttf");
 }
 
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url("/static/css/Open_Sans/OpenSans-Bold.ttf");
+}
+
 .page-holder {
   min-height: 100vh;
 }
@@ -93,7 +98,7 @@
 
   /* Header / Modal Header */
 
-  font-family: Open Sans;
+  font-family: OpenSans-Bold;
   font-style: normal;
   font-weight: bold;
   font-size: 28px;
@@ -166,6 +171,10 @@
   border-radius: 4px;
 }
 
+.start-button:hover {
+  color: #ffffff;
+}
+
 .got-it-button {
   position: absolute;
   width: 133px;
@@ -175,13 +184,17 @@
   background: #ec4e55;
   border-radius: 4px;
 }
+
+.got-it-button:hover {
+  color: #ffffff;
+}
+
 .got-it-button-text {
   font-family: DarkerGrotesque-Regular;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
-  display: flex;
   align-items: center;
   text-align: center;
   color: #ffffff;
@@ -191,7 +204,7 @@
   font-family: DarkerGrotesque-Regular;
   font-style: normal;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 24px;
   align-items: center;
   text-align: center;
@@ -227,7 +240,7 @@
   font-family: DarkerGrotesque-Regular;
   font-style: normal;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 24px;
   align-items: center;
   text-align: center;
@@ -247,6 +260,7 @@
   position: absolute;
   right: 239.17px;
   bottom: 28.17px;
+  /*backdrop-filter: blur(50px);*/
 }
 
 .help-button-text {
@@ -271,14 +285,14 @@
 
 .help-modal-header {
   position: absolute;
-  width: 169px;
+  width: 300px;
   height: 38px;
   left: 20px;
   top: 28px;
 
   /* Header / Modal Header */
 
-  font-family: Open Sans;
+  font-family: OpenSans-Bold;
   font-style: normal;
   font-weight: bold;
   font-size: 28px;

@@ -115,9 +115,9 @@
   {
     "name": "Man",
     "position": [-7.883, 0.825, 7.653],
-    "scale": [2, 2, 2],
+    "scale": [0.02, 0.02, 0.02],
     "rotation": [0, 180, 0],
-    "asset_id": 19,
+    "asset_id": 20,
     "next_objects": [],
     "texts": [],
     "is_interactable": true,
@@ -146,8 +146,18 @@
     "asset_id": 21,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/maze.png",
+          "scaleBy": 10,
+          "position": [0, 0, 0],
+          "caption": ""
+        }
+      }
+    }
   },
   {
     "name": "Frame2",
@@ -157,8 +167,18 @@
     "asset_id": 22,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/think.jpg",
+          "scaleBy": 10,
+          "position": [0, 0, 0],
+          "caption": ""
+        }
+      }
+    }
   },
   {
     "name": "Frame3",
@@ -168,8 +188,18 @@
     "asset_id": 23,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/sunsetLandscape.jpg",
+          "scaleBy": 10,
+          "position": [0, 0, 0],
+          "caption": ""
+        }
+      }
+    }
   },
   {
     "name": "Frame4",
@@ -179,8 +209,18 @@
     "asset_id": 24,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/sunsetframe5.png",
+          "scaleBy": 12,
+          "position": [0, 0, 0],
+          "caption": ""
+        }
+      }
+    }
   },
   {
     "name": "Agenda",
@@ -195,6 +235,7 @@
       "blackboardData": {
         "componentType": "ordered-puzzle",
         "draggable": true,
+        "blackboardText": "Shoot! The cat ripped up my agenda.",
         "jsonData": {
           "images": [
             {
@@ -263,8 +304,8 @@
   },
   {
     "name": "Trophy",
-    "position": [-5.089, 2.863, -0.822],
-    "scale": [0.5, 0.5, 0.5],
+    "position": [-5.089, 2.729, -0.822],
+    "scale": [0.004, 0.004, 0.004],
     "rotation": [0, 0, 0],
     "asset_id": 27,
     "next_objects": [],
@@ -275,7 +316,7 @@
         "componentType": "rotation-controls",
         "jsonData": {
           "position": [0, 0, 5],
-          "scale": [1, 1, 1]
+          "scale": [0.02, 0.02, 0.02]
         }
       }
     }
@@ -315,9 +356,9 @@
     "animations_json": {
       "blackboardData": {
         "componentType": "keypad",
-        "blackboardText": "What is the date test?",
+        "blackboardText": "What date is the test?",
         "jsonData": {
-          "password": "may 26",
+          "password": "May 26",
           "model": "basic",
           "is_last_object": true
         }

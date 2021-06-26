@@ -7,81 +7,81 @@
   {
     "name": "Shelf",
     "obj_type": "object",
-    "s3_key": "assets/shelf.glb"
+    "s3_key": "assets/5542f960eca5423789c93be1eea5ffb5.glb"
   },
   {
     "name": "Open Book",
     "obj_type": "object",
-    "s3_key": "assets/openbook.glb"
+    "s3_key": "assets/fc6708733a804d419ad558314529b7e8.glb"
   },
   {
     "name": "Books",
     "obj_type": "object",
-    "s3_key": "assets/books.glb"
+    "s3_key": "assets/54478eea3b454334b4ce11c4d95b4c16.glb"
   },
   {
     "name": "Rubiks Cube",
     "obj_type": "object",
-    "s3_key": "assets/rubikscube.glb"
+    "s3_key": "assets/9a0c4b4627294e639d932730082bab50.glb"
   },
   {
     "name": "Jenga",
     "obj_type": "object",
-    "s3_key": "assets/jenga.glb"
+    "s3_key": "assets/58e694567a024f028e7706c371b6ede3.glb"
   },
   {
     "name": "Woman",
     "obj_type": "object",
-    "s3_key": "assets/woman.glb"
+    "s3_key": "assets/7e167ead18664cb2b282cdbaafdb57b6.glb"
   },
   {
     "name": "Man",
     "obj_type": "object",
-    "s3_key": "assets/man.glb"
+    "s3_key": "assets/6c058e8533714c48b92d5f235a697128.glb"
   },
   {
     "name": "Frame1",
     "obj_type": "object",
-    "s3_key": "assets/mazeframe.glb"
+    "s3_key": "assets/d5c5047c8b3b446d8ce9abcd8d704141.glb"
   },
   {
     "name": "Frame2",
     "obj_type": "object",
-    "s3_key": "assets/thinkframe.glb"
+    "s3_key": "assets/679dc160eb9b4f6aa03e58e8903bc577.glb"
   },
   {
     "name": "Frame3",
     "obj_type": "object",
-    "s3_key": "assets/sunframe.glb"
+    "s3_key": "assets/41e3c8824e7a4a0797a6a24a84797e39.glb"
   },
   {
     "name": "Frame4",
     "obj_type": "object",
-    "s3_key": "assets/sunframe5.glb"
+    "s3_key": "assets/5c34bcf5dc1f44a297c999d328f297a8.glb"
   },
   {
     "name": "Agenda",
     "obj_type": "object",
-    "s3_key": "assets/agenda.glb"
+    "s3_key": "assets/290f6ba559b94321b84b461d9f5f9eb3.glb"
   },
   {
     "name": "Cat",
     "obj_type": "object",
-    "s3_key": "assets/cat.glb"
+    "s3_key": "assets/25481279dca74e368ecf48203aef3c96.glb"
   },
   {
     "name": "Trophy",
     "obj_type": "object",
-    "s3_key": "assets/trophy.glb"
+    "s3_key": "assets/55d0251e28054bd98eb243c867defc15.glb"
   },
   {
     "name": "Calendar",
     "obj_type": "object",
-    "s3_key": "assets/calendar.glb"
+    "s3_key": "assets/32c0a697ae2947af831d3ab08b9bc470.glb"
   },
   {
     "name": "Door",
     "obj_type": "object",
-    "s3_key": "assets/door.glb"
+    "s3_key": "assets/dd0cd94b98404ace9f112fb9bd3d172d.glb"
   }
 ]

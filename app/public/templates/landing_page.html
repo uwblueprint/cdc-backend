@@ -2,15 +2,124 @@
 <html lang="en">
   <head>
     <title>{{ scenario_name }}</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link href="/static/css/landing_page.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
-    <h1>{{ scenario_introduction_data['header_text'] }}</h1>
-    <button id="playButton" onclick="playGame();">Play</button>
+    <!-- Background image -->
+    <div
+      style="background: url('/static/img/background_image.png')"
+      class="page-holder bg-cover d-flex align-items-end"
+    >
+      <div
+        class="container base-container overflow-hidden d-flex align-items-center justify-content-start"
+      >
+        <div class="row p-1">
+          <div class="p-1 slanted welcome-to-text">Welcome to</div>
+          <div class="p-1 slanted escape-room-text">{{ scenario_name }}</div>
+          <div class="slanted-play-button">
+            <img
+              type="button"
+              src="/static/img/play_button.svg"
+              onmouseover="this.src='/static/img/play_button_hover.svg';"
+              onmouseout="this.src='/static/img/play_button.svg';"
+              class="slanted-play-button-img"
+              data-bs-toggle="modal"
+              data-bs-target="#playModal"
+            />
+            <div class="play-button-text">play</div>
+          </div>
+        </div>
+      </div>
+      <div type="button" data-bs-toggle="modal" data-bs-target="#helpModal">
+        <img
+          src="/static/img/help_question.svg"
+          class="help-question-icon btn btn-custom-help"
+        />
+        <div class="help-button-text btn">What's this?</div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="playModal"
+      tabindex="-1"
+      aria-labelledby="playGameLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="play-modal-title">How to play</div>
+          <div class="play-modal-body">
+            Welcome to the game! We're going to start with a quick tutorial.
+          </div>
+          <button
+            type="button"
+            class="btn start-button start-button-text"
+            onclick="playTutorial()"
+          >
+            Start!
+          </button>
+          <button
+            type="button"
+            class="btn skip-button skip-button-text"
+            onclick="skipTutorial()"
+          >
+            Skip
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="helpModal"
+      tabindex="-1"
+      aria-labelledby="helpGameLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" id="help-modal-dialog">
+        <div class="modal-content">
+          <div class="help-modal-header">What's this?</div>
+          <div class="help-modal-body">
+            Welcome to the Escape room! This is an escape room designed to help
+            individuals learn about Mental Health resources in a fun interactive
+            way. If you are up for a fun challenge, while learning about some
+            cool resources available to you, hit the play button!
+          </div>
+          <button
+            type="button"
+            class="btn got-it-button got-it-button-text"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            Got it!
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script type="text/javascript">
-      function playGame() {
+      function playTutorial() {
         let nextURL = "/{{ scenario_friendly_name }}/tutorial";
-        alert("You are entering the tutorial.");
+        window.location.replace(nextURL);
+      }
+      function skipTutorial() {
+        let nextURL = "/{{ scenario_friendly_name }}/0";
         window.location.replace(nextURL);
       }
     </script>

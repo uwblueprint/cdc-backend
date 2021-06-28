@@ -151,7 +151,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/maze.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/306fada2eb90474ead542eb5e3d0bf64.png",
           "scaleBy": 10,
           "position": [0, 0, 0],
           "caption": ""
@@ -172,7 +172,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/think.jpg",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/9598cf70854c4cb48f2adc8418964a1e.jpg",
           "scaleBy": 10,
           "position": [0, 0, 0],
           "caption": ""
@@ -193,7 +193,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/sunsetLandscape.jpg",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a6eb0c21e61344739689e9a2c83735cc.jpg",
           "scaleBy": 10,
           "position": [0, 0, 0],
           "caption": ""
@@ -214,7 +214,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/sunsetframe5.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/e0a5de8a13464b98ba5a208e5977ec42.png",
           "scaleBy": 12,
           "position": [0, 0, 0],
           "caption": ""
@@ -239,47 +239,47 @@
         "jsonData": {
           "images": [
             {
-              "imageSrc": "/static/img/agenda/1.png",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/dbedc070783843d49acffd13cbe1de1b.png",
               "xTarget": 1.1,
               "yTarget": -1.1
             },
             {
-              "imageSrc": "/static/img/agenda/2.png",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/95f93bc7388d4d77a3fe11f6193d8e65.png",
               "xTarget": 0,
               "yTarget": -1.1
             },
             {
-              "imageSrc": "/static/img/agenda/3.png",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/3d3d9896d53e49cc9efe8ae29e66f213.png",
               "xTarget": -1.1,
               "yTarget": -1.1
             },
             {
-              "imageSrc": "/static/img/agenda/4.png",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/977b98d69d234648abf807facb65343d.png",
               "xTarget": 1.1,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/agenda/5.png",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/b3d1c94f0c2c48d18d91e43568bbfb30.png",
               "xTarget": 0,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/agenda/6.png",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2ad0610ad54447fda868606f057b1e99.png",
               "xTarget": -1.1,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/agenda/7.png",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f3c35bfd733641fa9493b2c63d44b387.png",
               "xTarget": 1.1,
               "yTarget": 1.1
             },
             {
-              "imageSrc": "/static/img/agenda/8.png",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c1ee9a6fe63b4ce4a80917b152cfbeef.png",
               "xTarget": 0,
               "yTarget": 1.1
             },
             {
-              "imageSrc": "/static/img/agenda/9.png",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0aa608b74d8f43c28b0a7db415895e18.png",
               "xTarget": -1.1,
               "yTarget": 1.1
             }

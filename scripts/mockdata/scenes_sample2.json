@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Living Room - Sample",
+    "description": "Sample escape room at home",
+    "object_ids": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "position": [0, 0.2, 10],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0.0, 90.0, 0.0],
+    "background_id": 13,
+    "camera_properties": {
+      "position": [2.84, 3.6, 6.145],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "Why am I so anxious all of a sudden? Is there a test I forgot to prepare for...?",
+      "I'm so bad at art it's laughable.",
+      "Dates are always something that I forget. It's probably why I'm so stressed now."
+    ],
+    "screenshot_url": ""
+  }
+]

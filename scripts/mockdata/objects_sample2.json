@@ -1,0 +1,368 @@
+[
+  {
+    "name": "Shelf",
+    "position": [-9.781, 0.804, 2.979],
+    "scale": [2.258, 2.258, 2.258],
+    "rotation": [0, 90, 0],
+    "asset_id": 14,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Openbook",
+    "position": [-9.781, 2.874, 3.666],
+    "scale": [0.014, 0.014, 0.014],
+    "rotation": [0, 180, 0],
+    "asset_id": 15,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.08, 0.08, 0.08]
+        }
+      }
+    }
+  },
+  {
+    "name": "Books",
+    "position": [-9.773, 4.767, 3.9],
+    "scale": [2.277, 2.277, 2.277],
+    "rotation": [0, 90, 0],
+    "asset_id": 16,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [5, 5, 5]
+        }
+      }
+    }
+  },
+  {
+    "name": "Rubiks Cube",
+    "position": [-9.719, 3.934, 3.877],
+    "scale": [0.001, 0.001, 0.001],
+    "rotation": [-0.293, -0.042, 0],
+    "asset_id": 17,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.005, 0.005, 0.005]
+        }
+      }
+    }
+  },
+  {
+    "name": "Jenga",
+    "position": [-9.798, 3.926, 2.9],
+    "scale": [0.106, 0.106, 0.106],
+    "rotation": [0, 90, 0],
+    "asset_id": 18,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.3, 0.3, 0.3]
+        }
+      }
+    }
+  },
+  {
+    "name": "Woman",
+    "position": [-7.883, 0.825, 5.244],
+    "scale": [2, 2, 2],
+    "rotation": [0, 0, 0],
+    "asset_id": 19,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You are too scared to approach your parents right now."
+            },
+            {
+              "text": "Try and find a way out of the room and avoid the parents."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Man",
+    "position": [-7.883, 0.825, 7.653],
+    "scale": [0.02, 0.02, 0.02],
+    "rotation": [0, 180, 0],
+    "asset_id": 20,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You are too scared to approach your parents right now."
+            },
+            {
+              "text": "Try and find a way out of the room and avoid the parents."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Frame1",
+    "position": [-2, 4, -13.23],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 270, 0],
+    "asset_id": 21,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/306fada2eb90474ead542eb5e3d0bf64.png",
+          "scaleBy": 10,
+          "position": [0, 0, 0],
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Frame2",
+    "position": [-4, 4, -13.23],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 270, 0],
+    "asset_id": 22,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/9598cf70854c4cb48f2adc8418964a1e.jpg",
+          "scaleBy": 10,
+          "position": [0, 0, 0],
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Frame3",
+    "position": [-10.063, 4, -7],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 0, 0],
+    "asset_id": 23,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a6eb0c21e61344739689e9a2c83735cc.jpg",
+          "scaleBy": 10,
+          "position": [0, 0, 0],
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Frame4",
+    "position": [-10.063, 4, -11],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 0, 0],
+    "asset_id": 24,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/e0a5de8a13464b98ba5a208e5977ec42.png",
+          "scaleBy": 12,
+          "position": [0, 0, 0],
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Agenda",
+    "position": [-9.343, 1.574, -12.411],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [270, 40, 0],
+    "asset_id": 25,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "blackboardText": "Shoot! The cat ripped up my agenda.",
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/dbedc070783843d49acffd13cbe1de1b.png",
+              "xTarget": 1.1,
+              "yTarget": -1.1
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/95f93bc7388d4d77a3fe11f6193d8e65.png",
+              "xTarget": 0,
+              "yTarget": -1.1
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/3d3d9896d53e49cc9efe8ae29e66f213.png",
+              "xTarget": -1.1,
+              "yTarget": -1.1
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/977b98d69d234648abf807facb65343d.png",
+              "xTarget": 1.1,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/b3d1c94f0c2c48d18d91e43568bbfb30.png",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2ad0610ad54447fda868606f057b1e99.png",
+              "xTarget": -1.1,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f3c35bfd733641fa9493b2c63d44b387.png",
+              "xTarget": 1.1,
+              "yTarget": 1.1
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c1ee9a6fe63b4ce4a80917b152cfbeef.png",
+              "xTarget": 0,
+              "yTarget": 1.1
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0aa608b74d8f43c28b0a7db415895e18.png",
+              "xTarget": -1.1,
+              "yTarget": 1.1
+            }
+          ],
+          "useTargets": false,
+          "randomizePos": true,
+          "scaleBy": 3
+        }
+      }
+    }
+  },
+  {
+    "name": "Cat",
+    "position": [-8, 1.64, -12.525],
+    "scale": [0.5, 0.5, 0.5],
+    "rotation": [0, -45, 0],
+    "asset_id": 26,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Trophy",
+    "position": [-5.089, 2.729, -0.822],
+    "scale": [0.004, 0.004, 0.004],
+    "rotation": [0, 0, 0],
+    "asset_id": 27,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.02, 0.02, 0.02]
+        }
+      }
+    }
+  },
+  {
+    "name": "Calendar",
+    "position": [-2.6, 2.587, 5.388],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, -67.011, 0],
+    "asset_id": 28,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Darn, I forgot to mark the test date on the calendar! Is that why I'm so stressed?"
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Door",
+    "position": [-10.315, 0.823, 1.26],
+    "scale": [1.434, 2.034, 3.757],
+    "rotation": [0, 270, 0],
+    "asset_id": 29,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "blackboardText": "What date is the test?",
+        "jsonData": {
+          "password": "May 26",
+          "model": "basic",
+          "is_last_object": true
+        }
+      }
+    }
+  }
+]

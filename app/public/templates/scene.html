@@ -23,6 +23,7 @@
     <script src="/static/js/components/ordered-puzzle.js"></script>
     <script src="/static/js/components/target-box.js"></script>
     <script src="/static/js/components/jigsaw-puzzle.js"></script>
+    <script src="/static/js/components/interactable.js"></script>
 
     <!-- Initial state  -->
     {% include state.html %}
@@ -126,8 +127,7 @@
             class="link"
             animation__onclick="property: position; dur: 0; startEvents: click"
             animation-on-click-run='blackboardData: {{ json_encode(object["animations_json"]["blackboardData"]) }}'
-            animation__mouseenter="property: scale; to: {{ object['scale'][0] *1.04 }} {{ object['scale'][1] *1.04 }} {{ object['scale'][2] *1.04 }}; dur: 100; startEvents: mouseenter"
-            animation__mouseleave="property: scale; to: {{ object['scale'][0] }} {{ object['scale'][1] }} {{ object['scale'][2] }}; dur: 100; startEvents: mouseleave"
+            interactable
           {% end %}
         ></a-gltf-model>
         {% end %}

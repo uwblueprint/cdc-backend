@@ -1,14 +1,4 @@
 AFRAME.registerComponent("interactable", {
-  schema: {
-    axis: {
-      type: "string",
-      default: "x",
-    },
-    value: {
-      type: "number",
-      default: 1,
-    },
-  },
   init: function () {
     let el = this.el;
     let model = el.object3D;

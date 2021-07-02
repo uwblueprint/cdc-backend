@@ -38,6 +38,7 @@ from routes.admin.scene import (
 from routes.base import (
     BaseAuthHandler,
     BaseLogoutHandler,
+    BaseProfileHandler,
     NotFoundHandler,
     UIStaticHandler,
 )
@@ -98,6 +99,7 @@ def get_routes():
         (r"/admin/scene/([0-9]{1,16})", UIAdminSceneHandler),
         (r"/admin_login", BaseAuthHandler),
         (r"/api/admin/v1/admin_logout", BaseLogoutHandler),
+        (r"/api/admin/v1/user_profile", BaseProfileHandler),
         (r"/([a-zA-Z_-]{1,50})/?", UIScenarioLandingPageHandler),
         (r"/([a-zA-Z_-]{1,50})/tutorial", UITutorialPageHandler),
         (r"/([a-zA-Z_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),

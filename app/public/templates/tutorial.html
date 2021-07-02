@@ -133,6 +133,8 @@ controls: checkpoint, gamepad, trackpad, keyboard, touch;"
           scale="1.0 1.0 1.0"
           rotation="0.0 180.0 0.0"
           class="link"
+          animation__mouseenter="property: scale; to: 1.04 1.04 1.04; dur: 100; startEvents: mouseenter"
+          animation__mouseleave="property: scale; to: 1 1 1 dur: 100; startEvents: mouseleave"
           animation__onclick="property: position; dur: 0; startEvents: click"
           animation-on-click-run='blackboardData: {"jsonData": {"model": "basic", "password": "abcde", "is_last_object": true}, "componentType": "keypad"}'
         >
@@ -150,6 +152,8 @@ controls: checkpoint, gamepad, trackpad, keyboard, touch;"
           scale="1.0 1.0 1.0"
           rotation="0.0 0.0 0.0"
           class="link"
+          animation__mouseenter="property: scale; to: 1.04 1.04 1.04; dur: 100; startEvents: mouseenter"
+          animation__mouseleave="property: scale; to: 1 1 1 dur: 100; startEvents: mouseleave"
           animation__onclick="property: position; dur: 0; startEvents: click"
           animation-on-click-run='blackboardData: {"jsonData": {"data": [{"text": "This is just text for you to read. This might have clues in the actual escape room so keep an eye out for these. The images can be useful too.", "imageSrc": "/static/img/dev/pic1.png"}, {"text": "More text, more clues. Click the RED box in top left to close this at anytime. You can also go back if you want."}, {"text": "This is some more text. This is some more text. This is some more text.", "imageSrc": "/static/img/dev/pic2.png"}, {"text": "This is the last text, clicking Done will close this."}], "currPosition": 0}, "componentType": "text-pane"}'
         >
@@ -167,6 +171,8 @@ controls: checkpoint, gamepad, trackpad, keyboard, touch;"
           scale="1.0 1.0 1.0"
           rotation="0.0 0.0 0.0"
           class="link"
+          animation__mouseenter="property: scale; to: 1.04 1.04 1.04; dur: 100; startEvents: mouseenter"
+          animation__mouseleave="property: scale; to: 1 1 1 dur: 100; startEvents: mouseleave"
           animation__onclick="property: position; dur: 0; startEvents: click"
           animation-on-click-run='blackboardData: {"jsonData": {"caption": "Click on one of the chairs in the corners. If asked for a password, enter abcde to go to the next level. If not asked, try another chair.", "scaleBy": 3, "imageSrc": "/static/img/dev/pic1.png", "position": [0, 0, 0]}, "componentType": "visual-pane"}'
         >

@@ -33,7 +33,6 @@
 
 .base-textbox {
   width: 95vw;
-  /*height: 90vh;*/
   background: #ffffff;
   border-radius: 8px;
 }
@@ -53,8 +52,6 @@
   font-style: normal;
   font-weight: normal;
   font-size: calc(0.754vw + 10px);
-  /* Grey / Grey 6 */
-
   color: #677181;
 }
 
@@ -82,7 +79,6 @@
 
 .share-link-input-div {
   padding-top: 1.171875vh;
-  /*height: 4.296875vh;*/
 }
 
 .share-link-input-box {
@@ -100,9 +96,6 @@
   display: flex;
   align-items: center;
   padding-left: 12px;
-
-  /* Grey / Grey 6 */
-
   color: #677181;
 }
 
@@ -144,9 +137,6 @@
 }
 
 .back-to-lobby-button {
-  /*width: 133px;*/
-  /*height: 44px;*/
-  /*padding-top: 3.90625vh;*/
   background: #ec4e55;
   border-radius: 4px;
   align-content: center;

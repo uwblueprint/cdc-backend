@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("/static/css/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("/static/css/Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: "DarkerGrotesque-Regular";
+  src: url("/static/css/Darker_Grotesque/DarkerGrotesque-Regular.ttf");
+}
+
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url("/static/css/Open_Sans/OpenSans-Bold.ttf");
+}
+
+.page-holder {
+  min-height: 100vh;
+}
+
+.bg-cover {
+  background-size: cover !important;
+  overflow-y: hidden;
+}
+
+.base-container {
+  height: 100vh;
+}
+
+.base-textbox {
+  width: 95vw;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.congrats-text {
+  padding-top: 4vh;
+  font-family: OpenSans-Bold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: calc(1.277vw + 12px);
+  color: #1a1f26;
+}
+
+.header-text {
+  padding-top: 1.171875vh;
+  font-family: DarkerGrotesque-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: calc(0.754vw + 10px);
+  color: #677181;
+}
+
+.lessons-learnt-text {
+  padding-top: 3.90625vh;
+  font-family: OpenSans-Bold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: calc(1.277vw + 12px);
+  line-height: 38px;
+
+  color: #1a1f26;
+}
+
+.share-link-header {
+  padding-top: 3.90625vh;
+  font-family: OpenSans-Bold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: calc(1.277vw + 12px);
+  line-height: 38px;
+
+  color: #1a1f26;
+}
+
+.share-link-input-div {
+  padding-top: 1.171875vh;
+}
+
+.share-link-input-box {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #ced4da;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-align: left;
+  font-family: DarkerGrotesque-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: calc(0.754vw + 10px);
+  line-height: 4.296875vh;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  color: #677181;
+}
+
+.copy-share-link-text {
+  font-family: DarkerGrotesque-Regular;
+  font-style: normal;
+  font-weight: bold;
+  font-size: calc(0.754vw + 10px);
+  line-height: 4.296875vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #ec4e55;
+}
+
+.copy-share-link-text:hover {
+  text-decoration: none;
+  color: #c61f27;
+}
+
+.external-link-header {
+  padding-top: 3.90625vh;
+  font-family: OpenSans-Bold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: calc(1.277vw + 12px);
+  line-height: 38px;
+
+  color: #1a1f26;
+}
+
+.back-to-lobby-div {
+  padding-top: 3.90625vh;
+  padding-bottom: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-lobby-button {
+  background: #ec4e55;
+  border-radius: 4px;
+  align-content: center;
+}
+
+.back-to-lobby-button:hover {
+  color: #ffffff;
+}
+
+.back-to-lobby-button-text {
+  font-family: DarkerGrotesque-Regular;
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(0.754vw + 8px);
+  line-height: 24px;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}

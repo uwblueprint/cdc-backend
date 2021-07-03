@@ -30,6 +30,7 @@ class UIScenarioCompletedPageHandler(BaseUIHandler):
                 "completed_page.html",
                 scenario_name=scenario_obj.name,
                 scenario_conclusion_data=scenario_obj.conclusion_data,
+                scenario_friendly_name=scenario_obj.friendly_name,
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

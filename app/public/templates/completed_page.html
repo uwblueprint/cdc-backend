@@ -61,6 +61,7 @@
                   </a>
                 </div>
               </div>
+              {% if scenario_conclusion_data.get('external_link', None) %}
               <div class="external-link-header">External Link</div>
               <div class="share-link-input-div row">
                 <div class="col-9">
@@ -68,7 +69,7 @@
                     id="externalLinkInput"
                     class="share-link-input-box"
                     type="text"
-                    value="{{ scenario_conclusion_data['share_link'] }}"
+                    value="{{ scenario_conclusion_data['external_link'] }}"
                     readonly
                   />
                 </div>
@@ -84,6 +85,7 @@
                   </a>
                 </div>
               </div>
+              {% end %}
               <div class="back-to-lobby-div">
                 <button
                   type="button"

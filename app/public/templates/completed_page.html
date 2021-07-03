@@ -115,13 +115,14 @@
         copyText.setSelectionRange(0, 0);
         let copyLinkButton = document.getElementById("copy-link-button-id");
         copyLinkButton.innerHTML = "Link Copied";
-        resetText(copyLinkButton);
+        let externalCopyLinkButton = document.getElementById(
+          "external-link-button-id"
+        );
+        if (externalCopyLinkButton) {
+          externalCopyLinkButton.innerHTML = "Copy Link";
+        }
       }
-      async function resetText(el) {
-        setTimeout(function () {
-          el.innerHTML = "Copy Link";
-        }, 3 * 1000);
-      }
+
       function copyExternalLink() {
         /* Get the text field */
         let copyText = document.getElementById("externalLinkInput");
@@ -131,9 +132,12 @@
 
         document.execCommand("copy");
         copyText.setSelectionRange(0, 0);
-        let copyLinkButton = document.getElementById("external-link-button-id");
-        copyLinkButton.innerHTML = "Link Copied";
-        resetText(copyLinkButton);
+        let externalCopyLinkButton = document.getElementById(
+          "external-link-button-id"
+        );
+        externalCopyLinkButton.innerHTML = "Link Copied";
+        let copyLinkButton = document.getElementById("copy-link-button-id");
+        copyLinkButton.innerHTML = "Copy Link";
       }
       function redirectToLandingPage() {
         let nextURL = "/{{ scenario_friendly_name }}";

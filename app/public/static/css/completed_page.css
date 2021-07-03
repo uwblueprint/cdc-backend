@@ -33,7 +33,7 @@
 
 .base-textbox {
   width: 95vw;
-  height: 90vh;
+  /*height: 90vh;*/
   background: #ffffff;
   border-radius: 8px;
 }
@@ -43,7 +43,6 @@
   font-family: OpenSans-Bold;
   font-style: normal;
   font-weight: bold;
-  line-height: 38px;
   font-size: calc(1.277vw + 12px);
   color: #1a1f26;
 }
@@ -54,7 +53,6 @@
   font-style: normal;
   font-weight: normal;
   font-size: calc(0.754vw + 10px);
-  line-height: 27px;
   /* Grey / Grey 6 */
 
   color: #677181;
@@ -101,6 +99,7 @@
   line-height: 4.296875vh;
   display: flex;
   align-items: center;
+  padding-left: 12px;
 
   /* Grey / Grey 6 */
 
@@ -138,6 +137,7 @@
 
 .back-to-lobby-div {
   padding-top: 3.90625vh;
+  padding-bottom: 4vh;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -52,6 +52,7 @@
                 <div class="col-3">
                   <a
                     href="#"
+                    id="copy-link-button-id"
                     class="copy-share-link-text"
                     onclick="copyLink();return false;"
                     role="button"
@@ -76,6 +77,7 @@
                 <div class="col-3">
                   <a
                     href="#"
+                    id="external-link-button-id"
                     class="copy-share-link-text"
                     onclick="copyExternalLink();return false;"
                     role="button"
@@ -111,6 +113,14 @@
 
         document.execCommand("copy");
         copyText.setSelectionRange(0, 0);
+        let copyLinkButton = document.getElementById("copy-link-button-id");
+        copyLinkButton.innerHTML = "Link Copied";
+        resetText(copyLinkButton);
+      }
+      async function resetText(el) {
+        setTimeout(function () {
+          el.innerHTML = "Copy Link";
+        }, 2 * 1000);
       }
       function copyExternalLink() {
         /* Get the text field */
@@ -121,6 +131,9 @@
 
         document.execCommand("copy");
         copyText.setSelectionRange(0, 0);
+        let copyLinkButton = document.getElementById("external-link-button-id");
+        copyLinkButton.innerHTML = "Link Copied";
+        resetText(copyLinkButton);
       }
       function redirectToLandingPage() {
         let nextURL = "/{{ scenario_friendly_name }}";

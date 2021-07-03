@@ -283,3 +283,14 @@ class BaseLogoutHandler(BaseAdminAPIHandler):
 
         resp_json = {"status": 200, "message": "success"}
         await self.finish(resp_json)
+
+
+class BaseProfileHandler(BaseAdminAPIHandler):
+    """
+    Base handler for getting an user profile
+    """
+
+    async def get(self):
+
+        resp_json = {"status": 200, "message": "success", "email": self.user}
+        await self.finish(resp_json)

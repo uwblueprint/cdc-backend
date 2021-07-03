@@ -13,22 +13,18 @@ AFRAME.registerComponent("close-popup", {
     const data = this.data.jsonData;
     const el = this.el;
 
-    // Create geometry.
-    this.geometry = new THREE.BoxBufferGeometry(
-      data.width,
-      data.height,
-      data.depth
-    );
-
-    // Create material.
-    this.material = new THREE.MeshStandardMaterial({ color: data.color });
-
-    // Create mesh.
-    this.mesh = new THREE.Mesh(this.geometry, this.material);
-
-    el.object3D.position.set(data.x, data.y, data.z);
-    // Set mesh on entity.
-    el.setObject3D("mesh", this.mesh);
+    el.setAttribute("geometry", {
+      primitive: "box",
+      width: data.width,
+      height: data.height,
+      depth: data.depth,
+    });
+    el.setAttribute("material", {
+      color: data.color,
+      shader: "flat",
+      transparent: false,
+    });
+    el.setAttribute("position", { x: data.x, y: data.y, z: data.z });
 
     // Add event listener for closing (returning) on mouse click.
     el.addEventListener("click", function () {

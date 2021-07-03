@@ -11,7 +11,11 @@ AFRAME.registerComponent("jigsaw-puzzle", {
 
   init: function () {
     const data = this.data.jsonData;
+    const el = this.el;
     this.id = data.id;
+    //TODO : UNDO THIS AND FIX IT UP
+    el.setAttribute("scale", { x: 0.6, y: 0.6, z: 0.6 });
+    el.setAttribute("position", "y", 1.5);
     const puzzleDimension = data.hasOwnProperty("puzzleDimension")
       ? data.puzzleDimension
       : 3;
@@ -40,12 +44,13 @@ AFRAME.registerComponent("jigsaw-puzzle", {
       images.push(imageData);
     }
 
+    //TODO : UNDO THIS TOO LATER
     ordered_puzzle_json = {
       id: this.id,
       images: images,
       useTargets: true,
       randomizePos: false,
-      scaleBy: data.hasOwnProperty("scaleBy") ? data.scaleBy : 3,
+      scaleBy: data.hasOwnProperty("scaleBy") ? 3 : 3,
       is_last_object: "is_last_object" in data ? data.is_last_object : false,
     };
 

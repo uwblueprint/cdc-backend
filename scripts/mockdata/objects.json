@@ -117,6 +117,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardText": "What's This?",
         "componentType": "text-pane",
         "jsonData": {
           "data": [
@@ -188,6 +189,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardText": "What is This?",
         "componentType": "jigsaw-puzzle",
         "draggable": true,
         "jsonData": {
@@ -202,7 +204,7 @@
             "/static/img/jigsaw/img3_2.png",
             "/static/img/jigsaw/img3_3.png"
           ],
-          "scaleBy": 3,
+          "scaleBy": 1.5,
           "puzzleDimension": 3
         }
       }

@@ -28,8 +28,15 @@ AFRAME.registerComponent("keypad", {
       model: data.model,
       maxLength: password.length,
     });
-    el.setAttribute("scale", { x: 20, y: 20, z: 20 });
-    el.setAttribute("position", { x: 0, y: 0, z: 0.5 });
+
+    if (data.isBlackboardParagraphDefined) {
+      el.setAttribute("scale", { x: 18, y: 18, z: 18 });
+      el.setAttribute("position", { x: 0, y: 0.5, z: 0.5 });
+    } else {
+      el.setAttribute("scale", { x: 20, y: 20, z: 20 });
+      el.setAttribute("position", { x: 0, y: 0, z: 0.5 });
+    }
+
     el.addEventListener("superkeyboardinput", function (event) {
       if (event.detail.value === password) {
         // emit event to update state

@@ -36,6 +36,13 @@ AFRAME.registerComponent("ordered-puzzle", {
         scaleZ: "2",
         text: "Solved",
       };
+      if (
+        !(data.hasOwnProperty("isJigsaw") && data.isJigsaw) &&
+        data.isBlackboardParagraphDefined
+      ) {
+        solvedPuzzleText.y = "-2.9";
+      }
+
       // Create solved puzzle text
       this.solvedPuzzleEntity = document.createElement("a-entity");
       this.solvedPuzzleEntity.setAttribute(
@@ -105,7 +112,7 @@ AFRAME.registerComponent("ordered-puzzle", {
         if (data.useTargets) {
           // Create target
           let textBoxProp = JSON.parse(JSON.stringify(data.images[index]));
-          textBoxProp.color = "yellow";
+          textBoxProp.color = "#3a4355";
           textBoxProp.width = puzzlePieceWidth;
           textBoxProp.height = puzzlePieceHeight;
           textBoxProp.xTarget = textBoxProp.xTarget * puzzlePieceWidth;

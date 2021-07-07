@@ -32,7 +32,7 @@ AFRAME.registerComponent("text-box", {
     this.textLabel.setAttribute("value", data.text);
     this.textLabel.setAttribute(
       "font",
-      "https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/poppins/Poppins-Bold.json"
+      "https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Bold.json"
     );
     this.textLabel.setAttribute("shader", "msdf");
     this.textLabel.setAttribute("negate", "true");

@@ -17,7 +17,7 @@ AFRAME.registerComponent("text_pane", {
     this.textLabel.setAttribute("value", data.text[data.currPosition]);
     this.textLabel.setAttribute(
       "font",
-      "https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/poppins/Poppins-Medium.json"
+      "https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Medium.json"
     );
     this.textLabel.setAttribute("shader", "msdf");
     this.textLabel.setAttribute("negate", "true");

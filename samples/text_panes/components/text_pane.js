@@ -15,6 +15,11 @@ AFRAME.registerComponent("text_pane", {
     this.textLabel = document.createElement("a-text");
     this.textLabel.setAttribute("id", "text");
     this.textLabel.setAttribute("value", data.text[data.currPosition]);
+    this.textLabel.setAttribute(
+      "font",
+      "https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/poppins/Poppins-Medium.json"
+    );
+    this.textLabel.setAttribute("shader", "msdf");
     this.textLabel.setAttribute("negate", "true");
     this.textLabel.setAttribute("scale", "2 2 1");
     this.textLabel.setAttribute("position", "-4.9 0 0.25");

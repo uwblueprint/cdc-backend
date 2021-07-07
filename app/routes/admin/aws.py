@@ -21,6 +21,17 @@ class AdminUploadHandler(BaseAdminAPIHandler):
             # validate body
             validate(data, schema=admin_aws_handler_body_schema)
 
+            default_fields = {"acl": "public-read"}
+            default_conditions = [{"acl": "public-read"}]
+
+            # if it's an image, we need to appropriately set the content-type so aframe can render it properly
+            # not an issue for assets, since they are binary files.
+            if data["type"] == "image" and "extension" in data:
+                default_fields["Content-Type"] = "image/" + data["extension"]
+                default_conditions.append(
+                    {"Content-Type": "image/" + data["extension"]}
+                )
+
             # if we are uploading a _new_ object, generate the s3 key based on prefix
             if "s3_key" not in data or data["s3_key"] == "":
                 if data["type"] == "asset":
@@ -42,8 +53,8 @@ class AdminUploadHandler(BaseAdminAPIHandler):
             resp = s3_client.generate_presigned_post(
                 Bucket=config.get("s3.bucket_name"),
                 Key=data["s3_key"],
-                Fields={"acl": "public-read"},
-                Conditions=[{"acl": "public-read"}],
+                Fields=default_fields,
+                Conditions=default_conditions,
                 ExpiresIn=600,  # Expire URL in 10 minutes
             )
             resp["s3_key"] = data["s3_key"]

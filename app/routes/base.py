@@ -291,6 +291,14 @@ class BaseProfileHandler(BaseAdminAPIHandler):
     """
 
     async def get(self):
-
-        resp_json = {"status": 200, "message": "success", "email": self.user}
+        try:
+            display_name = auth.get_user_by_email(self.user).display_name
+        except Exception:
+            display_name = ""
+        resp_json = {
+            "status": 200,
+            "message": "success",
+            "email": self.user,
+            "display_name": display_name,
+        }
         await self.finish(resp_json)

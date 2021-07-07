@@ -1,6 +1,9 @@
 import tornado.escape
 from jsonschema import validate
-from library.api_schemas import admin_asset_handler_body_schema
+from library.api_schemas import (
+    admin_asset_handler_body_schema,
+    admin_screenshot_handler,
+)
 from library.postgres import (
     delete_asset_from_postgres,
     get_asset_from_postgres,
@@ -93,5 +96,29 @@ class AdminAssetsHandler(BaseAdminAPIHandler):
             response_dict = await get_assets_from_postgres(self.db_session)
             await self.finish(response_dict)
 
+        except Exception as e:
+            self.write_error(status_code=500, message=str(e))
+
+
+class AdminAssetScreenshotHandler(BaseAdminAPIHandler):
+    """
+    Handle routes that have api/admin/v1/asset/{id}/screenshot
+    """
+
+    async def put(self, id):
+
+        try:
+            data = tornado.escape.json_decode(self.request.body)
+
+            # validate body
+            validate(data, schema=admin_screenshot_handler)
+
+            response_message = await update_asset_from_postgres(
+                id, data, self.db_session
+            )
+            await self.finish(response_message)
+
+        except ValueError as e:
+            self.write_error(status_code=404, message=str(e))
         except Exception as e:
             self.write_error(status_code=500, message=str(e))

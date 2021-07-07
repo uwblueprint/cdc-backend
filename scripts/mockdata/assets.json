@@ -2,26 +2,31 @@
   {
     "name": "Armchair",
     "obj_type": "object",
-    "s3_key": "assets/752258ee7ff140e98a6f73fcca4e7efd.glb"
+    "s3_key": "assets/752258ee7ff140e98a6f73fcca4e7efd.glb",
+    "screenshot_url": ""
   },
   {
     "name": "Classroom",
     "obj_type": "background",
-    "s3_key": "assets/ac38abdce987432980ddcbdbba4190f9.glb"
+    "s3_key": "assets/ac38abdce987432980ddcbdbba4190f9.glb",
+    "screenshot_url": ""
   },
   {
     "name": "Sanitizer",
     "obj_type": "object",
-    "s3_key": "assets/4607df2be02e4dd1bb1e3c677a9da0b1.gltf"
+    "s3_key": "assets/4607df2be02e4dd1bb1e3c677a9da0b1.gltf",
+    "screenshot_url": ""
   },
   {
     "name": "Seashell",
     "obj_type": "object",
-    "s3_key": "aws_s3_route"
+    "s3_key": "aws_s3_route",
+    "screenshot_url": ""
   },
   {
     "name": "Living Room",
     "obj_type": "background",
-    "s3_key": "assets/f783f92e1d4840c784701af30d9dc313.glb"
+    "s3_key": "assets/f783f92e1d4840c784701af30d9dc313.glb",
+    "screenshot_url": ""
   }
 ]

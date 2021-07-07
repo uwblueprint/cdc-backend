@@ -8,4 +8,5 @@ class Asset(BaseModel):
     name = Column(Text, nullable=False)
     s3_key = Column(Text, nullable=False)
     obj_type = Column(Text, nullable=False)
-    columns = ["id", "name", "s3_key", "obj_type"]
+    screenshot_url = Column(Text, nullable=False, default="")
+    columns = ["id", "name", "s3_key", "obj_type", "screenshot_url"]

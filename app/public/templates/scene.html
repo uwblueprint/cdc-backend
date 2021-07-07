@@ -254,7 +254,6 @@
           let r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
           return r ? r[1] : undefined;
       }
-
       function dataURItoBlob(dataURI) {
           const binary = atob(dataURI.split(',')[1]);
           const array = [];

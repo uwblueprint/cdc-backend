@@ -14,6 +14,7 @@ from firebase_admin import credentials
 from routes.admin.asset import (
     AdminAssetHandler,
     AdminAssetPostHandler,
+    AdminAssetScreenshotHandler,
     AdminAssetsHandler,
 )
 from routes.admin.aws import AdminUploadHandler
@@ -70,6 +71,7 @@ def get_routes():
         (r"/api/admin/v1/asset", AdminAssetPostHandler),
         (r"/api/admin/v1/asset/([0-9]{1,16})", AdminAssetHandler),
         (r"/api/admin/v1/assets", AdminAssetsHandler),
+        (r"/api/admin/v1/asset/([0-9]{1,16})/screenshot", AdminAssetScreenshotHandler),
         (r"/api/admin/v1/scenario", AdminScenarioPostHandler),
         (r"/api/admin/v1/scenario/([0-9]{1,16})", AdminScenarioHandler),
         (

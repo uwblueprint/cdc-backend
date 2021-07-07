@@ -68,7 +68,7 @@ auth:
   # TODO: update this list, if needed
   allowed_domains:
     - uwblueprint.org
-  min_since_login: 100
+  min_since_login: 10
 
 frontend_domain: http://localhost:3000
 backend_domain: http://localhost:8888

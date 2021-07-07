@@ -20,7 +20,7 @@ asset:
   prefix_url: https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/
   # This will be changed to true for prod... for now until we get asset CRUD working
   # don't actually delete from S3
-  aws_hard_delete: false
+  aws_hard_delete: true
 
 inspector_url: /static/js/libraries/aframe-inspector.js
 
@@ -68,7 +68,7 @@ auth:
   # TODO: update this list, if needed
   allowed_domains:
     - uwblueprint.org
-  min_since_login: 10
+  min_since_login: 100
 
 frontend_domain: http://localhost:3000
 backend_domain: http://localhost:8888

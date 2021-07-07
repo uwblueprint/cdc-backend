@@ -204,10 +204,10 @@
           }
       }
       async function uploadScreenshotToS3(canvasDataUrl, s3_key){
-         const blobData = dataURItoBlob(canvasDataUrl);
+         const blobData = dataURItoBlob(canvasDataUrl); // packages glb
          await sendPresignedData(blobData, s3_key);
       }
-      async function sendPresignedData(blobData, s3_key){
+      async function sendPresignedData(blobData, s3_key){ // frontend requesting backend to get presigned link (209-218), do the same but with react
           const xhr = new XMLHttpRequest();
           xhr.responseType = "json";
           xhr.open("POST", "/api/admin/v1/upload");
@@ -219,7 +219,7 @@
               s3_key: s3_key
           }
           xhr.onload  = function() {
-              const jsonResponse = xhr.response;
+              const jsonResponse = xhr.response; // (220-230) making call to aws to upload the gltf file, need blob data here (check react stuff)
               const formData = new FormData();
               Object.keys(jsonResponse.fields).forEach(key => {
                     formData.append(key, jsonResponse.fields[key]);
@@ -231,7 +231,7 @@
               xhr_s3.setRequestHeader('Access-Control-Allow-Headers', '*');
               xhr_s3.setRequestHeader('Access-Control-Allow-Origin', '*');
               xhr_s3.onload = function() {
-                  if(xhr_s3.status === 200 || xhr_s3.status === 204){
+                  if(xhr_s3.status === 200 || xhr_s3.status === 204){ // (232-243) updating actual backend with s3 key to create actual asset (might not be useful, this is for screenshots) grab new fields (e.g. asset name, type)
                       const xhr_update_scene = new XMLHttpRequest();
                       xhr_update_scene.responseType = "json";
                       xhr_update_scene.open("PUT", "/api/admin/v1/scene/" + {{ scene_dict['id'] }} + "/screenshot");

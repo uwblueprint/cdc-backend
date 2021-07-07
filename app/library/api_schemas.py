@@ -10,6 +10,7 @@ admin_asset_handler_body_schema = {
             "enum": config.get("asset.allowed_asset_types"),
         },
         "s3_key": {"type": "string", "pattern": r"^[\S]{1,50}$"},
+        "screenshot_url": {"type": "string"},
     },
     "required": ["name", "obj_type", "s3_key"],
     "additionalProperties": False,
@@ -221,7 +222,7 @@ admin_aws_handler_body_schema = {
     "additionalProperties": False,
 }
 
-admin_scene_screenshot_handler = {
+admin_screenshot_handler = {
     "type": "object",
     "properties": {
         "screenshot_url": {"type": "string"},

@@ -3,7 +3,7 @@ from jsonschema import validate
 from library.api_schemas import (
     admin_scene_post_handler_schema,
     admin_scene_put_handler_schema,
-    admin_scene_screenshot_handler,
+    admin_screenshot_handler,
 )
 from library.postgres import (
     delete_scene_from_postgres,
@@ -132,7 +132,7 @@ class AdminSceneScreenshotHandler(BaseAdminAPIHandler):
             data = tornado.escape.json_decode(self.request.body)
 
             # validate body
-            validate(data, schema=admin_scene_screenshot_handler)
+            validate(data, schema=admin_screenshot_handler)
 
             response_message = await update_scene_from_postgres(
                 id, data, self.db_session

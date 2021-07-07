@@ -20,7 +20,7 @@ asset:
   prefix_url: https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/
   # This will be changed to true for prod... for now until we get asset CRUD working
   # don't actually delete from S3
-  aws_hard_delete: true
+  aws_hard_delete: false
 
 inspector_url: /static/js/libraries/aframe-inspector.js
 

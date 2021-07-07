@@ -149,7 +149,7 @@ async def delete_asset_from_postgres(asset_id: str, session):
             Key=asset_obj.s3_key,
         )
 
-        pos_key = asset_obj.screenshot_url.find("image/") + 6
+        pos_key = asset_obj.screenshot_url.find("image/")
         screenshot_key = asset_obj.screenshot_url[pos_key:]
         s3_client.delete_object(
             Bucket=config.get("s3.bucket_name"),

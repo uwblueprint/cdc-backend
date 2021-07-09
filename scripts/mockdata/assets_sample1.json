@@ -2,36 +2,43 @@
   {
     "name": "History Class Desk",
     "obj_type": "object",
-    "s3_key": "assets/752258ee7ff140e98a6f73fcca4e7efd.glb"
+    "s3_key": "assets/752258ee7ff140e98a6f73fcca4e7efd.glb",
+    "screenshot_url": ""
   },
   {
     "name": "History Classroom",
     "obj_type": "background",
-    "s3_key": "assets/ac38abdce987432980ddcbdbba4190f9.glb"
+    "s3_key": "assets/ac38abdce987432980ddcbdbba4190f9.glb",
+    "screenshot_url": ""
   },
   {
     "name": "Male Student",
     "obj_type": "object",
-    "s3_key": "assets/817e88e59ae94aed875f7b528bf080ec.gltf"
+    "s3_key": "assets/817e88e59ae94aed875f7b528bf080ec.gltf",
+    "screenshot_url": ""
   },
   {
     "name": "Teacher",
     "obj_type": "object",
-    "s3_key": "assets/0881731b72a24889a72c03bd6e8f8770.gltf"
+    "s3_key": "assets/0881731b72a24889a72c03bd6e8f8770.gltf",
+    "screenshot_url": ""
   },
   {
     "name": "Female Student",
     "obj_type": "object",
-    "s3_key": "assets/fc11e32a94b94924b4a9c65ade434f95.gltf"
+    "s3_key": "assets/fc11e32a94b94924b4a9c65ade434f95.gltf",
+    "screenshot_url": ""
   },
   {
     "name": "Chemistry Textbook",
     "obj_type": "object",
-    "s3_key": "assets/ad75dbcdd75e419ba23c44a8cc54b3a1.glb"
+    "s3_key": "assets/ad75dbcdd75e419ba23c44a8cc54b3a1.glb",
+    "screenshot_url": ""
   },
   {
     "name": "Whiteboard",
     "obj_type": "object",
-    "s3_key": "assets/a121b82050b14878963e93d39cc4734a.glb"
+    "s3_key": "assets/a121b82050b14878963e93d39cc4734a.glb",
+    "screenshot_url": ""
   }
 ]

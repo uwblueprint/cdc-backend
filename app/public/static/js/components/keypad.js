@@ -79,6 +79,9 @@ AFRAME.registerComponent("keypad", {
       scaleZ: "0.25",
       text: "Solved",
     };
+    if (data.isBlackboardParagraphDefined) {
+      solvedPuzzleText.y = "-0.25";
+    }
     // Create solved puzzle text
     this.solvedPuzzleEntity = document.createElement("a-entity");
     this.solvedPuzzleEntity.setAttribute("id", "keypad-solved-" + this.id);

@@ -40,6 +40,9 @@ function addEntityToBlackboard(componentDataParsed) {
   componentDataParsed.jsonData.isBlackboardParagraphDefined = componentDataParsed.hasOwnProperty(
     "blackboardParagraph"
   );
+  componentDataParsed.jsonData.isBlackboardTextDefined = componentDataParsed.hasOwnProperty(
+    "blackboardText"
+  );
   entityEl.setAttribute(
     componentDataParsed.componentType,
     "jsonData",

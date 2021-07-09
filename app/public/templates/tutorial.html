@@ -108,9 +108,16 @@ controls: checkpoint, gamepad, trackpad, keyboard, touch;"
           </a-entity>
           <a-entity
             id="returnButton"
-            close-popup='jsonData: {"width": "1", "height": "1", "depth": "0.01", "color": "red", "x": "-8.25", "y": "6.75", "z": "0.005"};'
+            close-popup='jsonData: {"width": "1", "height": "1", "depth": "0.01", "color": "red", "opacity": "0", "x": "-8.25", "y": "6.75", "z": "0.005"};'
             class="link"
-          ></a-entity>
+          >
+            <a-entity
+              id="xClose"
+              text="align: center; width: 1; wrapCount: 1; value: X"
+              position="0 0 0"
+            ></a-entity>
+          </a-entity>
+
           <a-entity
             id="blackboardText"
             text="align: center; width: 15;"

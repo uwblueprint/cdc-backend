@@ -22,7 +22,8 @@ AFRAME.registerComponent("close-popup", {
     el.setAttribute("material", {
       color: data.color,
       shader: "flat",
-      transparent: false,
+      transparent: true,
+      opacity: data.opacity,
     });
     el.setAttribute("position", { x: data.x, y: data.y, z: data.z });
 

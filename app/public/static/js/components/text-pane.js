@@ -14,18 +14,17 @@ AFRAME.registerComponent("text-box", {
     const data = this.data.jsonData;
     const el = this.el;
 
-    // Create geometry.
-    this.geometry = new THREE.PlaneGeometry(data.width, data.height);
-
-    // Create material.
-    this.material = new THREE.MeshStandardMaterial({ color: data.color });
-
-    // Create mesh.
-    this.mesh = new THREE.Mesh(this.geometry, this.material);
-
-    el.object3D.position.set(data.x, data.y, data.z);
-    // Set mesh on entity.
-    el.setObject3D("mesh", this.mesh);
+    el.setAttribute("geometry", {
+      primitive: "plane",
+      width: data.width,
+      height: data.height,
+    });
+    el.setAttribute("material", {
+      color: data.color,
+      shader: "flat",
+      transparent: false,
+    });
+    el.setAttribute("position", { x: data.x, y: data.y, z: data.z });
 
     // Create textLabel
     this.textLabel = document.createElement("a-text");
@@ -37,7 +36,7 @@ AFRAME.registerComponent("text-box", {
       y: data.scaleY,
       z: data.scaleZ,
     });
-    this.textLabel.setAttribute("color", "black");
+    this.textLabel.setAttribute("color", "white");
     this.textLabel.setAttribute("align", "center");
     this.el.appendChild(this.textLabel);
   },
@@ -77,12 +76,12 @@ AFRAME.registerComponent("text-pane", {
     }
 
     const leftNavProp = {
-      width: "1.5",
-      height: "1.5",
+      width: "2",
+      height: "1",
       depth: "0.005",
-      color: "white",
-      x: "-8",
-      y: "0",
+      color: "#1A1F26",
+      x: "-7.75",
+      y: "-6.75",
       z: "0.005",
       scaleX: "2",
       scaleY: "2",
@@ -91,17 +90,17 @@ AFRAME.registerComponent("text-pane", {
     };
 
     const rightNavProp = {
-      width: "1.5",
-      height: "1.5",
+      width: "2",
+      height: "1",
       depth: "0.005",
-      color: "white",
-      x: "8",
-      y: "0",
+      color: "#1A1F26",
+      x: "7.75",
+      y: "-6.75",
       z: "0.005",
       scaleX: "2",
       scaleY: "2",
       scaleZ: "1",
-      text: jsonData.data.length === 1 ? "Done" : "Next",
+      text: jsonData.data.length === 1 ? "Got it!" : "Next",
     };
 
     // Create left nav button
@@ -160,7 +159,7 @@ AFRAME.registerComponent("text-pane", {
 
     this.rightNav.addEventListener("click", function () {
       if (jsonData.currPosition === jsonData.data.length - 2) {
-        rightNavConst.firstChild.setAttribute("value", "Done");
+        rightNavConst.firstChild.setAttribute("value", "Got it!");
       }
 
       if (jsonData.currPosition !== jsonData.data.length - 1) {

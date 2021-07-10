@@ -47,18 +47,6 @@ AFRAME.registerComponent("visual-pane", {
         imageEl.setAttribute("height", maxHeight);
       }
 
-      if (
-        data.isBlackboardTextDefined &&
-        data.hasOwnProperty("caption") &&
-        data.caption !== ""
-      ) {
-        console.log("has both", data);
-      } else if (data.isBlackboardTextDefined) {
-        console.log("has only title", data);
-      } else if (data.hasOwnProperty("caption") && data.caption !== "") {
-        console.log("has only caption", data);
-      }
-
       // Still kept for overriding autoscale
       if (data.hasOwnProperty("scaleBy")) {
         imageEl.setAttribute("width", data.scaleBy * ratio);

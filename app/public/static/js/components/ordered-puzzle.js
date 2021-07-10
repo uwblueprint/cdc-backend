@@ -35,6 +35,7 @@ AFRAME.registerComponent("ordered-puzzle", {
         scaleY: "4",
         scaleZ: "2",
         text: "Solved",
+        yText: -0.55,
       };
       if (
         !(data.hasOwnProperty("isJigsaw") && data.isJigsaw) &&

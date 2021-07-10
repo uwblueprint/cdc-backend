@@ -152,8 +152,6 @@
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/306fada2eb90474ead542eb5e3d0bf64.png",
-          "scaleBy": 10,
-          "position": [0, 0, 0],
           "caption": ""
         }
       }
@@ -173,8 +171,6 @@
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/9598cf70854c4cb48f2adc8418964a1e.jpg",
-          "scaleBy": 10,
-          "position": [0, 0, 0],
           "caption": ""
         }
       }
@@ -194,8 +190,6 @@
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a6eb0c21e61344739689e9a2c83735cc.jpg",
-          "scaleBy": 10,
-          "position": [0, 0, 0],
           "caption": ""
         }
       }
@@ -215,8 +209,6 @@
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/e0a5de8a13464b98ba5a208e5977ec42.png",
-          "scaleBy": 12,
-          "position": [0, 0, 0],
           "caption": ""
         }
       }

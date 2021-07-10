@@ -37,6 +37,12 @@ AFRAME.registerComponent("animation-on-click-run", {
 function addEntityToBlackboard(componentDataParsed) {
   let blackboardEl = document.querySelector("#blackboard");
   let entityEl = document.createElement("a-entity");
+  componentDataParsed.jsonData.isBlackboardParagraphDefined = componentDataParsed.hasOwnProperty(
+    "blackboardParagraph"
+  );
+  componentDataParsed.jsonData.isBlackboardTextDefined = componentDataParsed.hasOwnProperty(
+    "blackboardText"
+  );
   entityEl.setAttribute(
     componentDataParsed.componentType,
     "jsonData",
@@ -73,6 +79,30 @@ function addEntityToBlackboard(componentDataParsed) {
           width: blackboardTextWidth,
           wrapCount: textWrapCount,
           value: blackboardText,
+          font:
+            "https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Bold.json",
+          shader: "msdf",
+        });
+      }
+
+      if (componentDataParsed.hasOwnProperty("blackboardParagraph")) {
+        let blackboardParagraphEl = document.querySelector(
+          "#blackboardParagraph"
+        );
+        const blackboardParagraph = componentDataParsed.blackboardParagraph;
+        const blackboardParagraphColor = componentDataParsed.hasOwnProperty(
+          "blackboardParagraphColor"
+        )
+          ? componentDataParsed.blackboardParagraphColor
+          : "white";
+
+        // TODO: Do we want paragraph text to be resizable like the title text?
+        blackboardParagraphEl.setAttribute("text", {
+          color: blackboardParagraphColor,
+          value: blackboardParagraph,
+          font:
+            "https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Medium.json",
+          shader: "msdf",
         });
       }
 

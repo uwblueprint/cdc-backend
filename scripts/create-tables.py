@@ -17,7 +17,8 @@ table_creation_commands = [
             id SERIAL PRIMARY KEY,
             name TEXT NOT NULL,
             s3_key TEXT NOT NULL,
-            obj_type TEXT NOT NULL
+            obj_type TEXT NOT NULL,
+            screenshot_url TEXT NOT NULL
         )
     """,
     """

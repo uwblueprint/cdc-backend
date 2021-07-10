@@ -78,6 +78,7 @@ AFRAME.registerComponent("keypad", {
       scaleY: "0.25",
       scaleZ: "0.25",
       text: "Solved",
+      yText: -0.04,
     };
     if (data.isBlackboardParagraphDefined) {
       solvedPuzzleText.y = "-0.25";

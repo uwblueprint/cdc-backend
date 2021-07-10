@@ -26,7 +26,7 @@ for r in range(1, rows + 1):
             ],
         )
         io_buffer = io.BytesIO(buffer)
-        print(io_buffer)
+        # print(io_buffer)
         # use io_buffer as body for S3?
         # key: f"images/img{r}_{c}.png"
         # body = io_buffer

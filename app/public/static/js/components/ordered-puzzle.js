@@ -36,6 +36,13 @@ AFRAME.registerComponent("ordered-puzzle", {
         scaleZ: "2",
         text: "Solved",
       };
+      if (
+        !(data.hasOwnProperty("isJigsaw") && data.isJigsaw) &&
+        data.isBlackboardParagraphDefined
+      ) {
+        solvedPuzzleText.y = "-2.9";
+      }
+
       // Create solved puzzle text
       this.solvedPuzzleEntity = document.createElement("a-entity");
       this.solvedPuzzleEntity.setAttribute(
@@ -84,6 +91,23 @@ AFRAME.registerComponent("ordered-puzzle", {
         puzzlePiece.setAttribute("class", "draggable link");
 
         if (data.randomizePos) {
+          puzzlePieceYOffset = -0.5;
+          puzzlePieceYLimit = 2;
+          if (!(data.hasOwnProperty("isJigsaw") && data.isJigsaw)) {
+            if (
+              data.isBlackboardTextDefined &&
+              data.isBlackboardParagraphDefined
+            ) {
+              puzzlePieceYOffset = 0;
+              puzzlePieceYLimit = 5;
+            } else if (data.isBlackboardTextDefined) {
+              puzzlePieceYOffset = -0.9;
+              puzzlePieceYLimit = 3;
+            } else if (data.isBlackboardParagraphDefined) {
+              puzzlePieceYOffset = 0.8;
+              puzzlePieceYLimit = 4;
+            }
+          }
           // Randomizes the position of the puzzle piece on the blackboard
           puzzlePiece.setAttribute("position", {
             x:
@@ -91,7 +115,10 @@ AFRAME.registerComponent("ordered-puzzle", {
               (blackboard.getAttribute("geometry").width - puzzlePieceWidth),
             y:
               (Math.random() - 0.5) *
-              (blackboard.getAttribute("geometry").height - puzzlePieceHeight),
+                (blackboard.getAttribute("geometry").height -
+                  puzzlePieceYLimit -
+                  puzzlePieceHeight) +
+              puzzlePieceYOffset,
             z: 0,
           });
         } else {
@@ -105,7 +132,7 @@ AFRAME.registerComponent("ordered-puzzle", {
         if (data.useTargets) {
           // Create target
           let textBoxProp = JSON.parse(JSON.stringify(data.images[index]));
-          textBoxProp.color = "yellow";
+          textBoxProp.color = "#3a4355";
           textBoxProp.width = puzzlePieceWidth;
           textBoxProp.height = puzzlePieceHeight;
           textBoxProp.xTarget = textBoxProp.xTarget * puzzlePieceWidth;

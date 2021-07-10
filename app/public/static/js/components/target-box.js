@@ -13,17 +13,16 @@ AFRAME.registerComponent("target-box", {
     const data = this.data.jsonData;
     const el = this.el;
 
-    // Create geometry.
-    this.geometry = new THREE.PlaneGeometry(data.width, data.height);
-
-    // Create material.
-    this.material = new THREE.MeshStandardMaterial({ color: data.color });
-
-    // Create mesh.
-    this.mesh = new THREE.Mesh(this.geometry, this.material);
-
-    el.object3D.position.set(data.xTarget, data.yTarget, 0);
-    // Set mesh on entity.
-    el.setObject3D("mesh", this.mesh);
+    el.setAttribute("geometry", {
+      primitive: "plane",
+      width: data.width,
+      height: data.height,
+    });
+    el.setAttribute("material", {
+      color: data.color,
+      shader: "flat",
+      transparent: false,
+    });
+    el.setAttribute("position", { x: data.xTarget, y: data.yTarget, z: 0 });
   },
 });

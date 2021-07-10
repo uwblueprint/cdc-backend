@@ -18,6 +18,8 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardText": "What is This? A rotation-controls",
+        "blackboardParagraph": "This is a paragraph text for rotation-controls. Should be loooong and nothing loonger than this is tested! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test.",
         "componentType": "rotation-controls",
         "jsonData": {
           "position": [0, 0, 5]
@@ -58,8 +60,9 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "componentType": "keypad",
         "blackboardText": "Enter PIN:",
+        "blackboardParagraph": "This is a paragraph text for keypad. Should be loooong and nothing loonger than this is tested! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test.",
+        "componentType": "keypad",
         "jsonData": {
           "password": "1234",
           "model": "numpad",
@@ -89,6 +92,7 @@
       "blackboardData": {
         "componentType": "keypad",
         "blackboardText": "Enter Password:",
+        "blackboardParagraph": "This is a paragraph text for keypad. Should be loooong and nothing loonger than this is tested! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test.",
         "blackboardTextColor": "white",
         "jsonData": {
           "password": "abcde",
@@ -117,6 +121,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardText": "What's This?",
         "componentType": "text-pane",
         "jsonData": {
           "data": [
@@ -188,6 +193,8 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardText": "What is This? A jigsaw-puzzle",
+        "blackboardParagraph": "This is a paragraph text for jigsaw-puzzle. Should be loooong and nothing loonger than this is tested! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test.",
         "componentType": "jigsaw-puzzle",
         "draggable": true,
         "jsonData": {
@@ -219,6 +226,8 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardText": "What is This? A ordered-puzzle",
+        "blackboardParagraph": "This is a paragraph text for ordered-puzzle. Should be loooong and nothing loonger than this is tested! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test.",
         "componentType": "ordered-puzzle",
         "draggable": true,
         "jsonData": {
@@ -268,6 +277,8 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardText": "What is This? A ordered-puzzle",
+        "blackboardParagraph": "This is a paragraph text for ordered-puzzle. Should be loooong and nothing loonger than this is tested! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test.",
         "componentType": "ordered-puzzle",
         "draggable": true,
         "jsonData": {

@@ -21,17 +21,59 @@ AFRAME.registerComponent("visual-pane", {
     let rawImageEl = document.createElement("img");
     rawImageEl.onload = function () {
       const ratio = rawImageEl.width / rawImageEl.height;
-      const scaleBy = data.hasOwnProperty("scaleBy") ? data.scaleBy : 5;
-      imageEl.setAttribute("width", scaleBy * ratio);
-      imageEl.setAttribute("height", scaleBy);
-      if (data.hasOwnProperty("position")) {
+      let imageYOffset = 0;
+      let maxHeight = 12;
+      const maxWidth = 17;
+      if (
+        data.isBlackboardTextDefined &&
+        data.hasOwnProperty("caption") &&
+        data.caption !== ""
+      ) {
+        maxHeight = 9;
+      } else if (data.isBlackboardTextDefined) {
+        imageYOffset = -0.5;
+        maxHeight = 10;
+      } else if (data.hasOwnProperty("caption") && data.caption !== "") {
+        imageYOffset = 1;
+        maxHeight = 10;
+      }
+      const maxDimRatio = maxWidth / maxHeight;
+
+      if (ratio >= maxDimRatio) {
+        imageEl.setAttribute("width", maxWidth);
+        imageEl.setAttribute("height", maxWidth / ratio);
+      } else {
+        imageEl.setAttribute("width", maxHeight * ratio);
+        imageEl.setAttribute("height", maxHeight);
+      }
+
+      if (
+        data.isBlackboardTextDefined &&
+        data.hasOwnProperty("caption") &&
+        data.caption !== ""
+      ) {
+        console.log("has both", data);
+      } else if (data.isBlackboardTextDefined) {
+        console.log("has only title", data);
+      } else if (data.hasOwnProperty("caption") && data.caption !== "") {
+        console.log("has only caption", data);
+      }
+
+      // Still kept for overriding autoscale
+      if (data.hasOwnProperty("scaleBy")) {
+        imageEl.setAttribute("width", data.scaleBy * ratio);
+        imageEl.setAttribute("height", data.scaleBy);
+      }
+
+      // Still kept for overriding autoscale
+      if (false && data.hasOwnProperty("position")) {
         el.setAttribute("position", {
           x: data.position[0],
           y: data.position[1],
           z: data.position[2],
         });
       } else {
-        el.setAttribute("position", { x: 0, y: 0, z: 0 });
+        el.setAttribute("position", { x: 0, y: imageYOffset, z: 0 });
       }
 
       el.appendChild(imageEl);
@@ -65,7 +107,7 @@ AFRAME.registerComponent("visual-pane", {
         } else {
           captionEl.setAttribute("position", {
             x: -4.9 + textHorizontalOffset,
-            y: -(imageEl.getAttribute("height") / 1.6 + textVerticalOffset),
+            y: -(imageEl.getAttribute("height") / 1.8 + textVerticalOffset),
             z: 0.25,
           });
         }

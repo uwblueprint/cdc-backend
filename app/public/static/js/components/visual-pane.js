@@ -42,6 +42,11 @@ AFRAME.registerComponent("visual-pane", {
         captionEl.setAttribute("value", data.caption);
         captionEl.setAttribute("negate", "true");
         captionEl.setAttribute("scale", "2 2 1");
+        captionEl.setAttribute(
+          "font",
+          "https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Medium.json"
+        );
+        captionEl.setAttribute("shader", "msdf");
         let textVerticalOffset = data.hasOwnProperty("textVerticalOffset")
           ? data.textVerticalOffset
           : 1;
@@ -54,13 +59,13 @@ AFRAME.registerComponent("visual-pane", {
         ) {
           captionEl.setAttribute("position", {
             x: -4.9 + textHorizontalOffset,
-            y: imageEl.getAttribute("height") / 2 + textVerticalOffset,
+            y: imageEl.getAttribute("height") / 1.6 + textVerticalOffset,
             z: 0.25,
           });
         } else {
           captionEl.setAttribute("position", {
             x: -4.9 + textHorizontalOffset,
-            y: -(imageEl.getAttribute("height") / 2 + textVerticalOffset),
+            y: -(imageEl.getAttribute("height") / 1.6 + textVerticalOffset),
             z: 0.25,
           });
         }

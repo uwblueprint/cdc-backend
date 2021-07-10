@@ -30,7 +30,12 @@ AFRAME.registerComponent("hint-button", {
     this.hintLabel.setAttribute("color", "black");
     this.hintLabel.setAttribute("scale", { x: 0.07, y: 0.07, z: 0.07 });
     this.hintLabel.setAttribute("align", "center");
-    this.hintLabel.object3D.position.set(x, y - (data.height * 2) / 3, z);
+    this.hintLabel.setAttribute(
+      "font",
+      "https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Bold.json"
+    );
+    this.hintLabel.setAttribute("shader", "msdf");
+    this.hintLabel.object3D.position.set(x, y - (data.height * 2) / 2.6, z);
     this.el.appendChild(this.hintLabel);
 
     const hintLabel = this.hintLabel;
@@ -49,7 +54,7 @@ AFRAME.registerComponent("hint-button", {
 
       hintIcon.object3D.position.set(x, y, z);
       // Y position is directly underneath the hint icon
-      hintLabel.object3D.position.set(x, y - (data.height * 2) / 3, z);
+      hintLabel.object3D.position.set(x, y - (data.height * 2) / 2.6, z);
     });
   },
 });

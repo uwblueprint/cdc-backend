@@ -1,8 +1,15 @@
+import base64
+
 import cv2
+from numpy import frombuffer, uint8
 
-# TODO: Add opencv-python to requirements
+f = open("b64/lightOn", "r")
+string_data = f.read()
 
-img = cv2.imread("images/whmis_labels.jpg")
+nparr = frombuffer(base64.b64decode(string_data), uint8)
+img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+
+f.close()
 rows = 3
 cols = 3
 pixelXscale = int(img.shape[0] / rows)

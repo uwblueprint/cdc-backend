@@ -1,4 +1,5 @@
 import base64
+import io
 
 import cv2
 from numpy import frombuffer, uint8
@@ -17,10 +18,28 @@ pixelYscale = int(img.shape[1] / cols)
 
 for r in range(1, rows + 1):
     for c in range(1, cols + 1):
-        cv2.imwrite(
-            f"images/img{r}_{c}.png",
+        _, buffer = cv2.imencode(
+            ".png",
             img[
                 (r - 1) * pixelXscale : r * pixelXscale,  # noqa: E203
                 (c - 1) * pixelYscale : c * pixelYscale,  # noqa: E203
             ],
         )
+        io_buffer = io.BytesIO(buffer)
+        print(io_buffer)
+        # use io_buffer as body for S3?
+        # key: f"images/img{r}_{c}.png"
+        # body = io_buffer
+        # ContentType='image/jpeg'
+
+
+# old code, saved for reference
+# for r in range(1, rows + 1):
+#     for c in range(1, cols + 1):
+#         cv2.imwrite(
+#             f"images/img{r}_{c}.png",
+#             img[
+#                 (r - 1) * pixelXscale : r * pixelXscale,  # noqa: E203
+#                 (c - 1) * pixelYscale : c * pixelYscale,  # noqa: E203
+#             ],
+#         )

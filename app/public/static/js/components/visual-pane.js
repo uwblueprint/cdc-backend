@@ -54,7 +54,7 @@ AFRAME.registerComponent("visual-pane", {
       }
 
       // Still kept for overriding autoscale
-      if (false && data.hasOwnProperty("position")) {
+      if (data.hasOwnProperty("position")) {
         el.setAttribute("position", {
           x: data.position[0],
           y: data.position[1],

@@ -215,10 +215,11 @@ AFRAME.registerComponent("text-pane", {
 
 function createVisualPane(jsonData, textPaneEl) {
   visualPaneJson = {
+    isBlackboardTextDefined: jsonData.isBlackboardTextDefined,
+    isBlackboardParagraphDefined: jsonData.isBlackboardTextDefined,
     imageSrc: jsonData.data[jsonData.currPosition].imageSrc,
     caption: jsonData.data[jsonData.currPosition].text,
   };
-
   let visualPane = document.createElement("a-entity");
   visualPane.setAttribute("id", "visual-pane");
   visualPane.setAttribute(

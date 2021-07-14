@@ -1,7 +1,10 @@
 import base64
 import io
+import uuid
 
+import boto3
 import cv2
+from botocore.config import Config
 from numpy import frombuffer, uint8
 
 f = open("b64/lightOn", "r")
@@ -16,6 +19,16 @@ cols = 3
 pixelXscale = int(img.shape[0] / rows)
 pixelYscale = int(img.shape[1] / cols)
 
+s3_client = boto3.client(
+    "s3",
+    config=Config(signature_version="s3v4"),
+    endpoint_url="https://s3.us-east-2.amazonaws.com",
+    region_name="us-east-2",
+)
+
+s3_key_prefix = "jay/images/" + uuid.uuid4().hex + "-"
+s3_key_counter = 0
+
 for r in range(1, rows + 1):
     for c in range(1, cols + 1):
         _, buffer = cv2.imencode(
@@ -26,11 +39,13 @@ for r in range(1, rows + 1):
             ],
         )
         io_buffer = io.BytesIO(buffer)
-        # print(io_buffer)
-        # use io_buffer as body for S3?
-        # key: f"images/img{r}_{c}.png"
-        # body = io_buffer
-        # ContentType='image/jpeg'
+        s3_client.upload_fileobj(
+            Fileobj=io_buffer,
+            Bucket="dcc-bp-public-dev",
+            Key=s3_key_prefix + str(s3_key_counter) + ".png",
+            ExtraArgs={"ContentType": "image/png", "ACL": "public-read"},
+        )
+        s3_key_counter += 1
 
 
 # old code, saved for reference

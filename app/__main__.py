@@ -17,7 +17,7 @@ from routes.admin.asset import (
     AdminAssetScreenshotHandler,
     AdminAssetsHandler,
 )
-from routes.admin.aws import AdminUploadHandler
+from routes.admin.aws import AdminJigsawHelper, AdminUploadHandler
 from routes.admin.object import (
     AdminObjectPostHandler,
     AdminObjectPutHandler,
@@ -68,6 +68,7 @@ def get_routes():
         # (r"/api/user/v1/scenario/([0-9]{1,16})", UserScenarioHandler),
         # (r"/api/user/v1/loading_screen", UserLoadingScreen),
         (r"/api/admin/v1/upload", AdminUploadHandler),
+        (r"/api/admin/v1/jigsaw", AdminJigsawHelper),
         (r"/api/admin/v1/asset", AdminAssetPostHandler),
         (r"/api/admin/v1/asset/([0-9]{1,16})", AdminAssetHandler),
         (r"/api/admin/v1/assets", AdminAssetsHandler),

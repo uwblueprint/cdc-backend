@@ -126,7 +126,11 @@ AFRAME.registerComponent("text-pane", {
       "jsonData",
       JSON.stringify(leftNavProp)
     );
-    this.leftNav.setAttribute("class", "link");
+    if (jsonData.data.length === 1) {
+      this.leftNav.setAttribute("visible", "false");
+    } else {
+      this.leftNav.setAttribute("class", "link");
+    }
     this.el.appendChild(this.leftNav);
 
     // Create right nav button

@@ -69,3 +69,33 @@ AFRAME.registerComponent("tutorial-instructions", {
     }
   },
 });
+
+AFRAME.registerComponent("tutorial-hints", {
+  multiple: true,
+
+  init: function () {
+    const el = this.el;
+    this.clickHandler = this.clickHandler.bind(this);
+    el.addEventListener("click", this.clickHandler);
+  },
+  clickHandler: function () {
+    wipeBlackboard();
+    const textLabel = document.getElementById("text-instructions");
+    textLabel.setAttribute("value", "Click on the Hints!");
+    const hintButtonEl = document.getElementById("hint-button");
+    hintButtonEl.setAttribute("visible", "true");
+    const tutorial_hints_transition_data = {
+      data: [
+        {
+          text:
+            "Throughout the escape room, there will be hints readily available for you to use. The use of hints is optional, but feel free to check it out whenever you are stuck. Try accessing the hints now to get a clue for the password.",
+        },
+      ],
+      currPosition: 0,
+    };
+    tutorial_hints_transition_data["isTransition"] = false;
+    addTransition(tutorial_hints_transition_data);
+    this.el.removeAttribute("tutorial-hints");
+    this.el.removeEventListener("click", this.clickHandler);
+  },
+});

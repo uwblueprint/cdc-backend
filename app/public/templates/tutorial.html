@@ -110,7 +110,7 @@ controls: checkpoint, gamepad, trackpad, keyboard, touch;"
               visible="false"
               hint-button='jsonData: {"newHintImg": "/static/img/lightOn.png", "hintImg": "/static/img/lightOff.png", "width": 0.08, "height": 0.08}'
               animation__onclick="property: position; dur: 0; startEvents: click"
-              animation-on-click-run='blackboardData: {"jsonData": {"data": [{"text": "Pay attention to objects that provide clues."}, {"text": "Pay more attention to those objects."}, {"text": "If you cannot find the objects then try clicking on stuff."}, {"text": "If you still cannot find clues then revisit the previous hint."}], "currPosition": 0}, "componentType": "text-pane"}'
+              animation-on-click-run='blackboardData: {"jsonData": {"data": [{"text": "The password is 1591. Enter it on the keypad to escape!"}], "currPosition": 0}, "componentType": "text-pane"}'
             >
             </a-entity>
           </a-entity>
@@ -126,7 +126,8 @@ controls: checkpoint, gamepad, trackpad, keyboard, touch;"
           <a-entity
             id="returnButton"
             close-popup='jsonData: {"width": "1", "height": "1", "depth": "0.01", "color": "red", "opacity": "0", "x": "-8.25", "y": "6.75", "z": "0.005"};'
-            class="link"
+            visible="false"
+            tutorial-hints
           >
             <a-entity
               id="xClose"
@@ -206,7 +207,10 @@ controls: checkpoint, gamepad, trackpad, keyboard, touch;"
           rotation="0.0 0.0 0.0"
           animation__mouseenter="property: scale; to: 0.19 0.19 0.19; dur: 100; startEvents: mouseenter"
           animation__mouseleave="property: scale; to: 0.15 0.15 0.15 dur: 100; startEvents: mouseleave"
+          {#
           animation__onclick="property: position; dur: 0; startEvents: click"
+          #}
+          animation__onclick_tutorial="property: position; dur: 0; startEvents: click"
           animation-on-click-run='blackboardData: {"jsonData": {"model": "numpad", "password": "1591", "is_last_object": true}, "componentType": "keypad", "blackboardText": "Looks like you don&apos;t know the password yet!", "blackboardParagraph": "Click on the \"X\" to exit the pin pad." }'
           visible="false"
         ></a-gltf-model>
@@ -231,7 +235,8 @@ controls: checkpoint, gamepad, trackpad, keyboard, touch;"
           let transitionData = {
             data: [
               {
-                text: "You are about to enter the escape room! All the best!",
+                text:
+                  "Congratulations on finishing the tutorial! Good luck with the rest of the escape room. The next few rooms will not be this easy.",
               },
             ],
             currPosition: 0,

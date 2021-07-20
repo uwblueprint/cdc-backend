@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Bedroom - Aaron",
+    "obj_type": "background",
+    "s3_key": "assets/room3.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Computer",
+    "obj_type": "object",
+    "s3_key": "assets/computer.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Guitar",
+    "obj_type": "object",
+    "s3_key": "assets/guitar.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Card Deck",
+    "obj_type": "object",
+    "s3_key": "assets/carddeck.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Carpet",
+    "obj_type": "object",
+    "s3_key": "assets/carpet.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "House Plant",
+    "obj_type": "object",
+    "s3_key": "assets/houseplant.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Phone",
+    "obj_type": "object",
+    "s3_key": "assets/phone.glb",
+    "screenshot_url": ""
+  }
+]

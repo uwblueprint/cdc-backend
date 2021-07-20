@@ -84,7 +84,7 @@ controls: checkpoint, gamepad, trackpad, keyboard, touch;"
             id="primaryCamera"
             camera="active: false;"
             fov="80"
-            look-controls="reverseMouseDrag: true"
+            look-controls="reverseMouseDrag: {{ pan_mode }}"
             position="0 1.689 0"
           >
             <!-- Hints -->
@@ -120,7 +120,7 @@ controls: checkpoint, gamepad, trackpad, keyboard, touch;"
 
           <a-entity
             id="blackboardText"
-            text="align: center; width: 15;"
+            text="align: center; width: 15; font: https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Bold.json; shader: msdf"
             position="0 6 0.005"
           ></a-entity>
           <a-entity

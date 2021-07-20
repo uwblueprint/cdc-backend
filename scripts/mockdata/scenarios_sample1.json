@@ -62,7 +62,15 @@
         "currPosition": 0
       },
       {
-        "data": [{ "text": "Congratulations, you have escaped!" }],
+        "data": [
+          {
+            "text": "Finally! Feeling much less stressed now. Looking at those plants and rummaging through those pictures really help when I'm stressed."
+          },
+          {
+            "text": "Despite that, I really need to change my password and make it easier to remember. Let's get cracking on this assignment shall we?"
+          },
+          { "text": "Congratulations, you have escaped!" }
+        ],
         "currPosition": 0
       }
     ]

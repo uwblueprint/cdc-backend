@@ -7,8 +7,18 @@
     "asset_id": 31,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "blackboardText": "Enter your password: ",
+        "jsonData": {
+          "password": "223161",
+          "model": "numpad",
+          "is_last_object": true
+        }
+      }
+    }
   },
   {
     "name": "Guitar",
@@ -18,8 +28,30 @@
     "asset_id": 32,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "What is This? A jigsaw-puzzle",
+        "blackboardParagraph": "This is a paragraph text for jigsaw-puzzle. Should be loooong and nothing loonger than this is tested! This is a very loooooong sentence for testing. This is a test this is a test this is a test this is a test.",
+        "componentType": "jigsaw-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            "/static/img/guitarNote/11.png",
+            "/static/img/guitarNote/12.png",
+            "/static/img/guitarNote/13.png",
+            "/static/img/guitarNote/21.png",
+            "/static/img/guitarNote/22.png",
+            "/static/img/guitarNote/23.png",
+            "/static/img/guitarNote/31.png",
+            "/static/img/guitarNote/32.png",
+            "/static/img/guitarNote/33.png"
+          ],
+          "scaleBy": 3,
+          "puzzleDimension": 3
+        }
+      }
+    }
   },
   {
     "name": "Card Deck",
@@ -51,8 +83,16 @@
     "asset_id": 35,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.8, 0.8, 0.8]
+        }
+      }
+    }
   },
   {
     "name": "House Plant",
@@ -62,8 +102,23 @@
     "asset_id": 35,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "When I'm super anxious, I tend to misplace some things. Seems like I found something from my Arabic class."
+            },
+            {
+              "text": "When reading Arabic, read right to left."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
   },
   {
     "name": "Phone",
@@ -73,8 +128,16 @@
     "asset_id": 36,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/room3/reminder.jpg",
+          "caption": ""
+        }
+      }
+    }
   },
   {
     "name": "Shelf",

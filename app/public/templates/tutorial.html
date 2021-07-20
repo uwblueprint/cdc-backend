@@ -228,8 +228,8 @@ controls: checkpoint, gamepad, trackpad, keyboard, touch;"
             },
           ],
           currPosition: 0,
+          isTransition: false,
         };
-        intro_transition_data["isTransition"] = false;
         addTransition(intro_transition_data);
         scene.addEventListener("dcc-success-scene-complete", function () {
           let transitionData = {

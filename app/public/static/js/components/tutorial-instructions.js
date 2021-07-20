@@ -34,7 +34,7 @@ AFRAME.registerComponent("tutorial-instructions", {
   keyDownHandle: function (e) {
     const buttons = this.buttons;
     const dir = this.dir;
-    if (e.key === buttons[this.cur_idx]) {
+    if (e.key.toLowerCase() === buttons[this.cur_idx]) {
       // Correct key pressed, nice job!
       this.cur_idx++;
       if (this.cur_idx < buttons.length) {
@@ -55,8 +55,8 @@ AFRAME.registerComponent("tutorial-instructions", {
             },
           ],
           currPosition: 0,
+          isTransition: false,
         };
-        tutorial_keypress_transition_data["isTransition"] = false;
         addTransition(tutorial_keypress_transition_data);
         this.textLabel.setAttribute(
           "value",
@@ -92,8 +92,8 @@ AFRAME.registerComponent("tutorial-hints", {
         },
       ],
       currPosition: 0,
+      isTransition: false,
     };
-    tutorial_hints_transition_data["isTransition"] = false;
     addTransition(tutorial_hints_transition_data);
     this.el.removeAttribute("tutorial-hints");
     this.el.removeEventListener("click", this.clickHandler);

@@ -52,6 +52,9 @@ AFRAME.registerComponent("text-box", {
   },
 });
 
+// global variable for tutorial flow, sorry
+let start_tutorial_flow = false;
+
 AFRAME.registerComponent("text-pane", {
   schema: {
     jsonData: {
@@ -207,6 +210,7 @@ AFRAME.registerComponent("text-pane", {
         if (jsonData.hasOwnProperty("isTransition") && jsonData.isTransition) {
           sceneComplete(0, jsonData.transitionURL);
         } else {
+          start_tutorial_flow = true;
           el.sceneEl.emit("dcc-success-close-popup", {
             seconds: 0,
             is_last_object: false,

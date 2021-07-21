@@ -6,18 +6,14 @@ AFRAME.registerComponent("tutorial-instructions", {
     this.dir = ["left", "forward", "backward", "right"];
     const el = this.el;
     this.cur_idx = 0;
+    this.drag_done = false;
     this.keyDownHandle = this.keyDownHandle.bind(this);
+    this.dragHandle = this.dragHandle.bind(this);
 
     // Create textLabel
     this.textLabel = document.createElement("a-text");
     this.textLabel.setAttribute("id", "text-instructions");
-    this.textLabel.setAttribute(
-      "value",
-      'Press "' +
-        this.buttons[this.cur_idx] +
-        '" to move ' +
-        this.dir[this.cur_idx]
-    );
+    this.textLabel.setAttribute("value", "Click and drag mouse to pan around");
     this.textLabel.setAttribute(
       "font",
       "https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Medium.json"
@@ -30,8 +26,13 @@ AFRAME.registerComponent("tutorial-instructions", {
 
     el.appendChild(this.textLabel);
     window.addEventListener("keydown", this.keyDownHandle);
+    window.addEventListener("mousedown", this.dragHandle);
   },
   keyDownHandle: function (e) {
+    if (!this.drag_done) {
+      // user hasn't dragged yet, don't do anything
+      return;
+    }
     const buttons = this.buttons;
     const dir = this.dir;
     if (e.key.toLowerCase() === buttons[this.cur_idx]) {
@@ -67,6 +68,36 @@ AFRAME.registerComponent("tutorial-instructions", {
         bookEl.setAttribute("visible", "true");
       }
     }
+  },
+  dragHandle: function (e) {
+    if (!start_tutorial_flow) {
+      // tutorial flow hasn't started yet, don't do anything
+      return;
+    }
+    let mouse_moved = false;
+    const moveListener = (e) => {
+      if (Math.abs(e.movementX) > 5 || Math.abs(e.movementY) > 5) {
+        mouse_moved = true;
+      }
+    };
+    window.addEventListener("mousemove", moveListener);
+    const upListener = () => {
+      if (mouse_moved) {
+        // mouse moved, finish this section of tutorial
+        this.drag_done = true;
+        this.textLabel.setAttribute(
+          "value",
+          'Press "' +
+            this.buttons[this.cur_idx] +
+            '" to move ' +
+            this.dir[this.cur_idx]
+        );
+        window.removeEventListener("mousemove", moveListener);
+        window.removeEventListener("mouseup", upListener);
+        window.removeEventListener("mousedown", this.dragHandle);
+      }
+    };
+    window.addEventListener("mouseup", upListener);
   },
 });
 

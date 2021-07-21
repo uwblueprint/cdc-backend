@@ -222,6 +222,17 @@ admin_aws_handler_body_schema = {
     "additionalProperties": False,
 }
 
+admin_jigsaw_handler_body_schema = {
+    "type": "object",
+    "properties": {
+        "encoded_image": {"type": "string"},
+        "rows": {"type": "integer"},
+        "columns": {"type": "integer"},
+    },
+    "required": ["encoded_image"],
+    "additionalProperties": False,
+}
+
 admin_screenshot_handler = {
     "type": "object",
     "properties": {

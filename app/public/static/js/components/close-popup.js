@@ -29,7 +29,9 @@ AFRAME.registerComponent("close-popup", {
 
     // Add event listener for closing (returning) on mouse click.
     el.addEventListener("click", function () {
-      closePopup(0, false, el);
+      if (!el.hasAttribute("tutorial-hints")) {
+        closePopup(0, false, el);
+      }
     });
 
     // Add event listener for closing on successful puzzle solve, after X seconds

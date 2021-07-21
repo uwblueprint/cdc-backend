@@ -25,6 +25,7 @@ admin_scenario_post_handler_schema = {
             "type": "string",
             "pattern": r"^[\'\?\!\.,a-zA-Z0-9 _-]{,2000}$",
         },
+        "screenshot_url": {"type": "string"},
     },
     "required": [
         "name",

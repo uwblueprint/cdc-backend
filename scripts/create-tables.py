@@ -35,7 +35,8 @@ table_creation_commands = [
             expected_solve_time TEXT NOT NULL,
             introduction_data JSONB NOT NULL,
             conclusion_data JSONB NOT NULL,
-            transitions JSONB[] NOT NULL
+            transitions JSONB[] NOT NULL,
+            screenshot_url TEXT NOT NULL
         )
     """,
     """

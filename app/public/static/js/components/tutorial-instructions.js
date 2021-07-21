@@ -58,14 +58,17 @@ AFRAME.registerComponent("tutorial-instructions", {
           currPosition: 0,
           isTransition: false,
         };
-        addTransition(tutorial_keypress_transition_data);
-        this.textLabel.setAttribute(
-          "value",
-          "Click on the textbook (on teacher's desk)!"
-        );
-        const bookEl = document.getElementById("9-obj");
-        bookEl.setAttribute("class", "link");
-        bookEl.setAttribute("visible", "true");
+        const textLabel = this.textLabel;
+        setTimeout(function () {
+          addTransition(tutorial_keypress_transition_data);
+          const bookEl = document.getElementById("9-obj");
+          bookEl.setAttribute("class", "link");
+          bookEl.setAttribute("visible", "true");
+          textLabel.setAttribute(
+            "value",
+            "Click on the textbook (on teacher's desk)!"
+          );
+        }, 1000);
       }
     }
   },

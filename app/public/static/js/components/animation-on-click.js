@@ -26,7 +26,12 @@ AFRAME.registerComponent("animation-on-click-run", {
 
     this.el.addEventListener("animationcomplete", function (e) {
       if (e.detail.name === "animation__onclick") {
-        // Call Dhruvin's function
+        addEntityToBlackboard(extraInfo);
+      } else if (e.detail.name === "animation__onclick_tutorial") {
+        // Tutorial needs a special case
+        const closeButtonEl = document.getElementById("returnButton");
+        closeButtonEl.setAttribute("class", "link");
+        closeButtonEl.setAttribute("visible", "true");
         addEntityToBlackboard(extraInfo);
       }
     });

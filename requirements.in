@@ -1,6 +1,7 @@
 boto3
 firebase-admin
 jsonschema
+opencv-python
 pre-commit
 psycopg2
 SQLAlchemy

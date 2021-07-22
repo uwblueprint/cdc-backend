@@ -40,5 +40,65 @@
     "obj_type": "object",
     "s3_key": "assets/phone.glb",
     "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 1",
+    "obj_type": "object",
+    "s3_key": "assets/r3f1.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 2",
+    "obj_type": "object",
+    "s3_key": "assets/r3f2.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 3",
+    "obj_type": "object",
+    "s3_key": "assets/r3f3.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 4",
+    "obj_type": "object",
+    "s3_key": "assets/r3f4.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 5",
+    "obj_type": "object",
+    "s3_key": "assets/r3f5.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 6",
+    "obj_type": "object",
+    "s3_key": "assets/r3f6.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 7",
+    "obj_type": "object",
+    "s3_key": "assets/r3f7.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 8",
+    "obj_type": "object",
+    "s3_key": "assets/r3f8.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 9",
+    "obj_type": "object",
+    "s3_key": "assets/r3f9.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 10",
+    "obj_type": "object",
+    "s3_key": "assets/r3f10.glb",
+    "screenshot_url": ""
   }
 ]

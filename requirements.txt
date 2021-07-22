@@ -83,6 +83,10 @@ msgpack==1.0.2
     # via cachecontrol
 nodeenv==1.5.0
     # via pre-commit
+numpy==1.21.0
+    # via opencv-python
+opencv-python==4.5.2.54
+    # via -r requirements.in
 packaging==20.9
     # via google-api-core
 pre-commit==2.10.1

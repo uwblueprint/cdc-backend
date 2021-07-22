@@ -31,6 +31,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "A piece of paper fell out of my guitar. Interesting.",
         "componentType": "jigsaw-puzzle",
         "draggable": true,
         "jsonData": {
@@ -122,6 +123,9 @@
         "componentType": "text-pane",
         "jsonData": {
           "data": [
+            {
+              "text": "What's this piece of paper doing underneath the pot? I'm always misplacing my things when I get anxious."
+            },
             {
               "text": "When I'm super anxious, I tend to misplace some things. Seems like I found something from my Arabic class."
             },

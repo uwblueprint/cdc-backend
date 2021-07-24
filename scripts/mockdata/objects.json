@@ -233,7 +233,7 @@
         "jsonData": {
           "images": [
             {
-              "imageSrc": "/static/img/guitarNote/11.png",
+              "imageSrc": "/static/img/dev/pic1.png",
               "xTarget": -2.5,
               "yTarget": 0
             },

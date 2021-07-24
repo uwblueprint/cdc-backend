@@ -3,7 +3,7 @@
     "name": "Managing Anxiety Attacks Escape Room",
     "friendly_name": "sample-escape-room",
     "description": "A student at ABC High is going through a hard time dealing with the stresses of school, and they begin to feel really anxious in class. Help the student manage their anxiety and escape the class!",
-    "scene_ids": [4, 5],
+    "scene_ids": [4, 5, 6],
     "is_published": true,
     "is_previewable": true,
     "publish_link": "www.publishlink.com/sample-escape-room",
@@ -48,6 +48,26 @@
         "data": [
           {
             "text": "You have escaped the living room. You finally remember now. You have an art project due on May 26."
+          },
+          {
+            "text": "Phew - I made it upstairs without my parents noticing. That would have been a train wreck if they saw me. They'd probably be speechless again if I told them how I was feeling."
+          },
+          {
+            "text": "I hate it when they look at me with such blank expressions. . . what am I going to do with myself now."
+          },
+          {
+            "text": "Maybe I'll start working on my art paper. Better than waiting till the last minute I guess. . . My head and my chest still hurt."
+          }
+        ],
+        "currPosition": 0
+      },
+      {
+        "data": [
+          {
+            "text": "Finally! Feeling much less stressed now. Looking at those plants and rummaging through those pictures really help when I'm stressed."
+          },
+          {
+            "text": "Despite that, I really need to change my password and make it easier to remember. Let's get cracking on this assignment shall we?"
           },
           { "text": "Congratulations, you have escaped!" }
         ],

@@ -24,7 +24,7 @@ Make sure you have sufficient AWS permissions for the actions required. If you h
 1. Copy the latest version of the code to the EC2 instance using `scp`
 1. Download the latest required dependencies:
    - `sudo apt-get update`
-   - `sudo apt-get install python3.9 python3.9-venv libpq-dev python3.9-dev`
+   - `sudo apt-get install python3.9 python3.9-venv libpq-dev python3.9-dev python3-opencv`
 1. Update the configuration file to point to the AWS RDS endpoint and also add a password field under `postgres`. So, you will need to update "postgres.hostname" and "postgres.password". Also, update the asset prefix URL by "asset.prefix_url".
 1. Download the python reqs:
    - `. ./env/bin/activate`

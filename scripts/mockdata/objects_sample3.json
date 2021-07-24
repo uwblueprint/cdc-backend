@@ -36,15 +36,15 @@
         "draggable": true,
         "jsonData": {
           "images": [
-            "/static/img/guitarNote/11.png",
-            "/static/img/guitarNote/12.png",
-            "/static/img/guitarNote/13.png",
-            "/static/img/guitarNote/21.png",
-            "/static/img/guitarNote/22.png",
-            "/static/img/guitarNote/23.png",
-            "/static/img/guitarNote/31.png",
-            "/static/img/guitarNote/32.png",
-            "/static/img/guitarNote/33.png"
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/41756e1d64104f1abca3272e70a173c5.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d72c45cfe63b4ca698be6b3383d81d4c.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/63b52057b47942b7aacb984a40ad91ba.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/e51c242e0517420b9abea96c1783e983.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d2f45d794af342fd8ac02490b0487c83.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/01586c8cc8ef46588067464e1ec43387.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/de508eb2e67c4f06a67071263f7f3aa6.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c5d23503dd87498081526cd7ba62e824.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/1e8b343cd3e645f48086440624971c12.jpg"
           ],
           "scaleBy": 3,
           "puzzleDimension": 3
@@ -151,7 +151,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/room3/reminder.jpg",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/84f2b061b76b408db66234baa3b0ff4e.jpg",
           "caption": ""
         }
       }
@@ -170,7 +170,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/room3/f1.jpg",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/aff0289669274027b0b094c7ee163992.jpg",
           "caption": ""
         }
       }
@@ -189,7 +189,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/room3/f2.jpg",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2dfae009657e4636ac089a353e2d6995.jpg",
           "caption": ""
         }
       }
@@ -208,7 +208,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/room3/f3.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0b37643a8651477aa15dd98f2afd0c00.png",
           "caption": ""
         }
       }
@@ -227,7 +227,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/room3/f4.jpg",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/fac0f97db4d146218d527aebeede5220.jpg",
           "caption": ""
         }
       }
@@ -246,7 +246,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/room3/f5.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/dcbe9625946b4ed8adbc253152b63446.png",
           "caption": ""
         }
       }
@@ -265,7 +265,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/room3/f6.jpg",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/4afa893660724f0aadb974b668c1f562.jpg",
           "caption": ""
         }
       }
@@ -284,7 +284,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/room3/f7.jpg",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/fc727c7dfe2d4bb0ac2b9014849dafa8.jpg",
           "caption": ""
         }
       }
@@ -303,7 +303,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/room3/f8.jpg",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a8b9b3aabd154ed08022d7e44d3801f3.jpg",
           "caption": ""
         }
       }
@@ -322,7 +322,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/room3/f9.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a8618cf289d14d21947d179ba21013c2.png",
           "caption": ""
         }
       }
@@ -341,7 +341,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/room3/f10.jpg",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/4b102ff5cb304904ab131fdb9fed448f.jpg",
           "caption": ""
         }
       }

@@ -25,7 +25,7 @@ admin_scenario_post_handler_schema = {
             "type": "string",
             "pattern": r"^[\'\?\!\.,a-zA-Z0-9 _-]{,2000}$",
         },
-        "screenshot_url": {"type": "string"},
+        "display_image_url": {"type": "string"},
     },
     "required": [
         "name",
@@ -44,7 +44,7 @@ admin_scenario_put_handler_schema = {
             "type": "string",
             "pattern": r"^[\'\?\!\.,a-zA-Z0-9 _-]{,2000}$",
         },
-        "screenshot_url": {"type": "string"},
+        "display_image_url": {"type": "string"},
         "scene_ids": {"type": "array", "items": {"type": "integer"}},
         "is_published": {"type": "boolean"},
         "is_previewable": {"type": "boolean"},

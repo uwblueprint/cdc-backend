@@ -25,7 +25,7 @@ class Scenario(BaseModel):
     transitions = Column(
         ARRAY(JSONB), nullable=False, default=config.get("default_data.transitions")
     )
-    screenshot_url = Column(Text, nullable=False, default="")
+    display_image_url = Column(Text, nullable=False, default="")
     columns = [
         "id",
         "name",
@@ -40,5 +40,5 @@ class Scenario(BaseModel):
         "introduction_data",
         "conclusion_data",
         "transitions",
-        "screenshot_url",
+        "display_image_url",
     ]

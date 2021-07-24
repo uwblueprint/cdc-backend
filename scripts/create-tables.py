@@ -36,7 +36,7 @@ table_creation_commands = [
             introduction_data JSONB NOT NULL,
             conclusion_data JSONB NOT NULL,
             transitions JSONB[] NOT NULL,
-            screenshot_url TEXT NOT NULL
+            display_image_url TEXT NOT NULL
         )
     """,
     """

@@ -11,7 +11,7 @@ AFRAME.registerComponent("hint-button", {
     const data = this.data.jsonData;
 
     let z = -0.5;
-    let x = visibleWidthAtZDepth(z) / 2 - data.width;
+    let x = (visibleWidthAtZDepth(z) * 52) / 100 - data.width;
     let y = -visibleHeightAtZDepth(z) / 2 + data.height;
 
     // Create hint button
@@ -24,25 +24,25 @@ AFRAME.registerComponent("hint-button", {
     this.hintIcon.object3D.position.set(x, y, z);
 
     // Create hint label
-    this.hintLabel = document.createElement("a-text");
-    this.hintLabel.setAttribute("id", "hint-label");
-    this.hintLabel.setAttribute("value", "New Hints!");
-    this.hintLabel.setAttribute("color", "black");
-    this.hintLabel.setAttribute("scale", { x: 0.07, y: 0.07, z: 0.07 });
-    this.hintLabel.setAttribute("align", "center");
-    this.hintLabel.setAttribute(
-      "font",
-      "https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Bold.json"
-    );
-    this.hintLabel.setAttribute("shader", "msdf");
-    this.hintLabel.object3D.position.set(x, y - (data.height * 2) / 2.6, z);
-    this.el.appendChild(this.hintLabel);
+    // this.hintLabel = document.createElement("a-text");
+    // this.hintLabel.setAttribute("id", "hint-label");
+    // this.hintLabel.setAttribute("value", "New Hints!");
+    // this.hintLabel.setAttribute("color", "black");
+    // this.hintLabel.setAttribute("scale", { x: 0.07, y: 0.07, z: 0.07 });
+    // this.hintLabel.setAttribute("align", "center");
+    // this.hintLabel.setAttribute(
+    //   "font",
+    //   "https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Bold.json"
+    // );
+    // this.hintLabel.setAttribute("shader", "msdf");
+    // this.hintLabel.object3D.position.set(x, y - (data.height * 2) / 2.6, z);
+    // this.el.appendChild(this.hintLabel);
 
-    const hintLabel = this.hintLabel;
+    // const hintLabel = this.hintLabel;
     const hintIcon = this.hintIcon;
     this.hintIcon.addEventListener("click", function () {
       hintIcon.setAttribute("src", data.hintImg);
-      hintLabel.setAttribute("value", "Hints");
+      // hintLabel.setAttribute("value", "Hints");
     });
     this.el.appendChild(this.hintIcon);
 
@@ -54,7 +54,7 @@ AFRAME.registerComponent("hint-button", {
 
       hintIcon.object3D.position.set(x, y, z);
       // Y position is directly underneath the hint icon
-      hintLabel.object3D.position.set(x, y - (data.height * 2) / 2.6, z);
+      // hintLabel.object3D.position.set(x, y - (data.height * 2) / 2.6, z);
     });
   },
 });

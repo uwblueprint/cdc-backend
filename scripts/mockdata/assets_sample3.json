@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Bedroom - Aaron",
+    "obj_type": "background",
+    "s3_key": "assets/d83205d4c9ba4f68b3840450adbc5bc0.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Computer",
+    "obj_type": "object",
+    "s3_key": "assets/50fb593924a34adca32ee66ea90324f9.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Guitar",
+    "obj_type": "object",
+    "s3_key": "assets/3d287978842d44388cae80fdf44a74cf.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Card Deck",
+    "obj_type": "object",
+    "s3_key": "assets/db23c1b83799412485fd10f5c73f3fe2.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Carpet",
+    "obj_type": "object",
+    "s3_key": "assets/abbe7ecd847d498b8b240ae4e9fb59b5.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "House Plant",
+    "obj_type": "object",
+    "s3_key": "assets/a9eb65b36f414c1b8adf43da12b1c8d6.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Phone",
+    "obj_type": "object",
+    "s3_key": "assets/f41cf8a7db3a4381a8d19626fb55216c.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 1",
+    "obj_type": "object",
+    "s3_key": "assets/be978485e729474d8e9cdd5d8ebd25e8.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 2",
+    "obj_type": "object",
+    "s3_key": "assets/caf1f48313e84e0eb6106fdc8dbb00f2.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 3",
+    "obj_type": "object",
+    "s3_key": "assets/2647be3f75124aa38aaf86e6cdf76ce4.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 4",
+    "obj_type": "object",
+    "s3_key": "assets/efa4768dd2f74e1597f07360a4174b22.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 5",
+    "obj_type": "object",
+    "s3_key": "assets/769ef37376f84b7aa02622fa9c651b6e.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 6",
+    "obj_type": "object",
+    "s3_key": "assets/34850f8116b74e579dedbd38e618ae55.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 7",
+    "obj_type": "object",
+    "s3_key": "assets/39a6b89a27f242499a4147d83913dc68.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 8",
+    "obj_type": "object",
+    "s3_key": "assets/188b72f6abcb46848b5d11dd8d58b82d.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 9",
+    "obj_type": "object",
+    "s3_key": "assets/94668c3a6c0c4f7d88765636ed770a5e.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room3 Frame 10",
+    "obj_type": "object",
+    "s3_key": "assets/eadf3bc01f2545bf9a83661bed5abad1.glb",
+    "screenshot_url": ""
+  }
+]

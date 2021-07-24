@@ -23,26 +23,9 @@ AFRAME.registerComponent("hint-button", {
     this.hintIcon.setAttribute("class", "link");
     this.hintIcon.object3D.position.set(x, y, z);
 
-    // Create hint label
-    // this.hintLabel = document.createElement("a-text");
-    // this.hintLabel.setAttribute("id", "hint-label");
-    // this.hintLabel.setAttribute("value", "New Hints!");
-    // this.hintLabel.setAttribute("color", "black");
-    // this.hintLabel.setAttribute("scale", { x: 0.07, y: 0.07, z: 0.07 });
-    // this.hintLabel.setAttribute("align", "center");
-    // this.hintLabel.setAttribute(
-    //   "font",
-    //   "https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Bold.json"
-    // );
-    // this.hintLabel.setAttribute("shader", "msdf");
-    // this.hintLabel.object3D.position.set(x, y - (data.height * 2) / 2.6, z);
-    // this.el.appendChild(this.hintLabel);
-
-    // const hintLabel = this.hintLabel;
     const hintIcon = this.hintIcon;
     this.hintIcon.addEventListener("click", function () {
       hintIcon.setAttribute("src", data.hintImg);
-      // hintLabel.setAttribute("value", "Hints");
     });
     this.el.appendChild(this.hintIcon);
 
@@ -53,8 +36,6 @@ AFRAME.registerComponent("hint-button", {
       const y = -visibleHeightAtZDepth(z) / 2 + data.height;
 
       hintIcon.object3D.position.set(x, y, z);
-      // Y position is directly underneath the hint icon
-      // hintLabel.object3D.position.set(x, y - (data.height * 2) / 2.6, z);
     });
   },
 });

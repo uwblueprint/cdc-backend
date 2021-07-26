@@ -17,6 +17,7 @@
     <script src="/static/js/components/text-pane.js"></script>
     <script src="/static/js/components/visual-pane.js"></script>
     <script src="/static/js/components/hint-button.js"></script>
+    <script src="/static/js/components/button-design.js"></script>
     <script src="/static/js/components/tutorial-instructions.js"></script>
     <!-- Initial state -->
     <script>
@@ -114,7 +115,7 @@ controls: checkpoint, gamepad, trackpad, keyboard, touch;"
             id="blackboard"
             visible="true"
             geometry="primitive: plane; width: 18 ; height: 15"
-            material="color: #1A1F26; shader: flat; transparent: false"
+            material="color: #242424; shader: flat; transparent: false"
           >
           </a-entity>
           <a-entity
@@ -122,12 +123,18 @@ controls: checkpoint, gamepad, trackpad, keyboard, touch;"
             close-popup='jsonData: {"width": "1", "height": "1", "depth": "0.01", "color": "red", "opacity": "0", "x": "-8.25", "y": "6.75", "z": "0.005"};'
             visible="false"
             tutorial-hints
+            button-design
           >
-            <a-entity
+            <a-text
               id="xClose"
-              text="align: center; width: 0.5; wrapCount: 1; value: X"
+              align="center"
+              font="https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Bold.json"
+              wrapCount="1"
+              value="X"
+              shader="msdf"
+              scale="2 2 1"
               position="0 0 0"
-            ></a-entity>
+            ></a-text>
           </a-entity>
 
           <a-entity

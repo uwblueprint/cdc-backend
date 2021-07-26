@@ -32,7 +32,7 @@ AFRAME.registerComponent("text-box", {
     this.textLabel.setAttribute("value", data.text);
     this.textLabel.setAttribute(
       "font",
-      "https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Medium.json"
+      "https://raw.githubusercontent.com/jaydhulia/aframe-fonts/master/fonts/poppins/Poppins-Bold.json"
     );
     this.textLabel.setAttribute("shader", "msdf");
     this.textLabel.setAttribute("negate", "true");
@@ -97,7 +97,7 @@ AFRAME.registerComponent("text-pane", {
       width: "2",
       height: "1",
       depth: "0.005",
-      color: "#1A1F26",
+      color: "#242424",
       x: "-7.75",
       y: "-6.75",
       z: "0.005",
@@ -111,7 +111,7 @@ AFRAME.registerComponent("text-pane", {
       width: "2",
       height: "1",
       depth: "0.005",
-      color: "#1A1F26",
+      color: "#242424",
       x: "7.75",
       y: "-6.75",
       z: "0.005",
@@ -133,6 +133,7 @@ AFRAME.registerComponent("text-pane", {
       this.leftNav.setAttribute("visible", "false");
     } else {
       this.leftNav.setAttribute("class", "link");
+      this.leftNav.setAttribute("button-design", "");
     }
     this.el.appendChild(this.leftNav);
 
@@ -145,6 +146,7 @@ AFRAME.registerComponent("text-pane", {
       JSON.stringify(rightNavProp)
     );
     this.rightNav.setAttribute("class", "link");
+    this.rightNav.setAttribute("button-design", "");
     this.el.appendChild(this.rightNav);
 
     let currVisualPane = initialVisualPane;

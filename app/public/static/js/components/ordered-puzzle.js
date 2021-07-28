@@ -204,7 +204,7 @@ AFRAME.registerComponent("ordered-puzzle", {
     }
   },
   tick: function () {
-    // nothing to dp if already restored
+    // nothing to do if already restored
     if (this.alreadyRestored) {
       return;
     }

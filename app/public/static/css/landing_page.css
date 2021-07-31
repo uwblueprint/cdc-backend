@@ -215,9 +215,6 @@
 #help-modal-dialog {
   width: 532px;
   height: 415px;
-  position: absolute;
-  left: 490px;
-  top: 333px;
   max-width: 532px;
   /* Grey / White */
 
@@ -225,12 +222,15 @@
   border-radius: 4px;
 }
 
+.modal.show {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
 .modal-dialog {
   width: 408px;
   height: 233px;
-  position: absolute;
-  left: 552px;
-  top: 425px;
   /* Grey / White */
 
   background: #ffffff;

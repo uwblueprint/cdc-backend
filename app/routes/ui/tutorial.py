@@ -27,18 +27,19 @@ class UITutorialPageHandler(BaseUIHandler):
             if not scenario_obj.is_published:
                 raise ValueError("This Scenario is currently not accessible")
 
-            pan_mode = 0
-            try:
-                pan_mode = int(self.get_argument("pan_mode", "0"))
-            except ValueError:
-                pass
+            # Legacy code keeping for future, if we want to give the user a choice.
+            # pan_mode = 0
+            # try:
+            #     pan_mode = int(self.get_argument("pan_mode", "0"))
+            # except ValueError:
+            #     pass
 
             await self.render(
                 "tutorial.html",
                 asset_prefix_url=config.get("asset.prefix_url"),
                 scenario_name=scenario_obj.name,
                 scenario_friendly_name=scenario_obj.friendly_name,
-                pan_mode="true" if pan_mode == 1 else "false",
+                # pan_mode="true" if pan_mode == 1 else "false",
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

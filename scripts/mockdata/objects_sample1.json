@@ -18,7 +18,7 @@
               "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/89a29bddf6164ab1973c07d1f14b49be.jpg"
             },
             {
-              "text": "Bromelain is an enzyme extract derived from the stems of pineapples, although it exists in all parts of the fresh pineapple. The chemical formula of bromelain is C39H66N2O29"
+              "text": "Bromelain is an enzyme extract derived from the stems of pineapples, although it exists in all parts of the fresh pineapple. The chemical formula of bromelain is C(39)H(66)N(2)O(29)"
             }
           ],
           "currPosition": 0
@@ -38,6 +38,7 @@
     "animations_json": {
       "blackboardData": {
         "componentType": "keypad",
+        "blackboardText": "The teacher can't let you leave unless you give him the password. He says you should be able to find it if you had studied properly. What's the password?",
         "jsonData": {
           "password": "3966229",
           "model": "numpad",

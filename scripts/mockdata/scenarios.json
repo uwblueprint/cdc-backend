@@ -15,7 +15,7 @@
     "conclusion_data": {
       "header_text": "Welcome to Student Escape Room",
       "paragraph_text": "Check out the link below",
-      "share_link": "www.sharelink.com/student-escape-room"
+      "share_link": "https://backend-dev.jaydhulia.com/student-escape-room"
     },
     "transitions": [
       {
@@ -62,7 +62,7 @@
     "conclusion_data": {
       "header_text": "You escaped Teacher Escape Room",
       "paragraph_text": "Check out the link below",
-      "share_link": "www.sharelink.com/teacher-escape-room"
+      "share_link": "https://backend-dev.jaydhulia.com/teacher-escape-room"
     },
     "transitions": [
       {

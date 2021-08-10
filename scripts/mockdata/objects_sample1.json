@@ -18,7 +18,8 @@
               "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/89a29bddf6164ab1973c07d1f14b49be.jpg"
             },
             {
-              "text": "Bromelain is an enzyme extract derived from the stems of pineapples, although it exists in all parts of the fresh pineapple. The chemical formula of bromelain is C39H66N2O29"
+              "text": "Bromelain is an enzyme extract derived from the stems of pineapples, although it exists in all parts of the fresh pineapple. The chemical formula of bromelain is shown above.",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/810e45298b9b4192904d599881b35194.jpg"
             }
           ],
           "currPosition": 0
@@ -29,7 +30,7 @@
   {
     "name": "Teacher",
     "position": [4.707, 0.035, -3.379],
-    "scale": [1.8, 1.8, 1.8],
+    "scale": [1.0, 1.0, 1.0],
     "rotation": [0, 300, 0],
     "asset_id": 9,
     "next_objects": [],
@@ -38,6 +39,7 @@
     "animations_json": {
       "blackboardData": {
         "componentType": "keypad",
+        "blackboardText": "The teacher can't let you leave unless you give him the password. He says you should be able to find it if you had studied properly. What's the password?",
         "jsonData": {
           "password": "3966229",
           "model": "numpad",
@@ -72,7 +74,7 @@
   {
     "name": "Male Student",
     "position": [2.987, -0.025, -1.149],
-    "scale": [0.16, 0.16, 0.16],
+    "scale": [0.18, 0.18, 0.18],
     "rotation": [0, 180, 0],
     "asset_id": 8,
     "next_objects": [],

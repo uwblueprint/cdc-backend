@@ -22,7 +22,16 @@
       {
         "data": [
           {
-            "text": "You are a student having a sudden panic attack about an upcoming test. Try to escape the class to get a breather!"
+            "text": "You're a high school student stuck in class. The clock ticks past as you wait for the bell to ring. Your teacher Mrs. Smith says, \"Alright, now we are going to be talking about the 8 page history paper due next week, there will be 4 components to the structure...\""
+          },
+          {
+            "text": "You look down at your agenda. \"8 page paper, in a week!? I still have a Bio lab, Math quiz and a Chem exam I have to prepare for next week. I can't, I just can't. It's impossible. I can't breath. What am I going to do??\""
+          },
+          {
+            "text": "Your hands start to tremble as you grasp your chest, you can't even tell if you are breathing properly anymore. You feel like you are going to pass out. Everything begins to look blurry and you notice your body start to subtly shake. You know what's happening: it's an anxiety attack"
+          },
+          {
+            "text": "\"I have to get out of here, I have to go home. I feel like I'm gonna puke.\" Escape the room to get back home!"
           }
         ],
         "currPosition": 0
@@ -30,16 +39,16 @@
       {
         "data": [
           {
-            "text": "The bell rings and you grab your books and shove them in your bag. Slinging the bag over your shoulder, you quickly leave the class. Thank god that class is over with, and you step outside for a breather."
+            "text": "You were finally able to escape the class. Sweat trickles down your back as you run back home. If you had stayed any longer in that class and with added stress, you might have needed medical attention. If you ever feel an anxiety attack coming, get help and remove yourself from the stressful situation!"
           },
           {
-            "text": "You are feeling stressed for some reason. What can it be?? You cannot focus and you decide to go home early and just relax."
+            "text": "Let's go back home and get some rest. School's been too stressful for you."
           },
           {
-            "text": "You finally arrive home. Your parents are in the living room. If you talk to them, they will start asking a million questions about why you left school early."
+            "text": "You manage to get a bus and get yourself home. As you walk up to the door, you notice that your parents have come early for work. That's not good: they're going to pepper me with questions as soon as I enter the room"
           },
           {
-            "text": "Maybe there is something in the room that can help figure out Maybe there is something in the room that can help figure out why I am feeling stressed. Perhaps a test or project is due soon? Let's try and find out."
+            "text": "With a flash of realization, you realize that your anxiety attack in school was related to some project that you forgot to do. When was the project due again? Let's try to find out without talking to Mom and Dad."
           }
         ],
         "currPosition": 0

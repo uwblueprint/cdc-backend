@@ -227,8 +227,16 @@
     "asset_id": 50,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/8.png",
+          "caption": ""
+        }
+      }
+    }
   },
   {
     "name": "Fridge",
@@ -270,8 +278,16 @@
     "asset_id": 53,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/5.png",
+          "caption": ""
+        }
+      }
+    }
   },
   {
     "name": "Juice cup",
@@ -281,8 +297,16 @@
     "asset_id": 54,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/0.png",
+          "caption": ""
+        }
+      }
+    }
   },
   {
     "name": "Burger",
@@ -292,8 +316,16 @@
     "asset_id": 55,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/1.png",
+          "caption": ""
+        }
+      }
+    }
   },
   {
     "name": "Phone",

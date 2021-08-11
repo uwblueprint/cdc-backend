@@ -7,7 +7,7 @@ import cv2
 from botocore.config import Config
 from numpy import frombuffer, uint8
 
-f = open("b64/lightOn", "r")
+f = open("b64/viv", "r")
 string_data = f.read()
 
 nparr = frombuffer(base64.b64decode(string_data), uint8)
@@ -26,8 +26,9 @@ s3_client = boto3.client(
     region_name="us-east-2",
 )
 
-s3_key_prefix = "jay/images/" + uuid.uuid4().hex + "-"
+s3_key_prefix = "images/" + uuid.uuid4().hex + "-"
 s3_key_counter = 0
+filenames = []
 
 for r in range(1, rows + 1):
     for c in range(1, cols + 1):
@@ -46,8 +47,14 @@ for r in range(1, rows + 1):
             ExtraArgs={"ContentType": "image/png", "ACL": "public-read"},
         )
         s3_key_counter += 1
+        filenames.append(
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/"
+            + s3_key_prefix
+            + str(s3_key_counter)
+            + ".png"
+        )
 
-
+print(filenames)
 # old code, saved for reference
 # for r in range(1, rows + 1):
 #     for c in range(1, cols + 1):

@@ -43,7 +43,8 @@
         "data": [{ "text": "Conclusion: Just text, no images." }],
         "currPosition": 0
       }
-    ]
+    ],
+    "display_image_url": ""
   },
   {
     "name": "Teacher Escape Room",
@@ -99,6 +100,7 @@
         ],
         "currPosition": 0
       }
-    ]
+    ],
+    "display_image_url": ""
   }
 ]

@@ -1,0 +1,140 @@
+[
+  {
+    "name": "Cafe",
+    "obj_type": "background",
+    "s3_key": "assets/room4.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Backpack",
+    "obj_type": "object",
+    "s3_key": "assets/backpack.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Id Card",
+    "obj_type": "object",
+    "s3_key": "assets/idcard.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "House Plant",
+    "obj_type": "object",
+    "s3_key": "assets/a9eb65b36f414c1b8adf43da12b1c8d6.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Fridge",
+    "obj_type": "object",
+    "s3_key": "assets/Fridge.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Door",
+    "obj_type": "object",
+    "s3_key": "assets/dd0cd94b98404ace9f112fb9bd3d172d.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Dice",
+    "obj_type": "object",
+    "s3_key": "assets/dice.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Juice Cup",
+    "obj_type": "object",
+    "s3_key": "assets/juicecup.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Burger",
+    "obj_type": "object",
+    "s3_key": "assets/burger.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Coffeebag",
+    "obj_type": "object",
+    "s3_key": "assets/coffeebag.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room4 Frame 1",
+    "obj_type": "object",
+    "s3_key": "assets/f1.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room4 Frame 2",
+    "obj_type": "object",
+    "s3_key": "assets/f2.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room4 Frame 3",
+    "obj_type": "object",
+    "s3_key": "assets/f3.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room4 Frame 4",
+    "obj_type": "object",
+    "s3_key": "assets/f4.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room4 Frame 5",
+    "obj_type": "object",
+    "s3_key": "assets/f5.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room4 Frame 6",
+    "obj_type": "object",
+    "s3_key": "assets/f6.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room4 Frame 7",
+    "obj_type": "object",
+    "s3_key": "assets/f7.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room4 Frame 8",
+    "obj_type": "object",
+    "s3_key": "assets/f8.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room4 Frame 9",
+    "obj_type": "object",
+    "s3_key": "assets/f9.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room4 Frame 10",
+    "obj_type": "object",
+    "s3_key": "assets/f10.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room4 Frame 11",
+    "obj_type": "object",
+    "s3_key": "assets/f11.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room4 Frame 12",
+    "obj_type": "object",
+    "s3_key": "assets/f12.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Room4 Frame 13",
+    "obj_type": "object",
+    "s3_key": "assets/f13.glb",
+    "screenshot_url": ""
+  }
+]

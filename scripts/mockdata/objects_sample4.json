@@ -1,0 +1,675 @@
+[
+  {
+    "name": "Door",
+    "position": [3.919, 0.823, -6.285],
+    "scale": [3.302, 2.825, 2.866],
+    "rotation": [0, 270, 0],
+    "asset_id": 52,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "jsonData": {
+          "password": "6427",
+          "model": "numpad",
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Backpack",
+    "position": [-1.656, 1.734, 8.109],
+    "scale": [0.5, 0.5, 0.5],
+    "rotation": [-23.696, 180, 0],
+    "asset_id": 48,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Huh, what's this?",
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "/static/img/r4/t3/row-1-column-1.jpg",
+              "xTarget": -2.5,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t3/row-1-column-2.jpg",
+              "xTarget": -1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t3/row-1-column-3.jpg",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t3/row-1-column-4.jpg",
+              "xTarget": 1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t3/row-1-column-5.jpg",
+              "xTarget": 2.5,
+              "yTarget": 0
+            }
+          ],
+          "useTargets": true,
+          "randomizePos": true,
+          "scaleBy": 3,
+          "is_last_object": false
+        }
+      }
+    }
+  },
+  {
+    "name": "Id card 1",
+    "position": [-10.105, 0.995, -2.764],
+    "scale": [0.25, 0.25, 0.25],
+    "rotation": [0, 5, 0],
+    "asset_id": 49,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Another weird riddle, huh?",
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "/static/img/r4/t4/row-1-column-1.jpg",
+              "xTarget": -2.5,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t4/row-1-column-2.jpg",
+              "xTarget": -1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t4/row-1-column-3.jpg",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t4/row-1-column-4.jpg",
+              "xTarget": 1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t4/row-1-column-5.jpg",
+              "xTarget": 2.5,
+              "yTarget": 0
+            }
+          ],
+          "useTargets": true,
+          "randomizePos": true,
+          "scaleBy": 3,
+          "is_last_object": false
+        }
+      }
+    }
+  },
+  {
+    "name": "Id card 2",
+    "position": [-5.645, 0.995, 7.833],
+    "scale": [0.25, 0.25, 0.25],
+    "rotation": [0, 69.0, 0],
+    "asset_id": 49,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Another weird riddle, huh?",
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "/static/img/r4/t2/row-1-column-1.jpg",
+              "xTarget": -2.5,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t2/row-1-column-2.jpg",
+              "xTarget": -1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t2/row-1-column-3.jpg",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t2/row-1-column-4.jpg",
+              "xTarget": 1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t2/row-1-column-5.jpg",
+              "xTarget": 2.5,
+              "yTarget": 0
+            }
+          ],
+          "useTargets": true,
+          "randomizePos": true,
+          "scaleBy": 3,
+          "is_last_object": false
+        }
+      }
+    }
+  },
+  {
+    "name": "House Plant 1",
+    "position": [-12.378, 3.09, 7.527],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0, 0, 0],
+    "asset_id": 50,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Are these riddles supposed to help?",
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "/static/img/r4/t1/row-1-column-1.jpg",
+              "xTarget": -2.5,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t1/row-1-column-2.jpg",
+              "xTarget": -1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t1/row-1-column-3.jpg",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t1/row-1-column-4.jpg",
+              "xTarget": 1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/t1/row-1-column-5.jpg",
+              "xTarget": 2.5,
+              "yTarget": 0
+            }
+          ],
+          "useTargets": true,
+          "randomizePos": true,
+          "scaleBy": 3,
+          "is_last_object": false
+        }
+      }
+    }
+  },
+  {
+    "name": "House Plant 2",
+    "position": [-12.378, 3.09, 5.849],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0, 69, 0],
+    "asset_id": 50,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Fridge",
+    "position": [-11.917, 0.921, -5.115],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0, 90, 0],
+    "asset_id": 51,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Cool! This is probably the owner's travel wish list",
+        "componentType": "jigsaw-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            "/static/img/r4/q1/row-1-column-1.jpg",
+            "/static/img/r4/q1/row-1-column-2.jpg",
+            "/static/img/r4/q1/row-1-column-3.jpg",
+            "/static/img/r4/q1/row-2-column-1.jpg",
+            "/static/img/r4/q1/row-2-column-2.jpg",
+            "/static/img/r4/q1/row-2-column-3.jpg",
+            "/static/img/r4/q1/row-3-column-1.jpg",
+            "/static/img/r4/q1/row-3-column-2.jpg",
+            "/static/img/r4/q1/row-3-column-3.jpg"
+          ],
+          "scaleBy": 3,
+          "puzzleDimension": 3
+        }
+      }
+    }
+  },
+  {
+    "name": "Dice",
+    "position": [-12.032, 3.107, 9.261],
+    "scale": [0.5, 0.5, 0.5],
+    "rotation": [0, 45, 0],
+    "asset_id": 53,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Juice cup",
+    "position": [-4.347, 3.741, -0.65],
+    "scale": [0.5, 0.5, 0.5],
+    "rotation": [0, 0, 0],
+    "asset_id": 54,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Burger",
+    "position": [-3.316, 3.298, 10.059],
+    "scale": [2, 2, 2],
+    "rotation": [0, 45, 0],
+    "asset_id": 55,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Phone",
+    "position": [-3.271, 3.273, 8.197],
+    "scale": [0.3, 0.3, 0.3],
+    "rotation": [0, 69, 0],
+    "asset_id": 36,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Weird app that's on my phone. What could this mean?",
+        "componentType": "jigsaw-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            "/static/img/r4/q3/row-1-column-1.jpg",
+            "/static/img/r4/q3/row-1-column-2.jpg",
+            "/static/img/r4/q3/row-1-column-3.jpg",
+            "/static/img/r4/q3/row-2-column-1.jpg",
+            "/static/img/r4/q3/row-2-column-2.jpg",
+            "/static/img/r4/q3/row-2-column-3.jpg",
+            "/static/img/r4/q3/row-3-column-1.jpg",
+            "/static/img/r4/q3/row-3-column-2.jpg",
+            "/static/img/r4/q3/row-3-column-3.jpg"
+          ],
+          "scaleBy": 3,
+          "puzzleDimension": 3
+        }
+      }
+    }
+  },
+  {
+    "name": "Rubiks cube",
+    "position": [-3.743, 3.277, 3.711],
+    "scale": [0.002, 0.002, 0.002],
+    "rotation": [0, 0, 0],
+    "asset_id": 17,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/8.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Coffeebag",
+    "position": [-12.526, 3.107, 0.94],
+    "scale": [0.69, 0.69, 0.69],
+    "rotation": [0, 25, 0],
+    "asset_id": 56,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/2.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame1",
+    "position": [3.64, 5.129, -11.406],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 180, 0],
+    "asset_id": 57,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/4.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame2",
+    "position": [0.459, 5.299, -8.828],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 90, 0],
+    "asset_id": 58,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/9.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame3",
+    "position": [-2.37, 5.199, -12.705],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 180, 0],
+    "asset_id": 59,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/8.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame4",
+    "position": [-4.656, 4.297, -8.82],
+    "scale": [0.073, 0.15, 0.15],
+    "rotation": [0, 90, 0],
+    "asset_id": 60,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/2.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame5",
+    "position": [-13.363, 5.297, -1.25],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 0, 0],
+    "asset_id": 61,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/5.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame6",
+    "position": [-13.363, 5.345, 3.51],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 0, 0],
+    "asset_id": 62,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/7.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame7",
+    "position": [-13.363, 5.345, 8.493],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 0, 0],
+    "asset_id": 63,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "/static/img/r4/q2/row-1-column-1.jpg",
+              "xTarget": 1.1,
+              "yTarget": -1.1
+            },
+            {
+              "imageSrc": "/static/img/r4/q2/row-1-column-2.jpg",
+              "xTarget": 0,
+              "yTarget": -1.1
+            },
+            {
+              "imageSrc": "/static/img/r4/q2/row-1-column-3.jpg",
+              "xTarget": -1.1,
+              "yTarget": -1.1
+            },
+            {
+              "imageSrc": "/static/img/r4/q2/row-2-column-1.jpg",
+              "xTarget": 1.1,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/q2/row-2-column-2.jpg",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/q2/row-2-column-3.jpg",
+              "xTarget": -1.1,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/r4/q2/row-3-column-1.jpg",
+              "xTarget": 1.1,
+              "yTarget": 1.1
+            },
+            {
+              "imageSrc": "/static/img/r4/q2/row-3-column-2.jpg",
+              "xTarget": 0,
+              "yTarget": 1.1
+            },
+            {
+              "imageSrc": "/static/img/r4/q2/row-3-column-3.jpg",
+              "xTarget": -1.1,
+              "yTarget": 1.1
+            }
+          ],
+          "useTargets": false,
+          "randomizePos": true,
+          "scaleBy": 2
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame8",
+    "position": [-10.957, 4.776, 15.118],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 90, 0],
+    "asset_id": 64,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/0.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame9",
+    "position": [-6.845, 4.776, 15.118],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 90, 0],
+    "asset_id": 65,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/1.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame10",
+    "position": [-2.708, 4.776, 15.118],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 90, 0],
+    "asset_id": 66,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/44.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame11",
+    "position": [1.083, 4.64, 15.118],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 90, 0],
+    "asset_id": 67,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/3.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame12",
+    "position": [3.677, 4.149, 10.029],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 180, 0],
+    "asset_id": 68,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/7.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame13",
+    "position": [3.677, 4.149, 2.07],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 180, 0],
+    "asset_id": 69,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/numbers/2.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Backdoor",
+    "position": [-8.603, 0.823, -14.573],
+    "scale": [2.073, 2.825, 2.866],
+    "rotation": [0, 0, 0],
+    "asset_id": 52,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  }
+]

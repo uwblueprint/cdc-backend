@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Bedroom - Sample",
+    "description": "Sample escape room in the bedroom",
+    "object_ids": [
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78
+    ],
+    "position": [0, 0.1, 0],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0.0, 90.0, 0.0],
+    "background_id": 47,
+    "camera_properties": {
+      "position": [-1.628, 3.5, 10.027],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "The cafe owner loves riddles. She uses it to sometimes hide intermediate clues!",
+      "That destination list is pretty interesting. I remember the owner saying she used some letters and positions to create a password. Maybe the numbers that I found could help me find the destinations??",
+      "I remember something! I need to find some letters and check the position on a list...my memory is super foggy right now.",
+      "The owner did tell me one time that she made a backup just in case. She said it was some drawing..."
+    ],
+    "screenshot_url": ""
+  }
+]

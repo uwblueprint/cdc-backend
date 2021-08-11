@@ -38,7 +38,7 @@ AFRAME.registerComponent("keypad", {
     }
 
     el.addEventListener("superkeyboardinput", function (event) {
-      if (event.detail.value === password) {
+      if (event.detail.value.toLowerCase() === password.toLowerCase()) {
         // emit event to update state
         el.sceneEl.emit("solvedObject", { id: data.id });
         // emit event to close popup (after 1 second for now)

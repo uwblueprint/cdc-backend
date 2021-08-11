@@ -408,6 +408,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/4.png",
@@ -427,6 +428,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/9.png",
@@ -446,6 +448,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/8.png",
@@ -465,6 +468,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/2.png",
@@ -484,6 +488,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/5.png",
@@ -503,6 +508,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/7.png",
@@ -522,6 +528,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "ordered-puzzle",
         "draggable": true,
         "jsonData": {
@@ -590,6 +597,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/0.png",
@@ -609,6 +617,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/1.png",
@@ -628,6 +637,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/44.png",
@@ -647,6 +657,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/3.png",
@@ -666,6 +677,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/7.png",
@@ -685,6 +697,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/2.png",

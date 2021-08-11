@@ -140,8 +140,8 @@
   },
   {
     "name": "Frame1",
-    "position": [-2, 4, -13.23],
-    "scale": [0.1, 0.1, 0.1],
+    "position": [-1.634, 4.041, -13.23],
+    "scale": [0.1, 0.073, 0.08],
     "rotation": [0, 270, 0],
     "asset_id": 21,
     "next_objects": [],

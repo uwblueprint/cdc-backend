@@ -225,60 +225,23 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "componentType": "ordered-puzzle",
+        "componentType": "jigsaw-puzzle",
         "draggable": true,
         "blackboardText": "Shoot! The cat ripped up my agenda.",
         "jsonData": {
           "images": [
-            {
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/dbedc070783843d49acffd13cbe1de1b.png",
-              "xTarget": 1.1,
-              "yTarget": -1.1
-            },
-            {
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/95f93bc7388d4d77a3fe11f6193d8e65.png",
-              "xTarget": 0,
-              "yTarget": -1.1
-            },
-            {
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/3d3d9896d53e49cc9efe8ae29e66f213.png",
-              "xTarget": -1.1,
-              "yTarget": -1.1
-            },
-            {
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/977b98d69d234648abf807facb65343d.png",
-              "xTarget": 1.1,
-              "yTarget": 0
-            },
-            {
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/b3d1c94f0c2c48d18d91e43568bbfb30.png",
-              "xTarget": 0,
-              "yTarget": 0
-            },
-            {
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2ad0610ad54447fda868606f057b1e99.png",
-              "xTarget": -1.1,
-              "yTarget": 0
-            },
-            {
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f3c35bfd733641fa9493b2c63d44b387.png",
-              "xTarget": 1.1,
-              "yTarget": 1.1
-            },
-            {
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c1ee9a6fe63b4ce4a80917b152cfbeef.png",
-              "xTarget": 0,
-              "yTarget": 1.1
-            },
-            {
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0aa608b74d8f43c28b0a7db415895e18.png",
-              "xTarget": -1.1,
-              "yTarget": 1.1
-            }
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0b1545ac51a2484daeecbadd439bea13-0.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0b1545ac51a2484daeecbadd439bea13-1.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0b1545ac51a2484daeecbadd439bea13-2.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0b1545ac51a2484daeecbadd439bea13-3.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0b1545ac51a2484daeecbadd439bea13-4.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0b1545ac51a2484daeecbadd439bea13-5.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0b1545ac51a2484daeecbadd439bea13-6.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0b1545ac51a2484daeecbadd439bea13-7.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0b1545ac51a2484daeecbadd439bea13-8.png"
           ],
-          "useTargets": false,
-          "randomizePos": true,
-          "scaleBy": 3
+          "scaleBy": 3,
+          "puzzleDimension": 3
         }
       }
     }

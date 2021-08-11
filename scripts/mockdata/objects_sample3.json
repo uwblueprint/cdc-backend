@@ -36,15 +36,15 @@
         "draggable": true,
         "jsonData": {
           "images": [
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/41756e1d64104f1abca3272e70a173c5.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d72c45cfe63b4ca698be6b3383d81d4c.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/63b52057b47942b7aacb984a40ad91ba.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/e51c242e0517420b9abea96c1783e983.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d2f45d794af342fd8ac02490b0487c83.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/01586c8cc8ef46588067464e1ec43387.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/de508eb2e67c4f06a67071263f7f3aa6.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c5d23503dd87498081526cd7ba62e824.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/1e8b343cd3e645f48086440624971c12.jpg"
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-0.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-1.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-2.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-3.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-4.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-5.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-6.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-7.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-8.png"
           ],
           "scaleBy": 3,
           "puzzleDimension": 3
@@ -181,25 +181,6 @@
     "position": [-3.283, 3.809, -5.443],
     "scale": [0.073, 0.073, 0.073],
     "rotation": [0, 270, 0],
-    "asset_id": 38,
-    "next_objects": [],
-    "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "visual-pane",
-        "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2dfae009657e4636ac089a353e2d6995.jpg",
-          "caption": ""
-        }
-      }
-    }
-  },
-  {
-    "name": "Room3 Frame3",
-    "position": [-4.824, 3.809, -5.443],
-    "scale": [0.073, 0.073, 0.073],
-    "rotation": [0, 270, 0],
     "asset_id": 39,
     "next_objects": [],
     "texts": [],
@@ -215,29 +196,10 @@
     }
   },
   {
-    "name": "Room3 Frame4",
-    "position": [-6.434, 3.809, -5.443],
+    "name": "Room3 Frame3",
+    "position": [-4.824, 3.809, -5.443],
     "scale": [0.073, 0.073, 0.073],
     "rotation": [0, 270, 0],
-    "asset_id": 40,
-    "next_objects": [],
-    "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "visual-pane",
-        "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/fac0f97db4d146218d527aebeede5220.jpg",
-          "caption": ""
-        }
-      }
-    }
-  },
-  {
-    "name": "Room3 Frame5",
-    "position": [-7.455, 3.809, -4.504],
-    "scale": [0.073, 0.073, 0.073],
-    "rotation": [0, 0, 0],
     "asset_id": 41,
     "next_objects": [],
     "texts": [],
@@ -246,36 +208,17 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/dcbe9625946b4ed8adbc253152b63446.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/252a5667f26f4297b6adf62147428dac.jpg",
           "caption": ""
         }
       }
     }
   },
   {
-    "name": "Room3 Frame6",
-    "position": [-7.455, 3.809, -3.041],
+    "name": "Room3 Frame4",
+    "position": [-6.434, 3.809, -5.443],
     "scale": [0.073, 0.073, 0.073],
-    "rotation": [0, 0, 0],
-    "asset_id": 42,
-    "next_objects": [],
-    "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "visual-pane",
-        "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/4afa893660724f0aadb974b668c1f562.jpg",
-          "caption": ""
-        }
-      }
-    }
-  },
-  {
-    "name": "Room3 Frame7",
-    "position": [-7.455, 3.809, -1.562],
-    "scale": [0.073, 0.073, 0.073],
-    "rotation": [0, 0, 0],
+    "rotation": [0, 270, 0],
     "asset_id": 43,
     "next_objects": [],
     "texts": [],
@@ -291,8 +234,8 @@
     }
   },
   {
-    "name": "Room3 Frame8",
-    "position": [-7.455, 3.809, -0.091],
+    "name": "Room3 Frame5",
+    "position": [-7.455, 3.809, -4.204],
     "scale": [0.073, 0.073, 0.073],
     "rotation": [0, 0, 0],
     "asset_id": 44,
@@ -310,8 +253,8 @@
     }
   },
   {
-    "name": "Room3 Frame9",
-    "position": [-7.455, 3.809, 1.38],
+    "name": "Room3 Frame6",
+    "position": [-7.455, 3.809, -2.684],
     "scale": [0.073, 0.073, 0.073],
     "rotation": [0, 0, 0],
     "asset_id": 45,
@@ -323,25 +266,6 @@
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a8618cf289d14d21947d179ba21013c2.png",
-          "caption": ""
-        }
-      }
-    }
-  },
-  {
-    "name": "Room3 Frame10",
-    "position": [-7.455, 3.809, 2.851],
-    "scale": [0.073, 0.073, 0.073],
-    "rotation": [0, 0, 0],
-    "asset_id": 46,
-    "next_objects": [],
-    "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "visual-pane",
-        "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/4b102ff5cb304904ab131fdb9fed448f.jpg",
           "caption": ""
         }
       }

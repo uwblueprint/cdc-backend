@@ -36,27 +36,27 @@
         "jsonData": {
           "images": [
             {
-              "imageSrc": "/static/img/r4/t3/row-1-column-1.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f894141a32d54e07ba6c6cc260c59d53.jpg",
               "xTarget": -2.5,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t3/row-1-column-2.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7c2cfce1709d48aaa3b03f5b3fd5460b.jpg",
               "xTarget": -1.25,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t3/row-1-column-3.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/64e0fc960e0349e0882f5557a13f4a60.jpg",
               "xTarget": 0,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t3/row-1-column-4.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d2d2a4559226404fa104c5f2befaeb34.jpg",
               "xTarget": 1.25,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t3/row-1-column-5.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c9b8d493db6c41c0a3542c0c299ce525.jpg",
               "xTarget": 2.5,
               "yTarget": 0
             }
@@ -86,27 +86,27 @@
         "jsonData": {
           "images": [
             {
-              "imageSrc": "/static/img/r4/t4/row-1-column-1.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/71322bb93f75406d99fc90411f233cea.jpg",
               "xTarget": -2.5,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t4/row-1-column-2.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/4f0245c20e2b40809c7aeb8576922c48.jpg",
               "xTarget": -1.25,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t4/row-1-column-3.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/16d26904be1b4796ae45ce823bdae15f.jpg",
               "xTarget": 0,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t4/row-1-column-4.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d70d43027f8e4c7f8b6aef1bc91d8d00.jpg",
               "xTarget": 1.25,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t4/row-1-column-5.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/272b3fe5300d4e4ebd119419bbc880f6.jpg",
               "xTarget": 2.5,
               "yTarget": 0
             }
@@ -136,27 +136,27 @@
         "jsonData": {
           "images": [
             {
-              "imageSrc": "/static/img/r4/t2/row-1-column-1.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/631b2a6f8fb6497fb34a008353976473.jpg",
               "xTarget": -2.5,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t2/row-1-column-2.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a0ef5754161f45a1b7bfbd580c529b40.jpg",
               "xTarget": -1.25,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t2/row-1-column-3.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/851153a500dd48ceaca4c3e767e50901.jpg",
               "xTarget": 0,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t2/row-1-column-4.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/24fac2b5f77348f2bd8fe8c92255d2dd.jpg",
               "xTarget": 1.25,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t2/row-1-column-5.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f7c393abc3804d22bba34845f1cbf8f2.jpg",
               "xTarget": 2.5,
               "yTarget": 0
             }
@@ -186,27 +186,27 @@
         "jsonData": {
           "images": [
             {
-              "imageSrc": "/static/img/r4/t1/row-1-column-1.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/cf540c84c4824582b13b770cd7746d34.jpg",
               "xTarget": -2.5,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t1/row-1-column-2.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/5ff125a50de7427fa27070a85add3c19.jpg",
               "xTarget": -1.25,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t1/row-1-column-3.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/29cf8e7e1bf441dfb825442a07b5a84a.jpg",
               "xTarget": 0,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t1/row-1-column-4.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c799286b60304d3eac7efb518471da88.jpg",
               "xTarget": 1.25,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/t1/row-1-column-5.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0489d44d693b4759bc9f9a2f6b38ff66.jpg",
               "xTarget": 2.5,
               "yTarget": 0
             }
@@ -232,7 +232,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/8.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2ed766b4b9a240f3aac864255d0555af.png",
           "caption": ""
         }
       }
@@ -254,15 +254,15 @@
         "draggable": true,
         "jsonData": {
           "images": [
-            "/static/img/r4/q1/row-1-column-1.jpg",
-            "/static/img/r4/q1/row-1-column-2.jpg",
-            "/static/img/r4/q1/row-1-column-3.jpg",
-            "/static/img/r4/q1/row-2-column-1.jpg",
-            "/static/img/r4/q1/row-2-column-2.jpg",
-            "/static/img/r4/q1/row-2-column-3.jpg",
-            "/static/img/r4/q1/row-3-column-1.jpg",
-            "/static/img/r4/q1/row-3-column-2.jpg",
-            "/static/img/r4/q1/row-3-column-3.jpg"
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/bc29e9efb75d4a62930301d152ca2205.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f1393ee8591d4c66bf6f1c145b5c5cc1.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/afe39824656c43669e0bbf798507dba2.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/54739c0104a346d2abe9700d89369b2f.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c16d142dcf4c4527863e2186fc7e1004.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f9fd23c924044dfca4468606ab2e4d34.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/97c55c7e30214863bb4e580c0e948af5.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/9701b5a47cac4ab08a328bfdb05b228f.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/b0aa13772e8e436d8bec2e9de2c752f3.jpg"
           ],
           "scaleBy": 3,
           "puzzleDimension": 3
@@ -283,7 +283,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/5.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2f9e2536b627400fbd1edfea08ad7dea.png",
           "caption": ""
         }
       }
@@ -302,7 +302,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/0.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/1e89b4d4eddd453687ac0f2abfef1581.png",
           "caption": ""
         }
       }
@@ -321,7 +321,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/1.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/1e89b4d4eddd453687ac0f2abfef1581.png",
           "caption": ""
         }
       }
@@ -343,15 +343,15 @@
         "draggable": true,
         "jsonData": {
           "images": [
-            "/static/img/r4/q3/row-1-column-1.jpg",
-            "/static/img/r4/q3/row-1-column-2.jpg",
-            "/static/img/r4/q3/row-1-column-3.jpg",
-            "/static/img/r4/q3/row-2-column-1.jpg",
-            "/static/img/r4/q3/row-2-column-2.jpg",
-            "/static/img/r4/q3/row-2-column-3.jpg",
-            "/static/img/r4/q3/row-3-column-1.jpg",
-            "/static/img/r4/q3/row-3-column-2.jpg",
-            "/static/img/r4/q3/row-3-column-3.jpg"
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/9bfb686001fb48cfa91da9f490b2cfa6.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0d0de474e1004b63af54f931767efb08.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0182349894544bd0a070afd6ec0214d9.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/479246fbfa2f4cc597642b496ba7c510.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/609941fec3c5476c86b14e013c4406a9.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/4a6cc477e04d41638736750803822205.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/299a05db9a6842cba74aae8b33e47f7e.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/043b52580b2544b08df41ddd105998e1.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a64bd6f58c2d434ba0924a88320d2d59.jpg"
           ],
           "scaleBy": 3,
           "puzzleDimension": 3
@@ -372,7 +372,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/8.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2ed766b4b9a240f3aac864255d0555af.png",
           "caption": ""
         }
       }
@@ -391,7 +391,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/2.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ec4262fef86443c96f105523f207617.png",
           "caption": ""
         }
       }
@@ -410,7 +410,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/4.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/62e704eb292f49f1905efc520b4cd414.png",
           "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
@@ -429,7 +429,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/9.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/13a6a283b1f94a938ef25df25e793b17.png",
           "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
@@ -448,7 +448,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/8.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2ed766b4b9a240f3aac864255d0555af.png",
           "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
@@ -467,7 +467,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/2.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ec4262fef86443c96f105523f207617.png",
           "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
@@ -486,7 +486,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/5.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2f9e2536b627400fbd1edfea08ad7dea.png",
           "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
@@ -505,7 +505,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/7.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c0b063a053e24b98981c127612a7590c.png",
           "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
@@ -528,47 +528,47 @@
         "jsonData": {
           "images": [
             {
-              "imageSrc": "/static/img/r4/q2/row-1-column-1.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0680b52ebb5549a58d48c79b8812de3d.jpg",
               "xTarget": 1.1,
               "yTarget": -1.1
             },
             {
-              "imageSrc": "/static/img/r4/q2/row-1-column-2.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/ad2092dd27974ae48ebcf87f846cd684.jpg",
               "xTarget": 0,
               "yTarget": -1.1
             },
             {
-              "imageSrc": "/static/img/r4/q2/row-1-column-3.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/15828010e4cc4e60b5c6c9ae2573bef9.jpg",
               "xTarget": -1.1,
               "yTarget": -1.1
             },
             {
-              "imageSrc": "/static/img/r4/q2/row-2-column-1.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d23f66e106fa4f508420205cfcc54c04.jpg",
               "xTarget": 1.1,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/q2/row-2-column-2.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/3bab4597ab6a4c629db73d6086c36abf.jpg",
               "xTarget": 0,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/q2/row-2-column-3.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a1f7cd491f90421fb6ce58e71cf89563.jpg",
               "xTarget": -1.1,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/r4/q2/row-3-column-1.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/25ebffa81fc749498830f14eb9e7a2bd.jpg",
               "xTarget": 1.1,
               "yTarget": 1.1
             },
             {
-              "imageSrc": "/static/img/r4/q2/row-3-column-2.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7dae3505164641c6a3cbe85ca843b4f2.jpg",
               "xTarget": 0,
               "yTarget": 1.1
             },
             {
-              "imageSrc": "/static/img/r4/q2/row-3-column-3.jpg",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/6e081e3995174df28e7523e2c13a68fd.jpg",
               "xTarget": -1.1,
               "yTarget": 1.1
             }
@@ -593,7 +593,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/0.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/1e89b4d4eddd453687ac0f2abfef1581.png",
           "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
@@ -612,7 +612,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/1.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/e4727e9f443f4904a52968debd9eba41.png",
           "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
@@ -631,7 +631,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/44.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d7656c4b6b374f4f8737067ba6005944.png",
           "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
@@ -650,7 +650,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/3.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/fd11d22e03204756859101dc406c583d.png",
           "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
@@ -669,7 +669,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/7.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/b50b697870464f869219f3b8078b5ac2.png",
           "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
@@ -688,7 +688,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/numbers/2.png",
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ec4262fef86443c96f105523f207617.png",
           "caption": "Something seems to have fallen out of the back of the painting."
         }
       }

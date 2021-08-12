@@ -14,6 +14,8 @@ AFRAME.registerComponent("ordered-puzzle", {
     const el = this.el;
     this.id = data.id;
     this.useTargets = data.useTargets;
+    // For making tick better performing
+    this.alreadyRestored = false;
     const is_last_object =
       "is_last_object" in data ? data.is_last_object : false;
 
@@ -67,7 +69,7 @@ AFRAME.registerComponent("ordered-puzzle", {
     const puzzlePieceCache = this.puzzlePieceCache;
     const scaleBy = data.hasOwnProperty("scaleBy") ? data.scaleBy : 3;
 
-    for (i = 0; i < numPuzzlePieces; i++) {
+    for (let i = 0; i < numPuzzlePieces; i++) {
       this.puzzlePiece = document.createElement("a-image");
       this.puzzlePiece.setAttribute("id", "puzzle-piece-image-" + i);
       this.puzzlePiece.setAttribute(
@@ -201,7 +203,11 @@ AFRAME.registerComponent("ordered-puzzle", {
       rawImageEl.src = data.images[i].imageSrc + "?d=" + new Date().getTime();
     }
   },
-  update: function () {
+  tick: function () {
+    // nothing to do if already restored
+    if (this.alreadyRestored) {
+      return;
+    }
     this.puzzleIsSolved = this.data.isSolved[this.id];
 
     if (typeof this.puzzleIsSolved === "undefined") {
@@ -209,6 +215,34 @@ AFRAME.registerComponent("ordered-puzzle", {
     } else if (this.puzzleIsSolved === true && this.useTargets) {
       // Already solved
       this.solvedPuzzleEntity.setAttribute("visible", "true");
+      let numberRestored = 0;
+      for (let i = 0; i < this.puzzlePieceCache.length; i++) {
+        const puzzlePiece = this.puzzlePieceCache[i];
+        let delta = { x: 0, y: 0, z: 0 };
+        if (puzzlePiece.object3D.children.length > 0) {
+          delta = puzzlePiece.object3D.children[0].position;
+        } else {
+          // delta not loaded yet, continue
+          continue;
+        }
+        const targetPos = {
+          x: puzzlePiece.getAttribute("xTarget"),
+          y: puzzlePiece.getAttribute("yTarget"),
+        };
+        if (typeof targetPos["x"] === "undefined") {
+          continue;
+        }
+        numberRestored++;
+        puzzlePiece.object3D.position.set(
+          parseFloat(targetPos["x"]) - delta["x"],
+          parseFloat(targetPos["y"]) - delta["y"],
+          0
+        );
+      }
+      if (numberRestored === this.puzzlePieceCache.length) {
+        // All have been restored
+        this.alreadyRestored = true;
+      }
     } else {
       // not solved yet, do nothing for now
     }

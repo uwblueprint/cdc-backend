@@ -224,6 +224,25 @@ async def get_scenario_by_friendly_name_from_postgres(
 
 
 async def delete_scenario_from_postgres(scenario_id: str, session):
+    # Get scenario first
+    scenario_obj: Scenario = get_scenario(scenario_id, session)
+    if scenario_obj is None:
+        raise ValueError("Scenario ID not valid")
+
+    # Delete the display image of scenario, if it has one
+    if scenario_obj.display_image_url:
+        # Only delete from AWS if config is enabled for AWS support
+        if "aws" in config.get("app-env"):
+            s3_client = boto3.client(
+                "s3",
+                endpoint_url=f"https://s3.{config.get('s3.region')}.amazonaws.com",
+                region_name=config.get("s3.region"),
+            )
+            s3_client.delete_object(
+                Bucket=config.get("s3.bucket_name"),
+                Key=scenario_obj.display_image_url,
+            )
+
     if not delete_scenario(scenario_id, session):
         raise ValueError("Scenario ID not valid")
 

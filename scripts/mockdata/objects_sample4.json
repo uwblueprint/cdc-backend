@@ -408,11 +408,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/4.png",
-          "caption": ""
+          "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
     }
@@ -428,11 +427,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/9.png",
-          "caption": ""
+          "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
     }
@@ -448,11 +446,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/8.png",
-          "caption": ""
+          "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
     }
@@ -468,11 +465,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/2.png",
-          "caption": ""
+          "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
     }
@@ -488,11 +484,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/5.png",
-          "caption": ""
+          "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
     }
@@ -508,11 +503,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/7.png",
-          "caption": ""
+          "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
     }
@@ -597,11 +591,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/0.png",
-          "caption": ""
+          "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
     }
@@ -617,11 +610,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/1.png",
-          "caption": ""
+          "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
     }
@@ -637,11 +629,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/44.png",
-          "caption": ""
+          "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
     }
@@ -657,11 +648,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/3.png",
-          "caption": ""
+          "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
     }
@@ -677,11 +667,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/7.png",
-          "caption": ""
+          "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
     }
@@ -697,11 +686,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
         "componentType": "visual-pane",
         "jsonData": {
           "imageSrc": "/static/img/numbers/2.png",
-          "caption": ""
+          "caption": "Something seems to have fallen out of the back of the painting."
         }
       }
     }

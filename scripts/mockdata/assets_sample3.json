@@ -50,55 +50,31 @@
   {
     "name": "Room3 Frame 2",
     "obj_type": "object",
-    "s3_key": "assets/caf1f48313e84e0eb6106fdc8dbb00f2.glb",
+    "s3_key": "assets/2647be3f75124aa38aaf86e6cdf76ce4.glb",
     "screenshot_url": ""
   },
   {
     "name": "Room3 Frame 3",
     "obj_type": "object",
-    "s3_key": "assets/2647be3f75124aa38aaf86e6cdf76ce4.glb",
+    "s3_key": "assets/516ac4df01e44541b7dd7b575b183ce2.glb",
     "screenshot_url": ""
   },
   {
     "name": "Room3 Frame 4",
     "obj_type": "object",
-    "s3_key": "assets/efa4768dd2f74e1597f07360a4174b22.glb",
+    "s3_key": "assets/39a6b89a27f242499a4147d83913dc68.glb",
     "screenshot_url": ""
   },
   {
     "name": "Room3 Frame 5",
     "obj_type": "object",
-    "s3_key": "assets/769ef37376f84b7aa02622fa9c651b6e.glb",
+    "s3_key": "assets/188b72f6abcb46848b5d11dd8d58b82d.glb",
     "screenshot_url": ""
   },
   {
     "name": "Room3 Frame 6",
     "obj_type": "object",
-    "s3_key": "assets/34850f8116b74e579dedbd38e618ae55.glb",
-    "screenshot_url": ""
-  },
-  {
-    "name": "Room3 Frame 7",
-    "obj_type": "object",
-    "s3_key": "assets/39a6b89a27f242499a4147d83913dc68.glb",
-    "screenshot_url": ""
-  },
-  {
-    "name": "Room3 Frame 8",
-    "obj_type": "object",
-    "s3_key": "assets/188b72f6abcb46848b5d11dd8d58b82d.glb",
-    "screenshot_url": ""
-  },
-  {
-    "name": "Room3 Frame 9",
-    "obj_type": "object",
     "s3_key": "assets/94668c3a6c0c4f7d88765636ed770a5e.glb",
-    "screenshot_url": ""
-  },
-  {
-    "name": "Room3 Frame 10",
-    "obj_type": "object",
-    "s3_key": "assets/eadf3bc01f2545bf9a83661bed5abad1.glb",
     "screenshot_url": ""
   }
 ]

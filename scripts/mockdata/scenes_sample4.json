@@ -3,6 +3,10 @@
     "name": "Bedroom - Sample",
     "description": "Sample escape room in the bedroom",
     "object_ids": [
+      48,
+      49,
+      50,
+      51,
       52,
       53,
       54,
@@ -27,16 +31,12 @@
       71,
       72,
       73,
-      74,
-      75,
-      76,
-      77,
-      78
+      74
     ],
     "position": [0, 0.1, 0],
     "scale": [0.425, 0.425, 0.425],
     "rotation": [0.0, 90.0, 0.0],
-    "background_id": 47,
+    "background_id": 43,
     "camera_properties": {
       "position": [-1.628, 3.5, 10.027],
       "look_controls": true,

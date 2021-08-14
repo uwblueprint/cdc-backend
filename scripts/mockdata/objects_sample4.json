@@ -1,0 +1,708 @@
+[
+  {
+    "name": "Door",
+    "position": [3.919, 0.823, -6.285],
+    "scale": [3.302, 2.825, 2.866],
+    "rotation": [0, 270, 0],
+    "asset_id": 48,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "jsonData": {
+          "password": "6427",
+          "model": "numpad",
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Backpack",
+    "position": [-1.656, 1.734, 8.109],
+    "scale": [0.5, 0.5, 0.5],
+    "rotation": [-23.696, 180, 0],
+    "asset_id": 44,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Huh, what's this?",
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f894141a32d54e07ba6c6cc260c59d53.jpg",
+              "xTarget": -2.5,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7c2cfce1709d48aaa3b03f5b3fd5460b.jpg",
+              "xTarget": -1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/64e0fc960e0349e0882f5557a13f4a60.jpg",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d2d2a4559226404fa104c5f2befaeb34.jpg",
+              "xTarget": 1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c9b8d493db6c41c0a3542c0c299ce525.jpg",
+              "xTarget": 2.5,
+              "yTarget": 0
+            }
+          ],
+          "useTargets": true,
+          "randomizePos": true,
+          "scaleBy": 3,
+          "is_last_object": false
+        }
+      }
+    }
+  },
+  {
+    "name": "Id card 1",
+    "position": [-10.105, 0.995, -2.764],
+    "scale": [0.25, 0.25, 0.25],
+    "rotation": [0, 5, 0],
+    "asset_id": 45,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Another weird riddle, huh?",
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/71322bb93f75406d99fc90411f233cea.jpg",
+              "xTarget": -2.5,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/4f0245c20e2b40809c7aeb8576922c48.jpg",
+              "xTarget": -1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/16d26904be1b4796ae45ce823bdae15f.jpg",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d70d43027f8e4c7f8b6aef1bc91d8d00.jpg",
+              "xTarget": 1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/272b3fe5300d4e4ebd119419bbc880f6.jpg",
+              "xTarget": 2.5,
+              "yTarget": 0
+            }
+          ],
+          "useTargets": true,
+          "randomizePos": true,
+          "scaleBy": 3,
+          "is_last_object": false
+        }
+      }
+    }
+  },
+  {
+    "name": "Id card 2",
+    "position": [-5.645, 0.995, 7.833],
+    "scale": [0.25, 0.25, 0.25],
+    "rotation": [0, 69.0, 0],
+    "asset_id": 45,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Another weird riddle, huh?",
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/631b2a6f8fb6497fb34a008353976473.jpg",
+              "xTarget": -2.5,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a0ef5754161f45a1b7bfbd580c529b40.jpg",
+              "xTarget": -1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/851153a500dd48ceaca4c3e767e50901.jpg",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/24fac2b5f77348f2bd8fe8c92255d2dd.jpg",
+              "xTarget": 1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f7c393abc3804d22bba34845f1cbf8f2.jpg",
+              "xTarget": 2.5,
+              "yTarget": 0
+            }
+          ],
+          "useTargets": true,
+          "randomizePos": true,
+          "scaleBy": 3,
+          "is_last_object": false
+        }
+      }
+    }
+  },
+  {
+    "name": "House Plant 1",
+    "position": [-12.378, 3.09, 7.527],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0, 0, 0],
+    "asset_id": 46,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Are these riddles supposed to help?",
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/cf540c84c4824582b13b770cd7746d34.jpg",
+              "xTarget": -2.5,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/5ff125a50de7427fa27070a85add3c19.jpg",
+              "xTarget": -1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/29cf8e7e1bf441dfb825442a07b5a84a.jpg",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c799286b60304d3eac7efb518471da88.jpg",
+              "xTarget": 1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0489d44d693b4759bc9f9a2f6b38ff66.jpg",
+              "xTarget": 2.5,
+              "yTarget": 0
+            }
+          ],
+          "useTargets": true,
+          "randomizePos": true,
+          "scaleBy": 3,
+          "is_last_object": false
+        }
+      }
+    }
+  },
+  {
+    "name": "House Plant 2",
+    "position": [-12.378, 3.09, 5.849],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0, 69, 0],
+    "asset_id": 46,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2ed766b4b9a240f3aac864255d0555af.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Fridge",
+    "position": [-11.917, 0.921, -5.115],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0, 90, 0],
+    "asset_id": 47,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Cool! This is probably the owner's travel wish list",
+        "componentType": "jigsaw-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/bc29e9efb75d4a62930301d152ca2205.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f1393ee8591d4c66bf6f1c145b5c5cc1.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/afe39824656c43669e0bbf798507dba2.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/54739c0104a346d2abe9700d89369b2f.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c16d142dcf4c4527863e2186fc7e1004.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f9fd23c924044dfca4468606ab2e4d34.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/97c55c7e30214863bb4e580c0e948af5.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/9701b5a47cac4ab08a328bfdb05b228f.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/b0aa13772e8e436d8bec2e9de2c752f3.jpg"
+          ],
+          "scaleBy": 3,
+          "puzzleDimension": 3
+        }
+      }
+    }
+  },
+  {
+    "name": "Dice",
+    "position": [-12.032, 3.107, 9.261],
+    "scale": [0.5, 0.5, 0.5],
+    "rotation": [0, 45, 0],
+    "asset_id": 49,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2f9e2536b627400fbd1edfea08ad7dea.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Juice cup",
+    "position": [-4.347, 3.741, -0.65],
+    "scale": [0.5, 0.5, 0.5],
+    "rotation": [0, 0, 0],
+    "asset_id": 50,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/1e89b4d4eddd453687ac0f2abfef1581.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Burger",
+    "position": [-3.316, 3.298, 10.059],
+    "scale": [2, 2, 2],
+    "rotation": [0, 45, 0],
+    "asset_id": 51,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/1e89b4d4eddd453687ac0f2abfef1581.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Phone",
+    "position": [-3.271, 3.273, 8.197],
+    "scale": [0.3, 0.3, 0.3],
+    "rotation": [0, 69, 0],
+    "asset_id": 36,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Weird app that's on my phone. What could this mean?",
+        "componentType": "jigsaw-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/9bfb686001fb48cfa91da9f490b2cfa6.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0d0de474e1004b63af54f931767efb08.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0182349894544bd0a070afd6ec0214d9.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/479246fbfa2f4cc597642b496ba7c510.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/609941fec3c5476c86b14e013c4406a9.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/4a6cc477e04d41638736750803822205.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/299a05db9a6842cba74aae8b33e47f7e.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/043b52580b2544b08df41ddd105998e1.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a64bd6f58c2d434ba0924a88320d2d59.jpg"
+          ],
+          "scaleBy": 3,
+          "puzzleDimension": 3
+        }
+      }
+    }
+  },
+  {
+    "name": "Rubiks cube",
+    "position": [-3.743, 3.277, 3.711],
+    "scale": [0.002, 0.002, 0.002],
+    "rotation": [0, 0, 0],
+    "asset_id": 17,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2ed766b4b9a240f3aac864255d0555af.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Coffeebag",
+    "position": [-12.526, 3.107, 0.94],
+    "scale": [0.69, 0.69, 0.69],
+    "rotation": [0, 25, 0],
+    "asset_id": 52,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ec4262fef86443c96f105523f207617.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame1",
+    "position": [3.64, 5.129, -11.406],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 180, 0],
+    "asset_id": 53,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/62e704eb292f49f1905efc520b4cd414.png",
+          "caption": "Something seems to have fallen out of the back of the painting."
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame2",
+    "position": [0.459, 5.299, -8.828],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 90, 0],
+    "asset_id": 54,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/13a6a283b1f94a938ef25df25e793b17.png",
+          "caption": "Something seems to have fallen out of the back of the painting."
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame3",
+    "position": [-2.37, 5.199, -12.705],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 180, 0],
+    "asset_id": 55,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2ed766b4b9a240f3aac864255d0555af.png",
+          "caption": "Something seems to have fallen out of the back of the painting."
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame4",
+    "position": [-4.656, 4.297, -8.82],
+    "scale": [0.073, 0.15, 0.15],
+    "rotation": [0, 90, 0],
+    "asset_id": 56,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ec4262fef86443c96f105523f207617.png",
+          "caption": "Something seems to have fallen out of the back of the painting."
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame5",
+    "position": [-13.363, 5.297, -1.25],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 0, 0],
+    "asset_id": 57,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/2f9e2536b627400fbd1edfea08ad7dea.png",
+          "caption": "Something seems to have fallen out of the back of the painting."
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame6",
+    "position": [-13.363, 5.345, 3.51],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 0, 0],
+    "asset_id": 58,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c0b063a053e24b98981c127612a7590c.png",
+          "caption": "Something seems to have fallen out of the back of the painting."
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame7",
+    "position": [-13.363, 5.345, 8.493],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 0, 0],
+    "asset_id": 59,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Something seems to have fallen out of the back of the painting.",
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0680b52ebb5549a58d48c79b8812de3d.jpg",
+              "xTarget": 1.1,
+              "yTarget": -1.1
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/ad2092dd27974ae48ebcf87f846cd684.jpg",
+              "xTarget": 0,
+              "yTarget": -1.1
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/15828010e4cc4e60b5c6c9ae2573bef9.jpg",
+              "xTarget": -1.1,
+              "yTarget": -1.1
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d23f66e106fa4f508420205cfcc54c04.jpg",
+              "xTarget": 1.1,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/3bab4597ab6a4c629db73d6086c36abf.jpg",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a1f7cd491f90421fb6ce58e71cf89563.jpg",
+              "xTarget": -1.1,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/25ebffa81fc749498830f14eb9e7a2bd.jpg",
+              "xTarget": 1.1,
+              "yTarget": 1.1
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7dae3505164641c6a3cbe85ca843b4f2.jpg",
+              "xTarget": 0,
+              "yTarget": 1.1
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/6e081e3995174df28e7523e2c13a68fd.jpg",
+              "xTarget": -1.1,
+              "yTarget": 1.1
+            }
+          ],
+          "useTargets": false,
+          "randomizePos": true,
+          "scaleBy": 2
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame8",
+    "position": [-10.957, 4.776, 15.118],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 90, 0],
+    "asset_id": 60,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/1e89b4d4eddd453687ac0f2abfef1581.png",
+          "caption": "Something seems to have fallen out of the back of the painting."
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame9",
+    "position": [-6.845, 4.776, 15.118],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 90, 0],
+    "asset_id": 61,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/e4727e9f443f4904a52968debd9eba41.png",
+          "caption": "Something seems to have fallen out of the back of the painting."
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame10",
+    "position": [-2.708, 4.776, 15.118],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 90, 0],
+    "asset_id": 62,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d7656c4b6b374f4f8737067ba6005944.png",
+          "caption": "Something seems to have fallen out of the back of the painting."
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame11",
+    "position": [1.083, 4.64, 15.118],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 90, 0],
+    "asset_id": 63,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/fd11d22e03204756859101dc406c583d.png",
+          "caption": "Something seems to have fallen out of the back of the painting."
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame12",
+    "position": [3.677, 4.149, 10.029],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 180, 0],
+    "asset_id": 64,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/b50b697870464f869219f3b8078b5ac2.png",
+          "caption": "Something seems to have fallen out of the back of the painting."
+        }
+      }
+    }
+  },
+  {
+    "name": "Room4 Frame13",
+    "position": [3.677, 4.149, 2.07],
+    "scale": [0.073, 0.101, 0.101],
+    "rotation": [0, 180, 0],
+    "asset_id": 65,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ec4262fef86443c96f105523f207617.png",
+          "caption": "Something seems to have fallen out of the back of the painting."
+        }
+      }
+    }
+  },
+  {
+    "name": "Backdoor",
+    "position": [-8.603, 0.823, -14.573],
+    "scale": [2.073, 2.825, 2.866],
+    "rotation": [0, 0, 0],
+    "asset_id": 48,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  }
+]

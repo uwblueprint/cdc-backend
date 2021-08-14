@@ -3,7 +3,7 @@
     "name": "Managing Anxiety Attacks Escape Room",
     "friendly_name": "sample-escape-room",
     "description": "A student at ABC High is going through a hard time dealing with the stresses of school, and they begin to feel really anxious in class. Help the student manage their anxiety and escape the class!",
-    "scene_ids": [4, 5, 6],
+    "scene_ids": [4, 5, 6, 7],
     "is_published": true,
     "is_previewable": true,
     "publish_link": "www.publishlink.com/sample-escape-room",
@@ -77,6 +77,26 @@
           },
           {
             "text": "Despite that, I really need to change my password and make it easier to remember. Let's get cracking on this assignment shall we?"
+          },
+          {
+            "text": " spent a few hours working on the paper. I still don't feel like it's at a high level. My parents have always told me that if I'm feeling unfocused or anxious, I should try to change scenery. You know what, I'll go to the cafe down the street! Hopefully that should jog my productivity."
+          },
+          {
+            "text": "Alright, at the cafe! I was right: that change in scenery was super helpful. I'm feeling a bit tired though...perhaps I'll take a short nap."
+          },
+          {
+            "text": "(alarm rings). Huh...OH NO! I overslept! Seems like the owner didn't see me and I'm locked out. Oh no! I can feel my heart racing. Ok calm down, you got this. I just got to find the password to get out of the cafe and get back home! Let's approach this calmly and carefully."
+          }
+        ],
+        "currPosition": 0
+      },
+      {
+        "data": [
+          {
+            "text": "Finally! Wow, my heart was never beating that fast before. I wonder what I would have done if I couldn't have gotten myself out."
+          },
+          {
+            "text": "I should get going back home. My parents must be worried sick. After all the stress and panic attacks today, sleep is the biggest medicine. A full 8 hours of sleep...can't WAIT!"
           },
           { "text": "Congratulations, you have escaped!" }
         ],

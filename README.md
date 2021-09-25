@@ -1,16 +1,23 @@
 # Getting Started (Contributors Only)
 
 1. Clone this repo and the frontend repo (cdc-frontend)
-2. Grab the secrets
-3. todo: continued steps to get project set up locally
+1. Grab the secrets
+1. Follow steps below in Python setup section if you haven't done so before
+1. Follow steps below in Running the backend repo section
 
 ---
 
 # About Calgary Distress Center
 
-todo
+The Distress Centre Calgary (DCC) is an organization dedicated towards providing crisis support for Calgary and southern Alberta residents. DCC provides various programs to reach all population segments who are in need of help, including a 24 hour crisis line and counselling. The organization has also provided several services for teenagers given the increasing prevalence of mental health issues among this population demographic.
 
 # Team
+
+## F21 and W22
+
+FYDP: [Jay Dhulia](https://github.com/jaydhulia), [Dhruvin Balar](https://github.com/drbalar), [Amolik Singh](https://github.com/amoliksingh), [Ahmed Hamodi](https://github.com/ahmedhamodi)
+
+## W21 and S21
 
 Project Lead: [Ahmed Hamodi](https://github.com/ahmedhamodi)\
 Product Manager: [Aaron Abraham](https://github.com/aaronabraham311)\

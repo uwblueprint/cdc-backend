@@ -444,10 +444,8 @@ async def delete_object_in_postgres(scene_id: str, object_id: str, session):
 
 
 async def clean_object_assets_from_aws(old: dict, new: dict):
-    # Only delete from AWS if config is enabled for AWS support
-    # TODO: uncomment
-    # if "aws" not in config.get("app-env"):
-    #     return
+    if "aws" not in config.get("app-env"):
+        return
     del old["asset_details"]
     del new["asset_details"]
     old_obj = Object(**old)

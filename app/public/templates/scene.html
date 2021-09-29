@@ -27,7 +27,15 @@
 {#    <script src="/static/js/components/button-design.js"></script>#}
 
       <script src="/static/js/components.min.js"></script>
+    <style>
+      .a-canvas.a-grab-cursor:active,.a-grabbing{
+        cursor:grabbing !important
+      }
 
+      .a-canvas.a-grab-cursor.a-mouse-cursor-hover{
+        cursor:crosshair !important;
+      }
+    </style>
     <!-- Initial state  -->
     {% include state.html %}
   </head>
@@ -67,6 +75,7 @@
         <!--  Background  -->
         <a-gltf-model
             id="{{ scene_dict['background_details']['id'] }}-background"
+            class="link"
             src="#{{ scene_dict['background_details']['id'] }}-asset-src"
             position="{{ scene_dict['position'][0] }} {{ scene_dict['position'][1] }} {{ scene_dict['position'][2] }}"
             scale="{{ scene_dict['scale'][0] }} {{ scene_dict['scale'][1] }} {{ scene_dict['scale'][2] }}"

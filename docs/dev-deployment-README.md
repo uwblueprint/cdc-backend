@@ -33,4 +33,15 @@ Make sure you have sufficient AWS permissions for the actions required. If you h
    - `tmux`
    - `. ./env/bin/activate`
    - `ulimit -n 70000`
-   - `PYTHONPATH=. CONFIG_PATH=./configs/dev-ec2-config.yaml python3.9 app/__main__.py`
+   - `PYTHONPATH=. CONFIG_PATH=./secrets/dev-ec2-config.yaml python3.9 app/__main__.py`
+1. Install `nginx` if it's not already installed by running:
+   ```
+   sudo apt update
+   sudo apt install nginx
+   ```
+1. The `nginx` config exists inside of `configs/nginx.conf`. You will have to copy it to a shared folder: `cp configs/nginx.conf /usr/share/nginx/`. Remember to recopy if you make changes to the local copy of the config file.
+1. To run `nginx`, you can do `nginx -c nginx.conf`. Common commands:
+   - `quit` - `nginx -s quit` to quit nginx
+   - `reload` - `nginx -s reload` to reload nginx
+   - Tail access logs - `tail -f /var/log/nginx/access.log`
+   - Tail error logs - `tail -f /var/log/nginx/error.log`

@@ -106,10 +106,14 @@ class NotFoundHandler(tornado.web.RequestHandler):
     Base handler for all invalid routes
     """
 
-    def write_error(self, status_code: int, **kwargs: Any) -> None:
-        title = httputil.responses.get(status_code, "Unknown")
-        message = kwargs.get("message", self._reason)
-        self.render("error_404.html", error_title=title, error_message=message)
+    async def prepare(self):
+        self.set_header("Content-Type", "application/problem+json")
+        title = "Not Found"
+        message = "Invalid Path"
+        status_code = 404
+        self.set_status(status_code)
+        response_error = {"status": status_code, "title": title, "message": message}
+        await self.finish(response_error)
 
 
 class BaseUIHandler(tornado.web.RequestHandler):

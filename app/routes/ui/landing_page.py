@@ -33,8 +33,8 @@ class UIScenarioLandingPageHandler(BaseUIHandler):
                 scenario_friendly_name=scenario_obj.friendly_name,
                 scenario_introduction_data=scenario_obj.introduction_data,
             )
-        except ValueError as e:
-            self.write_error(status_code=404, message=str(e))
+        except ValueError:
+            await self.render("error_404.html")
         except Exception:
             # no need to expose exact exception error on this route
             self.write_error(status_code=500, message="Internal Server Error")

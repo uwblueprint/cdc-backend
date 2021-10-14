@@ -103,7 +103,7 @@ class BaseUserAPIHandler(BaseAPIHandler):
 
 class NotFoundHandler(tornado.web.RequestHandler):
     """
-    Base handler for all invalid routes
+    Base handler for all invalid routes that are served on the api: /api/*
     """
 
     async def prepare(self):
@@ -114,6 +114,17 @@ class NotFoundHandler(tornado.web.RequestHandler):
         self.set_status(status_code)
         response_error = {"status": status_code, "title": title, "message": message}
         await self.finish(response_error)
+
+
+class NotFoundUIHandler(tornado.web.RequestHandler):
+    """
+    Base handler for all invalid routes that are served on the UI
+    """
+
+    async def prepare(self):
+        title = "Not Found"
+        self.set_status(404)
+        await self.render("error_404.html", error_title=title)
 
 
 class BaseUIHandler(tornado.web.RequestHandler):
@@ -127,7 +138,10 @@ class BaseUIHandler(tornado.web.RequestHandler):
     def write_error(self, status_code: int, **kwargs: Any) -> None:
         title = httputil.responses.get(status_code, "Unknown")
         message = kwargs.get("message", self._reason)
-        self.render("error.html", error_title=title, error_message=message)
+        if status_code == 404:
+            self.render("error_404.html", error_title=title)
+        else:
+            self.render("error.html", error_title=title, error_message=message)
 
     def on_finish(self):
         if hasattr(self, "db_session") and self.db_session:

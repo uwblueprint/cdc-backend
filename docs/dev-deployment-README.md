@@ -63,7 +63,7 @@ Make sure you have sufficient AWS permissions for the actions required. If you h
 
 ## Docker build steps
 
-1. Make sure you are on the branch `jdhulia-update-instructions`: `git checkout jdhulia-update-instructions`
+1. Make sure you are on the branch `jdhulia-save-aws-files`: `git checkout jdhulia-save-aws-files`
 1. Build the docker image from the root directory: `docker build -t dcc-bp:v1 .` , make sure to update the version properly for all these steps
 1. (Optional) Test out docker container by running `docker run --rm -p 443:443 -it dcc-bp:v1`
 1. Login: `aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 222838721423.dkr.ecr.us-east-2.amazonaws.com`

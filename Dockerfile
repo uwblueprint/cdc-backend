@@ -4,9 +4,6 @@
 FROM python:3.9.5
 
 RUN mkdir /root/cdc-backend
-#CMD mkdir /root/cdc-backend/app
-#CMD mkdir /root/cdc-backend/configs
-#WORKDIR /usr/src/app
 COPY app /root/cdc-backend/app/
 COPY configs /root/cdc-backend/configs/
 COPY secrets /root/cdc-backend/secrets/
@@ -20,11 +17,8 @@ RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 RUN pip install -r ../requirements.txt
 
-#EXPOSE 8888
 
-CMD PYTHONPATH=. CONFIG_PATH=../configs/dev-config.yaml python __main__.py
-
-#CMD tail -f /dev/null
+CMD PYTHONPATH=. CONFIG_PATH=../secrets/dev-ec2-config.yaml python __main__.py
 
 
 # docker run --rm -p 8888:8888 -it $(docker build -q .)

@@ -1,0 +1,86 @@
+# Configuration options for dev
+tornado:
+  port: 8888
+  debug: true # will reload server on each change to python files
+  xsrf: false # can keep this false for dev mode
+
+postgres:
+  hostname: host.docker.internal
+  database: postgres_cdc_dev
+  user: postgres
+  db_url: postgres://{user}:{password}@{hostname}/{database}
+
+app-env: dev
+
+asset:
+  allowed_asset_types:
+    - background
+    - object
+  # This will be the S3 bucket URL in prod
+  prefix_url: http://localhost:8888/static/
+  # always false for local dev env, it doesn't have access to AWS
+  aws_hard_delete: false
+
+inspector_url: /static/js/libraries/aframe-inspector.js
+
+default_data:
+  introduction_data: { "header_text": "Welcome to the escape room." }
+  conclusion_data:
+    {
+      "header_text": "Congratulations, you escaped!",
+      "paragraph_text": "",
+      "share_link": "",
+    }
+  transitions:
+    [
+      {
+        "data":
+          [
+            {
+              "text": "INTRODUCTION: text goes here.",
+              "imageSrc": "/static/img/lightOn.png",
+            },
+          ],
+        "currPosition": 0,
+      },
+    ]
+
+script:
+  table-order:
+    - asset
+    - scenario
+    - scene
+    - object
+    - statistics
+
+cache:
+  # seconds in day: 24 * 60 * 60
+  expire_time: 86400
+  # how frequently to update cache (in seconds), 60 seconds for dev, for now
+  update_time: 5
+  # no need to update cache for dev, except for testing purpose
+  periodic_callback_enabled: false
+
+auth:
+  cookie_name: dcc_auth
+  expiry_hours: 1
+  # TODO: update this list, if needed
+  allowed_domains:
+    - uwblueprint.org
+  min_since_login: 100
+
+frontend_domain: http://localhost:3000
+backend_domain: http://localhost:8888
+
+s3:
+  allowed_types:
+    - asset
+    - image
+  allowed_extensions:
+    - gltf
+    - glb
+    - png
+    - jpeg
+    - jpg
+  bucket_name: dcc-bp-public-dev
+  region: us-east-2

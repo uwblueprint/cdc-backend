@@ -1,7 +1,7 @@
 SHELL:=/bin/bash
 
 CONFIG_FILE=secrets/dev-ec2-config.yaml
-DOCKER_CONFIG_FILE=configs/dev-docker-config.yaml
+DOCKER_CONFIG_FILE=secrets/dev-ec2-config.yaml
 PYTHON_PATH=.
 
 .PHONY: install

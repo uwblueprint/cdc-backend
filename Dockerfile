@@ -7,18 +7,21 @@ RUN mkdir /root/cdc-backend
 COPY app /root/cdc-backend/app/
 COPY configs /root/cdc-backend/configs/
 COPY secrets /root/cdc-backend/secrets/
+COPY scripts /root/cdc-backend/scripts/
 
 COPY requirements.txt /root/cdc-backend/requirements.txt
-
-WORKDIR /root/cdc-backend/app
+COPY Makefile /root/cdc-backend/Makefile
 
 RUN apt-get update
-RUN apt-get install ffmpeg libsm6 libxext6  -y
+RUN apt-get install ffmpeg libsm6 libxext6 nginx -y
 
-RUN pip install -r ../requirements.txt
+WORKDIR /root/cdc-backend
+RUN make docker_install
+RUN cp /root/cdc-backend/configs/nginx-docker.conf /usr/share/nginx/nginx.conf
 
 
-CMD PYTHONPATH=. CONFIG_PATH=../secrets/dev-ec2-config.yaml python __main__.py
+WORKDIR /root/cdc-backend/app
+CMD nginx -c nginx.conf && PYTHONPATH=. CONFIG_PATH=../secrets/dev-ec2-config.yaml python __main__.py
 
 
-# docker run --rm -p 8888:8888 -it $(docker build -q .)
+# docker run --rm -p 443:443 -it $(docker build -q .)

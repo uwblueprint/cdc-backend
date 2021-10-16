@@ -41,6 +41,7 @@ from routes.base import (
     BaseLogoutHandler,
     BaseProfileHandler,
     NotFoundHandler,
+    NotFoundUIHandler,
     UIStaticHandler,
 )
 from routes.ui.admin_scene import UIAdminSceneHandler
@@ -103,6 +104,8 @@ def get_routes():
         (r"/admin_login", BaseAuthHandler),
         (r"/api/admin/v1/admin_logout", BaseLogoutHandler),
         (r"/api/admin/v1/user_profile", BaseProfileHandler),
+        # if no match before this, match all /api/* routes with a 404 error
+        (r"/api/\S*", NotFoundHandler),
         (r"/([a-zA-Z_-]{1,50})/?", UIScenarioLandingPageHandler),
         (r"/([a-zA-Z_-]{1,50})/tutorial", UITutorialPageHandler),
         (r"/([a-zA-Z_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),
@@ -116,7 +119,7 @@ def make_app():
         get_routes(),
         debug=config.get("tornado.debug"),
         xsrf_cookies=config.get("tornado.xsrf"),
-        default_handler_class=NotFoundHandler,
+        default_handler_class=NotFoundUIHandler,
         template_path=f"{os.path.dirname(__file__)}/public/templates",
         cookie_secret=uuid.uuid4().hex,
     )

@@ -441,3 +441,54 @@ async def delete_object_in_postgres(scene_id: str, object_id: str, session):
 
     response = {"message": "Deleted successfully"}
     return response
+
+
+async def clean_object_assets_from_aws(old: dict, new: dict):
+    if "aws" not in config.get("app-env"):
+        return
+    del old["asset_details"]
+    del new["asset_details"]
+    old_obj = Object(**old)
+    new_obj = Object(**new)
+    if not old_obj.is_interactable:
+        # old object wasn't intractable, nothing to clean up, return
+        return
+
+    old_puzzle_type = old_obj.animations_json["blackboardData"]["componentType"]
+    new_puzzle_type = "NA"
+    if new_obj.is_interactable:
+        # new obj isn't intractable and old object was... need to clean up for certain puzzle types
+        new_puzzle_type = new_obj.animations_json["blackboardData"]["componentType"]
+    keys_to_delete = []
+    if old_puzzle_type == "jigsaw-puzzle":
+        # jigsaw puzzle always requires cleanup due to the way it is setup
+        for img in old_obj.animations_json["blackboardData"]["jsonData"]["images"]:
+            keys_to_delete.append({"Key": img.split("amazonaws.com/")[-1]})
+    elif old_puzzle_type != new_puzzle_type and old_puzzle_type == "visual-pane":
+        keys_to_delete.append(
+            {
+                "Key": old_obj.animations_json["blackboardData"]["jsonData"][
+                    "imageSrc"
+                ].split("amazonaws.com/")[-1]
+            }
+        )
+    elif old_puzzle_type != new_puzzle_type and old_puzzle_type == "text-pane":
+        for elem in old_obj.animations_json["blackboardData"]["jsonData"]["data"]:
+            if "imageSrc" in elem:
+                keys_to_delete.append(
+                    {"Key": elem["imageSrc"].split("amazonaws.com/")[-1]}
+                )
+    elif old_puzzle_type != new_puzzle_type and old_puzzle_type == "ordered-puzzle":
+        for elem in old_obj.animations_json["blackboardData"]["jsonData"]["images"]:
+            keys_to_delete.append({"Key": elem["imageSrc"].split("amazonaws.com/")[-1]})
+
+    # Only delete if hard delete is set to True
+    if config.get("asset.aws_hard_delete", False) and len(keys_to_delete) > 0:
+        s3_client = boto3.client(
+            "s3",
+            endpoint_url=f"https://s3.{config.get('s3.region')}.amazonaws.com",
+            region_name=config.get("s3.region"),
+        )
+        s3_client.delete_objects(
+            Bucket=config.get("s3.bucket_name"), Delete={"Objects": keys_to_delete}
+        )

@@ -45,3 +45,29 @@ Make sure you have sufficient AWS permissions for the actions required. If you h
    - `reload` - `nginx -s reload` to reload nginx
    - Tail access logs - `tail -f /var/log/nginx/access.log`
    - Tail error logs - `tail -f /var/log/nginx/error.log`
+
+## AWS EC2 - Docker
+
+1. Create an AWS EC2 instance (ask Jay for more details). Make sure the public IP is selected, or else it won't be accessible from outside. When choosing the instance type, choose "Ubuntu 20.04".
+1. Change the security group rules to allow Inbound traffic TCP to Port 443 from `Anywhere`
+1. Download the latest required dependencies:
+   - `sudo apt-get update`
+   - `sudo apt-get install docker.io unzip`
+   - `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"`
+   - `unzip awscliv2.zip`
+   - `sudo ./aws/install`
+1. Login and download ECR container from AWS:
+   - `aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 222838721423.dkr.ecr.us-east-2.amazonaws.com`
+   - `docker pull 222838721423.dkr.ecr.us-east-2.amazonaws.com/dcc-bp:latest`
+   - `docker run -d -p 443:443 -it 222838721423.dkr.ecr.us-east-2.amazonaws.com/dcc-bp:latest`
+
+## Docker build steps
+
+1. Build the docker image from the root directory: `docker build -t dcc-bp:v1 .` , make sure to update the version properly for all these steps
+1. (Optional) Test out docker container by running `docker run --rm -p 443:443 -it dcc-bp:v1`
+1. Login: `aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 222838721423.dkr.ecr.us-east-2.amazonaws.com`
+1. Tag it on AWS: `docker tag dcc-bp:v1 222838721423.dkr.ecr.us-east-2.amazonaws.com/dcc-bp:v1`
+1. Push to AWS: `docker push 222838721423.dkr.ecr.us-east-2.amazonaws.com/dcc-bp:v1`
+1. Tag it on AWS: `docker tag dcc-bp:v1 222838721423.dkr.ecr.us-east-2.amazonaws.com/dcc-bp:latest`
+1. Push to AWS: `docker push 222838721423.dkr.ecr.us-east-2.amazonaws.com/dcc-bp:latest`
+1. Log into the EC2 instance and stop container, re-pull `latest` and restart container

@@ -61,7 +61,7 @@ Make sure you have sufficient AWS permissions for the actions required. If you h
    - `docker pull 222838721423.dkr.ecr.us-east-2.amazonaws.com/dcc-bp:latest`
    - `docker run -d -p 443:443 -it 222838721423.dkr.ecr.us-east-2.amazonaws.com/dcc-bp:latest`
 1. Once the docker container is running, sh into it by doing: `docker exec -it <CONTAINER_ID> /bin/sh`
-1. Then run `certbot --nginx -d interactive.calgaryconnecteen.com -d www.interactive.calgaryconnecteen.com` to generate the intial certificate. The renewal of certifcates should happen automatically due to the cron script.
+1. Then run `certbot --nginx -d interactive.calgaryconnecteen.com -d www.interactive.calgaryconnecteen.com` to generate the intial certificate. The renewal of certifcates should happen automatically due to the cron script. You can use the email address `dcc.bp.aws@gmail.com`.
 
 ## Docker build steps
 

@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Youth in Crisis",
+    "friendly_name": "youth-in-crisis",
+    "description": "A youth is experiencing a crisis and they need to seek help for said crisis (i.e. You find yourself sitting at your desk needing to find a way out. The History Teacher is talking about the paper that is due in a week, you look down and see you haven’t even started writing your paper. You think back to the fact that you still have one Biology lab, one Math quiz and one Chemistry exam in the same week. The room begins to feel like it’s slanting, your palms are sweating, you feel your heart beating faster and your hands begin to shake – how will you escape and find help?)",
+    "scene_ids": [8],
+    "is_published": true,
+    "is_previewable": true,
+    "publish_link": "www.publishlink.com/youth-in-crisis",
+    "preview_link": "www.previewlink.com/youth-in-crisis",
+    "expected_solve_time": "5",
+    "introduction_data": {
+      "header_text": "Youth in Crisis Escape Room"
+    },
+    "conclusion_data": {
+      "header_text": "Great job, you escaped the Youth in Crisis Escape Room! You managed to help a student at a school that was going through an anxiety attack reach home safely. Once home, you were able to successfully help them reach their bedroom, where XYZ. By going through this escape room, you have now learnt valuable skills that you can use in your everyday life to manage anxiety attacks.",
+      "paragraph_text": "By solving the puzzles and going through the room, you have learnt important skills such as techniques you can use when having an anxiety attack, solving problems and finding a focus object. You have also learnt about resources that the Calgary Distress Center provides when you or someone you know may be experiencing an anxiety attack. If you enjoyed the room, or have some feedback, check out the links below to share the escape room link, or give feedback to the admins!",
+      "share_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
+      "external_link": "https://calgaryconnecteen.com/"
+    },
+    "transitions": [
+      {
+        "data": [
+          {
+            "text": "You're a high school student in class. Your teacher Mr. Smith says, \"Alright, now we are going to be talking about the 8 page history paper due next week, there will be 4 components to the structure...\""
+          },
+          {
+            "text": "You look down at your agenda. \"8 page paper, in a week!? I still have a Bio lab, Math quiz and a Chem exam I have to prepare for next week. I can't, I just can't. It's impossible. I can't breath. What am I going to do??\""
+          },
+          {
+            "text": "Your hands start to tremble as you grasp your chest, you can't even tell if you are breathing properly anymore. You feel like you are going to pass out. Everything begins to look blurry and you notice your body start to subtly shake."
+          },
+          {
+            "text": "\"I have to get out of here, I have to go home. I feel like I'm gonna puke.\" Escape the room to get back home!"
+          }
+        ],
+        "currPosition": 0
+      },
+      {
+        "data": [
+          {
+            "text": "Sweet, I remembered my locker combo. I'll talk to Mr. Smith now."
+          },
+          {
+            "text": "You ask to leave the class so that you can go to the nurses office. You feel uneasy as you can see everyone in class turned to stare at you. Mr. Smith dismisses you and hopes for you to feel better soon. You nod your head, gather your things and leave"
+          }
+        ],
+        "currPosition": 0
+      }
+    ],
+    "display_image_url": ""
+  }
+]

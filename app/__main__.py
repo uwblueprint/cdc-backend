@@ -40,6 +40,7 @@ from routes.base import (
     BaseAuthHandler,
     BaseLogoutHandler,
     BaseProfileHandler,
+    LandingPageUIHandler,
     NotFoundHandler,
     NotFoundUIHandler,
     UIStaticHandler,
@@ -110,6 +111,7 @@ def get_routes():
         (r"/([a-zA-Z_-]{1,50})/tutorial", UITutorialPageHandler),
         (r"/([a-zA-Z_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),
         (r"/([a-zA-Z_-]{1,50})/completed", UIScenarioCompletedPageHandler),
+        (r"/?", LandingPageUIHandler),
     ]
     return routes
 

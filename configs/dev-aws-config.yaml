@@ -58,9 +58,9 @@ cache:
   # seconds in day: 24 * 60 * 60
   expire_time: 86400
   # how frequently to update cache (in seconds), 60 seconds for dev, for now
-  update_time: 5
+  update_time: 60
   # no need to update cache for dev, except for testing purpose
-  periodic_callback_enabled: false
+  periodic_callback_enabled: true
 
 auth:
   cookie_name: dcc_auth

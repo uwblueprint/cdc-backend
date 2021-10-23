@@ -13,7 +13,7 @@ COPY requirements.txt /root/cdc-backend/requirements.txt
 COPY Makefile /root/cdc-backend/Makefile
 
 RUN apt-get update
-RUN apt-get install ffmpeg libsm6 libxext6 nginx certbot python3-certbot-nginx cron libpq-dev -y
+RUN apt-get install ffmpeg libsm6 libxext6 nginx certbot python3-certbot-nginx cron -y
 
 WORKDIR /root/cdc-backend
 RUN make docker_install
@@ -31,3 +31,5 @@ CMD cron && nginx && PYTHONPATH=. CONFIG_PATH=../secrets/dev-ec2-config.yaml pyt
 # Once docker is running, to verify and set up certificates:
 # docker exec -it <CONTAINER_ID> /bin/sh
 # certbot --nginx -d interactive.calgaryconnecteen.com -d www.interactive.calgaryconnecteen.com --agree-tos -m dcc.bp.aws@gmail.com
+
+#PYTHONPATH=. CONFIG_PATH=secrets/dev-ec2-config.yaml python

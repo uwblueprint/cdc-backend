@@ -27347,8 +27347,14 @@ object-assign
           {
             key: "render",
             value: function render() {
-              // var iframeLink = "http://localhost:3000/admin/scene/" + this.props.sceneId + "/object/" + this.props.objectId;
-              var iframeLink = "https://admin-dev.jaydhulia.com/admin";
+              var frontendSceneUrl =
+                "https://interactive-admin.calgaryconnecteen.com/admin/scene/";
+              var iframeLink =
+                frontendSceneUrl +
+                this.props.sceneId +
+                "/object/" +
+                this.props.objectId;
+
               return _react2.default.createElement(
                 "div",
                 {
@@ -27360,7 +27366,7 @@ object-assign
                   "div",
                   {
                     className: "w3-modal-content w3-card-4 w3-animate-zoom",
-                    style: { width: "70%", height: "70%" },
+                    style: { width: "70%", height: "100%" },
                   },
                   _react2.default.createElement(
                     "div",
@@ -27379,11 +27385,11 @@ object-assign
                   ),
                   _react2.default.createElement(
                     "div",
-                    { style: { height: "800px" } },
+                    { style: { height: "100vh" } },
                     _react2.default.createElement("iframe", {
                       src: iframeLink,
                       title: "Test",
-                      style: { height: "100%", width: "95%" },
+                      style: { height: "100vh", width: "95%" },
                     })
                   ),
                   _react2.default.createElement(
@@ -27513,22 +27519,26 @@ object-assign
                     searchable: true,
                     onChange: _this2.selectOption,
                   }),
-                  _react2.default.createElement(GltfPopUp, {
-                    popupView: _this2.state.popupView,
-                    sceneId: AFRAME.scenes[0]
-                      .getAttribute("id")
-                      .replace("-scene", ""),
-                    objectId: objId.replace("-obj", ""),
-                    closePopup: _this2.closePopup,
-                  }),
                   objId.endsWith("-obj")
                     ? _react2.default.createElement(
-                        "button",
-                        {
-                          onClick: _this2.showPopup,
-                          className: "w3-button w3-green w3-large",
-                        },
-                        "Edit Puzzle Type"
+                        "div",
+                        null,
+                        _react2.default.createElement(GltfPopUp, {
+                          popupView: _this2.state.popupView,
+                          sceneId: AFRAME.scenes[0]
+                            .getAttribute("id")
+                            .replace("-scene", ""),
+                          objectId: objId.replace("-obj", ""),
+                          closePopup: _this2.closePopup,
+                        }),
+                        _react2.default.createElement(
+                          "button",
+                          {
+                            onClick: _this2.showPopup,
+                            className: "w3-button w3-green w3-large",
+                          },
+                          "Edit Puzzle Type"
+                        )
                       )
                     : null
                 );
@@ -27557,10 +27567,6 @@ object-assign
             objectList: [],
             backgroundList: [],
             assetLinkToTypeMap: new Map(),
-            checked: false,
-            idToCheckedMap: new Map(),
-            idToDataMap: new Map(),
-            originalDataMap: new Map(),
             popupView: "none",
           };
           _this2.setObjects(_this2);
@@ -27571,7 +27577,7 @@ object-assign
           {
             key: "setObjects",
             value: function setObjects(self) {
-              var baseUrl = "https://backend-dev.jaydhulia.com/";
+              var baseUrl = "http://interactive.calgaryconnecteen.com/";
               var baseEndpoint = "api/admin/v1/";
               var getUrl = baseUrl + baseEndpoint + "assets";
               var assetsUrl =
@@ -27720,8 +27726,6 @@ object-assign
                   componentName.indexOf("__")
                 );
               }
-              // alert(componentName);
-              // alert(subComponentName);
 
               return _react2.default.createElement(
                 _Collapsible2.default,
@@ -30183,7 +30187,7 @@ object-assign
           );
 
           _this.writeChanges = function () {
-            var baseUrl = "https://backend-dev.jaydhulia.com/";
+            var baseUrl = "http://interactive.calgaryconnecteen.com/";
             var apiEndpointScene = AFRAME.scenes[0]
               .getAttribute("id")
               .replace("-scene", "");
@@ -30390,7 +30394,7 @@ object-assign
           {
             key: "getRequests",
             value: function getRequests(self) {
-              var baseUrl = "https://backend-dev.jaydhulia.com/";
+              var baseUrl = "http://interactive.calgaryconnecteen.com/";
               var apiEndpointScene = AFRAME.scenes[0]
                 .getAttribute("id")
                 .replace("-scene", "");

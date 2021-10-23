@@ -6,6 +6,7 @@ import firebase_admin.auth as auth
 import tornado.escape
 import tornado.httputil as httputil
 import tornado.web
+from cache.cache import get_all_cached_scenarios
 from config import config
 from models import get_session, return_session
 
@@ -316,3 +317,25 @@ class BaseProfileHandler(BaseAdminAPIHandler):
             "display_name": display_name,
         }
         await self.finish(resp_json)
+
+
+class LandingPageUIHandler(tornado.web.RequestHandler):
+    """
+    Base handler for the landing page
+    """
+
+    async def get(self):
+        self.set_status(200)
+        cached_scenarios = await get_all_cached_scenarios()
+        res_scenarios = []
+        for scenario in cached_scenarios.values():
+            scenario_dict = scenario["obj_dict"]
+            if scenario_dict["is_published"]:
+                res_scenarios.append(
+                    {
+                        "title": scenario_dict["name"],
+                        "link": f"/{scenario_dict['friendly_name']}",
+                        "description": scenario_dict["description"],
+                    }
+                )
+        await self.render("home.html", res_scenarios=res_scenarios)

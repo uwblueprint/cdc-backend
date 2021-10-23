@@ -1,22 +1,22 @@
 [
   {
-    "name": "Managing Anxiety Attacks Escape Room",
-    "friendly_name": "sample-escape-room",
+    "name": "Youth in Crisis",
+    "friendly_name": "youth-in-crisis",
     "description": "A student at ABC High is going through a hard time dealing with the stresses of school, and they begin to feel really anxious in class. Help the student manage their anxiety and escape the class!",
     "scene_ids": [4, 5, 6, 7],
     "is_published": true,
     "is_previewable": true,
-    "publish_link": "www.publishlink.com/sample-escape-room",
-    "preview_link": "www.previewlink.com/sample-escape-room",
+    "publish_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
+    "preview_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
     "expected_solve_time": "5",
     "introduction_data": {
-      "header_text": "Welcome to Managing Anxiety Attacks Escape Room"
+      "header_text": "Youth in crisis"
     },
     "conclusion_data": {
-      "header_text": "Great job, you escaped the Managing Anxiety Attacks Escape Room! You managed to help a student at a school that was going through an anxiety attack reach home safely. Once home, you were able to successfully help them reach their bedroom, where XYZ. By going through this escape room, you have now learnt valuable skills that you can use in your everyday life to manage anxiety attacks.",
+      "header_text": "Great job, you escaped the Youth in Crisis Escape Room! You managed to help a student at a school that was going through a crisis reach home safely. Once home, you were able to successfully help them reach their bedroom. By going through this escape room, you have now learnt valuable skills that you can use in your everyday life to manage anxiety attacks.",
       "paragraph_text": "By solving the puzzles and going through the room, you have learnt important skills such as techniques you can use when having an anxiety attack, solving problems and finding a focus object. You have also learnt about resources that the Calgary Distress Center provides when you or someone you know may be experiencing an anxiety attack. If you enjoyed thr room, or have some feedback, check out the links below to share the escape room link, or give feedback to the admins!",
-      "share_link": "https://backend-dev.jaydhulia.com/sample-escape-room",
-      "external_link": "https://calgaryconnecteen.com/"
+      "share_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
+      "external_link": "https://forms.gle/XfToJtsQa25mB1qQA"
     },
     "transitions": [
       {

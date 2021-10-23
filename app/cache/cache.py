@@ -92,6 +92,9 @@ class CustomCache(object):
         self.asset_cache.clear()
         self.scenario_name_to_id_cache.clear()
 
+    async def get_all_cached_scenarios(self):
+        return self.scenario_cache
+
 
 CACHE = CustomCache()
 
@@ -110,3 +113,5 @@ update_scenario_cache = CACHE.update_scenario_cache
 update_scene_cache = CACHE.update_scene_cache
 
 update_asset_cache = CACHE.update_asset_cache
+
+get_all_cached_scenarios = CACHE.get_all_cached_scenarios

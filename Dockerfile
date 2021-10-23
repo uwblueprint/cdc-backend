@@ -13,7 +13,7 @@ COPY requirements.txt /root/cdc-backend/requirements.txt
 COPY Makefile /root/cdc-backend/Makefile
 
 RUN apt-get update
-RUN apt-get install ffmpeg libsm6 libxext6 nginx certbot python3-certbot-nginx cron -y
+RUN apt-get install ffmpeg libsm6 libxext6 nginx certbot python3-certbot-nginx cron libpq-dev -y
 
 WORKDIR /root/cdc-backend
 RUN make docker_install

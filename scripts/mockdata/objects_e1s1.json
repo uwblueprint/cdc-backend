@@ -12,9 +12,9 @@
       "blackboardData": {
         "componentType": "keypad",
         "blackboardText": "What was my locker combination again? 58 ^ . . . ",
-        "blackboardParagraph": "Note, answer is of the form XX.XX.XX where X represents a digit.",
+        "blackboardParagraph": "Note, answer is of the form X.XX.XX where X represents a digit.",
         "jsonData": {
-          "password": "04.22.58",
+          "password": "4.22.58",
           "model": "numpad",
           "is_last_object": true
         }

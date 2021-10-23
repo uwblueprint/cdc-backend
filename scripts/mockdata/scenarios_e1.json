@@ -1,13 +1,13 @@
 [
   {
-    "name": "Youth in Crisis",
-    "friendly_name": "youth-in-crisis",
+    "name": "Youth in Crisis - 1",
+    "friendly_name": "youth-in-crisis-1",
     "description": "A youth is experiencing a crisis and they need to seek help for said crisis (i.e. You find yourself sitting at your desk needing to find a way out. The History Teacher is talking about the paper that is due in a week, you look down and see you haven’t even started writing your paper. You think back to the fact that you still have one Biology lab, one Math quiz and one Chemistry exam in the same week. The room begins to feel like it’s slanting, your palms are sweating, you feel your heart beating faster and your hands begin to shake – how will you escape and find help?)",
     "scene_ids": [8],
     "is_published": true,
     "is_previewable": true,
-    "publish_link": "www.publishlink.com/youth-in-crisis",
-    "preview_link": "www.previewlink.com/youth-in-crisis",
+    "publish_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis-1",
+    "preview_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis-1",
     "expected_solve_time": "5",
     "introduction_data": {
       "header_text": "Youth in Crisis Escape Room"
@@ -15,8 +15,8 @@
     "conclusion_data": {
       "header_text": "Great job, you escaped the Youth in Crisis Escape Room! You managed to help a student at a school that was going through an anxiety attack reach home safely. Once home, you were able to successfully help them reach their bedroom, where XYZ. By going through this escape room, you have now learnt valuable skills that you can use in your everyday life to manage anxiety attacks.",
       "paragraph_text": "By solving the puzzles and going through the room, you have learnt important skills such as techniques you can use when having an anxiety attack, solving problems and finding a focus object. You have also learnt about resources that the Calgary Distress Center provides when you or someone you know may be experiencing an anxiety attack. If you enjoyed the room, or have some feedback, check out the links below to share the escape room link, or give feedback to the admins!",
-      "share_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
-      "external_link": "https://calgaryconnecteen.com/"
+      "share_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis-1",
+      "external_link": "https://forms.gle/vFmVvh5svmwPnVkY6"
     },
     "transitions": [
       {

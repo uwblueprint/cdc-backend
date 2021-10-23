@@ -63,7 +63,17 @@
                 </div>
               </div>
               {% if scenario_conclusion_data.get('external_link', None) %}
-              <div class="external-link-header">External Link</div>
+              <div class="external-link-header">Feedback form</div>
+              <div class="header-text">
+                Have some feedback about your experience today? Please fill out
+                the form by clicking
+                <a
+                  href="{{ scenario_conclusion_data['external_link'] }}"
+                  target="_blank"
+                  >here</a
+                >
+                or visiting the link below:
+              </div>
               <div class="share-link-input-div row">
                 <div class="col-9">
                   <input

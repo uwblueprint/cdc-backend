@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ scenario_name }}</title>
+    <title>{{ scenario_name }} - Completed</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -63,7 +63,17 @@
                 </div>
               </div>
               {% if scenario_conclusion_data.get('external_link', None) %}
-              <div class="external-link-header">External Link</div>
+              <div class="external-link-header">Feedback form</div>
+              <div class="header-text">
+                Have some feedback about your experience today? Please fill out
+                the form by clicking
+                <a
+                  href="{{ scenario_conclusion_data['external_link'] }}"
+                  target="_blank"
+                  >here</a
+                >
+                or visiting the link below:
+              </div>
               <div class="share-link-input-div row">
                 <div class="col-9">
                   <input
@@ -140,7 +150,7 @@
         copyLinkButton.innerHTML = "Copy Link";
       }
       function redirectToLandingPage() {
-        let nextURL = "/{{ scenario_friendly_name }}";
+        let nextURL = "/";
         window.location.replace(nextURL);
       }
     </script>

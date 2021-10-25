@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Living Room",
+    "description": "Entrance way of house",
+    "object_ids": [
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97
+    ],
+    "position": [0, 0.2, 10],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0.0, 90.0, 0.0],
+    "background_id": 13,
+    "camera_properties": {
+      "position": [2.84, 3.6, 6.145],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "I remember there was some project that I am forgetting a date for...what could that project be?",
+      "Okay let's think back. There's always that elective course that I forget to do work for. It's either French or Art. I'd be doomed if it was Art! There's so much content and history that I would probably have another anxiety attack all over again!",
+      "I'm pretty sure I'm missing a date for art. My parents really enjoy the artwork that I make and often showcase it for others. I hate being the centre of attention."
+    ],
+    "screenshot_url": ""
+  }
+]

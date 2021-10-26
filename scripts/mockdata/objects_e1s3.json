@@ -1,0 +1,274 @@
+[
+  {
+    "name": "Computer",
+    "position": [4.969, 2.105, -2.444],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0, 90, 0],
+    "asset_id": 31,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "blackboardText": "Enter your password: ",
+        "jsonData": {
+          "password": "223161",
+          "model": "numpad",
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Guitar",
+    "position": [4.154, 1.588, 3.153],
+    "scale": [1.5, 1.5, 1.5],
+    "rotation": [-15.0, 180, 0],
+    "asset_id": 32,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "A piece of paper fell out of my guitar. Interesting.",
+        "componentType": "jigsaw-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-0.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-1.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-2.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-3.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-4.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-5.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-6.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-7.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-8.png"
+          ],
+          "scaleBy": 3,
+          "puzzleDimension": 3
+        }
+      }
+    }
+  },
+  {
+    "name": "Card Deck",
+    "position": [-5.25, 2.041, -2.5],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 45, 0],
+    "asset_id": 33,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.3, 0.3, 0.3]
+        }
+      }
+    }
+  },
+  {
+    "name": "Carpet",
+    "position": [-4.168, -0.522, 0.668],
+    "scale": [0.06, 0.06, 0.06],
+    "rotation": [0, 0, 0],
+    "asset_id": 34,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.04, 0.04, 0.04]
+        }
+      }
+    }
+  },
+  {
+    "name": "House Plant",
+    "position": [-0.092, 1.614, -5.473],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0, 17.71, 0],
+    "asset_id": 35,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.8, 0.8, 0.8]
+        }
+      }
+    }
+  },
+  {
+    "name": "House Plant",
+    "position": [1.612, 1.614, -5.473],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0, -125.645, 0],
+    "asset_id": 35,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "What's this piece of paper doing underneath the pot? I'm always misplacing my things when I get anxious."
+            },
+            {
+              "text": "When I'm super anxious, I tend to misplace some things. Seems like I found something from my Arabic class."
+            },
+            {
+              "text": "When reading Arabic, read right to left."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Phone",
+    "position": [3.941, 2.166, -3.48],
+    "scale": [0.3, 0.3, 0.3],
+    "rotation": [0, 280, 0],
+    "asset_id": 36,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/84f2b061b76b408db66234baa3b0ff4e.jpg",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room3 Frame1",
+    "position": [-1.855, 3.667, -5.443],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 270, 0],
+    "asset_id": 37,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/aff0289669274027b0b094c7ee163992.jpg",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room3 Frame2",
+    "position": [-3.283, 3.809, -5.443],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 270, 0],
+    "asset_id": 38,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0b37643a8651477aa15dd98f2afd0c00.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room3 Frame3",
+    "position": [-4.824, 3.809, -5.443],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 270, 0],
+    "asset_id": 39,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/252a5667f26f4297b6adf62147428dac.jpg",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room3 Frame4",
+    "position": [-6.434, 3.809, -5.443],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 270, 0],
+    "asset_id": 40,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/fc727c7dfe2d4bb0ac2b9014849dafa8.jpg",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room3 Frame5",
+    "position": [-7.455, 3.809, -4.204],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 0, 0],
+    "asset_id": 41,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a8b9b3aabd154ed08022d7e44d3801f3.jpg",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Room3 Frame6",
+    "position": [-7.455, 3.809, -2.684],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 0, 0],
+    "asset_id": 42,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a8618cf289d14d21947d179ba21013c2.png",
+          "caption": ""
+        }
+      }
+    }
+  }
+]

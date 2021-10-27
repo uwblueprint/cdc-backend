@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Mouse",
+    "obj_type": "object",
+    "s3_key": "assets/cc69424bb71949d6ac9be6091573a087.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Bells",
+    "obj_type": "object",
+    "s3_key": "assets/9e481c2ed0254e3a8c4e2a29531cfb46.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Radio",
+    "obj_type": "object",
+    "s3_key": "assets/b38029bf1a0e479f88c28ef309a11311.glb",
+    "screenshot_url": ""
+  }
+]

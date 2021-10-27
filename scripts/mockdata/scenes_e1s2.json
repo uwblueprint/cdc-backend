@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Living Room",
+    "description": "Entrance way of house",
+    "object_ids": [
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97
+    ],
+    "position": [0, 0.2, 10],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0.0, 90.0, 0.0],
+    "background_id": 13,
+    "camera_properties": {
+      "position": [2.84, 3.6, 6.145],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": ["Can the cat help you create a distraction?"],
+    "screenshot_url": ""
+  }
+]

@@ -39,10 +39,27 @@
       {
         "data": [
           {
-            "text": "Sweet, I remembered my locker combo. I'll talk to Mr. Smith now."
+            "text": "\"Sweet, I remembered my locker combo. I'll talk to Mr. Smith now.\""
           },
           {
             "text": "You ask to leave the class so that you can go to the nurses office. You feel uneasy as you can see everyone in class turned to stare at you. Mr. Smith dismisses you and hopes for you to feel better soon. You nod your head, gather your things and leave"
+          },
+          {
+            "text": "You enter the house and see that your parents are cooking in the kitchen, the stairs going up are next to the kitchen. You hide by the closet door as they keep walking back and forth as they prepare dinner."
+          },
+          {
+            "text": "\"Ahhhh how do I get them to go to the living room so I run upstairs???\""
+          }
+        ],
+        "currPosition": 0
+      },
+      {
+        "data": [
+          {
+            "text": "Yes, this should work well. Strawberry likes to make sound and my parents don't like it when she is too loud."
+          },
+          {
+            "text": "You lure Strawberry to you with the string and mouse. After you throw the bell at the radio, Strawberry chases it and the radio starts to play music. Your parents go to the living room to figure out what happened. While they are occupied turning off the radio, you run upstairs. Strawberry runs after you."
           }
         ],
         "currPosition": 0

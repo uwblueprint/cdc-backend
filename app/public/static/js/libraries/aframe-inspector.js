@@ -27577,7 +27577,7 @@ object-assign
           {
             key: "setObjects",
             value: function setObjects(self) {
-              var baseUrl = "http://interactive.calgaryconnecteen.com/";
+              var baseUrl = "https://interactive.calgaryconnecteen.com/";
               var baseEndpoint = "api/admin/v1/";
               var getUrl = baseUrl + baseEndpoint + "assets";
               var assetsUrl =
@@ -30187,7 +30187,7 @@ object-assign
           );
 
           _this.writeChanges = function () {
-            var baseUrl = "http://interactive.calgaryconnecteen.com/";
+            var baseUrl = "https://interactive.calgaryconnecteen.com/";
             var apiEndpointScene = AFRAME.scenes[0]
               .getAttribute("id")
               .replace("-scene", "");
@@ -30394,7 +30394,7 @@ object-assign
           {
             key: "getRequests",
             value: function getRequests(self) {
-              var baseUrl = "http://interactive.calgaryconnecteen.com/";
+              var baseUrl = "https://interactive.calgaryconnecteen.com/";
               var apiEndpointScene = AFRAME.scenes[0]
                 .getAttribute("id")
                 .replace("-scene", "");

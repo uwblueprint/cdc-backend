@@ -3,7 +3,7 @@
     "name": "Youth in Crisis - 1",
     "friendly_name": "youth-in-crisis-1",
     "description": "A youth is experiencing a crisis and they need to seek help for said crisis (i.e. You find yourself sitting at your desk needing to find a way out. The History Teacher is talking about the paper that is due in a week, you look down and see you haven’t even started writing your paper. You think back to the fact that you still have one Biology lab, one Math quiz and one Chemistry exam in the same week. The room begins to feel like it’s slanting, your palms are sweating, you feel your heart beating faster and your hands begin to shake – how will you escape and find help?)",
-    "scene_ids": [8],
+    "scene_ids": [8, 9],
     "is_published": true,
     "is_previewable": true,
     "publish_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis-1",
@@ -39,10 +39,27 @@
       {
         "data": [
           {
-            "text": "Sweet, I remembered my locker combo. I'll talk to Mr. Smith now."
+            "text": "\"Sweet, I remembered my locker combo. I'll talk to Mr. Smith now.\""
           },
           {
             "text": "You ask to leave the class so that you can go to the nurses office. You feel uneasy as you can see everyone in class turned to stare at you. Mr. Smith dismisses you and hopes for you to feel better soon. You nod your head, gather your things and leave"
+          },
+          {
+            "text": "You enter the house and see that your parents are cooking in the kitchen, the stairs going up are next to the kitchen. You hide by the closet door as they keep walking back and forth as they prepare dinner."
+          },
+          {
+            "text": "\"Ahhhh how do I get them to go to the living room so I run upstairs???\""
+          }
+        ],
+        "currPosition": 0
+      },
+      {
+        "data": [
+          {
+            "text": "Yes, this should work well. Strawberry likes to make sound and my parents don't like it when she is too loud."
+          },
+          {
+            "text": "You lure Strawberry to you with the string and mouse. After you throw the bell at the radio, Strawberry chases it and the radio starts to play music. Your parents go to the living room to figure out what happened. While they are occupied turning off the radio, you run upstairs. Strawberry runs after you."
           }
         ],
         "currPosition": 0

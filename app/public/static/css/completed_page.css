@@ -156,3 +156,9 @@
   text-align: center;
   color: #ffffff;
 }
+
+.lr-padded {
+  padding-left: 3vh;
+  padding-right: 3vh;
+  border-radius: 2rem !important;
+}

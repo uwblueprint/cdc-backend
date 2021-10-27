@@ -20,97 +20,97 @@
 
   <body>
     <div
-      style="background: url('/static/img/background_image.png')"
-      class="page-holder bg-cover d-flex align-items-end"
+      style="
+        background: url('/static/img/background_image.png');
+        overflow-x: hidden;
+      "
+      class="page-holder bg-cover d-flex align-items-center"
     >
-      <div
-        class="container base-container d-flex align-items-center justify-content-center"
-      >
-        <div class="base-textbox">
-          <div class="row">
-            <div class="col"></div>
-            <div class="col-10 text-start">
-              <div class="congrats-text">Congratulations!</div>
-              <div class="header-text">
-                {{ scenario_conclusion_data['header_text'] }}
-              </div>
-              <div class="lessons-learnt-text">Lessons Learned Today</div>
-              <div class="header-text">
-                {{ scenario_conclusion_data['paragraph_text'] }}
-              </div>
-              <div class="share-link-header">Share it with your friends!</div>
-              <div class="share-link-input-div row">
-                <div class="col-9">
-                  <input
-                    id="shareLinkInput"
-                    class="share-link-input-box"
-                    type="text"
-                    value="{{ scenario_conclusion_data['share_link'] }}"
-                    readonly
-                  />
-                </div>
-                <div class="col-3">
-                  <a
-                    href="#"
-                    id="copy-link-button-id"
-                    class="copy-share-link-text"
-                    onclick="copyLink();return false;"
-                    role="button"
-                    tabindex="0"
-                  >
-                    Copy Link
-                  </a>
-                </div>
-              </div>
-              {% if scenario_conclusion_data.get('external_link', None) %}
-              <div class="external-link-header">Feedback form</div>
-              <div class="header-text">
-                Have some feedback about your experience today? Please fill out
-                the form by clicking
-                <a
-                  href="{{ scenario_conclusion_data['external_link'] }}"
-                  target="_blank"
-                  >here</a
-                >
-                or visiting the link below:
-              </div>
-              <div class="share-link-input-div row">
-                <div class="col-9">
-                  <input
-                    id="externalLinkInput"
-                    class="share-link-input-box"
-                    type="text"
-                    value="{{ scenario_conclusion_data['external_link'] }}"
-                    readonly
-                  />
-                </div>
-                <div class="col-3">
-                  <a
-                    href="#"
-                    id="external-link-button-id"
-                    class="copy-share-link-text"
-                    onclick="copyExternalLink();return false;"
-                    role="button"
-                    tabindex="0"
-                  >
-                    Copy Link
-                  </a>
-                </div>
-              </div>
-              {% end %}
-              <div class="back-to-lobby-div">
-                <button
-                  type="button"
-                  class="btn back-to-lobby-button back-to-lobby-button-text"
-                  onclick="redirectToLandingPage();"
-                >
-                  Back to Lobby
-                </button>
-              </div>
+      <div class="h-100 row align-items-center">
+        <div class="col"></div>
+        <div class="col-10 text-start lr-padded" style="background: #ffffff">
+          <div class="congrats-text">Congratulations!</div>
+          <div class="header-text">
+            {% raw scenario_conclusion_data['header_text'] %}
+          </div>
+          <div class="lessons-learnt-text">Lessons Learned Today</div>
+          <div class="header-text">
+            {% raw scenario_conclusion_data['paragraph_text'] %}
+          </div>
+          <div class="share-link-header">Share it with your friends!</div>
+          <div class="header-text">
+            Enjoyed the room? Share it with your friends today!
+          </div>
+          <div class="share-link-input-div row">
+            <div class="col-9">
+              <input
+                id="shareLinkInput"
+                class="share-link-input-box"
+                type="text"
+                value="{{ scenario_conclusion_data['share_link'] }}"
+                readonly
+              />
             </div>
-            <div class="col"></div>
+            <div class="col-3">
+              <a
+                href="#"
+                id="copy-link-button-id"
+                class="copy-share-link-text"
+                onclick="copyLink();return false;"
+                role="button"
+                tabindex="0"
+              >
+                Copy Link
+              </a>
+            </div>
+          </div>
+          {% if scenario_conclusion_data.get('external_link', None) %}
+          <div class="external-link-header">Feedback form</div>
+          <div class="header-text">
+            Have some feedback about your experience today? Please fill out the
+            form by clicking
+            <a
+              href="{{ scenario_conclusion_data['external_link'] }}"
+              target="_blank"
+              >here</a
+            >
+            or visiting the link below:
+          </div>
+          <div class="share-link-input-div row">
+            <div class="col-9">
+              <input
+                id="externalLinkInput"
+                class="share-link-input-box"
+                type="text"
+                value="{{ scenario_conclusion_data['external_link'] }}"
+                readonly
+              />
+            </div>
+            <div class="col-3">
+              <a
+                href="#"
+                id="external-link-button-id"
+                class="copy-share-link-text"
+                onclick="copyExternalLink();return false;"
+                role="button"
+                tabindex="0"
+              >
+                Copy Link
+              </a>
+            </div>
+          </div>
+          {% end %}
+          <div class="back-to-lobby-div">
+            <button
+              type="button"
+              class="btn back-to-lobby-button back-to-lobby-button-text"
+              onclick="redirectToLandingPage();"
+            >
+              Back to Lobby
+            </button>
           </div>
         </div>
+        <div class="col"></div>
       </div>
     </div>
     <script>

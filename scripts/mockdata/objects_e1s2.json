@@ -1,0 +1,345 @@
+[
+  {
+    "name": "Shelf",
+    "position": [-9.781, 0.804, 2.979],
+    "scale": [2.258, 2.258, 2.258],
+    "rotation": [0, 90, 0],
+    "asset_id": 14,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Openbook",
+    "position": [-9.781, 2.874, 3.666],
+    "scale": [0.014, 0.014, 0.014],
+    "rotation": [0, 180, 0],
+    "asset_id": 15,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.08, 0.08, 0.08]
+        }
+      }
+    }
+  },
+  {
+    "name": "Books",
+    "position": [-9.773, 4.767, 3.9],
+    "scale": [2.277, 2.277, 2.277],
+    "rotation": [0, 90, 0],
+    "asset_id": 16,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [5, 5, 5]
+        }
+      }
+    }
+  },
+  {
+    "name": "Rubiks Cube",
+    "position": [-9.719, 3.934, 3.877],
+    "scale": [0.001, 0.001, 0.001],
+    "rotation": [-0.293, -0.042, 0],
+    "asset_id": 17,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.005, 0.005, 0.005]
+        }
+      }
+    }
+  },
+  {
+    "name": "Jenga",
+    "position": [-9.798, 3.926, 2.9],
+    "scale": [0.106, 0.106, 0.106],
+    "rotation": [0, 90, 0],
+    "asset_id": 18,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.3, 0.3, 0.3]
+        }
+      }
+    }
+  },
+  {
+    "name": "Woman",
+    "position": [-7.883, 0.825, 5.244],
+    "scale": [2, 2, 2],
+    "rotation": [0, 0, 0],
+    "asset_id": 19,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You are too scared to approach your parents right now."
+            },
+            {
+              "text": "Try and find a way out of the room and avoid the parents."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Man",
+    "position": [-7.883, 0.825, 7.653],
+    "scale": [0.02, 0.02, 0.02],
+    "rotation": [0, 180, 0],
+    "asset_id": 20,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You are too scared to approach your parents right now."
+            },
+            {
+              "text": "Try and find a way out of the room and avoid the parents."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Frame1",
+    "position": [-1.634, 4.041, -13.23],
+    "scale": [0.1, 0.073, 0.08],
+    "rotation": [0, 270, 0],
+    "asset_id": 21,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/306fada2eb90474ead542eb5e3d0bf64.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Frame2",
+    "position": [-4, 4, -13.23],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 270, 0],
+    "asset_id": 22,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/9598cf70854c4cb48f2adc8418964a1e.jpg",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Frame3",
+    "position": [-10.063, 4, -7],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 0, 0],
+    "asset_id": 23,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a6eb0c21e61344739689e9a2c83735cc.jpg",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Frame4",
+    "position": [-10.063, 4, -11],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 0, 0],
+    "asset_id": 24,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/e0a5de8a13464b98ba5a208e5977ec42.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Cat",
+    "position": [-8, 1.64, -12.525],
+    "scale": [0.5, 0.5, 0.5],
+    "rotation": [0, -45, 0],
+    "asset_id": 26,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "Strawberry",
+        "blackboardParagraph": "There is Strawberry, without a care in the world like usual. Lucky. Maybe if Strawberry got my parents attention somehow... What is something that she does that annoys them...",
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.5, 0.5, 0.5]
+        }
+      }
+    }
+  },
+  {
+    "name": "Mouse",
+    "position": [-4.082, 2.376, 0.554],
+    "scale": [10, 10, 10],
+    "rotation": [0, -134.176, 0],
+    "asset_id": 66,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "Mouse Toy",
+        "blackboardParagraph": "Here is one of her toys, I have to be careful though not to draw attention to me picking them up. First I have to get her to come to me, then I have to get her to make some rukus in the living room.",
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [60, 60, 60]
+        }
+      }
+    }
+  },
+  {
+    "name": "Bells",
+    "position": [-4.213, 2.385, -0.84],
+    "scale": [10, 10, 10],
+    "rotation": [0, -84.185, 0],
+    "asset_id": 67,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "Bells",
+        "blackboardParagraph": "Here is another one of her toys, I have to be careful though not to draw attention to me picking them up. First I have to get her to come to me, then I have to get her to make some rukus in the living room.",
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [60, 60, 60]
+        }
+      }
+    }
+  },
+  {
+    "name": "Radio",
+    "position": [-1.196, 2.585, 8.927],
+    "scale": [10, 10, 10],
+    "rotation": [0, -151.811, 0],
+    "asset_id": 68,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [30, 30, 30]
+        }
+      }
+    }
+  },
+  {
+    "name": "Door",
+    "position": [-10.315, 0.823, 1.26],
+    "scale": [1.434, 1.9759, 3.757],
+    "rotation": [0, 270, 0],
+    "asset_id": 29,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "First I need Strawberry's attention. Then I need her to make some noise, maybe if I throw something...",
+        "blackboardParagraph": "Figure out which items and in what sequence to use them to get Strawberry to make a commotion.",
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/b188e92d007b4309aff3bcdca556f31f.png",
+              "xTarget": -2.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/75e4e0ad8787414fa1c67f041e4baa63.png",
+              "xTarget": -0.75,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f0cad23d70d5497680d41383f16d9e5b.png",
+              "xTarget": 0.75,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/1fac68e22cb14995a3cbe0931bd1568e.png",
+              "xTarget": 2.25,
+              "yTarget": 0
+            }
+          ],
+          "useTargets": true,
+          "randomizePos": true,
+          "scaleBy": 3,
+          "is_last_object": true
+        }
+      }
+    }
+  }
+]

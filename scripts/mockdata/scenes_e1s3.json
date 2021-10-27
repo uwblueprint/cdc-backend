@@ -1,8 +1,8 @@
 [
   {
-    "name": "Bedroom",
-    "description": "Student Bedroom, facing the wall with door.",
-    "object_ids": [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47],
+    "name": "Bedroom - Sample",
+    "description": "Sample escape room in the bedroom",
+    "object_ids": [98, 99, 100, 101, 102, 103, 104, 105, 106],
     "position": [0, 0.1, 0],
     "scale": [0.425, 0.425, 0.425],
     "rotation": [0.0, 90.0, 0.0],

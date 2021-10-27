@@ -13,8 +13,9 @@
         "componentType": "keypad",
         "blackboardText": "Enter your password: ",
         "jsonData": {
-          "password": "223161",
+          "password": "03032018",
           "model": "numpad",
+          "errorMsg": "What?? Ugh, what is my pin again. Why can't I remember!? Man, I am so stupid.",
           "is_last_object": true
         }
       }
@@ -28,29 +29,8 @@
     "asset_id": 32,
     "next_objects": [],
     "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "blackboardParagraph": "A piece of paper fell out of my guitar. Interesting.",
-        "componentType": "jigsaw-puzzle",
-        "draggable": true,
-        "jsonData": {
-          "images": [
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-0.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-1.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-2.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-3.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-4.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-5.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-6.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-7.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-8.png"
-          ],
-          "scaleBy": 3,
-          "puzzleDimension": 3
-        }
-      }
-    }
+    "is_interactable": false,
+    "animations_json": {}
   },
   {
     "name": "Card Deck",
@@ -120,20 +100,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "componentType": "text-pane",
+        "componentType": "rotation-controls",
         "jsonData": {
-          "data": [
-            {
-              "text": "What's this piece of paper doing underneath the pot? I'm always misplacing my things when I get anxious."
-            },
-            {
-              "text": "When I'm super anxious, I tend to misplace some things. Seems like I found something from my Arabic class."
-            },
-            {
-              "text": "When reading Arabic, read right to left."
-            }
-          ],
-          "currPosition": 0
+          "position": [0, 0, 5],
+          "scale": [0.8, 0.8, 0.8]
         }
       }
     }
@@ -151,122 +121,68 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/84f2b061b76b408db66234baa3b0ff4e.jpg",
+          "imageSrc": "/static/assets/calendar.png",
           "caption": ""
         }
       }
     }
   },
   {
-    "name": "Room3 Frame1",
+    "name": "Friends",
     "position": [-1.855, 3.667, -5.443],
     "scale": [0.073, 0.073, 0.073],
     "rotation": [0, 270, 0],
-    "asset_id": 37,
+    "asset_id": 69,
     "next_objects": [],
     "texts": [],
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "componentType": "visual-pane",
+        "componentType": "text-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/aff0289669274027b0b094c7ee163992.jpg",
-          "caption": ""
+          "data": [
+            {
+              "text": "",
+              "imageSrc": "/static/assets/friends.jpeg"
+            },
+            {
+              "text": "I remember this! We took it together on the first day of class. We all got really lukcy and ended up in the same homeroom together. We were so excited! It was so fun having them around all the time."
+            },
+            {
+              "text": "I wish things like this could happen more, where I just feel excited. Maybe I could talk to my friends, but I don't want them to know how much I am struggling. Plus, they are all busy since I left school early."
+            }
+          ],
+          "currPosition": 0
         }
       }
     }
   },
   {
-    "name": "Room3 Frame2",
+    "name": "Concert",
     "position": [-3.283, 3.809, -5.443],
     "scale": [0.073, 0.073, 0.073],
     "rotation": [0, 270, 0],
-    "asset_id": 38,
+    "asset_id": 70,
     "next_objects": [],
     "texts": [],
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "componentType": "visual-pane",
+        "componentType": "text-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0b37643a8651477aa15dd98f2afd0c00.png",
-          "caption": ""
-        }
-      }
-    }
-  },
-  {
-    "name": "Room3 Frame3",
-    "position": [-4.824, 3.809, -5.443],
-    "scale": [0.073, 0.073, 0.073],
-    "rotation": [0, 270, 0],
-    "asset_id": 39,
-    "next_objects": [],
-    "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "visual-pane",
-        "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/252a5667f26f4297b6adf62147428dac.jpg",
-          "caption": ""
-        }
-      }
-    }
-  },
-  {
-    "name": "Room3 Frame4",
-    "position": [-6.434, 3.809, -5.443],
-    "scale": [0.073, 0.073, 0.073],
-    "rotation": [0, 270, 0],
-    "asset_id": 40,
-    "next_objects": [],
-    "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "visual-pane",
-        "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/fc727c7dfe2d4bb0ac2b9014849dafa8.jpg",
-          "caption": ""
-        }
-      }
-    }
-  },
-  {
-    "name": "Room3 Frame5",
-    "position": [-7.455, 3.809, -4.204],
-    "scale": [0.073, 0.073, 0.073],
-    "rotation": [0, 0, 0],
-    "asset_id": 41,
-    "next_objects": [],
-    "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "visual-pane",
-        "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a8b9b3aabd154ed08022d7e44d3801f3.jpg",
-          "caption": ""
-        }
-      }
-    }
-  },
-  {
-    "name": "Room3 Frame6",
-    "position": [-7.455, 3.809, -2.684],
-    "scale": [0.073, 0.073, 0.073],
-    "rotation": [0, 0, 0],
-    "asset_id": 42,
-    "next_objects": [],
-    "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "visual-pane",
-        "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a8618cf289d14d21947d179ba21013c2.png",
-          "caption": ""
+          "data": [
+            {
+              "text": "",
+              "imageSrc": "/static/assets/concert.jpeg"
+            },
+            {
+              "text": "I really love this band, they have great music. It's helped me a lot when I feel like I have nowhere to turn. The lyrics really resonate with how I feel."
+            },
+            {
+              "text": "Their concert is coming up soon and I am so excited for it! I'm going to buy tickets for it, they go up for sale on June 11th."
+            }
+          ],
+          "currPosition": 0
         }
       }
     }

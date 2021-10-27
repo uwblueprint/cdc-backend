@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Friends",
+    "obj_type": "object",
+    "s3_key": "assets/be978485e729474d8e9cdd5d8ebd25e8.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Concert",
+    "obj_type": "object",
+    "s3_key": "assets/frameconcert.glb",
+    "screenshot_url": ""
+  }
+]

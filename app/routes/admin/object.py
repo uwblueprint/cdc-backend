@@ -2,6 +2,7 @@ import tornado.escape
 from jsonschema import validate
 from library.api_schemas import admin_object_handler_schema, admin_puzzle_handler_schema
 from library.postgres import (
+    clean_object_assets_from_aws,
     delete_object_in_postgres,
     get_object_from_postgres,
     post_object_to_postgres,
@@ -98,10 +99,12 @@ class AdminPuzzleHandler(BaseAdminAPIHandler):
 
             # validate body
             validate(data, schema=admin_puzzle_handler_schema)
-
+            saved_object = await get_object_from_postgres(object_id, self.db_session)
             response_message = await update_object_in_postgres(
                 scene_id, object_id, data, self.db_session
             )
+            await clean_object_assets_from_aws(saved_object, response_message)
+
             await self.finish(response_message)
 
         except ValueError as e:

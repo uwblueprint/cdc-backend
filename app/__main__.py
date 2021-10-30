@@ -40,7 +40,9 @@ from routes.base import (
     BaseAuthHandler,
     BaseLogoutHandler,
     BaseProfileHandler,
+    LandingPageUIHandler,
     NotFoundHandler,
+    NotFoundUIHandler,
     UIStaticHandler,
 )
 from routes.ui.admin_scene import UIAdminSceneHandler
@@ -103,10 +105,13 @@ def get_routes():
         (r"/admin_login", BaseAuthHandler),
         (r"/api/admin/v1/admin_logout", BaseLogoutHandler),
         (r"/api/admin/v1/user_profile", BaseProfileHandler),
-        (r"/([a-zA-Z_-]{1,50})/?", UIScenarioLandingPageHandler),
-        (r"/([a-zA-Z_-]{1,50})/tutorial", UITutorialPageHandler),
-        (r"/([a-zA-Z_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),
-        (r"/([a-zA-Z_-]{1,50})/completed", UIScenarioCompletedPageHandler),
+        # if no match before this, match all /api/* routes with a 404 error
+        (r"/api/\S*", NotFoundHandler),
+        (r"/([a-zA-Z0-9_-]{1,50})/?", UIScenarioLandingPageHandler),
+        (r"/([a-zA-Z0-9_-]{1,50})/tutorial", UITutorialPageHandler),
+        (r"/([a-zA-Z0-9_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),
+        (r"/([a-zA-Z0-9_-]{1,50})/completed", UIScenarioCompletedPageHandler),
+        (r"/?", LandingPageUIHandler),
     ]
     return routes
 
@@ -116,7 +121,7 @@ def make_app():
         get_routes(),
         debug=config.get("tornado.debug"),
         xsrf_cookies=config.get("tornado.xsrf"),
-        default_handler_class=NotFoundHandler,
+        default_handler_class=NotFoundUIHandler,
         template_path=f"{os.path.dirname(__file__)}/public/templates",
         cookie_secret=uuid.uuid4().hex,
     )
@@ -173,6 +178,7 @@ def main():
     cache_update_time = config.get("cache.update_time") * 1000
     cache_periodic_callback_enabled = config.get("cache.periodic_callback_enabled")
     if cache_periodic_callback_enabled:
+        tornado.ioloop.IOLoop.current().run_sync(update_cache)
         tornado.ioloop.PeriodicCallback(update_cache, cache_update_time).start()
     asyncio.get_event_loop().run_forever()
 

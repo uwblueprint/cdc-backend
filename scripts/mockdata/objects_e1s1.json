@@ -1,0 +1,172 @@
+[
+  {
+    "name": "Agenda",
+    "position": [-2.99, 0.777, -1.897],
+    "scale": [0.03, 0.03, 0.03],
+    "rotation": [-86.885, -6.818, -4.675],
+    "asset_id": 25,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "blackboardText": "What was my locker combination again? 58 ^ . . . ",
+        "blackboardParagraph": "Note, answer is of the form X.XX.XX where X represents a digit.",
+        "jsonData": {
+          "password": "4.22.58",
+          "model": "numpad",
+          "errorMsg": "No, that’s not right. What was it again. . . I know there was three numbers. . .",
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "History Teacher",
+    "position": [4.707, 0.035, -3.379],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation": [0, 300, 0],
+    "asset_id": 9,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "\"I'm going to ask Mr. Smith if I can go to the nurses office. I don't feel good. Oh shoot – I can't leave yet. I can't remember my locker combination so I won't be able to get my stuff... now what was my locker combination again... I remember that my favorite number 4 was part of the combo...\nI think I wrote a note in my agenda. . .\""
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Female Student",
+    "position": [1.792, 0.148, -1.02],
+    "scale": [0.002, 0.002, 0.002],
+    "rotation": [0, 180, 0],
+    "asset_id": 10,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Maybe I could ask the class representative if they could help me with my History paper, they have the highest grades in the class..."
+            },
+            {
+              "text": "They are also really good in Chem. I suck at Chem. The only thing I can remember from Chem is that the atomic number for Titanium is 22."
+            },
+            {
+              "text": "I wonder if they would be up for a study group or something... It's so unfair that they are good at everything. On second thought, maybe I shouldn't ask. I don't want them to think I'm stupid...I'll deal with it on my own"
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Male Student",
+    "position": [2.987, -0.025, -1.149],
+    "scale": [0.18, 0.18, 0.18],
+    "rotation": [0, 180, 0],
+    "asset_id": 8,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Maybe I could ask the class representative if they could help me with my History paper, they have the highest grades in the class..."
+            },
+            {
+              "text": "They are also really good in Chem. I suck at Chem. The only thing I can remember from Chem is that the atomic number for Titanium is 22."
+            },
+            {
+              "text": "I wonder if they would be up for a study group or something... It's so unfair that they are good at everything. On second thought, maybe I shouldn't ask. I don't want them to think I'm stupid...I'll deal with it on my own"
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Blackboard",
+    "position": [0.005, 1.562, -6.093],
+    "scale": [0.3, 0.25, 0.3],
+    "rotation": [0, 90, 0],
+    "asset_id": 12,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Math Textbook",
+    "position": [-1.758, 0.804, 1.123],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [0, 0, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Who's math textbook is this? There is chicken scratch writing all over the pages inside.",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f60ae6b842774e8f8a12fd3b3958feb6.jpg"
+            },
+            {
+              "text": "You flip to a page in the trigonometry unit.",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/c04ada911ff24ad79c500309b502e91f.png"
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "History Textbook",
+    "position": [1.839, 0.804, 4.138],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [0, 0, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "This history textbook is falling apart...",
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/812cebff4b9b4444a79a830761a9b684.jpg"
+            },
+            {
+              "text": "World War I, also known as the Great War, began in 1914 after the assassination of Archduke Franz Ferdinand of Austria. His murder catapulted into a war across Europe that lasted until 1918. During the conflict, Germany, Austria-Hungary, Bulgaria and the Ottoman Empire (the Central Powers) fought against Great Britain, France, Russia, Italy, Romania, Japan and the United States (the Allied Powers). "
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  }
+]

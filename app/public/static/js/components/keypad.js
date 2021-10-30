@@ -11,6 +11,8 @@ AFRAME.registerComponent("keypad", {
    * Initial creation and setting of the mesh.
    */
   init: function () {
+    const DEFAULT_ERROR_MESSAGE = "ERROR";
+    const DEFAULT_ERROR_MESSAGE_SIZE = "20";
     const data = this.data.jsonData;
     const password = data.password;
     const el = this.el;
@@ -57,11 +59,20 @@ AFRAME.registerComponent("keypad", {
             );
           }
           blackboardTextEl.setAttribute("text", {
-            value: "ERROR",
+            value:
+              data.hasOwnProperty("errorMsg") && data.errorMsg !== ""
+                ? data.errorMsg
+                : DEFAULT_ERROR_MESSAGE,
             color: "red",
-            wrapCount: "20",
+            wrapCount:
+              data.hasOwnProperty("errorMsg") && data.errorMsg !== ""
+                ? 60
+                : DEFAULT_ERROR_MESSAGE_SIZE,
           });
-          removeError(self);
+          removeError(
+            self,
+            data.hasOwnProperty("errorMsg") && data.errorMsg !== "" ? 5 : 1.5
+          );
         }
       }
     });
@@ -129,7 +140,7 @@ AFRAME.registerComponent("keypad", {
   },
 });
 
-async function removeError(self) {
+async function removeError(self, waitTime) {
   setTimeout(function () {
     if (!self.puzzleIsSolved) {
       let blackboardTextEl = document.querySelector("#blackboardText");
@@ -143,5 +154,5 @@ async function removeError(self) {
         });
       }
     }
-  }, 1.5 * 1000);
+  }, waitTime * 1000);
 }

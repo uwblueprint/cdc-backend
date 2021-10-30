@@ -6,6 +6,7 @@ import firebase_admin.auth as auth
 import tornado.escape
 import tornado.httputil as httputil
 import tornado.web
+from cache.cache import get_all_cached_scenarios
 from config import config
 from models import get_session, return_session
 
@@ -103,7 +104,7 @@ class BaseUserAPIHandler(BaseAPIHandler):
 
 class NotFoundHandler(tornado.web.RequestHandler):
     """
-    Base handler for all invalid routes
+    Base handler for all invalid routes that are served on the api: /api/*
     """
 
     async def prepare(self):
@@ -114,6 +115,17 @@ class NotFoundHandler(tornado.web.RequestHandler):
         self.set_status(status_code)
         response_error = {"status": status_code, "title": title, "message": message}
         await self.finish(response_error)
+
+
+class NotFoundUIHandler(tornado.web.RequestHandler):
+    """
+    Base handler for all invalid routes that are served on the UI
+    """
+
+    async def prepare(self):
+        title = "Not Found"
+        self.set_status(404)
+        await self.render("error_404.html", error_title=title)
 
 
 class BaseUIHandler(tornado.web.RequestHandler):
@@ -127,7 +139,10 @@ class BaseUIHandler(tornado.web.RequestHandler):
     def write_error(self, status_code: int, **kwargs: Any) -> None:
         title = httputil.responses.get(status_code, "Unknown")
         message = kwargs.get("message", self._reason)
-        self.render("error.html", error_title=title, error_message=message)
+        if status_code == 404:
+            self.render("error_404.html", error_title=title)
+        else:
+            self.render("error.html", error_title=title, error_message=message)
 
     def on_finish(self):
         if hasattr(self, "db_session") and self.db_session:
@@ -174,7 +189,7 @@ class UIStaticHandler(tornado.web.StaticFileHandler):
     def write_error(self, status_code, *args, **kwargs):
         title = httputil.responses.get(status_code, "Unknown")
         message = kwargs.get("message", self._reason)
-        self.render("error.html", error_title=title, error_message=message)
+        self.render("error_404.html", error_title=title, error_message=message)
 
 
 class BaseAuthHandler(tornado.web.RequestHandler):
@@ -302,3 +317,25 @@ class BaseProfileHandler(BaseAdminAPIHandler):
             "display_name": display_name,
         }
         await self.finish(resp_json)
+
+
+class LandingPageUIHandler(tornado.web.RequestHandler):
+    """
+    Base handler for the landing page
+    """
+
+    async def get(self):
+        self.set_status(200)
+        cached_scenarios = await get_all_cached_scenarios()
+        res_scenarios = []
+        for scenario in cached_scenarios.values():
+            scenario_dict = scenario["obj_dict"]
+            if scenario_dict["is_published"]:
+                res_scenarios.append(
+                    {
+                        "title": scenario_dict["name"],
+                        "link": f"/{scenario_dict['friendly_name']}",
+                        "description": scenario_dict["description"],
+                    }
+                )
+        await self.render("home.html", res_scenarios=res_scenarios)

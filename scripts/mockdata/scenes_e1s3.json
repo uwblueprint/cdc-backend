@@ -1,8 +1,8 @@
 [
   {
-    "name": "Bedroom - Sample",
-    "description": "Sample escape room in the bedroom",
-    "object_ids": [98, 99, 100, 101, 102, 103, 104, 105, 106],
+    "name": "Bedroom with Cat",
+    "description": "Crisis in Youth - Room 3 - Student goes to their bedroom with their cat, Strawberry",
+    "object_ids": [98, 99, 100, 101, 102, 103, 104, 105, 106, 107],
     "position": [0, 0.1, 0],
     "scale": [0.425, 0.425, 0.425],
     "rotation": [0.0, 90.0, 0.0],
@@ -18,9 +18,9 @@
       }
     },
     "hints": [
-      "Dad has been on me to practice my guitar. Taking my mind off school with guitar is pretty helpful actually [semicolon] maybe I should play it.",
-      "Guitar is great to get my mind of things, but sometimes a breath of fresh air would help as well.",
-      "Left to right or right to left? This is something I always forget when reading Arabic."
+      "I should log into my computer!",
+      "Maybe my password is a special date? What could it be...",
+      "Ah, I always keep important information on my phone!"
     ],
     "screenshot_url": ""
   }

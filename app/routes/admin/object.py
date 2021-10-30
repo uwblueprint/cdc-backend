@@ -118,7 +118,7 @@ class AdminPuzzleHandler(BaseAdminAPIHandler):
         except Exception as e:
             self.write_error(status_code=500, message=str(e))
 
-    async def delete(self, scene_id, object_id):
+    async def post(self, scene_id, object_id):
         try:
             data = tornado.escape.json_decode(self.request.body)
 
@@ -135,7 +135,8 @@ class AdminPuzzleHandler(BaseAdminAPIHandler):
                     region_name=config.get("s3.region"),
                 )
                 s3_client.delete_objects(
-                    Bucket=config.get("s3.bucket_name"), Delete={"Objects": data}
+                    Bucket=config.get("s3.bucket_name"),
+                    Delete={"Objects": [{"Key": a} for a in data]},
                 )
                 response = {"message": "Deleted successfully"}
                 await self.finish(response)

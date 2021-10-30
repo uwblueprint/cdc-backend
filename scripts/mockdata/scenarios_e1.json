@@ -3,7 +3,7 @@
     "name": "Youth in Crisis - 1",
     "friendly_name": "youth-in-crisis-1",
     "description": "A youth is experiencing a crisis and they need to seek help for said crisis (i.e. You find yourself sitting at your desk needing to find a way out. The History Teacher is talking about the paper that is due in a week, you look down and see you haven’t even started writing your paper. You think back to the fact that you still have one Biology lab, one Math quiz and one Chemistry exam in the same week. The room begins to feel like it’s slanting, your palms are sweating, you feel your heart beating faster and your hands begin to shake – how will you escape and find help?)",
-    "scene_ids": [8, 9, 10],
+    "scene_ids": [8, 9, 10, 11],
     "is_published": true,
     "is_previewable": true,
     "publish_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis-1",
@@ -77,6 +77,23 @@
         "data": [
           {
             "text": "Right right, that's Strawberry's birthday. \"Sorry I forgot Strawberry\", you say as you lean down to pet your cat Strawberry on the head."
+          },
+          {
+            "text": "\"I can't believe I thought I could do this!? This way to much work, I still have Bio, Math - *cough\""
+          },
+          {
+            "text": "You begin to have shallow breathes and clutch your chest again. You look around the room for anything that might help you calm down."
+          }
+        ],
+        "currPosition": 0
+      },
+      {
+        "data": [
+          {
+            "text": "\"Right, breathing slowly helps me calm down first before I can do other things. But it's important that I am in a comfortable position or I start to feel scared and worried again.\""
+          },
+          {
+            "text": "You adjust yourself to be in a position that helps you feel grounded and connected to the present. You start from 5 and breathe in, 4 you breathe out, and so on. You remind yourself to take time and repeat the cycle until you feel at ease, even if its only slightly."
           }
         ],
         "currPosition": 0

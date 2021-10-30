@@ -189,7 +189,7 @@ class UIStaticHandler(tornado.web.StaticFileHandler):
     def write_error(self, status_code, *args, **kwargs):
         title = httputil.responses.get(status_code, "Unknown")
         message = kwargs.get("message", self._reason)
-        self.render("error.html", error_title=title, error_message=message)
+        self.render("error_404.html", error_title=title, error_message=message)
 
 
 class BaseAuthHandler(tornado.web.RequestHandler):

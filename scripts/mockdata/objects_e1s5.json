@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Journal",
+    "position": [0.76, 1.714, -5.473],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [270, 40, 0],
+    "asset_id": 25,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "I've been tryng to journal more lately. Apparently it's good to get your thoughts out on paper. I've been writing about the things I want to do when I turn nineteen (19) and it's been pretty interesting to see the things I come up with. It just seems like such a long time from now..."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Books",
+    "position": [-3.25, 2.041, -2.5],
+    "scale": [2.277, 2.277, 2.277],
+    "rotation": [0, 90, 0],
+    "asset_id": 16,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "I really love reading. It's just so hard to find the time when I have so much school work. It really stressed me out! And today isn't any better."
+            },
+            {
+              "text": "But I am proud of myself, I read about seven (7) books last month and in the next month or so my goal is to read five (5) more."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  }
+]

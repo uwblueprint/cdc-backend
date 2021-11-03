@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Bedroom with Cat - 3",
+    "description": "Crisis in Youth - Room 5 - Student calls ConnecTeen",
+    "object_ids": [
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139
+    ],
+    "position": [0, 0.1, 0],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0.0, 90.0, 0.0],
+    "background_id": 30,
+    "camera_properties": {
+      "position": [3.548, 3.5, -0.77],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "I should look at my books and journal to jog my memory of my passcode.",
+      "I really like reading, perhaps my pin involves the number of books I have read or plan to read.",
+      "I often updated my passcode based on the age I am turning! Did I read something about this in my journal?",
+      "The numbers 1, 5, 7, and 9 appear smudged on my phone. I think I use these numbers a lot!"
+    ],
+    "screenshot_url": ""
+  }
+]

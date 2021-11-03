@@ -110,10 +110,13 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "componentType": "visual-pane",
+        "componentType": "keypad",
+        "blackboardText": "Enter your password: ",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/62521e3397d6a781018182426caf6b6c.png",
-          "caption": ""
+          "password": "7519",
+          "model": "numpad",
+          "errorMsg": "Gahh, still not right. There has to be something here that reminds me of my pin.",
+          "is_last_object": true
         }
       }
     }
@@ -168,7 +171,6 @@
     "animations_json": {
       "blackboardData": {
         "blackboardText": "Kalimba",
-        "blackboardParagraph": "I really love the sound of my kalimba. It's really gentle sounding, especially when you play each key one by one starting from the highest note then working down. My hands are still so shaky I wouldn't be able to play properly. I also don't want my parents to know that I am home so I can't make any sounds.",
         "componentType": "rotation-controls",
         "jsonData": {
           "position": [0, 0, 5],
@@ -185,19 +187,8 @@
     "asset_id": 72,
     "next_objects": [],
     "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "keypad",
-        "blackboardText": "kcab ,daeh ,sdanh ,teef \\\\ 5->",
-        "blackboardParagraph": "\"I wrote myself a note on what to do in these situations - what does this mean again?\"",
-        "jsonData": {
-          "password": "54321",
-          "model": "numpad",
-          "is_last_object": true
-        }
-      }
-    }
+    "is_interactable": false,
+    "animations_json": {}
   },
   {
     "name": "Openbook",
@@ -207,20 +198,8 @@
     "asset_id": 15,
     "next_objects": [],
     "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "text-pane",
-        "jsonData": {
-          "data": [
-            {
-              "text": "\"Reading is a nice way to escape reality for a little bit of time. I hate being told to read but if I can do it on my own time, I enjoy it a lot more. Usually when I read my back hurts because I am always slouching or in a weird position so I can't read for very long. My chest still really hurts, I'm not sure if I can focus on reading right now though.\""
-            }
-          ],
-          "currPosition": 0
-        }
-      }
-    }
+    "is_interactable": false,
+    "animations_json": {}
   },
   {
     "name": "Journal",
@@ -230,8 +209,20 @@
     "asset_id": 25,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "I've been tryng to journal more lately. Apparently it's good to get your thoughts out on paper. I've been writing about the things I want to do when I turn nineteen (19) and it's been pretty interesting to see the things I come up with. It just seems like such a long time from now..."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
   },
   {
     "name": "Books",
@@ -241,7 +232,22 @@
     "asset_id": 16,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "I really love reading. It's just so hard to find the time when I have so much school work. It really stressed me out! And today isn't any better."
+            },
+            {
+              "text": "But I am proud of myself, I read about seven (7) books last month and in the next month or so my goal is to read five (5) more."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
   }
 ]

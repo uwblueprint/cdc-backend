@@ -3,7 +3,7 @@
     "name": "Youth in Crisis - 1",
     "friendly_name": "youth-in-crisis-1",
     "description": "A youth is experiencing a crisis and they need to seek help for said crisis (i.e. You find yourself sitting at your desk needing to find a way out. The History Teacher is talking about the paper that is due in a week, you look down and see you haven’t even started writing your paper. You think back to the fact that you still have one Biology lab, one Math quiz and one Chemistry exam in the same week. The room begins to feel like it’s slanting, your palms are sweating, you feel your heart beating faster and your hands begin to shake – how will you escape and find help?)",
-    "scene_ids": [8, 9, 10, 11],
+    "scene_ids": [8, 9, 10, 11, 12],
     "is_published": true,
     "is_previewable": true,
     "publish_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis-1",
@@ -94,6 +94,28 @@
           },
           {
             "text": "You adjust yourself to be in a position that helps you feel grounded and connected to the present. You start from 5 and breathe in, 4 you breathe out, and so on. You remind yourself to take time and repeat the cycle until you feel at ease, even if its only slightly."
+          }
+        ],
+        "currPosition": 0
+      },
+      {
+        "data": [
+          {
+            "text": "Finally! I remembered my pin. Now I can talk to someone."
+          },
+          {
+            "text": "You punch in the ConnecTeen phone number (587-333-2724) into your messages and start a new thread."
+          },
+          {
+            "text": "You take a deep breathe and begin to type.",
+            "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f65991fa9c9f25100bba9113f42c1b5a.png"
+          },
+          {
+            "text": "A reply comes in!",
+            "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/8648a60f655cb48c0ef29eab9abebc5f.png"
+          },
+          {
+            "text": "You begin to cry as it's nice to hear someone ask you what's going on. You continue the conversation."
           }
         ],
         "currPosition": 0

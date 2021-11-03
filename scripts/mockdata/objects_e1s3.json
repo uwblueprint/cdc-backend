@@ -211,5 +211,27 @@
     "texts": [],
     "is_interactable": false,
     "animations_json": {}
+  },
+  {
+    "name": "Journal",
+    "position": [0.76, 1.714, -5.473],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [270, 40, 0],
+    "asset_id": 25,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Books",
+    "position": [0.699, 2.933, 2.89],
+    "scale": [2.277, 2.277, 2.277],
+    "rotation": [0, 90, 0],
+    "asset_id": 16,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
   }
 ]

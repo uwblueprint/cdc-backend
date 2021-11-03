@@ -2,13 +2,28 @@
   {
     "name": "Bedroom with Cat - 3",
     "description": "Crisis in Youth - Room 5 - Student calls ConnecTeen",
-    "object_ids": [98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109],
+    "object_ids": [
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139
+    ],
     "position": [0, 0.1, 0],
     "scale": [0.425, 0.425, 0.425],
     "rotation": [0.0, 90.0, 0.0],
     "background_id": 30,
     "camera_properties": {
-      "position": [3.809, 3.5, 2.993],
+      "position": [3.548, 3.5, -0.77],
       "look_controls": true,
       "wasd_controls": true,
       "cursor_properties": {

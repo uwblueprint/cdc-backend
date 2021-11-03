@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Kalimba",
+    "obj_type": "object",
+    "s3_key": "assets/43f47562855646279761b82b5fcc00f8.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Mirror",
+    "obj_type": "object",
+    "s3_key": "assets/673f4197b51a44848e585ce290dedb22.glb",
+    "screenshot_url": ""
+  }
+]

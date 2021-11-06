@@ -1,0 +1,247 @@
+[
+  {
+    "name": "Computer",
+    "position": [4.969, 2.105, -2.444],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0, 90, 0],
+    "asset_id": 31,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "blackboardText": "Enter your password: ",
+        "jsonData": {
+          "password": "03032018",
+          "model": "numpad",
+          "is_last_object": false
+        }
+      }
+    }
+  },
+  {
+    "name": "Guitar",
+    "position": [4.154, 1.588, 3.153],
+    "scale": [1.5, 1.5, 1.5],
+    "rotation": [-15.0, 180, 0],
+    "asset_id": 32,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Cat",
+    "position": [4.154, 0, 0.153],
+    "scale": [0.5, 0.5, 0.5],
+    "rotation": [0, -90, 0],
+    "asset_id": 26,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Carpet",
+    "position": [-4.168, -0.522, 0.668],
+    "scale": [0.06, 0.06, 0.06],
+    "rotation": [0, 0, 0],
+    "asset_id": 34,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.04, 0.04, 0.04]
+        }
+      }
+    }
+  },
+  {
+    "name": "House Plant",
+    "position": [-0.092, 1.614, -5.473],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0, 17.71, 0],
+    "asset_id": 35,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.8, 0.8, 0.8]
+        }
+      }
+    }
+  },
+  {
+    "name": "House Plant",
+    "position": [1.612, 1.614, -5.473],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0, -125.645, 0],
+    "asset_id": 35,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.8, 0.8, 0.8]
+        }
+      }
+    }
+  },
+  {
+    "name": "Phone",
+    "position": [3.941, 2.166, -3.48],
+    "scale": [0.3, 0.3, 0.3],
+    "rotation": [0, 280, 0],
+    "asset_id": 36,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/62521e3397d6a781018182426caf6b6c.png",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Friends",
+    "position": [-1.855, 3.667, -5.443],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 270, 0],
+    "asset_id": 69,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/44a5ebe14f3ed2b854ae0ab5f2f3e438.jpeg",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Concert",
+    "position": [-3.283, 3.809, -5.443],
+    "scale": [0.073, 0.073, 0.073],
+    "rotation": [0, 270, 0],
+    "asset_id": 70,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d9fee8c2e9ab1bd457232bfcae704dd7.jpeg",
+          "caption": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "Kalimba",
+    "position": [2.286, 3.093, 2.711],
+    "scale": [0.9, 0.9, 0.9],
+    "rotation": [0, 19.6, 0],
+    "asset_id": 71,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "Kalimba",
+        "blackboardParagraph": "I really love the sound of my kalimba. It's really gentle sounding, especially when you play each key one by one starting from the highest note then working down. My hands are still so shaky I wouldn't be able to play properly. I also don't want my parents to know that I am home so I can't make any sounds.",
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [1.5, 1.5, 1.5]
+        }
+      }
+    }
+  },
+  {
+    "name": "Mirror",
+    "position": [-4.291, 0.022, 2.872],
+    "scale": [0.71, 1, 1],
+    "rotation": [-12.911, -179.13, 0.9],
+    "asset_id": 72,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "blackboardText": "kcab ,daeh ,sdanh ,teef \\\\ 5->",
+        "blackboardParagraph": "\"I wrote myself a note on what to do in these situations - what does this mean again?\"",
+        "jsonData": {
+          "password": "54321",
+          "model": "numpad",
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Openbook",
+    "position": [-5.25, 2.041, -2.5],
+    "scale": [0.014, 0.014, 0.014],
+    "rotation": [0, 17.7, 0],
+    "asset_id": 15,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "\"Reading is a nice way to escape reality for a little bit of time. I hate being told to read but if I can do it on my own time, I enjoy it a lot more. Usually when I read my back hurts because I am always slouching or in a weird position so I can't read for very long. My chest still really hurts, I'm not sure if I can focus on reading right now though.\""
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Journal",
+    "position": [0.76, 1.714, -5.473],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [270, 40, 0],
+    "asset_id": 25,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Books",
+    "position": [0.699, 2.933, 2.89],
+    "scale": [2.277, 2.277, 2.277],
+    "rotation": [0, 90, 0],
+    "asset_id": 16,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Bedroom with Cat - 1",
+    "description": "Crisis in Youth - Room 3 - Student goes to their bedroom with their cat, Strawberry",
+    "object_ids": [
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111
+    ],
+    "position": [0, 0.1, 0],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0.0, 90.0, 0.0],
+    "background_id": 30,
+    "camera_properties": {
+      "position": [3.809, 3.5, 2.993],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "I should log into my computer!",
+      "Maybe my password is a special date? What could it be...",
+      "Ah, I always keep important information on my phone!"
+    ],
+    "screenshot_url": ""
+  }
+]

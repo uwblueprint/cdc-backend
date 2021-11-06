@@ -243,3 +243,5 @@ admin_screenshot_handler = {
     "required": ["screenshot_url"],
     "additionalProperties": False,
 }
+
+admin_puzzle_delete_handler_schema = {"type": "array", "items": {"type": "string"}}

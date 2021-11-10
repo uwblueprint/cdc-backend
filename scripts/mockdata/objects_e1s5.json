@@ -15,8 +15,7 @@
         "jsonData": {
           "password": "03032018",
           "model": "numpad",
-          "errorMsg": "What?? Ugh, what is my pin again. Why can't I remember!? Man, I am so stupid.",
-          "is_last_object": true
+          "is_last_object": false
         }
       }
     }
@@ -111,10 +110,13 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "componentType": "visual-pane",
+        "componentType": "keypad",
+        "blackboardText": "Enter your password: ",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/62521e3397d6a781018182426caf6b6c.png",
-          "caption": ""
+          "password": "7519",
+          "model": "numpad",
+          "errorMsg": "Gahh, still not right. There has to be something here that reminds me of my pin.",
+          "is_last_object": true
         }
       }
     }
@@ -130,21 +132,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "componentType": "text-pane",
+        "componentType": "visual-pane",
         "jsonData": {
-          "data": [
-            {
-              "text": "",
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/44a5ebe14f3ed2b854ae0ab5f2f3e438.jpeg"
-            },
-            {
-              "text": "I remember this! We took it together on the first day of class. We all got really lucky and ended up in the same homeroom together. We were so excited! It was so fun having them around all the time."
-            },
-            {
-              "text": "I wish things like this could happen more, where I just feel excited. Maybe I could talk to my friends, but I don't want them to know how much I am struggling. Plus, they are all busy since I left school early."
-            }
-          ],
-          "currPosition": 0
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/44a5ebe14f3ed2b854ae0ab5f2f3e438.jpeg",
+          "caption": ""
         }
       }
     }
@@ -160,21 +151,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "componentType": "text-pane",
+        "componentType": "visual-pane",
         "jsonData": {
-          "data": [
-            {
-              "text": "",
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d9fee8c2e9ab1bd457232bfcae704dd7.jpeg"
-            },
-            {
-              "text": "I really love this band, they have great music. It's helped me a lot when I feel like I have nowhere to turn. The lyrics really resonate with how I feel."
-            },
-            {
-              "text": "Their concert is coming up soon and I am so excited for it! I'm going to buy tickets for it, they go up for sale on June 11th."
-            }
-          ],
-          "currPosition": 0
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d9fee8c2e9ab1bd457232bfcae704dd7.jpeg",
+          "caption": ""
         }
       }
     }
@@ -187,8 +167,17 @@
     "asset_id": 71,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "Kalimba",
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [1.5, 1.5, 1.5]
+        }
+      }
+    }
   },
   {
     "name": "Mirror",
@@ -220,8 +209,20 @@
     "asset_id": 25,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "I've been tryng to journal more lately. Apparently it's good to get your thoughts out on paper. I've been writing about the things I want to do when I turn nineteen (19) and it's been pretty interesting to see the things I come up with. It just seems like such a long time from now..."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
   },
   {
     "name": "Books",
@@ -231,7 +232,22 @@
     "asset_id": 16,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "I really love reading. It's just so hard to find the time when I have so much school work. It really stressed me out! And today isn't any better."
+            },
+            {
+              "text": "But I am proud of myself, I read about seven (7) books last month and in the next month or so my goal is to read five (5) more."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
   }
 ]

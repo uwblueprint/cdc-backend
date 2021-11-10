@@ -15,8 +15,7 @@
         "jsonData": {
           "password": "03032018",
           "model": "numpad",
-          "errorMsg": "What?? Ugh, what is my pin again. Why can't I remember!? Man, I am so stupid.",
-          "is_last_object": true
+          "is_last_object": false
         }
       }
     }
@@ -130,21 +129,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "componentType": "text-pane",
+        "componentType": "visual-pane",
         "jsonData": {
-          "data": [
-            {
-              "text": "",
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/44a5ebe14f3ed2b854ae0ab5f2f3e438.jpeg"
-            },
-            {
-              "text": "I remember this! We took it together on the first day of class. We all got really lucky and ended up in the same homeroom together. We were so excited! It was so fun having them around all the time."
-            },
-            {
-              "text": "I wish things like this could happen more, where I just feel excited. Maybe I could talk to my friends, but I don't want them to know how much I am struggling. Plus, they are all busy since I left school early."
-            }
-          ],
-          "currPosition": 0
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/44a5ebe14f3ed2b854ae0ab5f2f3e438.jpeg",
+          "caption": ""
         }
       }
     }
@@ -160,21 +148,10 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "componentType": "text-pane",
+        "componentType": "visual-pane",
         "jsonData": {
-          "data": [
-            {
-              "text": "",
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d9fee8c2e9ab1bd457232bfcae704dd7.jpeg"
-            },
-            {
-              "text": "I really love this band, they have great music. It's helped me a lot when I feel like I have nowhere to turn. The lyrics really resonate with how I feel."
-            },
-            {
-              "text": "Their concert is coming up soon and I am so excited for it! I'm going to buy tickets for it, they go up for sale on June 11th."
-            }
-          ],
-          "currPosition": 0
+          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d9fee8c2e9ab1bd457232bfcae704dd7.jpeg",
+          "caption": ""
         }
       }
     }
@@ -187,8 +164,18 @@
     "asset_id": 71,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "Kalimba",
+        "blackboardParagraph": "I really love the sound of my kalimba. It's really gentle sounding, especially when you play each key one by one starting from the highest note then working down. My hands are still so shaky I wouldn't be able to play properly. I also don't want my parents to know that I am home so I can't make any sounds.",
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [1.5, 1.5, 1.5]
+        }
+      }
+    }
   },
   {
     "name": "Mirror",
@@ -198,8 +185,19 @@
     "asset_id": 72,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "blackboardText": "kcab ,daeh ,sdanh ,teef \\\\ 5->",
+        "blackboardParagraph": "\"I wrote myself a note on what to do in these situations - what does this mean again?\"",
+        "jsonData": {
+          "password": "54321",
+          "model": "numpad",
+          "is_last_object": true
+        }
+      }
+    }
   },
   {
     "name": "Openbook",
@@ -209,8 +207,20 @@
     "asset_id": 15,
     "next_objects": [],
     "texts": [],
-    "is_interactable": false,
-    "animations_json": {}
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "\"Reading is a nice way to escape reality for a little bit of time. I hate being told to read but if I can do it on my own time, I enjoy it a lot more. Usually when I read my back hurts because I am always slouching or in a weird position so I can't read for very long. My chest still really hurts, I'm not sure if I can focus on reading right now though.\""
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
   },
   {
     "name": "Journal",

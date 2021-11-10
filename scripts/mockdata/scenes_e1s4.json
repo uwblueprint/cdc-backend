@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Bedroom with Cat - 2",
+    "description": "Crisis in Youth - Room 4 - Student freaking out with the amount of work needed for paper.",
+    "object_ids": [
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125
+    ],
+    "position": [0, 0.1, 0],
+    "scale": [0.425, 0.425, 0.425],
+    "rotation": [0.0, 90.0, 0.0],
+    "background_id": 30,
+    "camera_properties": {
+      "position": [1.393, 3.5, -2],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": ["What's that note on the mirror..."],
+    "screenshot_url": ""
+  }
+]

@@ -75,7 +75,30 @@
           ></a-asset-item>
 
         </a-assets>
-        <a-entity environment="preset: forest; dressingAmount: 500; playArea: 10"></a-entity>
+
+        <!--  Lighting  -->
+        <a-entity environment="preset: forest; dressingAmount: 500; lighting: none; playArea: 10"></a-entity>
+        <a-entity id="light1" light="type: point; intensity: 0.5; distance: 300" position="25 25 -25"></a-entity>
+        <a-entity id="light2" light="type: point; intensity: 0.5; distance: 300" position="-25 25 25"></a-entity>
+        <a-entity id="light3" light="type: point; intensity: 0.5; distance: 300" position="25 25 25"></a-entity>
+        <a-entity id="light4" light="type: point; intensity: 0.5; distance: 300" position="-25 25 -25"></a-entity>
+        <a-entity id="light1" light="type: point; intensity: 0.2; distance: 300" position="25 -100 -25"></a-entity>
+        <a-entity id="light2" light="type: point; intensity: 0.2; distance: 300" position="-25 -100 25"></a-entity>
+        <a-entity id="light3" light="type: point; intensity: 0.2; distance: 300" position="25 -100 25"></a-entity>
+        <a-entity id="light4" light="type: point; intensity: 0.2; distance: 300" position="-25 -100 -25"></a-entity>
+        <a-entity id="light1" light="type: point; intensity: 0.1; distance: 300" position="25 0 -25"></a-entity>
+        <a-entity id="light2" light="type: point; intensity: 0.1; distance: 300" position="-25 0 25"></a-entity>
+        <a-entity id="light3" light="type: point; intensity: 0.1; distance: 300" position="25 0 25"></a-entity>
+        <a-entity id="light4" light="type: point; intensity: 0.1; distance: 300" position="-25 0 -25"></a-entity>
+
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="25 -525 -25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="-25 -525 25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="25 -525 25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="-25 -525 -25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="25 -475 -25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="-25 -475 25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="25 -475 25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="-25 -475 -25"></a-entity>
 
         <!--  Background  -->
         <a-gltf-model

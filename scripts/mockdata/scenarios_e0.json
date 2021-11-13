@@ -1,21 +1,21 @@
 [
   {
-    "name": "Youth in Crisis",
-    "friendly_name": "youth-in-crisis",
+    "name": "Sample",
+    "friendly_name": "sample",
     "description": "A student at ABC High is going through a hard time dealing with the stresses of school, and they begin to feel really anxious in class. Help the student manage their anxiety and escape the class!",
     "scene_ids": [4, 5, 6, 7],
-    "is_published": true,
+    "is_published": false,
     "is_previewable": true,
-    "publish_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
-    "preview_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
+    "publish_link": "https://interactive.calgaryconnecteen.com/sample",
+    "preview_link": "https://interactive.calgaryconnecteen.com/sample",
     "expected_solve_time": "5",
     "introduction_data": {
-      "header_text": "Youth in crisis"
+      "header_text": "Sample"
     },
     "conclusion_data": {
-      "header_text": "Great job, you escaped the Youth in Crisis Escape Room! Thank you for playing! You were able to find support for the character and got some insight on what it can be like if you are in a crisis. To learn more about ConnecTeen please visit our website <a href='https://calgaryconnecteen.com'>here</a>.",
+      "header_text": "Great job, you escaped the Sample Escape Room! Thank you for playing! You were able to find support for the character and got some insight on what it can be like if you are in a crisis. To learn more about ConnecTeen please visit our website <a href='https://calgaryconnecteen.com'>here</a>.",
       "paragraph_text": "By solving the puzzles and going through the room, you have learnt important skills such as being aware of triggers (many tasks, lots of school work), techniques you can use when having an anxiety attack, and helpful resources. When you are in a crisis, it is hard to see options and ask for help. You may feel like you don't deserve help, may talk down to yourself, and experience low self-esteem when going through a challenging time. During these times, you can use the coping strategies you learnt about today such as music, reading, music and journaling to help feel better. You should also remember that it is okay to reach out for help and support - your friends as well as Calgary ConnecTeen are available for your support.",
-      "share_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
+      "share_link": "https://interactive.calgaryconnecteen.com/sample",
       "external_link": "https://forms.gle/XfToJtsQa25mB1qQA"
     },
     "transitions": [

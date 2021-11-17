@@ -47,8 +47,8 @@
   },
   {
     "name": "Female Student",
-    "position": [1.792, 0.148, -1.02],
-    "scale": [0.002, 0.002, 0.002],
+    "position": [1.792, 0, -1.02],
+    "scale": [0.8, 0.8, 0.8],
     "rotation": [0, 180, 0],
     "asset_id": 10,
     "next_objects": [],
@@ -76,7 +76,7 @@
   },
   {
     "name": "Male Student",
-    "position": [2.987, -0.025, -1.149],
+    "position": [2.987, 0.02, -1.149],
     "scale": [0.18, 0.18, 0.18],
     "rotation": [0, 180, 0],
     "asset_id": 8,

@@ -67,6 +67,7 @@ AFRAME.registerComponent("text-pane", {
   multiple: true,
 
   init: function () {
+    self = this;
     const jsonData = this.data.jsonData;
     const el = this.el;
 
@@ -152,6 +153,9 @@ AFRAME.registerComponent("text-pane", {
     let currVisualPane = initialVisualPane;
 
     const rightNavConst = this.rightNav;
+
+    addLearnMoreButton(jsonData, self);
+
     this.leftNav.addEventListener("click", function () {
       if (jsonData.currPosition !== 0) {
         --jsonData.currPosition;
@@ -176,7 +180,7 @@ AFRAME.registerComponent("text-pane", {
             jsonData.data[jsonData.currPosition].text
           );
         }
-
+        addLearnMoreButton(jsonData, self);
         rightNavConst.firstChild.setAttribute("value", "Next");
       }
     });
@@ -208,6 +212,7 @@ AFRAME.registerComponent("text-pane", {
             jsonData.data[jsonData.currPosition].text
           );
         }
+        addLearnMoreButton(jsonData, self);
       } else {
         if (jsonData.hasOwnProperty("isTransition") && jsonData.isTransition) {
           sceneComplete(0, jsonData.transitionURL);
@@ -240,4 +245,47 @@ function createVisualPane(jsonData, textPaneEl) {
   textPaneEl.appendChild(visualPane);
 
   return visualPane;
+}
+
+function addLearnMoreButton(jsonData, self) {
+  if (self.hasOwnProperty("learnMoreButton")) {
+    self.el.removeChild(self.learnMoreButton);
+    delete self.learnMoreButton;
+  }
+  if (jsonData.data[jsonData.currPosition].hasOwnProperty("link")) {
+    url = jsonData.data[jsonData.currPosition].link;
+    try {
+      checkUrlIsValid = new URL(url);
+      const learnMoreProp = {
+        width: "4",
+        height: "1",
+        depth: "0.005",
+        color: "#242424",
+        x: "0",
+        y: "-6.8",
+        z: "0.005",
+        scaleX: "2",
+        scaleY: "2",
+        scaleZ: "1",
+        text: "Learn more!",
+      };
+
+      // Create learn more button
+      self.learnMoreButton = document.createElement("a-entity");
+      self.learnMoreButton.setAttribute("id", "button-learn-more");
+      self.learnMoreButton.setAttribute(
+        "text-box",
+        "jsonData",
+        JSON.stringify(learnMoreProp)
+      );
+      self.learnMoreButton.setAttribute("class", "link");
+      self.learnMoreButton.setAttribute("button-design", "");
+      self.el.appendChild(self.learnMoreButton);
+      self.learnMoreButton.addEventListener("click", function () {
+        window.open(url, "_blank").focus();
+      });
+    } catch (_) {
+      // DO NOTHING
+    }
+  }
 }

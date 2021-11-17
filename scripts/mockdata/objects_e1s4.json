@@ -7,18 +7,8 @@
     "asset_id": 31,
     "next_objects": [],
     "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "keypad",
-        "blackboardText": "Enter your password: ",
-        "jsonData": {
-          "password": "03032018",
-          "model": "numpad",
-          "is_last_object": false
-        }
-      }
-    }
+    "is_interactable": false,
+    "animations_json": {}
   },
   {
     "name": "Guitar",

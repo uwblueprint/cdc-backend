@@ -178,13 +178,23 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "componentType": "keypad",
-        "blackboardText": "kcab ,daeh ,sdanh ,teef \\\\ 5->",
         "blackboardParagraph": "\"I wrote myself a note on what to do in these situations - what does this mean again?\"",
+        "componentType": "jigsaw-puzzle",
+        "draggable": true,
         "jsonData": {
-          "password": "54321",
-          "model": "numpad",
-          "is_last_object": true
+          "images": [
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-0.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-1.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-2.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-3.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-4.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-5.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-6.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-7.jpg",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-8.jpg"
+          ],
+          "scaleBy": 3,
+          "puzzleDimension": 3
         }
       }
     }

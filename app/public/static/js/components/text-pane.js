@@ -180,7 +180,7 @@ AFRAME.registerComponent("text-pane", {
             jsonData.data[jsonData.currPosition].text
           );
         }
-        addLearnMoreButton(jsonData, self);
+        addLearnMoreButton(jsonData, selfObj);
         rightNavConst.firstChild.setAttribute("value", "Next");
       }
     });
@@ -212,7 +212,7 @@ AFRAME.registerComponent("text-pane", {
             jsonData.data[jsonData.currPosition].text
           );
         }
-        addLearnMoreButton(jsonData, self);
+        addLearnMoreButton(jsonData, selfObj);
       } else {
         if (jsonData.hasOwnProperty("isTransition") && jsonData.isTransition) {
           sceneComplete(0, jsonData.transitionURL);

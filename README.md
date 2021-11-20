@@ -103,6 +103,16 @@ todo
 
 This script will output a JSON object – you can use the `idToken` value and provide it as a bearer token to your API calls. This token expires every hour, and you can rerun this script to generate a new one.
 
+### Minifying JS files
+
+1. Open https://jscompress.com/
+2. Go to the `Upload Javascript Files` tab
+3. Upload all the files under `app/public/static/js/components/`
+4. Upload `app/public/static/js/libraries/TransformControls.js`
+5. Check the box in the top right corner for `ECMAScript 2021 (via babel-minify)`
+6. Hit `Compress`
+7. Download the file as `component.min.js` and place it in `app/public/static/js/`
+
 ## Deployment
 
 todo

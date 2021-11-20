@@ -67,7 +67,7 @@ AFRAME.registerComponent("text-pane", {
   multiple: true,
 
   init: function () {
-    self = this;
+    const selfObj = this;
     const jsonData = this.data.jsonData;
     const el = this.el;
 
@@ -154,7 +154,7 @@ AFRAME.registerComponent("text-pane", {
 
     const rightNavConst = this.rightNav;
 
-    addLearnMoreButton(jsonData, self);
+    addLearnMoreButton(jsonData, selfObj);
 
     this.leftNav.addEventListener("click", function () {
       if (jsonData.currPosition !== 0) {
@@ -247,10 +247,10 @@ function createVisualPane(jsonData, textPaneEl) {
   return visualPane;
 }
 
-function addLearnMoreButton(jsonData, self) {
-  if (self.hasOwnProperty("learnMoreButton")) {
-    self.el.removeChild(self.learnMoreButton);
-    delete self.learnMoreButton;
+function addLearnMoreButton(jsonData, selfObj) {
+  if (selfObj.hasOwnProperty("learnMoreButton")) {
+    selfObj.el.removeChild(selfObj.learnMoreButton);
+    delete selfObj.learnMoreButton;
   }
   if (jsonData.data[jsonData.currPosition].hasOwnProperty("link")) {
     url = jsonData.data[jsonData.currPosition].link;
@@ -271,17 +271,17 @@ function addLearnMoreButton(jsonData, self) {
       };
 
       // Create learn more button
-      self.learnMoreButton = document.createElement("a-entity");
-      self.learnMoreButton.setAttribute("id", "button-learn-more");
-      self.learnMoreButton.setAttribute(
+      selfObj.learnMoreButton = document.createElement("a-entity");
+      selfObj.learnMoreButton.setAttribute("id", "button-learn-more");
+      selfObj.learnMoreButton.setAttribute(
         "text-box",
         "jsonData",
         JSON.stringify(learnMoreProp)
       );
-      self.learnMoreButton.setAttribute("class", "link");
-      self.learnMoreButton.setAttribute("button-design", "");
-      self.el.appendChild(self.learnMoreButton);
-      self.learnMoreButton.addEventListener("click", function () {
+      selfObj.learnMoreButton.setAttribute("class", "link");
+      selfObj.learnMoreButton.setAttribute("button-design", "");
+      selfObj.el.appendChild(selfObj.learnMoreButton);
+      selfObj.learnMoreButton.addEventListener("click", function () {
         window.open(url, "_blank").focus();
       });
     } catch (_) {

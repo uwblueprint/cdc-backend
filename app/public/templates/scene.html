@@ -12,21 +12,21 @@
 
     <!-- A-frame components   -->
     <!--  Keeping commented in case things go south for some reason -->
-{#    <script src="/static/js/components/animation-on-click.js"></script>#}
-{#    <script src="/static/js/components/close-popup.js"></script>#}
-{#    <script src="/static/js/components/keypad.js"></script>#}
-{#    <script src="/static/js/components/text-pane.js"></script>#}
-{#    <script src="/static/js/components/rotation-controls.js"></script>#}
-{#    <script src="/static/js/components/visual-pane.js"></script>#}
-{#    <script src="/static/js/libraries/TransformControls.js"></script>#}
-{#    <script src="/static/js/components/hint-button.js"></script>#}
-{#    <script src="/static/js/components/ordered-puzzle.js"></script>#}
-{#    <script src="/static/js/components/target-box.js"></script>#}
-{#    <script src="/static/js/components/jigsaw-puzzle.js"></script>#}
-{#    <script src="/static/js/components/interactable.js"></script>#}
-{#    <script src="/static/js/components/button-design.js"></script>#}
+{#    <script src="/static/js/components/animation-on-click.js"></script>    #}
+{#    <script src="/static/js/components/close-popup.js"></script>    #}
+{#    <script src="/static/js/components/keypad.js"></script>    #}
+{#    <script src="/static/js/components/text-pane.js"></script>    #}
+{#    <script src="/static/js/components/rotation-controls.js"></script>    #}
+{#    <script src="/static/js/components/visual-pane.js"></script>    #}
+{#    <script src="/static/js/libraries/TransformControls.js"></script>    #}
+{#    <script src="/static/js/components/hint-button.js"></script>    #}
+{#    <script src="/static/js/components/ordered-puzzle.js"></script>    #}
+{#    <script src="/static/js/components/target-box.js"></script>    #}
+{#    <script src="/static/js/components/jigsaw-puzzle.js"></script>    #}
+{#    <script src="/static/js/components/interactable.js"></script>    #}
+{#    <script src="/static/js/components/button-design.js"></script>    #}
 
-      <script src="/static/js/components.min.js"></script>
+    <script src="/static/js/components.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCV4M5LZE1"></script>
     <script>
@@ -75,7 +75,30 @@
           ></a-asset-item>
 
         </a-assets>
-        <a-entity environment="preset: forest; dressingAmount: 500; playArea: 10"></a-entity>
+
+        <!--  Lighting  -->
+        <a-entity environment="preset: forest; dressingAmount: 500; lighting: none; playArea: 10"></a-entity>
+        <a-entity id="light1" light="type: point; intensity: 0.5; distance: 300" position="25 25 -25"></a-entity>
+        <a-entity id="light2" light="type: point; intensity: 0.5; distance: 300" position="-25 25 25"></a-entity>
+        <a-entity id="light3" light="type: point; intensity: 0.5; distance: 300" position="25 25 25"></a-entity>
+        <a-entity id="light4" light="type: point; intensity: 0.5; distance: 300" position="-25 25 -25"></a-entity>
+        <a-entity id="light1" light="type: point; intensity: 0.2; distance: 300" position="25 -100 -25"></a-entity>
+        <a-entity id="light2" light="type: point; intensity: 0.2; distance: 300" position="-25 -100 25"></a-entity>
+        <a-entity id="light3" light="type: point; intensity: 0.2; distance: 300" position="25 -100 25"></a-entity>
+        <a-entity id="light4" light="type: point; intensity: 0.2; distance: 300" position="-25 -100 -25"></a-entity>
+        <a-entity id="light1" light="type: point; intensity: 0.1; distance: 300" position="25 0 -25"></a-entity>
+        <a-entity id="light2" light="type: point; intensity: 0.1; distance: 300" position="-25 0 25"></a-entity>
+        <a-entity id="light3" light="type: point; intensity: 0.1; distance: 300" position="25 0 25"></a-entity>
+        <a-entity id="light4" light="type: point; intensity: 0.1; distance: 300" position="-25 0 -25"></a-entity>
+
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="25 -525 -25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="-25 -525 25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="25 -525 25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="-25 -525 -25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="25 -475 -25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="-25 -475 25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="25 -475 25"></a-entity>
+        <a-entity class="blackboard-lights" light="type: point; intensity: 0.5; distance: 100" position="-25 -475 -25"></a-entity>
 
         <!--  Background  -->
         <a-gltf-model

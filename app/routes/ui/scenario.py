@@ -31,7 +31,7 @@ class UIScenarioHandler(BaseUIHandler):
             else:
                 scenario_obj: Scenario = Scenario(**scenario_dict)
 
-            if not scenario_obj.is_published:
+            if not scenario_obj.is_published and not scenario_obj.is_previewable:
                 raise ValueError("This Scenario is currently not accessible")
 
             if scene_number_int >= len(scenario_obj.scene_ids) or scene_number_int < 0:

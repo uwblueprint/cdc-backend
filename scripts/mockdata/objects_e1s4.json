@@ -194,7 +194,8 @@
             "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-8.jpg"
           ],
           "scaleBy": 3,
-          "puzzleDimension": 3
+          "puzzleDimension": 3,
+          "is_last_object": true
         }
       }
     }

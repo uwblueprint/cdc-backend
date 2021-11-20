@@ -5,7 +5,7 @@
     "description": "A student at ABC High is going through a troubling time. They are in their Chemistry class when they realize they did not get their homework done in time. Find out what they do next in this escape room!",
     "scene_ids": [1, 2, 3],
     "is_published": false,
-    "is_previewable": true,
+    "is_previewable": false,
     "publish_link": null,
     "preview_link": "www.previewlink.com/student-escape-room",
     "expected_solve_time": "10 to 20",
@@ -47,22 +47,22 @@
     "display_image_url": ""
   },
   {
-    "name": "Teacher Escape Room",
-    "friendly_name": "teacher-escape-room",
-    "description": "A teacher at ABC High is going through a tough divorce at home. Teacher is testing whether single quotes ' work. At school, they are struggling to keep up with the new students and their childish ways. They realize they did not prepare a lecture plan for today. Find out what they do next in this escape room!",
+    "name": "Sample 2 Escape Room",
+    "friendly_name": "sample2-f0f06d41f",
+    "description": "Our first room, keeping for fun",
     "scene_ids": [3, 2],
     "is_published": false,
     "is_previewable": true,
-    "publish_link": "www.publishlink.com/teacher-escape-room",
-    "preview_link": "www.previewlink.com/teacher-escape-room",
+    "publish_link": "https://interactive.calgaryconnecteen.com/sample2-f0f06d41f",
+    "preview_link": "https://interactive.calgaryconnecteen.com/sample2-f0f06d41f",
     "expected_solve_time": "20 to 30",
     "introduction_data": {
-      "header_text": "Welcome to Teacher Escape Room"
+      "header_text": "Welcome to Sample Escape Room"
     },
     "conclusion_data": {
-      "header_text": "You escaped Teacher Escape Room",
+      "header_text": "Great job, you escaped the Sample Escape Room! Thank you for playing! You were able to find support for the character and got some insight on what it can be like if you are in a crisis. To learn more about ConnecTeen please visit our website <a href='https://calgaryconnecteen.com'>here</a>.",
       "paragraph_text": "Check out the link below",
-      "share_link": "https://backend-dev.jaydhulia.com/teacher-escape-room"
+      "share_link": "https://interactive.calgaryconnecteen.com/sample2-f0f06d41f"
     },
     "transitions": [
       {

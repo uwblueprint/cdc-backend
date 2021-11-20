@@ -23,7 +23,7 @@ class UIScenarioCompletedPageHandler(BaseUIHandler):
                 )
             else:
                 scenario_obj: Scenario = Scenario(**scenario_dict)
-            if not scenario_obj.is_published:
+            if not scenario_obj.is_published and not scenario_obj.is_previewable:
                 raise ValueError("This Scenario is currently not accessible")
 
             await self.render(

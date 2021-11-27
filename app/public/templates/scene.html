@@ -146,7 +146,7 @@
           class="link"
           hint-button='jsonData: {"newHintImg": "/static/img/lightOn.png", "hintImg": "/static/img/lightOff.png", "width": 0.15, "height": 0.04}'
           animation__onclick="property: position; dur: 0; startEvents: click"
-          animation-on-click-run='blackboardData: {"jsonData": {"data": {{ json_encode( [ {"text": x} for x in scene_dict["hints"] ] ) }}, "currPosition": 0}, "componentType": "text-pane"}'
+          animation-on-click-run='blackboardData: {{ json_encode(scene_dict["hint_obj"]) }}'
         >
         </a-entity>
       {% end %}

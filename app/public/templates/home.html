@@ -50,7 +50,7 @@
       </nav>
       {% if len(res_scenarios) == 0 %}
       <h2>No escape rooms found</h2>
-      {% else %} {% if len(res_scenarios) > 1 %}
+      {% elif len(res_scenarios) > 1 %}
       <h2>Try out one of the escape rooms below!</h2>
       {% else %}
       <h2>Try out the escape room below!</h2>
@@ -64,7 +64,7 @@
           >
         </div>
       </div>
-      {% end %} {% end %}
+      {% end %}
     </div>
   </body>
 </html>

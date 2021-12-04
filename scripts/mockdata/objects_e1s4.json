@@ -102,7 +102,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/62521e3397d6a781018182426caf6b6c.png",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/62521e3397d6a781018182426caf6b6c.png",
           "caption": ""
         }
       }
@@ -121,7 +121,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/44a5ebe14f3ed2b854ae0ab5f2f3e438.jpeg",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/44a5ebe14f3ed2b854ae0ab5f2f3e438.jpeg",
           "caption": ""
         }
       }
@@ -140,7 +140,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d9fee8c2e9ab1bd457232bfcae704dd7.jpeg",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/d9fee8c2e9ab1bd457232bfcae704dd7.jpeg",
           "caption": ""
         }
       }
@@ -183,15 +183,15 @@
         "draggable": true,
         "jsonData": {
           "images": [
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-0.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-1.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-2.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-3.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-4.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-5.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-6.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-7.jpg",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/83eb3c19b0ad4e019bae7980b32e44b4-8.jpg"
+            "https://d2pfugr306exr.cloudfront.net/images/83eb3c19b0ad4e019bae7980b32e44b4-0.jpg",
+            "https://d2pfugr306exr.cloudfront.net/images/83eb3c19b0ad4e019bae7980b32e44b4-1.jpg",
+            "https://d2pfugr306exr.cloudfront.net/images/83eb3c19b0ad4e019bae7980b32e44b4-2.jpg",
+            "https://d2pfugr306exr.cloudfront.net/images/83eb3c19b0ad4e019bae7980b32e44b4-3.jpg",
+            "https://d2pfugr306exr.cloudfront.net/images/83eb3c19b0ad4e019bae7980b32e44b4-4.jpg",
+            "https://d2pfugr306exr.cloudfront.net/images/83eb3c19b0ad4e019bae7980b32e44b4-5.jpg",
+            "https://d2pfugr306exr.cloudfront.net/images/83eb3c19b0ad4e019bae7980b32e44b4-6.jpg",
+            "https://d2pfugr306exr.cloudfront.net/images/83eb3c19b0ad4e019bae7980b32e44b4-7.jpg",
+            "https://d2pfugr306exr.cloudfront.net/images/83eb3c19b0ad4e019bae7980b32e44b4-8.jpg"
           ],
           "scaleBy": 3,
           "puzzleDimension": 3,

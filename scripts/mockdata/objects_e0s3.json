@@ -36,15 +36,15 @@
         "draggable": true,
         "jsonData": {
           "images": [
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-0.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-1.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-2.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-3.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-4.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-5.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-6.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-7.png",
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/7ff2809205184ea1a742bbb8d583249f-8.png"
+            "https://d2pfugr306exr.cloudfront.net/images/7ff2809205184ea1a742bbb8d583249f-0.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7ff2809205184ea1a742bbb8d583249f-1.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7ff2809205184ea1a742bbb8d583249f-2.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7ff2809205184ea1a742bbb8d583249f-3.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7ff2809205184ea1a742bbb8d583249f-4.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7ff2809205184ea1a742bbb8d583249f-5.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7ff2809205184ea1a742bbb8d583249f-6.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7ff2809205184ea1a742bbb8d583249f-7.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7ff2809205184ea1a742bbb8d583249f-8.png"
           ],
           "scaleBy": 3,
           "puzzleDimension": 3
@@ -151,7 +151,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/84f2b061b76b408db66234baa3b0ff4e.jpg",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/84f2b061b76b408db66234baa3b0ff4e.jpg",
           "caption": ""
         }
       }
@@ -170,7 +170,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/aff0289669274027b0b094c7ee163992.jpg",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/aff0289669274027b0b094c7ee163992.jpg",
           "caption": ""
         }
       }
@@ -189,7 +189,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/0b37643a8651477aa15dd98f2afd0c00.png",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/0b37643a8651477aa15dd98f2afd0c00.png",
           "caption": ""
         }
       }
@@ -208,7 +208,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/252a5667f26f4297b6adf62147428dac.jpg",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/252a5667f26f4297b6adf62147428dac.jpg",
           "caption": ""
         }
       }
@@ -227,7 +227,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/fc727c7dfe2d4bb0ac2b9014849dafa8.jpg",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/fc727c7dfe2d4bb0ac2b9014849dafa8.jpg",
           "caption": ""
         }
       }
@@ -246,7 +246,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a8b9b3aabd154ed08022d7e44d3801f3.jpg",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/a8b9b3aabd154ed08022d7e44d3801f3.jpg",
           "caption": ""
         }
       }
@@ -265,7 +265,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a8618cf289d14d21947d179ba21013c2.png",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/a8618cf289d14d21947d179ba21013c2.png",
           "caption": ""
         }
       }

@@ -17,7 +17,7 @@ asset:
     - background
     - object
   # This will be the S3 bucket URL in prod
-  prefix_url: https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/
+  prefix_url: https://d2pfugr306exr.cloudfront.net/
   # This will be changed to true for prod... for now until we get asset CRUD working
   # don't actually delete from S3
   aws_hard_delete: false

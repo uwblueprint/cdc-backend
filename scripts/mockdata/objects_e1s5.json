@@ -124,7 +124,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/44a5ebe14f3ed2b854ae0ab5f2f3e438.jpeg",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/44a5ebe14f3ed2b854ae0ab5f2f3e438.jpeg",
           "caption": ""
         }
       }
@@ -143,7 +143,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d9fee8c2e9ab1bd457232bfcae704dd7.jpeg",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/d9fee8c2e9ab1bd457232bfcae704dd7.jpeg",
           "caption": ""
         }
       }

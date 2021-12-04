@@ -48,7 +48,7 @@ for r in range(1, rows + 1):
         )
         s3_key_counter += 1
         filenames.append(
-            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/"
+            "https://d2pfugr306exr.cloudfront.net/"
             + s3_key_prefix
             + str(s3_key_counter)
             + ".png"

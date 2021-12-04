@@ -48,9 +48,13 @@
           alt=""
         />
       </nav>
-      {% if len(res_scenarios) > 0 %}
-      <h1>Try out one of the escape rooms below!</h1>
-      {% for scenario in res_scenarios %}
+      {% if len(res_scenarios) == 0 %}
+      <h2>No escape rooms found</h2>
+      {% elif len(res_scenarios) > 1 %}
+      <h2>Try out one of the escape rooms below!</h2>
+      {% else %}
+      <h2>Try out the escape room below!</h2>
+      {% end %} {% for scenario in res_scenarios %}
       <div class="card bg-light mb-3">
         <div class="card-body">
           <h5 class="card-title">{{ scenario['title'] }}</h5>
@@ -60,8 +64,6 @@
           >
         </div>
       </div>
-      {% end %} {% else %}
-      <h1>No escape rooms found</h1>
       {% end %}
     </div>
   </body>

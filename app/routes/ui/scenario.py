@@ -64,6 +64,21 @@ class UIScenarioHandler(BaseUIHandler):
                 + ".gltf"
             )
 
+            # Need to special parsing for hints
+            hints_array = [{"text": x} for x in scene_dict["hints"]]
+            hints_array.insert(
+                -1,
+                {
+                    "text": "The next panel contains the solution to the current room, only proceed if you want to "
+                    "view the answer!",
+                    "imageSrc": "/static/img/spoiler.jpeg",
+                },
+            )
+            scene_dict["hint_obj"] = {
+                "jsonData": {"data": hints_array, "currPosition": 0},
+                "componentType": "text-pane",
+            }
+
             await self.render(
                 "scene.html",
                 is_last_scene=is_last_scene,

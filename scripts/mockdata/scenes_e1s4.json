@@ -32,7 +32,10 @@
         "position": [0, -1, -1]
       }
     },
-    "hints": ["What's that note on the mirror..."],
+    "hints": [
+      "What's that note on the mirror...",
+      "In order to solve this room, you need to solve the puzzle that's associated with the mirror. This puzzle represents the grounding position that is helpful when you are feeling stressed. You shouldn't be slumping forward or backward, but rather sitting up straight, with both feet firmly planted on the ground. Re-arrange the pictures to solve this puzzle."
+    ],
     "screenshot_url": ""
   }
 ]

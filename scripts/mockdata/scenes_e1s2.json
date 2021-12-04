@@ -34,7 +34,10 @@
         "position": [0, -1, -1]
       }
     },
-    "hints": ["Can the cat help you create a distraction?"],
+    "hints": [
+      "Can the cat help you create a distraction?",
+      "In order to solve this room, you need to get your cat to make a distraction! To do this, you need to arrange the objects in the correct order for the puzzle on the door. Starting from the left, the first image should be the mouse and then the cat (Strawberry). The next image should be Strawberry's bells, and finally the speaker."
+    ],
     "screenshot_url": ""
   }
 ]

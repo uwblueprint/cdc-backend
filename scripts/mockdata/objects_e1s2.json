@@ -151,7 +151,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/306fada2eb90474ead542eb5e3d0bf64.png",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/306fada2eb90474ead542eb5e3d0bf64.png",
           "caption": ""
         }
       }
@@ -170,7 +170,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/9598cf70854c4cb48f2adc8418964a1e.jpg",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/9598cf70854c4cb48f2adc8418964a1e.jpg",
           "caption": ""
         }
       }
@@ -189,7 +189,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/a6eb0c21e61344739689e9a2c83735cc.jpg",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/a6eb0c21e61344739689e9a2c83735cc.jpg",
           "caption": ""
         }
       }
@@ -208,7 +208,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/e0a5de8a13464b98ba5a208e5977ec42.png",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/e0a5de8a13464b98ba5a208e5977ec42.png",
           "caption": ""
         }
       }
@@ -268,7 +268,7 @@
     "animations_json": {
       "blackboardData": {
         "blackboardText": "Bells",
-        "blackboardParagraph": "Here is another one of her toys, I have to be careful though not to draw attention to me picking them up. First I have to get her to come to me, then I have to get her to make some rukus in the living room.",
+        "blackboardParagraph": "Here is another one of her toys, I have to be careful though not to draw attention to me picking them up. First I have to get her to come to me, then I have to get her to make some ruckus in the living room.",
         "componentType": "rotation-controls",
         "jsonData": {
           "position": [0, 0, 5],
@@ -314,22 +314,22 @@
         "jsonData": {
           "images": [
             {
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/b188e92d007b4309aff3bcdca556f31f.png",
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/b188e92d007b4309aff3bcdca556f31f.png",
               "xTarget": -2.25,
               "yTarget": 0
             },
             {
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/75e4e0ad8787414fa1c67f041e4baa63.png",
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/75e4e0ad8787414fa1c67f041e4baa63.png",
               "xTarget": -0.75,
               "yTarget": 0
             },
             {
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/f0cad23d70d5497680d41383f16d9e5b.png",
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/f0cad23d70d5497680d41383f16d9e5b.png",
               "xTarget": 0.75,
               "yTarget": 0
             },
             {
-              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/1fac68e22cb14995a3cbe0931bd1568e.png",
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/1fac68e22cb14995a3cbe0931bd1568e.png",
               "xTarget": 2.25,
               "yTarget": 0
             }

@@ -21,7 +21,7 @@ asset:
   # always false for local dev env, it doesn't have access to AWS
   aws_hard_delete: false
 
-inspector_url: /static/js/libraries/aframe-inspector.js
+inspector_url: https://cdn.jsdelivr.net/gh/jaydhulia/blueprint-cdc-static/aframe-inspector.js
 
 default_data:
   introduction_data: { "header_text": "Welcome to the escape room." }

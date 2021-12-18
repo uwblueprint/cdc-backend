@@ -112,6 +112,7 @@ This script will output a JSON object – you can use the `idToken` value and p
 5. Check the box in the top right corner for `ECMAScript 2021 (via babel-minify)`
 6. Hit `Compress`
 7. Download the file as `component.min.js` and place it in `app/public/static/js/`
+8. Update the repo https://github.com/jaydhulia/blueprint-cdc-static
 
 ## Deployment
 

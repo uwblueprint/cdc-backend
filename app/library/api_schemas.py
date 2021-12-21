@@ -246,3 +246,8 @@ admin_screenshot_handler = {
 }
 
 admin_puzzle_delete_handler_schema = {"type": "array", "items": {"type": "string"}}
+
+admin_transition_image_delete_handler_schema = {
+    "type": "array",
+    "items": {"type": "string"},
+}

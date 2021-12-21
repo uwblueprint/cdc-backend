@@ -28,6 +28,7 @@ from routes.admin.scenario import (
     AdminScenarioHandler,
     AdminScenarioPostHandler,
     AdminScenariosHandler,
+    AdminScenarioTransitionHandler,
 )
 from routes.admin.scene import (
     AdminSceneDuplicateHandler,
@@ -80,6 +81,10 @@ def get_routes():
         (
             r"/api/admin/v1/scenario/([0-9]{1,16})/duplicate",
             AdminScenarioDuplicateHandler,
+        ),
+        (
+            r"/api/admin/v1/scenario/([0-9]{1,16})/transition",
+            AdminScenarioTransitionHandler,
         ),
         (r"/api/admin/v1/scenarios", AdminScenariosHandler),
         (r"/api/admin/v1/scene", AdminScenePostHandler),

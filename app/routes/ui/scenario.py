@@ -1,4 +1,5 @@
 import json
+from uuid import uuid4
 
 from cache.cache import check_and_get_scenario_by_name, check_and_get_scene
 from config import config
@@ -13,11 +14,17 @@ from routes.base import BaseUIHandler
 
 class UIScenarioHandler(BaseUIHandler):
     """
-    Handle routes that have {scenario_friendly_name}/{scene_number}
+    Handle routes that have {scenario_friendly_name}/{scene_hex_number}
     """
 
-    async def get(self, scenario_friendly_name, scene_number=0):
+    async def get(self, scenario_friendly_name, scene_hex_number):
         try:
+            if len(scene_hex_number) < 6:
+                raise ValueError("Invalid scene")
+            scene_hex_number = scene_hex_number[3:-3]
+            scene_number = config.get("scene_data.hash_to_number").get(scene_hex_number)
+            if scene_number is None:
+                raise ValueError("Invalid scene")
             scene_number_int = int(scene_number)
             scenario_dict = await check_and_get_scenario_by_name(scenario_friendly_name)
             if not scenario_dict:
@@ -78,7 +85,7 @@ class UIScenarioHandler(BaseUIHandler):
                 "jsonData": {"data": hints_array, "currPosition": 0},
                 "componentType": "text-pane",
             }
-
+            random_pre_post = uuid4().hex
             await self.render(
                 "scene.html",
                 is_last_scene=is_last_scene,
@@ -92,6 +99,9 @@ class UIScenarioHandler(BaseUIHandler):
                 cur_scene_idx=scene_number_int,
                 scenario_transitions=scenario_obj.transitions,
                 take_screenshot=False,
+                next_scene_uri=random_pre_post[:3]
+                + config.get("scene_data.number_to_hash").get(scene_number_int + 1)
+                + random_pre_post[-3:],
             )
         except ValueError as e:
             self.write_error(status_code=404, message=str(e))

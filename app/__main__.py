@@ -109,8 +109,8 @@ def get_routes():
         (r"/api/\S*", NotFoundHandler),
         (r"/([a-zA-Z0-9_-]{1,50})/?", UIScenarioLandingPageHandler),
         (r"/([a-zA-Z0-9_-]{1,50})/tutorial", UITutorialPageHandler),
-        (r"/([a-zA-Z0-9_-]{1,50})/([0-9]{0,16})", UIScenarioHandler),
         (r"/([a-zA-Z0-9_-]{1,50})/completed", UIScenarioCompletedPageHandler),
+        (r"/([a-zA-Z0-9_-]{1,50})/([0-9a-z]{1,72})", UIScenarioHandler),
         (r"/?", LandingPageUIHandler),
     ]
     return routes

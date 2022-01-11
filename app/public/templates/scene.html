@@ -178,7 +178,6 @@
         {% if not is_admin %}
           <!--  Logic for scene completion  -->
           const is_last_scene = {{ is_last_scene }};
-          const next_scene_idx = {{ cur_scene_idx }} + 1;
 
           if({{cur_scene_idx }} == 0){
             const intro_transition_data = {% raw json_encode(scenario_transitions[0]) %};
@@ -197,7 +196,7 @@
               {% if is_last_scene != "true" %}
                 transitionData = {% raw json_encode(scenario_transitions[cur_scene_idx + 1]) %};
               {% end %}
-              nextURL = "/{{ scenario_friendly_name }}/" + next_scene_idx;
+              nextURL = "/{{ scenario_friendly_name }}/" + "{{ next_scene_uri }}";
             }
 
             transitionData["transitionURL"] = nextURL;

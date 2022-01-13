@@ -1,4 +1,5 @@
 import json
+import logging
 from uuid import uuid4
 
 from cache.cache import check_and_get_scenario_by_name, check_and_get_scene
@@ -10,6 +11,8 @@ from library.postgres import (
 from models import get_session
 from models.scenario import Scenario
 from routes.base import BaseUIHandler
+
+logger = logging.getLogger("houdini")
 
 
 class UIScenarioHandler(BaseUIHandler):
@@ -86,6 +89,14 @@ class UIScenarioHandler(BaseUIHandler):
                 "componentType": "text-pane",
             }
             random_pre_post = uuid4().hex
+            logger.info(
+                {
+                    "message": "Rendering scene",
+                    "scenario_name": scenario_obj.name,
+                    "scene_number": scene_number_int,
+                    "ip": self.remote_ip,
+                }
+            )
             await self.render(
                 "scene.html",
                 is_last_scene=is_last_scene,

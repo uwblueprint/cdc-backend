@@ -1,4 +1,5 @@
 import asyncio
+import logging
 import os
 import ssl
 import uuid
@@ -141,15 +142,25 @@ def init_firebase():
 
 
 def main():
+    # setup logger
+    logging.basicConfig(
+        format="%(asctime)s:%(levelname)s: %(message)s", datefmt="%m/%d/%Y %I:%M:%S %p"
+    )
+    logger = logging.getLogger("houdini")
+    logger.setLevel(logging.INFO)
+
     if "dev" in config.get("app-env"):
         # Print out config for dev environments
-        print(" --------------------- SERVER SETTINGS ---------------------")
-        print("tornado port:", config.get("tornado.port"))
-        print("tornado debug:", config.get("tornado.debug"))
-        print("postgres hostname:", config.get("postgres.hostname"))
-        print("postgres database:", config.get("postgres.database"))
-        print("postgres user:", config.get("postgres.user"))
-        print(" --------------------- SERVER STARTED ---------------------")
+        logging.info(
+            {
+                "message": "Server Settings",
+                "tornado port": config.get("tornado.port"),
+                "tornado debug": config.get("tornado.debug"),
+                "postgres hostname": config.get("postgres.hostname"),
+                "postgres database": config.get("postgres.database"),
+                "postgres user": config.get("postgres.user"),
+            }
+        )
 
         # Autoreload server for HTML file changes
         for directory, _, files in os.walk("public"):
@@ -179,6 +190,8 @@ def main():
         server.bind(port, address=config.get("tornado.address"))
 
     server.start()
+
+    logging.info(f"Tornado Server Started on {port}")
 
     cache_update_time = config.get("cache.update_time") * 1000
     cache_periodic_callback_enabled = config.get("cache.periodic_callback_enabled")

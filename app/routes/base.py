@@ -1,4 +1,5 @@
 import datetime
+import logging
 import time
 from typing import Any
 
@@ -9,6 +10,8 @@ import tornado.web
 from cache.cache import get_all_cached_scenarios
 from config import config
 from models import get_session, return_session
+
+logger = logging.getLogger("houdini")
 
 
 class BaseAPIHandler(tornado.web.RequestHandler):
@@ -61,6 +64,7 @@ class BaseAdminAPIHandler(BaseAPIHandler):
         # AUTH, check to make sure the user is authenticated
         self.db_session = None
         self.user = ""
+        self.remote_ip = self.request.headers.get("X-Real-IP", self.request.remote_ip)
 
         # only need to do auth check if it is not OPTIONS
         if self.request.method != "OPTIONS":
@@ -135,6 +139,7 @@ class BaseUIHandler(tornado.web.RequestHandler):
 
     def prepare(self):
         self.db_session = None
+        self.remote_ip = self.request.headers.get("X-Real-IP", self.request.remote_ip)
 
     def write_error(self, status_code: int, **kwargs: Any) -> None:
         title = httputil.responses.get(status_code, "Unknown")
@@ -175,9 +180,13 @@ class BaseAdminUIHandler(BaseUIHandler):
             if self.user.split("@")[-1] not in config.get("auth.allowed_domains"):
                 raise Exception
         except ValueError as e:
+            logger.warning(
+                {"message": "error logging in", "error": str(e), "ip": self.remote_ip}
+            )
             return self.write_error(status_code=403, message=str(e))
         except Exception:
             # Session cookie is invalid, expired or revoked. Force user to login.
+            logger.warning({"message": "error logging in", "ip": self.remote_ip})
             return self.write_error(status_code=403, message="Forbidden")
 
 
@@ -218,6 +227,7 @@ class BaseAuthHandler(tornado.web.RequestHandler):
         pass
 
     async def post(self):
+        remote_ip = self.request.headers.get("X-Real-IP", self.request.remote_ip)
         try:
             data = tornado.escape.json_decode(self.request.body)
             id_token = data["idToken"]
@@ -265,6 +275,13 @@ class BaseAuthHandler(tornado.web.RequestHandler):
                     secure=set_secure,
                     domain=domain,
                 )
+                logger.info(
+                    {
+                        "message": "admin logged in successfully",
+                        "user": self.user,
+                        "ip": remote_ip,
+                    }
+                )
                 await self.finish(resp_json)
             else:
                 raise ValueError("User signed in too long ago")
@@ -272,6 +289,14 @@ class BaseAuthHandler(tornado.web.RequestHandler):
             self.set_header("Content-Type", "application/problem+json")
             self.set_status(403)
             response_error = {"status": 403, "message": str(e)}
+            logger.warning(
+                {
+                    "message": "error logging in",
+                    "route": "admin_login",
+                    "error": str(e),
+                    "ip": remote_ip,
+                }
+            )
             await self.finish(response_error)
         except Exception:
             # Don't give any reason as this is a sensitive route
@@ -279,6 +304,9 @@ class BaseAuthHandler(tornado.web.RequestHandler):
             message = "Forbidden"
             self.set_status(403)
             response_error = {"status": 403, "message": message}
+            logger.warning(
+                {"message": "error logging in", "route": "admin_login", "ip": remote_ip}
+            )
             await self.finish(response_error)
 
 
@@ -297,6 +325,13 @@ class BaseLogoutHandler(BaseAdminAPIHandler):
         auth.revoke_refresh_tokens(self.sub)
 
         resp_json = {"status": 200, "message": "success"}
+        logger.info(
+            {
+                "message": "admin logged out successfully",
+                "user": self.user,
+                "ip": self.remote_ip,
+            }
+        )
         await self.finish(resp_json)
 
 
@@ -319,7 +354,7 @@ class BaseProfileHandler(BaseAdminAPIHandler):
         await self.finish(resp_json)
 
 
-class LandingPageUIHandler(tornado.web.RequestHandler):
+class LandingPageUIHandler(BaseUIHandler):
     """
     Base handler for the landing page
     """
@@ -338,4 +373,11 @@ class LandingPageUIHandler(tornado.web.RequestHandler):
                         "description": scenario_dict["description"],
                     }
                 )
+        logger.info(
+            {
+                "message": "Rendering all scenarios",
+                "number_of_scenarios": len(res_scenarios),
+                "ip": self.remote_ip,
+            }
+        )
         await self.render("home.html", res_scenarios=res_scenarios)

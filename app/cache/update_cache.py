@@ -3,7 +3,7 @@ from datetime import datetime
 
 from cache.cache import clear_all_cache, update_scenario_cache
 from library.postgres import get_scene_from_postgres
-from models import get_session
+from models import get_session, return_session
 from models.db_client import get_scenarios
 
 
@@ -26,3 +26,4 @@ async def update_cache():
                 scenes_updated.add(scene_id)
 
     print(datetime.fromtimestamp(int(time.time())), "Cache updated")
+    return_session(session)

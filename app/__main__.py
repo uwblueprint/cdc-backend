@@ -151,7 +151,7 @@ def main():
 
     if "dev" in config.get("app-env"):
         # Print out config for dev environments
-        logging.info(
+        logger.info(
             {
                 "message": "Server Settings",
                 "tornado port": config.get("tornado.port"),

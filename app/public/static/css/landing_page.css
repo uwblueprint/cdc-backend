@@ -222,6 +222,16 @@
   border-radius: 4px;
 }
 
+#mobile-help-modal-dialog {
+  width: 532px;
+  height: 415px;
+  max-width: 532px;
+  /* Grey / White */
+
+  background: #ffffff;
+  border-radius: 4px;
+}
+
 .modal.show {
   display: flex !important;
   align-items: center;

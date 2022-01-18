@@ -65,8 +65,7 @@
               onmouseover="this.src='/static/img/play_button_hover.svg';"
               onmouseout="this.src='/static/img/play_button.svg';"
               class="slanted-play-button-img"
-              data-bs-toggle="modal"
-              data-bs-target="#playModal"
+              onclick="playButtonClicked()"
             />
             <div class="play-button-text">play</div>
           </div>
@@ -92,7 +91,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="play-modal-title">How to play</div>
-          <div class="play-modal-body">
+          <div class="play-modal-body" id="start-game-text-content">
             Welcome to the game! We're going to start with a quick tutorial.
           </div>
           <button
@@ -142,6 +141,36 @@
       </div>
     </div>
 
+    <!-- Mobile Warning Modal -->
+    <div
+      class="modal"
+      id="mobileHelpModal"
+      tabindex="-1"
+      aria-labelledby="mobilehelpGameLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" id="mobile-help-modal-dialog">
+        <div class="modal-content">
+          <div class="help-modal-header">Warning!</div>
+          <div class="help-modal-body">
+            Welcome to the Escape room! This is an escape room experience that
+            was designed for a desktop. You will still be able to continue and
+            play the game, however, for the best experience it is recommended
+            that you switch to a desktop.
+          </div>
+          <button
+            type="button"
+            class="btn got-it-button got-it-button-text"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            onclick="skipTutorial()"
+          >
+            Let's Play!
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script type="text/javascript">
       function playTutorial() {
         let nextURL = "/{{ scenario_friendly_name }}/tutorial";
@@ -151,6 +180,33 @@
         let nextURL = "/{{ scenario_friendly_name }}/3500d0b";
         window.location.replace(nextURL);
       }
+      function playButtonClicked() {
+        if (
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          ) ||
+          /Mobi|Android/i.test(navigator.userAgent)
+        ) {
+          // it is a mobile device (https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent#mobile_tablet_or_desktop)
+          // In summary, we recommend looking for the string Mobi anywhere in the User Agent to detect a mobile device.
+          const modal = new bootstrap.Modal(
+            document.getElementById("mobileHelpModal"),
+            {}
+          );
+          modal.show();
+        } else {
+          const modal = new bootstrap.Modal(
+            document.getElementById("playModal"),
+            {}
+          );
+          modal.show();
+        }
+      }
     </script>
   </body>
 </html>
+
+{#<br />
+For the best experience, it is recommended you visit this page from a desktop
+browser instead. If you wish to continue and try this game out on mobile, click
+\"Skip\" below!#}

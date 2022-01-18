@@ -1,8 +1,12 @@
+import logging
+
 from cache.cache import check_and_get_scenario_by_name
 from library.postgres import get_scenario_by_friendly_name_from_postgres
 from models import get_session
 from models.scenario import Scenario
 from routes.base import BaseUIHandler
+
+logger = logging.getLogger("houdini")
 
 
 class UIScenarioLandingPageHandler(BaseUIHandler):
@@ -26,6 +30,14 @@ class UIScenarioLandingPageHandler(BaseUIHandler):
 
             if not scenario_obj.is_published and not scenario_obj.is_previewable:
                 raise ValueError("This Scenario is currently not accessible")
+
+            logger.info(
+                {
+                    "message": "Rendering scenario",
+                    "scenario_name": scenario_obj.name,
+                    "ip": self.remote_ip,
+                }
+            )
 
             await self.render(
                 "landing_page.html",

@@ -232,6 +232,9 @@ function createVisualPane(jsonData, textPaneEl) {
   visualPaneJson = {
     isBlackboardTextDefined: jsonData.isBlackboardTextDefined,
     isBlackboardParagraphDefined: jsonData.isBlackboardTextDefined,
+    isLinkProvided:
+      jsonData.data[jsonData.currPosition].hasOwnProperty("link") &&
+      jsonData.data[jsonData.currPosition].link !== "",
     imageSrc: jsonData.data[jsonData.currPosition].imageSrc,
     caption: jsonData.data[jsonData.currPosition].text,
   };

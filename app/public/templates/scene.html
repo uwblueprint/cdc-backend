@@ -26,7 +26,7 @@
 {#    <script src="/static/js/components/interactable.js"></script>    #}
 {#    <script src="/static/js/components/button-design.js"></script>    #}
 
-    <script src="https://cdn.jsdelivr.net/gh/jaydhulia/blueprint-cdc-static/components.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jaydhulia/blueprint-cdc-static@master/components.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCV4M5LZE1"></script>
     <script>
@@ -178,7 +178,6 @@
         {% if not is_admin %}
           <!--  Logic for scene completion  -->
           const is_last_scene = {{ is_last_scene }};
-          const next_scene_idx = {{ cur_scene_idx }} + 1;
 
           if({{cur_scene_idx }} == 0){
             const intro_transition_data = {% raw json_encode(scenario_transitions[0]) %};
@@ -197,7 +196,7 @@
               {% if is_last_scene != "true" %}
                 transitionData = {% raw json_encode(scenario_transitions[cur_scene_idx + 1]) %};
               {% end %}
-              nextURL = "/{{ scenario_friendly_name }}/" + next_scene_idx;
+              nextURL = "/{{ scenario_friendly_name }}/" + "{{ next_scene_uri }}";
             }
 
             transitionData["transitionURL"] = nextURL;

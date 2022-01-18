@@ -24,18 +24,32 @@ AFRAME.registerComponent("visual-pane", {
       let imageYOffset = 0;
       let maxHeight = 12;
       const maxWidth = 17;
-      if (
-        data.isBlackboardTextDefined &&
-        data.hasOwnProperty("caption") &&
-        data.caption !== ""
-      ) {
-        maxHeight = 9;
+      if (data.hasOwnProperty("caption") && data.caption !== "") {
+        if (data.isLinkProvided && data.isBlackboardTextDefined) {
+          imageYOffset = 2;
+          maxHeight = 6;
+          data.textVerticalOffset = 2.25;
+        } else if (data.isLinkProvided) {
+          imageYOffset = 2;
+          maxHeight = 7;
+          data.textVerticalOffset = 2.25;
+        } else if (data.isBlackboardTextDefined) {
+          imageYOffset = 1;
+          maxHeight = 7;
+          data.textVerticalOffset = 2.25;
+        } else {
+          imageYOffset = 1.5;
+          maxHeight = 8;
+          data.textVerticalOffset = 2;
+        }
+      } else if (data.isLinkProvided && data.isBlackboardTextDefined) {
+        imageYOffset = -0.5;
+        maxHeight = 10;
       } else if (data.isBlackboardTextDefined) {
         imageYOffset = -0.5;
         maxHeight = 10;
-      } else if (data.hasOwnProperty("caption") && data.caption !== "") {
-        imageYOffset = 1;
-        maxHeight = 10;
+      } else if (data.isLinkProvided) {
+        maxHeight = 11;
       }
       const maxDimRatio = maxWidth / maxHeight;
 

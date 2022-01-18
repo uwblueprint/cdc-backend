@@ -303,3 +303,21 @@
 
   color: #1a1f26;
 }
+
+@media only screen and (orientation: landscape) {
+  #base-container {
+    display: block;
+  }
+  #base-container-portrait {
+    display: none !important;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  #base-container {
+    display: none !important;
+  }
+  #base-container-portrait {
+    display: block;
+  }
+}

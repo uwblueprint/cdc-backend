@@ -22,7 +22,7 @@ asset:
   # don't actually delete from S3
   aws_hard_delete: false
 
-inspector_url: https://cdn.jsdelivr.net/gh/jaydhulia/blueprint-cdc-static/aframe-inspector.js
+inspector_url: https://cdn.jsdelivr.net/gh/jaydhulia/blueprint-cdc-static@master/aframe-inspector.js
 
 default_data:
   introduction_data: { "header_text": "Welcome to the escape room." }

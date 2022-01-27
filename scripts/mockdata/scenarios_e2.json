@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Supporting a Youth in Crisis",
+    "friendly_name": "youth-in-crisis-2",
+    "description": "You find yourself sitting at your desk needing to find a way out. The History Teacher is talking about the paper that is due in a week, you look down and see you haven't even started writing your paper. You think back to the fact that you still have one Biology lab, one Math quiz and one Chemistry exam in the same week. The room begins to feel like it's slanting, your palms are sweating, you feel your heart beating faster and your hands begin to shake - how will you escape and find help?",
+    "scene_ids": [13],
+    "is_published": true,
+    "is_previewable": true,
+    "publish_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
+    "preview_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
+    "expected_solve_time": "5",
+    "introduction_data": {
+      "header_text": "Youth in Crisis Escape Room"
+    },
+    "conclusion_data": {
+      "header_text": "Great job, you escaped the Youth in Crisis Escape Room! Thank you for playing! You were able to find support for the character and got some insight on what it can be like if you are in a crisis. To learn more about ConnecTeen please visit our website <a href='https://calgaryconnecteen.com'>here</a>.",
+      "paragraph_text": "By solving the puzzles and going through the room, you have learnt important skills such as being aware of triggers (many tasks, lots of school work), techniques you can use when having an anxiety attack, and helpful resources. When you are in a crisis, it is hard to see options and ask for help. You may feel like you don't deserve help, may talk down to yourself, and experience low self-esteem when going through a challenging time. During these times, you can use the coping strategies you learnt about today such as music, reading, music and journaling to help feel better. You should also remember that it is okay to reach out for help and support - your friends as well as Calgary ConnecTeen are available for your support.",
+      "share_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
+      "external_link": "https://forms.gle/vFmVvh5svmwPnVkY6"
+    },
+    "transitions": [
+      {
+        "data": [
+          {
+            "text": "You're a high school student in class. Your teacher Mr. Smith says, \"Alright, now we are going to be talking about the 8 page history paper due next week, there will be 4 components to the structure...\""
+          },
+          {
+            "text": "You look down at your agenda. \"8 page paper, in a week!? I still have a Bio lab, Math quiz and a Chem exam I have to prepare for next week. I can't, I just can't. It's impossible. I can't breath. What am I going to do??\""
+          },
+          {
+            "text": "Your hands start to tremble as you grasp your chest, you can't even tell if you are breathing properly anymore. You feel like you are going to pass out. Everything begins to look blurry and you notice your body start to subtly shake."
+          },
+          {
+            "text": "\"I have to get out of here, I have to go home. I feel like I'm gonna puke.\" Escape the room to get back home!"
+          }
+        ],
+        "currPosition": 0
+      },
+      {
+        "data": [
+          {
+            "text": "\"Sweet, I remembered my locker combo. I'll talk to Mr. Smith now.\""
+          },
+          {
+            "text": "You ask to leave the class so that you can go to the nurses office. You feel uneasy as you can see everyone in class turned to stare at you. Mr. Smith dismisses you and hopes for you to feel better soon. You nod your head, gather your things and leave"
+          },
+          {
+            "text": "You enter the house and see that your parents are cooking in the kitchen, the stairs going up are next to the kitchen. You hide by the closet door as they keep walking back and forth as they prepare dinner."
+          },
+          {
+            "text": "\"Ahhhh how do I get them to go to the living room so I run upstairs???\""
+          }
+        ],
+        "currPosition": 0
+      }
+    ],
+    "display_image_url": ""
+  }
+]

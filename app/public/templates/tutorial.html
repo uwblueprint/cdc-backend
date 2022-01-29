@@ -63,7 +63,12 @@
   </head>
   <body>
     <div id="scene-root">
-      <a-scene id="3-scene" cursor="rayOrigin:mouse" raycaster="objects: .link">
+      <a-scene
+        id="3-scene"
+        cursor="rayOrigin:mouse"
+        raycaster="objects: .link"
+        gltf-model="dracoDecoderPath: https://cdn.jsdelivr.net/gh/jaydhulia/blueprint-cdc-static@master/draco/;"
+      >
         <a-assets timeout="50000">
           <a-asset-item
             id="1-asset-src"

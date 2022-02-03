@@ -3,7 +3,7 @@
     "name": "Supporting a Youth in Crisis",
     "friendly_name": "youth-in-crisis-2",
     "description": "You find yourself sitting at your desk needing to find a way out. The History Teacher is talking about the paper that is due in a week, you look down and see you haven't even started writing your paper. You think back to the fact that you still have one Biology lab, one Math quiz and one Chemistry exam in the same week. The room begins to feel like it's slanting, your palms are sweating, you feel your heart beating faster and your hands begin to shake - how will you escape and find help?",
-    "scene_ids": [13],
+    "scene_ids": [13, 14],
     "is_published": false,
     "is_previewable": true,
     "publish_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
@@ -46,6 +46,26 @@
           },
           {
             "text": "Mr. Smith greeted everyone good morning then asked the class to open up the text book to start class."
+          }
+        ],
+        "currPosition": 0
+      },
+      {
+        "data": [
+          {
+            "text": "Skylar is the only one without a textbook. I wonder why. That doesn't matter though I can offer to share mine for today."
+          },
+          {
+            "text": "\"Hey Skylar, I noticed you don't have a text book. We can share mine!\""
+          },
+          {
+            "text": "Skylar looked surprised at first then they smiled. They look relieved and their leg has stopped shaking from earlier."
+          },
+          {
+            "text": "Mr. Smith finished their lecture and it's time for our break. Skylar thanked you for sharing your textbook. They haven't bought theirs yet as its pretty expensive."
+          },
+          {
+            "text": "Everyone walked on over to the group sitting area. You get up to go eat lunch with everyone and notice that Skylar is the only person who hasn't walked over. Maybe if we strike up a conversation we can invite them over casually."
           }
         ],
         "currPosition": 0

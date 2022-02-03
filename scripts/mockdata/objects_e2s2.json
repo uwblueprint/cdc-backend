@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Alex sitting",
+    "position": [8.831, 0.028, -1.027],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-1.731, 180, 0],
+    "asset_id": 74,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Alex looks really tired today. They came into class, went straight to their desk and put their head down."
+            },
+            {
+              "text": "\"Hey. You're asking if I'm okay?? Kinda not really. I didn't get any sleep last night so and I'm worried about how well I can do at today's project. It's stressing me out.\""
+            },
+            {
+              "text": "\"Thanks for asking though, I appreciate it. I might just take a nap during the break and should be fine after.\""
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Skylar sitting",
+    "position": [8.03, 0.082, -3.311],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-11.438, 0, 0],
+    "asset_id": 75,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You wonder how Skylar is feeling since they didn't respond to you when you said hi."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Gray sitting",
+    "position": [6.894, 0.096, 2.109],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-3.71, 90, 0],
+    "asset_id": 78,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Everyone's desks look so full with stuff. The textbook takes up so much room."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Wave poster",
+    "position": [2.668, 1.719, -6.057],
+    "scale": [2, 2, 2],
+    "rotation": [0, -90, 0],
+    "asset_id": 77,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/wave.png",
+          "caption": "To get someone's attention, try waving."
+        }
+      }
+    }
+  },
+  {
+    "name": "Textbook",
+    "position": [8.86, 0.72, -1.768],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [0, 0, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Everyone's desks look so full with stuff. The textbook takes up so much room."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Textbook",
+    "position": [7.644, 0.72, 2.305],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [0, -110.38, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Everyone's desks look so full with stuff. The textbook takes up so much room."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Agenda",
+    "position": [8.157, 0.717, -2.977],
+    "scale": [0.015, 0.015, 0.015],
+    "rotation": [-90, 187, 0],
+    "asset_id": 25,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Hm. It can be tough following along during class without the textbook.",
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "/static/img/textbook.jpg",
+              "xTarget": -1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/rightArrow.png",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "/static/img/emptyDesk.jpg",
+              "xTarget": 1.25,
+              "yTarget": 0
+            }
+          ],
+          "useTargets": true,
+          "randomizePos": true,
+          "scaleBy": 3,
+          "is_last_object": false
+        }
+      }
+    }
+  }
+]

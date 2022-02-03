@@ -5,7 +5,7 @@
     "description": "You find yourself sitting at your desk needing to find a way out. The History Teacher is talking about the paper that is due in a week, you look down and see you haven't even started writing your paper. You think back to the fact that you still have one Biology lab, one Math quiz and one Chemistry exam in the same week. The room begins to feel like it's slanting, your palms are sweating, you feel your heart beating faster and your hands begin to shake - how will you escape and find help?",
     "scene_ids": [13],
     "is_published": false,
-    "is_previewable": false,
+    "is_previewable": true,
     "publish_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
     "preview_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
     "expected_solve_time": "5",

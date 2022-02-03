@@ -64,6 +64,7 @@ admin_scenario_put_handler_schema = {
                 "header_text": {"type": "string"},
                 "paragraph_text": {"type": "string"},
                 "share_link": {"type": "string"},
+                "external_link": {"type": "string"},
             },
             "additionalProperties": False,
         },

@@ -2,13 +2,13 @@
   {
     "name": "Classroom - 3",
     "description": "Supporting a Youth in Crisis - Room 1 - Check in with your classmates",
-    "object_ids": [],
+    "object_ids": [140, 141, 142, 143],
     "position": [-5.446, 0.1, 0],
     "scale": [1, 1, 1],
     "rotation": [0.0, 90.0, 0.0],
     "background_id": 73,
     "camera_properties": {
-      "position": [3.548, 1.5, -0.77],
+      "position": [11.682, 1.5, 4.878],
       "look_controls": true,
       "wasd_controls": true,
       "cursor_properties": {

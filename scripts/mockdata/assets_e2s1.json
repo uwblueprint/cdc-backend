@@ -4,5 +4,29 @@
     "obj_type": "background",
     "s3_key": "assets/untitled.glb",
     "screenshot_url": ""
+  },
+  {
+    "name": "Alex Sitting",
+    "obj_type": "object",
+    "s3_key": "assets/AlexSitting.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Skylar Sitting",
+    "obj_type": "object",
+    "s3_key": "assets/SkylarSitting.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Gray Pacing",
+    "obj_type": "object",
+    "s3_key": "assets/GrayPacing.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Wave Poster",
+    "obj_type": "object",
+    "s3_key": "assets/wave.glb",
+    "screenshot_url": ""
   }
 ]

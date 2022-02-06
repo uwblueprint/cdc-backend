@@ -174,9 +174,20 @@
           "useTargets": true,
           "randomizePos": true,
           "scaleBy": 3,
-          "is_last_object": false
+          "is_last_object": true
         }
       }
     }
+  },
+  {
+    "name": "Teacher",
+    "position": [12.107, 0.035, 1.717],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation": [0, 250, 0],
+    "asset_id": 9,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
   }
 ]

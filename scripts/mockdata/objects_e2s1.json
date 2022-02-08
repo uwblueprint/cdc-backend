@@ -1,5 +1,16 @@
 [
   {
+    "name": "Window",
+    "position": [-5.446, 0.1, 0],
+    "scale": [1, 1, 1],
+    "rotation": [0.0, 90.0, 0.0],
+    "asset_id": 78,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
     "name": "Alex sitting",
     "position": [8.831, 0.028, -1.027],
     "scale": [0.8, 0.8, 0.8],

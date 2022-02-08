@@ -2,7 +2,7 @@
   {
     "name": "Classroom - 3",
     "description": "Supporting a Youth in Crisis - Room 1 - Check in with your classmates",
-    "object_ids": [140, 141, 142, 143],
+    "object_ids": [140, 141, 142, 143, 144],
     "position": [-5.446, 0.1, 0],
     "scale": [1, 1, 1],
     "rotation": [0.0, 90.0, 0.0],

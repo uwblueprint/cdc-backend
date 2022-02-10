@@ -48,7 +48,7 @@
   <body>
     <div id="scene-root">
       <!-- Need to add  inspector="url: http://localhost:3333/dist/aframe-inspector.js" to the a-scene element if using local inspector -->
-      <a-scene id="{{ scene_dict['id'] }}-scene" cursor="rayOrigin:mouse" raycaster="objects: .link" gltf-model="dracoDecoderPath: https://cdn.jsdelivr.net/gh/jaydhulia/blueprint-cdc-static@master/draco/;">
+      <a-scene id="{{ scene_dict['id'] }}-scene" cursor="rayOrigin:mouse" raycaster="objects: .link" gltf-model="dracoDecoderPath: https://cdn.jsdelivr.net/gh/jaydhulia/blueprint-cdc-static@master/draco/;"
         {% if is_admin %}
           inspector="url: {{ inspector_url }}"
         {% end %}

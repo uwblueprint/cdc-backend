@@ -4,5 +4,11 @@
     "obj_type": "object",
     "s3_key": "assets/290f6ba559b94321b84b461d9f5f9eb3.glb",
     "screenshot_url": ""
+  },
+  {
+    "name": "Alex Sitting Up",
+    "obj_type": "object",
+    "s3_key": "assets/AlexSittingUp.glb",
+    "screenshot_url": ""
   }
 ]

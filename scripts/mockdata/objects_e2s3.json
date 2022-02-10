@@ -26,33 +26,15 @@
     }
   },
   {
-    "name": "Alex sitting",
-    "position": [8.831, 0.028, -1.027],
+    "name": "Alex sitting up",
+    "position": [7.698, 0.028, 2.926],
     "scale": [0.8, 0.8, 0.8],
     "rotation": [-1.731, 180, 0],
-    "asset_id": 74,
+    "asset_id": 81,
     "next_objects": [],
     "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "text-pane",
-        "jsonData": {
-          "data": [
-            {
-              "text": "Alex looks really tired today. They came into class, went straight to their desk and put their head down."
-            },
-            {
-              "text": "\"Hey. You're asking if I'm okay?? Kinda not really. I didn't get any sleep last night so and I'm worried about how well I can do at today's project. It's stressing me out.\""
-            },
-            {
-              "text": "\"Thanks for asking though, I appreciate it. I might just take a nap during the break and should be fine after.\""
-            }
-          ],
-          "currPosition": 0
-        }
-      }
-    }
+    "is_interactable": false,
+    "animations_json": {}
   },
   {
     "name": "Skylar sitting",
@@ -85,20 +67,8 @@
     "asset_id": 79,
     "next_objects": [],
     "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "text-pane",
-        "jsonData": {
-          "data": [
-            {
-              "text": "Everyone's desks look so full with stuff. The textbook takes up so much room."
-            }
-          ],
-          "currPosition": 0
-        }
-      }
-    }
+    "is_interactable": false,
+    "animations_json": {}
   },
   {
     "name": "Wave poster",
@@ -120,50 +90,26 @@
     }
   },
   {
-    "name": "Textbook",
+    "name": "Alexs Textbook",
     "position": [8.86, 0.72, -1.768],
     "scale": [0.15, 0.15, 0.15],
     "rotation": [0, 0, 0],
     "asset_id": 11,
     "next_objects": [],
     "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "text-pane",
-        "jsonData": {
-          "data": [
-            {
-              "text": "Everyone's desks look so full with stuff. The textbook takes up so much room."
-            }
-          ],
-          "currPosition": 0
-        }
-      }
-    }
+    "is_interactable": false,
+    "animations_json": {}
   },
   {
-    "name": "Textbook",
-    "position": [7.644, 0.72, 2.305],
+    "name": "Grays Textbook",
+    "position": [7.644, 0.72, 1.191],
     "scale": [0.15, 0.15, 0.15],
-    "rotation": [0, -110.38, 0],
+    "rotation": [0, -30.57, 0],
     "asset_id": 11,
     "next_objects": [],
     "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "text-pane",
-        "jsonData": {
-          "data": [
-            {
-              "text": "Everyone's desks look so full with stuff. The textbook takes up so much room."
-            }
-          ],
-          "currPosition": 0
-        }
-      }
-    }
+    "is_interactable": false,
+    "animations_json": {}
   },
   {
     "name": "Agenda",
@@ -189,7 +135,7 @@
   },
   {
     "name": "Teacher",
-    "position": [12.107, 0.035, 1.717],
+    "position": [11.064, 0.035, -2.283],
     "scale": [1.0, 1.0, 1.0],
     "rotation": [0, 250, 0],
     "asset_id": 9,

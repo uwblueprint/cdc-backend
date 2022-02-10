@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Hallway",
+    "obj_type": "background",
+    "s3_key": "assets/hallway.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Backpack",
+    "obj_type": "object",
+    "s3_key": "assets/backpack.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Alex Standing",
+    "obj_type": "object",
+    "s3_key": "assets/AlexStanding.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Skylar Standing",
+    "obj_type": "object",
+    "s3_key": "assets/SkylarStanding.glb",
+    "screenshot_url": ""
+  }
+]

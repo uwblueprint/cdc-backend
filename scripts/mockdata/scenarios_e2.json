@@ -3,7 +3,7 @@
     "name": "Supporting a Youth in Crisis",
     "friendly_name": "youth-in-crisis-2",
     "description": "You find yourself sitting at your desk needing to find a way out. The History Teacher is talking about the paper that is due in a week, you look down and see you haven't even started writing your paper. You think back to the fact that you still have one Biology lab, one Math quiz and one Chemistry exam in the same week. The room begins to feel like it's slanting, your palms are sweating, you feel your heart beating faster and your hands begin to shake - how will you escape and find help?",
-    "scene_ids": [13, 14, 15],
+    "scene_ids": [13, 14, 15, 16],
     "is_published": false,
     "is_previewable": true,
     "publish_link": "https://interactive.calgaryconnecteen.com/youth-in-crisis",
@@ -77,6 +77,20 @@
           },
           {
             "text": "You had fun at lunch with everyone. Now it's time for the group project. Everyone looks really nervous again. You're in a group of 4 and happen to be paired with Alex, Gray and Skylar. Everyone begins to discuss."
+          }
+        ],
+        "currPosition": 0
+      },
+      {
+        "data": [
+          {
+            "text": "The group project was a success and you all scored well."
+          },
+          {
+            "text": "It's now the end of the day and everyone will be heading home for. Thankfully its the weekend so you can have a break from a tough week of school!"
+          },
+          {
+            "text": "Before you go let's see if there is something you can give your new friend in case they might need extra support."
           }
         ],
         "currPosition": 0

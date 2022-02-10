@@ -1,0 +1,169 @@
+[
+  {
+    "name": "Window",
+    "position": [-5.446, 0.1, 0],
+    "scale": [1, 1, 1],
+    "rotation": [0.0, 90.0, 0.0],
+    "asset_id": 78,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Alex sitting up",
+    "position": [7.25, 0.028, -2.653],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-1.731, 43.47, 0],
+    "asset_id": 81,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Alex gives their opinions on the topic. You and Gray chime in and begin to take notes. You three are hitting it off and are getting a lot of ideas written."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Skylar sitting",
+    "position": [8.03, 0.082, -3.311],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-11.438, 0, 0],
+    "asset_id": 75,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "How can I include Skylar?",
+        "componentType": "jigsaw-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            "/static/img/e2s4/row-1-column-1.png",
+            "/static/img/e2s4/row-1-column-2.png",
+            "/static/img/e2s4/row-1-column-3.png",
+            "/static/img/e2s4/row-2-column-1.png",
+            "/static/img/e2s4/row-2-column-2.png",
+            "/static/img/e2s4/row-2-column-3.png",
+            "/static/img/e2s4/row-3-column-1.png",
+            "/static/img/e2s4/row-3-column-2.png",
+            "/static/img/e2s4/row-3-column-3.png"
+          ],
+          "scaleBy": 3,
+          "puzzleDimension": 3,
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Gray sitting",
+    "position": [7.128, 0.096, -1.793],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-3.71, 90, 0],
+    "asset_id": 79,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Gray suggests how to organize the presentation. Alex and you look over at Gray's laptop and then begin to add in what information you feel like should go where."
+            },
+            {
+              "text": "While the three of you discuss you all laugh as you exchange fun jokes."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Wave poster",
+    "position": [2.668, 1.719, -6.057],
+    "scale": [2, 2, 2],
+    "rotation": [0, -90, 0],
+    "asset_id": 77,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "/static/img/wave.png",
+          "caption": "To get someone's attention, try waving."
+        }
+      }
+    }
+  },
+  {
+    "name": "Alexs Textbook",
+    "position": [8.86, 0.72, -1.768],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [0, 0, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Grays Textbook",
+    "position": [7.644, 0.72, 1.191],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [0, -30.57, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Agenda",
+    "position": [8.157, 0.717, -2.977],
+    "scale": [0.015, 0.015, 0.015],
+    "rotation": [-90, 187, 0],
+    "asset_id": 80,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Teacher",
+    "position": [4.937, 0.035, 3.752],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation": [0, 140, 0],
+    "asset_id": 9,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Laptop",
+    "position": [7.779, 0.71, -1.809],
+    "scale": [0.06, 0.06, 0.06],
+    "rotation": [0, -102.66, 0],
+    "asset_id": 82,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  }
+]

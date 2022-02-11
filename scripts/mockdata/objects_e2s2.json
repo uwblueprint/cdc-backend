@@ -18,26 +18,8 @@
     "asset_id": 74,
     "next_objects": [],
     "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "text-pane",
-        "jsonData": {
-          "data": [
-            {
-              "text": "Alex looks really tired today. They came into class, went straight to their desk and put their head down."
-            },
-            {
-              "text": "\"Hey. You're asking if I'm okay?? Kinda not really. I didn't get any sleep last night so and I'm worried about how well I can do at today's project. It's stressing me out.\""
-            },
-            {
-              "text": "\"Thanks for asking though, I appreciate it. I might just take a nap during the break and should be fine after.\""
-            }
-          ],
-          "currPosition": 0
-        }
-      }
-    }
+    "is_interactable": false,
+    "animations_json": {}
   },
   {
     "name": "Skylar sitting",
@@ -70,20 +52,8 @@
     "asset_id": 79,
     "next_objects": [],
     "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "text-pane",
-        "jsonData": {
-          "data": [
-            {
-              "text": "Everyone's desks look so full with stuff. The textbook takes up so much room."
-            }
-          ],
-          "currPosition": 0
-        }
-      }
-    }
+    "is_interactable": false,
+    "animations_json": {}
   },
   {
     "name": "Wave poster",

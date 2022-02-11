@@ -7,20 +7,8 @@
     "asset_id": 85,
     "next_objects": [],
     "texts": [],
-    "is_interactable": true,
-    "animations_json": {
-      "blackboardData": {
-        "componentType": "text-pane",
-        "jsonData": {
-          "data": [
-            {
-              "text": "Alex gives their opinions on the topic. You and Gray chime in and begin to take notes. You three are hitting it off and are getting a lot of ideas written."
-            }
-          ],
-          "currPosition": 0
-        }
-      }
-    }
+    "is_interactable": false,
+    "animations_json": {}
   },
   {
     "name": "Skylar standing",

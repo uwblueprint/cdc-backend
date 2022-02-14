@@ -1,6 +1,6 @@
 [
   {
-    "name": "Classroom - 3",
+    "name": "Classroom - 3 (1)",
     "description": "Supporting a Youth in Crisis - Room 1 - Check in with your classmates",
     "object_ids": [140, 141, 142, 143, 144],
     "position": [-5.446, 0.1, 0],
@@ -18,11 +18,10 @@
       }
     },
     "hints": [
-      "I should look at my books and journal to jog my memory of my passcode.",
-      "I really like reading, perhaps my pin involves the number of books I have read or plan to read.",
-      "I often updated my passcode based on the age I am turning! Did I read something about this in my journal?",
-      "The numbers 1, 5, 7, and 9 appear smudged on my phone. I think I use these numbers a lot!",
-      "In order to solve this room, you need to find and enter in your phone password. The correct answer is 7519. This is because you read 7 books last month, and are planning on reading 5 books this month. 19 represents the age when you want to achieve certain goals by."
+      "There are three other students in the class, maybe talking to them will help?",
+      "Maybe I should try to talk to Skylar, how should I get their attention?",
+      "What's that picture on the wall? It looks like someone waving...",
+      "In order to solve this room, you need to get Skylar's attention. The correct answer to get their attention is \"wave\". The picture in the room mentions that waving is a great way to get someone's attention, and this is indeed correct."
     ],
     "screenshot_url": ""
   }

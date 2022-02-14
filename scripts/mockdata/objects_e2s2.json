@@ -89,7 +89,7 @@
         "jsonData": {
           "data": [
             {
-              "text": "Everyone's desks look so full with stuff. The textbook takes up so much room."
+              "text": "The textbook looks so big, and it's required for this class."
             }
           ],
           "currPosition": 0
@@ -112,7 +112,7 @@
         "jsonData": {
           "data": [
             {
-              "text": "Everyone's desks look so full with stuff. The textbook takes up so much room."
+              "text": "The textbook looks so big, and it's required for this class."
             }
           ],
           "currPosition": 0
@@ -131,7 +131,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Hm. It can be tough following along during class without the textbook.",
+        "blackboardParagraph": "Hm. It can be tough following along during class without the textbook. Skylar only seems to have this agenda.",
         "componentType": "ordered-puzzle",
         "draggable": true,
         "jsonData": {

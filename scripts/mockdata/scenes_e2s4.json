@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Classroom - 3 (4)",
+    "description": "Supporting a Youth in Crisis - Room 1 - Students working in groups",
+    "object_ids": [166, 167, 168, 169, 170, 171, 172, 173, 174, 175],
+    "position": [-5.446, 0.1, 0],
+    "scale": [1, 1, 1],
+    "rotation": [0.0, 90.0, 0.0],
+    "background_id": 73,
+    "camera_properties": {
+      "position": [11.682, 1.5, 4.878],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "The group project is going well, but it would go even better if Skylar was involved.",
+      "Skylar seems to be uncomfortable, maybe I can interact with Skylar and reassure them that it's a safe space?",
+      "In order to solve this room, you need to interact with Skylar and make them feel like they are in a safe space. To do that, you need to click on Skylar and solve the corresponding jigsaw puzzle. The blue person should end up on the left, while the red question mark appears on the top right. Re-arrange the puzzle to solve this room."
+    ],
+    "screenshot_url": ""
+  }
+]

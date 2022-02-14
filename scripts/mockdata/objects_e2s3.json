@@ -1,0 +1,198 @@
+[
+  {
+    "name": "Window",
+    "position": [-5.446, 0.1, 0],
+    "scale": [1, 1, 1],
+    "rotation": [0.0, 90.0, 0.0],
+    "asset_id": 78,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "\"Hey Skylar, it's really nice out isn't it?\""
+            },
+            {
+              "text": "Skylar nods yes in return."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Alex sitting up",
+    "position": [7.698, 0.028, 2.926],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-1.731, 180, 0],
+    "asset_id": 81,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Skylar sitting",
+    "position": [8.03, 0.082, -3.311],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-11.438, 0, 0],
+    "asset_id": 75,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "\"Hey Skylar, it's really nice out isn't it?\""
+            },
+            {
+              "text": "Skylar nods yes in return."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Gray sitting",
+    "position": [6.894, 0.096, 2.109],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-3.71, 90, 0],
+    "asset_id": 79,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Wave poster",
+    "position": [2.668, 1.719, -6.057],
+    "scale": [2, 2, 2],
+    "rotation": [0, -90, 0],
+    "asset_id": 77,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/3b45752041664d47a8995d577c422aae.png",
+          "caption": "To get someone's attention, try waving."
+        }
+      }
+    }
+  },
+  {
+    "name": "Alexs Textbook",
+    "position": [8.86, 0.72, -1.768],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [0, 0, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Grays Textbook",
+    "position": [7.644, 0.72, 1.191],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [0, -30.57, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Comic",
+    "position": [8.045, 0.717, -2.876],
+    "scale": [0.033, 0.033, 0.033],
+    "rotation": [-90, 187, 0],
+    "asset_id": 80,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "blackboardText": "What's an open-ended question can you ask Skylar?\n\ta. Do you like Marvel?\n\tb. What do you like about Marvel?",
+        "jsonData": {
+          "password": "b",
+          "model": "basic",
+          "errorMsg": "Skylar smiles and nods in return.",
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Teacher",
+    "position": [11.064, 0.035, -2.283],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation": [0, 250, 0],
+    "asset_id": 9,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "\"The class had a lot of information didn't it?\""
+            },
+            {
+              "text": "Skylar pauses, thinks for a bit, then nods in return."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Juice cup",
+    "position": [7.755, 0.792, -2.985],
+    "scale": [0.088, 0.088, 0.088],
+    "rotation": [0, 155.67, 0],
+    "asset_id": 50,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Burger",
+    "position": [7.407, 0.72, 1.99],
+    "scale": [0.5, 0.5, 0.5],
+    "rotation": [0, 45, 0],
+    "asset_id": 51,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Banana",
+    "position": [7.768, 0.72, 2.543],
+    "scale": [0.042, 0.042, 0.042],
+    "rotation": [85.486, 45, -164.65],
+    "asset_id": 82,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  }
+]

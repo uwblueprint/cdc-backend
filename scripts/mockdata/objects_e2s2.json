@@ -1,0 +1,174 @@
+[
+  {
+    "name": "Window",
+    "position": [-5.446, 0.1, 0],
+    "scale": [1, 1, 1],
+    "rotation": [0.0, 90.0, 0.0],
+    "asset_id": 78,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Alex sitting",
+    "position": [8.831, 0.028, -1.027],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-1.731, 180, 0],
+    "asset_id": 74,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Skylar sitting",
+    "position": [8.03, 0.082, -3.311],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-11.438, 0, 0],
+    "asset_id": 75,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You wonder how Skylar is feeling since they didn't respond to you when you said hi."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Gray sitting",
+    "position": [6.894, 0.096, 2.109],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-3.71, 90, 0],
+    "asset_id": 79,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Wave poster",
+    "position": [2.668, 1.719, -6.057],
+    "scale": [2, 2, 2],
+    "rotation": [0, -90, 0],
+    "asset_id": 77,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/3b45752041664d47a8995d577c422aae.png",
+          "caption": "To get someone's attention, try waving."
+        }
+      }
+    }
+  },
+  {
+    "name": "Textbook",
+    "position": [8.86, 0.72, -1.768],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [0, 0, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "The textbook looks so big, and it's required for this class."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Textbook",
+    "position": [7.644, 0.72, 2.305],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [0, -110.38, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "The textbook looks so big, and it's required for this class."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Agenda",
+    "position": [8.157, 0.717, -2.977],
+    "scale": [0.015, 0.015, 0.015],
+    "rotation": [-90, 187, 0],
+    "asset_id": 25,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Hm. It can be tough following along during class without the textbook. Skylar only seems to have this agenda.",
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/1f7e07e03ae14bddbefbd8f0fbd3835d.jpg",
+              "xTarget": -1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/9cbe09eabc7c4df3b6ff2d39389934e4.png",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/59111c7765334f48a77025cdc35d29a0.jpg",
+              "xTarget": 1.25,
+              "yTarget": 0
+            }
+          ],
+          "useTargets": true,
+          "randomizePos": true,
+          "scaleBy": 3,
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Teacher",
+    "position": [12.107, 0.035, 1.717],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation": [0, 250, 0],
+    "asset_id": 9,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Window",
+    "position": [-5.446, 0.1, 0],
+    "scale": [1, 1, 1],
+    "rotation": [0.0, 90.0, 0.0],
+    "asset_id": 78,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Alex sitting",
+    "position": [8.831, 0.028, -1.027],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-1.731, 180, 0],
+    "asset_id": 74,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Alex looks really tired today. They came into class, went straight to their desk and put their head down."
+            },
+            {
+              "text": "\"Hey. You're asking if I'm okay?? Kinda not really. I didn't get any sleep last night so and I'm worried about how well I can do at today's project. It's stressing me out.\""
+            },
+            {
+              "text": "\"Thanks for asking though, I appreciate it. I might just take a nap during the break and should be fine after.\""
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Skylar sitting",
+    "position": [8.03, 0.082, -3.311],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-11.438, 0, 0],
+    "asset_id": 75,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "blackboardText": "Skylar's sitting at their desk and their leg is shaking a lot and staring straight at their desk. How will you get their attention?",
+        "jsonData": {
+          "password": "wave",
+          "model": "basic",
+          "errorMsg": "You said hi but it looks like they didn't hear you. Maybe there is another way to greet them.",
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Gray pacing",
+    "position": [5.053, 0.082, 2.781],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-3.71, 0, 0],
+    "asset_id": 76,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Gray is pacing around the room."
+            },
+            {
+              "text": "\"Oh sorry, didn't see you there. Me? How am I doing? Not okay! I didn't know we had a group project today. I didn't do last night's homework so I don't know the topic too well.\""
+            },
+            {
+              "text": "\"Maybe I'll read up on it during the break. Thanks for asking!\""
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Wave poster",
+    "position": [2.668, 1.719, -6.057],
+    "scale": [2, 2, 2],
+    "rotation": [0, -90, 0],
+    "asset_id": 77,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "visual-pane",
+        "jsonData": {
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/3b45752041664d47a8995d577c422aae.png",
+          "caption": "To get someone's attention, try waving."
+        }
+      }
+    }
+  }
+]

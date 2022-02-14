@@ -267,6 +267,17 @@ async def update_scenario_from_postgres(scenario_id: str, data: dict, session):
 
 async def post_scene_to_postgres(data: dict, session):
     scene_model = Scene(**data)
+    scene_model.position = config.get("scene_data.position").get(
+        scene_model.background_id
+    )
+    scene_model.rotation = config.get("scene_data.rotation").get(
+        scene_model.background_id
+    )
+    scene_model.scale = config.get("scene_data.scale").get(scene_model.background_id)
+    scene_model.camera_properties = config.get("scene_data.camera_properties").get(
+        scene_model.background_id
+    )
+    scene_model.hints = config.get("scene_data.hints")
     scene_model = create_entity(scene_model, session)
     return scene_model.as_dict()
 

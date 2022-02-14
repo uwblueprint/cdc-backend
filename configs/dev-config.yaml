@@ -201,6 +201,34 @@ scene_data:
           - 0
           - -1
           - -1
+    73:
+      position:
+        - 11.682
+        - 1.5
+        - 4.878
+      look_controls: true
+      wasd_controls: true
+      cursor_properties:
+        shape: crosshairs
+        asset_id: 7
+        position:
+          - 0
+          - -1
+          - -1
+    84:
+      position:
+        - -0.389
+        - 1.5
+        - 14.338
+      look_controls: true
+      wasd_controls: true
+      cursor_properties:
+        shape: crosshairs
+        asset_id: 7
+        position:
+          - 0
+          - -1
+          - -1
   position:
     2:
       - 0.0
@@ -224,6 +252,14 @@ scene_data:
       - 0.0
     43:
       - 0.0
+      - 0.1
+      - 0.0
+    73:
+      - -5.446
+      - 0.1
+      - 0.0
+    84:
+      - 7.379
       - 0.1
       - 0.0
   rotation:
@@ -251,6 +287,14 @@ scene_data:
       - 0.0
       - 90.0
       - 0.0
+    73:
+      - 0.0
+      - 90.0
+      - 0.0
+    84:
+      - 0.0
+      - 0.0
+      - 0.0
   scale:
     2:
       - 1.0
@@ -276,6 +320,14 @@ scene_data:
       - 0.425
       - 0.425
       - 0.425
+    73:
+      - 1.0
+      - 1.0
+      - 1.0
+    84:
+      - 1.0
+      - 1.0
+      - 1.0
   hints:
     - "You can use your mouse to pan around, and use the arrow keys / WASD to move around"
     - "If you are seeing this page and aren't the admin, please contact Calgary ConnecTeen to let them know that a solution is missing :)"

@@ -2,19 +2,19 @@
   {
     "name": "Comic",
     "obj_type": "object",
-    "s3_key": "assets/comic.glb",
+    "s3_key": "assets/0f2e95ee04434dc49bacb9b8b2310fd6.glb",
     "screenshot_url": ""
   },
   {
     "name": "Alex Sitting Up",
     "obj_type": "object",
-    "s3_key": "assets/AlexSittingUp.glb",
+    "s3_key": "assets/f33d7144e37c4ecea6ebbbddab59bbc1.glb",
     "screenshot_url": ""
   },
   {
     "name": "Banana",
     "obj_type": "object",
-    "s3_key": "assets/banana.glb",
+    "s3_key": "assets/d42f9b43c3a14d2c9a39b2f1df2ac445.glb",
     "screenshot_url": ""
   }
 ]

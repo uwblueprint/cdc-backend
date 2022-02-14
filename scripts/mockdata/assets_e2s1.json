@@ -2,37 +2,37 @@
   {
     "name": "Classroom 2",
     "obj_type": "background",
-    "s3_key": "assets/classroom2.glb",
+    "s3_key": "assets/eb60ab5ad27040ab8287c6dcf011d292.glb",
     "screenshot_url": ""
   },
   {
     "name": "Alex Sitting",
     "obj_type": "object",
-    "s3_key": "assets/AlexSitting.glb",
+    "s3_key": "assets/4da27629ae35497bafd8508b075c6937.glb",
     "screenshot_url": ""
   },
   {
     "name": "Skylar Sitting",
     "obj_type": "object",
-    "s3_key": "assets/SkylarSitting.glb",
+    "s3_key": "assets/c5d36d0263144a18be887f5939001f9f.glb",
     "screenshot_url": ""
   },
   {
     "name": "Gray Pacing",
     "obj_type": "object",
-    "s3_key": "assets/GrayPacing.glb",
+    "s3_key": "assets/ab97d49cd9404981a27c66983a6718f6.glb",
     "screenshot_url": ""
   },
   {
     "name": "Wave Poster",
     "obj_type": "object",
-    "s3_key": "assets/wave.glb",
+    "s3_key": "assets/57a158fc199f406eb7e39591234a5153.glb",
     "screenshot_url": ""
   },
   {
     "name": "Window",
     "obj_type": "object",
-    "s3_key": "assets/windows.glb",
+    "s3_key": "assets/c0f46051ce694f66866c19805a2b5991.glb",
     "screenshot_url": ""
   }
 ]

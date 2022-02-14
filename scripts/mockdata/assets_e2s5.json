@@ -2,25 +2,25 @@
   {
     "name": "Hallway",
     "obj_type": "background",
-    "s3_key": "assets/hallway.glb",
+    "s3_key": "assets/47e9d2c5fff04191b58ff1f4d47134d1.glb",
     "screenshot_url": ""
   },
   {
     "name": "Backpack",
     "obj_type": "object",
-    "s3_key": "assets/backpack.glb",
+    "s3_key": "assets/9f281d30e07f493eb9b31d4e9d02f00b.glb",
     "screenshot_url": ""
   },
   {
     "name": "Alex Standing",
     "obj_type": "object",
-    "s3_key": "assets/AlexStanding.glb",
+    "s3_key": "assets/15e4f4806d5c44cb9daa622f929f973f.glb",
     "screenshot_url": ""
   },
   {
     "name": "Skylar Standing",
     "obj_type": "object",
-    "s3_key": "assets/SkylarStanding.glb",
+    "s3_key": "assets/f3cd4e47c0464303943f04a5d55ad463.glb",
     "screenshot_url": ""
   }
 ]

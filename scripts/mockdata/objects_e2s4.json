@@ -49,15 +49,15 @@
         "draggable": true,
         "jsonData": {
           "images": [
-            "/static/img/e2s4/row-1-column-1.png",
-            "/static/img/e2s4/row-1-column-2.png",
-            "/static/img/e2s4/row-1-column-3.png",
-            "/static/img/e2s4/row-2-column-1.png",
-            "/static/img/e2s4/row-2-column-2.png",
-            "/static/img/e2s4/row-2-column-3.png",
-            "/static/img/e2s4/row-3-column-1.png",
-            "/static/img/e2s4/row-3-column-2.png",
-            "/static/img/e2s4/row-3-column-3.png"
+            "https://d2pfugr306exr.cloudfront.net/images/7f53dcd82ae74eed8579853efe5f397c-0.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7f53dcd82ae74eed8579853efe5f397c-1.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7f53dcd82ae74eed8579853efe5f397c-2.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7f53dcd82ae74eed8579853efe5f397c-3.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7f53dcd82ae74eed8579853efe5f397c-4.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7f53dcd82ae74eed8579853efe5f397c-5.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7f53dcd82ae74eed8579853efe5f397c-6.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7f53dcd82ae74eed8579853efe5f397c-7.png",
+            "https://d2pfugr306exr.cloudfront.net/images/7f53dcd82ae74eed8579853efe5f397c-8.png"
           ],
           "scaleBy": 3,
           "puzzleDimension": 3,

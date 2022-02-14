@@ -137,17 +137,17 @@
         "jsonData": {
           "images": [
             {
-              "imageSrc": "/static/img/textbook.jpg",
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/1f7e07e03ae14bddbefbd8f0fbd3835d.jpg",
               "xTarget": -1.25,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/rightArrow.png",
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/9cbe09eabc7c4df3b6ff2d39389934e4.png",
               "xTarget": 0,
               "yTarget": 0
             },
             {
-              "imageSrc": "/static/img/emptyDesk.jpg",
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/59111c7765334f48a77025cdc35d29a0.jpg",
               "xTarget": 1.25,
               "yTarget": 0
             }

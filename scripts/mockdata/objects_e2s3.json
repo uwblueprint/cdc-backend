@@ -112,9 +112,9 @@
     "animations_json": {}
   },
   {
-    "name": "Agenda",
-    "position": [8.157, 0.717, -2.977],
-    "scale": [0.015, 0.015, 0.015],
+    "name": "Comic",
+    "position": [8.045, 0.717, -2.876],
+    "scale": [0.033, 0.033, 0.033],
     "rotation": [-90, 187, 0],
     "asset_id": 80,
     "next_objects": [],

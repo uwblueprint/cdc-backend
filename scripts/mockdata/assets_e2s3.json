@@ -1,6 +1,6 @@
 [
   {
-    "name": "Agenda",
+    "name": "Comic",
     "obj_type": "object",
     "s3_key": "assets/comic.glb",
     "screenshot_url": ""
@@ -9,6 +9,12 @@
     "name": "Alex Sitting Up",
     "obj_type": "object",
     "s3_key": "assets/AlexSittingUp.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Banana",
+    "obj_type": "object",
+    "s3_key": "assets/banana.glb",
     "screenshot_url": ""
   }
 ]

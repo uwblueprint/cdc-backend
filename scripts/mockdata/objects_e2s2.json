@@ -131,7 +131,7 @@
     "is_interactable": true,
     "animations_json": {
       "blackboardData": {
-        "blackboardParagraph": "Hm. It can be tough following along during class without the textbook. Skylar only seems to have this agenda on her desk.",
+        "blackboardParagraph": "Hm. It can be tough following along during class without the textbook. Skylar only seems to have this agenda.",
         "componentType": "ordered-puzzle",
         "draggable": true,
         "jsonData": {

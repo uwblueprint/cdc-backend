@@ -51,7 +51,10 @@
         "jsonData": {
           "data": [
             {
-              "text": "You wonder how Skylar is feeling since they didn't respond to you when you said hi."
+              "text": "\"Hey Skylar, it's really nice out isn't it?\""
+            },
+            {
+              "text": "Skylar nods yes in return."
             }
           ],
           "currPosition": 0
@@ -123,7 +126,7 @@
     "animations_json": {
       "blackboardData": {
         "componentType": "keypad",
-        "blackboardText": "What an open-ended question can you ask Skylar?\n\ta. Do you like Marvel?\n\tb. What do you like about Marvel?",
+        "blackboardText": "What's an open-ended question can you ask Skylar?\n\ta. Do you like Marvel?\n\tb. What do you like about Marvel?",
         "jsonData": {
           "password": "b",
           "model": "basic",
@@ -148,7 +151,7 @@
         "jsonData": {
           "data": [
             {
-              "text": "\"The had a lot of information didn't it?\""
+              "text": "\"The class had a lot of information didn't it?\""
             },
             {
               "text": "Skylar pauses, thinks for a bit, then nods in return."

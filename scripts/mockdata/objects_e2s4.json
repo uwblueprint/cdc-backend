@@ -105,7 +105,7 @@
       "blackboardData": {
         "componentType": "visual-pane",
         "jsonData": {
-          "imageSrc": "/static/img/wave.png",
+          "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/3b45752041664d47a8995d577c422aae.png",
           "caption": "To get someone's attention, try waving."
         }
       }

@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Classroom - 3 (3)",
+    "description": "Supporting a Youth in Crisis - Room 1 - Lunch time",
+    "object_ids": [154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165],
+    "position": [-5.446, 0.1, 0],
+    "scale": [1, 1, 1],
+    "rotation": [0.0, 90.0, 0.0],
+    "background_id": 73,
+    "camera_properties": {
+      "position": [11.682, 1.5, 4.878],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "Skylar seems to be sitting alone, maybe I should go and start a conversation?",
+      "What's that book on Skylar's desk? Looks like a comic book of some type",
+      "Maybe I can talk to Skylar about that comic book?",
+      "In order to solve this room, you need to strike a conversation with Skylar about something that's interesting to them. In order to continue conversation, it is important to ask open-ended questions. This room can be solved by clicking on Skylar's comic book and then asking them what they like about Marvel. To do this, select the comic book and enter 'b'."
+    ],
+    "screenshot_url": ""
+  }
+]

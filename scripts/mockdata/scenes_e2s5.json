@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Hallway",
+    "description": "Supporting a Youth in Crisis - Room 1 - Locker Area",
+    "object_ids": [176, 177, 178, 179, 180, 181],
+    "position": [7.379, 0.1, 0],
+    "scale": [1, 1, 1],
+    "rotation": [0.0, 0.0, 0.0],
+    "background_id": 84,
+    "camera_properties": {
+      "position": [-0.389, 1.5, 14.338],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "Right, I wanted to give Skylar the phone number for ConnecTeen in case they want to talk to someone tonight.",
+      "What was the number again? It was something like 403264....",
+      "I had that number somewhere with me, maybe in my bag?",
+      "In order to solve this room, you need to find and give Skylar the phone number for Calgary ConnecTeen. The correct answer is 4032648336, and it is listed on the card present on the school bag. Enter the phone number on the keypad present on Skylar to provide them with the phone number."
+    ],
+    "screenshot_url": ""
+  }
+]

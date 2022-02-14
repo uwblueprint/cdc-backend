@@ -115,9 +115,9 @@
     "animations_json": {}
   },
   {
-    "name": "Agenda",
-    "position": [8.157, 0.717, -2.977],
-    "scale": [0.015, 0.015, 0.015],
+    "name": "Comic",
+    "position": [8.045, 0.717, -2.876],
+    "scale": [0.033, 0.033, 0.033],
     "rotation": [-90, 187, 0],
     "asset_id": 80,
     "next_objects": [],
@@ -161,5 +161,38 @@
         }
       }
     }
+  },
+  {
+    "name": "Juice cup",
+    "position": [7.755, 0.792, -2.985],
+    "scale": [0.088, 0.088, 0.088],
+    "rotation": [0, 155.67, 0],
+    "asset_id": 50,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Burger",
+    "position": [7.407, 0.72, 1.99],
+    "scale": [0.5, 0.5, 0.5],
+    "rotation": [0, 45, 0],
+    "asset_id": 51,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Banana",
+    "position": [7.768, 0.72, 2.543],
+    "scale": [0.042, 0.042, 0.042],
+    "rotation": [85.486, 45, -164.65],
+    "asset_id": 82,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
   }
 ]

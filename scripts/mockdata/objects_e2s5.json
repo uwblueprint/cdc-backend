@@ -1,0 +1,117 @@
+[
+  {
+    "name": "Alex standing",
+    "position": [0.248, 0.028, -10.985],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-1.731, 120, 0],
+    "asset_id": 86,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Skylar standing",
+    "position": [0.317, 0.116, 10.29],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [0, 70, 0],
+    "asset_id": 87,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "blackboardText": "You wanted to give Skylar the ConnecTeen phone number. Enter the ConnecTeen phone number:",
+        "jsonData": {
+          "password": "4032648336",
+          "model": "numpad",
+          "errorMsg": "That's doesn't seem right, double check the ConnecTeen card once again.",
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Gray pacing",
+    "position": [-1.108, 0.116, 1.534],
+    "scale": [0.9, 0.9, 0.9],
+    "rotation": [-3.71, 180, 0],
+    "asset_id": 76,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Textbook",
+    "position": [0.75, 0.283, 12.385],
+    "scale": [0.15, 0.15, 0.15],
+    "rotation": [75, -90, 0],
+    "asset_id": 11,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "\"You mentioned earlier that you don't have the textbook yet. If you want to give me your number, I can text you pictures of the pages that were assigned for next week.\""
+            },
+            {
+              "text": "Skylar is really thankful and says they'll buy you a coffee in exchange."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Teacher",
+    "position": [0.588, 0.097, 3.57],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation": [0, -40.8, 0],
+    "asset_id": 9,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "\"Mr. Smith arranged for an afterschool study group to help some of us with the topic. I go to it a lot, did you know about it?\""
+            },
+            {
+              "text": "Skylar is surprised and says they didn't know about it. You share the information for the study group so that they have it for when they need it. They thank you again."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Backpack",
+    "position": [0.461, 0.479, 12.78],
+    "scale": [0.138, 0.138, 0.138],
+    "rotation": [0, -240, 0],
+    "asset_id": 85,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "rotation-controls",
+        "jsonData": {
+          "position": [0, 0, 5],
+          "scale": [0.5, 0.5, 0.5]
+        }
+      }
+    }
+  }
+]

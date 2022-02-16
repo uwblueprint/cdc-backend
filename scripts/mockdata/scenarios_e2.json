@@ -2,7 +2,7 @@
   {
     "name": "Supporting a Youth in Crisis",
     "friendly_name": "supporting-youth-in-crisis",
-    "description": "When someone is going through a crisis it can sometimes be very obvious. Other times, it can be really discrete – how can you find ways to support people around you?",
+    "description": "When someone is going through a crisis it can sometimes be very obvious. Other times, it can be really discrete - how can you find ways to support people around you?",
     "scene_ids": [13, 14, 15, 16, 17],
     "is_published": true,
     "is_previewable": true,

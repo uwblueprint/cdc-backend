@@ -136,10 +136,7 @@ admin_scene_put_handler_schema = {
         "background_id": {"type": "integer"},
         "hints": {
             "type": "array",
-            "items": {
-                "type": "string",
-                "pattern": r"^[\:\(\)\'\?\!\.,a-zA-Z0-9 _-]{1,2000}$",
-            },
+            "items": {"type": "string"},
         },
         "screenshot_url": {"type": "string"},
         "camera_properties": {

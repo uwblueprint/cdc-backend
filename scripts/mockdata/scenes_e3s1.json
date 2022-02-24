@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Classroom - Scene 1",
+    "description": "Supporting a Youth in Crisis - Room 1 - Check in with your classmates",
+    "object_ids": [182, 183, 184, 185, 186],
+    "position": [0, 2.487, 16.345],
+    "scale": [5, 5, 5],
+    "rotation": [0.0, 90.0, 0.0],
+    "background_id": 93,
+    "camera_properties": {
+      "position": [0, 2.5, 0],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "There are three other students in the class, maybe talking to them will help?",
+      "Maybe I should try to talk to Skylar, how should I get their attention?",
+      "What's that picture on the wall? It looks like someone waving...",
+      "In order to solve this room, you need to get Skylar's attention. The correct answer to get their attention is \"wave\". The picture in the room mentions that waving is a great way to get someone's attention, and this is indeed correct."
+    ],
+    "screenshot_url": ""
+  }
+]

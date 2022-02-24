@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Tablist",
+    "obj_type": "object",
+    "s3_key": "assets/tablist.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Tab 1",
+    "obj_type": "object",
+    "s3_key": "assets/tab1.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Tab 2",
+    "obj_type": "object",
+    "s3_key": "assets/tab2.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Tab 3",
+    "obj_type": "object",
+    "s3_key": "assets/tab3.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Tab 4",
+    "obj_type": "object",
+    "s3_key": "assets/tab4.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Empty Room",
+    "obj_type": "background",
+    "s3_key": "assets/empty.glb",
+    "screenshot_url": ""
+  }
+]

@@ -128,6 +128,8 @@ async def delete_asset_from_postgres(asset_id: str, session):
     asset_obj: Asset = get_asset(asset_id, session)
     if not asset_obj:
         raise ValueError("Asset ID not valid")
+    if asset_obj.obj_type == "background":
+        raise AssertionError("Sorry, currently deleting of background isn't supported.")
 
     scenes_resp = await get_scenes_from_postgres(session)
 

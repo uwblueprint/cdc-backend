@@ -5,7 +5,10 @@ from config import config
 admin_asset_handler_body_schema = {
     "type": "object",
     "properties": {
-        "name": {"type": "string", "pattern": r"^[\'a-zA-Z0-9 _-]{1,50}$"},
+        "name": {
+            "type": "string",
+            "pattern": r"^[\:\(\)\'\?\!\.\",a-zA-Z0-9 _-]{1,50}$",
+        },
         "obj_type": {
             "enum": config.get("asset.allowed_asset_types"),
         },
@@ -19,11 +22,14 @@ admin_asset_handler_body_schema = {
 admin_scenario_post_handler_schema = {
     "type": "object",
     "properties": {
-        "name": {"type": "string", "pattern": r"^[\'a-zA-Z0-9 _-]{1,50}$"},
+        "name": {
+            "type": "string",
+            "pattern": r"^[\:\(\)\'\?\!\.\",a-zA-Z0-9 _-]{1,50}$",
+        },
         "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z0-9_-]{1,50}$"},
         "description": {
             "type": "string",
-            "pattern": r"^[\:\(\)\'\?\!\.,a-zA-Z0-9 _-]{,2000}$",
+            "pattern": r"^[\:\(\)\'\?\!\.\",a-zA-Z0-9 _-]{,2000}$",
         },
         "display_image_url": {"type": "string"},
     },
@@ -38,11 +44,14 @@ admin_scenario_post_handler_schema = {
 admin_scenario_put_handler_schema = {
     "type": "object",
     "properties": {
-        "name": {"type": "string", "pattern": r"^[\'a-zA-Z0-9 _-]{1,50}$"},
+        "name": {
+            "type": "string",
+            "pattern": r"^[\:\(\)\'\?\!\.\",a-zA-Z0-9 _-]{1,50}$",
+        },
         "friendly_name": {"type": "string", "pattern": r"^[a-zA-Z0-9_-]{1,50}$"},
         "description": {
             "type": "string",
-            "pattern": r"^[\:\(\)\'\?\!\.,a-zA-Z0-9 _-]{,2000}$",
+            "pattern": r"^[\:\(\)\'\?\!\.\",a-zA-Z0-9 _-]{,2000}$",
         },
         "display_image_url": {"type": "string"},
         "scene_ids": {"type": "array", "items": {"type": "integer"}},
@@ -107,11 +116,14 @@ admin_scenario_put_handler_schema = {
 admin_scene_post_handler_schema = {
     "type": "object",
     "properties": {
-        "name": {"type": "string", "pattern": r"^[\'a-zA-Z0-9 _-]{1,50}$"},
+        "name": {
+            "type": "string",
+            "pattern": r"^[\:\(\)\'\?\!\.\",a-zA-Z0-9 _-]{1,50}$",
+        },
         "background_id": {"type": "integer"},
         "description": {
             "type": "string",
-            "pattern": r"^[\:\(\)\'\?\!\.,a-zA-Z0-9 _-]{,2000}$",
+            "pattern": r"^[\:\(\)\'\?\!\.\",a-zA-Z0-9 _-]{,2000}$",
         },
     },
     "required": [
@@ -124,10 +136,13 @@ admin_scene_post_handler_schema = {
 admin_scene_put_handler_schema = {
     "type": "object",
     "properties": {
-        "name": {"type": "string", "pattern": r"^[\'a-zA-Z0-9 _-]{1,50}$"},
+        "name": {
+            "type": "string",
+            "pattern": r"^[\:\(\)\'\?\!\.\",a-zA-Z0-9 _-]{1,50}$",
+        },
         "description": {
             "type": "string",
-            "pattern": r"^[\:\(\)\'\?\!\.,a-zA-Z0-9 _-]{,2000}$",
+            "pattern": r"^[\:\(\)\'\?\!\.\",a-zA-Z0-9 _-]{,2000}$",
         },
         "object_ids": {"type": "array", "items": {"type": "integer"}},
         "position": {"type": "array", "items": {"type": "number"}},

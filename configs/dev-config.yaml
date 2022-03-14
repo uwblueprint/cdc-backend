@@ -34,13 +34,7 @@ default_data:
   transitions:
     [
       {
-        "data":
-          [
-            {
-              "text": "INTRODUCTION: text goes here.",
-              "imageSrc": "/static/img/lightOn.png",
-            },
-          ],
+        "data": [{ "text": "INTRODUCTION: text goes here." }],
         "currPosition": 0,
       },
     ]

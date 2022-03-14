@@ -1,3 +1,21 @@
+const defaultXTargets = [
+  [], // won't ever be used
+  [0], // won't ever be used
+  [-0.75, 0.75],
+  [-1.25, 0, 1.25],
+  [-2.25, -0.75, 0.75, 2.25],
+  [-2.5, -1.25, 0, 1.25, 2.5],
+];
+
+const defaultYTargets = [
+  [], // won't ever be used
+  [0], // won't ever be used
+  [0, 0],
+  [0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+];
+
 AFRAME.registerComponent("ordered-puzzle", {
   schema: {
     jsonData: {
@@ -140,6 +158,16 @@ AFRAME.registerComponent("ordered-puzzle", {
         }
 
         if (data.useTargets) {
+          data.images[index].xTarget = data.images[index].hasOwnProperty(
+            "xTarget"
+          )
+            ? data.images[index].xTarget
+            : defaultXTargets[numPuzzlePieces][index];
+          data.images[index].yTarget = data.images[index].hasOwnProperty(
+            "yTarget"
+          )
+            ? data.images[index].yTarget
+            : defaultYTargets[numPuzzlePieces][index];
           // Create target
           let textBoxProp = JSON.parse(JSON.stringify(data.images[index]));
           textBoxProp.color = "#3a4355";

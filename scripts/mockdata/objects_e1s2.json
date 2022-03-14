@@ -314,24 +314,16 @@
         "jsonData": {
           "images": [
             {
-              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/b188e92d007b4309aff3bcdca556f31f.png",
-              "xTarget": -2.25,
-              "yTarget": 0
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/b188e92d007b4309aff3bcdca556f31f.png"
             },
             {
-              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/75e4e0ad8787414fa1c67f041e4baa63.png",
-              "xTarget": -0.75,
-              "yTarget": 0
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/75e4e0ad8787414fa1c67f041e4baa63.png"
             },
             {
-              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/f0cad23d70d5497680d41383f16d9e5b.png",
-              "xTarget": 0.75,
-              "yTarget": 0
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/f0cad23d70d5497680d41383f16d9e5b.png"
             },
             {
-              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/1fac68e22cb14995a3cbe0931bd1568e.png",
-              "xTarget": 2.25,
-              "yTarget": 0
+              "imageSrc": "https://d2pfugr306exr.cloudfront.net/images/1fac68e22cb14995a3cbe0931bd1568e.png"
             }
           ],
           "useTargets": true,

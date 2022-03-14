@@ -62,7 +62,7 @@ function addEntityToBlackboard(componentDataParsed) {
     if (e.target === entityEl) {
       let popupCameraEl = document.querySelector("#popup-camera");
       popupCameraEl.setAttribute("camera", "active", true);
-      // Puzzle types that are draggable
+
       if (componentDataParsed.hasOwnProperty("blackboardText")) {
         let blackboardTextEl = document.querySelector("#blackboardText");
         const blackboardText = componentDataParsed.blackboardText;
@@ -111,9 +111,10 @@ function addEntityToBlackboard(componentDataParsed) {
         });
       }
 
+      // Puzzle types that are draggable
       if (
-        componentDataParsed.hasOwnProperty("draggable") &&
-        componentDataParsed.draggable
+        componentDataParsed.componentType === "ordered-puzzle" ||
+        componentDataParsed.componentType === "jigsaw-puzzle"
       ) {
         popupCameraEl.setAttribute("drag-controls", "objects: .draggable");
       }

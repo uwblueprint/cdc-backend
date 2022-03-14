@@ -233,29 +233,19 @@
         "jsonData": {
           "images": [
             {
-              "imageSrc": "/static/img/dev/pic1.png",
-              "xTarget": -2.5,
-              "yTarget": 0
+              "imageSrc": "/static/img/dev/pic1.png"
             },
             {
-              "imageSrc": "/static/img/dev/pic2.png",
-              "xTarget": -1.25,
-              "yTarget": 0
+              "imageSrc": "/static/img/dev/pic2.png"
             },
             {
-              "imageSrc": "/static/img/dev/pic3.png",
-              "xTarget": 0,
-              "yTarget": 0
+              "imageSrc": "/static/img/dev/pic3.png"
             },
             {
-              "imageSrc": "/static/img/dev/pic4.png",
-              "xTarget": 1.25,
-              "yTarget": 0
+              "imageSrc": "/static/img/dev/pic4.png"
             },
             {
-              "imageSrc": "/static/img/dev/pic5.png",
-              "xTarget": 2.5,
-              "yTarget": 0
+              "imageSrc": "/static/img/dev/pic5.png"
             }
           ],
           "useTargets": true,
@@ -284,29 +274,19 @@
         "jsonData": {
           "images": [
             {
-              "imageSrc": "/static/img/dev/pic1.png",
-              "xTarget": -2.5,
-              "yTarget": 0
+              "imageSrc": "/static/img/dev/pic1.png"
             },
             {
-              "imageSrc": "/static/img/dev/pic2.png",
-              "xTarget": -1.25,
-              "yTarget": 0
+              "imageSrc": "/static/img/dev/pic2.png"
             },
             {
-              "imageSrc": "/static/img/dev/pic3.png",
-              "xTarget": 0,
-              "yTarget": 0
+              "imageSrc": "/static/img/dev/pic3.png"
             },
             {
-              "imageSrc": "/static/img/dev/pic4.png",
-              "xTarget": 1.25,
-              "yTarget": 0
+              "imageSrc": "/static/img/dev/pic4.png"
             },
             {
-              "imageSrc": "/static/img/dev/pic5.png",
-              "xTarget": 2.5,
-              "yTarget": 0
+              "imageSrc": "/static/img/dev/pic5.png"
             }
           ],
           "useTargets": false,

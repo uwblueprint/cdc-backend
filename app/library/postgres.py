@@ -128,6 +128,8 @@ async def delete_asset_from_postgres(asset_id: str, session):
     asset_obj: Asset = get_asset(asset_id, session)
     if not asset_obj:
         raise ValueError("Asset ID not valid")
+    if asset_obj.obj_type == "background":
+        raise AssertionError("Sorry, currently deleting of background isn't supported.")
 
     scenes_resp = await get_scenes_from_postgres(session)
 
@@ -277,7 +279,8 @@ async def post_scene_to_postgres(data: dict, session):
     scene_model.camera_properties = config.get("scene_data.camera_properties").get(
         scene_model.background_id
     )
-    scene_model.hints = config.get("scene_data.hints")
+    if not scene_model.hints:
+        scene_model.hints = config.get("scene_data.hints")
     scene_model = create_entity(scene_model, session)
     return scene_model.as_dict()
 

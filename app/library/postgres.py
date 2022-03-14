@@ -279,7 +279,8 @@ async def post_scene_to_postgres(data: dict, session):
     scene_model.camera_properties = config.get("scene_data.camera_properties").get(
         scene_model.background_id
     )
-    scene_model.hints = config.get("scene_data.hints")
+    if not scene_model.hints:
+        scene_model.hints = config.get("scene_data.hints")
     scene_model = create_entity(scene_model, session)
     return scene_model.as_dict()
 

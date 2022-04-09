@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Window",
+    "position": [-5.446, 0.1, 0],
+    "scale": [1, 1, 1],
+    "rotation": [0.0, 90.0, 0.0],
+    "asset_id": 78,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Gray sitting",
+    "position": [6.946, 0.096, 0.335],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-3.71, 90, 0],
+    "asset_id": 79,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "Hmm. . . what are some things that they are looking for in a volunteer? Where did I see that again?",
+        "componentType": "jigsaw-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d7f8fa5b0a394506a81a4b64fa8cd75e-0.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d7f8fa5b0a394506a81a4b64fa8cd75e-1.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d7f8fa5b0a394506a81a4b64fa8cd75e-2.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d7f8fa5b0a394506a81a4b64fa8cd75e-3.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d7f8fa5b0a394506a81a4b64fa8cd75e-4.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d7f8fa5b0a394506a81a4b64fa8cd75e-5.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d7f8fa5b0a394506a81a4b64fa8cd75e-6.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d7f8fa5b0a394506a81a4b64fa8cd75e-7.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/d7f8fa5b0a394506a81a4b64fa8cd75e-8.png"
+          ],
+          "scaleBy": 1.5,
+          "puzzleDimension": 3,
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Mirror",
+    "position": [10.775, 0.375, -6.056],
+    "scale": [0.8, 0.75, 1],
+    "rotation": [0, 0, 0],
+    "asset_id": 72,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You look around and see that everyone has professional business clothes like button ups, dress pants and blouses. You look down at your clothes and realized that you're wearing a pull over."
+            },
+            {
+              "text": "You take a mental note for the next time you do an interview when it comes to attire - oops!"
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Teacher",
+    "position": [12.107, 0.035, 1.717],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation": [0, 340, 0],
+    "asset_id": 9,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "This applicant just completed the mock scenario! You chime in during the debrief and let them know they did great and pointed out what you liked."
+            },
+            {
+              "text": "The applicant really appreciated the feedback and the interviewer thanked you for sharing."
+            },
+            {
+              "text": "You take some mental notes about the positive qualities that the other applicant and interviewer highlight in the debrief."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Laptop",
+    "position": [7.79, 0.71, 0.418],
+    "scale": [0.06, 0.06, 0.06],
+    "rotation": [0, -102.66, 0],
+    "asset_id": 83,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  }
+]

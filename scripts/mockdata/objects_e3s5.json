@@ -1,0 +1,156 @@
+[
+  {
+    "name": "Gray sitting",
+    "position": [-2.088, 0.169, 2.331],
+    "scale": [1.2, 1.2, 1.2],
+    "rotation": [-3.71, 0, 0],
+    "asset_id": 79,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Skylar the Teacher",
+    "position": [-2.706, -0.031, 0.855],
+    "scale": [1, 1, 1],
+    "rotation": [0, 100, 0],
+    "asset_id": 87,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You ask your Coach a few questions before getting started with the contact."
+            },
+            {
+              "text": "You two discuss a few things which helps clear things up and makes you feel a bit more confident in taking the chat."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Agenda",
+    "position": [-2.053, 1.235, -2.296],
+    "scale": [0.03, 0.03, 0.03],
+    "rotation": [-86.885, 12, -4.675],
+    "asset_id": 25,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Computer 1",
+    "position": [-1.509, 1.218, -2.94],
+    "scale": [0.3, 0.3, 0.3],
+    "rotation": [0, 180, 0],
+    "asset_id": 31,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "You get to the computer and try to start the conversation but are having a hard time opening it up. Let's try again!",
+        "componentType": "jigsaw-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/ea68512ac84b49c68c072492a75087e6-0.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/ea68512ac84b49c68c072492a75087e6-1.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/ea68512ac84b49c68c072492a75087e6-2.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/ea68512ac84b49c68c072492a75087e6-3.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/ea68512ac84b49c68c072492a75087e6-4.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/ea68512ac84b49c68c072492a75087e6-5.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/ea68512ac84b49c68c072492a75087e6-6.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/ea68512ac84b49c68c072492a75087e6-7.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/ea68512ac84b49c68c072492a75087e6-8.png"
+          ],
+          "scaleBy": 1.5,
+          "puzzleDimension": 3,
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Computer 2",
+    "position": [-2.351, 1.218, 3.898],
+    "scale": [0.3, 0.3, 0.3],
+    "rotation": [0, 0, 0],
+    "asset_id": 31,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Sticky Note",
+    "position": [-0.793, 1.218, -2.738],
+    "scale": [0.3, 0.3, 0.3],
+    "rotation": [0, 0, 0],
+    "asset_id": 96,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Bottle",
+    "position": [-0.637, 1.218, -2.825],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 0, 0],
+    "asset_id": 97,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Computer 3",
+    "position": [1.698, 1.218, -0.403],
+    "scale": [0.3, 0.3, 0.3],
+    "rotation": [0, 90, 0],
+    "asset_id": 31,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Teacher",
+    "position": [0.845, 0.035, 0.968],
+    "scale": [1.2, 1.2, 1.2],
+    "rotation": [0, 200, 0],
+    "asset_id": 9,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You check in with your CCC (supervisor on shift) introduce yourself and let them know that this is your first contact."
+            },
+            {
+              "text": "They welcome you to the team and ensure you that they will hop on an monitor right away for extra support."
+            },
+            {
+              "text": "The Coach praises you for keeping communication open between themselves and the CCC."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  }
+]

@@ -2,8 +2,8 @@
   {
     "name": "Behind the Scenes of ConnecTeen",
     "friendly_name": "bts-of-connecteen",
-    "description": "A volunteer is going through the application and recruitment process for the ConnecTeen program and goes through a series of events that gets them to supporting another youth in crisis. (i.e. You are so stoked as you have been looking forward to volunteering with ConnecTeen when you turned 15 years old. You have been in crisis before and have used the service in the past to get through some dark times and now that you are feeling better you want to support others who are going through the same thing. The application and recruitment process is a lot more extensive than you originally thought and it’s taken you about 2 and a half months before you could even take your first solo shift. Now that you are on your first shift, a youth tells you they are at risk for suicide – how will you support the youth in your new role?",
-    "scene_ids": [18, 14, 15, 16, 17],
+    "description": "A volunteer is going through the application and recruitment process for the ConnecTeen program and goes through a series of events that gets them to supporting another youth in crisis. (i.e. You are so stoked as you have been looking forward to volunteering with ConnecTeen when you turned 15 years old. You have been in crisis before and have used the service in the past to get through some dark times and now that you are feeling better you want to support others who are going through the same thing. The application and recruitment process is a lot more extensive than you originally thought and it's taken you about 2 and a half months before you could even take your first solo shift. Now that you are on your first shift, a youth tells you they are at risk for suicide - how will you support the youth in your new role?",
+    "scene_ids": [18, 19, 20, 21, 22],
     "is_published": true,
     "is_previewable": true,
     "publish_link": "https://interactive.calgaryconnecteen.com/bts-of-connecteen",
@@ -13,8 +13,8 @@
       "header_text": "Behind the Scenes of ConnecTeen Escape Room"
     },
     "conclusion_data": {
-      "header_text": "Great job, you escaped the Behind the Scenes of ConnecTeen Escape Room! Thank you for playing! You were able to find ways to include them in class and passed them a resource they could possibly use. Below are some take away points from the escape room. To learn more about ConnecTeen please visit our website <a href='https://calgaryconnecteen.com'>here</a>.",
-      "paragraph_text": "By solving the puzzles and going through the room, you have learnt important skills such as recognizing that when people feel uncomfortable or stressed, they can demonstrate it in different ways. Being able to take a step back from time to time, observe your surroundings and checking in on people is a great way to connect with someone. Sometimes its hard to ask for help, taking steps to provide that helping hand out first can make it seem less scary. It's a lot harder to connect with people when you use close-ended questions, try open end-ended questions. It's always important to create space for everyone, if someone is having a hard time making space for themselves you can help include them by giving them the floor to speak. If you're not sure how to support someone its okay to refer people to community resources.",
+      "header_text": "Great job, you escaped the Behind the Scenes of ConnecTeen Escape Room! Thank you for playing! You were able to find ways prepare for the application process and were able to start the coaching shifts. Below are some take away points from the escape room. To learn more about ConnecTeen please visit our website <a href='https://calgaryconnecteen.com'>here</a>.",
+      "paragraph_text": "By solving the puzzles and going through the room, you have learnt important skills such as \nmaking sure to fully read all the information that relates to any job or volunteer description as well as dressing the part (especially for the interview). Don't forget to always check if a new commitment fits within your schedule. It's great to interact with other participants, they might be your fellow volunteers in training process. Being able to refer back to what you have learned about in the volunteer descriptions as well as being able to pull from your own experiences can help show you are engaging with the material and you've done your own research. It's okay to ask questions and it's okay to use the material we give you! Everyone starts a different points in their learning process.\nAs important as it is to be able to absorb the learning material it's also just as important to make sure that you are okay! We can't take care of others if we ourselves are struggling - self care is so important! Just like how we are learning to communicate to those in crisis and support them we should also make sure we are communicating to everyone who is there to support you on a shift (i.e. coaches, CCC's, training coordinators, youth program coordinators). It's always scary to start something new, the important part is that you are trying and you've taken the steps to prepare. We all gotta start somewhere!",
       "share_link": "https://interactive.calgaryconnecteen.com/bts-of-connecteen",
       "external_link": "https://forms.gle/CHANGE_ME"
     },
@@ -33,13 +33,13 @@
       {
         "data": [
           {
-            "text": "You waved to Skylar. They look at you briefly then look back down at their desk."
+            "text": "Nice, now that you've made sure to look at all the information to apply you're ready to submit your application."
           },
           {
-            "text": "The teacher enters the room and everyone goes to their seats. Class is going to start soon."
+            "text": "You were contacted after you submitted your application and now will be participating in a group interview - scary!!"
           },
           {
-            "text": "Mr. Smith greeted everyone good morning then asked the class to open up the text book to start class."
+            "text": "You'll be providing support to someone acting as a service user to show your level current understanding of crisis support. Let's take a breath and try your best!"
           }
         ],
         "currPosition": 0
@@ -47,19 +47,16 @@
       {
         "data": [
           {
-            "text": "Skylar is the only one without a textbook. I wonder why. That doesn't matter though I can offer to share mine for today."
+            "text": "It's now your turn to go. You take a deep breath and remember some of the qualities they look for in a volunteer as well as the type of support you were provided when you used the service in the past."
           },
           {
-            "text": "\"Hey Skylar, I noticed you don't have a text book. We can share mine!\""
+            "text": "You did your best to support the acting service user and were given some areas of strength and areas of feedback afterwards."
           },
           {
-            "text": "Skylar looked surprised at first then they smiled. They look relieved and their leg has stopped shaking from earlier."
+            "text": "You made it past the group interviews!! Nice! Now you're in training and want to make sure you are participating and engaging in the material as much as you can while also getting to know the other applicants."
           },
           {
-            "text": "Mr. Smith finished their lecture and it's time for our break. Skylar thanked you for sharing your textbook. They haven't bought theirs yet as its pretty expensive."
-          },
-          {
-            "text": "Everyone walked on over to the group sitting area. You get up to go eat lunch with everyone and notice that Skylar is the only person who hasn't walked over. Maybe if we strike up a conversation we can invite them over casually."
+            "text": "You will be doing more roleplays in training so that you can practice providing crisis support. There are tons of processes to get into this volunteer role and you want to do your best to pass!"
           }
         ],
         "currPosition": 0
@@ -67,10 +64,13 @@
       {
         "data": [
           {
-            "text": "Skylar smiles and starts to talk about their favorite character. You too laugh for a bit and then you invite them over to eat lunch. They agree and you both head on over to the group."
+            "text": "It's your turn to complete a roleplay! You take out some diagrams and notes they gave to help give you tips when it comes to completing the roleplays. You do your best to be as independent as possible while also making use of the material when you feel stuck. Roleplay complete - phew !"
           },
           {
-            "text": "You had fun at lunch with everyone. Now it's time for the group project. Everyone looks really nervous again. You're in a group of 4 and happen to be paired with Alex, Gray and Skylar. Everyone begins to discuss."
+            "text": "You've finished training and now you get to go on to coaching shifts! Coaching shifts is where you can support real service users while being coached by a Leadership Volunteer as well as getting support from the CCC (supervisor)."
+          },
+          {
+            "text": "There are a few things you need to prepare before you can actually take some contacts. Take a deep breath and let's get started on set up!"
           }
         ],
         "currPosition": 0
@@ -78,16 +78,16 @@
       {
         "data": [
           {
-            "text": "You pause the conversation between Alex, Gray and yourself. You take the time to ask Skylar their thoughts. Skylar now has space to speak and adds on to the project."
+            "text": "You take out your water bottle, it's filled with your favorite drink so that you can get comfortable. You stretch as well to get the nerves off and breath deeply."
           },
           {
-            "text": "The group project was a success and you all scored well."
+            "text": "You remembered that you also talked to the Youth Program Coordinator before the shift to talk about how you're feeling to get some support and be able to vocalize your emotions. You're ready to take a contact!"
           },
           {
-            "text": "It's now the end of the day and everyone will be heading home. Thankfully its the weekend so you can have a break from a tough week of school!"
+            "text": "Your Coach comes in and introduces themselves. They're impressed at how prepared you are for the shift!"
           },
           {
-            "text": "Before you go let's see if there is something you can give your new friend in case they might need extra support."
+            "text": "You two talk about your goals, feelings, areas of strength and areas of development to get to know you a bit more. After chatting for a bit a contact comes in and now it's your chance to put everything you know into practice!"
           }
         ],
         "currPosition": 0
@@ -95,7 +95,7 @@
       {
         "data": [
           {
-            "text": "\"Hey, it was cool hearing from you today. I wanted to give you this before you go. Totally up to you if you want to use this, no pressure. But basically if you're ever going through something tough and you want to talk to someone about it and you don't feel comfortable telling me or anyone else you can try this line. I've used it in the past and it's been helpful so I wanted to pass it along just in case.\""
+            "text": "You opened the chat!!! Your heart is racing and see that the service user has said something. You take another breath, the Coach and CCC smile at you for reassurance. You begin typing up your response!"
           }
         ],
         "currPosition": 0

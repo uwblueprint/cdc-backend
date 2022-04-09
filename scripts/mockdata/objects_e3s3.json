@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Gray sitting",
+    "position": [-0.622, 0.096, -1.613],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [-3.71, 190, 0],
+    "asset_id": 79,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "We are doing roleplays, what are some things I can do to prepare?",
+        "componentType": "jigsaw-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/826885729f54436d9d1cb6aa20a27285-0.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/826885729f54436d9d1cb6aa20a27285-1.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/826885729f54436d9d1cb6aa20a27285-2.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/826885729f54436d9d1cb6aa20a27285-3.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/826885729f54436d9d1cb6aa20a27285-4.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/826885729f54436d9d1cb6aa20a27285-5.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/826885729f54436d9d1cb6aa20a27285-6.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/826885729f54436d9d1cb6aa20a27285-7.png",
+            "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/826885729f54436d9d1cb6aa20a27285-8.png"
+          ],
+          "scaleBy": 3,
+          "puzzleDimension": 3,
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Skylar the Teacher",
+    "position": [-2.726, 0.116, -3.974],
+    "scale": [0.8, 0.8, 0.8],
+    "rotation": [0, 20, 0],
+    "asset_id": 87,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "The Training Coordinator is asking if anyone has any questions from our pre assigned modules. You raise your hand to get clarification on something that was kinda confusing when you first read it."
+            },
+            {
+              "text": "The Coordinator was happy to answer and appreciated that you ask as it turns out some other volunteers had the same question."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Agenda",
+    "position": [-2.99, 0.777, -1.897],
+    "scale": [0.03, 0.03, 0.03],
+    "rotation": [-86.885, -6.818, -4.675],
+    "asset_id": 25,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You're given the syllabus along with all the days you have to set aside for training. Woah a whole month!!"
+            },
+            {
+              "text": "You take note of all the days and times and book that time aside in your agenda so that you don't overbook yourself on one day by accident."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Coaching Room",
+    "obj_type": "background",
+    "s3_key": "assets/6f0e6fafc58645e8a2e8fb261352fb6f.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Sticky Note",
+    "obj_type": "object",
+    "s3_key": "assets/ff0dde73dd4b450ba973c6921491c3e4.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Bottle",
+    "obj_type": "object",
+    "s3_key": "assets/6ec58a552ea44e7bbfaaf5a8ef91a52d.glb",
+    "screenshot_url": ""
+  }
+]

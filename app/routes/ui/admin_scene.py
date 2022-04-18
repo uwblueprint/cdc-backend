@@ -3,10 +3,10 @@ import json
 from config import config
 from library.postgres import get_scene_from_postgres
 from models import get_session
-from routes.base import BaseAdminUIHandler
+from routes.base import BaseUIHandler
 
 
-class UIAdminSceneHandler(BaseAdminUIHandler):
+class UIAdminSceneHandler(BaseUIHandler):
     """
     Handle routes that have admin/scene/{scene_id}
     """

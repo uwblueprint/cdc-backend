@@ -1,7 +1,7 @@
 [
   {
-    "name": "Classroom - Scene 5",
-    "description": "Supporting a Youth in Crisis - Room 2 - Check in with your classmates",
+    "name": "Computer Screen - Scene 5",
+    "description": "Behind the Scenes of ConnecTeen - Room 5 - Support youth and find a way to focus on their safety in the conversation",
     "object_ids": [203, 204, 205, 206, 207, 208, 209, 210, 211],
     "position": [0, 0.03, 0],
     "scale": [0.25, 0.25, 0.25],

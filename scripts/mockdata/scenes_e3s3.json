@@ -1,7 +1,7 @@
 [
   {
-    "name": "Classroom - Scene 3",
-    "description": "Supporting a Youth in Crisis - Room 2 - Check in with your classmates",
+    "name": "Training - Scene 3",
+    "description": "Behind the Scenes of ConnecTeen - Room 3 - Participate, learn and pass classroom training",
     "object_ids": [192, 193, 194],
     "position": [0, 0.03, 0],
     "scale": [1.0, 1.0, 1.0],

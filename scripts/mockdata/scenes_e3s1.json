@@ -1,7 +1,7 @@
 [
   {
-    "name": "Classroom - Scene 1",
-    "description": "Supporting a Youth in Crisis - Room 1 - Check in with your classmates",
+    "name": "Application Screen - Scene 1",
+    "description": "Behind the Scenes of ConnecTeen - Room 1 - Submit your online application",
     "object_ids": [182, 183, 184, 185, 186],
     "position": [0, 2.487, 16.345],
     "scale": [5, 5, 5],

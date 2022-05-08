@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Coaching Shift - Scene 4",
+    "description": "Behind the Scenes of ConnecTeen - Room 4 - Follow all procedures and get set up (technology) for your first shift",
+    "object_ids": [195, 196, 197, 198, 199, 200, 201, 202],
+    "position": [0, 0.03, 0],
+    "scale": [0.25, 0.25, 0.25],
+    "rotation": [0.0, 180.0, 0.0],
+    "background_id": 95,
+    "camera_properties": {
+      "position": [1.52, 1.3, 0.909],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "I wrote down a note for myself somewhere...",
+      "Oh found it, its on the table beside my bottle. It reads \"Take care of yourself\".",
+      "In order to solve this room, you need to know a way to take care of yourself. Another way to say this is \"self care\". The correct answer to the puzzle is \"self care\"."
+    ],
+    "screenshot_url": ""
+  }
+]

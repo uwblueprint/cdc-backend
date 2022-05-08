@@ -1,0 +1,127 @@
+[
+  {
+    "name": "Gray sitting",
+    "position": [-2.088, 0.169, 2.331],
+    "scale": [1.2, 1.2, 1.2],
+    "rotation": [-3.71, 0, 0],
+    "asset_id": 79,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Skylar the Teacher",
+    "position": [-2.547, -0.031, 0.11],
+    "scale": [1, 1, 1],
+    "rotation": [0, -100, 0],
+    "asset_id": 87,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Agenda",
+    "position": [-2.053, 1.235, -2.296],
+    "scale": [0.03, 0.03, 0.03],
+    "rotation": [-86.885, 12, -4.675],
+    "asset_id": 25,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "You open up your notes that you took from training as well as all the procedure documents so that they are readily available for when you get a contact."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Computer 1",
+    "position": [-1.509, 1.218, -2.94],
+    "scale": [0.3, 0.3, 0.3],
+    "rotation": [0, 180, 0],
+    "asset_id": 31,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "There is a lot of technology you have to set up for a shift! You open up the computer and check if everything is working like your headset and keyboard."
+            },
+            {
+              "text": "You also begin to open up all the programs you need to be able to take contacts on chat, text and phone."
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Computer 2",
+    "position": [-2.351, 1.218, 3.898],
+    "scale": [0.3, 0.3, 0.3],
+    "rotation": [0, 0, 0],
+    "asset_id": 31,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Sticky Note",
+    "position": [-0.793, 1.218, -2.738],
+    "scale": [0.3, 0.3, 0.3],
+    "rotation": [0, 0, 0],
+    "asset_id": 96,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Bottle",
+    "position": [-0.637, 1.218, -2.825],
+    "scale": [0.1, 0.1, 0.1],
+    "rotation": [0, 0, 0],
+    "asset_id": 97,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "componentType": "keypad",
+        "blackboardText": "You have all the things you need for the shift like technology and materials. What should you do for yourself so that you can also be okay during the shift?",
+        "jsonData": {
+          "password": "self care",
+          "model": "basic",
+          "is_last_object": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Computer 3",
+    "position": [1.698, 1.218, -0.403],
+    "scale": [0.3, 0.3, 0.3],
+    "rotation": [0, 90, 0],
+    "asset_id": 31,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  }
+]

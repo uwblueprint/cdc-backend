@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Tablist",
+    "position": [0, 2.552, -6.01],
+    "scale": [5, 5, 5],
+    "rotation": [0, -90, 0],
+    "asset_id": 88,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": false,
+    "animations_json": {}
+  },
+  {
+    "name": "Tab 1",
+    "position": [0, 3.322, -6],
+    "scale": [0.919, 0.919, 0.919],
+    "rotation": [0, -90, 0],
+    "asset_id": 89,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "ConnecTeen Volunteer Website",
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "\"Reading is a nice way to escape reality for a little bit of time. I hate being told to read but if I can do it on my own time, I enjoy it a lot more. Usually when I read my back hurts because I am always slouching or in a weird position so I can't read for very long. My chest still really hurts, I'm not sure if I can focus on reading right now though.\"",
+              "link": "https://calgaryconnecteen.com/volunteer/"
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Tab 2",
+    "position": [0, 1.705, -6],
+    "scale": [0.642, 0.642, 0.642],
+    "rotation": [0, -90, 0],
+    "asset_id": 91,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "ConnecTeen Volunteer Job Description",
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "The ConnecTeen Website directs you to the Distress Centre website that goes way more into depth about the qualifications and commitment. After thinking about it for some time and looking at your schedule you're able to see how this can fit into your life.",
+              "link": "https://www.distresscentre.com/get-involved/volunteer-opportunities/connecteen-volunteer-job-description/"
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Tab 3",
+    "position": [0, 2.474, -6],
+    "scale": [0.684, 0.684, 0.684],
+    "rotation": [0, -90, 0],
+    "asset_id": 90,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardText": "Volunteer Application",
+        "componentType": "text-pane",
+        "jsonData": {
+          "data": [
+            {
+              "text": "Check out the ConnecTeen volunteer application form.",
+              "link": "https://www.distresscentre.com/get-involved/volunteer-opportunities/connecteen-volunteer-application-form/"
+            }
+          ],
+          "currPosition": 0
+        }
+      }
+    }
+  },
+  {
+    "name": "Tab 4",
+    "position": [0, 0.95, -6],
+    "scale": [0.805, 0.805, 0.805],
+    "rotation": [0, -90, 0],
+    "asset_id": 92,
+    "next_objects": [],
+    "texts": [],
+    "is_interactable": true,
+    "animations_json": {
+      "blackboardData": {
+        "blackboardParagraph": "Oh man, it looks like you're missing a step to apply. What sites and in what order should you be looking at to at to get all the information?",
+        "componentType": "ordered-puzzle",
+        "draggable": true,
+        "jsonData": {
+          "images": [
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/6e4d5654be104688b10d1cba8cc6a234-0.png",
+              "xTarget": -1.25,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/6e4d5654be104688b10d1cba8cc6a234-1.png",
+              "xTarget": 0,
+              "yTarget": 0
+            },
+            {
+              "imageSrc": "https://dcc-bp-public-dev.s3.us-east-2.amazonaws.com/images/6e4d5654be104688b10d1cba8cc6a234-2.png",
+              "xTarget": 1.25,
+              "yTarget": 0
+            }
+          ],
+          "useTargets": true,
+          "randomizePos": true,
+          "scaleBy": 3,
+          "is_last_object": true
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Application Screen - Scene 1",
+    "description": "Behind the Scenes of ConnecTeen - Room 1 - Submit your online application",
+    "object_ids": [182, 183, 184, 185, 186],
+    "position": [0, 2.487, 16.345],
+    "scale": [5, 5, 5],
+    "rotation": [0.0, 90.0, 0.0],
+    "background_id": 93,
+    "camera_properties": {
+      "position": [0, 2.5, 0],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "Maybe the order of the tabs might mean something.",
+      "In order to solve this room, you need correctly order the steps to apply. The correct order is \"Volunteer with us!\", \"ConnecTeen Volunteer Application Form\" and then \"ConnecTeen Volunteer Job Description\"."
+    ],
+    "screenshot_url": ""
+  }
+]

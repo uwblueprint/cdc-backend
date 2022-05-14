@@ -1,7 +1,7 @@
 SHELL:=/bin/bash
 
-CONFIG_FILE=configs/dev-config.yaml
-DOCKER_CONFIG_FILE=configs/dev-docker-config.yaml
+CONFIG_FILE=secrets/dev-ec2-config.yaml
+DOCKER_CONFIG_FILE=secrets/dev-ec2-config.yaml
 PYTHON_PATH=.
 
 .PHONY: install
@@ -25,7 +25,11 @@ docker_install:
 	@echo ""
 	@echo " ---- Installing requirements... ----"
 	@pip install -r requirements.txt
-	@echo ""
+	@echo " ---- DONE ----"
+
+
+.PHONY: postgres_install
+postgres_install:
 	@echo " ---- Setting up Postgres (make sure Postgres is running) ----"
 	@PYTHONPATH=$(PYTHON_PATH) CONFIG_PATH=$(DOCKER_CONFIG_FILE) python scripts/create-tables.py
 	@PYTHONPATH=$(PYTHON_PATH) CONFIG_PATH=$(DOCKER_CONFIG_FILE) python scripts/insert_data.py

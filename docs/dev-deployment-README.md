@@ -59,7 +59,12 @@ Make sure you have sufficient AWS permissions for the actions required. If you h
 1. Login and download ECR container from AWS:
    - `aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 222838721423.dkr.ecr.us-east-2.amazonaws.com`
    - `docker pull 222838721423.dkr.ecr.us-east-2.amazonaws.com/dcc-bp:latest`
-   - `docker run -d -p 443:443 -it 222838721423.dkr.ecr.us-east-2.amazonaws.com/dcc-bp:latest`
+1. (Optional) If there are updates to the database or postgres schema, run the below commands first:
+   - `docker run -it --entrypoint=/bin/bash 222838721423.dkr.ecr.us-east-2.amazonaws.com/dcc-bp:latest`
+   - `cd ..`
+   - `make postgres_install`
+1. Next, to run the actual container, run:
+   - `docker run -d -p 443:443 -p 80:80 -it 222838721423.dkr.ecr.us-east-2.amazonaws.com/dcc-bp:latest`
 1. Once the docker container is running, sh into it by doing: `docker exec -it <CONTAINER_ID> /bin/sh`
 1. Then run `certbot --nginx -d interactive.calgaryconnecteen.com -d www.interactive.calgaryconnecteen.com` to generate the intial certificate. The renewal of certifcates should happen automatically due to the cron script. You can use the email address `dcc.bp.aws@gmail.com`.
 

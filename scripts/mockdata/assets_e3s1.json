@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Tablist",
+    "obj_type": "object",
+    "s3_key": "assets/04720605d3f048cd98e26937acb9f3a6.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Tab 1",
+    "obj_type": "object",
+    "s3_key": "assets/a2dc8c20de7f4b5d9fea5cd7cf4496a4.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Tab 2",
+    "obj_type": "object",
+    "s3_key": "assets/86c9125725ec4bf9bdcb7cc2c43f8e06.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Tab 3",
+    "obj_type": "object",
+    "s3_key": "assets/61aee8383fb24f93b5a808a244f11069.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Tab 4",
+    "obj_type": "object",
+    "s3_key": "assets/5994ef22b2df4ecaa2270dbea2ef9930.glb",
+    "screenshot_url": ""
+  },
+  {
+    "name": "Empty Room",
+    "obj_type": "background",
+    "s3_key": "assets/151b055be2d64c34b1884dbb21f8602b.glb",
+    "screenshot_url": ""
+  }
+]

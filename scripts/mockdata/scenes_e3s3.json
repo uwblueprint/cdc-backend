@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Training - Scene 3",
+    "description": "Behind the Scenes of ConnecTeen - Room 3 - Participate, learn and pass classroom training",
+    "object_ids": [192, 193, 194],
+    "position": [0, 0.03, 0],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation": [0.0, 180.0, 0.0],
+    "background_id": 2,
+    "camera_properties": {
+      "position": [-3.751, 1.3, 1],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "You might need to write down stuff or draw diagrams. Do you have a notebook?",
+      "In order to solve this room, you need to solve the jigsaw puzzle."
+    ],
+    "screenshot_url": ""
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Group Interview - Scene 2",
+    "description": "Behind the Scenes of ConnecTeen - Room 2 - Participate and pass group interview",
+    "object_ids": [187, 188, 189, 190, 191],
+    "position": [-5.446, 0.1, 0],
+    "scale": [1, 1, 1],
+    "rotation": [0.0, 90.0, 0.0],
+    "background_id": 94,
+    "camera_properties": {
+      "position": [11.682, 1.5, 4.878],
+      "look_controls": true,
+      "wasd_controls": true,
+      "cursor_properties": {
+        "asset_id": 7,
+        "shape": "crosshairs",
+        "position": [0, -1, -1]
+      }
+    },
+    "hints": [
+      "You might find more info regarding this on the ConnecTeen website from the previous scene.",
+      "Did you try swapping the two blank tiles?",
+      "In order to solve this room, you need to solve the jigsaw puzzle. The terms non-judgemental, confidential, supportive, understanding and knowledgeable (in the same order) are found on the ConnecTeen website from the previous scene."
+    ],
+    "screenshot_url": ""
+  }
+]
